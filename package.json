@@ -1,0 +1,58 @@
+{
+	"author": {
+		"email": "jonah@jonah.pw",
+		"name": "Jonah Snider",
+		"url": "https://jonah.pw"
+	},
+	"dependencies": {
+		"tiny-invariant": "^1.0.0"
+	},
+	"devDependencies": {
+		"@types/jest": "^25.2.2",
+		"husky": "^4.2.5",
+		"pretty-quick": "^2.0.1",
+		"tsdx": "^0.13.2",
+		"tslib": "^2.0.0",
+		"type-fest": "^0.13.1",
+		"typescript": "^3.9.2"
+	},
+	"engines": {
+		"node": ">=10"
+	},
+	"files": [
+		"dist",
+		"src"
+	],
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged && tsdx lint"
+		}
+	},
+	"prettier": {
+		"arrowParens": "avoid",
+		"bracketSpacing": false,
+		"endOfLine": "lf",
+		"jsxBracketSameLine": false,
+		"jsxSingleQuote": true,
+		"printWidth": 160,
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 2,
+		"trailingComma": "none",
+		"useTabs": true
+	},
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/convert.esm.js",
+	"name": "convert",
+	"scripts": {
+		"build": "tsdx build",
+		"lint": "tsdx lint",
+		"prepare": "tsdx build",
+		"start": "tsdx watch",
+		"style": "prettier --ignore-path .gitignore --check .",
+		"test": "tsdx test"
+	},
+	"typings": "dist/index.d.ts",
+	"version": "0.0.0-development"
+}
