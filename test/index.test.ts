@@ -13,6 +13,13 @@ describe('index', () => {
 				.to('minutes')
 		).toBe(1);
 	});
+	it('supports `BigInt`s', () => {
+		expect(
+			convert(BigInt(2))
+				.from('minutes')
+				.to('seconds')
+		).toBe(BigInt(120));
+	});
 
 	it('throws when appropriate', () => {
 		expect(() =>
