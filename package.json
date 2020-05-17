@@ -28,6 +28,10 @@
 			"pre-commit": "pretty-quick --staged && tsdx lint"
 		}
 	},
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/convert.esm.js",
+	"name": "convert",
 	"prettier": {
 		"arrowParens": "avoid",
 		"bracketSpacing": false,
@@ -41,10 +45,6 @@
 		"trailingComma": "none",
 		"useTabs": true
 	},
-	"license": "MIT",
-	"main": "dist/index.js",
-	"module": "dist/convert.esm.js",
-	"name": "convert",
 	"scripts": {
 		"build": "tsdx build",
 		"lint": "tsdx lint",
