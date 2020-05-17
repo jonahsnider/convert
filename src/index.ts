@@ -76,6 +76,8 @@ export function convert(
 					const combinedRatio = (1 / fromRatio) * toRatio;
 
 					if (typeof quantity === 'bigint') {
+						// Note: BigInt support only works when you are converting integers (obviously)
+						// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 						return quantity * BigInt(combinedRatio);
 					}
 
