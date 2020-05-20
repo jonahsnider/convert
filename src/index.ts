@@ -55,11 +55,13 @@ function conversionRatio(unit: ReadonlyDeep<Unit>, desiredConversion: Readonly<s
 		return found.ratio;
 	}
 
-	// const ratio = unit.base.includes(desiredConversion) ? 1 : unit.conversions.find(conversion => conversion.aliases.includes(desiredConversion))?.ratio;
+	const ratio = unit.base.includes(desiredConversion) ? 1 : unit.conversions.find(conversion => conversion.aliases.includes(desiredConversion))?.ratio;
 
-	throw new Error(`No conversion could be found for ${desiredConversion}... we got ${JSON.stringify(unit)}`);
+	if (ratio !== undefined) {
+		return ratio;
+	}
 
-	// return ratio;
+	throw new Error(`No conversion could be found for ${desiredConversion}`);
 }
 
 /**
