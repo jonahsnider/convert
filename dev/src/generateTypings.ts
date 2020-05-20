@@ -17,7 +17,7 @@ for (let [family, definition] of Object.entries(unitFamilies)) {
 
 file.push(
 	`export type AllUnits = ${Object.keys(unitFamilies)
-		.map(unitFamiily => typeNameFromUnit(unitFamiily))
+		.map(unitFamily => typeNameFromUnit(unitFamily))
 		.join(' | ')};\n`
 );
 
