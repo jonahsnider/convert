@@ -1,6 +1,4 @@
 import {convert} from '../../src';
-import {AllUnits, ValidLengthUnits} from '../../types/units';
-import {time} from '../../src/conversions/time';
 
 describe('time', () => {
 	it('converts centuries', () =>
