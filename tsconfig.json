@@ -1,23 +1,21 @@
 {
-	"include": ["src", "types"],
 	"compilerOptions": {
-		"module": "esnext",
-		"lib": ["dom", "esnext"],
-		"importHelpers": true,
-		"declaration": true,
-		"sourceMap": true,
-		"rootDir": "./src",
-		"strict": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-		"moduleResolution": "node",
 		"baseUrl": "./",
-		"paths": {
-			"*": ["src/*", "node_modules/*"]
-		},
+		"declaration": true,
+		"esModuleInterop": true,
+		"importHelpers": true,
 		"jsx": "react",
-		"esModuleInterop": true
-	}
+		"lib": ["dom", "esnext"],
+		"module": "esnext",
+		"moduleResolution": "node",
+		"noFallthroughCasesInSwitch": true,
+		"outDir": "tsc_output",
+		"paths": {
+			"*": ["src/*", "node_modules/*", "!src/dev/*"]
+		},
+		"rootDir": "./src",
+		"sourceMap": true,
+		"strict": true
+	},
+	"include": ["!src/dev", "src", "types"]
 }
