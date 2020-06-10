@@ -17,5 +17,5 @@
 		"sourceMap": true,
 		"strict": true
 	},
-	"include": ["!src/dev", "src", "types"]
+	"include": ["src", "types"]
 }

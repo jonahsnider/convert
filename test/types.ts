@@ -1,6 +1,7 @@
-import {convert} from '../src';
+import {convert} from '../src/convert';
 
+// prettier-disable
+// @ts-expect-error
 convert(1)
-	// @ts-expect-error
 	.from('seconds')
 	.to('meter');

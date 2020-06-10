@@ -1,6 +1,8 @@
 # Convert
 
-A small library for fully type-safe unit conversions in JavaScript & TypeScript.
+A small library for really easy, totally type-safe\* unit conversions in JavaScript & TypeScript.
+
+\* as in, no runtime errors
 
 ## Usage
 

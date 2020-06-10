@@ -1,24 +1,24 @@
 interface SIPrefix {
-	aliases: [string, string];
+	aliases: readonly [string, string];
 	ratio: number;
 }
 
-const siPrefixes: SIPrefix[] = [
-	{aliases: ['peta', 'P'], ratio: 1e15},
-	{aliases: ['tera', 'T'], ratio: 1e12},
-	{aliases: ['giga', 'G'], ratio: 1e9},
-	{aliases: ['mega', 'M'], ratio: 1e6},
-	{aliases: ['kilo', 'k'], ratio: 1e3},
-	{aliases: ['hecto', 'h'], ratio: 1e2},
-	{aliases: ['deca', 'da'], ratio: 1e1},
-	{aliases: ['deci', 'd'], ratio: 1e-1},
-	{aliases: ['centi', 'c'], ratio: 1e-2},
-	{aliases: ['milli', 'm'], ratio: 1e-3},
-	{aliases: ['micro', 'μ'], ratio: 1e-6},
-	{aliases: ['nano', 'n'], ratio: 1e-9},
-	{aliases: ['pico', 'p'], ratio: 1e-12},
-	{aliases: ['femto', 'f'], ratio: 1e-15}
-];
+const siPrefixes: readonly SIPrefix[] = [
+	{aliases: ['peta', 'P'] as const, ratio: 1e15},
+	{aliases: ['tera', 'T'] as const, ratio: 1e12},
+	{aliases: ['giga', 'G'] as const, ratio: 1e9},
+	{aliases: ['mega', 'M'] as const, ratio: 1e6},
+	{aliases: ['kilo', 'k'] as const, ratio: 1e3},
+	{aliases: ['hecto', 'h'] as const, ratio: 1e2},
+	{aliases: ['deca', 'da'] as const, ratio: 1e1},
+	{aliases: ['deci', 'd'] as const, ratio: 1e-1},
+	{aliases: ['centi', 'c'] as const, ratio: 1e-2},
+	{aliases: ['milli', 'm'] as const, ratio: 1e-3},
+	{aliases: ['micro', 'μ'] as const, ratio: 1e-6},
+	{aliases: ['nano', 'n'] as const, ratio: 1e-9},
+	{aliases: ['pico', 'p'] as const, ratio: 1e-12},
+	{aliases: ['femto', 'f'] as const, ratio: 1e-15}
+] as const;
 
 export function siPrefix<T>(unit: {
 	/**
@@ -31,6 +31,24 @@ export function siPrefix<T>(unit: {
 	 * @example 's'
 	 */
 	symbol: T;
-}): SIPrefix[] {
+}): readonly SIPrefix[] {
 	return siPrefixes.map(prefix => ({...prefix, aliases: [`${prefix.aliases[0]}${unit.full}`, `${prefix.aliases[1]}${unit.symbol}`]}));
+}
+
+const prefix: string = 'convert: Invariant failed';
+
+/**
+ * Throws an errror if `condition` is falsy.
+ * @param condition The condition to check
+ * @param message The error message to display in development builds
+ */
+export function invariant(condition: unknown, message?: string): asserts condition {
+	if (!condition) {
+		if (__DEV__) {
+			// Message is only in development
+			throw new Error(`${prefix}: ${message || ''}`);
+		}
+
+		throw new Error(prefix);
+	}
 }

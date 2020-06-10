@@ -1,11 +1,10 @@
-import {convert} from '../src';
+import {convert} from '../src/convert';
 
 describe('convert', () => {
 	it("doesn't convert when not necessary", () => {
 		expect(
-			convert(1)
-				.from('second')
-				.to('second')
+			// prettier-ignore
+			convert(1).from('second').to('second')
 		).toBe(1);
 	});
 
@@ -18,17 +17,15 @@ describe('convert', () => {
 
 	it('throws when appropriate', () => {
 		expect(() =>
-			convert(60)
-				.from('second')
-				// @ts-expect-error
-				.to('not a real value')
+			// prettier-ignore
+			// @ts-expect-error
+			convert(60).from('second').to('not a real value')
 		).toThrow();
 
 		expect(() =>
-			convert(60)
-				// @ts-expect-error
-				.from('not a real value')
-				.to('minute')
+			// prettier-ignore
+			// @ts-expect-error
+			convert(60).from('not a real value').to('minute')
 		).toThrow();
 	});
 });

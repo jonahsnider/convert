@@ -1,0 +1,13 @@
+.github
+.vscode
+coverage
+dist
+src
+test
+types
+.editorconfig
+.gitignore
+LICENSE
+prettier.config.js
+renovate.json
+tsconfig.json

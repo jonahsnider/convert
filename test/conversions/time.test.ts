@@ -76,7 +76,11 @@ describe('time', () => {
 			convert(1)
 				.from('millennia')
 				.to('second')
-		).toBe(31.556952e9));
+			// Floating point math is hard
+			// TODO: We should have a better way of handling problems that occur with very precise numbers like this
+			// In a perfect world the output would be 31556952000
+			// In reality it's                        31556951999.999996
+		).toBeCloseTo(31.556952e9));
 
 	it('converts minutes', () =>
 		expect(
