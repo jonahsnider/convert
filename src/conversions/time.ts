@@ -1,5 +1,5 @@
 import {Unit} from '../convert';
-import {siPrefix} from '../util';
+import {prefixer} from '../util';
 
 /** Base unit for time. */
 export type TimeBase = 'second' | 'seconds' | 's';
@@ -27,6 +27,6 @@ export const time: Unit<TimeBase> = {
 		{aliases: ['svedberg', 'svedbergs', 'S'] as const, ratio: 1e13},
 		{aliases: ['week', 'weeks', 'wk'] as const, ratio: 1 / (60 * 60 * 24 * 7)},
 		{aliases: ['year', 'years', 'a', 'y', 'yr'] as const, ratio: 1 / 31.536e6},
-		...siPrefix<TimeBase>({full: 'second', symbol: 's'})
+		...prefixer<TimeBase>({full: 'second', symbol: 's'})
 	] as const
 };

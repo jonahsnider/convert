@@ -1,5 +1,5 @@
 import {Unit} from '../convert';
-import {siPrefix} from '../util';
+import {prefixer} from '../util';
 
 /**
  * Base unit for lengths;
@@ -13,5 +13,5 @@ export type LengthBase = Readonly<'meter' | 'metre' | 'm'>;
  */
 export const length: Unit<LengthBase> = {
 	base: ['meter', 'metre', 'm'] as const,
-	conversions: siPrefix({full: 'meter', symbol: 'm'})
+	conversions: prefixer<LengthBase>({full: 'meter', symbol: 'm'})
 };
