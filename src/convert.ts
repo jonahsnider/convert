@@ -98,15 +98,3 @@ export const convert: ConversionFunction = (quantity: bigint | number) => {
 		}
 	};
 };
-
-/* if (__DEV__) {
-	// This should not compile
-	// prettier-ignore
-	// @ts-expect-error
-	convert(1).from('meter').to('minute');
-
-	// This should compile
-	convert(1)
-		.from('minute')
-		.to('seconds');
-} */
