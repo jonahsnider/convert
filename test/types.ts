@@ -1,7 +1,5 @@
 import {convert} from '../src/convert';
 
-// prettier-disable
+// prettier-ignore
 // @ts-expect-error
-convert(1)
-	.from('seconds')
-	.to('meter');
+convert(1).from('seconds').to('meter');
