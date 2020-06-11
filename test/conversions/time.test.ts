@@ -1,6 +1,6 @@
 import {convert} from '../../src';
+import {ValidTimeUnits} from '../../src/types/units';
 import {convertAssert} from '../util';
-import {ValidTimeUnits} from '../../types/units';
 
 const assertHelper = (seconds: number, from: ValidTimeUnits) => {
 	convertAssert(seconds, 'second', from, 1);

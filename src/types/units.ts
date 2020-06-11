@@ -4,10 +4,10 @@ import {temperature} from '../conversions/temperature';
 import {time} from '../conversions/time';
 import {ConverterBody, GetAliases} from './common';
 
-type ValidTimeUnits = GetAliases<typeof time>;
-type ValidLengthUnits = GetAliases<typeof length>;
-type ValidDataUnits = GetAliases<typeof data>;
-type ValidTemperatureUnits = GetAliases<typeof temperature>;
+export type ValidTimeUnits = GetAliases<typeof time>;
+export type ValidLengthUnits = GetAliases<typeof length>;
+export type ValidDataUnits = GetAliases<typeof data>;
+export type ValidTemperatureUnits = GetAliases<typeof temperature>;
 
 export type AllUnits = ValidTimeUnits | ValidLengthUnits | ValidDataUnits | ValidTemperatureUnits;
 
