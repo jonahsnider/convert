@@ -28,9 +28,9 @@ export const time = [
 	{aliases: ['hectosecond', 'hectoseconds', 'hs'], ratio: 1e2},
 	{aliases: ['decasecond', 'decaseconds', 'das'], ratio: 1e1},
 	{aliases: ['decisecond', 'deciseconds', 'ds'], ratio: 0.1},
-	{aliases: ['centisecond', 'centiseconds', 'cs'], ratio: 0.01},
-	{aliases: ['millisecond', 'milliseconds', 'ms'], ratio: 0.001},
-	{aliases: ['microsecond', 'microseconds', 'μs'], ratio: 0.000001},
+	{aliases: ['centisecond', 'centiseconds', 'cs'], ratio: 1e-2},
+	{aliases: ['millisecond', 'milliseconds', 'ms'], ratio: 1e-3},
+	{aliases: ['microsecond', 'microseconds', 'μs'], ratio: 0.1e-6},
 	{aliases: ['nanosecond', 'nanoseconds', 'ns'], ratio: 1e-9},
 	{aliases: ['picosecond', 'picoseconds', 'ps'], ratio: 1e-12},
 	{aliases: ['femtosecond', 'femtoseconds', 'fs'], ratio: 1e-15}
