@@ -6,6 +6,12 @@ A small library for really easy, totally type-safe unit conversions in JavaScrip
 
 It's not ready for production release, but all the groundwork for adding in new conversions is done.
 
+```sh
+yarn add convert
+# or
+npm install convert
+```
+
 ## Features
 
 - Full build time and runtime checks of conversions
