@@ -23,8 +23,7 @@
 	"files": [
 		"dist",
 		"!dist/dev.d.ts",
-		"!dist/util.d.ts",
-		"!dist/conversions/*.d.ts"
+		"!dist/util.d.ts"
 	],
 	"husky": {
 		"hooks": {
@@ -49,5 +48,5 @@
 	},
 	"sideEffects": false,
 	"typings": "dist/index.d.ts",
-	"version": "0.2.1-canary"
+	"version": "0.2.2-canary"
 }
