@@ -3,10 +3,10 @@
  * @private
  */
 export const temperature = [
-	{aliases: ['kelvin', 'kelvins', 'K'], ratio: 1, difference: 0},
-	{aliases: ['fahrenheit', 'F'], ratio: 5 / 9, difference: 459.67},
-	{aliases: ['celsius', 'C'], ratio: 1, difference: 273.15},
-	// flicky plz
-	{aliases: ['rankine', 'R'], ratio: 5 / 9, difference: 0},
-	{aliases: ['delisle', 'De'], ratio: 3 / -2, difference: 373.15}
+	{aliases: ['kelvin', 'K'], ratio: 1},
+	{aliases: ['fahrenheit', 'F'], ratio: 1.8, difference: -459.67},
+	{aliases: ['celcius', 'centigrades', 'C'], ratio: 1, difference: -273.15},
+	{aliases: ['rankine', 'Ra'], ratio: 1.8 },
+	{aliases: ['reaumur', 'Re'], ratio: -273.15 },
+	{aliases: ['delisle', 'Re'], ratio: 1.5, difference: -373.15 }
 ] as const;
