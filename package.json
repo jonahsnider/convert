@@ -42,5 +42,5 @@
 	},
 	"sideEffects": false,
 	"typings": "dist/index.d.ts",
-	"version": "0.1.0-canary"
+	"version": "0.0.0-development"
 }
