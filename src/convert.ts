@@ -21,15 +21,9 @@ type OverloadedConverter = ((quantity: number) => Converter<number>) &
 function conversionRatio(unit: readonly Unit[], desiredConversion: Readonly<string>): number {
 	const found = unit.find(conversion => conversion.aliases.includes(desiredConversion));
 
-	if (found) {
-		return found.ratio;
-	}
+	invariant(found !== undefined, `No conversion could be found for ${desiredConversion}`);
 
-	const ratio = unit.find(conversion => conversion.aliases.includes(desiredConversion))?.ratio;
-
-	invariant(ratio !== undefined, `No conversion could be found for ${desiredConversion}`);
-
-	return ratio;
+	return found.ratio;
 }
 
 /**
@@ -68,15 +62,22 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 					const combinedRatio = (1 / fromRatio) * toRatio;
 
 					if (typeof quantity === 'bigint') {
-						try {
-							// Note: BigInt support only works when you are converting integers (obviously)
-							// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
+						let bigintValue: bigint | undefined;
 
-							const bigIntRatio = BigInt(combinedRatio);
-							return quantity * bigIntRatio;
-						} catch (error) {
-							throw new TypeError(`Conversion ratio for ${from} to ${to} can't be expressed as an integer`);
+						if (__DEV__) {
+							try {
+								// Note: BigInt support only works when you are converting integers (obviously)
+								// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
+
+								bigintValue = quantity * BigInt(combinedRatio);
+							} catch (error) {
+								invariant(bigintValue !== undefined, `Conversion ratio for ${from} to ${to} can't be expressed as an integer`);
+							}
+						} else {
+							bigintValue = quantity * BigInt(combinedRatio);
 						}
+
+						return bigintValue;
 					}
 
 					return quantity * combinedRatio;
