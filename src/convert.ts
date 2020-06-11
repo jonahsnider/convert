@@ -81,7 +81,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 					const precalculatedDiff = (toConversion.difference / toConversion.ratio) - (fromConversion.difference / fromConversion.ratio) * fromConversion.ratio * toConversion.ratio;
 					
-					return (quantity + (precalculatedDiff<0?precalculatedDiff:0) ) * combinedRatio - ((precalculatedDiff>0?precalculatedDiff:0));
+					return (quantity + Math.min(precalculatedDiff,0) ) * combinedRatio - Math.max(precalculatedDiff,0);
 				}
 			};
 		}
