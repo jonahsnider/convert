@@ -18,7 +18,7 @@ type OverloadedConverter = ((quantity: number) => Converter<number>) &
  * // 1 / 60
  * ```
  */
-function conversionRatio(unit: readonly any[], desiredConversion: Readonly<string>): number {
+function conversionRatio(unit: readonly Unit[], desiredConversion: Readonly<string>): number {
 	const found = unit.find(conversion => conversion.aliases.includes(desiredConversion));
 
 	if (found) {
