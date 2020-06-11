@@ -60,6 +60,9 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 					const combinedRatio = (1 / toConversion.ratio) * fromConversion.ratio;
 
+					const precalculatedDiff =
+						toConversion.difference / toConversion.ratio - (fromConversion.difference / fromConversion.ratio) * fromConversion.ratio * toConversion.ratio;
+
 					if (typeof quantity === 'bigint') {
 						let bigintValue: bigint | undefined;
 
@@ -68,7 +71,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 								// Note: BigInt support only works when you are converting integers (obviously)
 								// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
-								bigintValue = (quantity + BigInt(fromConversion.difference)) * BigInt(combinedRatio) - BigInt(toConversion.difference);
+								bigintValue = (quantity + BigInt(Math.min(precalculatedDiff, 0))) * BigInt(combinedRatio) - BigInt(Math.max(precalculatedDiff, 0));
 							} catch (error) {
 								invariant(bigintValue !== undefined, `Conversion for ${from} to ${to} can't be expressed as an integer`);
 							}
@@ -78,9 +81,6 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 						return bigintValue;
 					}
-
-					const precalculatedDiff =
-						toConversion.difference / toConversion.ratio - (fromConversion.difference / fromConversion.ratio) * fromConversion.ratio * toConversion.ratio;
 
 					return (quantity + Math.min(precalculatedDiff, 0)) * combinedRatio - Math.max(precalculatedDiff, 0);
 				}
