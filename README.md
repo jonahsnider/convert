@@ -16,8 +16,9 @@ npm install convert
 
 - Full build time and runtime checks of conversions
 - Treeshake-able builds available
-- Out of the box ES3 backwards-compatibility
 - 0 dependencies
+- Out of the box ES3 backwards-compatibility
+- Works in browsers and Node.js
 
 ## Usage
 
