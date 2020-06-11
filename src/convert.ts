@@ -1,5 +1,5 @@
 import {ReadonlyDeep} from 'type-fest';
-import {AllUnits, ConversionFunction} from '../types/units';
+import {AllUnits, Converter} from '../types/units';
 import {families} from './unitFamilies';
 import {invariant} from './util';
 
@@ -60,7 +60,12 @@ function conversionRatio(unit: ReadonlyDeep<Unit>, desiredConversion: Readonly<s
  * Convert from one unit to another.
  * @example convert(360).from('seconds').to('minutes');
  */
-export const convert: ConversionFunction = (quantity: bigint | number) => {
+// export const convert = <T extends number | bigint>(quantity: T): Converter<T> => {
+export const convert = (quantity: number) => {
+	if (quantity === 0 || quantity === 0n) {
+		return {from: () => ({to: (): typeof quantity => quantity})};
+	}
+
 	return {
 		from: (fromUnit: AllUnits) => {
 			let from: typeof fromUnit;
@@ -75,7 +80,7 @@ export const convert: ConversionFunction = (quantity: bigint | number) => {
 			const fromRatio = conversionRatio(_unit, from);
 
 			return {
-				to: (toUnit: typeof from) => {
+				to: (toUnit: typeof from): typeof quantity => {
 					to = toUnit;
 
 					if (to === from) {
@@ -87,9 +92,15 @@ export const convert: ConversionFunction = (quantity: bigint | number) => {
 					const combinedRatio = (1 / fromRatio) * toRatio;
 
 					if (typeof quantity === 'bigint') {
-						// Note: BigInt support only works when you are converting integers (obviously)
-						// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
-						return quantity * BigInt(combinedRatio);
+						try {
+							// Note: BigInt support only works when you are converting integers (obviously)
+							// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
+
+							const bigIntRatio = BigInt(combinedRatio);
+							return quantity * bigIntRatio;
+						} catch (error) {
+							throw new TypeError(`Conversion ratio for ${from} to ${to} can't be expressed as an integer`);
+						}
 					}
 
 					return quantity * combinedRatio;
@@ -98,3 +109,9 @@ export const convert: ConversionFunction = (quantity: bigint | number) => {
 		}
 	};
 };
+
+const bruh = (num: number | bigint): typeof num => num;
+
+const aNumber = bruh(10);
+
+console.log(aNumber);
