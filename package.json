@@ -21,7 +21,10 @@
 		"node": ">=10"
 	},
 	"files": [
-		"dist"
+		"dist",
+		"!dist/dev.d.ts",
+		"!dist/util.d.ts",
+		"!dist/conversions/*.d.ts"
 	],
 	"husky": {
 		"hooks": {
