@@ -20,14 +20,8 @@ export const time = [
 	{aliases: ['svedberg', 'svedbergs', 'S'], ratio: 1e13},
 	{aliases: ['week', 'weeks', 'wk'], ratio: 1 / (60 * 60 * 24 * 7)},
 	{aliases: ['year', 'years', 'a', 'y', 'yr'], ratio: 1 / 31.536e6},
-	{
-		aliases: ['petasecond', 'petaseconds', 'Ps'],
-		ratio: 1e15
-	},
-	{
-		aliases: ['terasecond', 'teraseconds', 'Ts'],
-		ratio: 1e12
-	},
+	{aliases: ['petasecond', 'petaseconds', 'Ps'], ratio: 1e15},
+	{aliases: ['terasecond', 'teraseconds', 'Ts'], ratio: 1e12},
 	{aliases: ['gigasecond', 'gigaseconds', 'Gs'], ratio: 1e9},
 	{aliases: ['megasecond', 'megaseconds', 'Ms'], ratio: 1e6},
 	{aliases: ['kilosecond', 'kiloseconds', 'ks'], ratio: 1e3},

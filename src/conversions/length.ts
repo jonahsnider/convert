@@ -4,14 +4,8 @@
  */
 export const length = [
 	{aliases: ['meter', 'metre', 'm'], ratio: 1},
-	{
-		aliases: ['petameter', 'petameters', 'Pm'],
-		ratio: 1e15
-	},
-	{
-		aliases: ['terameter', 'terameters', 'Tm'],
-		ratio: 1e12
-	},
+	{aliases: ['petameter', 'petameters', 'Pm'], ratio: 1e15},
+	{aliases: ['terameter', 'terameters', 'Tm'], ratio: 1e12},
 	{aliases: ['gigameter', 'gigameters', 'Gm'], ratio: 1e9},
 	{aliases: ['megameter', 'megameters', 'Mm'], ratio: 1e6},
 	{aliases: ['kilometer', 'kilometers', 'km'], ratio: 1e3},

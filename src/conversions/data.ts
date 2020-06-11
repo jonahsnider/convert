@@ -8,10 +8,7 @@ export const data = [
 	{aliases: ['crumb', 'crumbs'], ratio: 1 / 4},
 	{aliases: ['nibble', 'nibbles'], ratio: 1 / 2},
 	{aliases: ['word', 'words'], ratio: 2},
-	{
-		aliases: ['petabyte', 'petabytes', 'PB'],
-		ratio: 1e15
-	},
+	{aliases: ['petabyte', 'petabytes', 'PB'], ratio: 1e15},
 	{aliases: ['terabyte', 'terabytes', 'TB'], ratio: 1e12},
 	{aliases: ['gigabyte', 'gigabytes', 'GB'], ratio: 1e9},
 	{aliases: ['megabyte', 'megabytes', 'MB'], ratio: 1e6},
