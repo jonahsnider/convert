@@ -8,5 +8,5 @@ export const temperature = [
 	{aliases: ['celcius', 'centigrades', 'C'], ratio: 1, difference: -273.15},
 	{aliases: ['rankine', 'Ra'], ratio: 1.8 },
 	{aliases: ['reaumur', 'Re'], ratio: -273.15 },
-	{aliases: ['delisle', 'Re'], ratio: 1.5, difference: -373.15 }
+	{aliases: ['delisle', 'De'], ratio: 1.5, difference: -373.15 }
 ] as const;
