@@ -4,6 +4,8 @@ A small library for really easy, totally type-safe\* unit conversions in JavaScr
 
 \* as in, no runtime errors
 
+It's not ready for production release, but all the groundwork for adding in new conversions is done.
+
 ## Usage
 
 ```ts
