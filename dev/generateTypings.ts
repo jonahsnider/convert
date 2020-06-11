@@ -14,7 +14,7 @@ let file: string[] = [
 	'// We would love your advice on improving this!',
 	'// Maybe this is useful? https://stackoverflow.com/a/45257357/10808983',
 	'',
-	"import {ConverterGroup} from '../src/index';",
+	"import {ConverterBody} from './common';",
 	''
 ];
 
@@ -32,7 +32,9 @@ const allUnits = Object.keys(unitFamilies).map(unitFamily => typeNameFromUnit(un
 file.push(
 	`export type AllUnits = ${allUnits.join(' | ')};`,
 	'',
-	`export type ConversionFunction = ${allUnits.map(unit => `ConverterGroup<${unit}>`).join(' & ')};`
+	'export interface Converter<Q> {',
+	allUnits.map(unit => `from(fromUnit: ${unit}): ConverterBody<${unit}, Q>`).join('\n'),
+	'}'
 );
 
 const path = joinPaths(__dirname, '..', 'types', 'units.d.ts');

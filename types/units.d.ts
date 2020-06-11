@@ -3,6 +3,8 @@
 // We would love your advice on improving this!
 // Maybe this is useful? https://stackoverflow.com/a/45257357/10808983
 
+import {ConverterBody} from './common';
+
 export type ValidTimeUnits =
 	| 'second'
 	| 'seconds'
@@ -211,28 +213,8 @@ export type ValidDataUnits =
 	| 'Kib';
 export type AllUnits = ValidTimeUnits | ValidLengthUnits | ValidDataUnits;
 
-interface ConverterBody<T, Q> {
-	to(to: T): Q;
-}
-
 export interface Converter<Q> {
-	from(from: ValidTimeUnits): ConverterBody<ValidTimeUnits, Q>;
-	from(from: ValidLengthUnits): ConverterBody<ValidLengthUnits, Q>;
-	from(from: ValidDataUnits): ConverterBody<ValidDataUnits, Q>;
+	from(fromUnit: ValidTimeUnits): ConverterBody<ValidTimeUnits, Q>;
+	from(fromUnit: ValidLengthUnits): ConverterBody<ValidLengthUnits, Q>;
+	from(fromUnit: ValidDataUnits): ConverterBody<ValidDataUnits, Q>;
 }
-
-/** All built-in properties and methods of an `Array`. */
-type ArrayBuiltIns = keyof Array<unknown>;
-
-type _GetAliases<T extends readonly Unit[]> = {
-	0: {
-		[K in Exclude<keyof T, ArrayBuiltIns>]: T[K] extends {
-			aliases: infer A;
-		}
-			? A
-			: never;
-	};
-	1: _GetAliases<T>[0][keyof _GetAliases<T>[0]];
-	2: _GetAliases<T>[1][Exclude<keyof _GetAliases<T>[1], ArrayBuiltIns>];
-};
-type GetAliases<T extends readonly Unit[]> = _GetAliases<T>[2];

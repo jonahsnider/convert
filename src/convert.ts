@@ -1,31 +1,12 @@
 import {ReadonlyDeep} from 'type-fest';
+import {Unit} from '../types/common';
 import {AllUnits, Converter} from '../types/units';
 import {families} from './unitFamilies';
 import {invariant} from './util';
 
-/**
- * A conversion between a unit.
- */
-export interface Unit<T = unknown> {
-	/**
-	 * The base unit.
-	 * @example ['second', 'seconds', 's']
-	 */
-	base: readonly T[];
-	/** The conversion ratios for this unit. */
-	conversions: readonly {
-		/**
-		 * Aliases for this ratio.
-		 * @example ['minute', 'minutes', 'm']
-		 */
-		aliases: readonly string[];
-		/**
-		 * The ratio as expressed in units of the base unit. For example, you express `1` second in minutes as `1 / 60` minutes.
-		 * @example 1 / 60
-		 */
-		ratio: number;
-	}[];
-}
+type OverloadedConverter = ((quantity: number) => Converter<number>) &
+	((quantity: bigint) => Converter<bigint>) &
+	((quantity: bigint | number) => Converter<bigint | number>);
 
 /**
  * Get the conversion ratio to the base unit of a `Unit`
@@ -61,9 +42,11 @@ function conversionRatio(unit: ReadonlyDeep<Unit>, desiredConversion: Readonly<s
  * @example convert(360).from('seconds').to('minutes');
  */
 // export const convert = <T extends number | bigint>(quantity: T): Converter<T> => {
-export const convert = (quantity: number) => {
-	if (quantity === 0 || quantity === 0n) {
-		return {from: () => ({to: (): typeof quantity => quantity})};
+// export function convert(quantity: number): Converter<number>;
+// export function convert(quantity: bigint): Converter<bigint>;
+function convert(quantity: number | bigint): Converter<typeof quantity> {
+	if (quantity === 0 || quantity === BigInt(0)) {
+		return {from: () => ({to: () => quantity})};
 	}
 
 	return {
@@ -80,7 +63,7 @@ export const convert = (quantity: number) => {
 			const fromRatio = conversionRatio(_unit, from);
 
 			return {
-				to: (toUnit: typeof from): typeof quantity => {
+				to: (toUnit: typeof from) => {
 					to = toUnit;
 
 					if (to === from) {
@@ -108,10 +91,9 @@ export const convert = (quantity: number) => {
 			};
 		}
 	};
-};
+}
 
-const bruh = (num: number | bigint): typeof num => num;
+// @ts-expect-error
+const typedConvert: OverloadedConverter = convert;
 
-const aNumber = bruh(10);
-
-console.log(aNumber);
+export {typedConvert as convert};
