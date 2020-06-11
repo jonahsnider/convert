@@ -1,10 +1,15 @@
 # Convert
 
-A small library for really easy, totally type-safe\* unit conversions in JavaScript & TypeScript.
-
-\* as in, no runtime errors
+A small library for really easy, totally type-safe unit conversions in JavaScript & TypeScript.
 
 It's not ready for production release, but all the groundwork for adding in new conversions is done.
+
+## Features
+
+- Full build time and runtime checks of conversions
+- Treeshake-able builds available
+- Out of the box ES3 backwards-compatibility
+- 0 dependencies
 
 ## Usage
 
