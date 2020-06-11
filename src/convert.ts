@@ -58,7 +58,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 					const toConversion = conversionRatio(_units, to);
 
-					const combinedRatio =  toConversion.ratio / fromConversion.ratio;
+					const combinedRatio = toConversion.ratio / fromConversion.ratio;
 
 					if (typeof quantity === 'bigint') {
 						let bigintValue: bigint | undefined;
@@ -79,9 +79,10 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 						return bigintValue;
 					}
 
-					const precalculatedDiff = (toConversion.difference / toConversion.ratio) - (fromConversion.difference / fromConversion.ratio) * fromConversion.ratio * toConversion.ratio;
-					
-					return (quantity + (precalculatedDiff<0?precalculatedDiff:0) ) * combinedRatio - ((precalculatedDiff>0?precalculatedDiff:0));
+					const precalculatedDiff =
+						toConversion.difference / toConversion.ratio - (fromConversion.difference / fromConversion.ratio) * fromConversion.ratio * toConversion.ratio;
+
+					return (quantity + (precalculatedDiff < 0 ? precalculatedDiff : 0)) * combinedRatio - (precalculatedDiff > 0 ? precalculatedDiff : 0);
 				}
 			};
 		}
