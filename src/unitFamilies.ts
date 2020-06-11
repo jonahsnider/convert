@@ -5,5 +5,3 @@ import {time} from './conversions/time';
 
 /** Families of units, like length or time. */
 export const unitFamilies = {time, length, data, temperature};
-
-export const families = Object.values(unitFamilies);

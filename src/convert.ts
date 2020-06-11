@@ -1,7 +1,10 @@
-import {Unit} from '../types/common';
-import {AllUnits, Converter} from '../types/units';
-import {families} from './unitFamilies';
+import {Unit} from './types/common';
+import {AllUnits, Converter} from './types/units';
+import {unitFamilies} from './unitFamilies';
 import {invariant} from './util';
+
+// If you want to add custom types, just add more `Unit` shaped objects to this array
+const families = Object.values(unitFamilies);
 
 type OverloadedConverter = ((quantity: number) => Converter<number>) &
 	((quantity: bigint) => Converter<bigint>) &

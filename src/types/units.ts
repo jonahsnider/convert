@@ -1,7 +1,7 @@
-import {data} from '../src/conversions/data';
-import {length} from '../src/conversions/length';
-import {temperature} from '../src/conversions/temperature';
-import {time} from '../src/conversions/time';
+import {data} from '../conversions/data';
+import {length} from '../conversions/length';
+import {temperature} from '../conversions/temperature';
+import {time} from '../conversions/time';
 import {ConverterBody, GetAliases} from './common';
 
 type ValidTimeUnits = GetAliases<typeof time>;
