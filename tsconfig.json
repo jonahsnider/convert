@@ -8,10 +8,10 @@
 		"lib": ["dom", "esnext"],
 		"module": "esnext",
 		"moduleResolution": "node",
+		"noEmit": true,
 		"noFallthroughCasesInSwitch": true,
-		"outDir": "tsc_output",
 		"paths": {
-			"*": ["src/*", "node_modules/*", "!src/dev/*"]
+			"*": ["src/*", "node_modules/*"]
 		},
 		"rootDir": "./src",
 		"sourceMap": true,
