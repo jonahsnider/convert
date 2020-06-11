@@ -5,6 +5,7 @@ export interface ConverterBody<T, Q> {
 export interface Unit {
 	aliases: readonly string[];
 	ratio: number;
+	difference?: number;
 }
 
 /**

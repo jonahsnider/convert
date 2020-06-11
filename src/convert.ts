@@ -9,7 +9,7 @@ type OverloadedConverter = ((quantity: number) => Converter<number>) &
 
 /**
  * Get the conversion ratio to the base unit of a `Unit`
- * @param unit The unit to get the conversion ratio from
+ * @param units The unit to get the conversion ratio from
  * @param desiredConversion The conversion you are looking for
  *
  * @example
@@ -18,12 +18,12 @@ type OverloadedConverter = ((quantity: number) => Converter<number>) &
  * // 1 / 60
  * ```
  */
-function conversionRatio(unit: readonly Unit[], desiredConversion: Readonly<string>): number {
-	const found = unit.find(conversion => conversion.aliases.includes(desiredConversion));
+function conversionRatio(units: readonly Unit[], desiredConversion: Readonly<string>): {ratio: number; difference: number} {
+	const found = units.find(conversion => conversion.aliases.includes(desiredConversion));
 
 	invariant(found !== undefined, `No conversion could be found for ${desiredConversion}`);
 
-	return found.ratio;
+	return {difference: found.difference ?? 0, ratio: found.ratio};
 }
 
 /**
@@ -31,10 +31,6 @@ function conversionRatio(unit: readonly Unit[], desiredConversion: Readonly<stri
  * @example convert(360).from('seconds').to('minutes');
  */
 function convert(quantity: number | bigint): Converter<typeof quantity> {
-	if (quantity === 0 || quantity === BigInt(0)) {
-		return {from: () => ({to: () => quantity})};
-	}
-
 	return {
 		from: (fromUnit: AllUnits) => {
 			let from: typeof fromUnit;
@@ -43,11 +39,11 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 			from = fromUnit;
 
 			// @ts-expect-error
-			const _unit = families.find(family => family.find((conversion: Unit) => conversion.aliases.includes(from)));
+			const _units = families.find(family => family.find((conversion: Unit) => conversion.aliases.includes(from)));
 
-			invariant(_unit, `No conversion could be found for ${from}`);
+			invariant(_units, `No conversion could be found for ${from}`);
 
-			const fromRatio = conversionRatio(_unit, from);
+			const fromConversion = conversionRatio(_units, from);
 
 			return {
 				to: (toUnit: typeof from) => {
@@ -57,9 +53,9 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 						return quantity;
 					}
 
-					const toRatio = conversionRatio(_unit, to);
+					const toConversion = conversionRatio(_units, to);
 
-					const combinedRatio = (1 / toRatio) * fromRatio;
+					const combinedRatio = (1 / toConversion.ratio) * fromConversion.ratio;
 
 					if (typeof quantity === 'bigint') {
 						let bigintValue: bigint | undefined;
@@ -69,9 +65,9 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 								// Note: BigInt support only works when you are converting integers (obviously)
 								// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
-								bigintValue = quantity * BigInt(combinedRatio);
+								bigintValue = (quantity + BigInt(fromConversion.difference)) * BigInt(combinedRatio) - BigInt(toConversion.difference);
 							} catch (error) {
-								invariant(bigintValue !== undefined, `Conversion ratio for ${from} to ${to} can't be expressed as an integer`);
+								invariant(bigintValue !== undefined, `Conversion for ${from} to ${to} can't be expressed as an integer`);
 							}
 						} else {
 							bigintValue = quantity * BigInt(combinedRatio);
@@ -80,7 +76,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 						return bigintValue;
 					}
 
-					return quantity * combinedRatio;
+					return (quantity + fromConversion.difference) * combinedRatio - toConversion.difference;
 				}
 			};
 		}
