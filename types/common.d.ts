@@ -5,26 +5,21 @@ export interface ConverterBody<T, Q> {
 	to(to: T): Q;
 }
 
-/**
- * A conversion between a unit.
- */
-export interface Unit<T = unknown> {
-	/**
-	 * The base unit.
-	 * @example ['second', 'seconds', 's']
-	 */
-	base: readonly T[];
-	/** The conversion ratios for this unit. */
-	conversions: readonly {
-		/**
-		 * Aliases for this ratio.
-		 * @example ['minute', 'minutes', 'm']
-		 */
-		aliases: readonly string[];
-		/**
-		 * The ratio as expressed in units of the base unit. For example, you express `1` second in minutes as `1 / 60` minutes.
-		 * @example 1 / 60
-		 */
-		ratio: number;
-	}[];
+export interface Unit {
+	aliases: readonly string[];
+	ratio: number;
 }
+
+type _GetAliases<T extends readonly Unit[]> = {
+	0: {
+		[K in Exclude<keyof T, ArrayBuiltIns>]: T[K] extends {
+			aliases: infer A;
+		}
+			? A
+			: never;
+	};
+	1: _GetAliases<T>[0][keyof _GetAliases<T>[0]];
+	2: _GetAliases<T>[1][Exclude<keyof _GetAliases<T>[1], ArrayBuiltIns>];
+};
+
+export type GetAliases<T extends readonly Unit[]> = _GetAliases<T>[2];

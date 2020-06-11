@@ -1,4 +1,3 @@
-import {ReadonlyDeep} from 'type-fest';
 import {Unit} from '../types/common';
 import {AllUnits, Converter} from '../types/units';
 import {families} from './unitFamilies';
@@ -19,18 +18,14 @@ type OverloadedConverter = ((quantity: number) => Converter<number>) &
  * // 1 / 60
  * ```
  */
-function conversionRatio(unit: ReadonlyDeep<Unit>, desiredConversion: Readonly<string>): number {
-	if (unit.base.includes(desiredConversion)) {
-		return 1;
-	}
-
-	const found = unit.conversions.find(conversion => conversion.aliases.includes(desiredConversion));
+function conversionRatio(unit: readonly any[], desiredConversion: Readonly<string>): number {
+	const found = unit.find(conversion => conversion.aliases.includes(desiredConversion));
 
 	if (found) {
 		return found.ratio;
 	}
 
-	const ratio = unit.base.includes(desiredConversion) ? 1 : unit.conversions.find(conversion => conversion.aliases.includes(desiredConversion))?.ratio;
+	const ratio = unit.find(conversion => conversion.aliases.includes(desiredConversion))?.ratio;
 
 	invariant(ratio !== undefined, `No conversion could be found for ${desiredConversion}`);
 
@@ -41,9 +36,6 @@ function conversionRatio(unit: ReadonlyDeep<Unit>, desiredConversion: Readonly<s
  * Convert from one unit to another.
  * @example convert(360).from('seconds').to('minutes');
  */
-// export const convert = <T extends number | bigint>(quantity: T): Converter<T> => {
-// export function convert(quantity: number): Converter<number>;
-// export function convert(quantity: bigint): Converter<bigint>;
 function convert(quantity: number | bigint): Converter<typeof quantity> {
 	if (quantity === 0 || quantity === BigInt(0)) {
 		return {from: () => ({to: () => quantity})};
@@ -56,7 +48,8 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 			from = fromUnit;
 
-			const _unit = families.find(type => type.base.includes(from) || type.conversions.find(conversion => conversion.aliases.includes(from)));
+			// @ts-expect-error
+			const _unit = families.find(family => family.find((conversion: Unit) => conversion.aliases.includes(from)));
 
 			invariant(_unit, `No conversion could be found for ${from}`);
 

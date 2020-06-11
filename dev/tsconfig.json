@@ -1,8 +1,0 @@
-{
-	"compilerOptions": {
-		"module": "commonjs",
-		"strict": true,
-		"target": "es2018"
-	},
-	"include": ["../types", "./*.ts"]
-}
