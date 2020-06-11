@@ -58,7 +58,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 					const toConversion = conversionRatio(_units, to);
 
-					const combinedRatio = toConversion.ratio / fromConversion.ratio;
+					const combinedRatio = (1 / toConversion.ratio) * fromConversion.ratio;
 
 					if (typeof quantity === 'bigint') {
 						let bigintValue: bigint | undefined;
