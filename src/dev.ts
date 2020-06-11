@@ -1,5 +1,6 @@
 /**
  * @file Dev tooling
+ * @private
  */
 
 import {Except} from 'type-fest';
@@ -16,6 +17,7 @@ interface PluralSIPrefix extends Except<SIPrefix, 'aliases'> {
 /**
  * SI prefixes.
  * @see https://en.wikipedia.org/wiki/Metric_prefix
+ * @private
  */
 export const siPrefixes = [
 	{aliases: ['femto', 'f'], ratio: 1e-15},
@@ -37,6 +39,7 @@ export const siPrefixes = [
 /**
  * Binary SI prefixes.
  * @see https://en.wikipedia.org/wiki/Binary_prefix
+ * @private
  */
 export const binaryPrefixes = [
 	{aliases: ['kibi', 'Ki'], ratio: 2 ** 10},

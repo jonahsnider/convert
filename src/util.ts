@@ -2,6 +2,7 @@ const prefix: string = 'convert: Invariant failed';
 
 /**
  * Throws an errror if `condition` is falsy.
+ * @private
  * @param condition The condition to check
  * @param message The error message to display in development builds
  */
