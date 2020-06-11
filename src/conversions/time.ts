@@ -1,4 +1,4 @@
-import {Unit} from '../convert';
+import {Unit} from '../../types/common';
 import {prefixer} from '../util';
 
 /** Base unit for time. */

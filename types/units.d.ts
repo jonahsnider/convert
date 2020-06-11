@@ -3,7 +3,7 @@
 // We would love your advice on improving this!
 // Maybe this is useful? https://stackoverflow.com/a/45257357/10808983
 
-import {ConverterBody} from './common';
+import {ConverterBody, ArrayBuiltIns, Unit} from './common';
 
 export type ValidTimeUnits =
 	| 'second'
@@ -218,3 +218,17 @@ export interface Converter<Q> {
 	from(fromUnit: ValidLengthUnits): ConverterBody<ValidLengthUnits, Q>;
 	from(fromUnit: ValidDataUnits): ConverterBody<ValidDataUnits, Q>;
 }
+
+type _GetAliases<T extends readonly Unit[]> = {
+	0: {
+		[K in Exclude<keyof T, ArrayBuiltIns>]: T[K] extends {
+			aliases: infer A;
+		}
+			? A
+			: never;
+	};
+	1: _GetAliases<T>[0][keyof _GetAliases<T>[0]];
+	2: _GetAliases<T>[1][Exclude<keyof _GetAliases<T>[1], ArrayBuiltIns>];
+};
+
+export type GetAliases<T extends readonly Unit[]> = _GetAliases<T>[2];

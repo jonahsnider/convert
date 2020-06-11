@@ -1,4 +1,4 @@
-import {Unit} from '../convert';
+import {Unit} from '../../types/common';
 import {binaryPrefixes, prefixer, siPrefixes} from '../util';
 
 /**

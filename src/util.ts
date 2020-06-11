@@ -78,7 +78,7 @@ const prefix: string = 'convert: Invariant failed';
  */
 export function invariant(condition: unknown, message?: string): asserts condition {
 	if (!condition) {
-		if (true) {
+		if (__DEV__) {
 			// Message is only in development
 			throw new Error(`${prefix}: ${message || ''}`);
 		}
