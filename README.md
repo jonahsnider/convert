@@ -56,4 +56,4 @@ By default, runs tests related to files changed since the last commit.
 
 ## Thanks
 
-Big thanks to @TheAkio, @iCrawl, @p7g, and @aequasi for their help in getting the typesafety working.
+Big thanks to @Jdender, @TheAkio, @iCrawl, @p7g, @aequasi, and the [TypeScript Discord server](https://discord.gg/typescript) for their help in getting the typesafety working.
