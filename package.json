@@ -40,6 +40,7 @@
 		"style": "prettier --ignore-path .gitignore --check \"./**/*.{{j,t}{s,sx},flow,{sc,c,le}ss,json,m{d,dx},{y,ya}ml}\"",
 		"test": "tsdx test"
 	},
+	"sideEffects": false,
 	"typings": "dist/index.d.ts",
-	"version": "0.0.0-development"
+	"version": "0.1.0-canary"
 }
