@@ -10,10 +10,10 @@ describe('convert', () => {
 
 	it('supports `BigInt`s', () =>
 		expect(
-			convert(BigInt(1))
-				.from('minute')
-				.to('second')
-		).toBe(BigInt(60)));
+			convert(BigInt(2))
+				.from('hour')
+				.to('minute')
+		).toBe(BigInt(120)));
 
 	it('throws when appropriate', () => {
 		expect(() =>

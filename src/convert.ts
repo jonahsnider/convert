@@ -59,7 +59,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 					const toRatio = conversionRatio(_unit, to);
 
-					const combinedRatio = (1 / fromRatio) * toRatio;
+					const combinedRatio = (1 / toRatio) * fromRatio;
 
 					if (typeof quantity === 'bigint') {
 						let bigintValue: bigint | undefined;

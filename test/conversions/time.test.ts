@@ -1,75 +1,31 @@
 import {convert} from '../../src';
+import {convertAssert} from '../util';
+import {ValidTimeUnits} from '../../types/units';
+
+const assertHelper = (seconds: number, from: ValidTimeUnits) => {
+	convertAssert(seconds, 'second', from, 1);
+};
 
 describe('time', () => {
-	it('converts centuries', () =>
-		expect(
-			convert(1)
-				.from('century')
-				.to('second')
-		).toBe(3.1556952e9));
+	assertHelper(3.1556952e9, 'centuries');
 
-	it('converts days', () =>
-		expect(
-			convert(1)
-				.from('day')
-				.to('second')
-		).toBe(86400));
+	assertHelper(86_400, 'days');
 
-	it('converts decades', () =>
-		expect(
-			convert(1)
-				.from('decade')
-				.to('second')
-		).toBe(315.56952e6));
+	assertHelper(315.56952e6, 'decade');
 
-	it('converts fortnights', () =>
-		expect(
-			convert(1)
-				.from('fortnight')
-				.to('second')
-		).toBe(1.2096e6));
+	assertHelper(1.2096e6, 'fortnights');
 
-	it('converts decades', () =>
-		expect(
-			convert(1)
-				.from('decade')
-				.to('second')
-		).toBe(315.56952e6));
+	assertHelper(315.56952e6, 'decades');
 
-	it('converts halakim', () =>
-		expect(
-			convert(1)
-				.from('helek')
-				.to('second')
-		).toBe(3 + 1 / 3));
+	assertHelper(3 + 1 / 3, 'halakim');
 
-	it('converts hours', () =>
-		expect(
-			convert(1)
-				.from('hour')
-				.to('second')
-		).toBe(60 * 60));
+	assertHelper(60 * 60, 'hours');
 
-	it('converts jiffies', () =>
-		expect(
-			convert(1)
-				.from('jiffy')
-				.to('second')
-		).toBe(1 / 60));
+	assertHelper(1 / 60, 'jiffies');
 
-	it('converts jiffies (alternative)', () =>
-		expect(
-			convert(1)
-				.from('ja')
-				.to('second')
-		).toBe(1 / 100));
+	assertHelper(1 / 100, 'ja');
 
-	it('converts ke (what is the plural of this)', () =>
-		expect(
-			convert(1)
-				.from('ke')
-				.to('second')
-		).toBe(900));
+	assertHelper(900, 'ke');
 
 	it('converts millennia', () =>
 		expect(
@@ -82,17 +38,9 @@ describe('time', () => {
 			// In reality it's                        31556951999.999996
 		).toBeCloseTo(31.556952e9));
 
-	it('converts minutes', () =>
-		expect(
-			convert(1)
-				.from('minute')
-				.to('second')
-		).toBe(60));
+	assertHelper(60, 'minutes');
 
-	it('converts moments', () =>
-		expect(
-			convert(1)
-				.from('moment')
-				.to('second')
-		).toBe(90));
+	assertHelper(90, 'moments');
+
+	assertHelper(1 / 1000, 'milliseconds');
 });
