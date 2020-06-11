@@ -32,6 +32,10 @@
 	"main": "dist/index.js",
 	"module": "dist/convert.esm.js",
 	"name": "convert",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/pizzafox/convert.git"
+	},
 	"scripts": {
 		"build": "tsdx build",
 		"lint": "tsdx lint",
