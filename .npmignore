@@ -1,7 +1,6 @@
 .github
 .vscode
 coverage
-dist
 src
 test
 types
