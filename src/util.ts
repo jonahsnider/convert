@@ -11,6 +11,8 @@ export function invariant(condition: unknown, message?: string): asserts conditi
 		if (__DEV__) {
 			// Message is only in development
 			throw new Error(`${prefix}: ${message || ''}`);
+		} else {
+			throw new Error(prefix);
 		}
 	}
 }
