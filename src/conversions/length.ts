@@ -1,5 +1,5 @@
 /**
- * Conversions for time.
+ * Conversions for length.
  * @private
  */
 export const length = [
