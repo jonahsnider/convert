@@ -22,4 +22,9 @@ type _GetAliases<T extends readonly Unit[]> = {
 	2: _GetAliases<T>[1][Exclude<keyof _GetAliases<T>[1], ArrayBuiltIns>];
 };
 
+/**
+ * Get a type of every alias belonging to a unit.
+ * @example
+ * GetAliases<TimeUnits>
+ */
 export type GetAliases<T extends readonly Unit[]> = _GetAliases<T>[2];
