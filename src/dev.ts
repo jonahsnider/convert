@@ -18,20 +18,20 @@ interface PluralSIPrefix extends Except<SIPrefix, 'aliases'> {
  * @see https://en.wikipedia.org/wiki/Metric_prefix
  */
 export const siPrefixes = [
-	{aliases: ['peta', 'P'], ratio: 1e15},
-	{aliases: ['tera', 'T'], ratio: 1e12},
-	{aliases: ['giga', 'G'], ratio: 1e9},
-	{aliases: ['mega', 'M'], ratio: 1e6},
-	{aliases: ['kilo', 'k'], ratio: 1e3},
-	{aliases: ['hecto', 'h'], ratio: 1e2},
-	{aliases: ['deca', 'da'], ratio: 1e1},
-	{aliases: ['deci', 'd'], ratio: 1e-1},
-	{aliases: ['centi', 'c'], ratio: 1e-2},
-	{aliases: ['milli', 'm'], ratio: 1e-3},
-	{aliases: ['micro', 'μ'], ratio: 1e-6},
-	{aliases: ['nano', 'n'], ratio: 1e-9},
+	{aliases: ['femto', 'f'], ratio: 1e-15},
 	{aliases: ['pico', 'p'], ratio: 1e-12},
-	{aliases: ['femto', 'f'], ratio: 1e-15}
+	{aliases: ['nano', 'n'], ratio: 1e-9},
+	{aliases: ['micro', 'μ'], ratio: 1e-6},
+	{aliases: ['milli', 'm'], ratio: 1e-3},
+	{aliases: ['centi', 'c'], ratio: 1e-2},
+	{aliases: ['deci', 'd'], ratio: 1e-1},
+	{aliases: ['deca', 'da'], ratio: 1e1},
+	{aliases: ['hecto', 'h'], ratio: 1e2},
+	{aliases: ['kilo', 'k'], ratio: 1e3},
+	{aliases: ['mega', 'M'], ratio: 1e6},
+	{aliases: ['giga', 'G'], ratio: 1e9},
+	{aliases: ['tera', 'T'], ratio: 1e12},
+	{aliases: ['peta', 'P'], ratio: 1e15}
 ] as const;
 
 /**
@@ -39,11 +39,11 @@ export const siPrefixes = [
  * @see https://en.wikipedia.org/wiki/Binary_prefix
  */
 export const binaryPrefixes = [
-	{aliases: ['pebi', 'Pi'], ratio: 2 ** 50},
-	{aliases: ['tebi', 'Ti'], ratio: 2 ** 40},
-	{aliases: ['gibi', 'Gi'], ratio: 2 ** 30},
+	{aliases: ['kibi', 'Ki'], ratio: 2 ** 10},
 	{aliases: ['mibi', 'Mi'], ratio: 2 ** 20},
-	{aliases: ['kibi', 'Ki'], ratio: 2 ** 1e1}
+	{aliases: ['gibi', 'Gi'], ratio: 2 ** 30},
+	{aliases: ['tebi', 'Ti'], ratio: 2 ** 40},
+	{aliases: ['pebi', 'Pi'], ratio: 2 ** 50}
 ] as const;
 
 /**
@@ -65,9 +65,9 @@ export function prefixer<T>(
 		 */
 		symbol: T;
 	},
-	prefixes = siPrefixes
+	prefixes: SIPrefix[] = (siPrefixes as unknown) as SIPrefix[]
 ): readonly PluralSIPrefix[] {
-	return prefixes.map(prefix => ({
+	return prefixes.map((prefix: SIPrefix) => ({
 		...prefix,
 		aliases: [`${prefix.aliases[0]}${unit.full}`, `${prefix.aliases[0]}${unit.full}s`, `${prefix.aliases[1]}${unit.symbol}`]
 	}));
