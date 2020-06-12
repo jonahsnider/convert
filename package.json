@@ -41,7 +41,6 @@
 	"scripts": {
 		"build": "tsdx build",
 		"lint": "tsdx lint",
-		"prepare": "tsdx build",
 		"start": "tsdx watch",
 		"style": "prettier --ignore-path .gitignore --check \"./**/*.{{j,t}{s,sx},flow,{sc,c,le}ss,json,m{d,dx},{y,ya}ml}\"",
 		"test": "tsdx test"
