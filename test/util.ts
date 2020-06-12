@@ -1,5 +1,5 @@
 import {convert} from '../src';
-import {AllUnits} from '../types/units';
+import {AllUnits} from '../src/types/units';
 
 export function convertAssert(quantity: number | bigint, from: AllUnits, to: typeof from, expected: typeof quantity, approx = false): void {
 	it(`converts ${from} -> ${to}`, () => {
