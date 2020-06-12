@@ -1,6 +1,6 @@
 # Convert
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=0.2.3-canary&wide=1)](https://bundlephobia.com/result?p=convert)
+[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=0.3.0-canary&wide=true)](https://bundlephobia.com/result?p=convert)
 
 A small library for really easy, totally type-safe unit conversions in JavaScript & TypeScript.
 
