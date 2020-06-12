@@ -42,11 +42,11 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 			from = fromUnit;
 
 			// @ts-expect-error
-			const _units = families.find(family => family.find((conversion: Unit) => conversion.aliases.includes(from)));
+			const units = families.find(family => family.find((conversion: Unit) => conversion.aliases.includes(from)));
 
-			invariant(_units, `No conversion could be found for ${from}`);
+			invariant(units, `No conversion could be found for ${from}`);
 
-			const fromConversion = conversionRatio(_units, from);
+			const fromConversion = conversionRatio(units, from);
 
 			return {
 				to: (toUnit: typeof from) => {
@@ -56,7 +56,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 						return quantity;
 					}
 
-					const toConversion = conversionRatio(_units, to);
+					const toConversion = conversionRatio(units, to);
 
 					const combinedRatio = (1 / toConversion.ratio) * fromConversion.ratio;
 
