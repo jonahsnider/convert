@@ -1,4 +1,7 @@
-/** Conversions for time. */
+/**
+ * Conversions for time.
+ * @private
+ */
 export const time = [
 	{aliases: ['second', 'seconds', 's'], ratio: 1},
 	{aliases: ['century', 'centuries', 'c'], ratio: 3.1556952e9},

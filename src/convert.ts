@@ -1,6 +1,6 @@
 import {Unit} from './types/common';
 import {AllUnits, Converter} from './types/units';
-import {unitFamilies} from './unitFamilies';
+import * as unitFamilies from './conversions';
 import {invariant} from './util';
 
 // If you want to add custom types, just add more `Unit` shaped objects to this array

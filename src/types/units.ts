@@ -4,16 +4,16 @@ import {temperature} from '../conversions/temperature';
 import {time} from '../conversions/time';
 import {ConverterBody, GetAliases} from './common';
 
-type ValidTimeUnits = GetAliases<typeof time>;
-type ValidLengthUnits = GetAliases<typeof length>;
-type ValidDataUnits = GetAliases<typeof data>;
-type ValidTemperatureUnits = GetAliases<typeof temperature>;
+type Time = GetAliases<typeof time>;
+type Length = GetAliases<typeof length>;
+type Data = GetAliases<typeof data>;
+type Temperature = GetAliases<typeof temperature>;
 
-export type AllUnits = ValidTimeUnits | ValidLengthUnits | ValidDataUnits | ValidTemperatureUnits;
+export type AllUnits = Time | Length | Data | Temperature;
 
 export interface Converter<Q> {
-	from(fromUnit: ValidTimeUnits): ConverterBody<ValidTimeUnits, Q>;
-	from(fromUnit: ValidLengthUnits): ConverterBody<ValidLengthUnits, Q>;
-	from(fromUnit: ValidDataUnits): ConverterBody<ValidDataUnits, Q>;
-	from(fromUnit: ValidTemperatureUnits): ConverterBody<ValidTemperatureUnits, Q>;
+	from(fromUnit: Time): ConverterBody<Time, Q>;
+	from(fromUnit: Length): ConverterBody<Length, Q>;
+	from(fromUnit: Data): ConverterBody<Data, Q>;
+	from(fromUnit: Temperature): ConverterBody<Temperature, Q>;
 }

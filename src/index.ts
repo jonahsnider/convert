@@ -1,3 +1,3 @@
 export {convert} from './convert';
-export {unitFamilies} from './unitFamilies';
+export * from './conversions';
 export {Unit} from './types/common';
