@@ -6,9 +6,7 @@ import {invariant} from './util';
 // If you want to add custom types, just add more `Unit` shaped objects to this array
 const families = Object.values(unitFamilies);
 
-type OverloadedConverter = ((quantity: number) => Converter<number>) &
-	((quantity: bigint) => Converter<bigint>) &
-	((quantity: bigint | number) => Converter<bigint | number>);
+type OverloadedConverter = ((quantity: number) => Converter<number>) & ((quantity: bigint) => Converter<bigint>);
 
 /**
  * Get the conversion ratio to the base unit of a `Unit`
