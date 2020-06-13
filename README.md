@@ -71,3 +71,5 @@ By default, runs tests related to files changed since the last commit.
 ## Thanks
 
 Big thanks to @Jdender, @TheAkio, @iCrawl, @p7g, @aequasi, and the [TypeScript Discord server](https://discord.gg/typescript) for their help in getting the typesafety working.
+
+Thanks to @MicroDroid for fixing temperature conversion.
