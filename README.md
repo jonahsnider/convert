@@ -28,9 +28,7 @@ npm install convert
 import {convert} from 'convert';
 
 // 360 seconds into minutes
-convert(360)
-	.from('seconds')
-	.to('minutes'); // 6
+convert(360).from('seconds').to('minutes'); // 6
 ```
 
 ## Contributing

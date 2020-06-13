@@ -29,9 +29,7 @@ describe('time', () => {
 
 	it('converts millennia', () =>
 		expect(
-			convert(1)
-				.from('millennium')
-				.to('second')
+			convert(1).from('millennium').to('second')
 			// Floating point math is hard
 			// TODO: We should have a better way of handling problems that occur with very precise numbers like this
 			// In a perfect world the output would be 31556952000

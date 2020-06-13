@@ -9,7 +9,9 @@
 		"@types/jest": "26.0.0",
 		"@types/prettier": "2.0.1",
 		"bundlesize": "0.18.0",
+		"eslint-plugin-prettier": "3.1.3",
 		"eslint-plugin-tree-shaking": "1.8.0",
+		"prettier": "2.0.5",
 		"prettier-config-xo": "1.0.1",
 		"ts-node": "8.10.2",
 		"tsdx": "0.13.2",
@@ -37,7 +39,7 @@
 		"build": "tsdx build",
 		"lint": "tsdx lint",
 		"start": "tsdx watch",
-		"style": "prettier --ignore-path .gitignore --check \"./**/*.{{j,t}{s,sx},flow,{sc,c,le}ss,json,m{d,dx},{y,ya}ml}\"",
+		"style": "prettier --ignore-path .gitignore --check .",
 		"test": "tsdx test"
 	},
 	"sideEffects": false,
