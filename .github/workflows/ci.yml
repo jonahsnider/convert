@@ -127,4 +127,4 @@ jobs:
           BUNDLESIZE_GITHUB_TOKEN: ${{ secrets.BUNDLESIZE_GITHUB_TOKEN }}
           CI_REPO_OWNER: pizzafox
           CI_REPO_NAME: convert
-          CI_COMMIT_SHA: ${{ GITHUB_SHA }}
+          CI_COMMIT_SHA: ${{ env.GITHUB_SHA }}
