@@ -7,8 +7,8 @@ export const temperature = {
 	kelvins: {ratio: 1},
 	K: {ratio: 1},
 
-	fahrenheit: {ratio: 5 / 9, difference: 241.15},
-	F: {ratio: 5 / 9, difference: 241.15},
+	fahrenheit: {ratio: 5 / 9, difference: 273.15 - 32},
+	F: {ratio: 5 / 9, difference: 273.15 - 32},
 
 	celsius: {ratio: 1, difference: 273.15},
 	C: {ratio: 1, difference: 273.15},
