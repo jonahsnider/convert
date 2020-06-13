@@ -6,5 +6,6 @@
 export {data} from './data';
 export {length} from './length';
 export {mass} from './mass';
+export {pressure} from './pressure';
 export {temperature} from './temperature';
 export {time} from './time';

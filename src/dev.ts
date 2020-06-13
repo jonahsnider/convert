@@ -69,9 +69,15 @@ export function prefixer<T>(
 		symbol: T;
 	},
 	prefixes: SIPrefix[] = (siPrefixes as unknown) as SIPrefix[]
-): readonly PluralSIPrefix[] {
-	return prefixes.map((prefix: SIPrefix) => ({
+) {
+	const generated = prefixes.map((prefix: SIPrefix) => ({
 		...prefix,
 		aliases: [`${prefix.aliases[0]}${unit.full}`, `${prefix.aliases[0]}${unit.full}s`, `${prefix.aliases[1]}${unit.symbol}`]
 	}));
+
+	const object: Record<string, {ratio: number}> = {};
+
+	generated.forEach(item => item.aliases.forEach(alias => (object[alias] = {ratio: item.ratio})));
+
+	return object;
 }
