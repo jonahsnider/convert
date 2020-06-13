@@ -16,6 +16,6 @@ export const temperature = {
 	rankine: {ratio: 5 / 9},
 	R: {ratio: 5 / 9},
 
-	delisle: {ratio: -2/3, difference: 373.15},
-	De: {ratio: -2/3, difference: 373.15}
+	delisle: {ratio: -2 / 3, difference: 373.15},
+	De: {ratio: -2 / 3, difference: 373.15}
 };
