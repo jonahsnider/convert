@@ -1,3 +1,3 @@
 export {convert} from './convert';
-export * from './conversions';
+export * as conversions from './conversions';
 export {Unit} from './types/common';
