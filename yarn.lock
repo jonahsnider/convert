@@ -4860,10 +4860,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier-config-xo@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/prettier-config-xo/-/prettier-config-xo-1.0.1.tgz#7bf2e9e0f64eb7acb6c1a7084d83c0fef32c814e"
-  integrity sha512-XBDMRrBWyrWHS/M2buzZIrvvkCJz+rMa0L8+PJUyBKdZFeJQuMS+LUJNZvi/h87zDSxyq52wSupwS6CFbidazA==
+prettier-config-xo@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/prettier-config-xo/-/prettier-config-xo-1.0.2.tgz#af75852699e55dacb450ab789f14aff002aff88f"
+  integrity sha512-PWGPvNSC3uIxTgNg35fzNEoZzD//Yj5ap2rfD0b/Y1RUISsCQsl/U8+9OMSjP8OCirGj7ZqsKcgZ773Mt5SKYg==
 
 prettier-linter-helpers@^1.0.0:
   version "1.0.0"
