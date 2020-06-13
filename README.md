@@ -68,6 +68,15 @@ The package is optimized and bundled with Rollup into multiple formats (CommonJS
 Runs the test watcher (Jest) in an interactive mode.
 By default, runs tests related to files changed since the last commit.
 
+## Alternatives
+
+All of them are bad because they aren't as small as this and they aren't as simple to use.
+
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/convert?label=convert)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/uom?label=uom)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/js-quantities?label=js-quantities)
+
 ## Thanks
 
 Big thanks to @Jdender, @TheAkio, @iCrawl, @p7g, @aequasi, and the [TypeScript Discord server](https://discord.gg/typescript) for their help in getting the typesafety working.
