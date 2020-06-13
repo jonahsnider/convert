@@ -52,7 +52,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 					const toConversion = conversionRatio(units, to);
 
-					const combinedRatio = (1 / toConversion.ratio) * fromConversion.ratio;
+					const combinedRatio = fromConversion.ratio / toConversion.ratio;
 
 					if (typeof quantity === 'bigint') {
 						let bigintValue: bigint | undefined;
@@ -64,10 +64,10 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 								bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion.difference) - BigInt(toConversion.difference));
 							} catch (error) {
-								invariant(bigintValue !== undefined, `Conversion for ${from} to ${to} can't be expressed as an integer`);
+								invariant(false, `Conversion for ${from} to ${to} can't be expressed as an integer`);
 							}
 						} else {
-							bigintValue = quantity * BigInt(combinedRatio);
+							bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion.difference) - BigInt(toConversion.difference));
 						}
 
 						return bigintValue;
