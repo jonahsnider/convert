@@ -8,7 +8,7 @@
 	"devDependencies": {
 		"@types/jest": "26.0.0",
 		"@types/prettier": "2.0.1",
-		"bundlesize": "^0.18.0",
+		"bundlesize": "0.18.0",
 		"husky": "4.2.5",
 		"prettier-config-xo": "1.0.1",
 		"pretty-quick": "2.0.1",
