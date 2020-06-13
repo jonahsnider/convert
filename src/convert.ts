@@ -73,7 +73,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 						return bigintValue;
 					}
 
-					return (quantity + fromConversion.difference) * combinedRatio - toConversion.difference;
+					return quantity * combinedRatio + (fromConversion.difference - toConversion.difference);
 				}
 			};
 		}
