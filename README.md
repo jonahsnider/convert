@@ -32,6 +32,16 @@ const {convert} = require('convert');
 // 360 seconds into minutes
 convert(360).from('seconds').to('minutes');
 // -> 6
+
+// BigInt support
+convert(20n).from('hours').to('minutes');
+// -> 1200n
+
+// We also do length, mass, data, and temperature
+convert(5).from('kilometers').to('nautical miles');
+convert(64).from('bytes').to('KiB');
+convert(12).from('pounds').to('ounces');
+convert(451).from('fahrenheit').to('celsius');
 ```
 
 ## Contributing
