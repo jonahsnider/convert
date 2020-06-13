@@ -15,6 +15,7 @@ export const data = {
 	millibit: {ratio: 1e-3},
 	millibits: {ratio: 1e-3},
 	mbit: {ratio: 1e-3},
+
 	centibit: {ratio: 1e-2},
 	centibits: {ratio: 1e-2},
 	cbit: {ratio: 1e-2},
@@ -42,7 +43,7 @@ export const data = {
 	tetrades: {ratio: 4},
 	quadbit: {ratio: 4},
 	quadbits: {ratio: 4},
-	semioctect: {ratio: 4},
+	semioctet: {ratio: 4},
 	semioctets: {ratio: 4},
 	halfbyte: {ratio: 4},
 	halfbytes: {ratio: 4},
@@ -60,7 +61,9 @@ export const data = {
 	sextets: {ratio: 6},
 
 	heptad: {ratio: 7},
-	heptdades: {ratio: 7},
+	heptads: {ratio: 7},
+	heptade: {ratio: 7},
+	heptades: {ratio: 7},
 
 	byte: {ratio: 8},
 	bytes: {ratio: 8},
