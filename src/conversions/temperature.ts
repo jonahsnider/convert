@@ -7,8 +7,8 @@ export const temperature = {
 	kelvins: {ratio: 1},
 	K: {ratio: 1},
 
-	fahrenheit: {ratio: 5 / 9, difference: 459.67},
-	F: {ratio: 5 / 9, difference: 459.67},
+	fahrenheit: {ratio: 5 / 9, difference: 241.15},
+	F: {ratio: 5 / 9, difference: 241.15},
 
 	celsius: {ratio: 1, difference: 273.15},
 	C: {ratio: 1, difference: 273.15},
@@ -16,6 +16,6 @@ export const temperature = {
 	rankine: {ratio: 5 / 9},
 	R: {ratio: 5 / 9},
 
-	delisle: {ratio: 3 / -2, difference: 373.15},
-	De: {ratio: 3 / -2, difference: 373.15}
+	delisle: {ratio: -2/3, difference: 373.15},
+	De: {ratio: -2/3, difference: 373.15}
 };
