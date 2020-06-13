@@ -129,5 +129,5 @@ export const pressure = {
 
 	atmosphere: {ratio: 101325},
 	atmospheres: {ratio: 101325},
-	atm: {ratio: 101325},
+	atm: {ratio: 101325}
 };
