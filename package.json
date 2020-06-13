@@ -9,9 +9,8 @@
 		"@types/jest": "26.0.0",
 		"@types/prettier": "2.0.1",
 		"bundlesize": "0.18.0",
-		"husky": "4.2.5",
+		"eslint-plugin-tree-shaking": "^1.8.0",
 		"prettier-config-xo": "1.0.1",
-		"pretty-quick": "2.0.1",
 		"ts-node": "8.10.2",
 		"tsdx": "0.13.2",
 		"tslib": "2.0.0",
@@ -26,11 +25,6 @@
 		"!dist/dev.d.ts",
 		"!dist/util.d.ts"
 	],
-	"husky": {
-		"hooks": {
-			"pre-commit": "pretty-quick --staged && tsdx lint"
-		}
-	},
 	"license": "MIT",
 	"main": "dist/index.js",
 	"module": "dist/convert.esm.js",
