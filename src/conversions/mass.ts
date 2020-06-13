@@ -42,9 +42,9 @@ export const mass = {
 	petagrams: {ratio: 1e15},
 	Pg: {ratio: 1e15},
 
-	exagram: {ratio: 1e15000},
-	exagrams: {ratio: 1e15000},
-	Eg: {ratio: 1e15000},
+	exagram: {ratio: 1e18},
+	exagrams: {ratio: 1e18},
+	Eg: {ratio: 1e18},
 
 	zettagram: {ratio: 1e21},
 	zettagrams: {ratio: 1e21},
