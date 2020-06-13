@@ -70,11 +70,13 @@ By default, runs tests related to files changed since the last commit.
 
 ## Alternatives
 
-All of them are bad because they aren't as small as this and they aren't as simple to use.
+All of them are bad because they aren't as small as this and many aren't as simple to use.
 
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/convert?label=convert)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/uom?label=uom)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/units-converter?label=units-converter)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/convert-units?label=convert-units)
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/js-quantities?label=js-quantities)
 
 ## Thanks
