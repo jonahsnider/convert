@@ -2,11 +2,10 @@
 
 A small library for really easy, totally type-safe unit conversions in JavaScript & TypeScript.
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=0.5.0-canary&wide=true)](https://bundlephobia.com/result?p=convert)
+[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=0.6.0-canary&wide=true)](https://bundlephobia.com/result?p=convert)
+[![Codecov](https://img.shields.io/codecov/c/gh/pizzafox/convert)](https://codecov.io/gh/pizzafox/convert)
 
-It's not ready for production release\*, but all the groundwork for adding in new conversions is done.
-
-\* Some conversions are just totally wrong. Please don't use this (yet).
+It's almost ready for production release, just need to add in some more conversions.
 
 ```sh
 yarn add convert
@@ -25,10 +24,14 @@ npm install convert
 ## Usage
 
 ```ts
+// ESM:
 import {convert} from 'convert';
+// CJS:
+const {convert} = require('convert');
 
 // 360 seconds into minutes
-convert(360).from('seconds').to('minutes'); // 6
+convert(360).from('seconds').to('minutes');
+// -> 6
 ```
 
 ## Contributing
