@@ -62,7 +62,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 								// Note: BigInt support only works when you are converting integers (obviously)
 								// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
-								bigintValue = (quantity + BigInt(fromConversion.difference)) * BigInt(combinedRatio) - BigInt(toConversion.difference);
+								bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion.difference) - BigInt(toConversion.difference));
 							} catch (error) {
 								invariant(bigintValue !== undefined, `Conversion for ${from} to ${to} can't be expressed as an integer`);
 							}
