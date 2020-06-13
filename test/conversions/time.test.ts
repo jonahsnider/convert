@@ -3,7 +3,7 @@ import {convertAssert} from '../util';
 import {Time} from '../../src/types/units';
 
 const assertHelper = (seconds: number, from: Time) => {
-	convertAssert(seconds, 'second', from, 1);
+	convertAssert(seconds, 'second', 1, from);
 };
 
 describe('time', () => {
