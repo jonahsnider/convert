@@ -13,5 +13,9 @@ describe('convert', () => {
 
 		// @ts-expect-error
 		expect(() => convert(60).from('kilogram').to('minute')).toThrow(/invariant/i);
+
+		// @ts-expect-error
+		global.__DEV__ = false;
+		expect(() => convert(BigInt(1)).from('grams').to('kilogram')).toThrow(/The number 0.001 cannot be converted to a BigInt because it is not an integer/);
 	});
 });
