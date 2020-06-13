@@ -14,5 +14,5 @@ export interface Converter<Q> {
 	from(fromUnit: Length): ConverterBody<Length, Q>;
 	from(fromUnit: Data): ConverterBody<Data, Q>;
 	from(fromUnit: Temperature): ConverterBody<Temperature, Q>;
-	from(fromUnit: Mass): ConverterBody<Temperature, Q>;
+	from(fromUnit: Mass): ConverterBody<Mass, Q>;
 }
