@@ -1,11 +1,11 @@
 import {data, length, mass, temperature, time} from '../conversions';
 import {ConverterBody, GetAliases} from './common';
 
-type Data = GetAliases<typeof data>;
-type Length = GetAliases<typeof length>;
-type Mass = GetAliases<typeof mass>;
-type Temperature = GetAliases<typeof temperature>;
-type Time = GetAliases<typeof time>;
+export type Data = GetAliases<typeof data>;
+export type Length = GetAliases<typeof length>;
+export type Mass = GetAliases<typeof mass>;
+export type Temperature = GetAliases<typeof temperature>;
+export type Time = GetAliases<typeof time>;
 
 export type AllUnits = Data | Length | Mass | Temperature | Time;
 

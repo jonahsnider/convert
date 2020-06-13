@@ -2,11 +2,20 @@
  * Conversions for temperature.
  * @private
  */
-export const temperature = [
-	{aliases: ['kelvin', 'kelvins', 'K'], ratio: 1, difference: 0},
-	{aliases: ['fahrenheit', 'F'], ratio: 5 / 9, difference: 459.67},
-	{aliases: ['celsius', 'C'], ratio: 1, difference: 273.15},
-	// flicky plz
-	{aliases: ['rankine', 'R'], ratio: 5 / 9, difference: 0},
-	{aliases: ['delisle', 'De'], ratio: 3 / -2, difference: 373.15}
-] as const;
+export const temperature = {
+	kelvin: {ratio: 1},
+	kelvins: {ratio: 1},
+	K: {ratio: 1},
+
+	fahrenheit: {ratio: 5 / 9, difference: 459.67},
+	F: {ratio: 5 / 9, difference: 459.67},
+
+	celsius: {ratio: 1, difference: 273.15},
+	C: {ratio: 1, difference: 273.15},
+
+	rankine: {ratio: 5 / 9},
+	R: {ratio: 5 / 9},
+
+	delisle: {ratio: 3 / -2, difference: 373.15},
+	De: {ratio: 3 / -2, difference: 373.15}
+};

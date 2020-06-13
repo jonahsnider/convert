@@ -1,8 +1,8 @@
 import {convert} from '../../src';
 import {convertAssert} from '../util';
-import {ValidTimeUnits} from '../../types/units';
+import {Time} from '../../src/types/units';
 
-const assertHelper = (seconds: number, from: ValidTimeUnits) => {
+const assertHelper = (seconds: number, from: Time) => {
 	convertAssert(seconds, 'second', from, 1);
 };
 
@@ -42,5 +42,5 @@ describe('time', () => {
 
 	assertHelper(90, 'moments');
 
-	assertHelper(1 / 1000, 'milliseconds');
+	assertHelper(1 / 1e3, 'milliseconds');
 });

@@ -1,10 +1,10 @@
+// If you want to add custom types, just add more `Unit` shaped objects to this array
+import * as conversions from './conversions';
 import {Unit} from './types/common';
 import {AllUnits, Converter} from './types/units';
-import * as unitFamilies from './conversions';
 import {invariant} from './util';
 
-// If you want to add custom types, just add more `Unit` shaped objects to this array
-const families = Object.values(unitFamilies);
+const families = Object.values(conversions);
 
 type OverloadedConverter = ((quantity: number) => Converter<number>) & ((quantity: bigint) => Converter<bigint>);
 
@@ -19,10 +19,10 @@ type OverloadedConverter = ((quantity: number) => Converter<number>) & ((quantit
  * // 1 / 60
  * ```
  */
-function conversionRatio(units: readonly Unit[], desiredConversion: Readonly<string>): {ratio: number; difference: number} {
-	const found = units.find(conversion => conversion.aliases.includes(desiredConversion));
+function conversionRatio(units: Record<string, Unit>, desiredConversion: Readonly<string>): {ratio: number; difference: number} {
+	const found = units[desiredConversion];
 
-	invariant(found !== undefined, `No conversion could be found for ${desiredConversion}`);
+	invariant(found, `No conversion ratio could be found for ${desiredConversion}`);
 
 	return {difference: found.difference ?? 0, ratio: found.ratio};
 }
@@ -34,13 +34,9 @@ function conversionRatio(units: readonly Unit[], desiredConversion: Readonly<str
 function convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {
 		from: (fromUnit: AllUnits) => {
-			let from: typeof fromUnit;
-			let to: typeof fromUnit;
+			const from = fromUnit;
 
-			from = fromUnit;
-
-			// @ts-expect-error
-			const units = families.find(family => family.find((conversion: Unit) => conversion.aliases.includes(from)));
+			const units = families.find(family => (family as Record<AllUnits, Unit>)[from]);
 
 			invariant(units, `No conversion could be found for ${from}`);
 
@@ -48,7 +44,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 
 			return {
 				to: (toUnit: typeof from) => {
-					to = toUnit;
+					const to = toUnit;
 
 					if (to === from) {
 						return quantity;

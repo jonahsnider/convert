@@ -5,59 +5,169 @@
  * @see https://en.wikipedia.org/wiki/Units_of_information
  * @see https://en.wikipedia.org/wiki/Template:Information_units
  */
-export const data = [
-	{aliases: ['bit', 'bits', 'b', 'unibit', 'unibits'], ratio: 1},
-	{aliases: ['millibit', 'millibits', 'mbit'], ratio: 1e-3},
-	{aliases: ['centibit', 'centibits', 'cbit'], ratio: 1e-2},
-	{aliases: ['decibit', 'decibits'], ratio: 1e-1},
-	{aliases: ['crumb', 'crumbs', 'dibit', 'dibits'], ratio: 2},
-	{aliases: ['triad', 'triads', 'triade', 'triades', 'tribit', 'tribits'], ratio: 3},
-	{
-		aliases: [
-			'nibble',
-			'nibbles',
-			'tetrad',
-			'tetrads',
-			'tetrade',
-			'tetrades',
-			'quadbit',
-			'quadbits',
-			'semioctect',
-			'semioctets',
-			'halfbyte',
-			'halfbytes',
-			'quartet',
-			'quartets'
-		],
-		ratio: 4
-	},
-	{aliases: ['pentad', 'pentads'], ratio: 5},
-	{aliases: ['hexad', 'hexads', 'hexade', 'hexades', 'sextet', 'sextets'], ratio: 6},
-	{aliases: ['heptad', 'heptdades'], ratio: 7},
-	{aliases: ['byte', 'bytes', 'B', 'octect', 'octects', 'octad', 'octads', 'octade', 'octades'], ratio: 8},
-	{aliases: ['decabit', 'decabits', 'declet', 'decle', 'deckle'], ratio: 10},
-	{aliases: ['slab', 'slabs'], ratio: 12},
-	{aliases: ['hextet', 'hextets'], ratio: 16},
-	{aliases: ['catena', 'catenas'], ratio: 24},
-	{aliases: ['hectobit', 'hectobits', 'hbit'], ratio: 1e2},
-	{aliases: ['kilobit', 'kilobits', 'kbit'], ratio: 1e3},
-	{aliases: ['kibibit', 'kibibits', 'Kibit'], ratio: 2 ** 10},
-	{aliases: ['kilobyte', 'kilobytes', 'kB'], ratio: 8e3},
-	{aliases: ['kibibyte', 'kibibytes', 'KiB'], ratio: 2 ** 13},
-	{aliases: ['megabit', 'megabits', 'Mbit'], ratio: 1e6},
-	{aliases: ['mebibit', 'mebibits', 'Mibit'], ratio: 2 ** 20},
-	{aliases: ['megabyte', 'megabytes', 'MB'], ratio: 8e6},
-	{aliases: ['mebibyte', 'mebibytes', 'MiB'], ratio: 2 ** 23},
-	{aliases: ['gigabit', 'gigabits', 'Gbit'], ratio: 1e9},
-	{aliases: ['gibibit', 'gibibits', 'Gibit'], ratio: 2 ** 30},
-	{aliases: ['gigabyte', 'gigabytes', 'GB'], ratio: 8e9},
-	{aliases: ['gibibyte', 'gibibytes', 'GiB'], ratio: 2 ** 33},
-	{aliases: ['terabit', 'terabits', 'Tbit'], ratio: 1e12},
-	{aliases: ['tebibit', 'tebibits', 'Tibit'], ratio: 2 ** 40},
-	{aliases: ['terabyte', 'terabytes', 'TB'], ratio: 8e12},
-	{aliases: ['tebibyte', 'tebibytes', 'TiB'], ratio: 2 ** 43},
-	{aliases: ['petabit', 'petabits', 'Pbit'], ratio: 1e15},
-	{aliases: ['pebibit', 'pebibits', 'Pibit'], ratio: 2 ** 50},
-	{aliases: ['petabyte', 'petabytes', 'PB'], ratio: 1e15},
-	{aliases: ['pebibyte', 'pebibytes', 'PiB'], ratio: 2 ** 53}
-] as const;
+export const data = {
+	bit: {ratio: 1},
+	bits: {ratio: 1},
+	b: {ratio: 1},
+	unibit: {ratio: 1},
+	unibits: {ratio: 1},
+
+	millibit: {ratio: 1e-3},
+	millibits: {ratio: 1e-3},
+	mbit: {ratio: 1e-3},
+	centibit: {ratio: 1e-2},
+	centibits: {ratio: 1e-2},
+	cbit: {ratio: 1e-2},
+
+	decibit: {ratio: 1e-1},
+	decibits: {ratio: 1e-1},
+
+	crumb: {ratio: 2},
+	crumbs: {ratio: 2},
+	dibit: {ratio: 2},
+	dibits: {ratio: 2},
+
+	triad: {ratio: 3},
+	triads: {ratio: 3},
+	triade: {ratio: 3},
+	triades: {ratio: 3},
+	tribit: {ratio: 3},
+	tribits: {ratio: 3},
+
+	nibble: {ratio: 4},
+	nibbles: {ratio: 4},
+	tetrad: {ratio: 4},
+	tetrads: {ratio: 4},
+	tetrade: {ratio: 4},
+	tetrades: {ratio: 4},
+	quadbit: {ratio: 4},
+	quadbits: {ratio: 4},
+	semioctect: {ratio: 4},
+	semioctets: {ratio: 4},
+	halfbyte: {ratio: 4},
+	halfbytes: {ratio: 4},
+	quartet: {ratio: 4},
+	quartets: {ratio: 4},
+
+	pentad: {ratio: 5},
+	pentads: {ratio: 5},
+
+	hexad: {ratio: 6},
+	hexads: {ratio: 6},
+	hexade: {ratio: 6},
+	hexades: {ratio: 6},
+	sextet: {ratio: 6},
+	sextets: {ratio: 6},
+
+	heptad: {ratio: 7},
+	heptdades: {ratio: 7},
+
+	byte: {ratio: 8},
+	bytes: {ratio: 8},
+	B: {ratio: 8},
+	octect: {ratio: 8},
+	octects: {ratio: 8},
+	octad: {ratio: 8},
+	octads: {ratio: 8},
+	octade: {ratio: 8},
+	octades: {ratio: 8},
+
+	decabit: {ratio: 10},
+	decabits: {ratio: 10},
+	declet: {ratio: 10},
+	decle: {ratio: 10},
+	deckle: {ratio: 10},
+
+	slab: {ratio: 12},
+	slabs: {ratio: 12},
+
+	hextet: {ratio: 16},
+	hextets: {ratio: 16},
+
+	catena: {ratio: 24},
+	catenas: {ratio: 24},
+
+	hectobit: {ratio: 1e2},
+	hectobits: {ratio: 1e2},
+	hbit: {ratio: 1e2},
+
+	kilobit: {ratio: 1e3},
+	kilobits: {ratio: 1e3},
+	kbit: {ratio: 1e3},
+
+	kibibit: {ratio: 2 ** 10},
+	kibibits: {ratio: 2 ** 10},
+	Kibit: {ratio: 2 ** 10},
+
+	kilobyte: {ratio: 8e3},
+	kilobytes: {ratio: 8e3},
+	kB: {ratio: 8e3},
+
+	kibibyte: {ratio: 2 ** 13},
+	kibibytes: {ratio: 2 ** 13},
+	KiB: {ratio: 2 ** 13},
+
+	megabit: {ratio: 1e6},
+	megabits: {ratio: 1e6},
+	Mbit: {ratio: 1e6},
+
+	mebibit: {ratio: 2 ** 10},
+	mebibits: {ratio: 2 ** 10},
+	Mibit: {ratio: 2 ** 10},
+
+	megabyte: {ratio: 8e6},
+	megabytes: {ratio: 8e6},
+	MB: {ratio: 8e6},
+
+	mebibyte: {ratio: 2 ** 13},
+	mebibytes: {ratio: 2 ** 13},
+	MiB: {ratio: 2 ** 13},
+
+	gigabit: {ratio: 2 ** 20},
+	gigabits: {ratio: 2 ** 20},
+	Gbit: {ratio: 2 ** 20},
+
+	gibibit: {ratio: 2 ** 23},
+	gibibits: {ratio: 2 ** 23},
+	Gibit: {ratio: 2 ** 23},
+
+	gigabyte: {ratio: 2 ** 30},
+	gigabytes: {ratio: 2 ** 30},
+	GB: {ratio: 2 ** 30},
+
+	gibibyte: {ratio: 2 ** 33},
+	gibibytes: {ratio: 2 ** 33},
+	GiB: {ratio: 2 ** 33},
+
+	terabit: {ratio: 1e12},
+	terabits: {ratio: 1e12},
+	Tbit: {ratio: 1e12},
+
+	tebibit: {ratio: 2 * 40},
+	tebibits: {ratio: 2 * 40},
+	Tibit: {ratio: 2 * 40},
+
+	terabyte: {ratio: 8e12},
+	terabytes: {ratio: 8e12},
+	TB: {ratio: 8e12},
+
+	tebibyte: {ratio: 2 ** 43},
+	tebibytes: {ratio: 2 ** 43},
+	TiB: {ratio: 2 ** 43},
+
+	petabit: {ratio: 1e15},
+	petabits: {ratio: 1e15},
+	Pbit: {ratio: 1e15},
+
+	pebibit: {ratio: 2 ** 50},
+	pebibits: {ratio: 2 ** 50},
+	Pibit: {ratio: 2 ** 50},
+
+	petabyte: {ratio: 1e15},
+	petabytes: {ratio: 1e15},
+	PB: {ratio: 1e15},
+
+	pebibyte: {ratio: 2 ** 53},
+	pebibytes: {ratio: 2 ** 53},
+	PiB: {ratio: 2 ** 53}
+};

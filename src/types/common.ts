@@ -3,7 +3,6 @@ export interface ConverterBody<T, Q> {
 }
 
 export interface Unit {
-	aliases: readonly string[];
 	ratio: number;
 	difference?: number;
 }
@@ -13,4 +12,4 @@ export interface Unit {
  * @example
  * GetAliases<TimeUnits>
  */
-export type GetAliases<T extends readonly Unit[]> = T[number]['aliases'][number];
+export type GetAliases<T extends Record<string, Unit>> = keyof T;

@@ -1,8 +1,8 @@
 import {convertAssert} from '../util';
 
 describe('mass', () => {
-	convertAssert(1, 'kilogram', 'grams', 1000);
-	convertAssert(1000, 'kilogram', 'metric ton', 1);
+	convertAssert(1, 'kilogram', 'grams', 1e3);
+	convertAssert(1e3, 'kilogram', 'metric ton', 1);
 	// Imperial ton has the same symbol (t), so we check that there isn't any mismatched value here
 	convertAssert(1, 'metric ton', 't', 1);
 	convertAssert(1, 'kilogram', 'milligrams', 1e6);

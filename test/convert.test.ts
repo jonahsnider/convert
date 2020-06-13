@@ -19,13 +19,13 @@ describe('convert', () => {
 		expect(() =>
 			// prettier-ignore
 			// @ts-expect-error
-			convert(60).from('second').to('not a real value')
-		).toThrow();
+			convert(60).from('second').to('kilogram')
+		).toThrow(/invariant/i);
 
 		expect(() =>
 			// prettier-ignore
 			// @ts-expect-error
-			convert(60).from('not a real value').to('minute')
-		).toThrow();
+			convert(60).from('kilogram').to('minute')
+		).toThrow(/invariant/i);
 	});
 });
