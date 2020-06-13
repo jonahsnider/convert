@@ -121,6 +121,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies with Yarn
         run: yarn install --frozen-lockfile
+      - name: Build
+        run: yarn run build
       - name: Calculate bundle size
         run: yarn bundlesize -f "dist/*.js"
         env:
