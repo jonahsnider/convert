@@ -1,10 +1,12 @@
 # Convert
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=0.5.0-canary&wide=true)](https://bundlephobia.com/result?p=convert)
-
 A small library for really easy, totally type-safe unit conversions in JavaScript & TypeScript.
 
-It's not ready for production release, but all the groundwork for adding in new conversions is done.
+[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=0.5.0-canary&wide=true)](https://bundlephobia.com/result?p=convert)
+
+It's not ready for production release\*, but all the groundwork for adding in new conversions is done.
+
+\* Some conversions are just totally wrong. Please don't use this (yet).
 
 ```sh
 yarn add convert
