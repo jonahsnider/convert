@@ -1,4 +1,3 @@
-// If you want to add custom types, just add more `Unit` shaped objects to this array
 import * as conversions from './conversions';
 import {Unit} from './types/common';
 import {AllUnits, Converter} from './types/units';
