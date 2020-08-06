@@ -6,7 +6,7 @@
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"@types/jest": "26.0.8",
+		"@types/jest": "26.0.9",
 		"bundlesize": "0.18.0",
 		"eslint-plugin-prettier": "3.1.4",
 		"eslint-plugin-tree-shaking": "1.8.0",
