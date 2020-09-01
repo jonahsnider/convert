@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 /**
  * @file Dev tooling
  * @private

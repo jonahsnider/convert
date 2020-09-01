@@ -4,7 +4,6 @@
 		"name": "Jonah Snider",
 		"url": "https://jonah.pw"
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"@types/jest": "26.0.12",
 		"bundlesize": "0.18.0",
@@ -12,14 +11,13 @@
 		"eslint-plugin-tree-shaking": "1.8.0",
 		"prettier": "2.1.1",
 		"prettier-config-xo": "1.0.3",
+		"rome": "^10.0.4-beta",
+		"semantic-release": "^17.1.1",
 		"ts-node": "9.0.0",
 		"tsdx": "0.13.3",
 		"tslib": "2.0.1",
 		"type-fest": "0.16.0",
 		"typescript": "3.9.6"
-	},
-	"engines": {
-		"node": ">=10"
 	},
 	"files": [
 		"dist",
@@ -60,5 +58,5 @@
 	},
 	"sideEffects": false,
 	"typings": "dist/index.d.ts",
-	"version": "0.7.0-canary"
+	"version": "0.0.0-development"
 }

@@ -2,10 +2,8 @@
 
 A small library for really easy, totally type-safe unit conversions in JavaScript & TypeScript.
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=0.7.0-canary&wide=true)](https://bundlephobia.com/result?p=convert)
+[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.0.0&wide=true)](https://bundlephobia.com/result?p=convert)
 [![Codecov](https://img.shields.io/codecov/c/gh/pizzafox/convert)](https://codecov.io/gh/pizzafox/convert)
-
-It's almost ready for production release, just need to add in some more conversions.
 
 ```sh
 yarn add convert
@@ -16,7 +14,7 @@ npm install convert
 ## Features
 
 - Full build time and runtime checks of conversions
-- Treeshake-able builds available
+- Treeshake-able & side effect free builds available
 - 0 dependencies
 - Out of the box ES5 backwards-compatibility
 - Works in browsers and Node.js

@@ -30,11 +30,9 @@ function conversionRatio(units: Record<string, Unit>, desiredConversion: Readonl
  * Convert from one unit to another.
  * @example convert(360).from('seconds').to('minutes');
  */
-function convert(quantity: number | bigint): Converter<typeof quantity> {
+function _convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {
-		from: (fromUnit: AllUnits) => {
-			const from = fromUnit;
-
+		from: (from: AllUnits) => {
 			const units = families.find(family => (family as Record<AllUnits, Unit>)[from]);
 
 			invariant(units, `No conversion could be found for ${from}`);
@@ -42,9 +40,7 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 			const fromConversion = conversionRatio(units, from);
 
 			return {
-				to: (toUnit: typeof from) => {
-					const to = toUnit;
-
+				to: (to: typeof from) => {
 					if (to === from) {
 						return quantity;
 					}
@@ -80,6 +76,4 @@ function convert(quantity: number | bigint): Converter<typeof quantity> {
 }
 
 // @ts-expect-error
-const typedConvert: OverloadedConverter = convert;
-
-export {typedConvert as convert};
+export const convert: OverloadedConverter = _convert;
