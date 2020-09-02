@@ -5,7 +5,7 @@
 		"url": "https://jonah.pw"
 	},
 	"devDependencies": {
-		"@types/jest": "26.0.12",
+		"@types/jest": "26.0.13",
 		"bundlesize": "0.18.0",
 		"eslint-plugin-prettier": "3.1.4",
 		"eslint-plugin-tree-shaking": "1.8.0",
