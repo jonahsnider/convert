@@ -14,11 +14,9 @@ export const data = {
 
 	millibit: {ratio: 1e-3},
 	millibits: {ratio: 1e-3},
-	mbit: {ratio: 1e-3},
 
 	centibit: {ratio: 1e-2},
 	centibits: {ratio: 1e-2},
-	cbit: {ratio: 1e-2},
 
 	decibit: {ratio: 1e-1},
 	decibits: {ratio: 1e-1},
