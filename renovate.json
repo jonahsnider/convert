@@ -1,4 +1,10 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["@pizzafox"]
+	"extends": ["@pizzafox"],
+	"packageRules": [
+		{
+			"groupName": "size-limit",
+			"packagePatterns": ["^size-limit$", "^@size-limit/"]
+		}
+	]
 }

@@ -5,6 +5,7 @@
 		"url": "https://jonah.pw"
 	},
 	"devDependencies": {
+		"@size-limit/preset-small-lib": "4.6.0",
 		"@types/jest": "26.0.14",
 		"bundlesize": "0.18.0",
 		"eslint-plugin-prettier": "3.1.4",
@@ -13,6 +14,7 @@
 		"prettier-config-xo": "1.0.3",
 		"rome": "10.0.4-beta",
 		"semantic-release": "17.1.2",
+		"size-limit": "4.6.0",
 		"ts-node": "9.0.0",
 		"tsdx": "0.14.0",
 		"tslib": "2.0.1",
@@ -50,13 +52,22 @@
 		"url": "http://github.com/pizzafox/convert.git"
 	},
 	"scripts": {
-		"build": "tsdx build",
+		"analyze": "size-limit --why",
+		"build": "tsdx build --format cjs,esm",
 		"lint": "tsdx lint",
+		"size": "size-limit",
 		"start": "tsdx watch",
 		"style": "prettier --ignore-path .gitignore --check .",
 		"test": "tsdx test"
 	},
 	"sideEffects": false,
+	"size-limit": [
+		{
+			"limit": "3 KB",
+			"path": "./dist/convert.cjs.production.min.js",
+			"brotli": true
+		}
+	],
 	"typings": "dist/index.d.ts",
 	"version": "0.0.0-development"
 }
