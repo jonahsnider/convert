@@ -57,6 +57,7 @@
 		"lint": "tsdx lint",
 		"size": "size-limit",
 		"start": "tsdx watch",
+		"skip": "echo skip",
 		"style": "prettier --ignore-path .gitignore --check .",
 		"test": "tsdx test"
 	},
