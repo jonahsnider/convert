@@ -18,7 +18,7 @@
 		"ts-node": "9.0.0",
 		"tsdx": "0.14.0",
 		"tslib": "2.0.1",
-		"type-fest": "0.16.0",
+		"type-fest": "0.17.0",
 		"typescript": "3.9.7"
 	},
 	"files": [
