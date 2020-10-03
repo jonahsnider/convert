@@ -1,4 +1,4 @@
-# Convert
+# Convert - An Amazing Project
 
 A small library for really easy, totally type-safe unit conversions in JavaScript & TypeScript.
 
