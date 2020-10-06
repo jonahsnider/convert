@@ -16,7 +16,7 @@
 		"size-limit": "4.6.0",
 		"ts-node": "9.0.0",
 		"tsdx": "0.14.0",
-		"tslib": "2.0.1",
+		"tslib": "2.0.2",
 		"type-fest": "0.17.0",
 		"typescript": "3.9.7"
 	},
