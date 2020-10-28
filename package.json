@@ -14,7 +14,7 @@
 		"prettier": "2.1.2",
 		"prettier-config-xo": "1.0.3",
 		"semantic-release": "17.2.1",
-		"size-limit": "4.6.2",
+		"size-limit": "4.7.0",
 		"ts-node": "9.0.0",
 		"tsdx": "0.14.1",
 		"tslib": "2.0.3",
