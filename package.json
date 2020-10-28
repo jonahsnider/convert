@@ -5,7 +5,7 @@
 		"url": "https://jonah.pw"
 	},
 	"devDependencies": {
-		"@size-limit/preset-small-lib": "4.6.2",
+		"@size-limit/preset-small-lib": "4.7.0",
 		"@types/jest": "26.0.15",
 		"bundlesize": "0.18.0",
 		"eslint-plugin-prettier": "3.1.4",
