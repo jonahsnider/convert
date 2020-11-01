@@ -9,3 +9,4 @@ export {mass} from './mass';
 export {pressure} from './pressure';
 export {temperature} from './temperature';
 export {time} from './time';
+export {volume} from './volume';
