@@ -35,7 +35,7 @@ convert(360).from('seconds').to('minutes');
 convert(20n).from('hours').to('minutes');
 // -> 1200n
 
-// We also do length, mass, data, pressure, and temperature
+// We also do length, mass, data, volume, pressure, and temperature
 convert(5).from('kilometers').to('nautical miles');
 convert(12).from('pounds').to('ounces');
 convert(64).from('bytes').to('KiB');
