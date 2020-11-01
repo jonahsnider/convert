@@ -1,3 +1,29 @@
+import {invariant} from '../util';
+
+const num2to10 = 1024;
+const num2to13 = 8192;
+const num2to20 = 1048576;
+const num2to23 = 8388608;
+const num2to30 = 1073741824;
+const num2to33 = 8589934592;
+const num2to40 = 1099511627776;
+const num2to43 = 8796093022208;
+const num2to50 = 1125899906842624;
+const num2to53 = 9007199254740992;
+
+if (__DEV__) {
+	invariant(num2to10 === 2 ** 10, 'num2to10 was not correct');
+	invariant(num2to13 === 2 ** 13, 'num2to10 was not correct');
+	invariant(num2to20 === 2 ** 20, 'num2to20 was not correct');
+	invariant(num2to23 === 2 ** 23, 'num2to23 was not correct');
+	invariant(num2to30 === 2 ** 30, 'num2to30 was not correct');
+	invariant(num2to33 === 2 ** 33, 'num2to33 was not correct');
+	invariant(num2to40 === 2 ** 40, 'num2to40 was not correct');
+	invariant(num2to43 === 2 ** 43, 'num2to43 was not correct');
+	invariant(num2to50 === 2 ** 50, 'num2to50 was not correct');
+	invariant(num2to53 === 2 ** 53, 'num2to53 was not correct');
+}
+
 /**
  * Conversions for data.
  * @private
@@ -96,79 +122,79 @@ export const data = {
 	kilobits: {ratio: 1e3},
 	kbit: {ratio: 1e3},
 
-	kibibit: {ratio: 2 ** 10},
-	kibibits: {ratio: 2 ** 10},
-	Kibit: {ratio: 2 ** 10},
+	kibibit: {ratio: num2to10},
+	kibibits: {ratio: num2to10},
+	Kibit: {ratio: num2to10},
 
 	kilobyte: {ratio: 8e3},
 	kilobytes: {ratio: 8e3},
 	kB: {ratio: 8e3},
 
-	kibibyte: {ratio: 2 ** 13},
-	kibibytes: {ratio: 2 ** 13},
-	KiB: {ratio: 2 ** 13},
+	kibibyte: {ratio: num2to13},
+	kibibytes: {ratio: num2to13},
+	KiB: {ratio: num2to13},
 
 	megabit: {ratio: 1e6},
 	megabits: {ratio: 1e6},
 	Mbit: {ratio: 1e6},
 
-	mebibit: {ratio: 2 ** 10},
-	mebibits: {ratio: 2 ** 10},
-	Mibit: {ratio: 2 ** 10},
+	mebibit: {ratio: num2to20},
+	mebibits: {ratio: num2to20},
+	Mibit: {ratio: num2to20},
 
 	megabyte: {ratio: 8e6},
 	megabytes: {ratio: 8e6},
 	MB: {ratio: 8e6},
 
-	mebibyte: {ratio: 2 ** 13},
-	mebibytes: {ratio: 2 ** 13},
-	MiB: {ratio: 2 ** 13},
+	mebibyte: {ratio: num2to23},
+	mebibytes: {ratio: num2to23},
+	MiB: {ratio: num2to23},
 
-	gigabit: {ratio: 2 ** 20},
-	gigabits: {ratio: 2 ** 20},
-	Gbit: {ratio: 2 ** 20},
+	gigabit: {ratio: 1e9},
+	gigabits: {ratio: 1e9},
+	Gbit: {ratio: 1e9},
 
-	gibibit: {ratio: 2 ** 23},
-	gibibits: {ratio: 2 ** 23},
-	Gibit: {ratio: 2 ** 23},
+	gibibit: {ratio: num2to30},
+	gibibits: {ratio: num2to30},
+	Gibit: {ratio: num2to30},
 
-	gigabyte: {ratio: 2 ** 30},
-	gigabytes: {ratio: 2 ** 30},
-	GB: {ratio: 2 ** 30},
+	gigabyte: {ratio: 8e9},
+	gigabytes: {ratio: 8e9},
+	GB: {ratio: 8e9},
 
-	gibibyte: {ratio: 2 ** 33},
-	gibibytes: {ratio: 2 ** 33},
-	GiB: {ratio: 2 ** 33},
+	gibibyte: {ratio: num2to33},
+	gibibytes: {ratio: num2to33},
+	GiB: {ratio: num2to33},
 
 	terabit: {ratio: 1e12},
 	terabits: {ratio: 1e12},
 	Tbit: {ratio: 1e12},
 
-	tebibit: {ratio: 2 * 40},
-	tebibits: {ratio: 2 * 40},
-	Tibit: {ratio: 2 * 40},
+	tebibit: {ratio: num2to40},
+	tebibits: {ratio: num2to40},
+	Tibit: {ratio: num2to40},
 
 	terabyte: {ratio: 8e12},
 	terabytes: {ratio: 8e12},
 	TB: {ratio: 8e12},
 
-	tebibyte: {ratio: 2 ** 43},
-	tebibytes: {ratio: 2 ** 43},
-	TiB: {ratio: 2 ** 43},
+	tebibyte: {ratio: num2to43},
+	tebibytes: {ratio: num2to43},
+	TiB: {ratio: num2to43},
 
 	petabit: {ratio: 1e15},
 	petabits: {ratio: 1e15},
 	Pbit: {ratio: 1e15},
 
-	pebibit: {ratio: 2 ** 50},
-	pebibits: {ratio: 2 ** 50},
-	Pibit: {ratio: 2 ** 50},
+	pebibit: {ratio: num2to50},
+	pebibits: {ratio: num2to50},
+	Pibit: {ratio: num2to50},
 
 	petabyte: {ratio: 1e15},
 	petabytes: {ratio: 1e15},
 	PB: {ratio: 1e15},
 
-	pebibyte: {ratio: 2 ** 53},
-	pebibytes: {ratio: 2 ** 53},
-	PiB: {ratio: 2 ** 53}
+	pebibyte: {ratio: num2to53},
+	pebibytes: {ratio: num2to53},
+	PiB: {ratio: num2to53}
 };
