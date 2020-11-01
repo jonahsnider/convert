@@ -30,6 +30,8 @@ jobs:
         with:
           name: dist
           path: dist
+      - name: Check ECMAScript compatibility
+        run: yarn run compat
   lint:
     name: Lint source
 
@@ -52,8 +54,6 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Lint
         run: yarn run lint
-      - name: Check ECMAScript compatibility
-        run: yarn run compat
   unit-test:
     name: Unit tests
 
