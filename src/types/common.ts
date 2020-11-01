@@ -1,10 +1,12 @@
+import {strings} from '../util';
+
 export interface ConverterBody<T, Q> {
 	to(to: T): Q;
 }
 
 export interface Unit {
-	ratio: number;
-	difference?: number;
+	[strings.ratio]: number;
+	[strings.difference]?: number;
 }
 
 /**

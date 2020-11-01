@@ -8,6 +8,7 @@
 		"@size-limit/preset-small-lib": "4.7.0",
 		"@types/jest": "26.0.15",
 		"bundlesize": "0.18.0",
+		"es-check": "5.1.2",
 		"eslint-plugin-prettier": "3.1.4",
 		"eslint-plugin-tree-shaking": "1.8.0",
 		"eslint-plugin-tsdoc": "0.2.7",
@@ -53,7 +54,8 @@
 	},
 	"scripts": {
 		"analyze": "size-limit --why",
-		"build": "tsdx build --format cjs,esm",
+		"build": "tsdx build --format cjs,esm,umd",
+		"compat": "es-check es3 dist/*.min.js",
 		"lint": "tsdx lint",
 		"size": "size-limit",
 		"skip": "echo skip",
@@ -67,6 +69,11 @@
 			"brotli": true,
 			"limit": "3.5 KB",
 			"path": "./dist/convert.cjs.production.min.js"
+		},
+		{
+			"brotli": true,
+			"limit": "3.6 KB",
+			"path": "./dist/convert.umd.production.min.js"
 		}
 	],
 	"typings": "dist/index.d.ts",

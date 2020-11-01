@@ -1,21 +1,23 @@
+import {ratioer} from '../util';
+
 /**
  * Conversions for temperature.
  * @private
  */
 export const temperature = {
-	kelvin: {ratio: 1},
-	kelvins: {ratio: 1},
-	K: {ratio: 1},
+	kelvin: ratioer(1),
+	kelvins: ratioer(1),
+	K: ratioer(1),
 
-	fahrenheit: {ratio: 5 / 9, difference: 273.15 - 32},
-	F: {ratio: 5 / 9, difference: 273.15 - 32},
+	fahrenheit: ratioer(5 / 9, 273.15 - 32),
+	F: ratioer(5 / 9, 273.15 - 32),
 
-	celsius: {ratio: 1, difference: 273.15},
-	C: {ratio: 1, difference: 273.15},
+	celsius: ratioer(1, 273.15),
+	C: ratioer(1, 273.15),
 
-	rankine: {ratio: 5 / 9},
-	R: {ratio: 5 / 9},
+	rankine: ratioer(5 / 9),
+	R: ratioer(5 / 9),
 
-	delisle: {ratio: -2 / 3, difference: 373.15},
-	De: {ratio: -2 / 3, difference: 373.15}
+	delisle: ratioer(-2 / 3, 373.15),
+	De: ratioer(-2 / 3, 373.15)
 };

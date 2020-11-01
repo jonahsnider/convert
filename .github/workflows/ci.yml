@@ -52,6 +52,8 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Lint
         run: yarn run lint
+      - name: Check ECMAScript compatibility
+        run: yarn run compat
   unit-test:
     name: Unit tests
 

@@ -2,7 +2,7 @@
 
 A small library for really easy, totally type-safe unit conversions in JavaScript & TypeScript.
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.0.1&wide=true)](https://bundlephobia.com/result?p=convert)
+[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.1.0&wide=true)](https://bundlephobia.com/result?p=convert)
 [![Codecov](https://img.shields.io/codecov/c/gh/pizzafox/convert)](https://codecov.io/gh/pizzafox/convert)
 
 ```sh
@@ -14,10 +14,10 @@ npm install convert
 ## Features
 
 - Full build time and runtime checks of conversions
-- Treeshake-able & side effect free builds available
 - 0 dependencies
 - Out of the box ES5 backwards-compatibility
-- Works in browsers and Node.js
+- Supports bigints if you pass something with `typeof` `bigint`
+- Works in browsers and Node.js (UMD, ESModules, and CommonJS builds provided)
 
 ## Usage
 

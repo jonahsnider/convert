@@ -1,9 +1,9 @@
-import * as conversions from './conversions';
+import {data, length, mass, pressure, temperature, time, volume} from './conversions';
 import {Unit} from './types/common';
 import {AllUnits, Converter} from './types/units';
-import {invariant} from './util';
+import {invariant, strings} from './util';
 
-const families = Object.values(conversions);
+const families = [data, length, mass, pressure, temperature, time, volume];
 
 type OverloadedConverter = ((quantity: number) => Converter<number>) & ((quantity: bigint) => Converter<bigint>);
 
@@ -18,12 +18,12 @@ type OverloadedConverter = ((quantity: number) => Converter<number>) & ((quantit
  * // 1 / 60
  * ```
  */
-function conversionRatio(units: Record<string, Unit>, desiredConversion: Readonly<string>): {ratio: number; difference: number} {
+function conversionRatio(units: Record<string, Unit>, desiredConversion: Readonly<string>) {
 	const found = units[desiredConversion];
 
 	invariant(found, `No conversion ratio could be found for ${desiredConversion}`);
 
-	return {difference: found.difference ?? 0, ratio: found.ratio};
+	return {[strings.difference]: found[strings.difference] ?? 0, [strings.ratio]: found[strings.ratio]};
 }
 
 /**
@@ -47,7 +47,7 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
 
 					const toConversion = conversionRatio(units, to);
 
-					const combinedRatio = fromConversion.ratio / toConversion.ratio;
+					const combinedRatio = fromConversion[strings.ratio] / toConversion[strings.ratio];
 
 					if (typeof quantity === 'bigint') {
 						let bigintValue: bigint | undefined;
@@ -57,18 +57,18 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
 								// Note: BigInt support only works when you are converting integers (obviously)
 								// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
-								bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion.difference) - BigInt(toConversion.difference));
+								bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion[strings.difference]) - BigInt(toConversion[strings.difference]));
 							} catch (error) {
 								invariant(false, `Conversion for ${from} to ${to} can't be expressed as an integer`);
 							}
 						} else {
-							bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion.difference) - BigInt(toConversion.difference));
+							bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion[strings.difference]) - BigInt(toConversion[strings.difference]));
 						}
 
 						return bigintValue;
 					}
 
-					return quantity * combinedRatio + (fromConversion.difference - toConversion.difference);
+					return quantity * combinedRatio + (fromConversion[strings.difference] - toConversion[strings.difference]);
 				}
 			};
 		}

@@ -16,3 +16,8 @@ export function invariant(condition: unknown, message: string): asserts conditio
 		}
 	}
 }
+
+// Changing this will break the exported conversions
+export const strings = {ratio: 'ratio', difference: 'difference'} as const;
+
+export const ratioer = (ratio: number, difference?: number) => ({[strings.ratio]: ratio, [strings.difference]: difference});
