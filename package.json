@@ -24,8 +24,7 @@
 	},
 	"files": [
 		"dist",
-		"!dist/dev.d.ts",
-		"!dist/util.d.ts"
+		"!dist/dev.d.ts"
 	],
 	"keywords": [
 		"convert",
