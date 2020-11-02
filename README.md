@@ -14,7 +14,7 @@ npm install convert
 ## Features
 
 - Full build time and runtime checks of conversions
-- Using a web framework like Next.js or Nuxt.js? You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/pizzafox/convert/blob/master/docs/build-time-optimizations.ts), so absolutely **zero conversion code is sent to clients**!
+- Using a web framework like Next.js or Nuxt.js? You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/pizzafox/convert/blob/master/docs/build-time-optimizations.tsx), so absolutely **zero conversion code is sent to clients**!
 - Works in browsers and Node.js (UMD, ESModules, and CommonJS builds provided)
 - Out of the box ES5 backwards-compatibility
 - 0 dependencies
