@@ -14,10 +14,11 @@ npm install convert
 ## Features
 
 - Full build time and runtime checks of conversions
-- 0 dependencies
-- Out of the box ES5 backwards-compatibility
-- Supports bigints if you pass something with `typeof` `bigint`
+- Using a web framework like Next.js or Nuxt.js? You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/pizzafox/convert/blob/master/docs/build-time-optimizations.ts), so absolutely **zero conversion code is sent to clients**!
 - Works in browsers and Node.js (UMD, ESModules, and CommonJS builds provided)
+- Out of the box ES5 backwards-compatibility
+- 0 dependencies
+- Supports bigints if you pass something with `typeof` `bigint`
 
 ## Usage
 
@@ -72,10 +73,17 @@ By default, runs tests related to files changed since the last commit.
 All of them are bad because they aren't as small as this and many aren't as simple to use.
 
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/convert?label=convert)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/uom?label=uom)
+![+](https://img.shields.io/badge/%2B-gray)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/uom-units?label=uom-units)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/units-converter?label=units-converter)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/convert-units?label=convert-units)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/js-quantities?label=js-quantities)
 
 ## Thanks
