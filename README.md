@@ -72,19 +72,19 @@ By default, runs tests related to files changed since the last commit.
 
 All of them are bad because they aren't as small as this and many aren't as simple to use.
 
-![npm bundle size of convert](https://img.shields.io/bundlephobia/minzip/convert?label=convert)
+[![npm bundle size of convert](https://img.shields.io/bundlephobia/minzip/convert?label=convert)](https://bundlephobia.com/result?p=convert)
 
-![npm bundle size of uom](https://img.shields.io/bundlephobia/minzip/uom?label=uom)
+[![npm bundle size of uom](https://img.shields.io/bundlephobia/minzip/uom?label=uom)](https://bundlephobia.com/result?p=uom)
 ![+](https://img.shields.io/badge/%2B-gray)
-![npm bundle size of uom-units](https://img.shields.io/bundlephobia/minzip/uom-units?label=uom-units)
+[![npm bundle size of uom-units](https://img.shields.io/bundlephobia/minzip/uom-units?label=uom-units)](https://bundlephobia.com/result?p=uom-units)
 
-![npm bundle size of units-converter](https://img.shields.io/bundlephobia/minzip/units-converter?label=units-converter)
+[![npm bundle size of units-converter](https://img.shields.io/bundlephobia/minzip/units-converter?label=units-converter)](https://bundlephobia.com/result?p=units-converter)
 
-![npm bundle size of safe-units](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)
+[![npm bundle size of safe-units](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)](https://bundlephobia.com/result?p=safe-units)
 
-![npm bundle size of convert-units](https://img.shields.io/bundlephobia/minzip/convert-units?label=convert-units)
+[![npm bundle size of convert-units](https://img.shields.io/bundlephobia/minzip/convert-units?label=convert-units)](https://bundlephobia.com/result?p=convert-units)
 
-![npm bundle size of js-quantities](https://img.shields.io/bundlephobia/minzip/js-quantities?label=js-quantities)
+[![npm bundle size of js-quantities](https://img.shields.io/bundlephobia/minzip/js-quantities?label=js-quantities)](https://bundlephobia.com/result?p=js-quantities)
 
 ## Thanks
 
