@@ -8,4 +8,4 @@ convert(330).from('minutes').to('hours');
 // You can also convert mass, length, etc.
 
 // Won't compile in TypeScript & throws at runtime
-convert(330).from('minutes').to('hours');
+convert(330).from('fahrenheit').to('meters');
