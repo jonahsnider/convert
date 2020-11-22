@@ -13,7 +13,7 @@
 		"eslint-plugin-tsdoc": "0.2.7",
 		"prettier": "2.1.2",
 		"prettier-config-xo": "1.0.3",
-		"semantic-release": "17.2.4",
+		"semantic-release": "17.3.0",
 		"size-limit": "4.9.0",
 		"ts-node": "9.0.0",
 		"tsdx": "0.14.1",
