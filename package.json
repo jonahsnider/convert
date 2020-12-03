@@ -10,7 +10,7 @@
 		"es-check": "5.1.4",
 		"eslint-plugin-prettier": "3.1.4",
 		"eslint-plugin-tree-shaking": "1.8.0",
-		"eslint-plugin-tsdoc": "0.2.8",
+		"eslint-plugin-tsdoc": "0.2.9",
 		"prettier": "2.2.1",
 		"prettier-config-xo": "1.0.3",
 		"semantic-release": "17.3.0",
