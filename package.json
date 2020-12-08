@@ -6,7 +6,7 @@
 	},
 	"devDependencies": {
 		"@size-limit/preset-small-lib": "4.9.1",
-		"@types/jest": "26.0.16",
+		"@types/jest": "26.0.17",
 		"es-check": "5.1.4",
 		"eslint-plugin-prettier": "3.2.0",
 		"eslint-plugin-tree-shaking": "1.8.0",
