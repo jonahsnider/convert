@@ -8,7 +8,7 @@
 		"@size-limit/preset-small-lib": "4.9.1",
 		"@types/jest": "26.0.19",
 		"es-check": "5.1.4",
-		"eslint-plugin-prettier": "3.2.0",
+		"eslint-plugin-prettier": "3.3.0",
 		"eslint-plugin-tree-shaking": "1.8.0",
 		"eslint-plugin-tsdoc": "0.2.10",
 		"prettier": "2.2.1",
