@@ -3,7 +3,7 @@ import {convertAssert} from '../util';
 describe('volume', () => {
 	convertAssert(1, 'cubic kilometre', 0.24, 'cu mi', true);
 	convertAssert(1, 'cubic metre', 1, 'cubic metre');
-	convertAssert(1, 'acre foot', 1233.48183754752, 'm3', true);
+	convertAssert(1, 'acre-foot', 1233.48183754752, 'm3', true);
 	convertAssert(1, 'cubic mile', 4.2, 'km3');
 	convertAssert(1, 'gigalitre', 1e9, 'liter');
 	convertAssert(1000, 'liter', 1, 'm3');
