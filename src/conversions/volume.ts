@@ -139,10 +139,10 @@ export const volume = {
 	cumi: ratioer(4.2e3),
 	mi3: ratioer(4.2e3),
 
-	'acre foot': ratioer(1233.48183754752),
-	'acre feet': ratioer(1233.48183754752),
-	'acre⋅ft': ratioer(1233.48183754752),
-	'acre ft': ratioer(1233.48183754752),
+	'acre-foot': ratioer(1233.48183754752),
+	'acre-feet': ratioer(1233.48183754752),
+	'ac⋅ft': ratioer(1233.48183754752),
+	'ac ft': ratioer(1233.48183754752),
 
 	'cubic yard': ratioer(0.76),
 	'cubic yards': ratioer(0.76),
