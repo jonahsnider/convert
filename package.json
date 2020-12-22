@@ -4,6 +4,7 @@
 		"name": "Jonah Snider",
 		"url": "https://jonah.pw"
 	},
+	"description": "The smallest & fastest library for really easy, totally type-safe unit conversions in TypeScript & JavaScript",
 	"devDependencies": {
 		"@size-limit/preset-small-lib": "4.9.1",
 		"@types/jest": "26.0.19",

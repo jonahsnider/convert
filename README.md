@@ -1,6 +1,6 @@
 # Convert
 
-A small library for really easy, totally type-safe unit conversions in JavaScript & TypeScript.
+The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/pizzafox/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
 [![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.1.2&wide=true)](https://bundlephobia.com/result?p=convert)
 [![Codecov](https://img.shields.io/codecov/c/gh/pizzafox/convert)](https://codecov.io/gh/pizzafox/convert)
@@ -70,7 +70,9 @@ By default, runs tests related to files changed since the last commit.
 
 ## Alternatives
 
-All of them are bad because they aren't as small as this and many aren't as simple to use.
+All of them are bad because they aren't as small and are slower than convert.
+Benchmarks of popular unit conversion libraries, including convert are [available here](https://github.com/pizzafox/js-unit-conversion-benchmarks).
+Convert is the fastest, taking less than a microsecond for most conversions (that's a little bit under 2 million per second).
 
 [![npm bundle size of convert](https://img.shields.io/bundlephobia/minzip/convert?label=convert)](https://bundlephobia.com/result?p=convert)
 
