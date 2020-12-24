@@ -13,7 +13,7 @@ describe('volume', () => {
 	convertAssert(1, 'cubic foot', 0.028, 'm3');
 	convertAssert(1, 'board foot', 0.002359737, 'm3');
 	convertAssert(1, 'cubic inch', 16, 'cm3');
-	convertAssert(1, 'measurement ton', 1.2, 'm3');
+	convertAssert(1, 'measurement ton', 1.133, 'm3');
 
 	convertAssert(6.2898, 'oilbbl', 1, 'm3', true);
 	convertAssert(0.0238, 'bbl', 1, 'US gallon', true);
@@ -31,5 +31,9 @@ describe('volume', () => {
 	convertAssert(1, 'US dry quart', 0.946352946, 'liters');
 	convertAssert(1, 'US dry pint', 33.6003125, 'm3');
 
-	convertAssert(219.9692, 'imperial gallons', 1, 'm3');
+	convertAssert(1, 'imperial fluid ounces', 28.4130625, 'ml');
+	convertAssert(1, 'gill', 142.0653125, 'ml');
+	convertAssert(1, 'imperial pints', 568.26125, 'ml');
+	convertAssert(1, 'imperial quarts', 1136.5225, 'ml');
+	convertAssert(1, 'imperial gallons', 4546.09, 'ml');
 });
