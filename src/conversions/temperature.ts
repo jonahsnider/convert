@@ -1,23 +1,24 @@
-import {ratioer} from '../util';
+import {unitFamilies} from '../util';
 
 /**
  * Conversions for temperature.
  * @private
  */
-export const temperature = {
-	kelvin: ratioer(1),
-	kelvins: ratioer(1),
-	K: ratioer(1),
+const temperature = {
+	kelvin: [unitFamilies.Temperature, 1, 0],
+	kelvins: [unitFamilies.Temperature, 1, 0],
+	K: [unitFamilies.Temperature, 1, 0],
 
-	fahrenheit: ratioer(5 / 9, 273.15 - 32),
-	F: ratioer(5 / 9, 273.15 - 32),
+	fahrenheit: [unitFamilies.Temperature, 5 / 9, 273.15 - 32],
+	F: [unitFamilies.Temperature, 5 / 9, 273.15 - 32],
 
-	celsius: ratioer(1, 273.15),
-	C: ratioer(1, 273.15),
+	celsius: [unitFamilies.Temperature, 1, 273.15],
+	C: [unitFamilies.Temperature, 1, 273.15],
 
-	rankine: ratioer(5 / 9),
-	R: ratioer(5 / 9),
+	rankine: [unitFamilies.Temperature, 5 / 9, 0],
+	R: [unitFamilies.Temperature, 5 / 9, 0],
 
-	delisle: ratioer(-2 / 3, 373.15),
-	De: ratioer(-2 / 3, 373.15)
+	delisle: [unitFamilies.Temperature, -2 / 3, 373.15],
+	De: [unitFamilies.Temperature, -2 / 3, 373.15]
 };
+export default temperature;

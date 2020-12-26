@@ -1,15 +1,27 @@
-import {data, length, mass, pressure, temperature, time, volume} from '../conversions';
-import {ConverterBody, GetAliases} from './common';
+import {allUnits} from '../conversions';
+import {UnitFamilies} from '../util';
+import {ConverterBody} from './common';
 
-export type Data = GetAliases<typeof data>;
-export type Length = GetAliases<typeof length>;
-export type Mass = GetAliases<typeof mass>;
-export type Pressure = GetAliases<typeof pressure>;
-export type Temperature = GetAliases<typeof temperature>;
-export type Time = GetAliases<typeof time>;
-export type Volume = GetAliases<typeof volume>;
+type UnitsCombined = typeof allUnits;
 
-export type AllUnits = Data | Length | Mass | Pressure | Temperature | Time | Volume;
+type AllValues = {
+	[P in keyof UnitsCombined]: {key: P; value: UnitsCombined[P][0]};
+}[keyof UnitsCombined];
+type IdToFamily = {
+	[P in AllValues['value']]: Extract<AllValues, {value: P}>['key'];
+};
+
+type GetAliases<X extends UnitsCombined[keyof UnitsCombined][0]> = IdToFamily[X];
+
+export type Data = GetAliases<UnitFamilies.Data>;
+export type Length = GetAliases<UnitFamilies.Length>;
+export type Mass = GetAliases<UnitFamilies.Mass>;
+export type Pressure = GetAliases<UnitFamilies.Pressure>;
+export type Temperature = GetAliases<UnitFamilies.Temperature>;
+export type Time = GetAliases<UnitFamilies.Time>;
+export type Volume = GetAliases<UnitFamilies.Volume>;
+
+export type Units = Data | Length | Mass | Pressure | Temperature | Time | Volume;
 
 export interface Converter<Q> {
 	from(fromUnit: Data): ConverterBody<Data, Q>;

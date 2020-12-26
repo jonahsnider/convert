@@ -1,135 +1,136 @@
-import {ratioer} from '../util';
+import {unitFamilies} from '../util';
 
 /**
  * Conversions for pressure.
  * @private
  */
-export const pressure = {
-	pascal: ratioer(1),
-	pascals: ratioer(1),
-	Pa: ratioer(1),
+const pressure = {
+	pascal: [unitFamilies.Pressure, 1, 0],
+	pascals: [unitFamilies.Pressure, 1, 0],
+	Pa: [unitFamilies.Pressure, 1, 0],
 
-	femtopascal: ratioer(1e-15),
-	femtopascals: ratioer(1e-15),
-	fPa: ratioer(1e-15),
+	femtopascal: [unitFamilies.Pressure, 1e-15, 0],
+	femtopascals: [unitFamilies.Pressure, 1e-15, 0],
+	fPa: [unitFamilies.Pressure, 1e-15, 0],
 
-	picopascal: ratioer(1e-12),
-	picopascals: ratioer(1e-12),
-	pPa: ratioer(1e-12),
+	picopascal: [unitFamilies.Pressure, 1e-12, 0],
+	picopascals: [unitFamilies.Pressure, 1e-12, 0],
+	pPa: [unitFamilies.Pressure, 1e-12, 0],
 
-	nanopascal: ratioer(1e-9),
-	nanopascals: ratioer(1e-9),
-	nPa: ratioer(1e-9),
+	nanopascal: [unitFamilies.Pressure, 1e-9, 0],
+	nanopascals: [unitFamilies.Pressure, 1e-9, 0],
+	nPa: [unitFamilies.Pressure, 1e-9, 0],
 
-	micropascal: ratioer(1e-6),
-	micropascals: ratioer(1e-6),
-	μPa: ratioer(1e-6),
+	micropascal: [unitFamilies.Pressure, 1e-6, 0],
+	micropascals: [unitFamilies.Pressure, 1e-6, 0],
+	μPa: [unitFamilies.Pressure, 1e-6, 0],
 
-	millipascal: ratioer(1e-3),
-	millipascals: ratioer(1e-3),
-	mPa: ratioer(1e-3),
+	millipascal: [unitFamilies.Pressure, 1e-3, 0],
+	millipascals: [unitFamilies.Pressure, 1e-3, 0],
+	mPa: [unitFamilies.Pressure, 1e-3, 0],
 
-	centipascal: ratioer(1e-2),
-	centipascals: ratioer(1e-2),
-	cPa: ratioer(1e-2),
+	centipascal: [unitFamilies.Pressure, 1e-2, 0],
+	centipascals: [unitFamilies.Pressure, 1e-2, 0],
+	cPa: [unitFamilies.Pressure, 1e-2, 0],
 
-	decipascal: ratioer(0.1),
-	decipascals: ratioer(0.1),
-	dPa: ratioer(0.1),
+	decipascal: [unitFamilies.Pressure, 0.1, 0],
+	decipascals: [unitFamilies.Pressure, 0.1, 0],
+	dPa: [unitFamilies.Pressure, 0.1, 0],
 
-	decapascal: ratioer(10),
-	decapascals: ratioer(10),
-	daPa: ratioer(10),
+	decapascal: [unitFamilies.Pressure, 10, 0],
+	decapascals: [unitFamilies.Pressure, 10, 0],
+	daPa: [unitFamilies.Pressure, 10, 0],
 
-	hectopascal: ratioer(1e2),
-	hectopascals: ratioer(1e2),
-	hPa: ratioer(1e2),
+	hectopascal: [unitFamilies.Pressure, 1e2, 0],
+	hectopascals: [unitFamilies.Pressure, 1e2, 0],
+	hPa: [unitFamilies.Pressure, 1e2, 0],
 
-	kilopascal: ratioer(1e3),
-	kilopascals: ratioer(1e3),
-	kPa: ratioer(1e3),
+	kilopascal: [unitFamilies.Pressure, 1e3, 0],
+	kilopascals: [unitFamilies.Pressure, 1e3, 0],
+	kPa: [unitFamilies.Pressure, 1e3, 0],
 
-	megapascal: ratioer(1e6),
-	megapascals: ratioer(1e6),
-	MPa: ratioer(1e6),
+	megapascal: [unitFamilies.Pressure, 1e6, 0],
+	megapascals: [unitFamilies.Pressure, 1e6, 0],
+	MPa: [unitFamilies.Pressure, 1e6, 0],
 
-	gigapascal: ratioer(1e9),
-	gigapascals: ratioer(1e9),
-	GPa: ratioer(1e9),
+	gigapascal: [unitFamilies.Pressure, 1e9, 0],
+	gigapascals: [unitFamilies.Pressure, 1e9, 0],
+	GPa: [unitFamilies.Pressure, 1e9, 0],
 
-	terapascal: ratioer(1e12),
-	terapascals: ratioer(1e12),
-	TPa: ratioer(1e12),
+	terapascal: [unitFamilies.Pressure, 1e12, 0],
+	terapascals: [unitFamilies.Pressure, 1e12, 0],
+	TPa: [unitFamilies.Pressure, 1e12, 0],
 
-	petapascal: ratioer(1e15),
-	petapascals: ratioer(1e15),
-	PPa: ratioer(1e15),
+	petapascal: [unitFamilies.Pressure, 1e15, 0],
+	petapascals: [unitFamilies.Pressure, 1e15, 0],
+	PPa: [unitFamilies.Pressure, 1e15, 0],
 
-	bar: ratioer(1e5),
+	bar: [unitFamilies.Pressure, 1e5, 0],
 
-	femtobar: ratioer(1e-15),
-	femtobars: ratioer(1e-15),
-	fbar: ratioer(1e-15),
+	femtobar: [unitFamilies.Pressure, 1e-15, 0],
+	femtobars: [unitFamilies.Pressure, 1e-15, 0],
+	fbar: [unitFamilies.Pressure, 1e-15, 0],
 
-	picobar: ratioer(1e-12),
-	picobars: ratioer(1e-12),
-	pbar: ratioer(1e-12),
+	picobar: [unitFamilies.Pressure, 1e-12, 0],
+	picobars: [unitFamilies.Pressure, 1e-12, 0],
+	pbar: [unitFamilies.Pressure, 1e-12, 0],
 
-	nanobar: ratioer(1e-9),
-	nanobars: ratioer(1e-9),
-	nbar: ratioer(1e-9),
+	nanobar: [unitFamilies.Pressure, 1e-9, 0],
+	nanobars: [unitFamilies.Pressure, 1e-9, 0],
+	nbar: [unitFamilies.Pressure, 1e-9, 0],
 
-	microbar: ratioer(1e-6),
-	microbars: ratioer(1e-6),
-	μbar: ratioer(1e-6),
+	microbar: [unitFamilies.Pressure, 1e-6, 0],
+	microbars: [unitFamilies.Pressure, 1e-6, 0],
+	μbar: [unitFamilies.Pressure, 1e-6, 0],
 
-	millibar: ratioer(1e-3),
-	millibars: ratioer(1e-3),
-	mbar: ratioer(1e-3),
+	millibar: [unitFamilies.Pressure, 1e-3, 0],
+	millibars: [unitFamilies.Pressure, 1e-3, 0],
+	mbar: [unitFamilies.Pressure, 1e-3, 0],
 
-	centibar: ratioer(1e-2),
-	centibars: ratioer(1e-2),
-	cbar: ratioer(1e-2),
+	centibar: [unitFamilies.Pressure, 1e-2, 0],
+	centibars: [unitFamilies.Pressure, 1e-2, 0],
+	cbar: [unitFamilies.Pressure, 1e-2, 0],
 
-	decibar: ratioer(0.1),
-	decibars: ratioer(0.1),
-	dbar: ratioer(0.1),
+	decibar: [unitFamilies.Pressure, 0.1, 0],
+	decibars: [unitFamilies.Pressure, 0.1, 0],
+	dbar: [unitFamilies.Pressure, 0.1, 0],
 
-	decabar: ratioer(10),
-	decabars: ratioer(10),
-	dabar: ratioer(10),
+	decabar: [unitFamilies.Pressure, 10, 0],
+	decabars: [unitFamilies.Pressure, 10, 0],
+	dabar: [unitFamilies.Pressure, 10, 0],
 
-	hectobar: ratioer(1e2),
-	hectobars: ratioer(1e2),
-	hbar: ratioer(1e2),
+	hectobar: [unitFamilies.Pressure, 1e2, 0],
+	hectobars: [unitFamilies.Pressure, 1e2, 0],
+	hbar: [unitFamilies.Pressure, 1e2, 0],
 
-	kilobar: ratioer(1e3),
-	kilobars: ratioer(1e3),
-	kbar: ratioer(1e3),
+	kilobar: [unitFamilies.Pressure, 1e3, 0],
+	kilobars: [unitFamilies.Pressure, 1e3, 0],
+	kbar: [unitFamilies.Pressure, 1e3, 0],
 
-	megabar: ratioer(1e6),
-	megabars: ratioer(1e6),
-	Mbar: ratioer(1e6),
+	megabar: [unitFamilies.Pressure, 1e6, 0],
+	megabars: [unitFamilies.Pressure, 1e6, 0],
+	Mbar: [unitFamilies.Pressure, 1e6, 0],
 
-	gigabar: ratioer(1e9),
-	gigabars: ratioer(1e9),
-	Gbar: ratioer(1e9),
+	gigabar: [unitFamilies.Pressure, 1e9, 0],
+	gigabars: [unitFamilies.Pressure, 1e9, 0],
+	Gbar: [unitFamilies.Pressure, 1e9, 0],
 
-	terabar: ratioer(1e12),
-	terabars: ratioer(1e12),
-	Tbar: ratioer(1e12),
+	terabar: [unitFamilies.Pressure, 1e12, 0],
+	terabars: [unitFamilies.Pressure, 1e12, 0],
+	Tbar: [unitFamilies.Pressure, 1e12, 0],
 
-	petabar: ratioer(1e15),
-	petabars: ratioer(1e15),
-	Pbar: ratioer(1e15),
+	petabar: [unitFamilies.Pressure, 1e15, 0],
+	petabars: [unitFamilies.Pressure, 1e15, 0],
+	Pbar: [unitFamilies.Pressure, 1e15, 0],
 
-	torr: ratioer(101325 / 760),
+	torr: [unitFamilies.Pressure, 101325 / 760, 0],
 
-	millitorr: ratioer(101325 / 760 / 1e3),
-	millitorrs: ratioer(101325 / 760 / 1e3),
-	mTorr: ratioer(101325 / 760 / 1e3),
+	millitorr: [unitFamilies.Pressure, 101325 / 760 / 1e3, 0],
+	millitorrs: [unitFamilies.Pressure, 101325 / 760 / 1e3, 0],
+	mTorr: [unitFamilies.Pressure, 101325 / 760 / 1e3, 0],
 
-	atmosphere: ratioer(101325),
-	atmospheres: ratioer(101325),
-	atm: ratioer(101325)
+	atmosphere: [unitFamilies.Pressure, 101325, 0],
+	atmospheres: [unitFamilies.Pressure, 101325, 0],
+	atm: [unitFamilies.Pressure, 101325, 0]
 };
+export default pressure;

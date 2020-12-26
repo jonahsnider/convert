@@ -2,7 +2,7 @@
 
 The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/pizzafox/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.1.4&wide=true)](https://bundlephobia.com/result?p=convert)
+[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.2.0&wide=true)](https://bundlephobia.com/result?p=convert)
 [![Codecov](https://img.shields.io/codecov/c/gh/pizzafox/convert)](https://codecov.io/gh/pizzafox/convert)
 
 ```sh
@@ -16,7 +16,7 @@ npm install convert
 - Full build time and runtime checks of conversions
 - Using a web framework like Next.js or Nuxt.js? You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/pizzafox/convert/blob/master/docs/build-time-optimizations.tsx), so absolutely **zero conversion code is sent to clients**!
 - Works in browsers and Node.js (UMD, ESModules, and CommonJS builds provided)
-- Out of the box ES5 backwards-compatibility
+- Out of the box ES3 backwards-compatibility (works since Node.js 0.9.1, probably earlier)
 - 0 dependencies
 - Supports bigints if you pass something with `typeof` `bigint`
 
@@ -90,6 +90,6 @@ Convert is the fastest, taking less than a microsecond for most conversions (tha
 
 ## Thanks
 
-Big thanks to @Jdender, @TheAkio, @iCrawl, @p7g, @aequasi, and the [TypeScript Discord server](https://discord.gg/typescript) for their help in getting the typesafety working.
+Big thanks to @Jdender, @TheAkio, @iCrawl, @p7g, @aequasi, @aetheryx, and the [TypeScript Discord server](https://discord.gg/typescript) for their help in getting the typesafety working.
 
 Thanks to @MicroDroid for fixing temperature conversion.

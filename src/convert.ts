@@ -1,53 +1,32 @@
-import {data, length, mass, pressure, temperature, time, volume} from './conversions';
-import {Unit} from './types/common';
-import {AllUnits, Converter} from './types/units';
-import {invariant, strings} from './util';
-
-const families = [data, length, mass, pressure, temperature, time, volume];
+import {allUnits} from './conversions';
+import {Converter} from './types/units';
+import {invariant} from './util';
 
 type OverloadedConverter = ((quantity: number) => Converter<number>) & ((quantity: bigint) => Converter<bigint>);
 
-/**
- * Get the conversion ratio to the base unit of a `Unit`
- * @param units The unit to get the conversion ratio from
- * @param desiredConversion The conversion you are looking for
- *
- * @example
- * ```ts
- * conversionRatio(time, 'minutes');
- * // 1 / 60
- * ```
- */
-function conversionRatio(units: Record<string, Unit>, desiredConversion: Readonly<string>) {
-	const found = units[desiredConversion];
-
-	invariant(found, `No conversion ratio could be found for ${desiredConversion}`);
-
-	return {[strings.difference]: found[strings.difference] ?? 0, [strings.ratio]: found[strings.ratio]};
+export const enum UnitIndexes {
+	Family,
+	Ratio,
+	Difference
 }
 
-/**
- * Convert from one unit to another.
- * @example convert(360).from('seconds').to('minutes');
- */
 function _convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {
-		from: (from: AllUnits) => {
-			const units = families.find(family => (family as Record<AllUnits, Unit>)[from]);
-
-			invariant(units, `No conversion could be found for ${from}`);
-
-			const fromConversion = conversionRatio(units, from);
-
+		// from: (from: AllUnits) => {
+		from: (from: keyof typeof allUnits) => {
 			return {
 				to: (to: typeof from) => {
 					if (to === from) {
 						return quantity;
 					}
 
-					const toConversion = conversionRatio(units, to);
+					// Inlining these references can reduce bundle size by around 5 bytes, but the performance cost from repeated object accesses is probably not worth it
+					const fromUnit = allUnits[from];
+					const toUnit = allUnits[to];
 
-					const combinedRatio = fromConversion[strings.ratio] / toConversion[strings.ratio];
+					invariant(fromUnit[UnitIndexes.Family] === toUnit[UnitIndexes.Family], `No conversion could be found from ${from} to ${to}`);
+
+					const combinedRatio = fromUnit[UnitIndexes.Ratio] / toUnit[UnitIndexes.Ratio];
 
 					if (typeof quantity === 'bigint') {
 						let bigintValue: bigint | undefined;
@@ -57,23 +36,32 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
 								// Note: BigInt support only works when you are converting integers (obviously)
 								// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
-								bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion[strings.difference]) - BigInt(toConversion[strings.difference]));
+								bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndexes.Difference]) - BigInt(toUnit[UnitIndexes.Difference]));
 							} catch (error) {
 								invariant(false, `Conversion for ${from} to ${to} can't be expressed as an integer`);
 							}
 						} else {
-							bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromConversion[strings.difference]) - BigInt(toConversion[strings.difference]));
+							bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndexes.Difference]) - BigInt(toUnit[UnitIndexes.Difference]));
 						}
 
 						return bigintValue;
 					}
 
-					return quantity * combinedRatio + (fromConversion[strings.difference] - toConversion[strings.difference]);
+					return quantity * combinedRatio + (fromUnit[UnitIndexes.Difference] - toUnit[UnitIndexes.Difference]);
 				}
 			};
 		}
 	};
 }
 
-// @ts-expect-error
-export const convert: OverloadedConverter = _convert;
+/**
+ * Convert a quantity from one unit to another.
+ *
+ * @example
+ * ```ts
+ * convert(90).from('minutes').to('h'); // 1
+ * ```
+ *
+ * @param quantity - The quantity you want to convert
+ */
+export const convert = (_convert as unknown) as OverloadedConverter;
