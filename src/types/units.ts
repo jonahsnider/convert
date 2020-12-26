@@ -11,7 +11,7 @@ type IdToFamily = {
 	[P in AllValues['value']]: Extract<AllValues, {value: P}>['key'];
 };
 
-type GetAliases<X extends UnitsCombined[keyof UnitsCombined][0]> = IdToFamily[X];
+type GetAliases<X extends UnitFamilies> = IdToFamily[X];
 
 export type Data = GetAliases<UnitFamilies.Data>;
 export type Length = GetAliases<UnitFamilies.Length>;

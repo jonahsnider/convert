@@ -116,5 +116,6 @@ const length = {
 	M: [unitFamilies.Length, 1852, 0],
 	NM: [unitFamilies.Length, 1852, 0],
 	nmi: [unitFamilies.Length, 1852, 0]
-};
+} as const;
+
 export default length;

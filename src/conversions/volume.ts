@@ -345,5 +345,6 @@ const volume = {
 	usdrypt: [unitFamilies.Volume, 33.6003125, 0],
 	drypt: [unitFamilies.Volume, 33.6003125, 0]
 	//#endregion
-};
+} as const;
+
 export default volume;

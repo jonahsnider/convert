@@ -20,5 +20,6 @@ const temperature = {
 
 	delisle: [unitFamilies.Temperature, -2 / 3, 373.15],
 	De: [unitFamilies.Temperature, -2 / 3, 373.15]
-};
+} as const;
+
 export default temperature;

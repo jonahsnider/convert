@@ -197,6 +197,6 @@ const data = {
 	pebibyte: [unitFamilies.Data, num2to53, 0],
 	pebibytes: [unitFamilies.Data, num2to53, 0],
 	PiB: [unitFamilies.Data, num2to53, 0]
-};
+} as const;
 
 export default data;

@@ -132,5 +132,6 @@ const pressure = {
 	atmosphere: [unitFamilies.Pressure, 101325, 0],
 	atmospheres: [unitFamilies.Pressure, 101325, 0],
 	atm: [unitFamilies.Pressure, 101325, 0]
-};
+} as const;
+
 export default pressure;

@@ -132,5 +132,6 @@ const time = {
 	femtosecond: [unitFamilies.Time, 1e-15, 0],
 	femtoseconds: [unitFamilies.Time, 1e-15, 0],
 	fs: [unitFamilies.Time, 1e-15, 0]
-};
+} as const;
+
 export default time;

@@ -121,5 +121,6 @@ const mass = {
 	'imperial tons': [unitFamilies.Mass, poundInGrams * 2240, 0],
 	'displacement ton': [unitFamilies.Mass, poundInGrams * 2240, 0],
 	'displacement tons': [unitFamilies.Mass, poundInGrams * 2240, 0]
-};
+} as const;
+
 export default mass;
