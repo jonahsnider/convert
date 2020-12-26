@@ -51,11 +51,6 @@
 		"type": "git",
 		"url": "http://github.com/pizzafox/convert.git"
 	},
-	"resolutions": {
-		"**/typescript": "^4.1.3",
-		"**/@typescript-eslint/eslint-plugin": "^4.11.0",
-		"**/@typescript-eslint/parser": "^4.11.0"
-	},
 	"scripts": {
 		"analyze": "size-limit --why",
 		"build": "tsdx build --format cjs,esm,umd",
@@ -64,7 +59,7 @@
 		"size": "size-limit",
 		"skip": "echo skip",
 		"start": "tsdx watch",
-		"style": "prettier --ignore-path .gitignore --check .",
+		"style": "prettier --check .",
 		"test": "tsdx test"
 	},
 	"sideEffects": false,
