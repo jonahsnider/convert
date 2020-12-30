@@ -6,12 +6,12 @@ describe('invariant', () => {
 			// @ts-expect-error
 			global.__DEV__ = true;
 			invariant(false, 'message');
-		}).toThrow('convert: Invariant failed: message'));
+		}).toThrow('message'));
 
 	it("doesn't have a message in production", () =>
 		expect(() => {
 			// @ts-expect-error
 			global.__DEV__ = false;
 			invariant(false, 'message');
-		}).toThrow('convert: Invariant failed'));
+		}).toThrow(Error));
 });

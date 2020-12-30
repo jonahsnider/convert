@@ -1,5 +1,3 @@
-const prefix: string = 'convert: Invariant failed';
-
 /**
  * Throws an errror if `condition` is falsy.
  * @private
@@ -10,9 +8,9 @@ export function invariant(condition: unknown, message: string): asserts conditio
 	if (!condition) {
 		if (__DEV__) {
 			// Message is only in development
-			throw new Error(`${prefix}: ${message}`);
+			throw new Error(message);
 		} else {
-			throw new Error(prefix);
+			throw new Error();
 		}
 	}
 }
