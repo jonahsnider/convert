@@ -73,6 +73,16 @@
 			"brotli": true,
 			"limit": "3.6 KB",
 			"path": "./dist/convert.umd.production.min.js"
+		},
+		{
+			"gzip": true,
+			"limit": "3.8 KB",
+			"path": "./dist/convert.cjs.production.min.js"
+		},
+		{
+			"gzip": true,
+			"limit": "4 KB",
+			"path": "./dist/convert.umd.production.min.js"
 		}
 	],
 	"typings": "dist/index.d.ts",
