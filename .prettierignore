@@ -196,3 +196,6 @@ $RECYCLE.BIN/
 # Yarn
 .yarn/*
 .pnp.*
+
+# Generated docs
+docs_out
