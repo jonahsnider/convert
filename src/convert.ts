@@ -13,10 +13,18 @@ export const enum UnitIndexes {
 function _convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {
 		from: (from: keyof typeof allUnits) => {
+			if (__DEV__) {
+				invariant(from in allUnits, `${from} is not a valid unit`);
+			}
+
 			return {
 				to: (to: typeof from) => {
 					if (to === from) {
 						return quantity;
+					}
+
+					if (__DEV__) {
+						invariant(to in allUnits, `${to} is not a valid unit`);
 					}
 
 					// Inlining these references can reduce bundle size by around 5 bytes, but the performance cost from repeated object accesses is probably not worth it
