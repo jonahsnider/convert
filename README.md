@@ -28,7 +28,7 @@ API documentation for the latest version is generated and available online.
 
 ```ts
 // ESM:
-import {convert} from 'convert';
+import convert from 'convert';
 // CJS:
 const {convert} = require('convert');
 
