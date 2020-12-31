@@ -1066,6 +1066,28 @@ export const allUnits = {
 	grads: [unitFamilies.Angle, Math.PI / 200, 0],
 	grade: [unitFamilies.Angle, Math.PI / 200, 0],
 	grades: [unitFamilies.Angle, Math.PI / 200, 0],
-	asd: []
+	//#endregion
+	//#region Force
+	newton: [unitFamilies.Force, 1, 0],
+	newtons: [unitFamilies.Force, 1, 0],
+	N: [unitFamilies.Force, 1, 0],
+
+	dyne: [unitFamilies.Force, 1e-5, 0],
+	dynes: [unitFamilies.Force, 1e-5, 0],
+	dyn: [unitFamilies.Force, 1e-5, 0],
+
+	'kilogram-force': [unitFamilies.Force, 9.80665, 0],
+	kgf: [unitFamilies.Force, 9.80665, 0],
+	kilopond: [unitFamilies.Force, 9.80665, 0],
+	kiloponds: [unitFamilies.Force, 9.80665, 0],
+	kp: [unitFamilies.Force, 9.80665, 0],
+
+	'pound of force': [unitFamilies.Force, 4.448222, 0],
+	'pound-force': [unitFamilies.Force, 4.448222, 0],
+	lbf: [unitFamilies.Force, 4.448222, 0],
+
+	poundal: [unitFamilies.Force, 0.138255, 0],
+	poundals: [unitFamilies.Force, 0.138255, 0],
+	pdl: [unitFamilies.Force, 0.138255, 0]
 	//#endregion
 } as const;
