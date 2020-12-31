@@ -21,6 +21,7 @@ const splitExpression = /(\d+(?:\.\d+)?)([^\d\s]+)/g;
  * @param value - The string to parse as values
  */
 export function convertMany(value: string) {
+	splitExpression.lastIndex = -1;
 	let search = splitExpression.exec(value);
 
 	invariant(search, `value did not match expression ${splitExpression}`);
