@@ -1,7 +1,7 @@
 import {convert, convertMany} from 'convert';
 // Only 3.23 kB with brotli compression, 3.76 kB gzipped
 
-// Convert time, length, data, volume, mass, pressure, and temperature
+// Convert time, length, data, volume, mass, temperature, and more
 convert(1024).from('bytes').to('kB');
 
 // Won't compile in TypeScript & throws at runtime

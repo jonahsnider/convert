@@ -27,6 +27,8 @@ if (__DEV__) {
 }
 
 export const allUnits = {
+	__proto__: null,
+
 	//#region Data
 	bit: [unitFamilies.Data, 1, 0],
 	bits: [unitFamilies.Data, 1, 0],
@@ -1037,7 +1039,33 @@ export const allUnits = {
 	USdrypt: [unitFamilies.Volume, 33.6003125, 0],
 	'U.S.drypt': [unitFamilies.Volume, 33.6003125, 0],
 	usdrypt: [unitFamilies.Volume, 33.6003125, 0],
-	drypt: [unitFamilies.Volume, 33.6003125, 0]
+	drypt: [unitFamilies.Volume, 33.6003125, 0],
 	//#endregion
+	//#endregion
+	//#region Angle
+	radian: [unitFamilies.Angle, 1, 0],
+	radians: [unitFamilies.Angle, 1, 0],
+	rad: [unitFamilies.Angle, 1, 0],
+	rads: [unitFamilies.Angle, 1, 0],
+	r: [unitFamilies.Angle, 1, 0],
+
+	turn: [unitFamilies.Angle, 2 * Math.PI, 0],
+	turns: [unitFamilies.Angle, 2 * Math.PI, 0],
+
+	degree: [unitFamilies.Angle, Math.PI / 180, 0],
+	degrees: [unitFamilies.Angle, Math.PI / 180, 0],
+	deg: [unitFamilies.Angle, Math.PI / 180, 0],
+	degs: [unitFamilies.Angle, Math.PI / 180, 0],
+	'°': [unitFamilies.Angle, Math.PI / 180, 0],
+
+	gradian: [unitFamilies.Angle, Math.PI / 200, 0],
+	gradians: [unitFamilies.Angle, Math.PI / 200, 0],
+	gon: [unitFamilies.Angle, Math.PI / 200, 0],
+	gons: [unitFamilies.Angle, Math.PI / 200, 0],
+	grad: [unitFamilies.Angle, Math.PI / 200, 0],
+	grads: [unitFamilies.Angle, Math.PI / 200, 0],
+	grade: [unitFamilies.Angle, Math.PI / 200, 0],
+	grades: [unitFamilies.Angle, Math.PI / 200, 0],
+	asd: []
 	//#endregion
 } as const;

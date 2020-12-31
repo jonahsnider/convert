@@ -26,7 +26,8 @@ export const enum UnitFamilies {
 	Pressure,
 	Temperature,
 	Time,
-	Volume
+	Volume,
+	Angle
 }
 
 // For some reason using a const enum doesn't compile with TSDX, so this hack is used instead
@@ -37,5 +38,6 @@ export const unitFamilies = {
 	Pressure: UnitFamilies.Pressure,
 	Temperature: UnitFamilies.Temperature,
 	Time: UnitFamilies.Time,
-	Volume: UnitFamilies.Volume
+	Volume: UnitFamilies.Volume,
+	Angle: UnitFamilies.Angle
 } as const;
