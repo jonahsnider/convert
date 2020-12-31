@@ -2,7 +2,7 @@
 
 The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/pizzafox/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.5.0&wide=true)](https://bundlephobia.com/result?p=convert)
+[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.6.0&wide=true)](https://bundlephobia.com/result?p=convert)
 [![Codecov](https://img.shields.io/codecov/c/gh/pizzafox/convert)](https://codecov.io/gh/pizzafox/convert)
 
 ```sh
@@ -40,7 +40,7 @@ convert(360).from('seconds').to('minutes');
 convert(20n).from('hours').to('minutes');
 // -> 1200n
 
-// We also do length, mass, data, volume, pressure, and temperature
+// We also do length, data, volume, mass, temperature, and more
 convert(5).from('kilometers').to('nautical miles');
 convert(12).from('pounds').to('ounces');
 convert(64).from('bytes').to('KiB');
