@@ -60,6 +60,10 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
  * ```ts
  * convert(90).from('minutes').to('h'); // 1
  * ```
+ * @example
+ * ```ts
+ * convert(2n).from('hours').to('min'); // 120n
+ * ```
  *
  * @param quantity - The quantity you want to convert
  */
