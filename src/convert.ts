@@ -12,7 +12,7 @@ export const enum UnitIndexes {
 
 function _convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {
-		from: (from: keyof typeof allUnits) => {
+		from: (from: Exclude<keyof typeof allUnits, '__proto__'>) => {
 			if (__DEV__) {
 				invariant(from in allUnits, `${from} is not a valid unit`);
 			}

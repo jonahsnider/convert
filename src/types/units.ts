@@ -4,9 +4,11 @@ import {ConverterBody} from './common';
 
 type UnitsCombined = typeof allUnits;
 
+type UnitKeys = Exclude<keyof UnitsCombined, '__proto__'>;
+
 type AllValues = {
-	[P in keyof UnitsCombined]: {key: P; value: UnitsCombined[P][0]};
-}[keyof UnitsCombined];
+	[P in UnitKeys]: {key: P; value: UnitsCombined[P][0]};
+}[UnitKeys];
 type IdToFamily = {
 	[P in AllValues['value']]: Extract<AllValues, {value: P}>['key'];
 };
