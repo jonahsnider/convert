@@ -18,6 +18,6 @@ describe('convertMany', () => {
 		expect(() => convertMany('1year2bytes').to('seconds')).toThrow("Couldn't convert bytes to seconds");
 		// @ts-expect-error
 		global.__DEV__ = false;
-		expect(() => convertMany('1year2bytes').to('seconds')).toThrow("");
+		expect(() => convertMany('1year2bytes').to('seconds')).toThrow('');
 	});
 });

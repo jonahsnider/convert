@@ -40,7 +40,7 @@ export function convertMany(value: string) {
 						// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
 						result += convert(search![MatchGroups.Quantity]).from(search![MatchGroups.Unit]).to(unit);
 					} catch (error) {
-						throw new RangeError(`Couldn't convert ${search![MatchGroups.Unit]} to ${unit}`)
+						throw new RangeError(`Couldn't convert ${search![MatchGroups.Unit]} to ${unit}`);
 					}
 				} else {
 					// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
