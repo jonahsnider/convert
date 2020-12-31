@@ -22,6 +22,10 @@ npm install convert
 
 ## Usage
 
+API documentation for the latest version is generated and available online.
+
+[**View docs**](https://convert.jonah.pw).
+
 ```ts
 // ESM:
 import {convert} from 'convert';
