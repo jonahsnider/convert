@@ -58,7 +58,7 @@
 		"lint": "tsdx lint",
 		"size": "size-limit",
 		"skip": "echo skip",
-		"start": "tsdx watch",
+		"start": "tsdx watch --format cjs,esm,umd",
 		"style": "prettier --check .",
 		"test": "tsdx test"
 	},
