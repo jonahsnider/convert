@@ -44,6 +44,16 @@ convert(10).from('atmospheres').to('kPa');
 convert(451).from('fahrenheit').to('celsius');
 ```
 
+### Converting many units
+
+```ts
+import {convertMany} from 'convert';
+const {convertMany} = require('convert');
+
+// Convert 1 day and 8 hours into ms
+convertMany('1d8h').to('ms');
+```
+
 ## Contributing
 
 Below is a list of commands you will probably find useful.
