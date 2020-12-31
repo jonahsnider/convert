@@ -12,7 +12,6 @@ export const enum UnitIndexes {
 
 function _convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {
-		// from: (from: AllUnits) => {
 		from: (from: keyof typeof allUnits) => {
 			return {
 				to: (to: typeof from) => {
