@@ -35,8 +35,17 @@ export function convertMany(value: string) {
 			let result = 0;
 
 			do {
-				// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
-				result += convert(search[MatchGroups.Quantity]).from(search[MatchGroups.Unit]).to(unit);
+				if (__DEV__) {
+					try {
+						// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
+						result += convert(search![MatchGroups.Quantity]).from(search![MatchGroups.Unit]).to(unit);
+					} catch (error) {
+						throw new RangeError(`Couldn't convert ${search![MatchGroups.Unit]} to ${unit}`)
+					}
+				} else {
+					// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
+					result += convert(search![MatchGroups.Quantity]).from(search![MatchGroups.Unit]).to(unit);
+				}
 
 				search = splitExpression.exec(value);
 			} while (search !== null);
