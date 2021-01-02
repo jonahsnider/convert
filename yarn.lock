@@ -4902,7 +4902,7 @@ __metadata:
     ts-node: 9.1.1
     tsdx: 0.14.1
     tslib: 2.0.3
-    typedoc: 0.20.8
+    typedoc: 0.20.9
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -15484,9 +15484,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.20.8":
-  version: 0.20.8
-  resolution: "typedoc@npm:0.20.8"
+"typedoc@npm:0.20.9":
+  version: 0.20.9
+  resolution: "typedoc@npm:0.20.9"
   dependencies:
     colors: ^1.4.0
     fs-extra: ^9.0.1
@@ -15503,7 +15503,7 @@ resolve@~1.19.0:
     typescript: 3.9.x || 4.0.x || 4.1.x
   bin:
     typedoc: bin/typedoc
-  checksum: 1d0773facc8a801af4cba6d2aef694ef47e7023639340985526a1356bab6ca3d41e5c6c7e941d4e0012f9be2296da39b73dde572accad0d5f207aa0a7d6f2019
+  checksum: 25bf501004856a53835ad8b8907f00d5cf3113faad28f7f5b5c07ab580c2df50960cf3213ff9ad4d2634146d7996176e5126524bdb21ec615cb3b77ea9d8ecb0
   languageName: node
   linkType: hard
 
