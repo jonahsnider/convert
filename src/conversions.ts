@@ -175,9 +175,9 @@ export const allUnits = {
 	pebibits: [unitFamilies.Data, num2to50, 0],
 	Pibit: [unitFamilies.Data, num2to50, 0],
 
-	petabyte: [unitFamilies.Data, 1e15, 0],
-	petabytes: [unitFamilies.Data, 1e15, 0],
-	PB: [unitFamilies.Data, 1e15, 0],
+	petabyte: [unitFamilies.Data, 8e15, 0],
+	petabytes: [unitFamilies.Data, 8e15, 0],
+	PB: [unitFamilies.Data, 8e15, 0],
 
 	pebibyte: [unitFamilies.Data, num2to53, 0],
 	pebibytes: [unitFamilies.Data, num2to53, 0],
