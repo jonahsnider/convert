@@ -1,4 +1,4 @@
-import {invariant, unitFamilies} from './util';
+import {unitFamilies} from './util';
 
 const poundInGrams = 4.5359237e2;
 
@@ -12,19 +12,6 @@ const num2to40 = 1099511627776;
 const num2to43 = 8796093022208;
 const num2to50 = 1125899906842624;
 const num2to53 = 9007199254740992;
-
-if (__DEV__) {
-	invariant(num2to10 === 2 ** 10, 'num2to10 was not correct');
-	invariant(num2to13 === 2 ** 13, 'num2to10 was not correct');
-	invariant(num2to20 === 2 ** 20, 'num2to20 was not correct');
-	invariant(num2to23 === 2 ** 23, 'num2to23 was not correct');
-	invariant(num2to30 === 2 ** 30, 'num2to30 was not correct');
-	invariant(num2to33 === 2 ** 33, 'num2to33 was not correct');
-	invariant(num2to40 === 2 ** 40, 'num2to40 was not correct');
-	invariant(num2to43 === 2 ** 43, 'num2to43 was not correct');
-	invariant(num2to50 === 2 ** 50, 'num2to50 was not correct');
-	invariant(num2to53 === 2 ** 53, 'num2to53 was not correct');
-}
 
 export const allUnits = {
 	__proto__: null,
