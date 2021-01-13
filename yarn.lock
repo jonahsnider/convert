@@ -4892,7 +4892,7 @@ __metadata:
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.13.0
     "@typescript-eslint/parser": 4.13.0
-    es-check: 5.1.4
+    es-check: 5.2.0
     eslint-plugin-prettier: 3.3.1
     eslint-plugin-tree-shaking: 1.8.0
     eslint-plugin-tsdoc: 0.2.10
@@ -5980,16 +5980,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-check@npm:5.1.4":
-  version: 5.1.4
-  resolution: "es-check@npm:5.1.4"
+"es-check@npm:5.2.0":
+  version: 5.2.0
+  resolution: "es-check@npm:5.2.0"
   dependencies:
     acorn: ^6.4.1
     caporal: 1.4.0
     glob: ^7.1.2
   bin:
     es-check: index.js
-  checksum: d855cd6863f98f3c9a4bd1fe2f60a2f44e8d88114c41c0ef1140f58bd977ab2314aebcb4bd553df1f65ea6635a7c41d1d68f989fa61a863b066ec921dc3243ac
+  checksum: 903cd7ce0ea1f7fa6356610bfe24e194204736af3bc732f197795d8a537a6f7b0687dbdd66b8d983a5fab2145c80856738e03e2c0e6b3111bdd36b4d9e81c0e5
   languageName: node
   linkType: hard
 
