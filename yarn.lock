@@ -1764,22 +1764,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/tsdoc-config@npm:0.13.9":
-  version: 0.13.9
-  resolution: "@microsoft/tsdoc-config@npm:0.13.9"
+"@microsoft/tsdoc-config@npm:0.14.0":
+  version: 0.14.0
+  resolution: "@microsoft/tsdoc-config@npm:0.14.0"
   dependencies:
-    "@microsoft/tsdoc": 0.12.24
+    "@microsoft/tsdoc": 0.13.0
     ajv: ~6.12.6
     jju: ~1.4.0
     resolve: ~1.19.0
-  checksum: 6365a595943dce9ee4f42a51c22f386ac3a0dc3e9baa91ce58d89d4cedf2806ef87c79de7da53a459f4dfd2d30aa14aa83adf43d5d61af7d5f47efb3e659f44e
+  checksum: 428dfda8bda546cd09621bd47605a6fe239b11b304ac628e972bfbc788205450b58d790f338a7e4f264837fc546899cb163e3dedbcc6d4ee4422e896e9b000cb
   languageName: node
   linkType: hard
 
-"@microsoft/tsdoc@npm:0.12.24":
-  version: 0.12.24
-  resolution: "@microsoft/tsdoc@npm:0.12.24"
-  checksum: 286b68331b3b26729cb5c98bb81a99f5ca32f3b56307913044e58a90ccb218d4ead7f1c94e1cc6cdddcdc49bf59ed7ce671c6170a7cbb069e3a7a68680976be3
+"@microsoft/tsdoc@npm:0.13.0":
+  version: 0.13.0
+  resolution: "@microsoft/tsdoc@npm:0.13.0"
+  checksum: 6729e5d953138844b85d34ff84cbb345eb34b23764be66f2e8879308d2f4df3e70843c0ac825f72f27d6633f3fe0125eafe4da7e3718362edeb1af3c3f892cd0
   languageName: node
   linkType: hard
 
@@ -4906,7 +4906,7 @@ __metadata:
     es-check: 5.2.0
     eslint-plugin-prettier: 3.3.1
     eslint-plugin-tree-shaking: 1.8.0
-    eslint-plugin-tsdoc: 0.2.10
+    eslint-plugin-tsdoc: 0.2.11
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
     semantic-release: 17.3.6
@@ -6277,13 +6277,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tsdoc@npm:0.2.10":
-  version: 0.2.10
-  resolution: "eslint-plugin-tsdoc@npm:0.2.10"
+"eslint-plugin-tsdoc@npm:0.2.11":
+  version: 0.2.11
+  resolution: "eslint-plugin-tsdoc@npm:0.2.11"
   dependencies:
-    "@microsoft/tsdoc": 0.12.24
-    "@microsoft/tsdoc-config": 0.13.9
-  checksum: cb7640ab4057fd6f2c5528ece49c18d846747d3a6b96435315ccc49c63abf4d5f33df3ad46a28a5d3c033973cbf57ca3637d6be3fdb89f5b09fc9f8ca07139bc
+    "@microsoft/tsdoc": 0.13.0
+    "@microsoft/tsdoc-config": 0.14.0
+  checksum: fac32d2350f54c7b533ea743a163e7e0e7982ae6053d9a4178c92c50ce236ee7738d22fc88842eac4e47434a5f998b634801670df5044ecb2b452dfa9c466424
   languageName: node
   linkType: hard
 
