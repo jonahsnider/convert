@@ -4914,7 +4914,7 @@ __metadata:
     ts-node: 9.1.1
     tsdx: 0.14.1
     tslib: 2.1.0
-    typedoc: 0.20.16
+    typedoc: 0.20.17
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -15570,16 +15570,16 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typedoc-default-themes@npm:^0.12.4":
-  version: 0.12.4
-  resolution: "typedoc-default-themes@npm:0.12.4"
-  checksum: 7fca966a3d553688f9b8ce17794a2797b69c691bd064f26f6dc542e5bd64eda31ee37d4224679f8906cf5d695827475f86f81e71a5f8662a1a87579de4f15053
+"typedoc-default-themes@npm:^0.12.5":
+  version: 0.12.5
+  resolution: "typedoc-default-themes@npm:0.12.5"
+  checksum: 2b1c8d5403877400961f56b6626b0d305194574f381f46dca72a5f3db2e04900bf0b2efbbab834d884795da596671ca9f5f3f3e218421aa40c32ba20fd7a30c9
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.20.16":
-  version: 0.20.16
-  resolution: "typedoc@npm:0.20.16"
+"typedoc@npm:0.20.17":
+  version: 0.20.17
+  resolution: "typedoc@npm:0.20.17"
   dependencies:
     colors: ^1.4.0
     fs-extra: ^9.0.1
@@ -15591,12 +15591,12 @@ resolve@~1.19.0:
     progress: ^2.0.3
     shelljs: ^0.8.4
     shiki: ^0.2.7
-    typedoc-default-themes: ^0.12.4
+    typedoc-default-themes: ^0.12.5
   peerDependencies:
     typescript: 3.9.x || 4.0.x || 4.1.x
   bin:
     typedoc: bin/typedoc
-  checksum: ce172d4c18e445e516bb70fca07ee62f96f1f3a2e16733e005967e69d36be5ca7c7392ee75f23403e20f6099de3a2ae671897293b329f1c4ef160cda5fd51042
+  checksum: b218e2019dac8022dd3bae536bdb74083b89b1905b5c076cc6dca682443f8a72e8a1a1b8a66f7f5458c49e3cd71d139b1f363bb9a9b8637de4a6c2c757180f29
   languageName: node
   linkType: hard
 
