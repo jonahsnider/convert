@@ -4895,7 +4895,7 @@ __metadata:
     ts-node: 9.1.1
     tsdx: 0.14.1
     tslib: 2.1.0
-    typedoc: 0.20.21
+    typedoc: 0.20.22
     typescript: 4.1.3
   languageName: unknown
   linkType: soft
@@ -9216,7 +9216,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"json5@npm:2.x, json5@npm:^2.1.0, json5@npm:^2.1.2":
+"json5@npm:2.x, json5@npm:^2.1.2":
   version: 2.1.3
   resolution: "json5@npm:2.1.3"
   dependencies:
@@ -10130,12 +10130,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"marked@npm:^1.2.8":
-  version: 1.2.8
-  resolution: "marked@npm:1.2.8"
+"marked@npm:^1.2.9":
+  version: 1.2.9
+  resolution: "marked@npm:1.2.9"
   bin:
     marked: bin/marked
-  checksum: 929a651833a463838fcd1deca5fb5bb5d471432782af018d3476929ef3d7acbe7a2858cc5fb2a74d51d8af49e3d3e554c6a69e14cc914d1990243136f7f331ac
+  checksum: d6cce03ea4a069e31d8e3c6ef99a2aee62aa6b309462a380c1f57caaec6aad0d9d62f1195e45230b838a301484a7a94d2bc70ba07bfddb003f8685710708874d
   languageName: node
   linkType: hard
 
@@ -13796,34 +13796,13 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"shiki-languages@npm:^0.2.7":
-  version: 0.2.7
-  resolution: "shiki-languages@npm:0.2.7"
-  dependencies:
-    vscode-textmate: ^5.2.0
-  checksum: 46e91b7cd8c2e2ebffc72243fc813acff1dd7124ff3b78b356bb1bea7b764fbe34fb1865651529f0b27948829c2901cea3672cd38052560f6e0b779a284cae31
-  languageName: node
-  linkType: hard
-
-"shiki-themes@npm:^0.2.7":
-  version: 0.2.7
-  resolution: "shiki-themes@npm:0.2.7"
-  dependencies:
-    json5: ^2.1.0
-    vscode-textmate: ^5.2.0
-  checksum: 5e79726b928f99d8723600662d02b7f3549a06603ee6b7e90a6084c4a0d1c3244b6b96d9d036933f362c8c20737e1a27875433a0b2b4a32f020cc87e78ed7fc8
-  languageName: node
-  linkType: hard
-
-"shiki@npm:^0.2.7":
-  version: 0.2.7
-  resolution: "shiki@npm:0.2.7"
+"shiki@npm:^0.9.2":
+  version: 0.9.2
+  resolution: "shiki@npm:0.9.2"
   dependencies:
     onigasm: ^2.2.5
-    shiki-languages: ^0.2.7
-    shiki-themes: ^0.2.7
     vscode-textmate: ^5.2.0
-  checksum: 4075bd1b7ca12c2ee44ab14691388651d7af69172259bd6af083d0841a6460572c0ef1b635fc15633972f4737dd476f4e71e7bbe32dec91100b2260346c8f3eb
+  checksum: 3177802720bec0605876c859f88200a0d109bb7db1656e190422d21563ac639cab36b01cd34cf82fe1673a3d63fac33be2f06cf9c1d6fe5a0552cbbfe1a82245
   languageName: node
   linkType: hard
 
@@ -15284,26 +15263,26 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.20.21":
-  version: 0.20.21
-  resolution: "typedoc@npm:0.20.21"
+"typedoc@npm:0.20.22":
+  version: 0.20.22
+  resolution: "typedoc@npm:0.20.22"
   dependencies:
     colors: ^1.4.0
     fs-extra: ^9.1.0
     handlebars: ^4.7.6
     lodash: ^4.17.20
     lunr: ^2.3.9
-    marked: ^1.2.8
+    marked: ^1.2.9
     minimatch: ^3.0.0
     progress: ^2.0.3
     shelljs: ^0.8.4
-    shiki: ^0.2.7
+    shiki: ^0.9.2
     typedoc-default-themes: ^0.12.7
   peerDependencies:
     typescript: 3.9.x || 4.0.x || 4.1.x
   bin:
     typedoc: bin/typedoc
-  checksum: 9a04d787087246330e0984a855d52ebd9ff77665ae00fe6d1d760145185645de9ee4a3beed54ba65d94c34b6bd76032711e7e4d16b120d0284467fc6dd2ba375
+  checksum: 93aacd7df8ccb7cf4234d497d250b18ae734ec04ab12102b3c755594de24b68a53da3423bada4099d5cb4c879463fe308e3028b6ff48d0cf605b64b2b1b681e4
   languageName: node
   linkType: hard
 
