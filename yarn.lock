@@ -4890,7 +4890,7 @@ __metadata:
     eslint-plugin-tsdoc: 0.2.11
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
-    semantic-release: 17.3.7
+    semantic-release: 17.3.8
     size-limit: 4.9.2
     ts-node: 9.1.1
     tsdx: 0.14.1
@@ -10121,21 +10121,21 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"marked@npm:^1.0.0":
-  version: 1.1.1
-  resolution: "marked@npm:1.1.1"
-  bin:
-    marked: bin/marked
-  checksum: 4fb077a99ca6a6a4f389bbe2f27620509a332da6fac019560fc25e0e9636226cc86420ddbcfc6e8956920cbca68d64cd11d03954d22123a95ffc63c2e6c4e0ae
-  languageName: node
-  linkType: hard
-
 "marked@npm:^1.2.9":
   version: 1.2.9
   resolution: "marked@npm:1.2.9"
   bin:
     marked: bin/marked
   checksum: d6cce03ea4a069e31d8e3c6ef99a2aee62aa6b309462a380c1f57caaec6aad0d9d62f1195e45230b838a301484a7a94d2bc70ba07bfddb003f8685710708874d
+  languageName: node
+  linkType: hard
+
+"marked@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "marked@npm:2.0.0"
+  bin:
+    marked: bin/marked
+  checksum: 5b3b13b9b68beb126284d04fedeacee37c847618c091cf575eaa32746cf0af2d65b1ed25b2cc9269b0cdffa2e8dc5aa2daacff81ead68c59a7a6a1656f1d28ed
   languageName: node
   linkType: hard
 
@@ -13571,9 +13571,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:17.3.7":
-  version: 17.3.7
-  resolution: "semantic-release@npm:17.3.7"
+"semantic-release@npm:17.3.8":
+  version: 17.3.8
+  resolution: "semantic-release@npm:17.3.8"
   dependencies:
     "@semantic-release/commit-analyzer": ^8.0.0
     "@semantic-release/error": ^2.2.0
@@ -13592,7 +13592,7 @@ resolve@~1.19.0:
     hook-std: ^2.0.0
     hosted-git-info: ^3.0.0
     lodash: ^4.17.15
-    marked: ^1.0.0
+    marked: ^2.0.0
     marked-terminal: ^4.0.0
     micromatch: ^4.0.2
     p-each-series: ^2.1.0
@@ -13605,7 +13605,7 @@ resolve@~1.19.0:
     yargs: ^16.2.0
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 171d750c4dc6a635f344be5c0d8c67e7903875a851fd16c104b2aa2a9ba10d88d24aab5f7f4d1df4684b8865e0fdf33b3f5fe62939fd8038a4c7e7a1ddcec05e
+  checksum: 47c47f41bc10c1dbf8e02c66878d8bb733f454fddd2b2a6171cab0350960743a080656ca810ba656ed44c07c153662f10ee304d678789322ee3348eca3998bd7
   languageName: node
   linkType: hard
 
