@@ -4889,7 +4889,7 @@ __metadata:
     eslint-plugin-tsdoc: 0.2.11
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
-    semantic-release: 17.3.8
+    semantic-release: 17.3.9
     size-limit: 4.9.2
     ts-node: 9.1.1
     tsdx: 0.14.1
@@ -13561,9 +13561,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:17.3.8":
-  version: 17.3.8
-  resolution: "semantic-release@npm:17.3.8"
+"semantic-release@npm:17.3.9":
+  version: 17.3.9
+  resolution: "semantic-release@npm:17.3.9"
   dependencies:
     "@semantic-release/commit-analyzer": ^8.0.0
     "@semantic-release/error": ^2.2.0
@@ -13595,7 +13595,7 @@ resolve@~1.19.0:
     yargs: ^16.2.0
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 47c47f41bc10c1dbf8e02c66878d8bb733f454fddd2b2a6171cab0350960743a080656ca810ba656ed44c07c153662f10ee304d678789322ee3348eca3998bd7
+  checksum: 575cb464cd9440847191990a32d29ff5a856bd9aa0eed87b973309e885ff47fde5f6b43dca629661af03294dce79951e35d3b9cf345cc777223e7d2b6cd1a956
   languageName: node
   linkType: hard
 
