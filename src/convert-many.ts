@@ -1,3 +1,4 @@
+import {allUnits} from './conversions';
 import {convert} from './convert';
 import {Units} from './types/units';
 import {invariant} from './util';
@@ -33,6 +34,10 @@ export function convertMany(value: string) {
 		 * @returns The sum of the values converted into `unit`
 		 */
 		to(unit: Units) {
+			if (__DEV__) {
+				invariant(unit in allUnits, `${unit} is not a valid unit`);
+			}
+
 			let result = 0;
 
 			do {
