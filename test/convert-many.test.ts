@@ -2,7 +2,9 @@ import {convertMany} from '../src/';
 
 describe('convertMany', () => {
 	it('combines several units', () => {
-		expect(convertMany('1min 30s').to('second')).toBe(90);
+		// expect(convertMany('1min 30s').to('second')).toBe(90);
+		// expect(convertMany('51h 13min 56s').to('hours')).toBe(51 + 13 / 60 + 56 / 60 / 60);
+		expect(convertMany('51h 13min 56s').to('h')).toBe(51 + 13 / 60 + 56 / 60 / 60);
 	});
 
 	it("doesn't convert when not necessary", () => {

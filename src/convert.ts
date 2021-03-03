@@ -19,10 +19,6 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
 
 			return {
 				to: (to: typeof from) => {
-					if (to === from) {
-						return quantity;
-					}
-
 					if (__DEV__) {
 						invariant(to in allUnits, `${to} is not a valid unit`);
 					}
