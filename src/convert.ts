@@ -1,14 +1,8 @@
-import {allUnits} from './conversions';
+import {allUnits, UnitIndexes} from './conversions';
 import {Converter} from './types/units';
 import {invariant} from './util';
 
 type OverloadedConverter = ((quantity: number) => Converter<number>) & ((quantity: bigint) => Converter<bigint>);
-
-export const enum UnitIndexes {
-	Family,
-	Ratio,
-	Difference
-}
 
 function _convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {

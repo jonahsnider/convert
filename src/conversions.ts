@@ -1,5 +1,11 @@
 import {unitFamilies} from './util';
 
+export const enum UnitIndexes {
+	Family,
+	Ratio,
+	Difference
+}
+
 const poundInGrams = 4.5359237e2;
 
 const num2to10 = 1024;
