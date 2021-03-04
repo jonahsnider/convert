@@ -2148,34 +2148,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:4.9.2":
-  version: 4.9.2
-  resolution: "@size-limit/file@npm:4.9.2"
+"@size-limit/file@npm:4.10.0":
+  version: 4.10.0
+  resolution: "@size-limit/file@npm:4.10.0"
   dependencies:
     semver: 7.3.4
   peerDependencies:
-    size-limit: 4.9.2
-  checksum: 9f62c36041198b320ab738e859c963cbd24cf00e3011dcd293e51fdb47d2d19ca82e6d24ce2b9ee6470d1d8465a4a3a388ca77a5097ad8748a1b9a23b6f7472b
+    size-limit: 4.10.0
+  checksum: 2ba64ba689509fde61c1804cee8addcd77d70688763e82e38de67e0c64a01692d1903ef9155bdb007735d73ca7d90f93d64543809b8b2dadc72269801fe84f8d
   languageName: node
   linkType: hard
 
-"@size-limit/preset-small-lib@npm:4.9.2":
-  version: 4.9.2
-  resolution: "@size-limit/preset-small-lib@npm:4.9.2"
+"@size-limit/preset-small-lib@npm:4.10.0":
+  version: 4.10.0
+  resolution: "@size-limit/preset-small-lib@npm:4.10.0"
   dependencies:
-    "@size-limit/file": 4.9.2
-    "@size-limit/webpack": 4.9.2
+    "@size-limit/file": 4.10.0
+    "@size-limit/webpack": 4.10.0
   peerDependencies:
-    size-limit: 4.9.2
-  checksum: 1046d339ce26ff32afd7cf989029ce56e1aa2e80116197d674867918a527bee5286a95489f168328bcef49fc2c1c6ca362989d2b9bf5f25b170d397a7fdfcb1c
+    size-limit: 4.10.0
+  checksum: 5442a9b1f81b9eacd8ce3f6293156db997a989b3c3bb1a977395f6f69cce7ed056323090ce945c03045a70997ac4526c52f92f259d5e57d89bac3277aac541d3
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:4.9.2":
-  version: 4.9.2
-  resolution: "@size-limit/webpack@npm:4.9.2"
+"@size-limit/webpack@npm:4.10.0":
+  version: 4.10.0
+  resolution: "@size-limit/webpack@npm:4.10.0"
   dependencies:
-    css-loader: ^5.0.1
+    css-loader: ^5.1.1
     escape-string-regexp: ^4.0.0
     file-loader: ^6.2.0
     mkdirp: ^1.0.4
@@ -2187,8 +2187,8 @@ __metadata:
     webpack: ^4.44.1
     webpack-bundle-analyzer: ^4.4.0
   peerDependencies:
-    size-limit: 4.9.2
-  checksum: 3332f83682d0a3035cf6b2fb8db8974698d0c5803a2126e4ad294e78427c5c7831e6d31fa1c00c96e74643a536979be8e2874ac1fa643b9c4bcdf1a1c686aa3d
+    size-limit: 4.10.0
+  checksum: 6fca45bf96f01e331d70e1db5d17b26d2f9e0ca08c9f5c76b10661e075ce639501d54ae3b9ebf6d860ce229118a21d0db74738e3e5bada761e81c7294c077962
   languageName: node
   linkType: hard
 
@@ -4653,10 +4653,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colorette@npm:^1.0.1, colorette@npm:^1.2.1":
+"colorette@npm:^1.0.1":
   version: 1.2.1
   resolution: "colorette@npm:1.2.1"
   checksum: 1cc21ad4b84777a424794f78b6bb6a44b614ae17dcea91762199339f8047598e6d981249eeef7ea588c99eaf062be8fcdcd4866c112998922ed854db6dde96f9
+  languageName: node
+  linkType: hard
+
+"colorette@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "colorette@npm:1.2.2"
+  checksum: e240f0c94b8d9f34b52bd17b50fc13a3b74f9e662edeaa2b0c65e06ec6b1fc6367fb42b834ec5a1d819d68b74a3d850f3bd3e284f9e614d6c4ffa122f83c6ec5
   languageName: node
   linkType: hard
 
@@ -4879,7 +4886,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "convert@workspace:."
   dependencies:
-    "@size-limit/preset-small-lib": 4.9.2
+    "@size-limit/preset-small-lib": 4.10.0
     "@types/jest": 26.0.20
     "@typescript-eslint/eslint-plugin": 4.16.1
     "@typescript-eslint/parser": 4.16.1
@@ -4890,7 +4897,7 @@ __metadata:
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
     semantic-release: 17.4.1
-    size-limit: 4.9.2
+    size-limit: 4.10.0
     ts-node: 9.1.1
     tsdx: 0.14.1
     tslib: 2.1.0
@@ -5131,25 +5138,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^5.0.1":
-  version: 5.0.1
-  resolution: "css-loader@npm:5.0.1"
+"css-loader@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "css-loader@npm:5.1.1"
   dependencies:
     camelcase: ^6.2.0
     cssesc: ^3.0.0
-    icss-utils: ^5.0.0
+    icss-utils: ^5.1.0
     loader-utils: ^2.0.0
-    postcss: ^8.1.4
+    postcss: ^8.2.6
     postcss-modules-extract-imports: ^3.0.0
     postcss-modules-local-by-default: ^4.0.0
     postcss-modules-scope: ^3.0.0
     postcss-modules-values: ^4.0.0
     postcss-value-parser: ^4.1.0
     schema-utils: ^3.0.0
-    semver: ^7.3.2
+    semver: ^7.3.4
   peerDependencies:
     webpack: ^4.27.0 || ^5.0.0
-  checksum: 5c257ac08dcc8c3b52175d4fbd3154c331c5784a48b24c2d432505daf5ee9a10504ef85171bc41f32fe1c3f491e9c4f60949927cbb8ed0ebcd3c5d67161484e4
+  checksum: 620fae3cace4a251fec723da2a4549a3874dd3459774451f834b19c4f38051aa76323d500d5d3408244b11fb40dbfc2fb30722be7b5e87ba7c6bed65396a898b
   languageName: node
   linkType: hard
 
@@ -7725,6 +7732,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"icss-utils@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "icss-utils@npm:5.1.0"
+  peerDependencies:
+    postcss: ^8.1.0
+  checksum: 4bf5c2e25b106a6c1f58d5f7b35134810aa785455f0c30e31939d873d4110964c5e470862026e0af51608b6d64853c614d9c724018f73cd59974106c0927e982
+  languageName: node
+  linkType: hard
+
 "ieee754@npm:^1.1.13":
   version: 1.2.1
   resolution: "ieee754@npm:1.2.1"
@@ -9570,16 +9586,6 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"line-column@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "line-column@npm:1.0.2"
-  dependencies:
-    isarray: ^1.0.0
-    isobject: ^2.0.0
-  checksum: e6fa785b0c75c4485d0f181beaeb2f0b482ebf16921b64d5b61e75e86a61504b42053655d481b1c8de5c4d8b551473c034eb48780c65d76be377e643d395f6e5
-  languageName: node
-  linkType: hard
-
 "lines-and-columns@npm:^1.1.6":
   version: 1.1.6
   resolution: "lines-and-columns@npm:1.1.6"
@@ -10553,15 +10559,6 @@ fsevents@~2.3.1:
   dependencies:
     node-gyp: latest
   checksum: eeab7cf260362a578f0b8622716a76d19bc009722049c7274748644ce03b2aa38ca01b3ac730a0497fd2c1ec882a21a0592e800a903994ed4d32acd06bf7eba7
-  languageName: node
-  linkType: hard
-
-"nanoid@npm:^3.1.16":
-  version: 3.1.16
-  resolution: "nanoid@npm:3.1.16"
-  bin:
-    nanoid: bin/nanoid.cjs
-  checksum: 1903aa0a7602e881ef7015d4c8ccf8a2a92b45b1bd6c4bb9c1dd2119f41ebe08a44c9195ecf4c1fbaef147bd4d050e41adbcb747ec96d7d14c1f662e3ac52790
   languageName: node
   linkType: hard
 
@@ -12350,15 +12347,14 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.1.4":
-  version: 8.1.7
-  resolution: "postcss@npm:8.1.7"
+"postcss@npm:^8.2.6":
+  version: 8.2.7
+  resolution: "postcss@npm:8.2.7"
   dependencies:
-    colorette: ^1.2.1
-    line-column: ^1.0.2
-    nanoid: ^3.1.16
+    colorette: ^1.2.2
+    nanoid: ^3.1.20
     source-map: ^0.6.1
-  checksum: 45ebaeb2814655d69439932169dd297957128c424a1533347a450c1f68a7f21e132d1658c7640bfb00cd880885662b15b85641556829b682f563f932b1f1a7e9
+  checksum: cd2a7a8b9c1950783afd05e906d65a6433b13bcce5a52f3c2802c524479e7ba6893f516338ed1bc755b3a8545eb5a181daf0fcf25af694ad2e33e9d9fe7d4254
   languageName: node
   linkType: hard
 
@@ -13685,7 +13681,7 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"semver@npm:7.3.4":
+"semver@npm:7.3.4, semver@npm:^7.3.4":
   version: 7.3.4
   resolution: "semver@npm:7.3.4"
   dependencies:
@@ -13885,21 +13881,21 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"size-limit@npm:4.9.2":
-  version: 4.9.2
-  resolution: "size-limit@npm:4.9.2"
+"size-limit@npm:4.10.0":
+  version: 4.10.0
+  resolution: "size-limit@npm:4.10.0"
   dependencies:
     bytes: ^3.1.0
     chokidar: ^3.5.1
     ci-job-number: ^1.2.2
-    colorette: ^1.2.1
+    colorette: ^1.2.2
     globby: ^11.0.2
     lilconfig: ^2.0.2
     ora: ^5.3.0
     read-pkg-up: ^7.0.1
   bin:
     size-limit: bin.js
-  checksum: a2433f097818112174814f00f194ea143b2dc49e23a20dc6f919f5a59752a422d75e348e68990642a3366c4081d58ae5f4c52b78f14f6fe563862ce31b0f5e20
+  checksum: a6c1db9d8be8b6ca777d5473bb985899b0d3246a7b6c785e291af444484111ba0d2732088db770f8a6e847a635e2b8c3a553f06fc03c1d56eca26bdee95bc27c
   languageName: node
   linkType: hard
 
