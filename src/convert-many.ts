@@ -35,6 +35,8 @@ export function convertMany(value: string) {
 		 * @param unit - The unit each value should be converted to
 		 *
 		 * @returns The sum of the values converted into `unit`
+		 *
+		 * @throws If the provided value was invalid
 		 */
 		to(unit: Units) {
 			if (__DEV__) {

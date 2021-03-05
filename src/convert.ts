@@ -2,7 +2,30 @@ import {allUnits, UnitIndexes} from './conversions';
 import {Converter} from './types/units';
 import {invariant} from './util';
 
-type OverloadedConverter = ((quantity: number) => Converter<number>) & ((quantity: bigint) => Converter<bigint>);
+type OverloadedConverter = ((
+	/**
+	 * Convert a quantity from one unit to another.
+	 *
+	 * @example
+	 * ```ts
+	 * convert(90).from('minutes').to('h'); // 1
+	 * ```
+	 *
+	 * @param quantity - The quantity you want to convert
+	 */ quantity: number
+) => Converter<number>) &
+	((
+		/**
+		 * Convert a quantity expressed as a `bigint` from one unit to another.
+		 *
+		 * @example
+		 * ```ts
+		 * convert(2n).from('hours').to('min'); // 120n
+		 * ```
+		 *
+		 * @param quantity - The quantity you want to convert
+		 */ quantity: bigint
+	) => Converter<bigint>);
 
 function _convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {
