@@ -2,13 +2,16 @@ import {convertMany} from '../src/';
 
 describe('convertMany', () => {
 	it('combines several units', () => {
-		// expect(convertMany('1min 30s').to('second')).toBe(90);
-		// expect(convertMany('51h 13min 56s').to('hours')).toBe(51 + 13 / 60 + 56 / 60 / 60);
+		expect(convertMany('1min 30s').to('second')).toBe(90);
+		expect(convertMany('51h 13min 56s').to('hours')).toBe(51 + 13 / 60 + 56 / 60 / 60);
 		expect(convertMany('51h 13min 56s').to('h')).toBe(51 + 13 / 60 + 56 / 60 / 60);
-	});
+		expect(convertMany('1m3').to('m3')).toBe(1);
 
-	it("doesn't convert when not necessary", () => {
-		expect(convertMany('1min').to('second')).toBe(60);
+		expect(convertMany('.1m').to('m')).toBe(0.1);
+		expect(convertMany('-.1m').to('m')).toBe(-0.1);
+		expect(convertMany('-1m').to('m')).toBe(-1);
+		expect(convertMany('0.1m').to('m')).toBe(0.1);
+		expect(convertMany('-0.1m').to('m')).toBe(-0.1);
 	});
 
 	it('throws when appropriate', () => {
@@ -27,7 +30,7 @@ describe('convertMany', () => {
 			global.__DEV__ = true;
 
 			convertMany('1min 2hours').to('seconds');
-			convertMany('1min2km').to('seconds');
+			convertMany('1min 2km').to('seconds');
 		}).toThrow("Couldn't convert km to seconds");
 	});
 });

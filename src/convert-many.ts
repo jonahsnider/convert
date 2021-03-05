@@ -12,7 +12,7 @@ const enum MatchGroups {
 	Unit
 }
 
-const splitExpression = /(-?(?:\d+)?\.?\d+)([^\d\s]+)/g;
+const splitExpression = /(-?(?:\d+)?\.?\d+)([^\s]+)/g;
 
 /**
  * Convert several values in a string into a single unit.
