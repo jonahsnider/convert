@@ -1,4 +1,4 @@
-import {convertMany} from '../src/';
+import {convertMany, ms} from '../src/';
 
 describe('convertMany', () => {
 	it('combines several units', () => {
@@ -33,4 +33,9 @@ describe('convertMany', () => {
 			convertMany('1min 2km').to('seconds');
 		}).toThrow("Couldn't convert km to seconds");
 	});
+});
+
+describe('ms', () => {
+	expect(ms('1s')).toBe(1000);
+	expect(ms('1d')).toBe(86_400_000);
 });

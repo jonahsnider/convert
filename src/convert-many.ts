@@ -65,3 +65,25 @@ export function convertMany(value: string) {
 		}
 	};
 }
+
+/**
+ * Convert a duration string to a duration in milliseconds.
+ *
+ * You can use this function as a replacement for the duration string to millisecond duration number that the popular `ms` package provides.
+ *
+ * If you really care about performance you should just use `convertMany` directly.
+ *
+ * @example
+ * ```ts
+ * ms('1d 2h 30min') === 95400000;
+ * ```
+ *
+ * @param value - Duration string to convert
+ *
+ * @returns A duration in milliseconds
+ *
+ * @throws If the provided value was invalid
+ */
+export function ms(value: string): number {
+	return convertMany(value).to('ms');
+}
