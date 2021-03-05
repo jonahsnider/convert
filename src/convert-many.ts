@@ -4,8 +4,11 @@ import {Units} from './types/units';
 import {invariant} from './util';
 
 const enum MatchGroups {
+	/** The entire match. */
 	Full,
+	/** The quantity of the unit. */
 	Quantity,
+	/** The unit. */
 	Unit
 }
 
