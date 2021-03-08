@@ -6,7 +6,7 @@
 	},
 	"description": "The smallest & fastest library for really easy, totally type-safe unit conversions in TypeScript & JavaScript",
 	"devDependencies": {
-		"@size-limit/preset-small-lib": "4.10.0",
+		"@size-limit/preset-small-lib": "4.10.1",
 		"@types/jest": "26.0.20",
 		"@typescript-eslint/eslint-plugin": "4.16.1",
 		"@typescript-eslint/parser": "4.16.1",
@@ -17,7 +17,7 @@
 		"prettier": "2.2.1",
 		"prettier-config-xo": "1.0.3",
 		"semantic-release": "17.4.1",
-		"size-limit": "4.10.0",
+		"size-limit": "4.10.1",
 		"ts-node": "9.1.1",
 		"tsdx": "0.14.1",
 		"tslib": "2.1.0",
