@@ -4896,7 +4896,7 @@ __metadata:
     eslint-plugin-tsdoc: 0.2.11
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
-    semantic-release: 17.4.1
+    semantic-release: 17.4.2
     size-limit: 4.10.1
     ts-node: 9.1.1
     tsdx: 0.14.1
@@ -7563,12 +7563,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hosted-git-info@npm:^3.0.0":
-  version: 3.0.5
-  resolution: "hosted-git-info@npm:3.0.5"
+"hosted-git-info@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "hosted-git-info@npm:4.0.0"
   dependencies:
     lru-cache: ^6.0.0
-  checksum: 38d67337781cc39d6ce88354097bebaa0ddc887d3e53ba7f62ffda2c880fb34efd81bf2a5896183ceb62661c646ada4a2da95841c34b968b3c010e754a32deb3
+  checksum: 540b4a8bd08f9ac5713516862f313ce8843a8465e4ac80ba9328956ee09ba887ca9b0d4044be88b10a2091e4a5e463337f3db0f28f7dd33d4a0c9db18218b162
   languageName: node
   linkType: hard
 
@@ -13591,9 +13591,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:17.4.1":
-  version: 17.4.1
-  resolution: "semantic-release@npm:17.4.1"
+"semantic-release@npm:17.4.2":
+  version: 17.4.2
+  resolution: "semantic-release@npm:17.4.2"
   dependencies:
     "@semantic-release/commit-analyzer": ^8.0.0
     "@semantic-release/error": ^2.2.0
@@ -13610,7 +13610,7 @@ resolve@~1.19.0:
     get-stream: ^6.0.0
     git-log-parser: ^1.2.0
     hook-std: ^2.0.0
-    hosted-git-info: ^3.0.0
+    hosted-git-info: ^4.0.0
     lodash: ^4.17.15
     marked: ^2.0.0
     marked-terminal: ^4.1.1
@@ -13625,7 +13625,7 @@ resolve@~1.19.0:
     yargs: ^16.2.0
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 60d6de3f6d2d3b9adec750e776e462ccbc48baebf20ce24236d22e72ffd12967d8d0355727ec607da60fba3933802ad6ea3dbd6a2e63803060d8da1b1499fbde
+  checksum: 200797a2aa33cb56a58ad13743887be084bac4afe4ce3816d652285bfd0601b0177ae50960c1544283e509c48464cf573df9717471ce9095cfe99ac5f630df85
   languageName: node
   linkType: hard
 
