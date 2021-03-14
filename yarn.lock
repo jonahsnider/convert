@@ -4901,7 +4901,7 @@ __metadata:
     ts-node: 9.1.1
     tsdx: 0.14.1
     tslib: 2.1.0
-    typedoc: 0.20.30
+    typedoc: 0.20.31
     typescript: 4.1.5
   languageName: unknown
   linkType: soft
@@ -13816,13 +13816,13 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"shiki@npm:^0.9.2":
-  version: 0.9.2
-  resolution: "shiki@npm:0.9.2"
+"shiki@npm:^0.9.3":
+  version: 0.9.3
+  resolution: "shiki@npm:0.9.3"
   dependencies:
     onigasm: ^2.2.5
     vscode-textmate: ^5.2.0
-  checksum: 3177802720bec0605876c859f88200a0d109bb7db1656e190422d21563ac639cab36b01cd34cf82fe1673a3d63fac33be2f06cf9c1d6fe5a0552cbbfe1a82245
+  checksum: fce8084727491c496187abe5b8f831dbecdada11ebcc2861335a31fb7eb3d3ebceaf50aec2f2d855f76af626ddb66dabd860536e334b3cb9feff7e79d61ccde0
   languageName: node
   linkType: hard
 
@@ -15276,16 +15276,16 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typedoc-default-themes@npm:^0.12.8":
-  version: 0.12.8
-  resolution: "typedoc-default-themes@npm:0.12.8"
-  checksum: dd2a196f571d7ee03c3d0a713150fb3bb5c80a8432e9bd167d8b8f89986803c71b03eda41865ec64cbb82bda65f287adfd479543da828d24bd9fe2eae9507f30
+"typedoc-default-themes@npm:^0.12.9":
+  version: 0.12.9
+  resolution: "typedoc-default-themes@npm:0.12.9"
+  checksum: 7d5a4152dadeca4649151909f8f0180f35a3d2d030c8e382930d04abb66d0d3f3c60461eb548376e92e0f6f8a3b027b39aaa432e84f9b52eb1e0dcc50cde45c7
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.20.30":
-  version: 0.20.30
-  resolution: "typedoc@npm:0.20.30"
+"typedoc@npm:0.20.31":
+  version: 0.20.31
+  resolution: "typedoc@npm:0.20.31"
   dependencies:
     colors: ^1.4.0
     fs-extra: ^9.1.0
@@ -15296,13 +15296,13 @@ resolve@~1.19.0:
     minimatch: ^3.0.0
     progress: ^2.0.3
     shelljs: ^0.8.4
-    shiki: ^0.9.2
-    typedoc-default-themes: ^0.12.8
+    shiki: ^0.9.3
+    typedoc-default-themes: ^0.12.9
   peerDependencies:
     typescript: 3.9.x || 4.0.x || 4.1.x || 4.2.x
   bin:
     typedoc: bin/typedoc
-  checksum: 32bf2726d222a290e9757301c03cc10c0e7588d6eebc1e8be4b3c487f9b836898db3fc672b7d98213edbb6c76e8c95ee9f1a5bd55d1dd1b13a7b3acda1f42a42
+  checksum: d6b0e1b14fef9f3cd92092a0def063739c5c7ef5855aa0150ff427b3798982739d307349e9b8af8315c6b8d97a044d2cfca1777223e52a423a72147fcf9cb1ba
   languageName: node
   linkType: hard
 
