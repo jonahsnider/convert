@@ -561,8 +561,8 @@ export const allUnits = {
 	rankine: [unitFamilies.Temperature, 5 / 9, 0],
 	R: [unitFamilies.Temperature, 5 / 9, 0],
 
-	delisle: [unitFamilies.Temperature, -2 / 3, 373.15],
-	De: [unitFamilies.Temperature, -2 / 3, 373.15],
+	delisle: [unitFamilies.Temperature, 2 / -3, 373.15],
+	De: [unitFamilies.Temperature, 2 / -3, 373.15],
 	//#endregion
 	//#region Time
 	second: [unitFamilies.Time, 1, 0],
