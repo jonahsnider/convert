@@ -47,7 +47,12 @@
 	],
 	"license": "MIT",
 	"main": "dist/index.js",
-	"module": "dist/convert.esm.js",
+	"type": "commonjs",
+	"module": "dist/convert.esm.mjs",
+	"exports": {
+		"import": "./dist/convert.esm.mjs",
+		"require": "./dist/index.js"
+	},
 	"name": "convert",
 	"repository": {
 		"type": "git",
@@ -55,13 +60,14 @@
 	},
 	"scripts": {
 		"analyze": "size-limit --why",
-		"build": "tsdx build --format cjs,esm,umd",
+		"build": "tsdx build --format cjs,esm,umd; yarn rename-esm",
+		"rename-esm": "mv ./dist/convert.esm.js ./dist/convert.esm.mjs; mv ./dist/convert.esm.js.map ./dist/convert.esm.mjs.map;",
 		"compat": "es-check es3 dist/*.min.js",
 		"docs": "typedoc",
 		"lint": "tsdx lint",
 		"size": "size-limit",
 		"skip": "echo skip",
-		"start": "tsdx watch --format cjs,esm,umd",
+		"start": "tsdx watch --format cjs,esm,umd --onSuccess \"yarn rename-esm\"",
 		"style": "prettier --check .",
 		"test": "tsdx test"
 	},
