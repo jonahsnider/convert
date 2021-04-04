@@ -6,7 +6,7 @@
 	},
 	"description": "The smallest & fastest library for really easy, totally type-safe unit conversions in TypeScript & JavaScript",
 	"devDependencies": {
-		"@size-limit/preset-small-lib": "4.10.1",
+		"@size-limit/preset-small-lib": "4.10.2",
 		"@types/jest": "26.0.22",
 		"@typescript-eslint/eslint-plugin": "4.20.0",
 		"@typescript-eslint/parser": "4.20.0",
@@ -17,7 +17,7 @@
 		"prettier": "2.2.1",
 		"prettier-config-xo": "1.0.3",
 		"semantic-release": "17.4.2",
-		"size-limit": "4.10.1",
+		"size-limit": "4.10.2",
 		"ts-node": "9.1.1",
 		"tsdx": "0.14.1",
 		"tslib": "2.1.0",
@@ -75,22 +75,22 @@
 	"size-limit": [
 		{
 			"brotli": true,
-			"limit": "3.5 KB",
+			"limit": "3.5 KiB",
 			"path": "./dist/convert.cjs.production.min.js"
 		},
 		{
 			"brotli": true,
-			"limit": "3.6 KB",
+			"limit": "3.6 KiB",
 			"path": "./dist/convert.umd.production.min.js"
 		},
 		{
 			"gzip": true,
-			"limit": "3.9 KB",
+			"limit": "3.9 KiB",
 			"path": "./dist/convert.cjs.production.min.js"
 		},
 		{
 			"gzip": true,
-			"limit": "4 KB",
+			"limit": "4 KiB",
 			"path": "./dist/convert.umd.production.min.js"
 		}
 	],
