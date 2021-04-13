@@ -49,10 +49,6 @@
 	"main": "dist/index.js",
 	"type": "commonjs",
 	"module": "dist/convert.esm.mjs",
-	"exports": {
-		"import": "./dist/convert.esm.mjs",
-		"require": "./dist/index.js"
-	},
 	"name": "convert",
 	"repository": {
 		"type": "git",
