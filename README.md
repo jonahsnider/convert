@@ -1,9 +1,9 @@
 # Convert
 
-The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/pizzafox/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
+The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/jonahsnider/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
 [![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.8.2&wide=true)](https://bundlephobia.com/result?p=convert)
-[![Codecov](https://img.shields.io/codecov/c/gh/pizzafox/convert)](https://codecov.io/gh/pizzafox/convert)
+[![Codecov](https://img.shields.io/codecov/c/gh/jonahsnider/convert)](https://codecov.io/gh/jonahsnider/convert)
 
 ```sh
 yarn add convert
@@ -14,7 +14,7 @@ npm install convert
 ## Features
 
 - Full build time and runtime checks of conversions
-- Using a web framework like Next.js or Nuxt.js? You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/pizzafox/convert/blob/master/docs/build-time-optimizations.tsx), so absolutely **zero conversion code is sent to clients**!
+- Using a web framework like Next.js or Nuxt.js? You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/jonahsnider/convert/blob/master/docs/build-time-optimizations.tsx), so absolutely **zero conversion code is sent to clients**!
 - Works in browsers and Node.js (UMD, ESModules, and CommonJS builds provided)
 - Out of the box ES3 backwards-compatibility (works since Node.js 0.9.1, probably earlier)
 - 0 dependencies
@@ -85,7 +85,7 @@ By default, runs tests related to files changed since the last commit.
 ## Alternatives
 
 All of them are bad because they aren't as small and are slower than convert.
-Benchmarks of popular unit conversion libraries, including convert are [available here](https://github.com/pizzafox/js-unit-conversion-benchmarks).
+Benchmarks of popular unit conversion libraries, including convert are [available here](https://github.com/jonahsnider/js-unit-conversion-benchmarks).
 Convert is the fastest, taking less than a microsecond for most conversions (that's a little bit under 2 million per second).
 
 [![npm bundle size of convert](https://img.shields.io/bundlephobia/minzip/convert?label=convert)](https://bundlephobia.com/result?p=convert)
