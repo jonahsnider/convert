@@ -2,7 +2,7 @@
 
 The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/jonahsnider/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.8.2&wide=true)](https://bundlephobia.com/result?p=convert)
+[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.8.3&wide=true)](https://bundlephobia.com/result?p=convert)
 [![Codecov](https://img.shields.io/codecov/c/gh/jonahsnider/convert)](https://codecov.io/gh/jonahsnider/convert)
 
 ```sh
