@@ -52,7 +52,7 @@
 	"name": "convert",
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/pizzafox/convert.git"
+		"url": "http://github.com/jonahsnider/convert.git"
 	},
 	"scripts": {
 		"analyze": "size-limit --why",
