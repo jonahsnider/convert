@@ -1764,15 +1764,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/tsdoc-config@npm:0.14.0":
-  version: 0.14.0
-  resolution: "@microsoft/tsdoc-config@npm:0.14.0"
+"@microsoft/tsdoc-config@npm:0.15.0":
+  version: 0.15.0
+  resolution: "@microsoft/tsdoc-config@npm:0.15.0"
   dependencies:
     "@microsoft/tsdoc": 0.13.0
     ajv: ~6.12.6
     jju: ~1.4.0
     resolve: ~1.19.0
-  checksum: 428dfda8bda546cd09621bd47605a6fe239b11b304ac628e972bfbc788205450b58d790f338a7e4f264837fc546899cb163e3dedbcc6d4ee4422e896e9b000cb
+  checksum: ace33435a9ca79969b2ee7d27dc39e2a9aea6f39bdcba9979f7844c59df6cebc8036057d9089f45974d5a86cb43ab7402a95f0e3b7975c130a8821855d454aa5
   languageName: node
   linkType: hard
 
@@ -4893,7 +4893,7 @@ __metadata:
     es-check: 5.2.3
     eslint-plugin-prettier: 3.4.0
     eslint-plugin-tree-shaking: 1.8.0
-    eslint-plugin-tsdoc: 0.2.11
+    eslint-plugin-tsdoc: 0.2.12
     prettier: 2.2.1
     prettier-config-xo: 1.0.3
     semantic-release: 17.4.2
@@ -6208,13 +6208,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tsdoc@npm:0.2.11":
-  version: 0.2.11
-  resolution: "eslint-plugin-tsdoc@npm:0.2.11"
+"eslint-plugin-tsdoc@npm:0.2.12":
+  version: 0.2.12
+  resolution: "eslint-plugin-tsdoc@npm:0.2.12"
   dependencies:
     "@microsoft/tsdoc": 0.13.0
-    "@microsoft/tsdoc-config": 0.14.0
-  checksum: fac32d2350f54c7b533ea743a163e7e0e7982ae6053d9a4178c92c50ce236ee7738d22fc88842eac4e47434a5f998b634801670df5044ecb2b452dfa9c466424
+    "@microsoft/tsdoc-config": 0.15.0
+  checksum: 2ef882ee4b5fb5a751b46c217936ecf9a982bf3ce80b8361d2bd7331287fea80ea56b8f7ea2069bae450877c90e024e77654e86bd9a70de3a5e532f630b4f65d
   languageName: node
   linkType: hard
 
