@@ -61,7 +61,7 @@
 		"eslint-plugin-tree-shaking": "1.8.0",
 		"eslint-plugin-tsdoc": "0.2.12",
 		"prettier": "2.2.1",
-		"prettier-config-xo": "1.0.3",
+		"prettier-config-xo": "1.0.4",
 		"semantic-release": "17.4.2",
 		"size-limit": "4.10.2",
 		"ts-node": "9.1.1",
