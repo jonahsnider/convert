@@ -4892,7 +4892,7 @@ __metadata:
     "@typescript-eslint/parser": 4.22.1
     es-check: 5.2.3
     eslint-plugin-prettier: 3.4.0
-    eslint-plugin-tree-shaking: 1.8.0
+    eslint-plugin-tree-shaking: 1.9.0
     eslint-plugin-tsdoc: 0.2.14
     prettier: 2.2.1
     prettier-config-xo: 1.0.4
@@ -6201,10 +6201,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tree-shaking@npm:1.8.0":
-  version: 1.8.0
-  resolution: "eslint-plugin-tree-shaking@npm:1.8.0"
-  checksum: b148ec2be2dc475a3a25e128740c793798e36efb93577fd63cc6954c569998ff833a675a1e66722ac86220604e5584bdaa1c7f4092edffff52a09a628db767ff
+"eslint-plugin-tree-shaking@npm:1.9.0":
+  version: 1.9.0
+  resolution: "eslint-plugin-tree-shaking@npm:1.9.0"
+  checksum: 584b1a066f161bbdb524362214f34c06f3b5558148647da569c957e12fe1a46de6be1d9790373ff0810fc547c75255b03506487d700d43f9b5c0703a4631d7b5
   languageName: node
   linkType: hard
 
