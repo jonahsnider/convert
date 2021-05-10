@@ -88,4 +88,4 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
  *
  * @param quantity - The quantity you want to convert
  */
-export const convert = (_convert as unknown) as OverloadedConverter;
+export const convert = _convert as unknown as OverloadedConverter;
