@@ -4892,7 +4892,7 @@ __metadata:
     "@typescript-eslint/parser": 4.23.0
     es-check: 5.2.3
     eslint-plugin-prettier: 3.4.0
-    eslint-plugin-tree-shaking: 1.9.0
+    eslint-plugin-tree-shaking: 1.9.1
     eslint-plugin-tsdoc: 0.2.14
     prettier: 2.3.0
     prettier-config-xo: 1.0.4
@@ -6201,10 +6201,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tree-shaking@npm:1.9.0":
-  version: 1.9.0
-  resolution: "eslint-plugin-tree-shaking@npm:1.9.0"
-  checksum: 584b1a066f161bbdb524362214f34c06f3b5558148647da569c957e12fe1a46de6be1d9790373ff0810fc547c75255b03506487d700d43f9b5c0703a4631d7b5
+"eslint-plugin-tree-shaking@npm:1.9.1":
+  version: 1.9.1
+  resolution: "eslint-plugin-tree-shaking@npm:1.9.1"
+  dependencies:
+    postcss: ^8.2.15
+    trim: 0.0.3
+  checksum: 932e0f2fec360777c02daab8824efaaae7ba6c0a1d718c4abb66424ec145f1cfa5eff6b96708bc3bebe9fade13cc42cc89322825105ce677921b9fc3343f2cbe
   languageName: node
   linkType: hard
 
@@ -10579,6 +10582,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^3.1.23":
+  version: 3.1.23
+  resolution: "nanoid@npm:3.1.23"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: e6dea1da5a593ffdc8cf2676d1d02f0626f07a54a5947a7a1f5ff1fd07901b2f53044c285e98b87eb367f016fde285fd8785d54a2dceeab9c3721f4e618f8326
+  languageName: node
+  linkType: hard
+
 "nanomatch@npm:^1.2.9":
   version: 1.2.13
   resolution: "nanomatch@npm:1.2.13"
@@ -12353,6 +12365,17 @@ fsevents@~2.3.1:
     source-map: ^0.6.1
     supports-color: ^6.1.0
   checksum: 60e02f81cedf98bc5f902e72ca7cfef20dc5789e367fd3620a41a00719ff3226796831f4ba55db7a1a1c595564fe0fa9a0a2fa6d8b2477d10ab83422fc0f91de
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.2.15":
+  version: 8.2.15
+  resolution: "postcss@npm:8.2.15"
+  dependencies:
+    colorette: ^1.2.2
+    nanoid: ^3.1.23
+    source-map: ^0.6.1
+  checksum: 2d26bc29dedd7656d1f53fa002374a014a8c2c7b9f1538d0fafadb9eae2494f5b037c87de4390d620f622b31d7f15c8c8d88de2bd682e206104fb44e781737df
   languageName: node
   linkType: hard
 
@@ -15051,6 +15074,13 @@ resolve@~1.19.0:
   version: 1.0.1
   resolution: "trim-off-newlines@npm:1.0.1"
   checksum: c590b9e8c1d91ac1b57b65f8ed7cc7837e702d86f47c725462cc7e03f3850dfa92a32f956d350632208aa78e9be03917a21d9ef5d139c30be13bb51bf576209f
+  languageName: node
+  linkType: hard
+
+"trim@npm:0.0.3":
+  version: 0.0.3
+  resolution: "trim@npm:0.0.3"
+  checksum: 4492aa2137093c4b7495effa1c1c92e9c4b2e44505cdafeec8c715235af604bef01d9e8abeec4631641ec2cdd6e0363cb8b6876c5136eb05c99f2261554eed60
   languageName: node
   linkType: hard
 
