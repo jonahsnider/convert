@@ -1,6 +1,6 @@
 import {allUnits, UnitIndexes} from './conversions';
 import {Converter} from './types/units';
-import {invariant} from './util';
+import {invariant, UnitFamilies} from './util';
 
 type OverloadedConverter = ((
 	/**
@@ -43,6 +43,27 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
 					// Inlining these references can reduce bundle size by around 5 bytes, but the performance cost from repeated object accesses is probably not worth it
 					const fromUnit = allUnits[from];
 					const toUnit = allUnits[to];
+
+					if (__DEV__) {
+						const meters = 'm';
+
+						invariant(
+							!(
+								// prettier-ignore
+								// Prettier likes to wrap the condition in ( ) then move the first comment outside of that
+								// time -> meters
+								(fromUnit[UnitIndexes.Family] === UnitFamilies.Time && to === meters) ||
+								// meters -> time
+								(toUnit[UnitIndexes.Family] === UnitFamilies.Time && from === meters)
+							),
+							[
+								`No conversion could be found from ${from} to ${to}.`,
+								'Also, are you trying to convert quantities of time?',
+								'Because "m" is treated as meters, not minutes.',
+								'You probably wanted to write "123min" instead.'
+							].join(' ')
+						);
+					}
 
 					invariant(fromUnit[UnitIndexes.Family] === toUnit[UnitIndexes.Family], `No conversion could be found from ${from} to ${to}`);
 
