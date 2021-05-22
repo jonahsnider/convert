@@ -2148,32 +2148,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:4.10.3":
-  version: 4.10.3
-  resolution: "@size-limit/file@npm:4.10.3"
+"@size-limit/file@npm:4.11.0":
+  version: 4.11.0
+  resolution: "@size-limit/file@npm:4.11.0"
   dependencies:
     semver: 7.3.5
   peerDependencies:
-    size-limit: 4.10.3
-  checksum: 43dd64a401246534980ce53993b6b15cb6bf3914af5a556802a84ab02bcb3ede5925b8e227839fd2ee7a41d79e2a68b9ebe8705856d4b20fe3b95d5be5bb35b4
+    size-limit: 4.11.0
+  checksum: 683f56a4ef7739cf8399353c9dd3c84e13fa45afedcfbdfc5c4931c4da703dec6f2c1363e32ef192419da6b82249ef8c82b4134a64c7fc9a0e596e1724c5e64d
   languageName: node
   linkType: hard
 
-"@size-limit/preset-small-lib@npm:4.10.3":
-  version: 4.10.3
-  resolution: "@size-limit/preset-small-lib@npm:4.10.3"
+"@size-limit/preset-small-lib@npm:4.11.0":
+  version: 4.11.0
+  resolution: "@size-limit/preset-small-lib@npm:4.11.0"
   dependencies:
-    "@size-limit/file": 4.10.3
-    "@size-limit/webpack": 4.10.3
+    "@size-limit/file": 4.11.0
+    "@size-limit/webpack": 4.11.0
   peerDependencies:
-    size-limit: 4.10.3
-  checksum: 4838055b6a332cefd67b23dfe096de0f8092c1c14fad86d7c5bc938776c4c0ed8d236e7aeeaaec25f3700b2a2157a90ff0ba98c9ecc70ac2790e49a1dd3097f5
+    size-limit: 4.11.0
+  checksum: 850c4eedf730f5cb527e423ec5091b4809dd2ddcd87969943a2c01c4e2e2bc0c4fdf20818f4130d9b005a541c891774bed5d9ea7baf9e857301234e6653d54c9
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:4.10.3":
-  version: 4.10.3
-  resolution: "@size-limit/webpack@npm:4.10.3"
+"@size-limit/webpack@npm:4.11.0":
+  version: 4.11.0
+  resolution: "@size-limit/webpack@npm:4.11.0"
   dependencies:
     css-loader: ^5.2.5
     escape-string-regexp: ^4.0.0
@@ -2187,8 +2187,8 @@ __metadata:
     webpack: ^4.44.1
     webpack-bundle-analyzer: ^4.4.2
   peerDependencies:
-    size-limit: 4.10.3
-  checksum: eeb3186869130c91794f70a8fbae51e631c431a400bea4fc90487cdebef440d45d9fd2dd859edd4f987ec8cbc071b436e0bb4e5b234f6c5c0cddf94efbfafaa6
+    size-limit: 4.11.0
+  checksum: 5803b79ec5e620d9d6d5c0bf7b9b27c273d906a50c6446e19f6d18a199c8eede0f46a10164fd862d814d74b3ab9ae5b414acd933276c9ca131edc191ad3502ab
   languageName: node
   linkType: hard
 
@@ -4859,7 +4859,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "convert@workspace:."
   dependencies:
-    "@size-limit/preset-small-lib": 4.10.3
+    "@size-limit/preset-small-lib": 4.11.0
     "@types/jest": 26.0.23
     "@typescript-eslint/eslint-plugin": 4.24.0
     "@typescript-eslint/parser": 4.24.0
@@ -4870,7 +4870,7 @@ __metadata:
     prettier: 2.3.0
     prettier-config-xo: 1.0.4
     semantic-release: 17.4.3
-    size-limit: 4.10.3
+    size-limit: 4.11.0
     ts-node: 9.1.1
     tsdx: 0.14.1
     tslib: 2.2.0
@@ -13732,9 +13732,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"size-limit@npm:4.10.3":
-  version: 4.10.3
-  resolution: "size-limit@npm:4.10.3"
+"size-limit@npm:4.11.0":
+  version: 4.11.0
+  resolution: "size-limit@npm:4.11.0"
   dependencies:
     bytes-iec: ^3.1.1
     chokidar: ^3.5.1
@@ -13746,7 +13746,7 @@ resolve@~1.19.0:
     read-pkg-up: ^7.0.1
   bin:
     size-limit: bin.js
-  checksum: 588181004b101c45063543ff61256fa555c506b62aff67ba6f6194f2f4d508963b00ce63f33edbb0f4c08fcc8bfbab7e4ae272e444cbf3e79e9317c1e19abb31
+  checksum: 49aecc162d9f5c3001ebcea3d4e2dc0a3757d2cd4d76c0019c523af6568cf471b7f2d37fee6f63512acd09070f6336b5002451019b56d8e1257a4ed9789b7cd2
   languageName: node
   linkType: hard
 
