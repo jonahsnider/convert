@@ -1,6 +1,6 @@
 import {allUnits, UnitIndexes} from './conversions';
 import {Converter} from './types/units';
-import {invariant, UnitFamilies} from './util';
+import {UnitFamilies} from './util';
 
 type OverloadedConverter = ((
 	/**
@@ -30,14 +30,14 @@ type OverloadedConverter = ((
 function _convert(quantity: number | bigint): Converter<typeof quantity> {
 	return {
 		from: (from: Exclude<keyof typeof allUnits, '__proto__'>) => {
-			if (__DEV__) {
-				invariant(from in allUnits, `${from} is not a valid unit`);
+			if (__DEV__ && !(from in allUnits)) {
+				throw new Error(`${from} is not a valid unit`);
 			}
 
 			return {
 				to: (to: typeof from) => {
-					if (__DEV__) {
-						invariant(to in allUnits, `${to} is not a valid unit`);
+					if (__DEV__ && !(to in allUnits)) {
+						throw new Error(`${to} is not a valid unit`);
 					}
 
 					// Inlining these references can reduce bundle size by around 5 bytes, but the performance cost from repeated object accesses is probably not worth it
@@ -47,25 +47,32 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
 					if (__DEV__) {
 						const meters = 'm';
 
-						invariant(
-							!(
-								// prettier-ignore
-								// Prettier likes to wrap the condition in ( ) then move the first comment outside of that
-								// time -> meters
-								(fromUnit[UnitIndexes.Family] === UnitFamilies.Time && to === meters) ||
-								// meters -> time
-								(toUnit[UnitIndexes.Family] === UnitFamilies.Time && from === meters)
-							),
-							[
-								`No conversion could be found from ${from} to ${to}.`,
-								'Also, are you trying to convert quantities of time?',
-								'Because "m" is treated as meters, not minutes.',
-								'You probably wanted to write "123min" instead.'
-							].join(' ')
-						);
+						if (
+							// prettier-ignore
+							// Prettier likes to wrap the condition in ( ) then move the first comment outside of that
+							// time -> meters
+							(fromUnit[UnitIndexes.Family] === UnitFamilies.Time && to === meters) ||
+							// meters -> time
+							(toUnit[UnitIndexes.Family] === UnitFamilies.Time && from === meters)
+						) {
+							throw new Error(
+								[
+									`No conversion could be found from ${from} to ${to}.`,
+									'Also, are you trying to convert quantities of time?',
+									'Because "m" is treated as meters, not minutes.',
+									'You probably wanted to write "123min" instead.'
+								].join(' ')
+							);
+						}
 					}
 
-					invariant(fromUnit[UnitIndexes.Family] === toUnit[UnitIndexes.Family], `No conversion could be found from ${from} to ${to}`);
+					if (fromUnit[UnitIndexes.Family] !== toUnit[UnitIndexes.Family]) {
+						if (__DEV__) {
+							throw new Error(`No conversion could be found from ${from} to ${to}`);
+						} else {
+							throw new Error();
+						}
+					}
 
 					const combinedRatio = fromUnit[UnitIndexes.Ratio] / toUnit[UnitIndexes.Ratio];
 
@@ -78,8 +85,8 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
 								// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
 								bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndexes.Difference]) - BigInt(toUnit[UnitIndexes.Difference]));
-							} catch (error) {
-								invariant(false, `Conversion for ${from} to ${to} can't be expressed as an integer`);
+							} catch {
+								throw new Error(`Conversion for ${from} to ${to} can't be expressed as an integer`);
 							}
 						} else {
 							bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndexes.Difference]) - BigInt(toUnit[UnitIndexes.Difference]));

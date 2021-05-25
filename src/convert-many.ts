@@ -1,7 +1,6 @@
 import {allUnits} from './conversions';
 import {convert} from './convert';
 import {Units} from './types/units';
-import {invariant} from './util';
 
 const enum MatchGroups {
 	/** The entire match. */
@@ -28,7 +27,13 @@ export function convertMany(value: string) {
 	splitExpression.lastIndex = -1;
 	let search = splitExpression.exec(value);
 
-	invariant(search, `value did not match expression ${splitExpression}`);
+	if (!search) {
+		if (__DEV__) {
+			throw new Error(`value did not match expression ${splitExpression}`);
+		}
+
+		throw new Error();
+	}
 
 	return {
 		/**
@@ -39,8 +44,8 @@ export function convertMany(value: string) {
 		 * @throws If the provided value was invalid
 		 */
 		to(unit: Units) {
-			if (__DEV__) {
-				invariant(unit in allUnits, `${unit} is not a valid unit`);
+			if (__DEV__ && !(unit in allUnits)) {
+				throw new Error(`${unit} is not a valid unit`);
 			}
 
 			let result = 0;
