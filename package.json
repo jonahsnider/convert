@@ -74,22 +74,26 @@
 		{
 			"brotli": true,
 			"limit": "3.5 KiB",
-			"path": "./dist/convert.cjs.production.min.js"
+			"path": "./dist/convert.cjs.production.min.js",
+			"webpack": false
 		},
 		{
 			"brotli": true,
 			"limit": "3.6 KiB",
-			"path": "./dist/convert.umd.production.min.js"
+			"path": "./dist/convert.umd.production.min.js",
+			"webpack": false
 		},
 		{
 			"gzip": true,
 			"limit": "3.9 KiB",
-			"path": "./dist/convert.cjs.production.min.js"
+			"path": "./dist/convert.cjs.production.min.js",
+			"webpack": false
 		},
 		{
 			"gzip": true,
 			"limit": "4 KiB",
-			"path": "./dist/convert.umd.production.min.js"
+			"path": "./dist/convert.umd.production.min.js",
+			"webpack": false
 		}
 	]
 }
