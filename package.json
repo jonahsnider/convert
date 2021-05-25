@@ -73,25 +73,25 @@
 	"size-limit": [
 		{
 			"brotli": true,
-			"limit": "3.5 KiB",
+			"limit": "3.65 KiB",
 			"path": "./dist/convert.cjs.production.min.js",
 			"webpack": false
 		},
 		{
 			"brotli": true,
-			"limit": "3.6 KiB",
+			"limit": "3.75 KiB",
 			"path": "./dist/convert.umd.production.min.js",
 			"webpack": false
 		},
 		{
 			"gzip": true,
-			"limit": "3.9 KiB",
+			"limit": "4.05 KiB",
 			"path": "./dist/convert.cjs.production.min.js",
 			"webpack": false
 		},
 		{
 			"gzip": true,
-			"limit": "4 KiB",
+			"limit": "4.15 KiB",
 			"path": "./dist/convert.umd.production.min.js",
 			"webpack": false
 		}
