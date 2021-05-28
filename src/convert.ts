@@ -69,9 +69,9 @@ function _convert(quantity: number | bigint): Converter<typeof quantity> {
 					if (fromUnit[UnitIndexes.Family] !== toUnit[UnitIndexes.Family]) {
 						if (__DEV__) {
 							throw new Error(`No conversion could be found from ${from} to ${to}`);
-						} else {
-							throw new Error();
 						}
+
+						throw new Error();
 					}
 
 					const combinedRatio = fromUnit[UnitIndexes.Ratio] / toUnit[UnitIndexes.Ratio];
