@@ -25,4 +25,35 @@ describe('convert', () => {
 			convert(BigInt(1)).from('grams').to('kilogram');
 		}).toThrow('The number 0.001 cannot be converted to a BigInt because it is not an integer');
 	});
+
+	it('handles converting units that are special keys', () => {
+		const units = [
+			['__proto__', '__proto__'],
+			['constructor', 'constructor'],
+
+			['constructor', '__proto__'],
+			['__proto__', 'constructor'],
+
+			['seconds', 'constructor'],
+			['seconds', '__proto__'],
+
+			['__proto__', 'seconds'],
+			['constructor', 'seconds']
+		] as const;
+
+		for (const [a, b] of units) {
+			const fn = () =>
+				convert(1)
+					.from(a as any)
+					.to(b as any);
+
+			// @ts-expect-error
+			global.__DEV__ = false;
+			expect(fn).toThrow("Cannot read property '0' of undefined");
+
+			// @ts-expect-error
+			global.__DEV__ = true;
+			expect(fn).toThrow(/is not a valid unit$/i);
+		}
+	});
 });
