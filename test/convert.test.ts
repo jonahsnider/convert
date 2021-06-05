@@ -8,14 +8,23 @@ describe('convert', () => {
 	it('supports `BigInt`s', () => expect(convert(BigInt(2)).from('hour').to('minute')).toBe(BigInt(120)));
 
 	it('throws when appropriate', () => {
-		// @ts-expect-error
-		expect(() => convert(60).from('second').to('kilogram')).toThrow();
+		expect(() =>
+			convert(60)
+				.from('second')
+				.to('kilogram' as any)
+		).toThrow();
 
-		// @ts-expect-error
-		expect(() => convert(60).from('kilogram').to('minute')).toThrow();
+		expect(() =>
+			convert(60)
+				.from('kilogram')
+				.to('minute' as any)
+		).toThrow();
 
-		// @ts-expect-error
-		expect(() => convert(1).from('not a unit').to('also not a unit')).toThrow();
+		expect(() =>
+			convert(1)
+				.from('not a unit' as any)
+				.to('also not a unit' as any)
+		).toThrow();
 
 		expect(() => convert(BigInt(1)).from('grams').to('kilogram')).toThrow("Conversion for grams to kilogram can't be expressed as an integer");
 

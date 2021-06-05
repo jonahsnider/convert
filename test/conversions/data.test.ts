@@ -4,14 +4,12 @@ import {convertAssert} from '../util';
 describe('data', () => {
 	it('converts bytes', () => expect(convert(8).from('bits').to('bytes')).toBe(1));
 
-	it('converts bytes in production mode', () => {
+	it('converts bytes', () => {
 		// @ts-expect-error
 		global.__DEV__ = false;
 
 		expect(convert(8).from('bits').to('bytes')).toBe(1);
-	});
 
-	it('converts bytes in dev mode', () => {
 		// @ts-expect-error
 		global.__DEV__ = true;
 
