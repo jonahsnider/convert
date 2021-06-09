@@ -4900,7 +4900,7 @@ __metadata:
     "@typescript-eslint/parser": 4.26.1
     es-check: 5.2.3
     eslint-plugin-prettier: 3.4.0
-    eslint-plugin-tree-shaking: 1.9.1
+    eslint-plugin-tree-shaking: 1.9.2
     eslint-plugin-tsdoc: 0.2.14
     prettier: 2.3.1
     prettier-config-xo: 1.0.4
@@ -6170,13 +6170,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tree-shaking@npm:1.9.1":
-  version: 1.9.1
-  resolution: "eslint-plugin-tree-shaking@npm:1.9.1"
-  dependencies:
-    postcss: ^8.2.15
-    trim: 0.0.3
-  checksum: 932e0f2fec360777c02daab8824efaaae7ba6c0a1d718c4abb66424ec145f1cfa5eff6b96708bc3bebe9fade13cc42cc89322825105ce677921b9fc3343f2cbe
+"eslint-plugin-tree-shaking@npm:1.9.2":
+  version: 1.9.2
+  resolution: "eslint-plugin-tree-shaking@npm:1.9.2"
+  checksum: efb76a856285f96bcd1c1d26851c72336539350bfda5661a57a4c63518ff9b931d3af2a27d91511dbe4aa4df1235b52b8b9cdbed1406843877f4f748a983fb68
   languageName: node
   linkType: hard
 
@@ -14961,13 +14958,6 @@ resolve@~1.19.0:
   version: 1.0.1
   resolution: "trim-off-newlines@npm:1.0.1"
   checksum: c590b9e8c1d91ac1b57b65f8ed7cc7837e702d86f47c725462cc7e03f3850dfa92a32f956d350632208aa78e9be03917a21d9ef5d139c30be13bb51bf576209f
-  languageName: node
-  linkType: hard
-
-"trim@npm:0.0.3":
-  version: 0.0.3
-  resolution: "trim@npm:0.0.3"
-  checksum: 4492aa2137093c4b7495effa1c1c92e9c4b2e44505cdafeec8c715235af604bef01d9e8abeec4631641ec2cdd6e0363cb8b6876c5136eb05c99f2261554eed60
   languageName: node
   linkType: hard
 
