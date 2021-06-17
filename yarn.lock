@@ -4909,7 +4909,7 @@ __metadata:
     ts-node: 10.0.0
     tsdx: 0.14.1
     tslib: 2.3.0
-    typedoc: 0.20.36
+    typedoc: 0.20.37
     typescript: 4.3.2
   languageName: unknown
   linkType: soft
@@ -10118,12 +10118,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"marked@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "marked@npm:2.0.3"
+"marked@npm:~2.0.3":
+  version: 2.0.7
+  resolution: "marked@npm:2.0.7"
   bin:
     marked: bin/marked
-  checksum: 18940065203f4eacf84538d57478cdab170ca024c01e8cb992871f48fedb8a534bb69a908edd5b2c4d0468fb751ed4da52996cda5a45f063e71e433bbb7f04f7
+  checksum: f2df7d761530ec0794f6a4cdac052f2bdb4a4cdbad3578d019cf665a35cf29688f1c0d3885a8abd80de76451b780418048bfcb43999e4a7c5a9fa5f1264f2168
   languageName: node
   linkType: hard
 
@@ -15234,16 +15234,16 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.20.36":
-  version: 0.20.36
-  resolution: "typedoc@npm:0.20.36"
+"typedoc@npm:0.20.37":
+  version: 0.20.37
+  resolution: "typedoc@npm:0.20.37"
   dependencies:
     colors: ^1.4.0
     fs-extra: ^9.1.0
     handlebars: ^4.7.7
     lodash: ^4.17.21
     lunr: ^2.3.9
-    marked: ^2.0.3
+    marked: ~2.0.3
     minimatch: ^3.0.0
     progress: ^2.0.3
     shelljs: ^0.8.4
@@ -15253,7 +15253,7 @@ resolve@~1.19.0:
     typescript: 3.9.x || 4.0.x || 4.1.x || 4.2.x
   bin:
     typedoc: bin/typedoc
-  checksum: 362a576deee8225e7f0e2722c91f9de553d8d821f0a7b07ac4bf9b9fa704452f495aba035e7c73af415b7363c88e80689f666e0b2dab3f29bb42eb5f2d7ae93c
+  checksum: 09efc1951f9ec5d3f37c40a6af63b98d1b4d0bd9c30f391d96489b368a182749f3701c2958ded80787c52c012043158ae5d966012538debc7c1d0ac844fd5b52
   languageName: node
   linkType: hard
 
