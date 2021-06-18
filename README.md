@@ -66,7 +66,9 @@ convertMany('1d8h').to('ms');
 
 All of them are bad because they aren't as small and are slower than convert.
 Benchmarks of popular unit conversion libraries, including convert are [available here](https://github.com/jonahsnider/js-unit-conversion-benchmarks).
-Convert is the fastest, taking less than a microsecond for most conversions (that's a little bit under 2 million per second).
+
+Convert is the fastest, taking less than a microsecond for all functions.
+That's a little over 3 million `convert()` calls per second.
 
 [![npm bundle size of convert](https://img.shields.io/bundlephobia/minzip/convert?label=convert)](https://bundlephobia.com/result?p=convert)
 
