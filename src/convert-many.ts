@@ -1,6 +1,6 @@
 import {allUnits} from './conversions';
 import {convert} from './convert';
-import {Units} from './types/units';
+import {Unit} from './types/units';
 
 const enum MatchGroups {
 	/** The entire match. */
@@ -29,10 +29,10 @@ export function convertMany(value: string) {
 
 	if (!search) {
 		if (__DEV__) {
-			throw new Error(`value did not match expression ${splitExpression}`);
+			throw new RangeError(`value did not match expression ${splitExpression}`);
 		}
 
-		throw new Error();
+		throw new RangeError();
 	}
 
 	return {
@@ -41,11 +41,11 @@ export function convertMany(value: string) {
 		 *
 		 * @returns The sum of the values converted into `unit`
 		 *
-		 * @throws If the provided value was invalid
+		 * @throws `RangeError` If the `from` parameter is not a recognized unit
 		 */
-		to(unit: Units) {
+		to(unit: Unit) {
 			if (__DEV__ && !(unit in allUnits)) {
-				throw new Error(`${unit} is not a valid unit`);
+				throw new RangeError(`${unit} is not a valid unit`);
 			}
 
 			let result = 0;
@@ -54,13 +54,13 @@ export function convertMany(value: string) {
 				if (__DEV__) {
 					try {
 						// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
-						result += convert(search[MatchGroups.Quantity]).from(search[MatchGroups.Unit]).to(unit);
+						result += convert(search[MatchGroups.Quantity], search[MatchGroups.Unit]).to(unit);
 					} catch (error) {
 						throw new RangeError(`Couldn't convert ${search![MatchGroups.Unit]} to ${unit}`);
 					}
 				} else {
 					// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
-					result += convert(search[MatchGroups.Quantity]).from(search[MatchGroups.Unit]).to(unit);
+					result += convert(search[MatchGroups.Quantity], search[MatchGroups.Unit]).to(unit);
 				}
 
 				search = splitExpression.exec(value);

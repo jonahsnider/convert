@@ -4,11 +4,11 @@ import {convert} from 'convert';
 
 render(
 	<div>
-		<p>there are {convert(55800).from('seconds').to('hours')} hours remaining</p>
+		<p>there are {convert(55800, 'seconds').to('hours')} hours remaining</p>
 	</div>
 );
 /*
-outputs:
+compiles to a pure number constant during build phase:
 <div>
 	<p>there are 15.5 hours remaining</p>
 </div>

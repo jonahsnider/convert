@@ -2,21 +2,21 @@ import {convert} from '../../src';
 import {convertAssert} from '../util';
 
 describe('data', () => {
-	it('converts bytes', () => expect(convert(8).from('bits').to('bytes')).toBe(1));
+	it('converts bytes', () => expect(convert(8, 'bits').to('bytes')).toBe(1));
 
 	it('converts bytes', () => {
 		// @ts-expect-error
 		global.__DEV__ = false;
 
-		expect(convert(8).from('bits').to('bytes')).toBe(1);
+		expect(convert(8, 'bits').to('bytes')).toBe(1);
 
 		// @ts-expect-error
 		global.__DEV__ = true;
 
-		expect(convert(8).from('bits').to('bytes')).toBe(1);
+		expect(convert(8, 'bits').to('bytes')).toBe(1);
 	});
 
-	it('converts millibits', () => expect(convert(1_000).from('millibits').to('bits')).toBe(1));
+	it('converts millibits', () => expect(convert(1_000, 'millibits').to('bits')).toBe(1));
 
 	convertAssert(1, 'nibble', 2 ** 2, 'bits');
 

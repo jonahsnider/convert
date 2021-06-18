@@ -2,7 +2,6 @@
 
 The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/jonahsnider/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
-[![bundlephobia](https://bundlephobia.com/api/stats-image?name=convert&version=1.9.1&wide=true)](https://bundlephobia.com/result?p=convert)
 [![Codecov](https://img.shields.io/codecov/c/gh/jonahsnider/convert)](https://codecov.io/gh/jonahsnider/convert)
 
 ```sh
@@ -33,19 +32,19 @@ import convert from 'convert';
 const {convert} = require('convert');
 
 // 360 seconds into minutes
-convert(360).from('seconds').to('minutes');
+convert(360, 'seconds').to('minutes');
 // -> 6
 
 // BigInt support
-convert(20n).from('hours').to('minutes');
+convert(20n, 'hours').to('minutes');
 // -> 1200n
 
 // We also do length, data, volume, mass, temperature, and more
-convert(5).from('kilometers').to('nautical miles');
-convert(12).from('pounds').to('ounces');
-convert(64).from('bytes').to('KiB');
-convert(10).from('atmospheres').to('kPa');
-convert(451).from('fahrenheit').to('celsius');
+convert(5, 'kilometers').to('nautical miles');
+convert(12, 'pounds').to('ounces');
+convert(64, 'bytes').to('KiB');
+convert(10, 'atmospheres').to('kPa');
+convert(451, 'fahrenheit').to('celsius');
 ```
 
 ### Converting many units
