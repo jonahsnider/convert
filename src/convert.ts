@@ -1,6 +1,6 @@
 import {allUnits, UnitIndexes} from './conversions';
 import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
-import {UnitFamilies} from './util';
+import {UnitFamily} from './util';
 
 export default convert;
 
@@ -151,9 +151,9 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 					// prettier-ignore
 					// Prettier likes to wrap the condition in ( ) then move the first comment outside of that
 					// time -> meters
-					(fromUnit[UnitIndexes.Family] === UnitFamilies.Time && to === meters) ||
+					(fromUnit[UnitIndexes.Family] === UnitFamily.Time && to === meters) ||
 					// meters -> time
-					(toUnit[UnitIndexes.Family] === UnitFamilies.Time && from === meters)
+					(toUnit[UnitIndexes.Family] === UnitFamily.Time && from === meters)
 				) {
 					throw new RangeError(
 						[

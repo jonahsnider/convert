@@ -1,11 +1,11 @@
-import {unitFamilies} from '../util';
+import {unitFamily} from '../util';
 
 /**
- * A single unit.
+ * A single unit conversion.
  *
  * @example
  * ```ts
  * [UnitFamilies.Data, 1, 0];
  * ```
  */
-export type Unit = [family: typeof unitFamilies[keyof typeof unitFamilies], ratio: number, difference: number];
+export type Conversion = [family: typeof unitFamily[keyof typeof unitFamily], ratio: number, difference: number];

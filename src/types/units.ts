@@ -1,5 +1,5 @@
 import {allUnits} from '../conversions';
-import {UnitFamilies} from '../util';
+import {UnitFamily} from '../util';
 
 type Units = Omit<typeof allUnits, '__proto__'>;
 
@@ -10,16 +10,16 @@ type IdToFamily = {
 	[P in AllValues['value']]: Extract<AllValues, {value: P}>['key'];
 };
 
-type GetAliases<X extends UnitFamilies> = IdToFamily[X];
+type GetAliases<X extends UnitFamily> = IdToFamily[X];
 
-export type Angle = GetAliases<UnitFamilies.Angle>;
-export type Data = GetAliases<UnitFamilies.Data>;
-export type Force = GetAliases<UnitFamilies.Force>;
-export type Length = GetAliases<UnitFamilies.Length>;
-export type Mass = GetAliases<UnitFamilies.Mass>;
-export type Pressure = GetAliases<UnitFamilies.Pressure>;
-export type Temperature = GetAliases<UnitFamilies.Temperature>;
-export type Time = GetAliases<UnitFamilies.Time>;
-export type Volume = GetAliases<UnitFamilies.Volume>;
+export type Angle = GetAliases<UnitFamily.Angle>;
+export type Data = GetAliases<UnitFamily.Data>;
+export type Force = GetAliases<UnitFamily.Force>;
+export type Length = GetAliases<UnitFamily.Length>;
+export type Mass = GetAliases<UnitFamily.Mass>;
+export type Pressure = GetAliases<UnitFamily.Pressure>;
+export type Temperature = GetAliases<UnitFamily.Temperature>;
+export type Time = GetAliases<UnitFamily.Time>;
+export type Volume = GetAliases<UnitFamily.Volume>;
 
 export type Unit = Angle | Data | Force | Length | Mass | Pressure | Temperature | Time | Volume;
