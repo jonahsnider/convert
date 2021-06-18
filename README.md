@@ -12,7 +12,7 @@ yarn add convert
 
 ```js
 convert(5, 'miles').to('km');
-convertMany('4d16h').to('minutes');
+convertMany('4d 16h').to('minutes');
 ```
 
 ## Features
