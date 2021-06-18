@@ -1,10 +1,10 @@
-import {allUnits, UnitIndexes} from '../conversions';
+import {allUnits, UnitIndex} from '../conversions';
 import {UnitFamily} from '../util';
 
 type Units = Omit<typeof allUnits, '__proto__'>;
 
 type AllValues = {
-	[P in keyof Units]: {key: P; value: Units[P][UnitIndexes.Family]};
+	[P in keyof Units]: {key: P; value: Units[P][UnitIndex.Family]};
 }[keyof Units];
 type IdToFamily = {
 	[P in AllValues['value']]: Extract<AllValues, {value: P}>['key'];

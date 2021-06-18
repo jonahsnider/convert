@@ -1,6 +1,6 @@
 import {unitFamily} from './util';
 
-export const enum UnitIndexes {
+export const enum UnitIndex {
 	Family,
 	Ratio,
 	Difference

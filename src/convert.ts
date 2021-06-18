@@ -1,4 +1,4 @@
-import {allUnits, UnitIndexes} from './conversions';
+import {allUnits, UnitIndex} from './conversions';
 import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
 import {UnitFamily} from './util';
 
@@ -151,9 +151,9 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 					// prettier-ignore
 					// Prettier likes to wrap the condition in ( ) then move the first comment outside of that
 					// time -> meters
-					(fromUnit[UnitIndexes.Family] === UnitFamily.Time && to === meters) ||
+					(fromUnit[UnitIndex.Family] === UnitFamily.Time && to === meters) ||
 					// meters -> time
-					(toUnit[UnitIndexes.Family] === UnitFamily.Time && from === meters)
+					(toUnit[UnitIndex.Family] === UnitFamily.Time && from === meters)
 				) {
 					throw new RangeError(
 						[
@@ -166,7 +166,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				}
 			}
 
-			if (fromUnit[UnitIndexes.Family] !== toUnit[UnitIndexes.Family]) {
+			if (fromUnit[UnitIndex.Family] !== toUnit[UnitIndex.Family]) {
 				if (__DEV__) {
 					throw new RangeError(`No conversion could be found from ${from} to ${to}`);
 				}
@@ -174,7 +174,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				throw new RangeError();
 			}
 
-			const combinedRatio = fromUnit[UnitIndexes.Ratio] / toUnit[UnitIndexes.Ratio];
+			const combinedRatio = fromUnit[UnitIndex.Ratio] / toUnit[UnitIndex.Ratio];
 
 			if (typeof quantity === 'bigint') {
 				let bigintValue: bigint | undefined;
@@ -184,18 +184,18 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 						// Note: BigInt support only works when you are converting integers (obviously)
 						// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
-						bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndexes.Difference]) - BigInt(toUnit[UnitIndexes.Difference]));
+						bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndex.Difference]) - BigInt(toUnit[UnitIndex.Difference]));
 					} catch {
 						throw new TypeError(`Conversion for ${from} to ${to} can't be expressed as an integer`);
 					}
 				} else {
-					bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndexes.Difference]) - BigInt(toUnit[UnitIndexes.Difference]));
+					bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndex.Difference]) - BigInt(toUnit[UnitIndex.Difference]));
 				}
 
 				return bigintValue as SimplifyQuantity<Q>;
 			}
 
-			return (quantity * combinedRatio + (fromUnit[UnitIndexes.Difference] - toUnit[UnitIndexes.Difference])) as SimplifyQuantity<Q>;
+			return (quantity * combinedRatio + (fromUnit[UnitIndex.Difference] - toUnit[UnitIndex.Difference])) as SimplifyQuantity<Q>;
 		}
 	};
 }
