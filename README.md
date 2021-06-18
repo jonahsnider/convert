@@ -5,9 +5,14 @@ The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://gi
 [![Codecov](https://img.shields.io/codecov/c/gh/jonahsnider/convert)](https://codecov.io/gh/jonahsnider/convert)
 
 ```sh
-yarn add convert
-# or
 npm install convert
+# or
+yarn add convert
+```
+
+```js
+convert(5, 'miles').to('km');
+convertMany('4d16h').to('minutes');
 ```
 
 ## Features
