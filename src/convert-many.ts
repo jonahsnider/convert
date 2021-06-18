@@ -2,7 +2,7 @@ import {allUnits} from './conversions';
 import {convert} from './convert';
 import {Unit} from './types/units';
 
-const enum MatchGroups {
+const enum MatchGroup {
 	/** The entire match. */
 	Full,
 	/** The quantity of the unit. */
@@ -54,13 +54,13 @@ export function convertMany(value: string) {
 				if (__DEV__) {
 					try {
 						// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
-						result += convert(search[MatchGroups.Quantity], search[MatchGroups.Unit]).to(unit);
+						result += convert(search[MatchGroup.Quantity], search[MatchGroup.Unit]).to(unit);
 					} catch (error) {
-						throw new RangeError(`Couldn't convert ${search![MatchGroups.Unit]} to ${unit}`);
+						throw new RangeError(`Couldn't convert ${search![MatchGroup.Unit]} to ${unit}`);
 					}
 				} else {
 					// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
-					result += convert(search[MatchGroups.Quantity], search[MatchGroups.Unit]).to(unit);
+					result += convert(search[MatchGroup.Quantity], search[MatchGroup.Unit]).to(unit);
 				}
 
 				search = splitExpression.exec(value);
