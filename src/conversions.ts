@@ -677,9 +677,9 @@ export const allUnits = {
 	milliseconds: [unitFamily.Time, 1e-3, 0],
 	ms: [unitFamily.Time, 1e-3, 0],
 
-	microsecond: [unitFamily.Time, 1e-7, 0],
-	microseconds: [unitFamily.Time, 1e-7, 0],
-	μs: [unitFamily.Time, 1e-7, 0],
+	microsecond: [unitFamily.Time, 1e-6, 0],
+	microseconds: [unitFamily.Time, 1e-6, 0],
+	μs: [unitFamily.Time, 1e-6, 0],
 
 	nanosecond: [unitFamily.Time, 1e-9, 0],
 	nanoseconds: [unitFamily.Time, 1e-9, 0],
