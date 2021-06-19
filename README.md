@@ -62,6 +62,17 @@ const {convertMany} = require('convert');
 convertMany('1d8h').to('ms');
 ```
 
+### `ms` shorthand
+
+```ts
+import {ms} from 'convert';
+const {ms} = require('convert');
+
+// Convert a duration into milliseconds
+ms('1d 2h 30min');
+// -> 95400000
+```
+
 ## Alternatives
 
 All of them are bad because they aren't as small and are slower than convert.
