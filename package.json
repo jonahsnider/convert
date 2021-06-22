@@ -54,8 +54,8 @@
 	"devDependencies": {
 		"@size-limit/preset-small-lib": "4.12.0",
 		"@types/jest": "26.0.23",
-		"@typescript-eslint/eslint-plugin": "4.27.0",
-		"@typescript-eslint/parser": "4.27.0",
+		"@typescript-eslint/eslint-plugin": "4.28.0",
+		"@typescript-eslint/parser": "4.28.0",
 		"es-check": "5.2.3",
 		"eslint-plugin-prettier": "3.4.0",
 		"eslint-plugin-tree-shaking": "1.9.2",
