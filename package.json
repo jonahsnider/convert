@@ -116,7 +116,7 @@
 			"./src/test/globals.js"
 		],
 		"files": [
-			"!src/test/"
+			"!src/test"
 		],
 		"typescript": {
 			"rewritePaths": {
