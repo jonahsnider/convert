@@ -77,15 +77,6 @@ const config = [
 		],
 		plugins: [typescript(), terser(esmTerserConfig)]
 	},
-	// Typings
-	{
-		input: './tsc_output/index.d.ts',
-		output: {
-			file: 'dist/index.d.ts',
-			format: 'esm'
-		},
-		plugins: [dts()]
-	},
 	// Entry
 	{
 		input: './src/entry.ts',
