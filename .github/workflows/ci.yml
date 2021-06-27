@@ -80,7 +80,8 @@ jobs:
         run: |
           wget https://nodejs.org/dist/v0.9.1/node-v0.9.1-linux-x64.tar.gz
           tar xf node-v0.9.1-linux-x64.tar.gz
-          cp node-v0.9.1-linux-x64/bin/node $HOME/.local/bin/node-0.9.1
+          mkdir -p $HOME/.local/bin
+          cp ./node-v0.9.1-linux-x64/bin/node $HOME/.local/bin/node-0.9.1
           echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Run tests
         run: node-0.9.1 ./src/test/legacy.js
