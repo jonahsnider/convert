@@ -1,6 +1,5 @@
 import {assert} from './assert';
 import {convert} from './convert';
-import {conversions} from './generated/generated';
 import {BestConversion, BestUnits, Converter} from './types/common';
 import {Unit} from './types/units';
 
