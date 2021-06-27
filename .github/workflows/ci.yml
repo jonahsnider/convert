@@ -97,7 +97,9 @@ jobs:
           mkdir -p $HOME/.local/bin
           cp ./node-v0.9.1-linux-x64/bin/node $HOME/.local/bin/node-0.9.1
           echo "$HOME/.local/bin" >> $GITHUB_PATH
-      - name: Run tests
+      - name: Run tests on modern Node.js
+        run: node ./src/test/legacy.js
+      - name: Run tests on Node.js v0.9.1
         run: node-0.9.1 ./src/test/legacy.js
   size:
     name: Calculate bundle size
