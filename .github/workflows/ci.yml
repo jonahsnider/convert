@@ -163,6 +163,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    if: ${{ github.ref  == 'refs/heads/master' }}
+
     needs: [unit-test, legacy-test, style, size]
 
     steps:
