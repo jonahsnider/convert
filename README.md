@@ -3,12 +3,15 @@
 The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/jonahsnider/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
 [![Codecov](https://img.shields.io/codecov/c/gh/jonahsnider/convert)](https://codecov.io/gh/jonahsnider/convert)
+[![CI](https://github.com/jonahsnider/convert/actions/workflows/ci.yml/badge.svg)](https://github.com/jonahsnider/convert/actions/workflows/ci.yml)
 
 ```sh
 npm install convert
 # or
 yarn add convert
 ```
+
+[**More installation steps below**](#Installation).
 
 ```js
 convert(5, 'miles').to('km');
@@ -17,16 +20,16 @@ convertMany('4d 16h').to('minutes');
 
 ## Features
 
-- Full build time and runtime checks of conversions
+- Full build time and runtime validation of conversions
 - Using a web framework like Next.js or Nuxt.js? You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/jonahsnider/convert/blob/master/docs/build-time-optimizations.tsx), so absolutely **zero conversion code is sent to clients**!
-- Works in browsers and Node.js (UMD, ESModules, and CommonJS builds provided)
-- Out of the box ES3 backwards-compatibility (works since Node.js 0.9.1, probably earlier)
-- 0 dependencies
-- Supports bigints if you pass something with `typeof` `bigint`
+- Works in browsers and Node.js (UMD and ESM builds will work anywhere)
+- Out of the box ES3 backwards-compatibility (CI tests on Node.js v0.9.1)
+- Absolutely tiny bundle size and 0 dependencies
+- Supports bigints without breaking on old engines
 
 ## Usage
 
-API documentation for the latest version is generated and available online.
+Generated API documentation for the latest version is available online.
 
 [**View docs**](https://convert.jonah.pw).
 
@@ -44,10 +47,14 @@ convert(360, 'seconds').to('minutes');
 convert(20n, 'hours').to('minutes');
 // -> 1200n
 
+// Format to the best unit automatically
+convert(5500, 'meters').to('best');
+// -> { quantity: 5.5, unit: 'km', toString: () => '5.5km' }
+
 // We also do length, data, volume, mass, temperature, and more
 convert(5, 'kilometers').to('nautical miles');
 convert(12, 'pounds').to('ounces');
-convert(64, 'bytes').to('KiB');
+convert(8192, 'bytes').to('KiB');
 convert(10, 'atmospheres').to('kPa');
 convert(451, 'fahrenheit').to('celsius');
 ```
@@ -62,9 +69,87 @@ const {convertMany} = require('convert');
 convertMany('1d8h').to('ms');
 ```
 
+### Converting to best unit
+
+```ts
+import convert from 'convert';
+const {convert} = require('convert');
+
+// Convert into the best unit
+const duration = convert(36, 'h').to('best');
+// -> { quantity: 1.5, unit: 'd', toString: () => '1.5d' }
+
+// The toString() method means you can automatically cast the object to a string without any issues
+'duration is ' + duration;
+// -> duration is 1.5d
+```
+
+### `ms` shorthand
+
+```ts
+import {ms} from 'convert';
+const {ms} = require('convert');
+
+// Convert a duration into milliseconds
+ms('1d 2h 30min');
+// -> 95400000
+```
+
+## Installation
+
+### Package maneger
+
+Convert is published as `convert` on npm.
+
+```sh
+npm install convert
+# or
+yarn add convert
+```
+
+#### CommonJS
+
+```js
+// Chooses dev build if NODE_ENV is "development", otherwise uses prod build
+const {convert} = require('convert');
+const {convert} = require('convert/dev');
+const {convert} = require('convert/prod');
+```
+
+#### ES Modules
+
+```js
+// ESM does not have automatic build switching, you must explicitly import the dev build
+import convert from 'convert';
+import convert from 'convert/dev';
+import convert from 'convert/prod';
+```
+
+### Browsers
+
+Pick your favorite CDN:
+
+#### Modules
+
+```html
+<script type="module">
+	import convert from 'https://cdn.skypack.dev/convert@2';
+	import convert from 'https://esm.run/convert@2';
+	import convert from 'https://cdn.jsdelivr.net/npm/convert@2';
+	import convert from 'https://unpkg.com/convert@2';
+</script>
+```
+
+#### UMD (global)
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/convert@2/dist/convert.prod.js"></script>
+<script src="https://unpkg.com/convert@2/dist/convert.prod.js"></script>
+```
+
 ## Alternatives
 
-All of them are bad because they aren't as small and are slower than convert.
+Convert is better than other unit conversion libraries because it's faster and smaller than them, while having the same features.
 Benchmarks of popular unit conversion libraries, including convert are [available here](https://github.com/jonahsnider/js-unit-conversion-benchmarks).
 
 Convert is the fastest, taking less than a microsecond for all functions.
