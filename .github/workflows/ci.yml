@@ -64,6 +64,8 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           fail_ci_if_error: true
+          directory: coverage
+          files: ./coverage/lcov.info
   legacy-test:
     name: Legacy Node.js tests
 
