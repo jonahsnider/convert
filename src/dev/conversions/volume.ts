@@ -40,7 +40,7 @@ export const conversions: ConversionGroup = [
 	{names: ['imperial quart', 'imperial quarts'], symbols: ['imp qt'], ratio: 0.0011365225},
 	{names: ['imperial gallon', 'imperial gallons'], symbols: ['imp gal'], ratio: 0.00454609},
 	{names: ['imperial pint', 'imperial pints'], symbols: ['imp pt'], ratio: 0.00056826125},
-	{names: ['gill', 'gills'], symbols: ['gi', 'impgi'], ratio: 0.0001420653125},
+	{names: ['gill', 'gills'], symbols: ['gi', 'imp gi'], ratio: 0.0001420653125},
 	{names: ['imperial fluid ounce', 'imperial fluid ounces'], symbols: ['imp fl oz'], ratio: 2.84130625e-5},
 	{names: ['US barrel', 'US barrels'], symbols: ['US bbl'], ratio: 0.164},
 	{names: ['barrel', 'barrels'], symbols: ['bbl', 'oilbbl'], ratio: 1 / 6.2898},
