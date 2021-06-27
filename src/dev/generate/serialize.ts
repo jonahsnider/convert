@@ -28,7 +28,7 @@ export function serialize({
 	];
 
 	return [
-		`export const conversions = ${stringify(conversions)} as const;`,
+		`export const conversions = {__proto__:null, ${stringify({...conversions}).slice(1)} as const;`,
 		'',
 		`export const macros = ${stringify(macros)} as const;`,
 		'',

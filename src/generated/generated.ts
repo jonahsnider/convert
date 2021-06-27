@@ -1,4 +1,4 @@
-export const conversions = {
+export const conversions = {__proto__:null, 
 	"radian": [
 		0,
 		1,
