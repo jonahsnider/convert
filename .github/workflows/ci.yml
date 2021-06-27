@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
       - name: Get Yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
@@ -38,6 +42,10 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
       - name: Get Yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
@@ -64,6 +72,10 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
       - name: Get Yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
@@ -98,6 +110,10 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
       - name: Get Yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
@@ -122,6 +138,10 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
       - name: Get Yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
@@ -146,6 +166,10 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
       - name: Get Yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
