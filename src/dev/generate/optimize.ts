@@ -1,24 +1,13 @@
 import {Conversion, ConversionFamily} from '../types/common';
 import * as Generated from '../types/generated';
 
-export function optimize(conversionFamily: ConversionFamily): {conversions: Generated.Conversions; macros: Generated.PrefixMacro[]} {
+export function optimize(conversionFamily: ConversionFamily): {conversions: Generated.Conversions} {
 	const conversions: Generated.Conversions = {};
-	const macros: Generated.PrefixMacro[] = [];
 
 	const conversionQueue: Conversion[] = [];
 
 	for (const conversion of conversionFamily.conversions) {
-		if ('prefix' in conversion) {
-			let options = Generated.PrefixMacroOptions.Si;
-
-			if (conversion.prefix === 'binary') {
-				options = Generated.PrefixMacroOptions.Binary;
-			} else if ('kind' in conversion) {
-				options = Generated.PrefixMacroOptions.BigSi;
-			}
-
-			macros.push([conversion.names, conversion.symbols, conversion.ratio, options]);
-		} else {
+		if (!('prefix' in conversion)) {
 			conversionQueue.push(conversion);
 		}
 	}
@@ -39,5 +28,5 @@ export function optimize(conversionFamily: ConversionFamily): {conversions: Gene
 		}
 	}
 
-	return {conversions, macros};
+	return {conversions};
 }

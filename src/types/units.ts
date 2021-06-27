@@ -1,10 +1,10 @@
 import {ConversionFamilyIndex} from '../dev/types/common';
 import {ConversionIndex} from '../dev/types/generated';
-import {conversions, prefixed} from '../generated/generated';
+import {conversions} from '../generated/generated';
 
 type Conversions = Omit<typeof conversions, '__proto__'>;
 
-export type Units = Conversions & typeof prefixed;
+export type Units = Conversions;
 
 type AllValues = {
 	[P in keyof Units]: {key: P; value: Units[P][ConversionIndex.Family]};
