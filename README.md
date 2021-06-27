@@ -127,21 +127,24 @@ import convert from 'convert/prod';
 
 ### Browsers
 
-#### UMD (global)
-
 Pick your favorite CDN:
+
+#### Modules
 
 ```html
 <script type="module">
-	import convert from 'https://unpkg.com/convert@2?module';
 	import convert from 'https://cdn.skypack.dev/convert@2';
 	import convert from 'https://esm.run/convert@2';
+	import convert from 'https://cdn.jsdelivr.net/npm/convert@2';
+	import convert from 'https://unpkg.com/convert@2';
 </script>
+```
 
-<!-- or -->
+#### UMD (global)
 
-<script src="https://cdn.jsdelivr.net/npm/convert@2"></script>
-<script src="https://unpkg.com/convert@2"></script>
+```html
+<script src="https://cdn.jsdelivr.net/npm/convert@2/dist/convert.prod.js"></script>
+<script src="https://unpkg.com/convert@2/dist/convert.prod.js"></script>
 ```
 
 ## Alternatives
