@@ -76,6 +76,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Build
+        run: yarn run build
       - name: Download Node.js v0.9.1
         run: |
           wget https://nodejs.org/dist/v0.9.1/node-v0.9.1-linux-x64.tar.gz
