@@ -33,6 +33,9 @@
 	"sideEffects": false,
 	"type": "commonjs",
 	"main": "./dist/index.js",
+	"browser": "./dist/convert.prod.mjs",
+	"jsdelivr": "./dist/convert.prod.mjs",
+	"unpkg": "./dist/convert.prod.mjs",
 	"module": "./dist/convert.prod.mjs",
 	"typings": "./dist/index.d.ts",
 	"files": [
