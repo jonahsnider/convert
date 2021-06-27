@@ -14,7 +14,11 @@ for (let i = 0; i < macros.length; i++) {
 	for (let j = 0; j < unitGroups.length; j++) {
 		const unit = unitGroups[j];
 
-		const conversion: Generated.Conversion = [conversions[names[0]][Generated.ConversionIndex.Family], unit[Generated.UnitGroupIndex.Value] * macro[Generated.PrefixMacroIndex.Scale], 0];
+		const conversion: Generated.Conversion = [
+			conversions[names[0]][Generated.ConversionIndex.Family],
+			unit[Generated.UnitGroupIndex.Value] * macro[Generated.PrefixMacroIndex.Scale],
+			0
+		];
 
 		for (let k = 0; k < names.length; k++) {
 			(conversions as unknown as MutableConversions)[unit[Generated.UnitGroupIndex.Prefix] + names[k]] = conversion;
