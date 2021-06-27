@@ -5,10 +5,10 @@ assert.strictEqual(lib.convert(5, 'miles').to('km'), 8.04672);
 assert.strictEqual(lib.convertMany('4d 16h').to('minutes'), 6720);
 assert.strictEqual(lib.ms('1d 2h 30min'), 95400000);
 
-var best = lib.convert(36, 'h').to('best');
+var best = lib.convert(24, 'h').to('best');
 var string = best.toString();
 
 delete best.toString;
 
-assert.deepEqual(best, {quantity: 1.5, unit: 'd'});
-assert.strictEqual(string, '1.5d');
+assert.deepEqual(best, {quantity: 1, unit: 'd'});
+assert.strictEqual(string, '1d');
