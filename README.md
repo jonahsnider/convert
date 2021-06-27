@@ -29,7 +29,7 @@ convertMany('4d 16h').to('minutes');
 
 ## Usage
 
-API documentation for the latest version is generated and available online.
+Generated API documentation for the latest version is available online.
 
 [**View docs**](https://convert.jonah.pw).
 
