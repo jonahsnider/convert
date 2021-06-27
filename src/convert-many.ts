@@ -12,11 +12,6 @@ const enum MatchGroup {
 	Unit
 }
 
-// throws if the types aren't in the same family
-// therefore they all have the same best unit
-// so if we just set the best unit once then we can reuse that at the end
-// UGH
-
 const splitExpression = /(-?(?:\d+)?\.?\d+)([^\s]+)/g;
 
 /**
@@ -30,7 +25,7 @@ const splitExpression = /(-?(?:\d+)?\.?\d+)([^\s]+)/g;
  * @param value - The string to parse as values
  */
 export function convertMany(value: string): Converter<number, Unit> {
-	splitExpression.lastIndex = -1;
+	splitExpression.lastIndex = 0;
 	let search = splitExpression.exec(value);
 
 	if (!search) {
