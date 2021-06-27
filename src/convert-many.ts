@@ -1,5 +1,7 @@
-import {allUnits} from './conversions';
+import {assert} from './assert';
 import {convert} from './convert';
+import {conversions} from './generated/generated';
+import {BestConversion, BestUnits, Converter} from './types/common';
 import {Unit} from './types/units';
 
 const enum MatchGroup {
@@ -11,6 +13,11 @@ const enum MatchGroup {
 	Unit
 }
 
+// throws if the types aren't in the same family
+// therefore they all have the same best unit
+// so if we just set the best unit once then we can reuse that at the end
+// UGH
+
 const splitExpression = /(-?(?:\d+)?\.?\d+)([^\s]+)/g;
 
 /**
@@ -18,12 +25,12 @@ const splitExpression = /(-?(?:\d+)?\.?\d+)([^\s]+)/g;
  *
  * @example
  * ```ts
- * convertMany('1d12h').to('hours') === 36;
+ * convertMany('1d 12h').to('hours') === 36;
  * ```
  *
  * @param value - The string to parse as values
  */
-export function convertMany(value: string) {
+export function convertMany(value: string): Converter<number, Unit> {
 	splitExpression.lastIndex = -1;
 	let search = splitExpression.exec(value);
 
@@ -36,39 +43,39 @@ export function convertMany(value: string) {
 	}
 
 	return {
-		/**
-		 * @param unit - The unit each value should be converted to
-		 *
-		 * @returns The sum of the values converted into `unit`
-		 *
-		 * @throws `RangeError` If the `from` parameter is not a recognized unit
-		 */
-		to(unit: Unit) {
-			if (__DEV__ && !(unit in allUnits)) {
-				throw new RangeError(`${unit} is not a valid unit`);
-			}
+		to(unit: Unit | 'best') {
+			assert(search);
+
+			const best = unit === 'best';
 
 			let result = 0;
+			let resolvedUnit: BestUnits;
+			let firstPass = true;
 
 			do {
-				if (__DEV__) {
-					try {
-						// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
-						result += convert(search[MatchGroup.Quantity], search[MatchGroup.Unit]).to(unit);
-					} catch (error) {
-						throw new RangeError(`Couldn't convert ${search![MatchGroup.Unit]} to ${unit}`);
-					}
+				const converted = convert(search[MatchGroup.Quantity] as unknown as number, search[MatchGroup.Unit] as any).to(
+					best && !firstPass ? (resolvedUnit! as any) : (unit as any)
+				) as number | BestConversion<number, BestUnits>;
+
+				if (best && firstPass) {
+					result += (converted as BestConversion<number, BestUnits>).quantity;
+					resolvedUnit = (converted as BestConversion<number, BestUnits>).unit;
+					firstPass = false;
 				} else {
-					// @ts-expect-error Units here aren't typesafe and the quantity is casted to a number
-					result += convert(search[MatchGroup.Quantity], search[MatchGroup.Unit]).to(unit);
+					result += converted as number;
 				}
 
 				search = splitExpression.exec(value);
-			} while (search !== null);
+			} while (search);
+
+			if (best) {
+				// @ts-expect-error
+				return convert(result, resolvedUnit).to('best');
+			}
 
 			return result;
 		}
-	};
+	} as Converter<number, Unit>;
 }
 
 /**

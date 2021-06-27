@@ -1,24 +1,9 @@
-import {allUnits, UnitIndex} from './conversions';
+import {assert, isType as assertType} from './assert';
+import {ConversionFamilyIndex} from './dev/types/common';
+import * as Generated from './dev/types/generated';
+import {bestUnits, conversions} from './generated/generated';
+import {Converter, SimplifyQuantity} from './types/common';
 import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
-import {UnitFamily} from './util';
-
-export default convert;
-
-type SimplifyQuantity<Q> = Q extends number ? number : Q extends bigint ? bigint : never;
-
-interface Converter<Q extends number | bigint, U extends Unit> {
-	/**
-	 * Convert a quantity of one unit into a new unit
-	 *
-	 * @param to - The unit you want to convert to
-	 *
-	 * @throws `RangeError` if the `to` parameter is not a valid type
-	 * @throws `TypeError` if `quantity` was a `bigint` but the conversion can't be expressed as an integer
-	 *
-	 * @returns The converted value
-	 */
-	to(to: U): SimplifyQuantity<Q>;
-}
 
 /**
  * Convert a given angle into another unit.
@@ -130,30 +115,56 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Volume): C
  * @returns An object you can use to convert the provided quantity
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Converter<Q, Unit> {
-	if (__DEV__ && !(from in allUnits)) {
-		throw new RangeError(`${from} is not a valid unit`);
+	const fromUnit = (conversions as unknown as Generated.Conversions)[from] as Generated.Conversion | undefined;
+
+	if (!fromUnit) {
+		if (__DEV__) {
+			throw new RangeError(`${from} is not a valid unit`);
+		}
+
+		throw new RangeError();
 	}
 
+	const usingBigInts = typeof quantity === 'bigint';
+
 	return {
-		to: (to: typeof from): SimplifyQuantity<Q> => {
-			if (__DEV__ && !(to in allUnits)) {
-				throw new RangeError(`${to} is not a valid unit`);
+		to: (to: typeof from | 'best') => {
+			if (to === 'best') {
+				const family = bestUnits[fromUnit[Generated.ConversionIndex.Family]];
+
+				const baseUnit = family[0][Generated.BestIndex.Symbol];
+
+				quantity = convert(quantity, from as any).to(baseUnit as any) as unknown as Q;
+
+				let bestUnit: typeof family[number][Generated.BestIndex.Symbol] = baseUnit;
+
+				for (let i = 0; i < family.length; i++) {
+					const best = family[i];
+
+					if (quantity >= best[Generated.BestIndex.Value]) {
+						bestUnit = best[Generated.BestIndex.Symbol];
+					}
+				}
+
+				quantity = convert(quantity, baseUnit as any).to(bestUnit as any) as unknown as Q;
+
+				return {quantity, unit: bestUnit, toString: () => quantity + bestUnit} as any;
 			}
 
-			// Inlining these references can reduce bundle size by around 5 bytes, but the performance cost from repeated object accesses is probably not worth it
-			const fromUnit = allUnits[from];
-			const toUnit = allUnits[to];
+			const toUnit = (conversions as unknown as Generated.Conversions)[to] as Generated.Conversion | undefined;
+
+			if (__DEV__ && !toUnit) {
+				throw new RangeError(`${to} is not a valid unit`);
+			}
 
 			if (__DEV__) {
 				const meters = 'm';
 
 				if (
-					// prettier-ignore
-					// Prettier likes to wrap the condition in ( ) then move the first comment outside of that
 					// time -> meters
-					(fromUnit[UnitIndex.Family] === UnitFamily.Time && to === meters) ||
+					(fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyIndex.Time && to === meters) ||
 					// meters -> time
-					(toUnit[UnitIndex.Family] === UnitFamily.Time && from === meters)
+					(toUnit![Generated.ConversionIndex.Family] === ConversionFamilyIndex.Time && from === meters)
 				) {
 					throw new RangeError(
 						[
@@ -166,7 +177,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				}
 			}
 
-			if (fromUnit[UnitIndex.Family] !== toUnit[UnitIndex.Family]) {
+			// @ts-expect-error This throws if toUnit is undefined
+			if (fromUnit[Generated.ConversionIndex.Family] !== toUnit[Generated.ConversionIndex.Family]) {
 				if (__DEV__) {
 					throw new RangeError(`No conversion could be found from ${from} to ${to}`);
 				}
@@ -174,9 +186,11 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				throw new RangeError();
 			}
 
-			const combinedRatio = fromUnit[UnitIndex.Ratio] / toUnit[UnitIndex.Ratio];
+			assert(toUnit);
 
-			if (typeof quantity === 'bigint') {
+			const combinedRatio = fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio];
+
+			if (usingBigInts && assertType<bigint>(quantity)) {
 				let bigintValue: bigint | undefined;
 
 				if (__DEV__) {
@@ -184,18 +198,22 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 						// Note: BigInt support only works when you are converting integers (obviously)
 						// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
-						bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndex.Difference]) - BigInt(toUnit[UnitIndex.Difference]));
+						bigintValue =
+							quantity * BigInt(combinedRatio) +
+							(BigInt(fromUnit[Generated.ConversionIndex.Difference]) - BigInt(toUnit[Generated.ConversionIndex.Difference]));
 					} catch {
-						throw new TypeError(`Conversion for ${from} to ${to} can't be expressed as an integer`);
+						throw new TypeError(`Conversion for ${from} to ${to} cannot be calculated as a BigInt because the conversion ratio is not an integer`);
 					}
 				} else {
-					bigintValue = quantity * BigInt(combinedRatio) + (BigInt(fromUnit[UnitIndex.Difference]) - BigInt(toUnit[UnitIndex.Difference]));
+					bigintValue =
+						quantity * BigInt(combinedRatio) + (BigInt(fromUnit[Generated.ConversionIndex.Difference]) - BigInt(toUnit[Generated.ConversionIndex.Difference]));
 				}
 
 				return bigintValue as SimplifyQuantity<Q>;
 			}
 
-			return (quantity * combinedRatio + (fromUnit[UnitIndex.Difference] - toUnit[UnitIndex.Difference])) as SimplifyQuantity<Q>;
+			return (quantity * combinedRatio +
+				(fromUnit[Generated.ConversionIndex.Difference] - toUnit[Generated.ConversionIndex.Difference])) as SimplifyQuantity<Q>;
 		}
 	};
 }

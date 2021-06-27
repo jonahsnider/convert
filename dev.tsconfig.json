@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"incremental": true
+	},
+	"extends": "./tsconfig.json",
+	"include": ["./src", "./types"]
+}
