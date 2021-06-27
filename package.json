@@ -77,13 +77,13 @@
 	},
 	"scripts": {
 		"analyze": "size-limit --why",
-		"build": "rm -rf tsc_output/* dist/*; yarn run generate; tsc; rollup --config rollup.config.js; rm tsc_output/*.tsbuildinfo",
+		"build": "rm -rf tsc_output dist; yarn run generate; tsc; rollup --config rollup.config.js; rm tsc_output/*.tsbuildinfo",
 		"generate": "tsc --build ./dev.tsconfig.json; node tsc_output/dev/generate/index.js",
 		"size": "size-limit",
 		"docs": "typedoc",
 		"style": "prettier --check .",
 		"test": "yarn run generate; ava",
-		"test:coverage": "yarn run generate; rm -rf coverage/*; c8 --reporter lcov --reporter text-summary --include 'tsc_output/**/*.js' --exclude 'tsc_output/{generated,test,dev,types}' --exclude 'tsc_output/*.test.js' --all ava"
+		"test:coverage": "yarn run generate; rm -rf coverage; c8 --reporter lcov --reporter text-summary --include 'tsc_output/**/*.js' --exclude 'tsc_output/{generated,test,dev,types}' --exclude 'tsc_output/*.test.js' --all ava"
 	},
 	"size-limit": [
 		{
