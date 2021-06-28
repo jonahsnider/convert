@@ -36,6 +36,8 @@ export function serialize({
 		'',
 		`export const bestUnits = ${stringify(best)} as const;`,
 		'',
-		`export const prefixed = ${stringify(prefixed)} as const;`
+		`export const prefixed = ${stringify(prefixed)} as const;`,
+		'',
+		`export const conversionsWithMacrosApplied = {__proto__:null, ${stringify({...conversions, ...prefixed}).slice(1)} as const;`
 	].join('\n');
 }

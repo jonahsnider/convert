@@ -41,7 +41,7 @@ const config = [
 				file: './dist/convert.prod.js',
 				format: 'umd',
 				name: 'convert',
-				plugins: [replace({__DEV__: false})],
+				plugins: [replace({__DEV__: false, __MACROS__: false})],
 				exports: 'named',
 				sourcemap: true
 			},
@@ -49,7 +49,23 @@ const config = [
 				file: './dist/convert.dev.js',
 				format: 'umd',
 				name: 'convert',
-				plugins: [replace({__DEV__: true})],
+				plugins: [replace({__DEV__: true, __MACROS__: false})],
+				exports: 'named',
+				sourcemap: true
+			},
+			{
+				file: './dist/convert-small.prod.js',
+				format: 'umd',
+				name: 'convert',
+				plugins: [replace({__DEV__: false, __MACROS__: true})],
+				exports: 'named',
+				sourcemap: true
+			},
+			{
+				file: './dist/convert-small.dev.js',
+				format: 'umd',
+				name: 'convert',
+				plugins: [replace({__DEV__: true, __MACROS__: true})],
 				exports: 'named',
 				sourcemap: true
 			}
@@ -63,14 +79,28 @@ const config = [
 			{
 				file: './dist/convert.prod.mjs',
 				format: 'esm',
-				plugins: [replace({__DEV__: false})],
+				plugins: [replace({__DEV__: false, __MACROS__: false})],
 				exports: 'named',
 				sourcemap: true
 			},
 			{
 				file: './dist/convert.dev.mjs',
 				format: 'esm',
-				plugins: [replace({__DEV__: true})],
+				plugins: [replace({__DEV__: true, __MACROS__: false})],
+				exports: 'named',
+				sourcemap: true
+			},
+			{
+				file: './dist/convert-small.prod.mjs',
+				format: 'esm',
+				plugins: [replace({__DEV__: false, __MACROS__: true})],
+				exports: 'named',
+				sourcemap: true
+			},
+			{
+				file: './dist/convert-small.dev.mjs',
+				format: 'esm',
+				plugins: [replace({__DEV__: true, __MACROS__: true})],
 				exports: 'named',
 				sourcemap: true
 			}

@@ -1,9 +1,10 @@
 import {assert, isType as assertType} from './assert';
 import {ConversionFamilyIndex} from './dev/types/common';
 import * as Generated from './dev/types/generated';
-import {bestUnits, conversions} from './generated/generated';
+import {bestUnits} from './generated/generated';
 import {Converter, SimplifyQuantity} from './types/common';
 import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
+import {conversions} from './dev/choose-conversions';
 
 /**
  * Convert a given angle into another unit.

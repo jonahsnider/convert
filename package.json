@@ -53,6 +53,14 @@
 		"./dev": {
 			"require": "./dist/convert.dev.js",
 			"import": "./dist/convert.dev.mjs"
+		},
+		"./small/prod": {
+			"require": "./dist/convert-small.prod.js",
+			"import": "./dist/convert-small.prod.mjs"
+		},
+		"./small/dev": {
+			"require": "./dist/convert-small.dev.js",
+			"import": "./dist/convert-small.dev.mjs"
 		}
 	},
 	"devDependencies": {
@@ -91,26 +99,50 @@
 	"size-limit": [
 		{
 			"brotli": true,
-			"limit": "3 KiB",
+			"limit": "4 KiB",
 			"path": "./dist/convert.prod.js",
 			"webpack": false
 		},
 		{
 			"gzip": true,
-			"limit": "3.5 KiB",
+			"limit": "4.5 KiB",
 			"path": "./dist/convert.prod.js",
 			"webpack": false
 		},
 		{
 			"brotli": true,
-			"limit": "3 KiB",
+			"limit": "4 KiB",
 			"path": "./dist/convert.prod.mjs",
 			"webpack": false
 		},
 		{
 			"gzip": true,
-			"limit": "3.5 KiB",
+			"limit": "4.5 KiB",
 			"path": "./dist/convert.prod.mjs",
+			"webpack": false
+		},
+		{
+			"brotli": true,
+			"limit": "3 KiB",
+			"path": "./dist/convert-small.prod.js",
+			"webpack": false
+		},
+		{
+			"gzip": true,
+			"limit": "3.5 KiB",
+			"path": "./dist/convert-small.prod.js",
+			"webpack": false
+		},
+		{
+			"brotli": true,
+			"limit": "3 KiB",
+			"path": "./dist/convert-small.prod.mjs",
+			"webpack": false
+		},
+		{
+			"gzip": true,
+			"limit": "3.5 KiB",
+			"path": "./dist/convert-small.prod.mjs",
 			"webpack": false
 		}
 	],
