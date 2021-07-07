@@ -3765,7 +3765,7 @@ __metadata:
     ava: 3.15.0
     c8: 7.7.3
     prettier: 2.3.2
-    prettier-config-xo: 1.0.4
+    prettier-config-xo: 2.0.0
     rollup: 2.52.7
     rollup-plugin-dts: 3.0.2
     rollup-plugin-terser: 7.0.2
@@ -8832,10 +8832,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier-config-xo@npm:1.0.4":
-  version: 1.0.4
-  resolution: "prettier-config-xo@npm:1.0.4"
-  checksum: 3ca2fc5ccf6a426b90520bf0e50fc2511c098505784eb1f09ae5d0b468df092ecf229464518b2ede541949e05c79b9ba35fbef698156c84d337c0564fe532feb
+"prettier-config-xo@npm:2.0.0":
+  version: 2.0.0
+  resolution: "prettier-config-xo@npm:2.0.0"
+  checksum: b1a0d1d92484918f00922af989df47399174e9d0d5fade393d502a073de526c685cb9bce5e6b86b266c4abfac2087fbd765f947fddaa4ffa4e9cfefa9d2dc9ac
   languageName: node
   linkType: hard
 
