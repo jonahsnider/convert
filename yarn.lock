@@ -3766,7 +3766,7 @@ __metadata:
     c8: 7.7.3
     prettier: 2.3.2
     prettier-config-xo: 1.0.4
-    rollup: 2.52.7
+    rollup: 2.52.8
     rollup-plugin-dts: 3.0.2
     rollup-plugin-terser: 7.0.2
     semantic-release: 17.4.4
@@ -9557,9 +9557,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"rollup@npm:2.52.7":
-  version: 2.52.7
-  resolution: "rollup@npm:2.52.7"
+"rollup@npm:2.52.8":
+  version: 2.52.8
+  resolution: "rollup@npm:2.52.8"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -9567,7 +9567,7 @@ fsevents@~2.3.2:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 341065bf751b811b6b88bf99282ef45da277bcd9e035a2e449a960db011b0916b2ea164999f13d435a9c64d016b61d474dfbf7def517b828f99c2eee8f00cf04
+  checksum: bd83d5c89a23bf59b639fa57316e402402606a896a9fd25e16f83d5004b57a36fb21321f5726406741b68a5fcf4768adaa53a8f6cfb9e39c8d11a7e6be2fdd3a
   languageName: node
   linkType: hard
 
