@@ -3773,7 +3773,7 @@ __metadata:
     size-limit: 5.0.1
     ts-node: 10.1.0
     tslib: 2.3.0
-    typedoc: 0.21.3
+    typedoc: 0.21.4
     typescript: 4.3.5
   languageName: unknown
   linkType: soft
@@ -10857,9 +10857,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.21.3":
-  version: 0.21.3
-  resolution: "typedoc@npm:0.21.3"
+"typedoc@npm:0.21.4":
+  version: 0.21.4
+  resolution: "typedoc@npm:0.21.4"
   dependencies:
     glob: ^7.1.7
     handlebars: ^4.7.7
@@ -10873,7 +10873,7 @@ fsevents@~2.3.2:
     typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x
   bin:
     typedoc: bin/typedoc
-  checksum: e264141c972c132e11b782d3048e4ab6bcff77bb078ce409c111e7f9f2253ef9e7a4448afcb347f956911ad57066ff56b26526b171396993c01bac44237981d6
+  checksum: 109d93b11a6e2b34d6ed9bad648c4089e26f3c2771cb7d65f837f1b605260752e4e0d7b6d35bf613f2dd0fbc431058bdc4cd75ad9fedce4741c4992b00a21dfa
   languageName: node
   linkType: hard
 
