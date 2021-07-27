@@ -1811,32 +1811,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:5.0.1":
-  version: 5.0.1
-  resolution: "@size-limit/file@npm:5.0.1"
+"@size-limit/file@npm:5.0.2":
+  version: 5.0.2
+  resolution: "@size-limit/file@npm:5.0.2"
   dependencies:
     semver: 7.3.5
   peerDependencies:
-    size-limit: 5.0.1
-  checksum: 359c66d77e9d8dbf76bebb6d5604c331f52f4fd09489e6b3b549b7cdd74159e3dc2c4961f853fd78a48bd1826dd09039028b4684d20081a196e216c144502963
+    size-limit: 5.0.2
+  checksum: 9c349c2d7580996219da1db26805af428d987a908a0d5fd77e9a64bff553b5620d2119a307204ea276fd6d130c916bf80a423f261f1b913d5cc1433fbffe2d00
   languageName: node
   linkType: hard
 
-"@size-limit/preset-small-lib@npm:5.0.1":
-  version: 5.0.1
-  resolution: "@size-limit/preset-small-lib@npm:5.0.1"
+"@size-limit/preset-small-lib@npm:5.0.2":
+  version: 5.0.2
+  resolution: "@size-limit/preset-small-lib@npm:5.0.2"
   dependencies:
-    "@size-limit/file": 5.0.1
-    "@size-limit/webpack": 5.0.1
+    "@size-limit/file": 5.0.2
+    "@size-limit/webpack": 5.0.2
   peerDependencies:
-    size-limit: 5.0.1
-  checksum: 5d0fd2f0082eb3eb0bef9368b83bb30ed49fe52cc6b43b2a626eb6101f06ef5f1978ab7144d1a5749bd97dda91eeca8f671dbb3d4b8c5db79da1e8ecd703da6c
+    size-limit: 5.0.2
+  checksum: ffb17e9e2a3bae0801ad0b3d10aa3f427aac2f2cefd8c1c31a860e96cb25d790fb9e09e11b09c7254efb1cde088ddbec80e528dc714a3b33fc252a014bf87108
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:5.0.1":
-  version: 5.0.1
-  resolution: "@size-limit/webpack@npm:5.0.1"
+"@size-limit/webpack@npm:5.0.2":
+  version: 5.0.2
+  resolution: "@size-limit/webpack@npm:5.0.2"
   dependencies:
     css-loader: ^5.2.6
     escape-string-regexp: ^4.0.0
@@ -1844,13 +1844,13 @@ __metadata:
     mkdirp: ^1.0.4
     nanoid: ^3.1.23
     optimize-css-assets-webpack-plugin: ^6.0.1
-    pnp-webpack-plugin: ^1.6.4
+    pnp-webpack-plugin: ^1.7.0
     style-loader: ^2.0.0
     webpack: ^4.44.1
     webpack-bundle-analyzer: ^4.4.2
   peerDependencies:
-    size-limit: 5.0.1
-  checksum: 9ec3a59e937c4934b72b4f7ae9325314897d6a0644f80b46e248ab2eb32ea04c034ed56254f6702cf7df28614586a91c25205d9e6748f96e71db7077f771a262
+    size-limit: 5.0.2
+  checksum: b907b4a44d39871e534fc6cc4eafa6e6cc0f9846a608595e5754a9686a53f0d8fa737f946f71ca38c05fb26138d23678797b4d9b80f59b72c153244fdf727fa0
   languageName: node
   linkType: hard
 
@@ -3839,7 +3839,7 @@ __metadata:
     "@rollup/plugin-babel": 5.3.0
     "@rollup/plugin-replace": 3.0.0
     "@rollup/plugin-typescript": 8.2.3
-    "@size-limit/preset-small-lib": 5.0.1
+    "@size-limit/preset-small-lib": 5.0.2
     "@types/node": 15.12.4
     ava: 3.15.0
     c8: 7.7.3
@@ -3849,7 +3849,7 @@ __metadata:
     rollup-plugin-dts: 3.0.2
     rollup-plugin-terser: 7.0.2
     semantic-release: 17.4.4
-    size-limit: 5.0.1
+    size-limit: 5.0.2
     ts-node: 10.1.0
     tslib: 2.3.0
     typedoc: 0.21.4
@@ -7153,12 +7153,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"mico-spinner@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "mico-spinner@npm:1.1.1"
+"mico-spinner@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "mico-spinner@npm:1.2.1"
   dependencies:
     colorette: ^1.2.2
-  checksum: 4383f86f8f7a848a397c093a2793f3e153937ea3614a8772215e3e90e3eb866ba938c950c7deefe7e1be19a05a1cba78b9fd205d7967662434e4557c90db60e8
+  checksum: f5f98159a90784e6cb2fb9ed4286a9eff973ac14268102792fbb5f6603a68d3dd158926b92633eed2322f334694f1918be73cc25f3b83e70adaab563e95ef409
   languageName: node
   linkType: hard
 
@@ -8500,12 +8500,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"pnp-webpack-plugin@npm:^1.6.4":
-  version: 1.6.4
-  resolution: "pnp-webpack-plugin@npm:1.6.4"
+"pnp-webpack-plugin@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "pnp-webpack-plugin@npm:1.7.0"
   dependencies:
     ts-pnp: ^1.1.6
-  checksum: 39a484182f8fc08cb1420d4a5ccf16457c6498a4546bfbad9e00df7238ba7d98796e9aa6f82a4e803a627860409ffed491a55c5a1384e09bed60cefeb618586d
+  checksum: 756163c5d0460a22353606dc44c2041fbb15e235cc9aac063755c885b090fc68c7c4d9dac68bdd3970716bd98bf2fae521a62ba97146f489cd5d8c08d84fa2f3
   languageName: node
   linkType: hard
 
@@ -9924,9 +9924,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"size-limit@npm:5.0.1":
-  version: 5.0.1
-  resolution: "size-limit@npm:5.0.1"
+"size-limit@npm:5.0.2":
+  version: 5.0.2
+  resolution: "size-limit@npm:5.0.2"
   dependencies:
     bytes-iec: ^3.1.1
     chokidar: ^3.5.2
@@ -9934,10 +9934,10 @@ fsevents@~2.3.2:
     colorette: ^1.2.2
     globby: ^11.0.4
     lilconfig: ^2.0.3
-    mico-spinner: ^1.1.1
+    mico-spinner: ^1.2.1
   bin:
     size-limit: bin.js
-  checksum: 952473bfbf4472c53ca8cc50c403de11b11e2465df70f1a09bf4d52f561bb87a35cd8e1c745ad7b7eefed6d8370918c92733c16d6dba38647c7f9bd4b6640e0c
+  checksum: 19f4314803d6f1c5150668a8898e61258046941c2b3549fa4c86c1a9e3524b80d43beee4759f193a8cb471ec434bdb216f0babd3fb5a42b05f10bc09455311df
   languageName: node
   linkType: hard
 
