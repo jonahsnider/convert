@@ -65,7 +65,7 @@
 		"@size-limit/preset-small-lib": "5.0.2",
 		"@types/node": "15.12.4",
 		"ava": "3.15.0",
-		"c8": "7.7.3",
+		"c8": "7.8.0",
 		"prettier": "2.3.2",
 		"prettier-config-xo": "1.0.4",
 		"rollup": "2.55.0",
