@@ -5,12 +5,13 @@ __metadata:
   version: 4
   cacheKey: 7
 
-"@ava/typescript@npm:1.1.1":
-  version: 1.1.1
-  resolution: "@ava/typescript@npm:1.1.1"
+"@ava/typescript@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@ava/typescript@npm:2.0.0"
   dependencies:
-    escape-string-regexp: ^2.0.0
-  checksum: f7354d9af5baa1eeb53d6bf8cebde66d005c60312b28d8dd499766ddcea9d60d9ce72fb52743bcc373320c03621546b3bb108e40abaa2d0c7fae029effcb63d2
+    escape-string-regexp: ^4.0.0
+    execa: ^5.0.0
+  checksum: ee6b8a33e2c7a59a214444991c35ae997b9a76a9e4d7f69b4e7e1760d2ce86d679361870f5eb3bcf78ea4233a0cd5300f203364dc786658e564355d2de240004
   languageName: node
   linkType: hard
 
@@ -3929,7 +3930,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "convert@workspace:."
   dependencies:
-    "@ava/typescript": 1.1.1
+    "@ava/typescript": 2.0.0
     "@babel/core": 7.15.0
     "@babel/preset-env": 7.15.0
     "@rollup/plugin-babel": 5.3.0
