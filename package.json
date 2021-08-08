@@ -127,5 +127,6 @@
 			},
 			"compile": false
 		}
-	}
+	},
+	"packageManager": "yarn@3.0.0"
 }
