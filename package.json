@@ -124,7 +124,8 @@
 		"typescript": {
 			"rewritePaths": {
 				"src/": "tsc_output/"
-			}
+			},
+			"compile": false
 		}
 	}
 }
