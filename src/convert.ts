@@ -3,7 +3,7 @@ import {ConversionFamilyIndex} from './dev/types/common';
 import * as Generated from './dev/types/generated';
 import {bestUnits, conversions} from './generated/generated';
 import {Converter, SimplifyQuantity} from './types/common';
-import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
+import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume, Area} from './types/units';
 
 /**
  * Convert a given angle into another unit.
@@ -104,6 +104,17 @@ export function convert<Q extends number | bigint>(duration: Q, from: Time): Con
  * @returns An object you can use to convert the provided quantity
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Volume): Converter<Q, Volume>;
+/**
+ * Convert a given area into another unit.
+ *
+ * @param quantity - The area you want to convert
+ * @param from - The unit of area you are converting from
+ *
+ * @throws `RangeError` If the `from` parameter is not a recognized unit
+ *
+ * @returns An object you can use to convert the provided quantity
+ */
+export function convert<Q extends number | bigint>(quantity: Q, from: Area): Converter<Q, Area>;
 /**
  * Convert a given quantity of a unit into another unit.
  *

@@ -25,7 +25,7 @@ interface BinaryPrefixMacro extends BasePrefixMacro {
 }
 
 interface SiPrefixMacro extends BasePrefixMacro {
-	prefix: 'si' | 'volumeSi';
+	prefix: 'si' | 'volumeSi' | 'areaSi';
 	kind?: 'big';
 }
 
@@ -42,6 +42,7 @@ export interface ConversionFamily {
 
 export const enum ConversionFamilyIndex {
 	Angle,
+	Area,
 	Data,
 	Force,
 	Length,

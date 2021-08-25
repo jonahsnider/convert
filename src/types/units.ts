@@ -17,6 +17,7 @@ type IdToFamily = {
 type GetAliases<X extends ConversionFamilyIndex> = IdToFamily[X];
 
 export type Angle = GetAliases<ConversionFamilyIndex.Angle>;
+export type Area = GetAliases<ConversionFamilyIndex.Area>;
 export type Data = GetAliases<ConversionFamilyIndex.Data>;
 export type Force = GetAliases<ConversionFamilyIndex.Force>;
 export type Length = GetAliases<ConversionFamilyIndex.Length>;
@@ -26,4 +27,4 @@ export type Temperature = GetAliases<ConversionFamilyIndex.Temperature>;
 export type Time = GetAliases<ConversionFamilyIndex.Time>;
 export type Volume = GetAliases<ConversionFamilyIndex.Volume>;
 
-export type Unit = Angle | Data | Force | Length | Mass | Pressure | Temperature | Time | Volume;
+export type Unit = Angle | Area | Data | Force | Length | Mass | Pressure | Temperature | Time | Volume;

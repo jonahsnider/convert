@@ -24,7 +24,8 @@ export function serialize({
 		optimizeUnitGroups(prefixUnits.si),
 		optimizeUnitGroups(prefixUnits.binary),
 		optimizeUnitGroups(prefixUnits.si.filter(unit => unit.kind === 'big')),
-		optimizeUnitGroups(prefixUnits.volumeSi)
+		optimizeUnitGroups(prefixUnits.volumeSi),
+		optimizeUnitGroups(prefixUnits.areaSi)
 	];
 
 	return [

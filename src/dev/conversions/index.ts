@@ -1,4 +1,5 @@
 export * as angle from './angle.js';
+export * as area from './area.js';
 export * as data from './data.js';
 export * as force from './force.js';
 export * as length from './length.js';
