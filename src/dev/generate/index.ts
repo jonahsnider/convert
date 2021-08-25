@@ -9,7 +9,6 @@ import {applyPrefixes} from './si-prefix.js';
 
 const conversions: Generated.Conversions = {};
 const allPrefixed: Generated.Conversions = {};
-const macros: Generated.PrefixMacro[] = [];
 
 for (const conversionFamily of Object.values(conversionFamilies)) {
 	const optimized = optimize(conversionFamily);
@@ -17,10 +16,9 @@ for (const conversionFamily of Object.values(conversionFamilies)) {
 
 	Object.assign(conversions, optimized.conversions);
 	Object.assign(allPrefixed, prefixed);
-	macros.push(...optimized.macros);
 }
 
-const generatedScript = serialize({conversions, macros, best: best(Object.values(conversionFamilies)), prefixed: allPrefixed});
+const generatedScript = serialize({conversions, best: best(Object.values(conversionFamilies)), prefixed: allPrefixed});
 
 fs.writeFileSync(path.join(__dirname, '..', '..', '..', 'src', 'generated', 'generated.ts'), generatedScript);
 fs.writeFileSync(path.join(__dirname, '..', '..', '..', 'tsc_output', 'generated', 'generated.ts'), generatedScript);
