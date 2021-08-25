@@ -29,9 +29,9 @@ export const enum PrefixMacroOptions {
 	BigSi
 }
 
-// The same indexes as PrefixMacroOptions
-export type PrefixMacros = [si: UnitGroup[], binary: UnitGroup[], bigSi: UnitGroup[], volumeSi: UnitGroup[]];
+export type PrefixMacros = [si: UnitGroup[], binary: UnitGroup[], bigSi: UnitGroup[], volumeSi: UnitGroup[], areaSi: UnitGroup[]];
 
+// The same indexes as PrefixMacroOptions
 export type PrefixMacro = [names: string[], symbols: string[], ratio: number, options: PrefixMacroOptions];
 
 export const enum PrefixMacroIndex {
