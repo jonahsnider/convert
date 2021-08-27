@@ -1,3 +1,4 @@
+import {expandMacro, Macros} from '../generate/macros';
 import {BestConversions, ConversionFamilyIndex, ConversionGroup} from '../types/common';
 
 export const id = ConversionFamilyIndex.Volume;
@@ -10,14 +11,14 @@ export const conversions: ConversionGroup = [
 		symbols: ['m³', 'm3'],
 		ratio: 1
 	},
-	{names: ['meter', 'meters'], symbols: ['m3', 'm³'], prefix: 'volumeSi', ratio: 1},
+	...expandMacro(Macros.volumeSi, {names: ['meter', 'meters'], symbols: ['m3', 'm³'], ratio: 1}),
 
 	{
 		names: ['liter', 'liters', 'litre', 'litres'],
 		symbols: ['l', 'L'],
 		ratio: 1e-3
 	},
-	{names: ['liter', 'liters', 'litre', 'litres'], symbols: ['l', 'L'], prefix: 'si', ratio: 1e-3},
+	...expandMacro(Macros.si, {names: ['liter', 'liters', 'litre', 'litres'], symbols: ['l', 'L'], ratio: 1e-3}),
 
 	// https://en.wikipedia.org/wiki/Cubic_mile
 	{names: ['cubic mile', 'cubic miles'], symbols: ['cu mi', 'mi3', 'mi³'], ratio: 4.2e3},

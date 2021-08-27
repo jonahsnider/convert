@@ -4,6 +4,7 @@ interface BaseConversion {
 }
 
 export interface OnlySymbolConversion extends BaseConversion {
+	names?: undefined;
 	symbols: string[];
 }
 
@@ -31,7 +32,7 @@ interface SiPrefixMacro extends BasePrefixMacro {
 
 export type PrefixMacro = SiPrefixMacro | BinaryPrefixMacro;
 
-export type ConversionGroup = Array<Conversion | PrefixMacro>;
+export type ConversionGroup = Array<Conversion>;
 export type BestConversions = string[];
 
 export interface ConversionFamily {

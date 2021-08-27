@@ -1,3 +1,4 @@
+import {expandMacro, Macros} from '../generate/macros';
 import {BestConversions, ConversionFamilyIndex, ConversionGroup} from '../types/common';
 
 export const id = ConversionFamilyIndex.Mass;
@@ -8,10 +9,10 @@ const poundInGrams = 4.5359237e2;
 
 export const conversions: ConversionGroup = [
 	{names: ['gram', 'grams'], symbols: ['g'], ratio: 1},
-	{names: ['gram', 'grams'], symbols: ['g'], prefix: 'si', ratio: 1},
+	...expandMacro(Macros.si, {names: ['gram', 'grams'], symbols: ['g'], ratio: 1}),
 
 	{names: ['tonne', 'tonnes', 'metric ton', 'metric tons'], symbols: ['t'], ratio: 1e6},
-	{names: ['gram', 'grams'], symbols: ['g'], prefix: 'si', ratio: 1},
+	...expandMacro(Macros.si, {names: ['gram', 'grams'], symbols: ['g'], ratio: 1}),
 
 	{names: ['pound', 'pounds'], symbols: ['lb'], ratio: poundInGrams},
 	{names: ['stone', 'stones'], symbols: ['st'], ratio: poundInGrams * 14},

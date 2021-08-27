@@ -1,3 +1,4 @@
+import {expandMacro, Macros} from '../generate/macros';
 import {BestConversions, ConversionFamilyIndex, ConversionGroup} from '../types/common';
 
 export const id = ConversionFamilyIndex.Time;
@@ -6,7 +7,7 @@ export const best: BestConversions = ['ns', 'μs', 'ms', 's', 'min', 'h', 'd', '
 
 export const conversions: ConversionGroup = [
 	{names: ['second', 'seconds'], symbols: ['s'], ratio: 1},
-	{names: ['second', 'seconds'], symbols: ['s'], prefix: 'si', ratio: 1},
+	...expandMacro(Macros.si, {names: ['second', 'seconds'], symbols: ['s'], ratio: 1}),
 
 	{names: ['minute', 'minutes'], symbols: ['min'], ratio: 60},
 	{names: ['hour', 'hours'], symbols: ['h'], ratio: 60 * 60},

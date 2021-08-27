@@ -1,3 +1,5 @@
+import {Macros} from '../generate/macros';
+import {expandMacro} from '../generate/macros/expand';
 import {BestConversions, ConversionFamilyIndex, ConversionGroup} from '../types/common';
 
 export const id = ConversionFamilyIndex.Area;
@@ -8,7 +10,7 @@ export const conversions: ConversionGroup = [
 	// https://en.wikipedia.org/wiki/Category:Units_of_area
 	// https://en.wikipedia.org/wiki/Square_metre
 	{names: ['square meter', 'square meters', 'square metre', 'square metres'], symbols: ['m²', 'm2'], ratio: 1},
-	{names: ['meter', 'metre', 'meters', 'metres'], symbols: ['m²', 'm2'], prefix: 'areaSi', ratio: 1},
+	...expandMacro(Macros.areaSi, {names: ['meter', 'metre', 'meters', 'metres'], symbols: ['m²', 'm2'], ratio: 1}),
 
 	// https://en.wikipedia.org/wiki/Conversion_of_units#Area
 	{names: ['acre', 'acres'], symbols: ['ac'], ratio: 4046.8564224},

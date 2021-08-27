@@ -7,15 +7,13 @@ export function optimize(conversionFamily: ConversionFamily): {conversions: Gene
 	const conversionQueue: Conversion[] = [];
 
 	for (const conversion of conversionFamily.conversions) {
-		if (!('prefix' in conversion)) {
-			conversionQueue.push(conversion);
-		}
+		conversionQueue.push(conversion);
 	}
 
 	for (const conversion of conversionQueue) {
 		const names: string[] = [];
 
-		if ('names' in conversion) {
+		if (conversion.names) {
 			names.push(...conversion.names);
 		}
 
