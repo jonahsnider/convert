@@ -1,8 +1,8 @@
 import {Macros} from '../generate/macros';
 import {expandMacro} from '../generate/macros/expand';
-import {BestConversions, ConversionFamilyIndex, ConversionGroup} from '../types/common';
+import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
 
-export const id = ConversionFamilyIndex.Area;
+export const id = ConversionFamilyId.Area;
 
 export const best: BestConversions = ['mm2', 'cm2', 'm2', 'km2'];
 

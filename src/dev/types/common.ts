@@ -38,10 +38,10 @@ export type BestConversions = string[];
 export interface ConversionFamily {
 	conversions: ConversionGroup;
 	best: BestConversions;
-	id: ConversionFamilyIndex;
+	id: ConversionFamilyId;
 }
 
-export const enum ConversionFamilyIndex {
+export const enum ConversionFamilyId {
 	Angle,
 	Area,
 	Data,

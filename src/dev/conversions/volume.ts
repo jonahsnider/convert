@@ -1,7 +1,7 @@
 import {expandMacro, Macros} from '../generate/macros';
-import {BestConversions, ConversionFamilyIndex, ConversionGroup} from '../types/common';
+import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
 
-export const id = ConversionFamilyIndex.Volume;
+export const id = ConversionFamilyId.Volume;
 
 export const best: BestConversions = ['mL', 'L'];
 

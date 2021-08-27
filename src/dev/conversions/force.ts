@@ -1,6 +1,6 @@
-import {BestConversions, ConversionFamilyIndex, ConversionGroup} from '../types/common';
+import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
 
-export const id = ConversionFamilyIndex.Force;
+export const id = ConversionFamilyId.Force;
 
 export const best: BestConversions = ['N'];
 

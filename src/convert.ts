@@ -1,5 +1,5 @@
 import {assert, isType as assertType} from './assert';
-import {ConversionFamilyIndex} from './dev/types/common';
+import {ConversionFamilyId} from './dev/types/common';
 import * as Generated from './dev/types/generated';
 import {bestUnits, conversions} from './generated/generated';
 import {Converter, SimplifyQuantity} from './types/common';
@@ -173,9 +173,9 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 				if (
 					// time -> meters
-					(fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyIndex.Time && to === meters) ||
+					(fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && to === meters) ||
 					// meters -> time
-					(toUnit![Generated.ConversionIndex.Family] === ConversionFamilyIndex.Time && from === meters)
+					(toUnit![Generated.ConversionIndex.Family] === ConversionFamilyId.Time && from === meters)
 				) {
 					throw new RangeError(
 						[
