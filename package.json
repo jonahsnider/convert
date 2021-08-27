@@ -103,6 +103,7 @@
 		"typescript": "4.3.5"
 	},
 	"packageManager": "yarn@3.0.0",
+	"runkitExampleFilename": "docs/runkit.js",
 	"size-limit": [
 		{
 			"brotli": true,
