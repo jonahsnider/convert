@@ -3975,7 +3975,7 @@ __metadata:
     rollup: 2.56.3
     rollup-plugin-dts: 3.0.2
     rollup-plugin-terser: 7.0.2
-    semantic-release: 17.4.6
+    semantic-release: 17.4.7
     size-limit: 5.0.3
     ts-node: 10.2.1
     tslib: 2.3.1
@@ -9866,9 +9866,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:17.4.6":
-  version: 17.4.6
-  resolution: "semantic-release@npm:17.4.6"
+"semantic-release@npm:17.4.7":
+  version: 17.4.7
+  resolution: "semantic-release@npm:17.4.7"
   dependencies:
     "@semantic-release/commit-analyzer": ^8.0.0
     "@semantic-release/error": ^2.2.0
@@ -9900,7 +9900,7 @@ fsevents@~2.3.2:
     yargs: ^16.2.0
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: d99e5733fb41f748a8a4d637154fb76f6cf813c68b1d4f258420fbad59cc10ab290ddf252fe150444d3543b45c879f85a4fdaca0f6dfe07b349dbc5df7580d30
+  checksum: 9a6c222eb4298e85f8be27d486088f1e9358e1174f36225312701e01127557a722adc1a6dc84b66fa04d27a1470dc15ed48951408684d0ff3559f054f0452ba3
   languageName: node
   linkType: hard
 
