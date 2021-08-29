@@ -9,7 +9,8 @@ export const conversions: ConversionGroup = [
 	{names: ['second', 'seconds'], symbols: ['s'], ratio: 1},
 	...expandMacro(Macros.si, {names: ['second', 'seconds'], symbols: ['s'], ratio: 1}),
 
-	{names: ['minute', 'minutes'], symbols: ['min'], ratio: 60},
+	// `m` is an unofficial symbol as it conflicts with meters which are also an SI unit
+	{names: ['minute', 'minutes'], symbols: ['m', 'min'], ratio: 60},
 	{names: ['hour', 'hours'], symbols: ['h'], ratio: 60 * 60},
 	{names: ['milliday', 'millidays'], symbols: ['md'], ratio: (60 * 60 * 24) / 1e3},
 	{names: ['day', 'days'], symbols: ['d'], ratio: 60 * 60 * 24},

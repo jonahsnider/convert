@@ -219,7 +219,5 @@ $RECYCLE.BIN/
 # TypeScript compiler
 tsc_output
 
-src/generated
-
 # TypeDoc
 docs_out

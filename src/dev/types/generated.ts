@@ -1,16 +1,19 @@
-export type Best = Array<[value: number, symbol: string]>;
-
+/** Indexed by `ConversionFamilyId`. */
+export type Best = Array<Array<[value: number, sym: string]>>;
 export const enum BestIndex {
 	Value,
-	Symbol
+	Sym
 }
 
 export type Conversion = [family: number, ratio: number, difference: number];
-
 export const enum ConversionIndex {
 	Family,
 	Ratio,
 	Difference
 }
 
-export type Conversions = Record<string, Conversion>;
+export type ConversionFamily = Record<string, Conversion>;
+/** Indexed by `ConversionFamilyId`. */
+export type AllFamilies = ConversionFamily[];
+
+export type UnitToFamily = Record<string, ConversionFamily | null>;

@@ -1,9 +1,8 @@
 import {assert, isType as assertType} from './assert';
-import {ConversionFamilyId} from './dev/types/common';
 import * as Generated from './dev/types/generated';
-import {bestUnits, conversions} from './generated/generated';
+import {bestUnits, unitToFamily} from './generated/generated';
 import {Converter, SimplifyQuantity} from './types/common';
-import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume, Area} from './types/units';
+import {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
 
 /**
  * Convert a given angle into another unit.
@@ -126,9 +125,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Area): Con
  * @returns An object you can use to convert the provided quantity
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Converter<Q, Unit> {
-	const fromUnit = (conversions as unknown as Generated.Conversions)[from] as Generated.Conversion | undefined;
-
-	if (!fromUnit) {
+	if (!(from in unitToFamily)) {
 		if (__DEV__) {
 			throw new RangeError(`${from} is not a valid unit`);
 		}
@@ -136,24 +133,35 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new RangeError();
 	}
 
+	let family = (unitToFamily as unknown as Generated.UnitToFamily)[from];
+
 	const usingBigInts = typeof quantity === 'bigint';
 
 	return {
 		to: (to: typeof from | 'best') => {
 			if (to === 'best') {
-				const family = bestUnits[fromUnit[Generated.ConversionIndex.Family]];
+				if (!family) {
+					if (__DEV__) {
+						throw new RangeError(`${from} is an ambiguous unit`);
+					}
 
-				const baseUnit = family[0][Generated.BestIndex.Symbol];
+					throw new RangeError();
+				}
+
+				const fromUnit = family[from];
+				const bestFamily = bestUnits[fromUnit[Generated.ConversionIndex.Family]];
+
+				const baseUnit = bestFamily[0][Generated.BestIndex.Sym];
 
 				quantity = convert(quantity, from as any).to(baseUnit as any) as unknown as Q;
 
-				let bestUnit: typeof family[number][Generated.BestIndex.Symbol] = baseUnit;
+				let bestUnit: typeof bestFamily[number][Generated.BestIndex.Sym] = baseUnit;
 
-				for (let i = 0; i < family.length; i++) {
-					const best = family[i];
+				for (let i = 0; i < bestFamily.length; i++) {
+					const best = bestFamily[i];
 
 					if (quantity >= best[Generated.BestIndex.Value]) {
-						bestUnit = best[Generated.BestIndex.Symbol];
+						bestUnit = best[Generated.BestIndex.Sym];
 					}
 				}
 
@@ -162,33 +170,26 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				return {quantity, unit: bestUnit, toString: () => quantity + bestUnit} as any;
 			}
 
-			const toUnit = (conversions as unknown as Generated.Conversions)[to] as Generated.Conversion | undefined;
-
-			if (__DEV__ && !toUnit) {
+			if (__DEV__ && !(to in unitToFamily)) {
 				throw new RangeError(`${to} is not a valid unit`);
 			}
 
-			if (__DEV__) {
-				const meters = 'm';
-
-				if (
-					// time -> meters
-					(fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && to === meters) ||
-					// meters -> time
-					(toUnit![Generated.ConversionIndex.Family] === ConversionFamilyId.Time && from === meters)
-				) {
-					throw new RangeError(
-						[
-							`No conversion could be found from ${from} to ${to}.`,
-							'Also, are you trying to convert quantities of time?',
-							'Because "m" is treated as meters, not minutes.',
-							'You probably want to use the "min" unit instead.'
-						].join(' ')
-					);
-				}
+			if (!family) {
+				family = (unitToFamily as unknown as Generated.UnitToFamily)[to];
 			}
 
-			// @ts-expect-error This throws if toUnit is undefined
+			if (!family) {
+				if (__DEV__) {
+					throw new RangeError(`${from} is an ambiguous unit`);
+				}
+
+				throw new RangeError();
+			}
+
+			const fromUnit = family[from] as Generated.Conversion | undefined;
+			const toUnit = family[to] as Generated.Conversion | undefined;
+
+			// @ts-expect-error This throws if fromUnit or toUnit is undefined
 			if (fromUnit[Generated.ConversionIndex.Family] !== toUnit[Generated.ConversionIndex.Family]) {
 				if (__DEV__) {
 					throw new RangeError(`No conversion could be found from ${from} to ${to}`);
@@ -197,6 +198,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				throw new RangeError();
 			}
 
+			assert(fromUnit);
 			assert(toUnit);
 
 			const combinedRatio = fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio];

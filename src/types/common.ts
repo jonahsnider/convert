@@ -4,7 +4,7 @@ import {Unit} from './units';
 
 export type SimplifyQuantity<Q> = Q extends number ? number : Q extends bigint ? bigint : never;
 
-export type BestUnits = typeof bestUnits[number][number][BestIndex.Symbol];
+export type BestUnits = typeof bestUnits[number][number][BestIndex.Sym];
 
 /**
  * The return value from converting a unit to `'best'`.

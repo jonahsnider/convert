@@ -50,7 +50,7 @@ test('development errors', t => {
 		() =>
 			convert(123, 'ms')
 				// @ts-expect-error
-				.to('m'),
+				.to('km'),
 		{instanceOf: RangeError, message: /not minutes.+min/i}
 	);
 
@@ -67,3 +67,6 @@ test('development errors', t => {
 
 test(macros.convert, [1, 'second'], [1, 'second']);
 test(macros.convert, [2n, 'hours'], [120n, 'minute']);
+
+convert(100, 'm').to('s');
+convert(100, 's').to('m');

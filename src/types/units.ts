@@ -1,30 +1,39 @@
 import {ConversionFamilyId} from '../dev/types/common';
-import {ConversionIndex} from '../dev/types/generated';
-import {conversions} from '../generated/generated';
+import {allFamilies} from '../generated/generated';
 
-type Conversions = Omit<typeof conversions, '__proto__'>;
+type AllFamilies = typeof allFamilies;
 
-export type Units = Conversions;
+type AngleFamily = AllFamilies[ConversionFamilyId.Angle];
+type AreaFamily = AllFamilies[ConversionFamilyId.Area];
+type DataFamily = AllFamilies[ConversionFamilyId.Data];
+type ForceFamily = AllFamilies[ConversionFamilyId.Force];
+type LengthFamily = AllFamilies[ConversionFamilyId.Length];
+type MassFamily = AllFamilies[ConversionFamilyId.Mass];
+type PressureFamily = AllFamilies[ConversionFamilyId.Pressure];
+type TemperatureFamily = AllFamilies[ConversionFamilyId.Temperature];
+type TimeFamily = AllFamilies[ConversionFamilyId.Time];
+type VolumeFamily = AllFamilies[ConversionFamilyId.Volume];
 
-type AllValues = {
-	[P in keyof Units]: {key: P; value: Units[P][ConversionIndex.Family]};
-}[keyof Units];
+export type Angle = keyof AngleFamily;
+export type Area = keyof AreaFamily;
+export type Data = keyof DataFamily;
+export type Force = keyof ForceFamily;
+export type Length = keyof LengthFamily;
+export type Mass = keyof MassFamily;
+export type Pressure = keyof PressureFamily;
+export type Temperature = keyof TemperatureFamily;
+export type Time = keyof TimeFamily;
+export type Volume = keyof VolumeFamily;
 
-type IdToFamily = {
-	[P in AllValues['value']]: Extract<AllValues, {value: P}>['key'];
-};
+type AnyFamily = AngleFamily &
+	AreaFamily &
+	DataFamily &
+	ForceFamily &
+	LengthFamily &
+	MassFamily &
+	PressureFamily &
+	TemperatureFamily &
+	TimeFamily &
+	VolumeFamily;
 
-type GetAliases<X extends ConversionFamilyId> = IdToFamily[X];
-
-export type Angle = GetAliases<ConversionFamilyId.Angle>;
-export type Area = GetAliases<ConversionFamilyId.Area>;
-export type Data = GetAliases<ConversionFamilyId.Data>;
-export type Force = GetAliases<ConversionFamilyId.Force>;
-export type Length = GetAliases<ConversionFamilyId.Length>;
-export type Mass = GetAliases<ConversionFamilyId.Mass>;
-export type Pressure = GetAliases<ConversionFamilyId.Pressure>;
-export type Temperature = GetAliases<ConversionFamilyId.Temperature>;
-export type Time = GetAliases<ConversionFamilyId.Time>;
-export type Volume = GetAliases<ConversionFamilyId.Volume>;
-
-export type Unit = Angle | Area | Data | Force | Length | Mass | Pressure | Temperature | Time | Volume;
+export type Unit = keyof AnyFamily;

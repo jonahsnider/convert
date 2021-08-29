@@ -1,9 +1,9 @@
 import {combineIterables} from '@jonahsnider/util';
-import {Conversion, ConversionFamily} from '../types/common';
+import {ConversionFamily} from '../types/common';
 import * as Generated from '../types/generated';
 
-export function best(conversionFamilies: ConversionFamily[]): Generated.Best[] {
-	const result: Generated.Best[] = [];
+export function best(conversionFamilies: ConversionFamily[]): Generated.Best {
+	const result: Generated.Best = [];
 
 	for (const conversionFamily of conversionFamilies) {
 		const lookup: Record<string, number> = {};

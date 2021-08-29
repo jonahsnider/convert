@@ -53,3 +53,5 @@ export const enum ConversionFamilyId {
 	Time,
 	Volume
 }
+
+export type UnitToFamily = Record<string, ConversionFamilyId | null>;
