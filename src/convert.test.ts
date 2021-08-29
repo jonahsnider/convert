@@ -74,6 +74,9 @@ test('development errors', t => {
 test(macros.convert, [1, 'second'], [1, 'second']);
 test(macros.convert, [2n, 'hours'], [120n, 'minute']);
 
+// TODO: Failing from ambiguous units
+test.failing(macros.convert, [1, 'm'], [1, 'm']);
+
 convert(1, 'm').to('second');
 convert(1, 'second').to('m');
 convert(1, 'm').to('kilometer');
