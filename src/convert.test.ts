@@ -68,5 +68,18 @@ test('development errors', t => {
 test(macros.convert, [1, 'second'], [1, 'second']);
 test(macros.convert, [2n, 'hours'], [120n, 'minute']);
 
-convert(100, 'm').to('s');
-convert(100, 's').to('m');
+convert(1, 'm').to('second');
+convert(1, 'second').to('m');
+convert(1, 'm').to('kilometer');
+convert(1, 'kilometer').to('m');
+
+convert(1, 'a').to('square kilometer');
+convert(1, 'square kilometer').to('a');
+convert(1, 'a').to('minute');
+convert(1, 'minute').to('a');
+
+convert(1, 'c').to('liter');
+convert(1, 'liter').to('c');
+convert(1, 'c').to('year');
+convert(1, 'year').to('c');
+

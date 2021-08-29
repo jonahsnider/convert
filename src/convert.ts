@@ -5,6 +5,39 @@ import {Converter, SimplifyQuantity} from './types/common';
 import {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
 
 /**
+ * Convert a given volume or duration of time into another unit.
+ *
+ * @param volumeOrTime - The volume or duration of time you want to convert
+ * @param from - The unit of volume or time you are converting from
+ *
+ * @throws `RangeError` If the `from` parameter is not a recognized unit
+ *
+ * @returns An object you can use to convert the provided quantity
+ */
+export function convert<Q extends number | bigint>(volumeOrTime: Q, from: 'c'): Converter<Q, Volume | Time>;
+/**
+ * Convert a given area or duration of time into another unit.
+ *
+ * @param areaOrTime - The area or duration of time you want to convert
+ * @param from - The unit of area or time you are converting from
+ *
+ * @throws `RangeError` If the `from` parameter is not a recognized unit
+ *
+ * @returns An object you can use to convert the provided quantity
+ */
+export function convert<Q extends number | bigint>(areaOrTime: Q, from: 'a'): Converter<Q, Area | Time>;
+/**
+ * Convert a given length or duration of time into another unit.
+ *
+ * @param lengthOrTime - The length or duration of time you want to convert
+ * @param from - The unit of length or time you are converting from
+ *
+ * @throws `RangeError` If the `from` parameter is not a recognized unit
+ *
+ * @returns An object you can use to convert the provided quantity
+ */
+export function convert<Q extends number | bigint>(lengthOrTime: Q, from: 'm'): Converter<Q, Length | Time>;
+/**
  * Convert a given angle into another unit.
  *
  * @param angle - The angle you want to convert
