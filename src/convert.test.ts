@@ -11,7 +11,12 @@ test('exports', t => {
 test('production errors', t => {
 	__DEV__ = false;
 
-	t.throws(() => convert(123, invalidUnit as any), {instanceOf: RangeError, message: ''});
+	t.throws(
+		() => convert(123, invalidUnit as any),
+		{instanceOf: RangeError, message: `${invalidUnit} is not a valid unit`},
+		'early error if from unit is invalid'
+	);
+
 	t.throws(
 		() =>
 			convert(123, 'ms')
@@ -25,7 +30,8 @@ test('production errors', t => {
 			convert(1000, 'ms')
 				// @ts-expect-error
 				.to('meters'),
-		{instanceOf: RangeError, message: ''}
+		{instanceOf: TypeError},
+		'error if units are not in the same family'
 	);
 
 	t.throws(() => convert(1000n, 'ms').to('seconds'), {
@@ -48,10 +54,10 @@ test('development errors', t => {
 
 	t.throws(
 		() =>
-			convert(123, 'ms')
+			convert(1000, 'meters')
 				// @ts-expect-error
-				.to('km'),
-		{instanceOf: RangeError, message: /not minutes.+min/i}
+				.to('ms'),
+		{instanceOf: RangeError, message: /ms belongs to a different unit family/i}
 	);
 
 	t.throws(
@@ -59,7 +65,7 @@ test('development errors', t => {
 			convert(1000, 'ms')
 				// @ts-expect-error
 				.to('meters'),
-		{instanceOf: RangeError, message: /.+/}
+		{instanceOf: RangeError, message: /meters belongs to a different unit family/i}
 	);
 
 	t.throws(() => convert(1000n, 'ms').to('seconds'), {instanceOf: TypeError, message: /conversion.+integer/i});
@@ -82,4 +88,3 @@ convert(1, 'c').to('liter');
 convert(1, 'liter').to('c');
 convert(1, 'c').to('year');
 convert(1, 'year').to('c');
-

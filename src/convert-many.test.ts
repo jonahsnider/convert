@@ -8,7 +8,7 @@ const invalidUnit = 'not a valid unit';
 test('production errors', t => {
 	__DEV__ = false;
 
-	t.throws(() => convertMany(invalidValue), {instanceOf: RangeError, message: ''});
+	t.throws(() => convertMany(invalidValue), {instanceOf: RangeError, message: /value did not match expression \/.+\//i});
 	t.throws(
 		() =>
 			convertMany('1000ms')

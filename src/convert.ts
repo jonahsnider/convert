@@ -159,11 +159,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Area): Con
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Converter<Q, Unit> {
 	if (!(from in unitToFamily)) {
-		if (__DEV__) {
-			throw new RangeError(`${from} is not a valid unit`);
-		}
-
-		throw new RangeError();
+		throw new RangeError(`${from} is not a valid unit`);
 	}
 
 	let family = (unitToFamily as unknown as Generated.UnitToFamily)[from];
@@ -174,11 +170,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		to: (to: typeof from | 'best') => {
 			if (to === 'best') {
 				if (!family) {
-					if (__DEV__) {
-						throw new RangeError(`${from} is an ambiguous unit`);
-					}
-
-					throw new RangeError();
+					throw new RangeError(`${from} is an ambiguous unit`);
 				}
 
 				const fromUnit = family[from];
@@ -212,23 +204,25 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 			}
 
 			if (!family) {
-				if (__DEV__) {
-					throw new RangeError(`${from} is an ambiguous unit`);
-				}
-
-				throw new RangeError();
+				throw new RangeError(`${from} is an ambiguous unit`);
 			}
 
 			const fromUnit = family[from] as Generated.Conversion | undefined;
 			const toUnit = family[to] as Generated.Conversion | undefined;
 
-			// @ts-expect-error This throws if fromUnit or toUnit is undefined
-			if (fromUnit[Generated.ConversionIndex.Family] !== toUnit[Generated.ConversionIndex.Family]) {
-				if (__DEV__) {
-					throw new RangeError(`No conversion could be found from ${from} to ${to}`);
+			if (__DEV__) {
+				if (!(from in family)) {
+					throw new RangeError(`${from} cannot be converted with ${to} because ${from} belongs to a different unit family`);
 				}
 
-				throw new RangeError();
+				if (!(to in family)) {
+					throw new RangeError(`${from} cannot be converted with ${to} because ${to} belongs to a different unit family`);
+				}
+			}
+
+			// @ts-expect-error This throws if fromUnit or toUnit is undefined
+			if (fromUnit[Generated.ConversionIndex.Family] !== toUnit[Generated.ConversionIndex.Family]) {
+				throw new RangeError(`No conversion could be found from ${from} to ${to}`);
 			}
 
 			assert(fromUnit);

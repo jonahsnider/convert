@@ -29,11 +29,7 @@ export function convertMany(value: string): Converter<number, Unit> {
 	let search = splitExpression.exec(value);
 
 	if (!search) {
-		if (__DEV__) {
-			throw new RangeError(`value did not match expression ${splitExpression}`);
-		}
-
-		throw new RangeError();
+		throw new RangeError(`value did not match expression ${splitExpression}`);
 	}
 
 	return {
