@@ -18,7 +18,8 @@ export const conversions: ConversionGroup = [
 	// https://en.wikipedia.org/wiki/Hectare#Are
 	{names: ['centiare', 'centiares'], symbols: ['ca'], ratio: 1},
 	{names: ['deciare', 'deciares'], symbols: ['da'], ratio: 1e1},
-	{names: ['are', 'ares'], symbols: ['a'], ratio: 1e2},
+	// Symbol `a` is excluded to avoid conflict
+	{names: ['are', 'ares'], ratio: 1e2},
 	{names: ['decare', 'decares'], symbols: ['daa'], ratio: 1e3},
 	{names: ['hectare', 'hectares'], symbols: ['ha'], ratio: 1e4},
 

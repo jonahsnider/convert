@@ -1,8 +1,8 @@
-export type Best = Array<[value: number, symbol: string]>;
+export type Best = Array<Array<[value: number, sym: string]>>;
 
 export const enum BestIndex {
 	Value,
-	Symbol
+	Sym
 }
 
 export type Conversion = [family: number, ratio: number, difference: number];

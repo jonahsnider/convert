@@ -3,7 +3,7 @@ import {ConversionFamilyId} from './dev/types/common';
 import * as Generated from './dev/types/generated';
 import {bestUnits, conversions} from './generated/generated';
 import {Converter, SimplifyQuantity} from './types/common';
-import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume, Area} from './types/units';
+import {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
 
 /**
  * Convert a given angle into another unit.
@@ -16,6 +16,17 @@ import {Angle, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Vol
  * @returns An object you can use to convert the provided quantity
  */
 export function convert<Q extends number | bigint>(angle: Q, from: Angle): Converter<Q, Angle>;
+/**
+ * Convert a given area into another unit.
+ *
+ * @param quantity - The area you want to convert
+ * @param from - The unit of area you are converting from
+ *
+ * @throws `RangeError` If the `from` parameter is not a recognized unit
+ *
+ * @returns An object you can use to convert the provided quantity
+ */
+export function convert<Q extends number | bigint>(quantity: Q, from: Area): Converter<Q, Area>;
 /**
  * Convert a given quantity of data into another unit.
  *
@@ -105,17 +116,6 @@ export function convert<Q extends number | bigint>(duration: Q, from: Time): Con
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Volume): Converter<Q, Volume>;
 /**
- * Convert a given area into another unit.
- *
- * @param quantity - The area you want to convert
- * @param from - The unit of area you are converting from
- *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
- *
- * @returns An object you can use to convert the provided quantity
- */
-export function convert<Q extends number | bigint>(quantity: Q, from: Area): Converter<Q, Area>;
-/**
  * Convert a given quantity of a unit into another unit.
  *
  * @param quantity - The quantity of the `from` unit you want to convert
@@ -143,17 +143,17 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 			if (to === 'best') {
 				const family = bestUnits[fromUnit[Generated.ConversionIndex.Family]];
 
-				const baseUnit = family[0][Generated.BestIndex.Symbol];
+				const baseUnit = family[0][Generated.BestIndex.Sym];
 
 				quantity = convert(quantity, from as any).to(baseUnit as any) as unknown as Q;
 
-				let bestUnit: typeof family[number][Generated.BestIndex.Symbol] = baseUnit;
+				let bestUnit: typeof family[number][Generated.BestIndex.Sym] = baseUnit;
 
 				for (let i = 0; i < family.length; i++) {
 					const best = family[i];
 
 					if (quantity >= best[Generated.BestIndex.Value]) {
-						bestUnit = best[Generated.BestIndex.Symbol];
+						bestUnit = best[Generated.BestIndex.Sym];
 					}
 				}
 

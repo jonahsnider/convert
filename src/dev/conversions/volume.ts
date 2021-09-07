@@ -33,29 +33,27 @@ export const conversions: ConversionGroup = [
 	{names: ['cubic inch', 'cubic inches'], symbols: ['cu in', 'in3', 'in³'], ratio: 0.000016387064},
 	{names: ['measurement ton', 'measurement tons'], symbols: ['MTON'], ratio: 1.133},
 	{names: ['imperial barrel', 'imperial barrels'], symbols: ['imp bbl'], ratio: 0.16},
-	{names: ['kilderkin', 'kilderkins'], ratio: 0.08318},
-	{names: ['firkin', 'firkins'], ratio: 0.041},
 	// https://en.wikipedia.org/wiki/Bushel#Imperial_bushel
 	{names: ['imperial bushel', 'imperial bushels'], symbols: ['imp bsh', 'imp bu'], ratio: 0.03636872},
 	{names: ['imperial peck', 'imperial pecks'], symbols: ['pk', 'imp pk'], ratio: 0.00909218},
-	{names: ['imperial quart', 'imperial quarts'], symbols: ['imp qt'], ratio: 0.0011365225},
 	{names: ['imperial gallon', 'imperial gallons'], symbols: ['imp gal'], ratio: 0.00454609},
+	{names: ['imperial quart', 'imperial quarts'], symbols: ['imp qt'], ratio: 0.0011365225},
 	{names: ['imperial pint', 'imperial pints'], symbols: ['imp pt'], ratio: 0.00056826125},
-	{names: ['gill', 'gills'], symbols: ['gi', 'imp gi'], ratio: 0.0001420653125},
 	{names: ['imperial fluid ounce', 'imperial fluid ounces'], symbols: ['imp fl oz'], ratio: 2.84130625e-5},
-	{names: ['US barrel', 'US barrels'], symbols: ['US bbl'], ratio: 0.164},
-	{names: ['barrel', 'barrels'], symbols: ['bbl', 'oilbbl'], ratio: 1 / 6.2898},
 
 	// https://en.wikipedia.org/wiki/United_States_customary_units#Fluid_volume
-	{names: ['teaspoon', 'teaspoons'], symbols: ['tsp'], ratio: 4.92892159375 / 1e6},
-	{names: ['tablespoon', 'tablespoons'], symbols: ['tbsp'], ratio: 14.78676478125 / 1e6},
-	{names: ['US fluid ounce', 'US fluid ounces'], symbols: ['US fl oz', 'US fl. oz.', 'US oz. fl.'], ratio: 29.5735295625e-6},
-	{names: ['US gill', 'US gills'], symbols: ['US gi'], ratio: 118.29411825 / 1e6},
-	{names: ['US cup', 'US cups'], symbols: ['c'], ratio: 236.5882365 / 1e6},
-	{names: ['US pint', 'US pints'], symbols: ['US pt'], ratio: 4.73176473e-4},
-	{names: ['US quart', 'US quarts'], symbols: ['US qt'], ratio: 9.46352946e-4},
-	{names: ['US gallon', 'US gallons'], symbols: ['US gal'], ratio: 1 / 264.1721},
-	{names: ['US beer barrel', 'US beer barrels'], symbols: ['US beer bbl'], ratio: 0.117},
+	{names: ['teaspoon', 'teaspoons', 'US teaspoon', 'US teaspoons'], symbols: ['tsp'], ratio: 4.92892159375 / 1e6},
+	{names: ['tablespoon', 'tablespoons', 'US tablespoon', 'US tablespoons'], symbols: ['tbsp'], ratio: 14.78676478125 / 1e6},
+	// https://en.wikipedia.org/wiki/Fluid_ounce
+	{names: ['US fluid ounce', 'US fluid ounces'], symbols: ['fl oz', 'fl. oz.', 'oz. fl.'], ratio: 29.5735295625e-6},
+	// https://en.wikipedia.org/wiki/Cup_(unit)
+	{names: ['cup', 'cups', 'US legal cup', 'US legal cups'], symbols: ['c'], ratio: 236.5882365 / 1e6},
+	// https://en.wikipedia.org/wiki/Pint
+	{names: ['pint', 'pints', 'US liquid pint', 'US liquid pints'], symbols: ['pt', 'p'], ratio: 4.73176473e-4},
+	// https://en.wikipedia.org/wiki/Quart
+	{names: ['quart', 'quarts', 'US liquid quart', 'US liquid quarts'], symbols: ['qt'], ratio: 9.46352946e-4},
+	// https://en.wikipedia.org/wiki/Gallon
+	{names: ['gallon', 'gallons', 'US liquid gallon', 'US liquid gallons'], symbols: ['gal'], ratio: 1 / 264.1721},
 
 	{names: ['US dry barrel', 'US dry barrels'], symbols: ['US dry bbl'], ratio: 0.12},
 	{names: ['US bushel', 'US bushels'], symbols: ['US bsh', 'US bu'], ratio: 3.52391e-2},

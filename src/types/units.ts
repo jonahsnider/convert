@@ -7,14 +7,14 @@ type Conversions = Omit<typeof conversions, '__proto__'>;
 export type Units = Conversions;
 
 type AllValues = {
-	[P in keyof Units]: {key: P; value: Units[P][ConversionIndex.Family]};
+	[Unit in keyof Units]: {unit: Unit; family: Units[Unit][ConversionIndex.Family]};
 }[keyof Units];
 
 type IdToFamily = {
-	[P in AllValues['value']]: Extract<AllValues, {value: P}>['key'];
+	[P in AllValues['family']]: Extract<AllValues, {family: P}>['unit'];
 };
 
-type GetAliases<X extends ConversionFamilyId> = IdToFamily[X];
+type GetAliases<T extends ConversionFamilyId> = IdToFamily[T];
 
 export type Angle = GetAliases<ConversionFamilyId.Angle>;
 export type Area = GetAliases<ConversionFamilyId.Area>;
@@ -27,4 +27,4 @@ export type Temperature = GetAliases<ConversionFamilyId.Temperature>;
 export type Time = GetAliases<ConversionFamilyId.Time>;
 export type Volume = GetAliases<ConversionFamilyId.Volume>;
 
-export type Unit = Angle | Area | Data | Force | Length | Mass | Pressure | Temperature | Time | Volume;
+export type Unit = GetAliases<ConversionFamilyId>;

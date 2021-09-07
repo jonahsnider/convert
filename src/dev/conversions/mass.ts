@@ -17,6 +17,6 @@ export const conversions: ConversionGroup = [
 	{names: ['pound', 'pounds'], symbols: ['lb'], ratio: poundInGrams},
 	{names: ['stone', 'stones'], symbols: ['st'], ratio: poundInGrams * 14},
 	{names: ['ounce', 'ounces'], symbols: ['oz', '℥'], ratio: poundInGrams / 16},
-	{names: ['short ton', 'short tons', 'us ton', 'us tons'], ratio: poundInGrams * 2000},
+	{names: ['short ton', 'short tons', 'US ton', 'US tons'], ratio: poundInGrams * 2000},
 	{names: ['long ton', 'long tons', 'imperial ton', 'imperial tons', 'displacement ton', 'displacement tons'], ratio: poundInGrams * 2240}
 ];

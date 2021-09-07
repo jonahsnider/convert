@@ -6,15 +6,13 @@ import {best} from './best.js';
 import {optimize} from './optimize.js';
 import {serialize} from './serialize.js';
 
-const conversions: Generated.Conversions = {};
+const conversionFamilyValues = Object.values(conversionFamilies);
 
-for (const conversionFamily of Object.values(conversionFamilies)) {
-	const optimized = optimize(conversionFamily);
+const optimized = optimize(conversionFamilyValues);
+const {conversions} = optimized;
+const bestUnits = best(conversionFamilyValues);
 
-	Object.assign(conversions, optimized.conversions);
-}
-
-const generatedScript = serialize({conversions, best: best(Object.values(conversionFamilies))});
+const generatedScript = serialize({conversions, best: bestUnits});
 
 fs.writeFileSync(path.join(__dirname, '..', '..', '..', 'src', 'generated', 'generated.ts'), generatedScript);
 fs.writeFileSync(path.join(__dirname, '..', '..', '..', 'tsc_output', 'generated', 'generated.ts'), generatedScript);

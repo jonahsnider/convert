@@ -1,28 +1,23 @@
-import {Conversion, ConversionFamily} from '../types/common';
+import {combineIterables, identical} from '@jonahsnider/util';
+import {ConversionFamily} from '../types/common';
 import * as Generated from '../types/generated';
 
-export function optimize(conversionFamily: ConversionFamily): {conversions: Generated.Conversions} {
+export function optimize(conversionFamilies: readonly ConversionFamily[]): {conversions: Generated.Conversions} {
 	const conversions: Generated.Conversions = {};
 
-	const conversionQueue: Conversion[] = [];
+	for (const conversionFamily of conversionFamilies) {
+		for (const conversion of conversionFamily.conversions) {
+			const names: Iterable<string> = combineIterables(conversion.names ?? [], conversion.symbols ?? []);
 
-	for (const conversion of conversionFamily.conversions) {
-		conversionQueue.push(conversion);
-	}
+			for (const name of names) {
+				const newConversion: Generated.Conversion = [conversionFamily.id, conversion.ratio, conversion.difference ?? 0];
 
-	for (const conversion of conversionQueue) {
-		const names: string[] = [];
+				if (name in conversions && !identical(conversions[name], newConversion)) {
+					throw new RangeError(`Conversion name conflict for ${name}`);
+				}
 
-		if (conversion.names) {
-			names.push(...conversion.names);
-		}
-
-		if (conversion.symbols) {
-			names.push(...conversion.symbols);
-		}
-
-		for (const name of names) {
-			conversions[name] = [conversionFamily.id, conversion.ratio, conversion.difference ?? 0];
+				conversions[name] = newConversion;
+			}
 		}
 	}
 
