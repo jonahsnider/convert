@@ -1,10 +1,11 @@
+import {ConversionFamilyId} from '../dev/types/common';
 import {BestIndex} from '../dev/types/generated';
 import {bestUnits} from '../generated/generated';
-import {Unit} from './units';
+import {Unit, UnitToFamily} from './units';
 
-export type SimplifyQuantity<Q> = Q extends number ? number : Q extends bigint ? bigint : never;
+export type SimplifyQuantity<Q> = Q extends number ? number : Extract<Q, bigint>;
 
-export type BestUnits = typeof bestUnits[number][number][BestIndex.Sym];
+export type BestUnits<Family extends ConversionFamilyId = ConversionFamilyId> = typeof bestUnits[Family][number][BestIndex.Sym];
 
 /**
  * The return value from converting a unit to `'best'`.
@@ -45,5 +46,5 @@ export interface Converter<Q extends number | bigint, U extends Unit> {
 	 *
 	 * @returns An object with a `quantity` property of the `unit` unit, which can be casted to a string using the `toString()` method
 	 */
-	to<B extends BestUnits>(to: 'best'): BestConversion<Q, B>;
+	to<B extends BestUnits<UnitToFamily[U]>>(to: 'best'): BestConversion<Q, B>;
 }

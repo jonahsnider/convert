@@ -10,11 +10,11 @@ type AllValues = {
 	[Unit in keyof Units]: {unit: Unit; family: Units[Unit][ConversionIndex.Family]};
 }[keyof Units];
 
-type IdToFamily = {
+type FamilyToUnit = {
 	[P in AllValues['family']]: Extract<AllValues, {family: P}>['unit'];
 };
 
-type GetAliases<T extends ConversionFamilyId> = IdToFamily[T];
+type GetAliases<T extends ConversionFamilyId> = FamilyToUnit[T];
 
 export type Angle = GetAliases<ConversionFamilyId.Angle>;
 export type Area = GetAliases<ConversionFamilyId.Area>;
@@ -28,3 +28,14 @@ export type Time = GetAliases<ConversionFamilyId.Time>;
 export type Volume = GetAliases<ConversionFamilyId.Volume>;
 
 export type Unit = GetAliases<ConversionFamilyId>;
+
+export type UnitToFamily = Record<Angle, ConversionFamilyId.Angle> &
+	Record<Area, ConversionFamilyId.Area> &
+	Record<Data, ConversionFamilyId.Data> &
+	Record<Force, ConversionFamilyId.Force> &
+	Record<Length, ConversionFamilyId.Length> &
+	Record<Mass, ConversionFamilyId.Mass> &
+	Record<Pressure, ConversionFamilyId.Pressure> &
+	Record<Temperature, ConversionFamilyId.Temperature> &
+	Record<Time, ConversionFamilyId.Time> &
+	Record<Volume, ConversionFamilyId.Volume>;
