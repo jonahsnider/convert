@@ -110,8 +110,9 @@ yarn add convert
 #### CommonJS
 
 ```js
-// Chooses dev build if NODE_ENV is "development", otherwise uses prod build
+// This chooses which build to use depending on NODE_ENV
 const {convert} = require('convert');
+// You can also specify which build to use
 const {convert} = require('convert/dev');
 const {convert} = require('convert/prod');
 ```
@@ -119,8 +120,10 @@ const {convert} = require('convert/prod');
 #### ES Modules
 
 ```js
-// ESM does not have automatic build switching, you must explicitly import the dev build
+// The production build is the default
 import convert from 'convert';
+
+// ESM does not have automatic build switching, you must explicitly import the dev build
 import convert from 'convert/dev';
 import convert from 'convert/prod';
 ```
@@ -133,18 +136,18 @@ Pick your favorite CDN:
 
 ```html
 <script type="module">
-	import convert from 'https://cdn.skypack.dev/convert@2';
-	import convert from 'https://esm.run/convert@2';
-	import convert from 'https://cdn.jsdelivr.net/npm/convert@2';
-	import convert from 'https://unpkg.com/convert@2';
+	import convert from 'https://cdn.skypack.dev/convert@3';
+	import convert from 'https://esm.run/convert@3';
+	import convert from 'https://cdn.jsdelivr.net/npm/convert@3';
+	import convert from 'https://unpkg.com/convert@3';
 </script>
 ```
 
 #### UMD (global)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/convert@2/dist/convert.prod.js"></script>
-<script src="https://unpkg.com/convert@2/dist/convert.prod.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/convert@3/dist/convert.prod.js"></script>
+<script src="https://unpkg.com/convert@3/dist/convert.prod.js"></script>
 ```
 
 ## Alternatives
