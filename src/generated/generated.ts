@@ -1609,6 +1609,11 @@ export const conversions = {__proto__:null,
 		0.3048,
 		0
 	],
+	"'": [
+		4,
+		0.3048,
+		0
+	],
 	"inch": [
 		4,
 		0.0254,
@@ -1620,6 +1625,11 @@ export const conversions = {__proto__:null,
 		0
 	],
 	"in": [
+		4,
+		0.0254,
+		0
+	],
+	"\"": [
 		4,
 		0.0254,
 		0
