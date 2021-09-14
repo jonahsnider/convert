@@ -4076,7 +4076,7 @@ __metadata:
     terser: 5.7.2
     ts-node: 10.2.1
     tslib: 2.3.1
-    typedoc: 0.22.2
+    typedoc: 0.22.3
     typescript: 4.4.3
   languageName: unknown
   linkType: soft
@@ -11147,9 +11147,9 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.22.2":
-  version: 0.22.2
-  resolution: "typedoc@npm:0.22.2"
+"typedoc@npm:0.22.3":
+  version: 0.22.3
+  resolution: "typedoc@npm:0.22.3"
   dependencies:
     glob: ^7.1.7
     lunr: ^2.3.9
@@ -11160,7 +11160,7 @@ fsevents@~2.3.2:
     typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x
   bin:
     typedoc: bin/typedoc
-  checksum: fa9650ab7e5aed5eceeb3ef310bbcef53549cd1b7e37bbbe99ee542db939b7d2d9b8d93d97b8dff18cb67884692f97352e6a6fabea9ad27b1a1a6d451d4b2936
+  checksum: 65a930a02f9ce6339ab44163efe90d6bb6bcae7054da9c698fa421b4c1d0d199b84a10ff13b0899366c17939a55c65821fc7506149aa7cf1bff0ac4a3b04bc26
   languageName: node
   linkType: hard
 
