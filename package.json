@@ -80,7 +80,7 @@
 		}
 	},
 	"resolutions": {
-		"terser": "5.7.2"
+		"terser": "5.8.0"
 	},
 	"devDependencies": {
 		"@ava/typescript": "2.0.0",
@@ -100,7 +100,7 @@
 		"rollup-plugin-terser": "7.0.2",
 		"semantic-release": "17.4.7",
 		"size-limit": "5.0.3",
-		"terser": "5.7.2",
+		"terser": "5.8.0",
 		"ts-node": "10.2.1",
 		"tslib": "2.3.1",
 		"typedoc": "0.22.3",
