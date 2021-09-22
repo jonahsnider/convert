@@ -136,7 +136,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new RangeError();
 	}
 
-	const usingBigInts = typeof quantity === 'bigint';
+	const quantityType = typeof quantity;
+	const usingBigInts = quantityType === 'bigint';
 
 	return {
 		to: (to: typeof from | 'best') => {
@@ -199,9 +200,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 			assert(toUnit);
 
-			const combinedRatio = fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio];
-
 			if (usingBigInts && assertType<bigint>(quantity)) {
+				const combinedRatio = fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio];
 				let bigintValue: bigint | undefined;
 
 				if (__DEV__) {
@@ -209,22 +209,44 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 						// Note: BigInt support only works when you are converting integers (obviously)
 						// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
-						bigintValue =
-							quantity * BigInt(combinedRatio) +
-							(BigInt(fromUnit[Generated.ConversionIndex.Difference]) - BigInt(toUnit[Generated.ConversionIndex.Difference]));
+						// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
+						bigintValue = quantity * BigInt(combinedRatio);
 					} catch {
 						throw new TypeError(`Conversion for ${from} to ${to} cannot be calculated as a BigInt because the conversion ratio is not an integer`);
 					}
 				} else {
-					bigintValue =
-						quantity * BigInt(combinedRatio) + (BigInt(fromUnit[Generated.ConversionIndex.Difference]) - BigInt(toUnit[Generated.ConversionIndex.Difference]));
+					// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
+					bigintValue = quantity * BigInt(combinedRatio);
 				}
 
 				return bigintValue as SimplifyQuantity<Q>;
 			}
 
-			return (quantity * combinedRatio +
-				(fromUnit[Generated.ConversionIndex.Difference] - toUnit[Generated.ConversionIndex.Difference])) as SimplifyQuantity<Q>;
+			if (toUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature && assertType<Temperature>(from) && assertType<Temperature>(to)) {
+				if (to === from) {
+					if (quantityType === 'number' || quantityType === 'bigint') {
+						return quantity;
+					}
+
+					throw new TypeError(`Expected quantity to be a number or a bigint, got ${quantityType}`);
+				}
+
+				if (to === 'K' || to === 'kelvin') {
+					return (quantity + (fromUnit[Generated.ConversionIndex.Difference] as any)) * fromUnit[Generated.ConversionIndex.Ratio];
+				}
+
+				if (from === 'K' || from === 'kelvin') {
+					return quantity / toUnit[Generated.ConversionIndex.Ratio] - (toUnit[Generated.ConversionIndex.Difference] as any);
+				}
+
+				const kelvin = convert(quantity, from).to('K') as unknown as Q;
+
+				return convert(kelvin, 'K').to(to);
+			}
+
+			const combinedRatio = fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio];
+
+			return quantity * combinedRatio;
 		}
 	};
 }
