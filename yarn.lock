@@ -4073,7 +4073,7 @@ __metadata:
     rollup-plugin-terser: 7.0.2
     semantic-release: 18.0.0
     size-limit: 5.0.4
-    terser: 5.8.0
+    terser: 5.9.0
     ts-node: 10.2.1
     tslib: 2.3.1
     typedoc: 0.22.4
@@ -10830,16 +10830,16 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"terser@npm:5.8.0":
-  version: 5.8.0
-  resolution: "terser@npm:5.8.0"
+"terser@npm:5.9.0":
+  version: 5.9.0
+  resolution: "terser@npm:5.9.0"
   dependencies:
     commander: ^2.20.0
     source-map: ~0.7.2
     source-map-support: ~0.5.20
   bin:
     terser: bin/terser
-  checksum: 770b7d3fad7eece4a423464a9774e4456b7aca70b869d0c783bde42d7453fac2670ef7532dbce0a5a6f79038c367f2cb6353995190b730e2c52cb4914f3d671e
+  checksum: 11c1246b1991015a8881742878af779e3863fad42f626ffda957dbf28c94bf51e7994cffb9ffbec86ff3c23ab45ffa6d79d453c15e664306e35fc7b2c4eee5f4
   languageName: node
   linkType: hard
 
