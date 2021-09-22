@@ -5,12 +5,14 @@ export const enum BestIndex {
 	Sym
 }
 
-export type Conversion = [family: number, ratio: number, difference: number];
+export type Conversion = [family: number, ratio: number];
 
 export const enum ConversionIndex {
 	Family,
-	Ratio,
-	Difference
+	Ratio
 }
 
 export type Conversions = Record<string, Conversion>;
+
+/** Values to use as offsets for converting temperatures to kelvin. */
+export type TemperatureDifferences = Record<string, number>;

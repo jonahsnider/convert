@@ -9,10 +9,10 @@ import {serialize} from './serialize.js';
 const conversionFamilyValues = Object.values(conversionFamilies);
 
 const optimized = optimize(conversionFamilyValues);
-const {conversions} = optimized;
+const {conversions, temperatureDifferences} = optimized;
 const bestUnits = best(conversionFamilyValues);
 
-const generatedScript = serialize({conversions, best: bestUnits});
+const generatedScript = serialize({conversions, best: bestUnits, temperatureDifferences});
 
 fs.writeFileSync(path.join(__dirname, '..', '..', '..', 'src', 'generated', 'generated.ts'), generatedScript);
 fs.writeFileSync(path.join(__dirname, '..', '..', '..', 'tsc_output', 'generated', 'generated.ts'), generatedScript);

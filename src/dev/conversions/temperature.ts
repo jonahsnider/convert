@@ -12,3 +12,11 @@ export const conversions: ConversionGroup = [
 	{names: ['celsius'], symbols: ['C'], ratio: 1, difference: 273.15},
 	{names: ['rankine'], symbols: ['R'], ratio: 5 / 9}
 ];
+
+
+/** This is like a `Set` of aliases except it's an object, so we can use the `in` keyword (ES3 compatibility). */
+export const kelvinsAliases: Record<string, unknown> = {
+	K: 0,
+	Kelvin: 0,
+	kelvins: 0
+};

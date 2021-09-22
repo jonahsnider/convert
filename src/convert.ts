@@ -1,7 +1,8 @@
 import {assert, isType as assertType} from './assert';
+import {kelvinsAliases} from './dev/conversions/temperature';
 import {ConversionFamilyId} from './dev/types/common';
 import * as Generated from './dev/types/generated';
-import {bestUnits, conversions} from './generated/generated';
+import {bestUnits, conversions, temperatureDifferences} from './generated/generated';
 import {Converter, SimplifyQuantity} from './types/common';
 import {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
 
@@ -228,15 +229,19 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 						return quantity;
 					}
 
-					throw new TypeError(`Expected quantity to be a number or a bigint, got ${quantityType}`);
+					if (__DEV__) {
+						throw new TypeError(`Expected quantity to be a number or a bigint, got ${quantityType}`);
+					}
+
+					throw new TypeError();
 				}
 
-				if (to === 'K' || to === 'kelvin') {
-					return (quantity + (fromUnit[Generated.ConversionIndex.Difference] as any)) * fromUnit[Generated.ConversionIndex.Ratio];
+				// in keyword here is safe because we have already validated that you are giving us a valid unit
+				if (to in kelvinsAliases) {
+					return (quantity + (temperatureDifferences[from] as any)) * fromUnit[Generated.ConversionIndex.Ratio];
 				}
-
-				if (from === 'K' || from === 'kelvin') {
-					return quantity / toUnit[Generated.ConversionIndex.Ratio] - (toUnit[Generated.ConversionIndex.Difference] as any);
+				if (from in kelvinsAliases) {
+					return quantity / toUnit[Generated.ConversionIndex.Ratio] - (temperatureDifferences[to] as any);
 				}
 
 				const kelvin = convert(quantity, from).to('K') as unknown as Q;
