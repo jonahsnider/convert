@@ -2027,32 +2027,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:5.0.3":
-  version: 5.0.3
-  resolution: "@size-limit/file@npm:5.0.3"
+"@size-limit/file@npm:5.0.4":
+  version: 5.0.4
+  resolution: "@size-limit/file@npm:5.0.4"
   dependencies:
     semver: 7.3.5
   peerDependencies:
-    size-limit: 5.0.3
-  checksum: b159ea96612b23219f68e56afb05d10a27f3a0c6a653651ad63c78f4301bcbad0163198768d7457eeeb0c19990e51d3de45198bdeb8456a838018c73a77cba47
+    size-limit: 5.0.4
+  checksum: 950b9206ca89d05c1e152e460821a01166da3147ad388d3fc3c5f4c208ec16db771609a7af366194ab4608dc305c45bcd2cd653608126272127d03eed8fb2e2c
   languageName: node
   linkType: hard
 
-"@size-limit/preset-small-lib@npm:5.0.3":
-  version: 5.0.3
-  resolution: "@size-limit/preset-small-lib@npm:5.0.3"
+"@size-limit/preset-small-lib@npm:5.0.4":
+  version: 5.0.4
+  resolution: "@size-limit/preset-small-lib@npm:5.0.4"
   dependencies:
-    "@size-limit/file": 5.0.3
-    "@size-limit/webpack": 5.0.3
+    "@size-limit/file": 5.0.4
+    "@size-limit/webpack": 5.0.4
   peerDependencies:
-    size-limit: 5.0.3
-  checksum: 94955c63bea3069d9a26c48a5388c50f3c8bd9ebbb45c1e39fb5857bdf7f0ece58aef4897ab85da75d1ac87fb95556e3e978d4f0778f83d7252cb949a6c52b5f
+    size-limit: 5.0.4
+  checksum: 9216d99be0e03f27fa5393b399397d5860b5ff82966db5d22cf9ca0d30a606f60e1d27a82a66e3f2884299d263b047f425005a7e6c24509160802f57710fe101
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:5.0.3":
-  version: 5.0.3
-  resolution: "@size-limit/webpack@npm:5.0.3"
+"@size-limit/webpack@npm:5.0.4":
+  version: 5.0.4
+  resolution: "@size-limit/webpack@npm:5.0.4"
   dependencies:
     css-loader: ^5.2.6
     escape-string-regexp: ^4.0.0
@@ -2065,8 +2065,8 @@ __metadata:
     webpack: ^4.44.1
     webpack-bundle-analyzer: ^4.4.2
   peerDependencies:
-    size-limit: 5.0.3
-  checksum: 0a9b2b662ec26e527d4ce8785256e757408dd2500ad5ce44e5a884c325debf3db57fcd097a12432297e81cafc71f4aff688d883bf4e2cba6b9be0a28cc136f42
+    size-limit: 5.0.4
+  checksum: af771aa236ab3f7bd280a8e14b1cf47319724bb54384058ac44902be1d6d0374c4e25ed30e65f861c711ddd503e69644798d7e8e423674a88df0f7045e7c6820
   languageName: node
   linkType: hard
 
@@ -3817,13 +3817,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colorette@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "colorette@npm:1.3.0"
-  checksum: bda403dfba4d032bee4169f2a6436a83ae3da488a53bcb3be92dc44ace056518245cc614b12429d7529493d6b090a119b2523b0d55e8cd6b81ad939a3003c008
-  languageName: node
-  linkType: hard
-
 "colors@npm:1.0.3":
   version: 1.0.3
   resolution: "colors@npm:1.0.3"
@@ -4070,7 +4063,7 @@ __metadata:
     "@rollup/plugin-babel": 5.3.0
     "@rollup/plugin-replace": 3.0.0
     "@rollup/plugin-typescript": 8.2.5
-    "@size-limit/preset-small-lib": 5.0.3
+    "@size-limit/preset-small-lib": 5.0.4
     "@types/node": 15.12.4
     ava: 3.15.0
     c8: 7.9.0
@@ -4079,7 +4072,7 @@ __metadata:
     rollup: 2.56.3
     rollup-plugin-terser: 7.0.2
     semantic-release: 18.0.0
-    size-limit: 5.0.3
+    size-limit: 5.0.4
     terser: 5.8.0
     ts-node: 10.2.1
     tslib: 2.3.1
@@ -7760,6 +7753,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"nanocolors@npm:^0.1.0":
+  version: 0.1.2
+  resolution: "nanocolors@npm:0.1.2"
+  checksum: 81128bbae66d497479f3bfd331ee9f03225516c34332e918f472521c68061fe571f9060f0b3b5260ea853c6cf0a9841ce397347f8d2064171b8f21d845ef21ec
+  languageName: node
+  linkType: hard
+
 "nanoid@npm:^3.1.23":
   version: 3.1.23
   resolution: "nanoid@npm:3.1.23"
@@ -10174,20 +10174,20 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"size-limit@npm:5.0.3":
-  version: 5.0.3
-  resolution: "size-limit@npm:5.0.3"
+"size-limit@npm:5.0.4":
+  version: 5.0.4
+  resolution: "size-limit@npm:5.0.4"
   dependencies:
     bytes-iec: ^3.1.1
     chokidar: ^3.5.2
     ci-job-number: ^1.2.2
-    colorette: ^1.3.0
     globby: ^11.0.4
     lilconfig: ^2.0.3
     mico-spinner: ^1.2.2
+    nanocolors: ^0.1.0
   bin:
     size-limit: bin.js
-  checksum: 8c203ba08f3f1f05fd8d19836ee5b67c9af9160913ef3fed600589e66ad47326f79faae549de898fdef717f2af1ccf8b926aa156b2d772d25d506cfd7a50692c
+  checksum: ad6c70c64209f10d8bb63d097aadde373e970f09e3d4cb8fd30956359caa97af0e6b8064a5775b73b5c30eba8a863e5be3c74aff7e7776354a2875559f5a994a
   languageName: node
   linkType: hard
 
