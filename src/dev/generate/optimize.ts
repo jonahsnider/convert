@@ -24,7 +24,7 @@ export function optimize(conversionFamilies: readonly ConversionFamily[]): {
 				if (conversionFamily.id === ConversionFamilyId.Temperature) {
 					temperatureDifferences[name] = conversion.difference ?? 0;
 				} else if (conversion.difference !== undefined) {
-					throw new RangeError('Only temperatures may specify a difference value')
+					throw new RangeError('Only temperatures may specify a difference value');
 				}
 			}
 		}
