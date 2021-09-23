@@ -9,7 +9,6 @@ const terserConfig = {
 	compress: {
 		arrows: false,
 		arguments: true,
-		booleans_as_integers: true,
 		ecma: 5,
 		keep_fargs: false,
 		toplevel: true,
