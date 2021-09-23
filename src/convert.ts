@@ -155,6 +155,12 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 	return {
 		to: (to: typeof from | 'best') => {
+			if (from === to) {
+				// This is ok since we have already validated the type of quantity
+				return quantity;
+			}
+
+			// TODO: Extract to function
 			if (to === 'best') {
 				const family = bestUnits[fromUnit[Generated.ConversionIndex.Family]];
 
