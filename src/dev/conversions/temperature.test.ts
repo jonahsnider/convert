@@ -10,7 +10,11 @@ test(macros.convert, [1391.67, 'R'], [932, 'F']);
 test(macros.convert, [932, 'F'], [1391.67, 'R']);
 
 test(macros.convert, [1n, 'C'], [1n, 'C']);
+test(macros.convert, [1n, 'F'], [1n, 'F']);
+test(macros.convert, [1n, 'R'], [1n, 'R']);
 test(macros.convert, [1n, 'K'], [1n, 'K']);
+test(macros.convert, [1n, 'C'], [1n, 'K']);
+test(macros.convert, [1n, 'K'], [1n, 'C']);
 
 test('__proto__', t => {
 	t.throws(() => convert(1, 'K').to('__proto__' as Temperature));
