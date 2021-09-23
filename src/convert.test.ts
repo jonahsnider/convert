@@ -11,6 +11,8 @@ test('exports', t => {
 test('production errors', t => {
 	__DEV__ = false;
 
+	t.throws(() => convert('123' as any, 'meters'), {instanceOf: TypeError, message: ''}, 'quantity type');
+
 	t.throws(() => convert(123, invalidUnit as any), {instanceOf: RangeError, message: ''});
 	t.throws(
 		() =>
@@ -36,6 +38,8 @@ test('production errors', t => {
 
 test('development errors', t => {
 	__DEV__ = true;
+
+	t.throws(() => convert('123' as any, 'meters'), {instanceOf: TypeError, message: /.+/}, 'quantity type');
 
 	t.throws(() => convert(123, invalidUnit as any), {instanceOf: RangeError, message: /.+/});
 	t.throws(

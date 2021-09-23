@@ -127,7 +127,18 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Volume): C
  * @returns An object you can use to convert the provided quantity
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Converter<Q, Unit> {
-	const fromUnit = (conversions as unknown as Generated.Conversions)[from] as Generated.Conversion | undefined;
+	const quantityType = typeof quantity;
+	const usingBigInts = quantityType === 'bigint';
+
+	if (!usingBigInts && quantityType !== 'number') {
+		if (__DEV__) {
+			throw new TypeError(`Expected quantity to be a number or a bigint, got ${quantityType}`);
+		}
+
+		throw new TypeError();
+	}
+
+	const fromUnit = conversions[from] as typeof conversions[keyof typeof conversions] | undefined;
 
 	if (!fromUnit) {
 		if (__DEV__) {

@@ -47,7 +47,7 @@ export function convertMany(value: string): Converter<number, Unit> {
 			let firstPass = true;
 
 			do {
-				const converted = convert(search[MatchGroup.Quantity] as unknown as number, search[MatchGroup.Unit] as any).to(
+				const converted = convert(Number(search[MatchGroup.Quantity]), search[MatchGroup.Unit] as any).to(
 					best && !firstPass ? (resolvedUnit! as any) : (unit as any)
 				) as number | BestConversion<number, BestUnits>;
 
@@ -81,7 +81,7 @@ export function convertMany(value: string): Converter<number, Unit> {
  *
  * @example
  * ```ts
- * ms('1d 2h 30min') === 95400000;
+ * ms('1d 2h 30min'); // 95400000
  * ```
  *
  * @param value - Duration string to convert
