@@ -137,6 +137,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new RangeError();
 	}
 
+	const convertingTemperature = fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature && assertType<Temperature>(from);
+
 	const quantityType = typeof quantity;
 	const usingBigInts = quantityType === 'bigint';
 
@@ -223,9 +225,9 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				return bigintValue as SimplifyQuantity<Q>;
 			}
 
-			if (toUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature && assertType<Temperature>(from) && assertType<Temperature>(to)) {
+			if (convertingTemperature && assertType<Temperature>(to)) {
 				if (to === from) {
-					if (quantityType === 'number' || quantityType === 'bigint') {
+					if (quantityType === 'number' || usingBigInts) {
 						return quantity;
 					}
 
