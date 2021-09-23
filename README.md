@@ -170,9 +170,3 @@ That's a little over 3 million `convert()` calls per second.
 [![npm bundle size of uom-units](https://img.shields.io/bundlephobia/minzip/uom-units?label=uom-units)](https://bundlephobia.com/result?p=uom-units)
 
 [![npm bundle size of safe-units](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)](https://bundlephobia.com/result?p=safe-units)
-
-## Thanks
-
-Big thanks to @Jdender, @TheAkio, @iCrawl, @p7g, @aequasi, @aetheryx, and the [TypeScript Discord server](https://discord.gg/typescript) for their help in getting the typesafety working.
-
-Thanks to @MicroDroid for fixing temperature conversion.
