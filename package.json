@@ -62,6 +62,7 @@
 		"size": "size-limit",
 		"docs": "typedoc",
 		"style": "prettier --check .",
+		"release": "semantic-release",
 		"test": "yarn run generate; ava",
 		"test:coverage": "yarn run generate; rm -rf coverage; c8 --reporter lcov --reporter text-summary --include 'tsc_output/**/*.js' --exclude 'tsc_output/{generated,test,dev,types}' --exclude 'tsc_output/*.test.js' --all ava"
 	},

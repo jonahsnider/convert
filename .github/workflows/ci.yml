@@ -196,8 +196,8 @@ jobs:
         run: yarn install --immutable
       - name: Compile TypeScript for publishing
         run: yarn run build
-      - name: Run semantic release
-        run: yarn run semantic-release
+      - name: Run release
+        run: yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
