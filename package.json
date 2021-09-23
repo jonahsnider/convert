@@ -96,7 +96,7 @@
 		"c8": "7.9.0",
 		"prettier": "2.4.1",
 		"prettier-config-xo": "1.0.4",
-		"rollup": "2.56.3",
+		"rollup": "2.57.0",
 		"rollup-plugin-terser": "7.0.2",
 		"semantic-release": "18.0.0",
 		"size-limit": "5.0.4",
