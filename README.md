@@ -137,18 +137,18 @@ Pick your favorite CDN:
 
 ```html
 <script type="module">
-	import convert from 'https://cdn.skypack.dev/convert@3';
-	import convert from 'https://esm.run/convert@3';
-	import convert from 'https://cdn.jsdelivr.net/npm/convert@3';
-	import convert from 'https://unpkg.com/convert@3';
+	import convert from 'https://cdn.skypack.dev/convert@4';
+	import convert from 'https://esm.run/convert@4';
+	import convert from 'https://cdn.jsdelivr.net/npm/convert@4';
+	import convert from 'https://unpkg.com/convert@4';
 </script>
 ```
 
 #### UMD (global)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/convert@3/dist/convert.prod.js"></script>
-<script src="https://unpkg.com/convert@3/dist/convert.prod.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/convert@4/dist/convert.prod.js"></script>
+<script src="https://unpkg.com/convert@4/dist/convert.prod.js"></script>
 ```
 
 ## Alternatives
