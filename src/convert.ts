@@ -1,9 +1,9 @@
-import {assert, isType as assertType} from './assert';
+import {assert, isType} from './assert';
 import {kelvinsAliases} from './dev/conversions/temperature';
 import {ConversionFamilyId} from './dev/types/common';
 import * as Generated from './dev/types/generated';
 import {bestUnits, conversions, temperatureDifferences} from './generated/generated';
-import {Converter, SimplifyQuantity} from './types/common';
+import {Converter} from './types/common';
 import {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
 
 /**
@@ -148,10 +148,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new RangeError();
 	}
 
-	const convertingTemperature = fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature && assertType<Temperature>(from);
-
-	const quantityType = typeof quantity;
-	const usingBigInts = quantityType === 'bigint';
+	const convertingTemperature = fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature;
 
 	return {
 		to: (to: typeof from | 'best') => {
@@ -183,13 +180,13 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				return {quantity, unit: bestUnit, toString: () => quantity + bestUnit} as any;
 			}
 
-			const toUnit = (conversions as unknown as Generated.Conversions)[to] as Generated.Conversion | undefined;
-
-			if (__DEV__ && !toUnit) {
-				throw new RangeError(`${to} is not a valid unit`);
-			}
+			const toUnit = conversions[to] as typeof conversions[keyof typeof conversions] | undefined;
 
 			if (__DEV__) {
+				if (!toUnit) {
+					throw new RangeError(`${to} is not a valid unit`);
+				}
+
 				const meters = 'm';
 
 				if (
@@ -217,44 +214,27 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 				throw new RangeError();
 			}
-
 			assert(toUnit);
 
-			if (usingBigInts && assertType<bigint>(quantity)) {
-				const combinedRatio = fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio];
-				let bigintValue: bigint | undefined;
-
+			if (usingBigInts && isType<bigint>(quantity)) {
+				// TODO: If quantity is a bigint return a different Converter<T> instead of checking it here
 				if (__DEV__) {
 					try {
 						// Note: BigInt support only works when you are converting integers (obviously)
 						// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
 						// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
-						bigintValue = quantity * BigInt(combinedRatio);
+						return quantity * BigInt(fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
 					} catch {
 						throw new TypeError(`Conversion for ${from} to ${to} cannot be calculated as a BigInt because the conversion ratio is not an integer`);
 					}
 				} else {
 					// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
-					bigintValue = quantity * BigInt(combinedRatio);
+					return quantity * BigInt(fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
 				}
-
-				return bigintValue as SimplifyQuantity<Q>;
 			}
 
-			if (convertingTemperature && assertType<Temperature>(to)) {
-				if (to === from) {
-					if (quantityType === 'number' || usingBigInts) {
-						return quantity;
-					}
-
-					if (__DEV__) {
-						throw new TypeError(`Expected quantity to be a number or a bigint, got ${quantityType}`);
-					}
-
-					throw new TypeError();
-				}
-
+			if (convertingTemperature && isType<Temperature>(from) && isType<Temperature>(to)) {
 				// in keyword here is safe because we have already validated that you are giving us a valid unit
 				if (to in kelvinsAliases) {
 					return (quantity + (temperatureDifferences[from] as any)) * fromUnit[Generated.ConversionIndex.Ratio];
@@ -263,14 +243,10 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 					return quantity / toUnit[Generated.ConversionIndex.Ratio] - (temperatureDifferences[to] as any);
 				}
 
-				const kelvin = convert(quantity, from).to('K') as unknown as Q;
-
-				return convert(kelvin, 'K').to(to);
+				return convert(convert(quantity, from).to('K'), 'K').to(to);
 			}
 
-			const combinedRatio = fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio];
-
-			return quantity * combinedRatio;
+			return quantity * (fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
 		}
 	};
 }
