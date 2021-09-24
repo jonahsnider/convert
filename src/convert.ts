@@ -1,4 +1,4 @@
-import {assert, isType} from './assert';
+import {assert, assertType, isType} from './assert';
 import {kelvinsAliases} from './dev/conversions/temperature';
 import {ConversionFamilyId} from './dev/types/common';
 import * as Generated from './dev/types/generated';
@@ -234,13 +234,23 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				}
 			}
 
+			assertType<number>(quantity);
+
 			if (convertingTemperature && isType<Temperature>(from) && isType<Temperature>(to)) {
 				// in keyword here is safe because we have already validated that you are giving us a valid unit
 				if (to in kelvinsAliases) {
-					return (quantity + (temperatureDifferences[from] as any)) * fromUnit[Generated.ConversionIndex.Ratio];
+					if (from in temperatureDifferences && isType<keyof typeof temperatureDifferences>(from)) {
+						return (quantity + temperatureDifferences[from]) * fromUnit[Generated.ConversionIndex.Ratio];
+					}
+
+					return quantity * fromUnit[Generated.ConversionIndex.Ratio];
 				}
 				if (from in kelvinsAliases) {
-					return quantity / toUnit[Generated.ConversionIndex.Ratio] - (temperatureDifferences[to] as any);
+					if (to in temperatureDifferences && isType<keyof typeof temperatureDifferences>(to)) {
+						return quantity / toUnit[Generated.ConversionIndex.Ratio] - temperatureDifferences[to];
+					}
+
+					return quantity / toUnit[Generated.ConversionIndex.Ratio];
 				}
 
 				return convert(convert(quantity, from).to('K'), 'K').to(to);

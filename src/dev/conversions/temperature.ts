@@ -1,3 +1,4 @@
+import {expandMacro, Macros} from '../generate/macros';
 import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
 
 export const id = ConversionFamilyId.Temperature;
@@ -13,6 +14,7 @@ const enum KelvinNames {
 /** @see https://en.wikipedia.org/wiki/Conversion_of_scales_of_temperature#Kelvin */
 export const conversions: ConversionGroup = [
 	{names: [KelvinNames.kelvin, KelvinNames.kelvins], symbols: [KelvinNames.K], ratio: 1},
+	...expandMacro(Macros.si, {names: [KelvinNames.kelvin, KelvinNames.kelvins], symbols: [KelvinNames.K], ratio: 1}),
 
 	{names: ['fahrenheit'], symbols: ['F'], ratio: 5 / 9, difference: 459.67},
 	{names: ['celsius'], symbols: ['C'], ratio: 1, difference: 273.15},

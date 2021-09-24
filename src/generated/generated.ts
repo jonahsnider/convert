@@ -2031,6 +2031,174 @@ export const conversions = {__proto__:null,
 		7,
 		1
 	],
+	"petakelvin": [
+		7,
+		1000000000000000
+	],
+	"petakelvins": [
+		7,
+		1000000000000000
+	],
+	"PK": [
+		7,
+		1000000000000000
+	],
+	"terakelvin": [
+		7,
+		1000000000000
+	],
+	"terakelvins": [
+		7,
+		1000000000000
+	],
+	"TK": [
+		7,
+		1000000000000
+	],
+	"gigakelvin": [
+		7,
+		1000000000
+	],
+	"gigakelvins": [
+		7,
+		1000000000
+	],
+	"GK": [
+		7,
+		1000000000
+	],
+	"megakelvin": [
+		7,
+		1000000
+	],
+	"megakelvins": [
+		7,
+		1000000
+	],
+	"MK": [
+		7,
+		1000000
+	],
+	"kilokelvin": [
+		7,
+		1000
+	],
+	"kilokelvins": [
+		7,
+		1000
+	],
+	"kK": [
+		7,
+		1000
+	],
+	"hectokelvin": [
+		7,
+		100
+	],
+	"hectokelvins": [
+		7,
+		100
+	],
+	"hK": [
+		7,
+		100
+	],
+	"decakelvin": [
+		7,
+		10
+	],
+	"decakelvins": [
+		7,
+		10
+	],
+	"daK": [
+		7,
+		10
+	],
+	"decikelvin": [
+		7,
+		0.1
+	],
+	"decikelvins": [
+		7,
+		0.1
+	],
+	"dK": [
+		7,
+		0.1
+	],
+	"centikelvin": [
+		7,
+		0.01
+	],
+	"centikelvins": [
+		7,
+		0.01
+	],
+	"cK": [
+		7,
+		0.01
+	],
+	"millikelvin": [
+		7,
+		0.001
+	],
+	"millikelvins": [
+		7,
+		0.001
+	],
+	"mK": [
+		7,
+		0.001
+	],
+	"microkelvin": [
+		7,
+		0.000001
+	],
+	"microkelvins": [
+		7,
+		0.000001
+	],
+	"μK": [
+		7,
+		0.000001
+	],
+	"nanokelvin": [
+		7,
+		1e-9
+	],
+	"nanokelvins": [
+		7,
+		1e-9
+	],
+	"nK": [
+		7,
+		1e-9
+	],
+	"picokelvin": [
+		7,
+		1e-12
+	],
+	"picokelvins": [
+		7,
+		1e-12
+	],
+	"pK": [
+		7,
+		1e-12
+	],
+	"femtokelvin": [
+		7,
+		1e-15
+	],
+	"femtokelvins": [
+		7,
+		1e-15
+	],
+	"fK": [
+		7,
+		1e-15
+	],
 	"fahrenheit": [
 		7,
 		0.5555555555555556
@@ -3585,13 +3753,8 @@ export const bestUnits = [
 ] as const;
 
 export const temperatureDifferences = {__proto__:null, 
-	"kelvin": 0,
-	"kelvins": 0,
-	"K": 0,
 	"fahrenheit": 459.67,
 	"F": 459.67,
 	"celsius": 273.15,
-	"C": 273.15,
-	"rankine": 0,
-	"R": 0
+	"C": 273.15
 } as const;
