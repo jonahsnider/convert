@@ -10,7 +10,7 @@ const enum MatchGroup {
 	/** The quantity of the unit. */
 	Quantity,
 	/** The unit. */
-	Unit
+	Unit,
 }
 
 const splitExpression = /(-?(?:\d+)?\.?\d+)([^\s]+)/g;
@@ -49,7 +49,7 @@ export function convertMany(value: string): Converter<number, Unit> {
 
 			do {
 				const converted = convert(Number(search[MatchGroup.Quantity]), search[MatchGroup.Unit] as any).to(
-					best && !firstPass ? (resolvedUnit! as any) : (unit as any)
+					best && !firstPass ? (resolvedUnit! as any) : (unit as any),
 				) as number | BestConversion<number, BestUnits>;
 
 				if (best && firstPass) {
@@ -69,7 +69,7 @@ export function convertMany(value: string): Converter<number, Unit> {
 			}
 
 			return result;
-		}
+		},
 	} as Converter<number, Unit>;
 }
 

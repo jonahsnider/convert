@@ -6,7 +6,7 @@ export const id = ConversionFamilyId.Area;
 
 export const best: BestConversions = {
 	metric: ['mm2', 'cm2', 'm2', 'km2'],
-	imperial: ['sq ft', 'sq in', 'sq mi', 'ac']
+	imperial: ['sq ft', 'sq in', 'sq mi', 'ac'],
 };
 
 export const conversions: ConversionGroup = [
@@ -29,5 +29,5 @@ export const conversions: ConversionGroup = [
 	{names: ['square foot', 'square feet'], symbols: ['sq ft'], ratio: 9.290304e-2},
 	{names: ['square inch', 'square inches'], symbols: ['sq in'], ratio: 6.4516e-4},
 	{names: ['square yard', 'square yards'], symbols: ['sq yd'], ratio: 0.83612736},
-	{names: ['square mile', 'square miles'], symbols: ['sq mi'], ratio: 2.589988110336e6}
+	{names: ['square mile', 'square miles'], symbols: ['sq mi'], ratio: 2.589988110336e6},
 ];

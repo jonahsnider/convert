@@ -57,5 +57,5 @@ export const enum ConversionFamilyId {
 	Pressure,
 	Temperature,
 	Time,
-	Volume
+	Volume,
 }

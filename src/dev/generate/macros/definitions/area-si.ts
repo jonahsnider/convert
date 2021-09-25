@@ -14,7 +14,7 @@ const areaSi: Macro = [
 	{prefix: 'square micro', symbol: 'μ', value: 1e-6, kind: 'small'},
 	{prefix: 'square nano', symbol: 'n', value: 1e-9, kind: 'small'},
 	{prefix: 'square pico', symbol: 'p', value: 1e-12, kind: 'small'},
-	{prefix: 'square femto', symbol: 'f', value: 1e-15, kind: 'small'}
+	{prefix: 'square femto', symbol: 'f', value: 1e-15, kind: 'small'},
 ];
 
 export default areaSi;

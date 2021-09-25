@@ -13,11 +13,11 @@ const terserConfig = {
 		keep_fargs: false,
 		toplevel: true,
 		passes: 10,
-		unsafe: true
+		unsafe: true,
 	},
 	mangle: {toplevel: true},
 	module: false,
-	ie8: true
+	ie8: true,
 };
 
 /** @type {import('rollup-plugin-terser').Options} */
@@ -26,8 +26,8 @@ const esmTerserConfig = {
 	ecma: 2016,
 	compress: {
 		...terserConfig.compress,
-		ecma: 2016
-	}
+		ecma: 2016,
+	},
 };
 
 const config = [
@@ -41,7 +41,7 @@ const config = [
 				name: 'convert',
 				plugins: [replace({__DEV__: false})],
 				exports: 'named',
-				sourcemap: true
+				sourcemap: true,
 			},
 			{
 				file: './dist/convert.dev.js',
@@ -49,10 +49,10 @@ const config = [
 				name: 'convert',
 				plugins: [replace({__DEV__: true})],
 				exports: 'named',
-				sourcemap: true
-			}
+				sourcemap: true,
+			},
 		],
-		plugins: [typescript(), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)]
+		plugins: [typescript(), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)],
 	},
 	// ES Modules
 	{
@@ -63,17 +63,17 @@ const config = [
 				format: 'esm',
 				plugins: [replace({__DEV__: false})],
 				exports: 'named',
-				sourcemap: true
+				sourcemap: true,
 			},
 			{
 				file: './dist/convert.dev.mjs',
 				format: 'esm',
 				plugins: [replace({__DEV__: true})],
 				exports: 'named',
-				sourcemap: true
-			}
+				sourcemap: true,
+			},
 		],
-		plugins: [typescript(), terser(esmTerserConfig)]
+		plugins: [typescript(), terser(esmTerserConfig)],
 	},
 	// Entry
 	{
@@ -81,10 +81,10 @@ const config = [
 		output: {
 			file: 'dist/index.js',
 			format: 'cjs',
-			sourcemap: true
+			sourcemap: true,
 		},
-		plugins: [typescript(), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)]
-	}
+		plugins: [typescript(), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)],
+	},
 ];
 
 export default config;

@@ -10,7 +10,7 @@ import {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Uni
 export const kelvinsAliases: Record<KelvinNames, unknown> = {
 	kelvin: 0,
 	kelvins: 0,
-	K: 0
+	K: 0,
 };
 
 /**
@@ -218,8 +218,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 							`No conversion could be found from ${from} to ${to}.`,
 							'Also, are you trying to convert quantities of time?',
 							'Because "m" is treated as meters, not minutes.',
-							'You probably want to use the "min" unit instead.'
-						].join(' ')
+							'You probably want to use the "min" unit instead.',
+						].join(' '),
 					);
 				}
 			}
@@ -275,6 +275,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 			}
 
 			return quantity * (fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
-		}
+		},
 	};
 }
