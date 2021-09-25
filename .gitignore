@@ -222,7 +222,7 @@ $RECYCLE.BIN/
 .rollup.cache
 
 # TypeScript compiler
-tsc_output
+tsc_*
 
 # TypeDoc
 docs_out

@@ -4071,6 +4071,7 @@ __metadata:
     prettier: 2.4.1
     prettier-config-xo: 2.0.0
     rollup: 2.57.0
+    rollup-plugin-dts: 4.0.0
     rollup-plugin-terser: 7.0.2
     semantic-release: 18.0.0
     size-limit: 5.0.4
@@ -9877,6 +9878,22 @@ fsevents@~2.3.2:
     hash-base: ^3.0.0
     inherits: ^2.0.1
   checksum: 006accc40578ee2beae382757c4ce2908a826b27e2b079efdcd2959ee544ddf210b7b5d7d5e80467807604244e7388427330f5c6d4cd61e6edaddc5773ccc393
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-dts@npm:4.0.0":
+  version: 4.0.0
+  resolution: "rollup-plugin-dts@npm:4.0.0"
+  dependencies:
+    "@babel/code-frame": ^7.14.5
+    magic-string: ^0.25.7
+  peerDependencies:
+    rollup: ^2.56.3
+    typescript: ^4.4.2
+  dependenciesMeta:
+    "@babel/code-frame":
+      optional: true
+  checksum: b8c74e892d4131da769389549ea6591fd6e6fe4ee480806d01d3d8cd300b278983afa11dcfd93a7c9de5a08352a9a0d321d98e76b00b3b2fa2a3f369971629f1
   languageName: node
   linkType: hard
 

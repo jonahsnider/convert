@@ -2,6 +2,7 @@ import babel from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 import {terser} from 'rollup-plugin-terser';
+import dts from 'rollup-plugin-dts';
 
 /** @type {import('rollup-plugin-terser').Options} */
 const terserConfig = {
@@ -84,6 +85,11 @@ const config = [
 			sourcemap: true,
 		},
 		plugins: [typescript(), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)],
+	},
+	{
+		input: './tsc_types/index.d.ts',
+		output: [{file: 'dist/index.d.ts', format: 'es'}],
+		plugins: [dts()],
 	},
 ];
 

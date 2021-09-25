@@ -217,7 +217,7 @@ $RECYCLE.BIN/
 .rollup.cache
 
 # TypeScript compiler
-tsc_output
+tsc_*
 
 src/generated/generated.ts
 

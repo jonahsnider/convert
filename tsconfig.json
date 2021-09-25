@@ -6,7 +6,7 @@
 		"strict": true,
 		"target": "esnext",
 		"outDir": "tsc_output",
-		"declarationDir": "dist"
+		"declarationDir": "tsc_types"
 	},
 	"include": ["./src", "./types"]
 }
