@@ -4069,7 +4069,7 @@ __metadata:
     c8: 7.9.0
     decimal.js: 10.3.1
     prettier: 2.4.1
-    prettier-config-xo: 1.0.4
+    prettier-config-xo: 2.0.0
     rollup: 2.57.0
     rollup-plugin-terser: 7.0.2
     semantic-release: 18.0.0
@@ -9192,10 +9192,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"prettier-config-xo@npm:1.0.4":
-  version: 1.0.4
-  resolution: "prettier-config-xo@npm:1.0.4"
-  checksum: d3e55b7a2b712fedc06daf46a60779a95deb6fa991dbaec8eb810753487d7f5ae01ac2fa3a4fd0210625643ff763b3f12420b19ad3be0ae99a275bd6bd26e27d
+"prettier-config-xo@npm:2.0.0":
+  version: 2.0.0
+  resolution: "prettier-config-xo@npm:2.0.0"
+  checksum: f5dc2760ee7991b98177789ac080aa720a38f49fcedd01f02acb281f02ecaf2dc9bc604d13ba804f750127df5913d396b8deae661cc8f7e2d422dded6a9b950f
   languageName: node
   linkType: hard
 

@@ -16,12 +16,12 @@ export const conversions: ConversionGroup = [
 
 	{
 		names: ['nibble', 'nibbles', 'semioctet', 'semioctets', 'halfbyte', 'halfbytes'],
-		ratio: 4
+		ratio: 4,
 	},
 
 	{names: ['byte', 'bytes', 'octect', 'octects'], symbols: ['B'], ratio: 8},
 	...expandMacro(Macros.binary, {names: ['byte', 'bytes'], symbols: ['B'], ratio: 8}),
 	...expandMacro(Macros.si, {names: ['byte', 'bytes'], symbols: ['B'], kind: 'big', ratio: 8}),
 
-	{names: ['hextet', 'hextets'], ratio: 16}
+	{names: ['hextet', 'hextets'], ratio: 16},
 ];

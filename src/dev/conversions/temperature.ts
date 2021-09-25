@@ -8,7 +8,7 @@ export const best: BestConversions = {metric: ['C'], imperial: ['F']};
 export const enum KelvinNames {
 	kelvin = 'kelvin',
 	kelvins = 'kelvins',
-	K = 'K'
+	K = 'K',
 }
 
 /** @see https://en.wikipedia.org/wiki/Conversion_of_scales_of_temperature#Kelvin */
@@ -18,5 +18,5 @@ export const conversions: ConversionGroup = [
 
 	{names: ['fahrenheit'], symbols: ['F'], ratio: 5 / 9, difference: 459.67},
 	{names: ['celsius'], symbols: ['C'], ratio: 1, difference: 273.15},
-	{names: ['rankine'], symbols: ['R'], ratio: 5 / 9}
+	{names: ['rankine'], symbols: ['R'], ratio: 5 / 9},
 ];

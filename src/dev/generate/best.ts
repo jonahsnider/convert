@@ -18,7 +18,7 @@ function simplify(decimal: Decimal): number {
 export function best(conversionFamilies: ConversionFamily[]): Generated.Best {
 	const result: Generated.Best = {
 		metric: [],
-		imperial: []
+		imperial: [],
 	};
 
 	for (const kind of ['metric', 'imperial'] as const) {

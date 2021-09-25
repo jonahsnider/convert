@@ -4,14 +4,14 @@ export type Best = Record<BestConversionKind, Array<Array<[value: number, sym: s
 
 export const enum BestIndex {
 	Value,
-	Sym
+	Sym,
 }
 
 export type Conversion = [family: number, ratio: number];
 
 export const enum ConversionIndex {
 	Family,
-	Ratio
+	Ratio,
 }
 
 export type Conversions = Record<string, Conversion>;

@@ -5,7 +5,7 @@ import {convert} from 'convert';
 render(
 	<div>
 		<p>there are {convert(55800, 'seconds').to('hours')} hours remaining</p>
-	</div>
+	</div>,
 );
 /*
 compiles to a pure number constant during build phase:

@@ -14,7 +14,7 @@ test('production errors', t => {
 			convertMany('1000ms')
 				// @ts-expect-error
 				.to(invalidUnit),
-		{instanceOf: TypeError}
+		{instanceOf: TypeError},
 	);
 });
 
@@ -27,7 +27,7 @@ test('development errors', t => {
 			convertMany('1000ms')
 				// @ts-expect-error
 				.to(invalidUnit),
-		{instanceOf: RangeError, message: /.+/}
+		{instanceOf: RangeError, message: /.+/},
 	);
 });
 

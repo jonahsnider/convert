@@ -22,7 +22,7 @@ test('production errors', t => {
 			convert(123, 'ms')
 				// @ts-expect-error
 				.to(invalidUnit),
-		{instanceOf: TypeError}
+		{instanceOf: TypeError},
 	);
 
 	t.throws(
@@ -30,12 +30,12 @@ test('production errors', t => {
 			convert(1000, 'ms')
 				// @ts-expect-error
 				.to('meters'),
-		{instanceOf: RangeError, message: ''}
+		{instanceOf: RangeError, message: ''},
 	);
 
 	t.throws(() => convert(1000n, 'ms').to('seconds'), {
 		instanceOf: RangeError,
-		message: /the number \d+\.\d+ cannot be converted to a bigint because it is not an integer/i
+		message: /the number \d+\.\d+ cannot be converted to a bigint because it is not an integer/i,
 	});
 
 	t.throws(
@@ -43,10 +43,10 @@ test('production errors', t => {
 			convert(123, 'in').to(
 				'best',
 				// @ts-expect-error
-				'invalid'
+				'invalid',
 			),
 		{instanceOf: RangeError, message: ''},
-		'invalid best unit kind'
+		'invalid best unit kind',
 	);
 });
 
@@ -61,7 +61,7 @@ test('development errors', t => {
 			convert(1000, 'ms')
 				// @ts-expect-error
 				.to(invalidUnit),
-		{instanceOf: RangeError, message: /.+/}
+		{instanceOf: RangeError, message: /.+/},
 	);
 
 	t.throws(
@@ -69,7 +69,7 @@ test('development errors', t => {
 			convert(123, 'ms')
 				// @ts-expect-error
 				.to('m'),
-		{instanceOf: RangeError, message: /not minutes.+min/i}
+		{instanceOf: RangeError, message: /not minutes.+min/i},
 	);
 
 	t.throws(
@@ -77,7 +77,7 @@ test('development errors', t => {
 			convert(1000, 'ms')
 				// @ts-expect-error
 				.to('meters'),
-		{instanceOf: RangeError, message: /.+/}
+		{instanceOf: RangeError, message: /.+/},
 	);
 
 	t.throws(() => convert(1000n, 'ms').to('seconds'), {instanceOf: TypeError, message: /conversion.+integer/i});
@@ -87,10 +87,10 @@ test('development errors', t => {
 			convert(123, 'in').to(
 				'best',
 				// @ts-expect-error
-				'invalid'
+				'invalid',
 			),
 		{instanceOf: RangeError, message: /.+/},
-		'invalid best unit kind'
+		'invalid best unit kind',
 	);
 });
 

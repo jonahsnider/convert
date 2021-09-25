@@ -7,7 +7,7 @@ import {Unit} from '../types/units';
 export const convert: Macro<[actual: [fromQuantity: number | bigint, from: Unit], expected: [toQuantity: number | bigint, to: Unit]]> = (
 	t,
 	input,
-	expected
+	expected,
 ) => {
 	const [fromQuantity, fromUnit] = input;
 	const [toQuantity, toUnit] = expected;
@@ -28,7 +28,7 @@ convertMany.title = (_providedTitle, input, expected) => `${input} -> ${expected
 export const convertManyBest: Macro<[input: [from: string, kind?: BestConversionKind | undefined], expected: [quantity: number | bigint, unit: BestUnits]]> = (
 	t,
 	input,
-	expected
+	expected,
 ) => {
 	const {toString, ...best} = lib.convertMany(input[0]).to('best', input[1]);
 

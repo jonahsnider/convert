@@ -7,7 +7,7 @@ function stringify(value: unknown): string {
 export function serialize({
 	conversions,
 	best,
-	temperatureDifferences
+	temperatureDifferences,
 }: {
 	conversions: Generated.Conversions;
 	best: Generated.Best;
@@ -18,6 +18,6 @@ export function serialize({
 		'',
 		`export const bestUnits = ${stringify(best)} as const;`,
 		'',
-		`export const temperatureDifferences = {__proto__:null, ${stringify(temperatureDifferences).slice(1)} as const;`
+		`export const temperatureDifferences = {__proto__:null, ${stringify(temperatureDifferences).slice(1)} as const;`,
 	].join('\n');
 }

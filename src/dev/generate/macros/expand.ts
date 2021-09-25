@@ -21,6 +21,6 @@ export function expandMacro(macro: UnitGroup[], unit: MacroOptions): Conversion[
 	return macro.map(unitGroup => ({
 		names: unit.names.map(name => `${unitGroup.prefix}${name}`),
 		symbols: unit.symbols.map(symbol => `${unitGroup.symbol}${symbol}`),
-		ratio: new Decimal(unit.ratio).times(unitGroup.value).toNumber()
+		ratio: new Decimal(unit.ratio).times(unitGroup.value).toNumber(),
 	}));
 }

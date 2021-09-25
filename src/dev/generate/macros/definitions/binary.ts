@@ -6,7 +6,7 @@ const binary: Macro = [
 	{prefix: 'tebi', symbol: 'Ti', value: 1024 ** 4, kind: 'big'},
 	{prefix: 'gibi', symbol: 'Gi', value: 1024 ** 3, kind: 'big'},
 	{prefix: 'mebi', symbol: 'Mi', value: 1024 ** 2, kind: 'big'},
-	{prefix: 'kibi', symbol: 'Ki', value: 1024 ** 1, kind: 'big'}
+	{prefix: 'kibi', symbol: 'Ki', value: 1024 ** 1, kind: 'big'},
 ];
 
 export default binary;

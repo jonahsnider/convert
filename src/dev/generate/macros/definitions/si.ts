@@ -14,7 +14,7 @@ const si: Macro = [
 	{prefix: 'micro', symbol: 'μ', value: 1e-6, kind: 'small'},
 	{prefix: 'nano', symbol: 'n', value: 1e-9, kind: 'small'},
 	{prefix: 'pico', symbol: 'p', value: 1e-12, kind: 'small'},
-	{prefix: 'femto', symbol: 'f', value: 1e-15, kind: 'small'}
+	{prefix: 'femto', symbol: 'f', value: 1e-15, kind: 'small'},
 ];
 
 export default si;

@@ -7,7 +7,7 @@ export type SimplifyQuantity<Q> = Q extends number ? number : Extract<Q, bigint>
 
 export type BestUnits<
 	Family extends ConversionFamilyId = ConversionFamilyId,
-	Kind extends BestConversionKind = BestConversionKind
+	Kind extends BestConversionKind = BestConversionKind,
 > = typeof bestUnits[Kind][Family][number][BestIndex.Sym];
 
 /**

@@ -6,21 +6,21 @@ export const id = ConversionFamilyId.Volume;
 
 export const best: BestConversions = {
 	metric: ['mL', 'L'],
-	imperial: ['tsp', 'tbsp', 'fl oz', 'pt', 'cup', 'qt', 'gal']
+	imperial: ['tsp', 'tbsp', 'fl oz', 'pt', 'cup', 'qt', 'gal'],
 };
 
 export const conversions: ConversionGroup = [
 	{
 		names: ['cubic meter', 'cubic meters', 'cubic metre', 'cubic metres', 'stere', 'steres'],
 		symbols: ['m³', 'm3'],
-		ratio: 1
+		ratio: 1,
 	},
 	...expandMacro(Macros.volumeSi, {names: ['meter', 'meters'], symbols: ['m3', 'm³'], ratio: 1}),
 
 	{
 		names: ['liter', 'liters', 'litre', 'litres'],
 		symbols: ['l', 'L'],
-		ratio: 1e-3
+		ratio: 1e-3,
 	},
 	...expandMacro(Macros.si, {names: ['liter', 'liters', 'litre', 'litres'], symbols: ['l', 'L'], ratio: 1e-3}),
 
@@ -67,5 +67,5 @@ export const conversions: ConversionGroup = [
 	{names: ['US peck'], symbols: ['US pk'], ratio: 9.09218e-3},
 	{names: ['US dry gallon'], symbols: ['US dry gal'], ratio: 4.40488377086e-3},
 	{names: ['US dry quart'], symbols: ['US dry qt'], ratio: 0.946352946e-3},
-	{names: ['US dry pint'], symbols: ['US dry pt'], ratio: 33.6003125}
+	{names: ['US dry pint'], symbols: ['US dry pt'], ratio: 33.6003125},
 ];

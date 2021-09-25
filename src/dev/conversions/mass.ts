@@ -6,7 +6,7 @@ export const id = ConversionFamilyId.Mass;
 
 export const best: BestConversions = {
 	metric: ['mg', 'g', 'kg'],
-	imperial: ['oz', 'lb']
+	imperial: ['oz', 'lb'],
 };
 
 const poundInGrams = new Decimal(4.5359237e2);
@@ -23,5 +23,5 @@ export const conversions: ConversionGroup = [
 	// TODO: Remove ℥ on next breaking release
 	{names: ['ounce', 'ounces'], symbols: ['oz', '℥'], ratio: poundInGrams.div(16)},
 	{names: ['short ton', 'short tons', 'US ton', 'US tons'], ratio: poundInGrams.times(2000)},
-	{names: ['long ton', 'long tons', 'imperial ton', 'imperial tons', 'displacement ton', 'displacement tons'], ratio: poundInGrams.times(2240)}
+	{names: ['long ton', 'long tons', 'imperial ton', 'imperial tons', 'displacement ton', 'displacement tons'], ratio: poundInGrams.times(2240)},
 ];

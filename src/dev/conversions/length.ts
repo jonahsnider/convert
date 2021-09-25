@@ -5,7 +5,7 @@ export const id = ConversionFamilyId.Length;
 
 export const best: BestConversions = {
 	metric: ['mm', 'cm', 'm', 'km'],
-	imperial: ['in', 'ft', 'yd', 'mi']
+	imperial: ['in', 'ft', 'yd', 'mi'],
 };
 
 export const conversions: ConversionGroup = [
@@ -16,5 +16,5 @@ export const conversions: ConversionGroup = [
 	{names: ['inch', 'inches'], symbols: ['in', '"'], ratio: 0.0254},
 	{names: ['yard', 'yards'], symbols: ['yd'], ratio: 0.9144},
 	{names: ['mile', 'miles'], symbols: ['mi'], ratio: 1609.344},
-	{names: ['nautical mile', 'nautical miles'], symbols: ['M', 'NM', 'nmi'], ratio: 1852}
+	{names: ['nautical mile', 'nautical miles'], symbols: ['M', 'NM', 'nmi'], ratio: 1852},
 ];
