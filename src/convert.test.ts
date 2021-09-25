@@ -1,5 +1,8 @@
+import {stddev} from '@jonahsnider/util';
 import test from 'ava';
-import defaultExport, {convert} from '.';
+import defaultExport, {convert, Unit} from '.';
+import {ConversionIndex} from './dev/types/generated';
+import {conversions} from './generated/generated';
 import * as macros from './test/macros';
 
 const invalidUnit = 'not a valid unit';
@@ -71,3 +74,35 @@ test('development errors', t => {
 
 test(macros.convert, [1, 'second'], [1, 'second']);
 test(macros.convert, [2n, 'hours'], [120n, 'minute']);
+
+const baseUnits: Unit[] = ['m2', 'b', 'B', 'N', 'pdl', 'm', 'g', 'Pa', 'K', 's', 'm3'];
+
+test('roundtrip conversion', t => {
+	for (const baseUnit of baseUnits) {
+		const desiredFamilyId = conversions[baseUnit][ConversionIndex.Family];
+
+		for (const [unit, data] of Object.entries(conversions)) {
+			if (!data) {
+				continue;
+			}
+
+			const familyId = data[ConversionIndex.Family];
+
+			if (familyId !== desiredFamilyId) {
+				continue;
+			}
+
+			const value = 123;
+
+			const aToB = convert(value, baseUnit as any).to(unit as any) as unknown as number;
+			const bToA = convert(aToB as any, unit as any).to(baseUnit as any) as unknown as number;
+
+			const difference = stddev([value, bToA]);
+
+			if (difference !== 0) {
+				// Not sure exactly why this value keeps showing up
+				t.is(difference, Number.EPSILON * 64, `${baseUnit} <-> ${unit}`);
+			}
+		}
+	}
+});
