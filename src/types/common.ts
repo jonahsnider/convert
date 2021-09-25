@@ -50,8 +50,5 @@ export interface Converter<Q extends number | bigint, U extends Unit> {
 	 *
 	 * @returns An object with a `quantity` property of the `unit` unit, which can be casted to a string using the `toString()` method
 	 */
-	to<B extends BestUnits<UnitToFamily[U], K>, K extends BestConversionKind = BestConversionKind>(
-		to: 'best',
-		kind?: K | undefined
-	): BestConversion<Q, B>;
+	to<B extends BestUnits<UnitToFamily[U], K>, K extends BestConversionKind = BestConversionKind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
 }
