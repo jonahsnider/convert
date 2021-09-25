@@ -1,4 +1,6 @@
-export type Best = Array<Array<[value: number, sym: string]>>;
+import { BestConversionKind } from "./common";
+
+export type Best = Record<BestConversionKind, Array<Array<[value: number, sym: string]>>>;
 
 export const enum BestIndex {
 	Value,

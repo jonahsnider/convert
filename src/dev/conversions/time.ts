@@ -24,6 +24,6 @@ export const conversions: ConversionGroup = [
 
 	{names: ['moment', 'moments'], ratio: 90},
 	{names: ['shake', 'shakes'], ratio: 1e-8},
-	{names: ['time unit'], symbols: ['TU'], ratio: 1e-6 * 1024},
+	{names: ['time unit'], symbols: ['TU'], ratio: 1024e-6},
 	{names: ['svedberg', 'svedbergs'], symbols: ['S'], ratio: 1e-13}
 ];

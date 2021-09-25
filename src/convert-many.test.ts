@@ -42,7 +42,9 @@ test(macros.convertMany, '-1m', [-1, 'm']);
 test(macros.convertMany, '0.1m', [0.1, 'm']);
 test(macros.convertMany, '-0.1m', [-0.1, 'm']);
 
-test(macros.convertManyBest, '500m 3km', [3.5, 'km']);
+test(macros.convertManyBest, ['500m 3km'], [3.5, 'km']);
+test(macros.convertManyBest, ['500m 3km', 'metric'], [3.5, 'km']);
+test(macros.convertManyBest, ['500m 3km', 'imperial'], [2.1747991728306686, 'mi']);
 
 test(macros.ms, '1s', 1000);
 test(macros.ms, '1d', 86_400_000);

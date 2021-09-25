@@ -82,6 +82,11 @@ const duration = convert(36, 'h').to('best');
 // The toString() method means you can automatically cast the object to a string without any issues
 'duration is ' + duration;
 // -> duration is 1.5d
+
+// You can also specify to use a specific kind of units (metric or imperial, metric is default)
+convert(3.5, 'km').to('best'); // -> { quantity: 3.5, unit: 'km', toString: () => '3.5km' }
+convert(3.5, 'km').to('best', 'metric'); // -> { quantity: 3.5, unit: 'km', toString: () => '3.5km' }
+convert(3.5, 'km').to('best', 'imperial'); // -> { quantity: 2.17, unit: 'mi', toString: () => '3.5mi' }
 ```
 
 ### `ms` shorthand

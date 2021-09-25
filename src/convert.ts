@@ -1,10 +1,17 @@
 import {assert, assertType, isType} from './assert';
-import {kelvinsAliases} from './dev/conversions/temperature';
-import {ConversionFamilyId} from './dev/types/common';
+import {KelvinNames} from './dev/conversions/temperature';
+import {BestConversionKind, ConversionFamilyId} from './dev/types/common';
 import * as Generated from './dev/types/generated';
 import {bestUnits, conversions, temperatureDifferences} from './generated/generated';
 import {Converter} from './types/common';
 import {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
+
+/** This is like a `Set` of aliases except it's an object, so we can use the `in` keyword (ES3 compatibility). */
+export const kelvinsAliases: Record<KelvinNames, unknown> = {
+	kelvin: 0,
+	kelvins: 0,
+	K: 0
+};
 
 /**
  * Convert a given angle into another unit.
@@ -127,6 +134,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Volume): C
  * @returns An object you can use to convert the provided quantity
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Converter<Q, Unit> {
+	// This causes @babel/runtime to emit a _typeOf function with symbol backwards compatibility
+	// Writing typeof quantity === 'bigint' doesn't trigger it for some reason
 	const quantityType = typeof quantity;
 	const usingBigInts = quantityType === 'bigint';
 
@@ -151,7 +160,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 	const convertingTemperature = fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature;
 
 	return {
-		to: (to: typeof from | 'best') => {
+		to: (to: typeof from | 'best', kind: BestConversionKind = 'metric') => {
 			if (from === to) {
 				// This is ok since we have already validated the type of quantity
 				return quantity;
@@ -159,7 +168,16 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 			// TODO: Extract to function
 			if (to === 'best') {
-				const family = bestUnits[fromUnit[Generated.ConversionIndex.Family]];
+				if (!bestUnits.hasOwnProperty(kind)) {
+					if (__DEV__) {
+						throw new RangeError(`${kind} is not a valid best conversion kind`);
+					}
+
+					throw new RangeError();
+				}
+
+				const bestUnitKind = bestUnits[kind];
+				const family = bestUnitKind[fromUnit[Generated.ConversionIndex.Family]];
 
 				const baseUnit = family[0][Generated.BestIndex.Sym];
 
@@ -193,7 +211,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 					// time -> meters
 					(fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && to === meters) ||
 					// meters -> time
-					(toUnit![Generated.ConversionIndex.Family] === ConversionFamilyId.Time && from === meters)
+					(toUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && from === meters)
 				) {
 					throw new RangeError(
 						[

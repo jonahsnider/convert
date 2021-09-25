@@ -2,7 +2,7 @@ import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/com
 
 export const id = ConversionFamilyId.Force;
 
-export const best: BestConversions = ['N'];
+export const best: BestConversions = {metric: ['N'], imperial: ['lbf']};
 
 export const conversions: ConversionGroup = [
 	{names: ['newton', 'newtons'], symbols: ['N'], ratio: 1},

@@ -3,7 +3,10 @@ import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/com
 
 export const id = ConversionFamilyId.Length;
 
-export const best: BestConversions = ['mm', 'cm', 'm', 'km'];
+export const best: BestConversions = {
+	metric: ['mm', 'cm', 'm', 'km'],
+	imperial: ['in', 'ft', 'yd', 'mi']
+};
 
 export const conversions: ConversionGroup = [
 	{names: ['meter', 'meters', 'metre', 'metres'], symbols: ['m'], ratio: 1},

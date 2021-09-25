@@ -3,9 +3,9 @@ import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/com
 
 export const id = ConversionFamilyId.Temperature;
 
-export const best: BestConversions = ['C'];
+export const best: BestConversions = {metric: ['C'], imperial: ['F']};
 
-const enum KelvinNames {
+export const enum KelvinNames {
 	kelvin = 'kelvin',
 	kelvins = 'kelvins',
 	K = 'K'
@@ -20,10 +20,3 @@ export const conversions: ConversionGroup = [
 	{names: ['celsius'], symbols: ['C'], ratio: 1, difference: 273.15},
 	{names: ['rankine'], symbols: ['R'], ratio: 5 / 9}
 ];
-
-/** This is like a `Set` of aliases except it's an object, so we can use the `in` keyword (ES3 compatibility). */
-export const kelvinsAliases: Record<string, unknown> = {
-	[KelvinNames.kelvin]: 0,
-	[KelvinNames.kelvins]: 0,
-	[KelvinNames.K]: 0
-};

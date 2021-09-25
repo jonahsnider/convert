@@ -4,7 +4,10 @@ import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/com
 
 export const id = ConversionFamilyId.Area;
 
-export const best: BestConversions = ['mm2', 'cm2', 'm2', 'km2'];
+export const best: BestConversions = {
+	metric: ['mm2', 'cm2', 'm2', 'km2'],
+	imperial: ['sq ft', 'sq in', 'sq mi', 'ac']
+};
 
 export const conversions: ConversionGroup = [
 	// https://en.wikipedia.org/wiki/Category:Units_of_area

@@ -1,11 +1,15 @@
+import Decimal from 'decimal.js';
 import {expandMacro, Macros} from '../generate/macros';
 import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
 
 export const id = ConversionFamilyId.Mass;
 
-export const best: BestConversions = ['mg', 'g', 'kg'];
+export const best: BestConversions = {
+	metric: ['mg', 'g', 'kg'],
+	imperial: ['oz', 'lb']
+};
 
-const poundInGrams = 4.5359237e2;
+const poundInGrams = new Decimal(4.5359237e2);
 
 export const conversions: ConversionGroup = [
 	{names: ['gram', 'grams'], symbols: ['g'], ratio: 1},
@@ -15,9 +19,9 @@ export const conversions: ConversionGroup = [
 	...expandMacro(Macros.si, {names: ['gram', 'grams'], symbols: ['g'], ratio: 1}),
 
 	{names: ['pound', 'pounds'], symbols: ['lb'], ratio: poundInGrams},
-	{names: ['stone', 'stones'], symbols: ['st'], ratio: poundInGrams * 14},
+	{names: ['stone', 'stones'], symbols: ['st'], ratio: poundInGrams.times(14)},
 	// TODO: Remove ℥ on next breaking release
-	{names: ['ounce', 'ounces'], symbols: ['oz', '℥'], ratio: poundInGrams / 16},
-	{names: ['short ton', 'short tons', 'US ton', 'US tons'], ratio: poundInGrams * 2000},
-	{names: ['long ton', 'long tons', 'imperial ton', 'imperial tons', 'displacement ton', 'displacement tons'], ratio: poundInGrams * 2240}
+	{names: ['ounce', 'ounces'], symbols: ['oz', '℥'], ratio: poundInGrams.div(16)},
+	{names: ['short ton', 'short tons', 'US ton', 'US tons'], ratio: poundInGrams.times(2000)},
+	{names: ['long ton', 'long tons', 'imperial ton', 'imperial tons', 'displacement ton', 'displacement tons'], ratio: poundInGrams.times(2240)}
 ];

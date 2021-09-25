@@ -1,9 +1,13 @@
+import Decimal from 'decimal.js';
 import {expandMacro, Macros} from '../generate/macros';
 import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
 
 export const id = ConversionFamilyId.Volume;
 
-export const best: BestConversions = ['mL', 'L'];
+export const best: BestConversions = {
+	metric: ['mL', 'L'],
+	imperial: ['tsp', 'tbsp', 'fl oz', 'pt', 'cup', 'qt', 'gal']
+};
 
 export const conversions: ConversionGroup = [
 	{
@@ -39,22 +43,25 @@ export const conversions: ConversionGroup = [
 	{names: ['imperial gallon', 'imperial gallons'], symbols: ['imp gal'], ratio: 0.00454609},
 	{names: ['imperial quart', 'imperial quarts'], symbols: ['imp qt'], ratio: 0.0011365225},
 	{names: ['imperial pint', 'imperial pints'], symbols: ['imp pt'], ratio: 0.00056826125},
-	{names: ['imperial fluid ounce', 'imperial fluid ounces'], symbols: ['imp fl oz'], ratio: 2.84130625e-5},
+	// https://en.wikipedia.org/wiki/Fluid_ounce
+	{names: ['imperial fluid ounce', 'imperial fluid ounces'], symbols: ['imp fl oz'], ratio: 28.4130625e-6},
 
 	// https://en.wikipedia.org/wiki/United_States_customary_units#Fluid_volume
-	{names: ['teaspoon', 'teaspoons', 'US teaspoon', 'US teaspoons'], symbols: ['tsp'], ratio: 4.92892159375 / 1e6},
-	{names: ['tablespoon', 'tablespoons', 'US tablespoon', 'US tablespoons'], symbols: ['tbsp'], ratio: 14.78676478125 / 1e6},
+	{names: ['teaspoon', 'teaspoons', 'US teaspoon', 'US teaspoons'], symbols: ['tsp'], ratio: 4.92892159375e-6},
+	{names: ['tablespoon', 'tablespoons', 'US tablespoon', 'US tablespoons'], symbols: ['tbsp'], ratio: 14.78676478125e-6},
 	// https://en.wikipedia.org/wiki/Fluid_ounce
 	{names: ['US fluid ounce', 'US fluid ounces'], symbols: ['fl oz', 'fl. oz.', 'oz. fl.'], ratio: 29.5735295625e-6},
 	// https://en.wikipedia.org/wiki/Cup_(unit)
-	{names: ['cup', 'cups', 'US legal cup', 'US legal cups'], symbols: ['c'], ratio: 236.5882365 / 1e6},
+	{names: ['cup', 'cups', 'US legal cup', 'US legal cups'], symbols: ['c'], ratio: 236.5882365e-6},
 	// https://en.wikipedia.org/wiki/Pint
 	{names: ['pint', 'pints', 'US liquid pint', 'US liquid pints'], symbols: ['pt', 'p'], ratio: 4.73176473e-4},
 	// https://en.wikipedia.org/wiki/Quart
 	{names: ['quart', 'quarts', 'US liquid quart', 'US liquid quarts'], symbols: ['qt'], ratio: 9.46352946e-4},
 	// https://en.wikipedia.org/wiki/Gallon
-	{names: ['gallon', 'gallons', 'US liquid gallon', 'US liquid gallons'], symbols: ['gal'], ratio: 1 / 264.1721},
+	{names: ['gallon', 'gallons', 'US liquid gallon', 'US liquid gallons'], symbols: ['gal'], ratio: 3.785411784e-3},
 
+	// https://en.wikipedia.org/wiki/United_States_customary_units#Dry_volume
+	// https://en.wikipedia.org/wiki/Dry_measure#US_units_of_dry_measure
 	{names: ['US dry barrel', 'US dry barrels'], symbols: ['US dry bbl'], ratio: 0.12},
 	{names: ['US bushel', 'US bushels'], symbols: ['US bsh', 'US bu'], ratio: 3.52391e-2},
 	{names: ['US peck'], symbols: ['US pk'], ratio: 9.09218e-3},

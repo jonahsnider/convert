@@ -1,11 +1,14 @@
-import {ConversionFamilyId} from '../dev/types/common';
+import {BestConversionKind, ConversionFamilyId} from '../dev/types/common';
 import {BestIndex} from '../dev/types/generated';
 import {bestUnits} from '../generated/generated';
 import {Unit, UnitToFamily} from './units';
 
 export type SimplifyQuantity<Q> = Q extends number ? number : Extract<Q, bigint>;
 
-export type BestUnits<Family extends ConversionFamilyId = ConversionFamilyId> = typeof bestUnits[Family][number][BestIndex.Sym];
+export type BestUnits<
+	Family extends ConversionFamilyId = ConversionFamilyId,
+	Kind extends BestConversionKind = BestConversionKind
+> = typeof bestUnits[Kind][Family][number][BestIndex.Sym];
 
 /**
  * The return value from converting a unit to `'best'`.
@@ -40,11 +43,15 @@ export interface Converter<Q extends number | bigint, U extends Unit> {
 	 * Convert a measurement to the best unit for display.
 	 *
 	 * @param to - The string `best`
+	 * @param kind - The set of units to use (defaults to `'metric'`)
 	 *
 	 * @throws `RangeError` if the `to` parameter is not a valid type
 	 * @throws `TypeError` if `quantity` was a `bigint` but the conversion can't be expressed as an integer
 	 *
 	 * @returns An object with a `quantity` property of the `unit` unit, which can be casted to a string using the `toString()` method
 	 */
-	to<B extends BestUnits<UnitToFamily[U]>>(to: 'best'): BestConversion<Q, B>;
+	to<B extends BestUnits<UnitToFamily[U], K>, K extends BestConversionKind = BestConversionKind>(
+		to: 'best',
+		kind?: K | undefined
+	): BestConversion<Q, B>;
 }

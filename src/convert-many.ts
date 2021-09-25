@@ -1,5 +1,6 @@
 import {assert} from './assert';
 import {convert} from './convert';
+import {BestConversionKind} from './dev/types/common';
 import {BestConversion, BestUnits, Converter} from './types/common';
 import {Unit} from './types/units';
 
@@ -37,7 +38,7 @@ export function convertMany(value: string): Converter<number, Unit> {
 	}
 
 	return {
-		to(unit: Unit | 'best') {
+		to(unit: Unit | 'best', kind?: BestConversionKind | undefined) {
 			assert(search);
 
 			const best = unit === 'best';
@@ -64,7 +65,7 @@ export function convertMany(value: string): Converter<number, Unit> {
 
 			if (best) {
 				// @ts-expect-error
-				return convert(result, resolvedUnit).to('best');
+				return convert(result, resolvedUnit).to('best', kind);
 			}
 
 			return result;

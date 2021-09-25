@@ -12,3 +12,11 @@ delete best.toString;
 
 assert.deepEqual(best, {quantity: 1, unit: 'd'});
 assert.strictEqual(string, '1d');
+
+best = lib.convert(12, 'in').to('best', 'imperial');
+string = best.toString();
+
+delete best.toString;
+
+assert.deepEqual(best, {quantity: 1, unit: 'ft'});
+assert.strictEqual(string, '1ft');

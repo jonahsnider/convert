@@ -1,6 +1,10 @@
+import Decimal from 'decimal.js';
+
+export type Numeric = number | Decimal;
+
 interface BaseConversion {
-	ratio: number;
-	difference?: number;
+	ratio: Numeric;
+	difference?: Numeric;
 }
 
 export interface OnlySymbolConversion extends BaseConversion {
@@ -18,7 +22,7 @@ export type Conversion = OnlySymbolConversion | NamedConversion;
 interface BasePrefixMacro {
 	names: string[];
 	symbols: string[];
-	ratio: number;
+	ratio: Numeric;
 }
 
 interface BinaryPrefixMacro extends BasePrefixMacro {
@@ -32,8 +36,10 @@ interface SiPrefixMacro extends BasePrefixMacro {
 
 export type PrefixMacro = SiPrefixMacro | BinaryPrefixMacro;
 
+export type BestConversionKind = 'metric' | 'imperial';
+
 export type ConversionGroup = Array<Conversion>;
-export type BestConversions = string[];
+export type BestConversions = string[] | Record<BestConversionKind, string[]>;
 
 export interface ConversionFamily {
 	conversions: ConversionGroup;

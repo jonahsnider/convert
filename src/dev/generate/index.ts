@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as conversionFamilies from '../conversions/index.js';
-import * as Generated from '../types/generated';
 import {best} from './best.js';
 import {optimize} from './optimize.js';
 import {serialize} from './serialize.js';

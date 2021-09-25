@@ -16,9 +16,9 @@ The optimization pipeline works like this:
 
    ```js
    const conversions = {
-   	gram: [0, 1, 0],
-   	grams: [0, 1, 0],
-   	g: [0, 1, 0]
+   	gram: [0, 1],
+   	grams: [0, 1],
+   	g: [0, 1]
    };
    ```
 

@@ -37,6 +37,17 @@ test('production errors', t => {
 		instanceOf: RangeError,
 		message: /the number \d+\.\d+ cannot be converted to a bigint because it is not an integer/i
 	});
+
+	t.throws(
+		() =>
+			convert(123, 'in').to(
+				'best',
+				// @ts-expect-error
+				'invalid'
+			),
+		{instanceOf: RangeError, message: ''},
+		'invalid best unit kind'
+	);
 });
 
 test('development errors', t => {
@@ -70,6 +81,17 @@ test('development errors', t => {
 	);
 
 	t.throws(() => convert(1000n, 'ms').to('seconds'), {instanceOf: TypeError, message: /conversion.+integer/i});
+
+	t.throws(
+		() =>
+			convert(123, 'in').to(
+				'best',
+				// @ts-expect-error
+				'invalid'
+			),
+		{instanceOf: RangeError, message: /.+/},
+		'invalid best unit kind'
+	);
 });
 
 test(macros.convert, [1, 'second'], [1, 'second']);
