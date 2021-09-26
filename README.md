@@ -31,7 +31,7 @@ convertMany('4d 16h').to('minutes');
 
 Generated API documentation for the latest version is available online.
 
-[**View docs**](https://convert.jonah.pw).
+[**View docs**](https://convert.js.org).
 
 ```ts
 // ESM:

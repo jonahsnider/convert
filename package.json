@@ -19,7 +19,7 @@
 		"length",
 		"data"
 	],
-	"homepage": "https://convert.jonah.pw/",
+	"homepage": "https://convert.js.org/",
 	"repository": {
 		"type": "git",
 		"url": "http://github.com/jonahsnider/convert.git"
