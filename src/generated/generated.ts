@@ -2007,7 +2007,7 @@ export const conversions = {__proto__:null,
 		6,
 		0.13332236842105263
 	],
-	"atmopshere": [
+	"atmosphere": [
 		6,
 		101325
 	],
