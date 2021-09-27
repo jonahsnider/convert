@@ -1,8 +1,8 @@
-import {assert} from './assert';
-import {convert} from './convert';
-import {BestConversionKind} from './dev/types/common';
-import {BestConversion, BestUnits, Converter} from './types/common';
-import {Unit} from './types/units';
+import {assert} from './assert.js';
+import {convert} from './convert.js';
+import type {BestConversionKind} from './dev/types/common.js';
+import type {BestConversion, BestUnits, Converter} from './types/common.js';
+import type {Unit} from './types/units.js';
 
 const enum MatchGroup {
 	/** The entire match. */
@@ -13,7 +13,7 @@ const enum MatchGroup {
 	Unit,
 }
 
-const splitExpression = /(-?(?:\d+)?\.?\d+)([^\s]+)/g;
+const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
 
 /**
  * Convert several values in a string into a single unit.
@@ -31,12 +31,13 @@ export function convertMany(value: string): Converter<number, Unit> {
 
 	if (!search) {
 		if (__DEV__) {
-			throw new RangeError(`value did not match expression ${splitExpression}`);
+			throw new RangeError(`value did not match expression ${splitExpression.source}`);
 		}
 
 		throw new RangeError();
 	}
 
+	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
 		to(unit: Unit | 'best', kind?: BestConversionKind | undefined) {
 			assert(search);
@@ -64,8 +65,7 @@ export function convertMany(value: string): Converter<number, Unit> {
 			} while (search);
 
 			if (best) {
-				// @ts-expect-error
-				return convert(result, resolvedUnit).to('best', kind);
+				return convert(result, resolvedUnit! as any).to('best', kind);
 			}
 
 			return result;

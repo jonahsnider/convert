@@ -1,7 +1,8 @@
-import {ConversionFamilyId} from '../dev/types/common';
-import {ConversionIndex} from '../dev/types/generated';
-import {conversions} from '../generated/generated';
+import type {ConversionFamilyId} from '../dev/types/common';
+import type {ConversionIndex} from '../dev/types/generated';
+import type {conversions} from '../generated/generated';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 type Conversions = Omit<typeof conversions, '__proto__'>;
 
 export type Units = Conversions;

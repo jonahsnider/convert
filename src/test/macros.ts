@@ -1,8 +1,9 @@
-import {Macro} from 'ava';
-import {BestConversionKind} from '../dev/types/common';
+// eslint-disable-next-line ava/use-test
+import type {Macro} from 'ava';
+import type {BestConversionKind} from '../dev/types/common';
 import * as lib from '../index';
-import {BestUnits} from '../types/common';
-import {Unit} from '../types/units';
+import type {BestUnits} from '../types/common';
+import type {Unit} from '../types/units';
 
 export const convert: Macro<[actual: [fromQuantity: number | bigint, from: Unit], expected: [toQuantity: number | bigint, to: Unit]]> = (
 	t,
@@ -36,7 +37,7 @@ export const convertManyBest: Macro<[input: [from: string, kind?: BestConversion
 	t.is(toString(), `${expected[0]}${expected[1]}`);
 };
 
-convertManyBest.title = (_providedTitle, input, expected) => `${input[0]} -> ${input[1]} ${expected[0]} ${expected[1]}`;
+convertManyBest.title = (_providedTitle, input, expected) => `${input[0]} -> ${input[1] ?? '(default)'} ${expected[0]} ${expected[1]}`;
 
 export const ms: Macro<[from: string, expected: number | bigint]> = (t, input, expected) => {
 	t.is(lib.ms(input), expected);

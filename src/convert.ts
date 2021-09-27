@@ -1,10 +1,11 @@
 import {assert, assertType, isType} from './assert';
-import {KelvinNames} from './dev/conversions/temperature';
-import {BestConversionKind, ConversionFamilyId} from './dev/types/common';
+import type {KelvinNames} from './dev/conversions/temperature';
+import type {BestConversionKind} from './dev/types/common';
+import {ConversionFamilyId} from './dev/types/common';
 import * as Generated from './dev/types/generated';
 import {bestUnits, conversions, temperatureDifferences} from './generated/generated';
-import {Converter} from './types/common';
-import {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
+import type {Converter} from './types/common';
+import type {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
 
 /** This is like a `Set` of aliases except it's an object, so we can use the `in` keyword (ES3 compatibility). */
 export const kelvinsAliases: Record<KelvinNames, unknown> = {
@@ -159,6 +160,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 	const convertingTemperature = fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature;
 
+	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
 		to: (to: typeof from | 'best', kind: BestConversionKind = 'metric') => {
 			if (from === to) {
@@ -168,6 +170,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 			// TODO: Extract to function
 			if (to === 'best') {
+				// eslint-disable-next-line no-prototype-builtins
 				if (!bestUnits.hasOwnProperty(kind)) {
 					if (__DEV__) {
 						throw new RangeError(`${kind} is not a valid best conversion kind`);
@@ -185,9 +188,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 				let bestUnit: typeof family[number][Generated.BestIndex.Sym] = baseUnit;
 
-				for (let i = 0; i < family.length; i++) {
-					const best = family[i];
-
+				for (const best of family) {
 					if (quantity >= best[Generated.BestIndex.Value]) {
 						bestUnit = best[Generated.BestIndex.Sym];
 					}
@@ -195,7 +196,12 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 				quantity = convert(quantity, baseUnit as any).to(bestUnit as any) as unknown as Q;
 
-				return {quantity, unit: bestUnit, toString: () => quantity + bestUnit} as any;
+				return {
+					quantity,
+					unit: bestUnit,
+					// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+					toString: () => quantity + bestUnit,
+				};
 			}
 
 			const toUnit = conversions[to] as typeof conversions[keyof typeof conversions] | undefined;
@@ -208,9 +214,9 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 				const meters = 'm';
 
 				if (
-					// time -> meters
+					// Time -> meters
 					(fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && to === meters) ||
-					// meters -> time
+					// Meters -> time
 					(toUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && from === meters)
 				) {
 					throw new RangeError(
@@ -232,6 +238,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 				throw new RangeError();
 			}
+
 			assert(toUnit);
 
 			if (usingBigInts && isType<bigint>(quantity)) {
@@ -255,7 +262,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 			assertType<number>(quantity);
 
 			if (convertingTemperature && isType<Temperature>(from) && isType<Temperature>(to)) {
-				// in keyword here is safe because we have already validated that you are giving us a valid unit
+				// `in` keyword here is safe because we have already validated that you are giving us a valid unit
 				if (to in kelvinsAliases) {
 					if (from in temperatureDifferences && isType<keyof typeof temperatureDifferences>(from)) {
 						return (quantity + temperatureDifferences[from]) * fromUnit[Generated.ConversionIndex.Ratio];
@@ -263,6 +270,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 					return quantity * fromUnit[Generated.ConversionIndex.Ratio];
 				}
+
 				if (from in kelvinsAliases) {
 					if (to in temperatureDifferences && isType<keyof typeof temperatureDifferences>(to)) {
 						return quantity / toUnit[Generated.ConversionIndex.Ratio] - temperatureDifferences[to];
@@ -276,5 +284,5 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 			return quantity * (fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
 		},
-	};
+	} as Converter<Q, typeof from>;
 }

@@ -1,6 +1,6 @@
 import test from 'ava';
-import {convertMany} from './';
 import * as macros from './test/macros';
+import {convertMany} from '.';
 
 const invalidValue = 'not a valid value';
 const invalidUnit = 'not a valid unit';
@@ -12,7 +12,7 @@ test('production errors', t => {
 	t.throws(
 		() =>
 			convertMany('1000ms')
-				// @ts-expect-error
+				// @ts-expect-error Invalid unit
 				.to(invalidUnit),
 		{instanceOf: TypeError},
 	);
@@ -25,7 +25,7 @@ test('development errors', t => {
 	t.throws(
 		() =>
 			convertMany('1000ms')
-				// @ts-expect-error
+				// @ts-expect-error Invalid unit
 				.to(invalidUnit),
 		{instanceOf: RangeError, message: /.+/},
 	);
@@ -44,7 +44,7 @@ test(macros.convertMany, '-0.1m', [-0.1, 'm']);
 
 test(macros.convertManyBest, ['500m 3km'], [3.5, 'km']);
 test(macros.convertManyBest, ['500m 3km', 'metric'], [3.5, 'km']);
-test(macros.convertManyBest, ['500m 3km', 'imperial'], [2.1747991728306686, 'mi']);
+test(macros.convertManyBest, ['500m 3km', 'imperial'], [2.174_799_172_830_668_6, 'mi']);
 
 test(macros.ms, '1s', 1000);
 test(macros.ms, '1d', 86_400_000);

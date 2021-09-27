@@ -1,9 +1,10 @@
 import {stddev} from '@jonahsnider/util';
 import test from 'ava';
-import defaultExport, {convert, Unit} from '.';
 import {ConversionIndex} from './dev/types/generated';
 import {conversions} from './generated/generated';
 import * as macros from './test/macros';
+import defaultExport, {convert} from '.';
+import type {Unit} from '.';
 
 const invalidUnit = 'not a valid unit';
 
@@ -20,7 +21,7 @@ test('production errors', t => {
 	t.throws(
 		() =>
 			convert(123, 'ms')
-				// @ts-expect-error
+				// @ts-expect-error Invalid unit
 				.to(invalidUnit),
 		{instanceOf: TypeError},
 	);
@@ -28,7 +29,7 @@ test('production errors', t => {
 	t.throws(
 		() =>
 			convert(1000, 'ms')
-				// @ts-expect-error
+				// @ts-expect-error Invalid unit
 				.to('meters'),
 		{instanceOf: RangeError, message: ''},
 	);
@@ -42,7 +43,7 @@ test('production errors', t => {
 		() =>
 			convert(123, 'in').to(
 				'best',
-				// @ts-expect-error
+				// @ts-expect-error Invalid best kind
 				'invalid',
 			),
 		{instanceOf: RangeError, message: ''},
@@ -59,7 +60,7 @@ test('development errors', t => {
 	t.throws(
 		() =>
 			convert(1000, 'ms')
-				// @ts-expect-error
+				// @ts-expect-error Invalid unit
 				.to(invalidUnit),
 		{instanceOf: RangeError, message: /.+/},
 	);
@@ -67,7 +68,7 @@ test('development errors', t => {
 	t.throws(
 		() =>
 			convert(123, 'ms')
-				// @ts-expect-error
+				// @ts-expect-error Invalid unit
 				.to('m'),
 		{instanceOf: RangeError, message: /not minutes.+min/i},
 	);
@@ -75,7 +76,7 @@ test('development errors', t => {
 	t.throws(
 		() =>
 			convert(1000, 'ms')
-				// @ts-expect-error
+				// @ts-expect-error Invalid unit
 				.to('meters'),
 		{instanceOf: RangeError, message: /.+/},
 	);
@@ -86,7 +87,7 @@ test('development errors', t => {
 		() =>
 			convert(123, 'in').to(
 				'best',
-				// @ts-expect-error
+				// @ts-expect-error Invalid unit
 				'invalid',
 			),
 		{instanceOf: RangeError, message: /.+/},

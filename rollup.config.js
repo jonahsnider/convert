@@ -4,6 +4,7 @@ import typescript from '@rollup/plugin-typescript';
 import {terser} from 'rollup-plugin-terser';
 import dts from 'rollup-plugin-dts';
 
+/* eslint-disable camelcase */
 /** @type {import('rollup-plugin-terser').Options} */
 const terserConfig = {
 	ecma: 5,
@@ -30,6 +31,7 @@ const esmTerserConfig = {
 		ecma: 2016,
 	},
 };
+/* eslint-enable camelcase */
 
 const config = [
 	// UMD

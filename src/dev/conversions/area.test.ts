@@ -11,4 +11,4 @@ test(macros.convert, [1, 'square meter'], [1000, 'square millimeter']);
 
 test(macros.convert, [1, 'sq ft'], [12 ** 2, 'sq in']);
 test(macros.convert, [1, 'sq yd'], [9, 'sq ft']);
-test(macros.convert, [1, 'm2'], [3.861021585424458e-7, 'sq mi']);
+test(macros.convert, [1, 'm2'], [3.861_021_585_424_458e-7, 'sq mi']);

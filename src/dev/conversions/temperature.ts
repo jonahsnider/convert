@@ -1,5 +1,6 @@
 import {expandMacro, Macros} from '../generate/macros';
-import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
+import type {BestConversions, ConversionGroup} from '../types/common';
+import {ConversionFamilyId} from '../types/common';
 
 export const id = ConversionFamilyId.Temperature;
 

@@ -1,4 +1,4 @@
-import Decimal from 'decimal.js';
+import type Decimal from 'decimal.js';
 
 export type Numeric = number | Decimal;
 
@@ -38,7 +38,7 @@ export type PrefixMacro = SiPrefixMacro | BinaryPrefixMacro;
 
 export type BestConversionKind = 'metric' | 'imperial';
 
-export type ConversionGroup = Array<Conversion>;
+export type ConversionGroup = Conversion[];
 export type BestConversions = string[] | Record<BestConversionKind, string[]>;
 
 export interface ConversionFamily {

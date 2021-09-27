@@ -1,5 +1,5 @@
 import Decimal from 'decimal.js';
-import {Conversion, Numeric} from '../../types/common';
+import type {Conversion, Numeric} from '../../types/common';
 
 interface UnitGroup {
 	prefix: string;

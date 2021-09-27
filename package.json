@@ -58,13 +58,40 @@
 	"scripts": {
 		"analyze": "size-limit --why",
 		"build": "rm -rf tsc_output dist; yarn run generate; tsc; rollup --config rollup.config.js; rm tsc_output/*.tsbuildinfo",
-		"generate": "tsc --build ./dev.tsconfig.json; node tsc_output/dev/generate/index.js",
-		"size": "size-limit",
 		"docs": "typedoc",
-		"style": "prettier --check .",
+		"generate": "tsc --build ./dev.tsconfig.json; node tsc_output/dev/generate/index.js",
+		"lint": "xo",
 		"release": "semantic-release",
+		"size": "size-limit",
+		"style": "prettier --check .",
 		"test": "yarn run generate; ava",
 		"test:coverage": "yarn run generate; rm -rf coverage; c8 --reporter lcov --reporter text-summary --include 'tsc_output/**/*.js' --exclude 'tsc_output/{generated,test,dev,types}' --exclude 'tsc_output/*.test.js' --exclude 'tsc_output/entry.js' --all ava"
+	},
+	"xo": {
+		"ignore": [
+			"./docs",
+			"./src/test/legacy.js",
+			"./src/generated/generated.ts"
+		],
+		"overrides": [
+			{
+				"files": "./**/*.ts",
+				"rules": {
+					"@typescript-eslint/consistent-type-imports": [
+						"error",
+						{
+							"prefer": "type-imports"
+						}
+					]
+				}
+			}
+		],
+		"prettier": true,
+		"rules": {
+			"prettier/prettier": "off",
+			"unicorn/error-message": "off",
+			"unicorn/prefer-module": "off"
+		}
 	},
 	"ava": {
 		"files": [
@@ -92,7 +119,7 @@
 		"@rollup/plugin-replace": "3.0.0",
 		"@rollup/plugin-typescript": "8.2.5",
 		"@size-limit/preset-small-lib": "5.0.4",
-		"@types/node": "15.12.4",
+		"@types/node": "16.10.1",
 		"ava": "3.15.0",
 		"c8": "7.9.0",
 		"decimal.js": "10.3.1",
@@ -107,7 +134,8 @@
 		"ts-node": "10.2.1",
 		"tslib": "2.3.1",
 		"typedoc": "0.22.4",
-		"typescript": "4.4.3"
+		"typescript": "4.4.3",
+		"xo": "0.44.0"
 	},
 	"packageManager": "yarn@3.0.2",
 	"runkitExampleFilename": "./docs/runkit.js",

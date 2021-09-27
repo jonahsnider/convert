@@ -1,4 +1,4 @@
-import {Macro} from '../expand';
+import type {Macro} from '../expand';
 
 const areaSi: Macro = [
 	{prefix: 'square peta', symbol: 'P', value: 1e15, kind: 'big'},

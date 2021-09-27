@@ -1,7 +1,8 @@
 import {combineIterables, identical} from '@jonahsnider/util';
 import Decimal from 'decimal.js';
-import {ConversionFamily, ConversionFamilyId} from '../types/common';
-import * as Generated from '../types/generated';
+import type {ConversionFamily} from '../types/common';
+import {ConversionFamilyId} from '../types/common';
+import type * as Generated from '../types/generated';
 
 export function optimize(conversionFamilies: readonly ConversionFamily[]): {
 	conversions: Generated.Conversions;

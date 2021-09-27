@@ -1,6 +1,7 @@
 import Decimal from 'decimal.js';
 import {expandMacro, Macros} from '../generate/macros';
-import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
+import type {BestConversions, ConversionGroup} from '../types/common';
+import {ConversionFamilyId} from '../types/common';
 
 export const id = ConversionFamilyId.Mass;
 
@@ -9,7 +10,7 @@ export const best: BestConversions = {
 	imperial: ['oz', 'lb'],
 };
 
-const poundInGrams = new Decimal(4.5359237e2);
+const poundInGrams = new Decimal(4.535_923_7e2);
 
 export const conversions: ConversionGroup = [
 	{names: ['gram', 'grams'], symbols: ['g'], ratio: 1},

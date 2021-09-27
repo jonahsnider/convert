@@ -1,6 +1,7 @@
 import {Macros} from '../generate/macros';
 import {expandMacro} from '../generate/macros/expand';
-import {BestConversions, ConversionFamilyId, ConversionGroup} from '../types/common';
+import type {BestConversions, ConversionGroup} from '../types/common';
+import {ConversionFamilyId} from '../types/common';
 
 export const id = ConversionFamilyId.Area;
 
@@ -16,7 +17,7 @@ export const conversions: ConversionGroup = [
 	...expandMacro(Macros.areaSi, {names: ['meter', 'metre', 'meters', 'metres'], symbols: ['m²', 'm2'], ratio: 1}),
 
 	// https://en.wikipedia.org/wiki/Conversion_of_units#Area
-	{names: ['acre', 'acres'], symbols: ['ac'], ratio: 4046.8564224},
+	{names: ['acre', 'acres'], symbols: ['ac'], ratio: 4046.856_422_4},
 
 	// https://en.wikipedia.org/wiki/Hectare#Are
 	{names: ['centiare', 'centiares'], symbols: ['ca'], ratio: 1},
@@ -26,8 +27,8 @@ export const conversions: ConversionGroup = [
 	{names: ['decare', 'decares'], symbols: ['daa'], ratio: 1e3},
 	{names: ['hectare', 'hectares'], symbols: ['ha'], ratio: 1e4},
 
-	{names: ['square foot', 'square feet'], symbols: ['sq ft'], ratio: 9.290304e-2},
+	{names: ['square foot', 'square feet'], symbols: ['sq ft'], ratio: 9.290_304e-2},
 	{names: ['square inch', 'square inches'], symbols: ['sq in'], ratio: 6.4516e-4},
-	{names: ['square yard', 'square yards'], symbols: ['sq yd'], ratio: 0.83612736},
-	{names: ['square mile', 'square miles'], symbols: ['sq mi'], ratio: 2.589988110336e6},
+	{names: ['square yard', 'square yards'], symbols: ['sq yd'], ratio: 0.836_127_36},
+	{names: ['square mile', 'square miles'], symbols: ['sq mi'], ratio: 2.589_988_110_336e6},
 ];

@@ -1,4 +1,4 @@
-import {BestConversionKind} from './common';
+import type {BestConversionKind} from './common';
 
 export type Best = Record<BestConversionKind, Array<Array<[value: number, sym: string]>>>;
 

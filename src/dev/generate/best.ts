@@ -1,7 +1,7 @@
 import {combineIterables} from '@jonahsnider/util';
 import Decimal from 'decimal.js';
-import {BestConversionKind, ConversionFamily} from '../types/common';
-import * as Generated from '../types/generated';
+import type {ConversionFamily} from '../types/common';
+import type * as Generated from '../types/generated';
 
 Decimal.set({precision: 50});
 
@@ -39,10 +39,10 @@ export function best(conversionFamilies: ConversionFamily[]): Generated.Best {
 
 			const conversionFamilyBest = Array.isArray(conversionFamily.best) ? conversionFamily.best : conversionFamily.best[kind];
 
-			const firstVal = lookup[conversionFamilyBest[0]];
+			const firstValue = lookup[conversionFamilyBest[0]];
 
 			for (const bestUnit of conversionFamilyBest) {
-				const relative = lookup[bestUnit].div(firstVal);
+				const relative = lookup[bestUnit].div(firstValue);
 
 				array.push([simplify(relative), bestUnit]);
 			}
