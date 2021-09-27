@@ -102,7 +102,7 @@ ms('1d 2h 30min');
 
 ## Installation
 
-### Package maneger
+### Package manager
 
 Convert is published as `convert` on npm.
 
