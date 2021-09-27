@@ -1,4 +1,4 @@
-import type {Macro} from '../expand';
+import type {Macro} from '../expand.js';
 
 /** @see https://en.wikipedia.org/wiki/Template:Bit_and_byte_prefixes Source */
 const binary: Macro = [

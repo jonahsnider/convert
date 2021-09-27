@@ -1,4 +1,4 @@
-import type * as Generated from '../types/generated';
+import type * as Generated from '../types/generated.js';
 
 function stringify(value: unknown): string {
 	return JSON.stringify(value, undefined, '\t');

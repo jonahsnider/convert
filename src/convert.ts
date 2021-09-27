@@ -1,11 +1,11 @@
-import {assert, assertType, isType} from './assert';
-import type {KelvinNames} from './dev/conversions/temperature';
-import type {BestConversionKind} from './dev/types/common';
-import {ConversionFamilyId} from './dev/types/common';
-import * as Generated from './dev/types/generated';
-import {bestUnits, conversions, temperatureDifferences} from './generated/generated';
-import type {Converter} from './types/common';
-import type {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units';
+import {assert, assertType, isType} from './assert.js';
+import type {KelvinNames} from './dev/conversions/temperature.js';
+import type {BestConversionKind} from './dev/types/common.js';
+import {ConversionFamilyId} from './dev/types/common.js';
+import * as Generated from './dev/types/generated.js';
+import {bestUnits, conversions, temperatureDifferences} from './generated/generated.js';
+import type {Converter} from './types/common.js';
+import type {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units.js';
 
 /** This is like a `Set` of aliases except it's an object, so we can use the `in` keyword (ES3 compatibility). */
 export const kelvinsAliases: Record<KelvinNames, unknown> = {

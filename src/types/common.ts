@@ -1,7 +1,7 @@
-import type {BestConversionKind, ConversionFamilyId} from '../dev/types/common';
-import type {BestIndex} from '../dev/types/generated';
-import type {bestUnits} from '../generated/generated';
-import type {Unit, UnitToFamily} from './units';
+import type {BestConversionKind, ConversionFamilyId} from '../dev/types/common.js';
+import type {BestIndex} from '../dev/types/generated.js';
+import type {bestUnits} from '../generated/generated.js';
+import type {Unit, UnitToFamily} from './units.js';
 
 export type SimplifyQuantity<Q> = Q extends number ? number : Extract<Q, bigint>;
 

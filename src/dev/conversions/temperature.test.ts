@@ -1,7 +1,7 @@
 import test from 'ava';
-import type {Temperature} from '../..';
-import {convert} from '../..';
-import * as macros from '../../test/macros';
+import type {Temperature} from '../../index.js';
+import {convert} from '../../index.js';
+import * as macros from '../../test/macros.js';
 
 test(macros.convert, [100, 'C'], [373.15, 'K']);
 test(macros.convert, [212, 'F'], [100 + 0.000_000_000_000_06, 'C']);

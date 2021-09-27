@@ -1,5 +1,5 @@
 import test from 'ava';
-import * as macros from '../../test/macros';
+import * as macros from '../../test/macros.js';
 
 test(macros.convert, [1, 'centiare'], [1, 'm2']);
 test(macros.convert, [1, 'deciare'], [1e1, 'm2']);

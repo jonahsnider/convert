@@ -1,4 +1,4 @@
-export {default as si} from './si';
-export {default as areaSi} from './area-si';
-export {default as volumeSi} from './volume-si';
-export {default as binary} from './binary';
+export {default as si} from './si.js';
+export {default as areaSi} from './area-si.js';
+export {default as volumeSi} from './volume-si.js';
+export {default as binary} from './binary.js';

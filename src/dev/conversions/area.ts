@@ -1,7 +1,7 @@
-import {Macros} from '../generate/macros';
-import {expandMacro} from '../generate/macros/expand';
-import type {BestConversions, ConversionGroup} from '../types/common';
-import {ConversionFamilyId} from '../types/common';
+import {Macros} from '../generate/macros/index.js';
+import {expandMacro} from '../generate/macros/expand.js';
+import type {BestConversions, ConversionGroup} from '../types/common.js';
+import {ConversionFamilyId} from '../types/common.js';
 
 export const id = ConversionFamilyId.Area;
 

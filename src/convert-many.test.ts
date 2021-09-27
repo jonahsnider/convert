@@ -1,5 +1,5 @@
 import test from 'ava';
-import * as macros from './test/macros';
+import * as macros from './test/macros.js';
 import {convertMany} from '.';
 
 const invalidValue = 'not a valid value';

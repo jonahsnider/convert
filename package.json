@@ -90,7 +90,11 @@
 		"rules": {
 			"prettier/prettier": "off",
 			"unicorn/error-message": "off",
-			"unicorn/prefer-module": "off"
+			"unicorn/prefer-module": "off",
+			"import/extensions": [
+				"error",
+				"always"
+			]
 		}
 	},
 	"ava": {

@@ -1,5 +1,5 @@
 import test from 'ava';
-import {bestUnits, conversions, temperatureDifferences} from './generated';
+import {bestUnits, conversions, temperatureDifferences} from './generated.js';
 
 test('conversions', t => {
 	t.snapshot(conversions);

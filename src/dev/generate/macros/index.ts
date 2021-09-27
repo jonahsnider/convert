@@ -1,2 +1,2 @@
-export * as Macros from './definitions';
-export {expandMacro} from './expand';
+export * as Macros from './definitions/index.js';
+export {expandMacro} from './expand.js';

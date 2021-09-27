@@ -1,9 +1,9 @@
 // eslint-disable-next-line ava/use-test
 import type {Macro} from 'ava';
-import type {BestConversionKind} from '../dev/types/common';
-import * as lib from '../index';
-import type {BestUnits} from '../types/common';
-import type {Unit} from '../types/units';
+import type {BestConversionKind} from '../dev/types/common.js';
+import * as lib from '../index.js';
+import type {BestUnits} from '../types/common.js';
+import type {Unit} from '../types/units.js';
 
 export const convert: Macro<[actual: [fromQuantity: number | bigint, from: Unit], expected: [toQuantity: number | bigint, to: Unit]]> = (
 	t,

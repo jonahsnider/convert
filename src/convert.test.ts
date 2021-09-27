@@ -1,10 +1,10 @@
 import {stddev} from '@jonahsnider/util';
 import test from 'ava';
-import {ConversionIndex} from './dev/types/generated';
-import {conversions} from './generated/generated';
-import * as macros from './test/macros';
-import defaultExport, {convert} from '.';
-import type {Unit} from '.';
+import {ConversionIndex} from './dev/types/generated.js';
+import {conversions} from './generated/generated.js';
+import * as macros from './test/macros.js';
+import defaultExport, {convert} from './index.js';
+import type {Unit} from './index.js';
 
 const invalidUnit = 'not a valid unit';
 

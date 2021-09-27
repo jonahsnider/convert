@@ -1,7 +1,7 @@
 import {combineIterables} from '@jonahsnider/util';
 import Decimal from 'decimal.js';
-import type {ConversionFamily} from '../types/common';
-import type * as Generated from '../types/generated';
+import type {ConversionFamily} from '../types/common.js';
+import type * as Generated from '../types/generated.js';
 
 Decimal.set({precision: 50});
 

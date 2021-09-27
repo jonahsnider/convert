@@ -1,4 +1,4 @@
-import type {Macro} from '../expand';
+import type {Macro} from '../expand.js';
 
 const volumeSi: Macro = [
 	{prefix: 'cubic peta', symbol: 'P', value: 1e15, kind: 'big'},
