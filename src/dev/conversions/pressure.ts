@@ -16,5 +16,5 @@ export const conversions: ConversionGroup = [
 	{names: ['torr', 'torrs'], symbols: ['Torr'], ratio: new Decimal(101325).div(760)},
 	{names: ['millitorr'], symbols: ['mTorr'], ratio: new Decimal(101325).div(760).div(1e3)},
 
-	{names: ['atmopshere', 'atmospheres'], symbols: ['atm'], ratio: 101325},
+	{names: ['atmosphere', 'atmospheres'], symbols: ['atm'], ratio: 101325},
 ];
