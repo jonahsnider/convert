@@ -188,7 +188,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 				let bestUnit: typeof family[number][Generated.BestIndex.Sym] = baseUnit;
 
-				// eslint-disable-next-line @typescript-eslint/prefer-for-of
+				// eslint-disable-next-line unicorn/no-for-loop, @typescript-eslint/prefer-for-of
 				for (let i = 0; i < family.length; i++) {
 					const best = family[i];
 					if (quantity >= best[Generated.BestIndex.Value]) {
