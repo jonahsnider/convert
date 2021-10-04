@@ -13,7 +13,7 @@ export const conversions: ConversionGroup = [
 	{names: ['bit', 'bits'], symbols: ['b'], ratio: 1},
 
 	...expandMacro(Macros.binary, {names: ['bit', 'bits'], symbols: ['b'], ratio: 1}),
-	...expandMacro(Macros.binary, {names: ['bit', 'bits'], symbols: ['b'], kind: 'big', ratio: 1}),
+	...expandMacro(Macros.si, {names: ['bit', 'bits'], symbols: ['b'], kind: 'big', ratio: 1}),
 
 	{
 		names: ['nibble', 'nibbles', 'semioctet', 'semioctets', 'halfbyte', 'halfbytes'],
