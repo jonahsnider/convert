@@ -223,3 +223,7 @@ src/generated/generated.ts
 
 # TypeDoc
 docs_out
+
+# Api Extractor
+temp
+docs/api.md

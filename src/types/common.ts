@@ -27,6 +27,10 @@ export interface BestConversion<Q extends number | bigint, U extends BestUnits> 
 	toString(): `${SimplifyQuantity<Q>}${U}`;
 }
 
+/**
+ * The return value from calling a conversion function.
+ * @internal
+ */
 export interface Converter<Q extends number | bigint, U extends Unit> {
 	/**
 	 * Convert a quantity of one unit into a new unit

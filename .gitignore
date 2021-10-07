@@ -226,3 +226,6 @@ tsc_*
 
 # TypeDoc
 docs_out
+
+# Api Extractor
+temp

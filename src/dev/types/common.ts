@@ -47,6 +47,10 @@ export interface ConversionFamily {
 	id: ConversionFamilyId;
 }
 
+/**
+ * IDs for conversion families.
+ * @internal
+ */
 export const enum ConversionFamilyId {
 	Angle,
 	Area,

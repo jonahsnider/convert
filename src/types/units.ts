@@ -15,29 +15,67 @@ type FamilyToUnit = {
 	[P in AllValues['family']]: Extract<AllValues, {family: P}>['unit'];
 };
 
-type GetAliases<T extends ConversionFamilyId> = FamilyToUnit[T];
+/**
+ * A string literal type for all units belonging to a given conversion family.
+ * @internal
+ */
+export type GetAliases<T extends ConversionFamilyId> = FamilyToUnit[T];
 
-/** Valid angle units. */
+/**
+ * Valid angle units.
+ * @public
+ */
 export type Angle = GetAliases<ConversionFamilyId.Angle>;
-/** Valid area units. */
+/**
+ * Valid area units.
+ * @public
+ */
 export type Area = GetAliases<ConversionFamilyId.Area>;
-/** Valid data units. */
+/**
+ * Valid data units.
+ * @public
+ */
 export type Data = GetAliases<ConversionFamilyId.Data>;
-/** Valid force units. */
+/**
+ * Valid force units.
+ * @public
+ */
 export type Force = GetAliases<ConversionFamilyId.Force>;
-/** Valid length units. */
+/**
+ * Valid length units.
+ * @public
+ */
 export type Length = GetAliases<ConversionFamilyId.Length>;
-/** Valid mass units. */
+/**
+ * Valid mass units.
+ * @public
+ */
 export type Mass = GetAliases<ConversionFamilyId.Mass>;
-/** Valid pressure units. */
+/**
+ * Valid pressure units.
+ * @public
+ */
 export type Pressure = GetAliases<ConversionFamilyId.Pressure>;
-/** Valid temperature units. */
+/**
+ * Valid temperature units.
+ * @public
+ */
 export type Temperature = GetAliases<ConversionFamilyId.Temperature>;
-/** Valid time units. */
+/**
+ * Valid time units.
+ * @public
+ */
 export type Time = GetAliases<ConversionFamilyId.Time>;
-/** Valid volume units. */
+/**
+ * Valid volume units.
+ * @public
+ */
 export type Volume = GetAliases<ConversionFamilyId.Volume>;
 
+/**
+ * A supported unit you can convert.
+ * @public
+ */
 export type Unit = GetAliases<ConversionFamilyId>;
 
 export type UnitToFamily = Record<Angle, ConversionFamilyId.Angle> &

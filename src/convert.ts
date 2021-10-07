@@ -25,6 +25,8 @@ export const kelvinsAliases: Record<KelvinNames, unknown> = {
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(angle: Q, from: Angle): Converter<Q, Angle>;
 /**
@@ -36,6 +38,8 @@ export function convert<Q extends number | bigint>(angle: Q, from: Angle): Conve
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Area): Converter<Q, Area>;
 /**
@@ -47,6 +51,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Area): Con
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Data): Converter<Q, Data>;
 /**
@@ -58,6 +64,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Data): Con
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Force): Converter<Q, Force>;
 /**
@@ -69,6 +77,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Force): Co
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(length: Q, from: Length): Converter<Q, Length>;
 /**
@@ -80,6 +90,8 @@ export function convert<Q extends number | bigint>(length: Q, from: Length): Con
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Mass): Converter<Q, Mass>;
 /**
@@ -91,6 +103,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Mass): Con
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Pressure): Converter<Q, Pressure>;
 /**
@@ -102,6 +116,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Pressure):
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Temperature): Converter<Q, Temperature>;
 /**
@@ -113,6 +129,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Temperatur
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(duration: Q, from: Time): Converter<Q, Time>;
 /**
@@ -124,6 +142,8 @@ export function convert<Q extends number | bigint>(duration: Q, from: Time): Con
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Volume): Converter<Q, Volume>;
 /**
@@ -135,6 +155,8 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Volume): C
  * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
+ *
+ * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Converter<Q, Unit> {
 	// This causes @babel/runtime to emit a _typeOf function with symbol backwards compatibility

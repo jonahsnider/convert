@@ -65,7 +65,9 @@
 		"size": "size-limit",
 		"style": "prettier --check .",
 		"test": "yarn run generate; ava",
-		"test:coverage": "yarn run generate; rm -rf coverage; c8 --reporter lcov --reporter text-summary --include 'tsc_output/**/*.js' --exclude 'tsc_output/{generated,test,dev,types}' --exclude 'tsc_output/*.test.js' --exclude 'tsc_output/entry.js' --all ava"
+		"test:coverage": "yarn run generate; rm -rf coverage; c8 --reporter lcov --reporter text-summary --include 'tsc_output/**/*.js' --exclude 'tsc_output/{generated,test,dev,types}' --exclude 'tsc_output/*.test.js' --exclude 'tsc_output/entry.js' --all ava",
+		"validate-api": "api-extractor run",
+		"validate-api:local": "api-extractor run --local --verbose"
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"ava": {
@@ -92,6 +94,7 @@
 		"@jonahsnider/prettier-config": "1.0.0",
 		"@jonahsnider/util": "8.0.1",
 		"@jonahsnider/xo-config": "2.0.0",
+		"@microsoft/api-extractor": "7.18.14",
 		"@rollup/plugin-babel": "5.3.0",
 		"@rollup/plugin-replace": "3.0.0",
 		"@rollup/plugin-typescript": "8.2.5",

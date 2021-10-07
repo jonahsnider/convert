@@ -24,6 +24,8 @@ const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
  * ```
  *
  * @param value - The string to parse as values
+ *
+ * @public
  */
 export function convertMany(value: string): Converter<number, Unit> {
 	splitExpression.lastIndex = 0;
@@ -90,6 +92,8 @@ export function convertMany(value: string): Converter<number, Unit> {
  * @returns A duration in milliseconds
  *
  * @throws If the provided value was invalid
+ *
+ * @public
  */
 export function ms(value: string): number {
 	return convertMany(value).to('ms');
