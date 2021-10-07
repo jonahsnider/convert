@@ -9,9 +9,11 @@ import type {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time
 
 /** This is like a `Set` of aliases except it's an object, so we can use the `in` keyword (ES3 compatibility). */
 export const kelvinsAliases: Record<KelvinNames, unknown> = {
+	/* eslint-disable @typescript-eslint/naming-convention */
 	kelvin: 0,
 	kelvins: 0,
 	K: 0,
+	/* eslint-enable @typescript-eslint/naming-convention */
 };
 
 /**
