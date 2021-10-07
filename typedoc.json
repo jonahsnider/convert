@@ -1,7 +1,5 @@
 {
-	"excludePrivate": true,
 	"entryPoints": ["./src/index.ts"],
-	"listInvalidSymbolLinks": true,
 	"name": "convert",
 	"out": "docs_out"
 }
