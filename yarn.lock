@@ -3621,15 +3621,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"c8@npm:7.9.0":
-  version: 7.9.0
-  resolution: "c8@npm:7.9.0"
+"c8@npm:7.10.0":
+  version: 7.10.0
+  resolution: "c8@npm:7.10.0"
   dependencies:
     "@bcoe/v8-coverage": ^0.2.3
     "@istanbuljs/schema": ^0.1.2
     find-up: ^5.0.0
     foreground-child: ^2.0.0
-    istanbul-lib-coverage: ^3.0.0
+    istanbul-lib-coverage: ^3.0.1
     istanbul-lib-report: ^3.0.0
     istanbul-reports: ^3.0.2
     rimraf: ^3.0.0
@@ -3639,7 +3639,7 @@ __metadata:
     yargs-parser: ^20.2.7
   bin:
     c8: bin/c8.js
-  checksum: 48f0d2cb5ec10c90fd51529e04647dcdab998fa990b145bc31efc8826359be71dc48b543e082d98b45283e30ed307734f82cfa65607c24667dd97b67051f567e
+  checksum: 38c9372dcbfd2b6675059f93764f9fe33694627568b70236b0c3b924d1b871edbc15d819b5f4eea39d1f83ce2f6288e127ecfc5f62a37d7aee178b7a15f3a654
   languageName: node
   linkType: hard
 
@@ -4418,7 +4418,7 @@ __metadata:
     "@size-limit/preset-small-lib": 5.0.5
     "@types/node": 16.10.1
     ava: 3.15.0
-    c8: 7.9.0
+    c8: 7.10.0
     decimal.js: 10.3.1
     prettier: 2.4.1
     prettier-config-xo: 2.0.0
@@ -7796,6 +7796,13 @@ fsevents@~2.3.2:
   version: 3.0.0
   resolution: "istanbul-lib-coverage@npm:3.0.0"
   checksum: ea57c2428858cc5d1e04c0e28b362950bbf6415e8ba1235cdd6f4c8dc3c57cb950db8b4e8a4f7e33abc240aa1eb816dba0d7285bdb8b70bda22bb2082492dbfc
+  languageName: node
+  linkType: hard
+
+"istanbul-lib-coverage@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "istanbul-lib-coverage@npm:3.0.1"
+  checksum: abb09e725179b60fd76208b10e467ec0796f8a0ee4c9f5a9250b2894d873997346907951e70b7fe1162cd609f9e1da62d54243d671b5b5c8083440f8f93cd050
   languageName: node
   linkType: hard
 
