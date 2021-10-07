@@ -7,9 +7,11 @@ export const id = ConversionFamilyId.Temperature;
 export const best: BestConversions = {metric: ['C'], imperial: ['F']};
 
 export const enum KelvinNames {
+	/* eslint-disable @typescript-eslint/naming-convention */
 	kelvin = 'kelvin',
 	kelvins = 'kelvins',
 	K = 'K',
+	/* eslint-enable @typescript-eslint/naming-convention */
 }
 
 /** @see https://en.wikipedia.org/wiki/Conversion_of_scales_of_temperature#Kelvin */

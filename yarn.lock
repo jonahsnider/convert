@@ -1668,10 +1668,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jonahsnider/prettier-config@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@jonahsnider/prettier-config@npm:1.0.0"
+  dependencies:
+    "@types/prettier": 2.4.1
+    prettier-config-xo: 2.0.0
+  checksum: 822e4125ac303058ea8c0735eef87e4e8a2bbc5f1bd1e486edf15bcabeba46db7f0316c7af753b61961228fecb6611e8c299ffdf02ae5312f3b2291ae790634d
+  languageName: node
+  linkType: hard
+
 "@jonahsnider/util@npm:8.0.1":
   version: 8.0.1
   resolution: "@jonahsnider/util@npm:8.0.1"
   checksum: 01e4295e8ef2e70e5b91891d039290e75cc7621e9d3de382f639d22fd371569f743cd24364f3ecf64d95fa439b5ece28ebce2bf351cf1c1ffd56f26681fb2482
+  languageName: node
+  linkType: hard
+
+"@jonahsnider/xo-config@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@jonahsnider/xo-config@npm:2.0.0"
+  checksum: e12740930579e18ea52d3765c5310a33330388f782f82d845de12f8ae9f0564d6f3324a97f62828e79aab27e50cebf930a247516628a8e4b27256fa1a91292b1
   languageName: node
   linkType: hard
 
@@ -2371,6 +2388,13 @@ __metadata:
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
   checksum: fd6bce2b674b6efc3db4c7c3d336bd70c90838e8439de639b909ce22f3720d21344f52427f1d9e57b265fcb7f6c018699b99e5e0c208a1a4823014269a6bf35b
+  languageName: node
+  linkType: hard
+
+"@types/prettier@npm:2.4.1":
+  version: 2.4.1
+  resolution: "@types/prettier@npm:2.4.1"
+  checksum: df330c2d6fe7c282839b0f17701e069a9c6c96d2ff54704e933a1b3c1b98844d963a7cb00c5629d173604892ceee802312bbaeb8a97f5da21e13db8f653b519e
   languageName: node
   linkType: hard
 
@@ -4502,7 +4526,9 @@ __metadata:
     "@ava/typescript": 2.0.0
     "@babel/core": 7.15.8
     "@babel/preset-env": 7.15.8
+    "@jonahsnider/prettier-config": 1.0.0
     "@jonahsnider/util": 8.0.1
+    "@jonahsnider/xo-config": 2.0.0
     "@rollup/plugin-babel": 5.3.0
     "@rollup/plugin-replace": 3.0.0
     "@rollup/plugin-typescript": 8.2.5
@@ -4512,7 +4538,6 @@ __metadata:
     c8: 7.9.0
     decimal.js: 10.3.1
     prettier: 2.4.1
-    prettier-config-xo: 2.0.0
     rollup: 2.58.0
     rollup-plugin-dts: 4.0.0
     rollup-plugin-terser: 7.0.2
