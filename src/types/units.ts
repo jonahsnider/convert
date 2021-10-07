@@ -17,15 +17,25 @@ type FamilyToUnit = {
 
 type GetAliases<T extends ConversionFamilyId> = FamilyToUnit[T];
 
+/** Valid angle units. */
 export type Angle = GetAliases<ConversionFamilyId.Angle>;
+/** Valid area units. */
 export type Area = GetAliases<ConversionFamilyId.Area>;
+/** Valid data units. */
 export type Data = GetAliases<ConversionFamilyId.Data>;
+/** Valid force units. */
 export type Force = GetAliases<ConversionFamilyId.Force>;
+/** Valid length units. */
 export type Length = GetAliases<ConversionFamilyId.Length>;
+/** Valid mass units. */
 export type Mass = GetAliases<ConversionFamilyId.Mass>;
+/** Valid pressure units. */
 export type Pressure = GetAliases<ConversionFamilyId.Pressure>;
+/** Valid temperature units. */
 export type Temperature = GetAliases<ConversionFamilyId.Temperature>;
+/** Valid time units. */
 export type Time = GetAliases<ConversionFamilyId.Time>;
+/** Valid volume units. */
 export type Volume = GetAliases<ConversionFamilyId.Volume>;
 
 export type Unit = GetAliases<ConversionFamilyId>;
