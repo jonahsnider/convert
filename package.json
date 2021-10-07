@@ -116,8 +116,8 @@
 	},
 	"devDependencies": {
 		"@ava/typescript": "2.0.0",
-		"@babel/core": "7.15.5",
-		"@babel/preset-env": "7.15.6",
+		"@babel/core": "7.15.8",
+		"@babel/preset-env": "7.15.8",
 		"@jonahsnider/util": "8.0.1",
 		"@rollup/plugin-babel": "5.3.0",
 		"@rollup/plugin-replace": "3.0.0",
