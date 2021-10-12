@@ -162,9 +162,9 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 	// This causes @babel/runtime to emit a _typeOf function with symbol backwards compatibility
 	// Writing typeof quantity === 'bigint' doesn't trigger it for some reason
 	const quantityType = typeof quantity;
-	const usingBigInts = quantityType === 'bigint';
+	const isUsingBigInts = quantityType === 'bigint';
 
-	if (!usingBigInts && quantityType !== 'number') {
+	if (!isUsingBigInts && quantityType !== 'number') {
 		if (__DEV__) {
 			throw new TypeError(`Expected quantity to be a number or a bigint, got ${quantityType}`);
 		}
@@ -182,7 +182,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new RangeError();
 	}
 
-	const convertingTemperature = fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature;
+	const isConvertingTemperature = fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature;
 
 	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
@@ -267,7 +267,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 			assert(toUnit);
 
-			if (usingBigInts && isType<bigint>(quantity)) {
+			if (isUsingBigInts && isType<bigint>(quantity)) {
 				// TODO: If quantity is a bigint return a different Converter<T> instead of checking it here
 				if (__DEV__) {
 					try {
@@ -287,7 +287,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 
 			assertType<number>(quantity);
 
-			if (convertingTemperature && isType<Temperature>(from) && isType<Temperature>(to)) {
+			if (isConvertingTemperature && isType<Temperature>(from) && isType<Temperature>(to)) {
 				// `in` keyword here is safe because we have already validated that you are giving us a valid unit
 				if (to in kelvinsAliases) {
 					if (from in temperatureDifferences && isType<keyof typeof temperatureDifferences>(from)) {
