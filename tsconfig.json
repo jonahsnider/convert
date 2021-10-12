@@ -8,5 +8,6 @@
 		"outDir": "tsc_output",
 		"declarationDir": "tsc_types"
 	},
-	"include": ["./src", "./types"]
+	"include": ["./src", "./types"],
+	"exclude": ["./node_modules"]
 }
