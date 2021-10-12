@@ -44,21 +44,21 @@ export function convertMany(value: string): Converter<number, Unit> {
 		to(unit: Unit | 'best', kind?: BestConversionKind | undefined) {
 			assert(search);
 
-			const best = unit === 'best';
+			const isBest = unit === 'best';
 
 			let result = 0;
 			let resolvedUnit: BestUnits;
-			let firstPass = true;
+			let isFirstPass = true;
 
 			do {
 				const converted = convert(Number(search[MatchGroup.Quantity]), search[MatchGroup.Unit] as any).to(
-					best && !firstPass ? (resolvedUnit! as any) : (unit as any),
+					isBest && !isFirstPass ? (resolvedUnit! as any) : (unit as any),
 				) as number | BestConversion<number, BestUnits>;
 
-				if (best && firstPass) {
+				if (isBest && isFirstPass) {
 					result += (converted as BestConversion<number, BestUnits>).quantity;
 					resolvedUnit = (converted as BestConversion<number, BestUnits>).unit;
-					firstPass = false;
+					isFirstPass = false;
 				} else {
 					result += converted as number;
 				}
@@ -66,7 +66,7 @@ export function convertMany(value: string): Converter<number, Unit> {
 				search = splitExpression.exec(value);
 			} while (search);
 
-			if (best) {
+			if (isBest) {
 				return convert(result, resolvedUnit! as any).to('best', kind);
 			}
 
