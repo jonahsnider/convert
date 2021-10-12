@@ -1,8 +1,13 @@
 # Convert
 
-The [smallest](https://bundlephobia.com/result?p=convert) & [fastest](https://github.com/jonahsnider/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
+The [smallest](https://bundlephobia.com/package/convert) & [fastest](https://github.com/jonahsnider/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
-[![Codecov](https://img.shields.io/codecov/c/gh/jonahsnider/convert)](https://codecov.io/gh/jonahsnider/convert)
+[![published npm version](https://img.shields.io/npm/v/convert)](https://www.npmjs.com/package/convert)
+[![test coverage](https://img.shields.io/codecov/c/gh/jonahsnider/convert)](https://codecov.io/gh/jonahsnider/convert)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/convert)](https://bundlephobia.com/package/convert)
+[![npm monthly downloads](https://img.shields.io/npm/dm/convert)](https://www.npmjs.com/package/convert)
+[![type definitions](https://img.shields.io/npm/types/convert)](https://www.npmjs.com/package/convert)
+[![license](https://img.shields.io/npm/l/convert)](https://www.npmjs.com/package/convert)
 [![CI](https://github.com/jonahsnider/convert/actions/workflows/ci.yml/badge.svg)](https://github.com/jonahsnider/convert/actions/workflows/ci.yml)
 
 ```sh
@@ -11,7 +16,7 @@ npm install convert
 yarn add convert
 ```
 
-[**More installation steps below**](#Installation).
+[**More installation examples below, including browser builds**](#Installation).
 
 ```js
 convert(5, 'miles').to('km');
@@ -159,12 +164,14 @@ Pick your favorite CDN:
 ## Alternatives
 
 Convert is better than other unit conversion libraries because it's faster and smaller than them, while having the same features.
-Benchmarks of popular unit conversion libraries, including convert are [available here](https://github.com/jonahsnider/js-unit-conversion-benchmarks).
+Benchmarks of popular unit conversion libraries, including Convert are [available here](https://github.com/jonahsnider/js-unit-conversion-benchmarks).
 
 Convert is the fastest, taking less than a microsecond for all functions.
 That's a little over 3 million `convert()` calls per second.
 
 [![npm bundle size of convert](https://img.shields.io/bundlephobia/minzip/convert?label=convert)](https://bundlephobia.com/result?p=convert)
+
+[![npm bundle size of safe-units](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)](https://bundlephobia.com/result?p=safe-units)
 
 [![npm bundle size of convert-units](https://img.shields.io/bundlephobia/minzip/convert-units?label=convert-units)](https://bundlephobia.com/result?p=convert-units)
 
@@ -173,5 +180,3 @@ That's a little over 3 million `convert()` calls per second.
 [![npm bundle size of uom](https://img.shields.io/bundlephobia/minzip/uom?label=uom)](https://bundlephobia.com/result?p=uom)
 ![+](https://img.shields.io/badge/%2B-gray)
 [![npm bundle size of uom-units](https://img.shields.io/bundlephobia/minzip/uom-units?label=uom-units)](https://bundlephobia.com/result?p=uom-units)
-
-[![npm bundle size of safe-units](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)](https://bundlephobia.com/result?p=safe-units)
