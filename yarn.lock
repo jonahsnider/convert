@@ -1696,13 +1696,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/xo-config@npm:4.0.0":
-  version: 4.0.0
-  resolution: "@jonahsnider/xo-config@npm:4.0.0"
+"@jonahsnider/xo-config@npm:4.0.4":
+  version: 4.0.4
+  resolution: "@jonahsnider/xo-config@npm:4.0.4"
   dependencies:
-    eslint-plugin-jsdoc: 36.1.0
+    "@types/xo": 0.39.1
+    eslint-plugin-jsdoc: 36.1.1
     eslint-plugin-tsdoc: 0.2.14
-  checksum: 0077410eabb08d6d3a2456bc6acc1af454921aaaa9e15f23935ffed8a70e7a043a7389fec86aedef81adcf6655fc859c38a16b04e29163a6f88a24f85c5dfb20
+  checksum: d0d78058161026691a5f82bf4f33377e77899e08b2ede4d01daa20dc5caca8f6e189e83c633866e3bf0d53244dd6aacf93e7b5d9bdf0a261429f745952ff30d2
   languageName: node
   linkType: hard
 
@@ -2400,6 +2401,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/eslint@npm:*":
+  version: 7.28.1
+  resolution: "@types/eslint@npm:7.28.1"
+  dependencies:
+    "@types/estree": "*"
+    "@types/json-schema": "*"
+  checksum: 16086d00c2f56b16471fd02c2b495b07e3b84b57113fe34d94b57fb9fc0a5a85f6b87d787051f5d6acb859f6addda9b1e747d1a83ee08cac330d0f26c357fb9e
+  languageName: node
+  linkType: hard
+
 "@types/eslint@npm:^7.2.13":
   version: 7.28.0
   resolution: "@types/eslint@npm:7.28.0"
@@ -2530,6 +2541,15 @@ __metadata:
   version: 0.12.0
   resolution: "@types/retry@npm:0.12.0"
   checksum: 61a072c7639f6e8126588bf1eb1ce8835f2cb9c2aba795c4491cf6310e013267b0c8488039857c261c387e9728c1b43205099223f160bb6a76b4374f741b5603
+  languageName: node
+  linkType: hard
+
+"@types/xo@npm:0.39.1":
+  version: 0.39.1
+  resolution: "@types/xo@npm:0.39.1"
+  dependencies:
+    "@types/eslint": "*"
+  checksum: e7af5f173375fcb70b45a9d7b6fafb8880388d0ff2554ebcf0fd049c0a704e5cd6d81923e4f81446fa51c2ddbcef3fa696e541a2e019de4e5211296031cd6561
   languageName: node
   linkType: hard
 
@@ -4661,7 +4681,7 @@ __metadata:
     "@babel/preset-env": 7.15.8
     "@jonahsnider/prettier-config": 1.0.0
     "@jonahsnider/util": 8.1.1
-    "@jonahsnider/xo-config": 4.0.0
+    "@jonahsnider/xo-config": 4.0.4
     "@microsoft/api-extractor": 7.18.15
     "@rollup/plugin-babel": 5.3.0
     "@rollup/plugin-replace": 3.0.0
@@ -5821,9 +5841,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:36.1.0":
-  version: 36.1.0
-  resolution: "eslint-plugin-jsdoc@npm:36.1.0"
+"eslint-plugin-jsdoc@npm:36.1.1":
+  version: 36.1.1
+  resolution: "eslint-plugin-jsdoc@npm:36.1.1"
   dependencies:
     "@es-joy/jsdoccomment": 0.10.8
     comment-parser: 1.2.4
@@ -5836,7 +5856,7 @@ __metadata:
     spdx-expression-parse: ^3.0.1
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0
-  checksum: 5152a252a1c1fa8773a22aa0a69ab1c52a9334b12f0f3667548c6478d2d9acf970042b55ff2c48fa5165fab008cf20883f18a173fc5d6ba8f813074618b70ece
+  checksum: ceaca9f5c39dbbab4cbb2f302e787d1581919273b4a25adca9d1b6d83fbca66a0e58da024bc1f3f21c8710f473745a297cb2a1fe5ed56c9d1f16967995293620
   languageName: node
   linkType: hard
 
