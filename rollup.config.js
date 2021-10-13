@@ -4,6 +4,13 @@ import typescript from '@rollup/plugin-typescript';
 import {terser} from 'rollup-plugin-terser';
 import dts from 'rollup-plugin-dts';
 
+const flags = {
+	dev: {__DEV__: true},
+	prod: {__DEV__: false},
+	es3: {__ES3__: true},
+	esnext: {__ES3__: false},
+};
+
 /* eslint-disable camelcase */
 /** @type {import('rollup-plugin-terser').Options} */
 const terserConfig = {
@@ -42,7 +49,7 @@ const config = [
 				file: './dist/convert.prod.js',
 				format: 'umd',
 				name: 'convert',
-				plugins: [replace({__DEV__: false})],
+				plugins: [replace({...flags.prod, ...flags.es3})],
 				exports: 'named',
 				sourcemap: true,
 			},
@@ -50,7 +57,7 @@ const config = [
 				file: './dist/convert.dev.js',
 				format: 'umd',
 				name: 'convert',
-				plugins: [replace({__DEV__: true})],
+				plugins: [replace({...flags.dev, ...flags.es3})],
 				exports: 'named',
 				sourcemap: true,
 			},
@@ -64,14 +71,14 @@ const config = [
 			{
 				file: './dist/convert.prod.mjs',
 				format: 'esm',
-				plugins: [replace({__DEV__: false})],
+				plugins: [replace({...flags.prod, ...flags.esnext})],
 				exports: 'named',
 				sourcemap: true,
 			},
 			{
 				file: './dist/convert.dev.mjs',
 				format: 'esm',
-				plugins: [replace({__DEV__: true})],
+				plugins: [replace({...flags.dev, ...flags.esnext})],
 				exports: 'named',
 				sourcemap: true,
 			},
