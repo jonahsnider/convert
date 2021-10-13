@@ -37,9 +37,6 @@ export interface Converter<Q extends number | bigint, U extends Unit> {
 	 *
 	 * @param to - The unit you want to convert to
 	 *
-	 * @throws `RangeError` if the `to` parameter is not a valid type
-	 * @throws `TypeError` if `quantity` was a `bigint` but the conversion can't be expressed as an integer
-	 *
 	 * @returns The converted value
 	 */
 	to(to: U): SimplifyQuantity<Q>;
@@ -48,9 +45,6 @@ export interface Converter<Q extends number | bigint, U extends Unit> {
 	 *
 	 * @param to - The string `best`
 	 * @param kind - The set of units to use (defaults to `'metric'`)
-	 *
-	 * @throws `RangeError` if the `to` parameter is not a valid type
-	 * @throws `TypeError` if `quantity` was a `bigint` but the conversion can't be expressed as an integer
 	 *
 	 * @returns An object with a `quantity` property of the `unit` unit, which can be casted to a string using the `toString()` method
 	 */

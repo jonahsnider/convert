@@ -91,8 +91,6 @@ export function convertMany(value: string): Converter<number, Unit> {
  *
  * @returns A duration in milliseconds
  *
- * @throws If the provided value was invalid
- *
  * @public
  */
 export function ms(value: string): number {

@@ -22,8 +22,6 @@ const kelvinsAliases: Record<KelvinNames, unknown> = {
  * @param angle - The angle you want to convert
  * @param from - The angle type you are converting from
  *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
- *
  * @returns An object you can use to convert the provided quantity
  *
  * @public
@@ -34,8 +32,6 @@ export function convert<Q extends number | bigint>(angle: Q, from: Angle): Conve
  *
  * @param quantity - The area you want to convert
  * @param from - The unit of area you are converting from
- *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
  *
@@ -48,8 +44,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Area): Con
  * @param quantity - The quantity of data you want to convert
  * @param from - The unit of data you are converting from
  *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
- *
  * @returns An object you can use to convert the provided quantity
  *
  * @public
@@ -60,8 +54,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Data): Con
  *
  * @param quantity - The quantity of force you want to convert
  * @param from - The unit of force you are converting from
- *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
  *
@@ -74,8 +66,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Force): Co
  * @param length - The length you want to convert
  * @param from - The unit of length you are converting from
  *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
- *
  * @returns An object you can use to convert the provided quantity
  *
  * @public
@@ -86,8 +76,6 @@ export function convert<Q extends number | bigint>(length: Q, from: Length): Con
  *
  * @param quantity - The quantity of mass you want to convert
  * @param from - The unit of mass you are converting from
- *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
  *
@@ -100,8 +88,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Mass): Con
  * @param quantity - The quantity of pressure you want to convert
  * @param from - The unit of pressure you are converting from
  *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
- *
  * @returns An object you can use to convert the provided quantity
  *
  * @public
@@ -112,8 +98,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Pressure):
  *
  * @param quantity - The quantity of temperature you want to convert
  * @param from - The unit of temperature are converting from
- *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
  *
@@ -126,8 +110,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Temperatur
  * @param duration - The duration of time you want to convert
  * @param from - The unit of time you are converting from
  *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
- *
  * @returns An object you can use to convert the provided quantity
  *
  * @public
@@ -139,8 +121,6 @@ export function convert<Q extends number | bigint>(duration: Q, from: Time): Con
  * @param quantity - The quantity of volume you want to convert
  * @param from - The unit of volume you are converting from
  *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
- *
  * @returns An object you can use to convert the provided quantity
  *
  * @public
@@ -151,8 +131,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Volume): C
  *
  * @param quantity - The quantity of the `from` unit you want to convert
  * @param from - The unit you are converting from
- *
- * @throws `RangeError` If the `from` parameter is not a recognized unit
  *
  * @returns An object you can use to convert the provided quantity
  *
