@@ -4,8 +4,8 @@ import {convert} from '../../index.js';
 import * as macros from '../../test/macros.js';
 
 test(macros.convert, [100, 'C'], [373.15, 'K']);
-test(macros.convert, [212, 'F'], [100 + 0.000_000_000_000_06, 'C']);
-test(macros.convert, [100, 'C'], [212 - 0.000_000_000_000_06, 'F']);
+test(macros.convert, [212, 'F'], [100 + 6e-14, 'C']);
+test(macros.convert, [100, 'C'], [212 - 6e-14, 'F']);
 
 test(macros.convert, [1391.67, 'R'], [932, 'F']);
 test(macros.convert, [932, 'F'], [1391.67, 'R']);
