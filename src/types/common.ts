@@ -3,7 +3,7 @@ import type {BestIndex} from '../dev/types/generated.js';
 import type {bestUnits} from '../generated/generated.js';
 import type {Unit, UnitToFamily} from './units.js';
 
-export type SimplifyQuantity<Q> = Q extends number ? number : Extract<Q, bigint>;
+export type SimplifyQuantity<Q> = Q extends number ? number : Q extends bigint ? bigint : never;
 
 export type BestUnits<
 	Family extends ConversionFamilyId = ConversionFamilyId,
