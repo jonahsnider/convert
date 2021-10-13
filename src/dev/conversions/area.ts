@@ -7,7 +7,7 @@ export const id = ConversionFamilyId.Area;
 
 export const best: BestConversions = {
 	metric: ['mm2', 'cm2', 'm2', 'km2'],
-	imperial: ['sq ft', 'sq in', 'sq mi', 'ac'],
+	imperial: ['sq in', 'sq ft', 'sq mi', 'ac'],
 };
 
 export const conversions: ConversionGroup = [

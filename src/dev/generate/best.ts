@@ -1,4 +1,4 @@
-import {combineIterables} from '@jonahsnider/util';
+import {combineIterables, Sort} from '@jonahsnider/util';
 import Decimal from 'decimal.js';
 import type {ConversionFamily} from '../types/common.js';
 import type * as Generated from '../types/generated.js';
@@ -38,6 +38,8 @@ export function best(conversionFamilies: ConversionFamily[]): Generated.Best {
 			const array = result[kind][conversionFamily.id];
 
 			const conversionFamilyBest = Array.isArray(conversionFamily.best) ? conversionFamily.best : conversionFamily.best[kind];
+
+			conversionFamilyBest.sort(Sort.ascending(bestUnit => lookup[bestUnit].toNumber()));
 
 			const firstValue = lookup[conversionFamilyBest[0]];
 

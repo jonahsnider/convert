@@ -6,7 +6,7 @@ export const id = ConversionFamilyId.Volume;
 
 export const best: BestConversions = {
 	metric: ['mL', 'L'],
-	imperial: ['tsp', 'tbsp', 'fl oz', 'pt', 'cup', 'qt', 'gal'],
+	imperial: ['tsp', 'tbsp', 'fl oz', 'cup', 'pt', 'qt', 'gal'],
 };
 
 export const conversions: ConversionGroup = [
