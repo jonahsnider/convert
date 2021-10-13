@@ -2300,34 +2300,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:6.0.2":
-  version: 6.0.2
-  resolution: "@size-limit/file@npm:6.0.2"
+"@size-limit/file@npm:6.0.3":
+  version: 6.0.3
+  resolution: "@size-limit/file@npm:6.0.3"
   dependencies:
     semver: 7.3.5
   peerDependencies:
-    size-limit: 6.0.2
-  checksum: 2871b07a43e97c5bb42a174e1777bbb6d90f1e41d48d08065791a0e328f42dcd0f679e85bda93477359af5138b9c500066f44b17615d62c542804088ade9544a
+    size-limit: 6.0.3
+  checksum: da52d67096f376f7d9f929690c7535f5e737744c5f77d6f4776055bdd79f1cd29d016bd3730b74e79e0a03b172abfcc62ea42c1ed9da26e63cf65147333a98a8
   languageName: node
   linkType: hard
 
-"@size-limit/preset-small-lib@npm:6.0.2":
-  version: 6.0.2
-  resolution: "@size-limit/preset-small-lib@npm:6.0.2"
+"@size-limit/preset-small-lib@npm:6.0.3":
+  version: 6.0.3
+  resolution: "@size-limit/preset-small-lib@npm:6.0.3"
   dependencies:
-    "@size-limit/file": 6.0.2
-    "@size-limit/webpack": 6.0.2
+    "@size-limit/file": 6.0.3
+    "@size-limit/webpack": 6.0.3
   peerDependencies:
-    size-limit: 6.0.2
-  checksum: 8a821e34503826f2b083228eb8484bb035f96b45168d90eecdbb26f4351b43980e36bd067bbcf8fdffbb8f6e7afbb9b3fc8ccc3ea2752701d7e239b3d3fa7f44
+    size-limit: 6.0.3
+  checksum: 7b7284dd83da6dd75d1685ee881b74a72f1b6df0072f2478e3ef4ebc1c167c7a887bca4d6a91064fc36cb6d5f82cc2914f4653fbdaa09115c25abffbe105964b
   languageName: node
   linkType: hard
 
-"@size-limit/webpack@npm:6.0.2":
-  version: 6.0.2
-  resolution: "@size-limit/webpack@npm:6.0.2"
+"@size-limit/webpack@npm:6.0.3":
+  version: 6.0.3
+  resolution: "@size-limit/webpack@npm:6.0.3"
   dependencies:
-    "@statoscope/webpack-plugin": ^5.13.0
+    "@statoscope/webpack-plugin": ^5.13.1
     css-loader: ^6.4.0
     css-minimizer-webpack-plugin: ^3.0.2
     escape-string-regexp: ^4.0.0
@@ -2336,8 +2336,8 @@ __metadata:
     style-loader: ^3.3.0
     webpack: ^5.56.0
   peerDependencies:
-    size-limit: 6.0.2
-  checksum: 5a088fab1c457c885c1b169200f248ea53749e20505d458fe91c38450f363a21ae5bb76e5bc67d7cbe7d9baa0a79dd1ffc1fbb6a1efb2b8b55d7ffe184e79e93
+    size-limit: 6.0.3
+  checksum: 07b6ac306ced0597ea031ac0ee19ad5c65db93f65a225ba69126b30f3727a5e9cf2c5e9be68a5927908bfa7b263c98fba678bdc022b3bea3f6f31fbdb6701272
   languageName: node
   linkType: hard
 
@@ -2449,7 +2449,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@statoscope/webpack-plugin@npm:^5.13.0":
+"@statoscope/webpack-plugin@npm:^5.13.1":
   version: 5.13.1
   resolution: "@statoscope/webpack-plugin@npm:5.13.1"
   dependencies:
@@ -4465,7 +4465,7 @@ __metadata:
     "@rollup/plugin-babel": 5.3.0
     "@rollup/plugin-replace": 3.0.0
     "@rollup/plugin-typescript": 8.2.5
-    "@size-limit/preset-small-lib": 6.0.2
+    "@size-limit/preset-small-lib": 6.0.3
     "@types/node": 16.10.1
     ava: 3.15.0
     c8: 7.10.0
@@ -4475,7 +4475,7 @@ __metadata:
     rollup-plugin-dts: 4.0.0
     rollup-plugin-terser: 7.0.2
     semantic-release: 18.0.0
-    size-limit: 6.0.1
+    size-limit: 6.0.3
     terser: 5.9.0
     ts-node: 10.3.0
     tslib: 2.3.1
@@ -8555,12 +8555,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"nanospinner@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "nanospinner@npm:0.2.2"
+"nanospinner@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "nanospinner@npm:0.3.0"
   dependencies:
     picocolors: ^0.2.0
-  checksum: a11b4dd304b3b18a5e0cb91c5d6d86e403e789ab2e3b9a1ed678ac277b510abfe4792715918300785488c99f9ea4d602ba0119a05b90350c41f0f18c7f9625a8
+  checksum: 4b0099b9ddb0e43411e70c81cae8d001c58aa4f077f778a43fad4228a3cd73a7beaf8f991ec6a3d049bff7b4203e1384c937810a7ce7f39bb3be73f850c20f49
   languageName: node
   linkType: hard
 
@@ -10889,20 +10889,20 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"size-limit@npm:6.0.1":
-  version: 6.0.1
-  resolution: "size-limit@npm:6.0.1"
+"size-limit@npm:6.0.3":
+  version: 6.0.3
+  resolution: "size-limit@npm:6.0.3"
   dependencies:
     bytes-iec: ^3.1.1
     chokidar: ^3.5.2
     ci-job-number: ^1.2.2
     globby: ^11.0.4
     lilconfig: ^2.0.3
-    nanospinner: ^0.2.2
+    nanospinner: ^0.3.0
     picocolors: ^0.2.1
   bin:
     size-limit: bin.js
-  checksum: 19a961d24dc88e5c812cf7b0bb9fc7fb29c06cf347a7858f61b027b7bfab72047b30edba34e9f6f75ccd21697fad088c820135ac25429a00b6b030eb53129558
+  checksum: 2dd873273cabe215f7c2e98bb924085269437dae8a93e44cf2fd25ddc78378569e092ed65e8acfb4cc16b2cce8b6fd47f86623886a478a1a83649b4b207ef0b4
   languageName: node
   linkType: hard
 
