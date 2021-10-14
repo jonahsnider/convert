@@ -1,4 +1,4 @@
-import {ConverterThisProperties, to} from './converter.js';
+import {to} from './converter.js';
 import {ConversionFamilyId} from './dev/types/common.js';
 import * as Generated from './dev/types/generated.js';
 import {conversions} from './generated/generated.js';
@@ -149,14 +149,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new RangeError();
 	}
 
-	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
-		to: to.bind({
-			[ConverterThisProperties.Quantity]: quantity,
-			[ConverterThisProperties.From]: from,
-			[ConverterThisProperties.FromUnit]: fromUnit,
-			[ConverterThisProperties.IsUsingBigInts]: isUsingBigInts,
-			[ConverterThisProperties.IsConvertingTemperature]: fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature,
-		}),
-	} as Converter<Q, Unit>;
+		to: to.bind<null, any, any>(null, quantity, from, fromUnit, isUsingBigInts, fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature),
+	} as unknown as Converter<Q, Unit>;
 }
