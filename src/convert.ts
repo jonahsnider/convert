@@ -1,20 +1,9 @@
-import {assert, assertType, isType} from './assert.js';
-import type {KelvinNames} from './dev/conversions/temperature.js';
-import type {BestConversionKind} from './dev/types/common.js';
+import {ConverterThisProperties, to} from './converter.js';
 import {ConversionFamilyId} from './dev/types/common.js';
 import * as Generated from './dev/types/generated.js';
-import {bestUnits, conversions, temperatureDifferences} from './generated/generated.js';
+import {conversions} from './generated/generated.js';
 import type {Converter} from './types/common.js';
 import type {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units.js';
-
-/** This is like a `Set` of aliases except it's an object, so we can use the `in` keyword (ES3 compatibility). */
-const kelvinsAliases: Record<KelvinNames, unknown> = {
-	/* eslint-disable @typescript-eslint/naming-convention */
-	kelvin: 0,
-	kelvins: 0,
-	K: 0,
-	/* eslint-enable @typescript-eslint/naming-convention */
-};
 
 /**
  * Convert a given angle into another unit.
@@ -140,7 +129,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 	// This causes @babel/runtime to emit a _typeOf function with symbol backwards compatibility
 	// Writing typeof quantity === 'bigint' doesn't trigger it for some reason
 	const quantityType = typeof quantity;
-	const isUsingBigInts = quantityType === 'bigint';
+	const isUsingBigInts = (quantityType === 'bigint') as Q extends bigint ? true : false;
 
 	if (!isUsingBigInts && quantityType !== 'number') {
 		if (__DEV__) {
@@ -160,133 +149,14 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new RangeError();
 	}
 
-	const isConvertingTemperature = fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature;
-
-	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+	// eslint-disable-next-line@typescript-eslint/consistent-type-assertions
 	return {
-		to: (to: typeof from | 'best', kind: BestConversionKind = 'metric') => {
-			if (from === to) {
-				// This is ok since we have already validated the type of quantity
-				return quantity;
-			}
-
-			// TODO: Extract to function
-			if (to === 'best') {
-				// eslint-disable-next-line no-prototype-builtins
-				if (!bestUnits.hasOwnProperty(kind)) {
-					if (__DEV__) {
-						throw new RangeError(`${kind} is not a valid best conversion kind`);
-					}
-
-					throw new RangeError();
-				}
-
-				const bestUnitKind = bestUnits[kind];
-				const family = bestUnitKind[fromUnit[Generated.ConversionIndex.Family]];
-
-				const baseUnit = family[0][Generated.BestIndex.Sym];
-
-				quantity = convert(quantity, from as any).to(baseUnit as any) as unknown as Q;
-
-				let bestUnit: typeof family[number][Generated.BestIndex.Sym] = baseUnit;
-
-				// eslint-disable-next-line unicorn/no-for-loop, @typescript-eslint/prefer-for-of
-				for (let i = 0; i < family.length; i++) {
-					const best = family[i];
-					if (quantity >= best[Generated.BestIndex.Value]) {
-						bestUnit = best[Generated.BestIndex.Sym];
-					}
-				}
-
-				quantity = convert(quantity, baseUnit as any).to(bestUnit as any) as unknown as Q;
-
-				return {
-					quantity,
-					unit: bestUnit,
-					// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-					toString: () => quantity + bestUnit,
-				};
-			}
-
-			const toUnit = conversions[to] as typeof conversions[keyof typeof conversions] | undefined;
-
-			if (__DEV__) {
-				if (!toUnit) {
-					throw new RangeError(`${to} is not a valid unit`);
-				}
-
-				const meters = 'm';
-
-				if (
-					// Time -> meters
-					(fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && to === meters) ||
-					// Meters -> time
-					(toUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && from === meters)
-				) {
-					throw new RangeError(
-						[
-							`No conversion could be found from ${from} to ${to}.`,
-							'Also, are you trying to convert quantities of time?',
-							'Because "m" is treated as meters, not minutes.',
-							'You probably want to use the "min" unit instead.',
-						].join(' '),
-					);
-				}
-			}
-
-			// @ts-expect-error This throws if toUnit is undefined
-			if (fromUnit[Generated.ConversionIndex.Family] !== toUnit[Generated.ConversionIndex.Family]) {
-				if (__DEV__) {
-					throw new RangeError(`No conversion could be found from ${from} to ${to}`);
-				}
-
-				throw new RangeError();
-			}
-
-			assert(toUnit);
-
-			if (isUsingBigInts && isType<bigint>(quantity)) {
-				// TODO: If quantity is a bigint return a different Converter<T> instead of checking it here
-				if (__DEV__) {
-					try {
-						// Note: BigInt support only works when you are converting integers (obviously)
-						// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
-
-						// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
-						return quantity * BigInt(fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
-					} catch {
-						throw new TypeError(`Conversion for ${from} to ${to} cannot be calculated as a BigInt because the conversion ratio is not an integer`);
-					}
-				} else {
-					// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
-					return quantity * BigInt(fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
-				}
-			}
-
-			assertType<number>(quantity);
-
-			if (isConvertingTemperature && isType<Temperature>(from) && isType<Temperature>(to)) {
-				// `in` keyword here is safe because we have already validated that you are giving us a valid unit
-				if (to in kelvinsAliases) {
-					if (from in temperatureDifferences && isType<keyof typeof temperatureDifferences>(from)) {
-						return (quantity + temperatureDifferences[from]) * fromUnit[Generated.ConversionIndex.Ratio];
-					}
-
-					return quantity * fromUnit[Generated.ConversionIndex.Ratio];
-				}
-
-				if (from in kelvinsAliases) {
-					if (to in temperatureDifferences && isType<keyof typeof temperatureDifferences>(to)) {
-						return quantity / toUnit[Generated.ConversionIndex.Ratio] - temperatureDifferences[to];
-					}
-
-					return quantity / toUnit[Generated.ConversionIndex.Ratio];
-				}
-
-				return convert(convert(quantity, from).to('K'), 'K').to(to);
-			}
-
-			return quantity * (fromUnit[Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
-		},
-	} as Converter<Q, typeof from>;
+		to: to.bind({
+			[ConverterThisProperties.Quantity]: quantity,
+			[ConverterThisProperties.From]: from,
+			[ConverterThisProperties.FromUnit]: fromUnit,
+			[ConverterThisProperties.IsUsingBigInts]: isUsingBigInts,
+			[ConverterThisProperties.IsConvertingTemperature]: fromUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Temperature,
+		}),
+	} as Converter<Q, Unit>;
 }

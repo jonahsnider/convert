@@ -16,6 +16,51 @@ const enum MatchGroup {
 const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
 
 /**
+ * Minified names of properties on the `this` context.
+ * Taken from the Terser output.
+ */
+export const enum ConverterThisProperties {
+	Search = 't',
+	Value = 'e',
+}
+
+interface ConverterThis {
+	[ConverterThisProperties.Search]: RegExpExecArray;
+	[ConverterThisProperties.Value]: string;
+}
+
+function to(this: ConverterThis, unit: Unit | 'best', kind?: BestConversionKind | undefined) {
+	const isBest = unit === 'best';
+
+	let result = 0;
+	let resolvedUnit: BestUnits;
+	let isFirstPass = true;
+
+	do {
+		const converted = convert(
+			Number(this[ConverterThisProperties.Search][MatchGroup.Quantity]),
+			this[ConverterThisProperties.Search][MatchGroup.Unit] as any,
+		).to(isBest && !isFirstPass ? (resolvedUnit! as any) : (unit as any)) as number | BestConversion<number, BestUnits>;
+
+		if (isBest && isFirstPass) {
+			result += (converted as BestConversion<number, BestUnits>).quantity;
+			resolvedUnit = (converted as BestConversion<number, BestUnits>).unit;
+			isFirstPass = false;
+		} else {
+			result += converted as number;
+		}
+
+		this[ConverterThisProperties.Search] = splitExpression.exec(this[ConverterThisProperties.Value])!;
+	} while (this[ConverterThisProperties.Search]);
+
+	if (isBest) {
+		return convert(result, resolvedUnit! as any).to('best', kind);
+	}
+
+	return result;
+}
+
+/**
  * Convert several values in a string into a single unit.
  *
  * @example
@@ -29,7 +74,7 @@ const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
  */
 export function convertMany(value: string): Converter<number, Unit> {
 	splitExpression.lastIndex = 0;
-	let search = splitExpression.exec(value);
+	const search = splitExpression.exec(value);
 
 	if (!search) {
 		if (__DEV__) {
@@ -39,39 +84,14 @@ export function convertMany(value: string): Converter<number, Unit> {
 		throw new RangeError();
 	}
 
+	assert(search);
+
 	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
-		to(unit: Unit | 'best', kind?: BestConversionKind | undefined) {
-			assert(search);
-
-			const isBest = unit === 'best';
-
-			let result = 0;
-			let resolvedUnit: BestUnits;
-			let isFirstPass = true;
-
-			do {
-				const converted = convert(Number(search[MatchGroup.Quantity]), search[MatchGroup.Unit] as any).to(
-					isBest && !isFirstPass ? (resolvedUnit! as any) : (unit as any),
-				) as number | BestConversion<number, BestUnits>;
-
-				if (isBest && isFirstPass) {
-					result += (converted as BestConversion<number, BestUnits>).quantity;
-					resolvedUnit = (converted as BestConversion<number, BestUnits>).unit;
-					isFirstPass = false;
-				} else {
-					result += converted as number;
-				}
-
-				search = splitExpression.exec(value);
-			} while (search);
-
-			if (isBest) {
-				return convert(result, resolvedUnit! as any).to('best', kind);
-			}
-
-			return result;
-		},
+		to: to.bind({
+			[ConverterThisProperties.Search]: search,
+			[ConverterThisProperties.Value]: value,
+		}),
 	} as Converter<number, Unit>;
 }
 

@@ -1,5 +1,5 @@
 import {convert, convertMany, ms} from 'convert';
-// Only 4.44 kB with brotli compression, 5.38 kB gzipped
+// Only 4.52 kB with brotli compression, 5.53 kB gzipped
 
 // Convert time, length, data, volume, mass, and more
 convert(1024, 'bytes').to('kB');
