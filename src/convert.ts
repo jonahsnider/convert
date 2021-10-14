@@ -149,7 +149,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new RangeError();
 	}
 
-	// eslint-disable-next-line@typescript-eslint/consistent-type-assertions
+	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
 		to: to.bind({
 			[ConverterThisProperties.Quantity]: quantity,
