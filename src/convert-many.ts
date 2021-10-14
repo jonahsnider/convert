@@ -1,4 +1,3 @@
-import {assert} from './assert.js';
 import {convert} from './convert.js';
 import type {BestConversionKind} from './dev/types/common.js';
 import type {BestConversion, BestUnits, Converter} from './types/common.js';
