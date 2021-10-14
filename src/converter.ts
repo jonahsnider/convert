@@ -87,7 +87,9 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 
 		const baseUnit = family[0][Generated.BestIndex.Sym];
 
-		let quantity = convert(this[ConverterThisProperties.Quantity], this[ConverterThisProperties.From] as any).to(baseUnit as any) as unknown as SimplifyQuantity<Q>;
+		let quantity = convert(this[ConverterThisProperties.Quantity], this[ConverterThisProperties.From] as any).to(
+			baseUnit as any,
+		) as unknown as SimplifyQuantity<Q>;
 
 		let bestUnit: typeof family[number][Generated.BestIndex.Sym] = baseUnit;
 
@@ -156,7 +158,9 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 
 				// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
 				return ((this[ConverterThisProperties.Quantity] as bigint) *
-					BigInt(this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
+					BigInt(
+						this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio],
+					)) as unknown as SimplifyQuantity<Q>;
 			} catch {
 				throw new TypeError(
 					`Conversion for ${this[ConverterThisProperties.From]} to ${to} cannot be calculated as a BigInt because the conversion ratio is not an integer`,
@@ -165,7 +169,9 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 		} else {
 			// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
 			return ((this[ConverterThisProperties.Quantity] as bigint) *
-				BigInt(this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
+				BigInt(
+					this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio],
+				)) as unknown as SimplifyQuantity<Q>;
 		}
 	}
 
@@ -179,12 +185,14 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 					this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
 			}
 
-			return (this[ConverterThisProperties.Quantity] * this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
+			return (this[ConverterThisProperties.Quantity] *
+				this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
 		}
 
 		if (this[ConverterThisProperties.From] in kelvinsAliases) {
 			if (to in temperatureDifferences && isType<TemperatureWithDifference>(to)) {
-				return (this[ConverterThisProperties.Quantity] / toUnit[Generated.ConversionIndex.Ratio] - temperatureDifferences[to]) as unknown as SimplifyQuantity<Q>;
+				return (this[ConverterThisProperties.Quantity] / toUnit[Generated.ConversionIndex.Ratio] -
+					temperatureDifferences[to]) as unknown as SimplifyQuantity<Q>;
 			}
 
 			return (this[ConverterThisProperties.Quantity] / toUnit[Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
