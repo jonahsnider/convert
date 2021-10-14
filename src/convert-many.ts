@@ -84,8 +84,6 @@ export function convertMany(value: string): Converter<number, Unit> {
 		throw new RangeError();
 	}
 
-	assert(search);
-
 	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
 		to: to.bind({
