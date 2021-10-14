@@ -118,7 +118,7 @@ test('roundtrip conversion', t => {
 			const value = 123;
 
 			const aToB = convert(value, baseUnit as any).to(unit as any) as unknown as number;
-			const bToA = convert(aToB as any, unit as any).to(baseUnit as any) as unknown as number;
+			const bToA = convert(aToB, unit as any).to(baseUnit as any) as unknown as number;
 
 			const difference = stddev([value, bToA]);
 
