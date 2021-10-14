@@ -169,6 +169,8 @@ Benchmarks of popular unit conversion libraries, including Convert are [availabl
 Convert is the fastest, taking less than a microsecond for all functions.
 That's a little over 3 million `convert()` calls per second.
 
+### Bundle size comparison
+
 [![npm bundle size of convert](https://img.shields.io/bundlephobia/minzip/convert?label=convert)](https://bundlephobia.com/result?p=convert)
 
 [![npm bundle size of safe-units](https://img.shields.io/bundlephobia/minzip/safe-units?label=safe-units)](https://bundlephobia.com/result?p=safe-units)
