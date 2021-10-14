@@ -68,6 +68,7 @@ jobs:
           fail_ci_if_error: true
           directory: coverage
           files: ./coverage/lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
   validate-api:
     name: Validate API
 
