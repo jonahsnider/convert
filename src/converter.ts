@@ -14,7 +14,7 @@ type TemperatureWithDifference = Exclude<keyof typeof temperatureDifferences, '_
  * Minified names of properties on the `this` context.
  * Taken from the Terser output.
  */
-export const enum ConverterThisProperties {
+const enum This {
 	Quantity = 't',
 	From = 'i',
 	FromUnit = 'm',
@@ -22,12 +22,14 @@ export const enum ConverterThisProperties {
 	IsConvertingTemperature = 'e',
 }
 
+export {This as ConverterThisProperties};
+
 interface ConverterThis<Q extends number | bigint, U extends Unit> {
-	[ConverterThisProperties.Quantity]: Q;
-	[ConverterThisProperties.From]: U;
-	[ConverterThisProperties.FromUnit]: typeof conversions[U];
-	[ConverterThisProperties.IsUsingBigInts]: Q extends bigint ? true : false;
-	[ConverterThisProperties.IsConvertingTemperature]: U extends Temperature ? true : false;
+	[This.Quantity]: Q;
+	[This.From]: U;
+	[This.FromUnit]: typeof conversions[U];
+	[This.IsUsingBigInts]: Q extends bigint ? true : false;
+	[This.IsConvertingTemperature]: U extends Temperature ? true : false;
 }
 
 /**
@@ -56,10 +58,10 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 	to: U | 'best',
 	kind: BestConversionKind = 'metric',
 ): SimplifyQuantity<Q> | BestConversion<Q, BestUnits<UnitToFamily[U], K>> {
-	if (this[ConverterThisProperties.From] === to) {
+	if (this[This.From] === to) {
 		// This is ok since we have already validated the type of quantity
 
-		return this[ConverterThisProperties.Quantity] as unknown as SimplifyQuantity<Q>;
+		return this[This.Quantity] as unknown as SimplifyQuantity<Q>;
 	}
 
 	// TODO: Extract to function
@@ -74,13 +76,11 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 		}
 
 		const bestUnitKind = bestUnits[kind];
-		const family = bestUnitKind[this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Family]];
+		const family = bestUnitKind[this[This.FromUnit][Generated.ConversionIndex.Family]];
 
 		const baseUnit = family[0][Generated.BestIndex.Sym];
 
-		let quantity = convert(this[ConverterThisProperties.Quantity], this[ConverterThisProperties.From] as any).to(
-			baseUnit as any,
-		) as unknown as SimplifyQuantity<Q>;
+		let quantity = convert(this[This.Quantity], this[This.From] as any).to(baseUnit as any) as unknown as SimplifyQuantity<Q>;
 
 		let bestUnit: typeof family[number][Generated.BestIndex.Sym] = baseUnit;
 
@@ -114,13 +114,13 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 
 		if (
 			// Time -> meters
-			(this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Family] === ConversionFamilyId.Time && to === meters) ||
+			(this[This.FromUnit][Generated.ConversionIndex.Family] === ConversionFamilyId.Time && to === meters) ||
 			// Meters -> time
-			(toUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && this[ConverterThisProperties.From] === meters)
+			(toUnit[Generated.ConversionIndex.Family] === ConversionFamilyId.Time && this[This.From] === meters)
 		) {
 			throw new RangeError(
 				[
-					`No conversion could be found from ${this[ConverterThisProperties.From]} to ${to}.`,
+					`No conversion could be found from ${this[This.From]} to ${to}.`,
 					'Also, are you trying to convert quantities of time?',
 					'Because "m" is treated as meters, not minutes.',
 					'You probably want to use the "min" unit instead.',
@@ -130,9 +130,9 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 	}
 
 	// @ts-expect-error This throws if toUnit is undefined
-	if (this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Family] !== toUnit[Generated.ConversionIndex.Family]) {
+	if (this[This.FromUnit][Generated.ConversionIndex.Family] !== toUnit[Generated.ConversionIndex.Family]) {
 		if (__DEV__) {
-			throw new RangeError(`No conversion could be found from ${this[ConverterThisProperties.From]} to ${to}`);
+			throw new RangeError(`No conversion could be found from ${this[This.From]} to ${to}`);
 		}
 
 		throw new RangeError();
@@ -140,7 +140,7 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 
 	assert(toUnit);
 
-	if (this[ConverterThisProperties.IsUsingBigInts] && isType<bigint>(this[ConverterThisProperties.Quantity])) {
+	if (this[This.IsUsingBigInts] && isType<bigint>(this[This.Quantity])) {
 		// TODO: If quantity is a bigint return a different Converter<T> instead of checking it here
 		if (__DEV__) {
 			try {
@@ -148,66 +148,55 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 				// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
 
 				// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
-				return ((this[ConverterThisProperties.Quantity] as bigint) *
-					BigInt(
-						this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio],
-					)) as unknown as SimplifyQuantity<Q>;
+				return ((this[This.Quantity] as bigint) *
+					BigInt(this[This.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
 			} catch {
-				throw new TypeError(
-					`Conversion for ${this[ConverterThisProperties.From]} to ${to} cannot be calculated as a BigInt because the conversion ratio is not an integer`,
-				);
+				throw new TypeError(`Conversion for ${this[This.From]} to ${to} cannot be calculated as a BigInt because the conversion ratio is not an integer`);
 			}
 		} else {
 			// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
-			return ((this[ConverterThisProperties.Quantity] as bigint) *
-				BigInt(
-					this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio],
-				)) as unknown as SimplifyQuantity<Q>;
+			return ((this[This.Quantity] as bigint) *
+				BigInt(this[This.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
 		}
 	}
 
-	assertType<number>(this[ConverterThisProperties.Quantity]);
+	assertType<number>(this[This.Quantity]);
 
-	if (this[ConverterThisProperties.IsConvertingTemperature] && isType<Temperature>(this[ConverterThisProperties.From]) && isType<Temperature>(to)) {
+	if (this[This.IsConvertingTemperature] && isType<Temperature>(this[This.From]) && isType<Temperature>(to)) {
 		switch (to) {
 			case KelvinNames.K:
 			case KelvinNames.kelvin:
 			case KelvinNames.kelvins: {
-				if (this[ConverterThisProperties.From] in temperatureDifferences && isType<TemperatureWithDifference>(this[ConverterThisProperties.From])) {
-					return (((this[ConverterThisProperties.Quantity] as number) +
-						temperatureDifferences[this[ConverterThisProperties.From] as TemperatureWithDifference]) *
-						this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
+				if (this[This.From] in temperatureDifferences && isType<TemperatureWithDifference>(this[This.From])) {
+					return (((this[This.Quantity] as number) + temperatureDifferences[this[This.From] as TemperatureWithDifference]) *
+						this[This.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
 				}
 
-				return (this[ConverterThisProperties.Quantity] *
-					this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
+				return (this[This.Quantity] * this[This.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
 			}
 
 			default:
 				break;
 		}
 
-		switch (this[ConverterThisProperties.From]) {
+		switch (this[This.From]) {
 			case KelvinNames.K:
 			case KelvinNames.kelvin:
 			case KelvinNames.kelvins: {
 				if (to in temperatureDifferences && isType<TemperatureWithDifference>(to)) {
-					return ((this[ConverterThisProperties.Quantity] as number) / toUnit[Generated.ConversionIndex.Ratio] -
-						temperatureDifferences[to]) as unknown as SimplifyQuantity<Q>;
+					return ((this[This.Quantity] as number) / toUnit[Generated.ConversionIndex.Ratio] - temperatureDifferences[to]) as unknown as SimplifyQuantity<Q>;
 				}
 
-				return ((this[ConverterThisProperties.Quantity] as number) / toUnit[Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
+				return ((this[This.Quantity] as number) / toUnit[Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
 			}
 
 			default:
 				break;
 		}
 
-		return convert(convert(this[ConverterThisProperties.Quantity] as number, this[ConverterThisProperties.From] as Temperature).to('K'), 'K').to(
-			to,
-		) as unknown as SimplifyQuantity<Q>;
+		return convert(convert(this[This.Quantity] as number, this[This.From] as Temperature).to('K'), 'K').to(to) as unknown as SimplifyQuantity<Q>;
 	}
 
-	return (this[ConverterThisProperties.Quantity] *
-		(this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
+	return (this[This.Quantity] *
+		(this[This.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
 }
