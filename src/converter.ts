@@ -6,18 +6,9 @@ import {bestUnits, conversions, temperatureDifferences} from './generated/genera
 import type {BestConversion, BestUnits, SimplifyQuantity} from './types/common.js';
 import type {Temperature, Unit, UnitToFamily} from './types/units.js';
 import {assert, assertType, isType} from './assert.js';
-import type {KelvinNames} from './dev/conversions/temperature.js';
+import {KelvinNames} from './dev/conversions/temperature.js';
 
 type TemperatureWithDifference = Exclude<keyof typeof temperatureDifferences, '__proto__'>;
-
-/** This is like a `Set` of aliases except it's an object, so we can use the `in` keyword (ES3 compatibility). */
-const kelvinsAliases: Record<KelvinNames, unknown> = {
-	/* eslint-disable @typescript-eslint/naming-convention */
-	kelvin: 0,
-	kelvins: 0,
-	K: 0,
-	/* eslint-enable @typescript-eslint/naming-convention */
-};
 
 /**
  * Minified names of properties on the `this` context.
@@ -178,24 +169,38 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 	assertType<number>(this[ConverterThisProperties.Quantity]);
 
 	if (this[ConverterThisProperties.IsConvertingTemperature] && isType<Temperature>(this[ConverterThisProperties.From]) && isType<Temperature>(to)) {
-		// `in` keyword here is safe because we have already validated that you are giving us a valid unit
-		if (to in kelvinsAliases) {
-			if (this[ConverterThisProperties.From] in temperatureDifferences && isType<TemperatureWithDifference>(this[ConverterThisProperties.From])) {
-				return (((this[ConverterThisProperties.Quantity] as number) + temperatureDifferences[this[ConverterThisProperties.From] as TemperatureWithDifference]) *
+		switch (to) {
+			case KelvinNames.K:
+			case KelvinNames.kelvin:
+			case KelvinNames.kelvins: {
+				if (this[ConverterThisProperties.From] in temperatureDifferences && isType<TemperatureWithDifference>(this[ConverterThisProperties.From])) {
+					return (((this[ConverterThisProperties.Quantity] as number) +
+						temperatureDifferences[this[ConverterThisProperties.From] as TemperatureWithDifference]) *
+						this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
+				}
+
+				return (this[ConverterThisProperties.Quantity] *
 					this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
 			}
 
-			return (this[ConverterThisProperties.Quantity] *
-				this[ConverterThisProperties.FromUnit][Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
+			default:
+				break;
 		}
 
-		if (this[ConverterThisProperties.From] in kelvinsAliases) {
-			if (to in temperatureDifferences && isType<TemperatureWithDifference>(to)) {
-				return (this[ConverterThisProperties.Quantity] / toUnit[Generated.ConversionIndex.Ratio] -
-					temperatureDifferences[to]) as unknown as SimplifyQuantity<Q>;
+		switch (this[ConverterThisProperties.From]) {
+			case KelvinNames.K:
+			case KelvinNames.kelvin:
+			case KelvinNames.kelvins: {
+				if (to in temperatureDifferences && isType<TemperatureWithDifference>(to)) {
+					return ((this[ConverterThisProperties.Quantity] as number) / toUnit[Generated.ConversionIndex.Ratio] -
+						temperatureDifferences[to]) as unknown as SimplifyQuantity<Q>;
+				}
+
+				return ((this[ConverterThisProperties.Quantity] as number) / toUnit[Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
 			}
 
-			return (this[ConverterThisProperties.Quantity] / toUnit[Generated.ConversionIndex.Ratio]) as unknown as SimplifyQuantity<Q>;
+			default:
+				break;
 		}
 
 		return convert(convert(this[ConverterThisProperties.Quantity] as number, this[ConverterThisProperties.From] as Temperature).to('K'), 'K').to(
