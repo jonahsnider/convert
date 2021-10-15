@@ -1,4 +1,6 @@
-import test, {ThrowsExpectation} from 'ava';
+// eslint-disable-next-line ava/use-test
+import type {ThrowsExpectation} from 'ava';
+import test from 'ava';
 import type {Temperature} from '../../index.js';
 import {convert} from '../../index.js';
 import * as macros from '../../test/macros.js';
