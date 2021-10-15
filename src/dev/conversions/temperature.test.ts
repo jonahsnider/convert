@@ -1,4 +1,4 @@
-import test from 'ava';
+import test, {ThrowsExpectation} from 'ava';
 import type {Temperature} from '../../index.js';
 import {convert} from '../../index.js';
 import * as macros from '../../test/macros.js';
@@ -14,8 +14,41 @@ test(macros.convert, [1n, 'C'], [1n, 'C']);
 test(macros.convert, [1n, 'F'], [1n, 'F']);
 test(macros.convert, [1n, 'R'], [1n, 'R']);
 test(macros.convert, [1n, 'K'], [1n, 'K']);
-test(macros.convert, [1n, 'C'], [1n, 'K']);
-test(macros.convert, [1n, 'K'], [1n, 'C']);
+
+test('prevent converting bigints with differences', t => {
+	function buildDevExpectation<U1 extends Temperature, U2 extends Temperature>(from: U1, to: U2, reason: U1 | U2): ThrowsExpectation {
+		return {
+			instanceOf: RangeError,
+			message: `Conversion for ${from} to ${to} cannot be calculated as ${reason} has a conversion difference which cannot be converted with bigints`,
+		};
+	}
+
+	__DEV__ = true;
+	t.throws(() => convert(1n, 'C').to('K'), buildDevExpectation('C', 'K', 'C'));
+	t.throws(() => convert(1n, 'K').to('C'), buildDevExpectation('K', 'C', 'C'));
+
+	t.throws(() => convert(1n, 'F').to('K'));
+	t.throws(() => convert(1n, 'K').to('F'));
+
+	t.throws(() => convert(1n, 'celsius').to('K'), buildDevExpectation('celsius', 'K', 'celsius'));
+	t.throws(() => convert(1n, 'K').to('celsius'), buildDevExpectation('K', 'celsius', 'celsius'));
+
+	t.throws(() => convert(1n, 'fahrenheit').to('K'));
+	t.throws(() => convert(1n, 'K').to('fahrenheit'));
+
+	__DEV__ = false;
+	t.throws(() => convert(1n, 'C').to('K'), {instanceOf: RangeError, message: ''});
+	t.throws(() => convert(1n, 'K').to('C'), {instanceOf: RangeError, message: ''});
+
+	t.throws(() => convert(1n, 'F').to('K'));
+	t.throws(() => convert(1n, 'K').to('F'));
+
+	t.throws(() => convert(1n, 'celsius').to('K'), {instanceOf: RangeError, message: ''});
+	t.throws(() => convert(1n, 'K').to('celsius'), {instanceOf: RangeError, message: ''});
+
+	t.throws(() => convert(1n, 'fahrenheit').to('K'));
+	t.throws(() => convert(1n, 'K').to('fahrenheit'));
+});
 
 test('__proto__', t => {
 	t.throws(() => convert(1, 'K').to('__proto__' as Temperature));

@@ -141,23 +141,33 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 	assert(toUnit);
 
 	if (this[This.IsUsingBigInts] && isType<bigint>(this[This.Quantity])) {
-		// TODO: If quantity is a bigint return a different Converter<T> instead of checking it here
+		// TODO: If quantity is a bigint return a different Converter<T> instead of checking it here - this may not increase performance if TurboFan is already optimizing for
+
 		if (__DEV__) {
 			try {
-				// Note: BigInt support only works when you are converting integers (obviously)
-				// If you tried converting 30 seconds into minutes it would fail since 0.5 minutes is not an integer
-
-				// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
-				return ((this[This.Quantity] as bigint) *
-					BigInt(this[This.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
+				BigInt(this[This.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio]);
 			} catch {
 				throw new TypeError(`Conversion for ${this[This.From]} to ${to} cannot be calculated as a BigInt because the conversion ratio is not an integer`);
 			}
-		} else {
-			// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
-			return ((this[This.Quantity] as bigint) *
-				BigInt(this[This.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
 		}
+
+		if (this[This.From] in temperatureDifferences || to in temperatureDifferences) {
+			if (__DEV__) {
+				const reason = this[This.From] in temperatureDifferences ? this[This.From] : to;
+
+				throw new RangeError(
+					`Conversion for ${this[This.From]} to ${to} cannot be calculated as ${reason} has a conversion difference which cannot be converted with bigints`,
+				);
+			}
+
+			throw new RangeError();
+		}
+
+		// Difference is intentionally excluded as there is never a case where you could convert a temperature to a different temperature as integers
+		return ((this[This.Quantity] as bigint) *
+			// Converting each ratio to bigints would make the most sense here but it ends up with unhelpful return values (ex. 1_000_000n B -> MB === 0n instead of 1n)
+			// It's mostly okay to do this since ratios are already `number`s so we aren't losing a ton of precision, just if you have 2 very precise ratios that are multiplied together and exceed the precision of a `number`
+			BigInt(this[This.FromUnit][Generated.ConversionIndex.Ratio] / toUnit[Generated.ConversionIndex.Ratio])) as unknown as SimplifyQuantity<Q>;
 	}
 
 	assertType<number>(this[This.Quantity]);
