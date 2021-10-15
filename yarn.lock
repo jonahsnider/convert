@@ -1686,13 +1686,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/prettier-config@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@jonahsnider/prettier-config@npm:1.0.0"
+"@jonahsnider/prettier-config@npm:1.1.0":
+  version: 1.1.0
+  resolution: "@jonahsnider/prettier-config@npm:1.1.0"
   dependencies:
     "@types/prettier": 2.4.1
     prettier-config-xo: 2.0.0
-  checksum: 822e4125ac303058ea8c0735eef87e4e8a2bbc5f1bd1e486edf15bcabeba46db7f0316c7af753b61961228fecb6611e8c299ffdf02ae5312f3b2291ae790634d
+  checksum: 7ff95794438cb2c7f4f794812d2933cd4f7e6958f017452f0ed4aae9ebccab25fc2fefa3a11986f7fa1cb61db2363eaecd59c2f67ac863fade63d643775ce874
   languageName: node
   linkType: hard
 
@@ -1703,14 +1703,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/xo-config@npm:4.0.4":
-  version: 4.0.4
-  resolution: "@jonahsnider/xo-config@npm:4.0.4"
+"@jonahsnider/xo-config@npm:4.1.0":
+  version: 4.1.0
+  resolution: "@jonahsnider/xo-config@npm:4.1.0"
   dependencies:
     "@types/xo": 0.39.1
     eslint-plugin-jsdoc: 36.1.1
     eslint-plugin-tsdoc: 0.2.14
-  checksum: d0d78058161026691a5f82bf4f33377e77899e08b2ede4d01daa20dc5caca8f6e189e83c633866e3bf0d53244dd6aacf93e7b5d9bdf0a261429f745952ff30d2
+  checksum: 9c424566bfd38e5648cd0bc2c4cc3579f9715b1c58c66102c358d86ff90103ce5eafb615154cb6c59aa01a26d747d27f195ca7d7e14a4c5d9dc6eb17f4beb397
   languageName: node
   linkType: hard
 
@@ -4458,9 +4458,9 @@ __metadata:
     "@ava/typescript": 2.0.0
     "@babel/core": 7.15.8
     "@babel/preset-env": 7.15.8
-    "@jonahsnider/prettier-config": 1.0.0
+    "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/util": 8.1.1
-    "@jonahsnider/xo-config": 4.0.4
+    "@jonahsnider/xo-config": 4.1.0
     "@microsoft/api-extractor": 7.18.16
     "@rollup/plugin-babel": 5.3.0
     "@rollup/plugin-replace": 3.0.0
