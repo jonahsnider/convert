@@ -23,6 +23,8 @@ const terserConfig = {
 		toplevel: true,
 		passes: 10,
 		unsafe: true,
+		// Required to reduce unnecessary side-effect reads of properties of `this` from Function.prototype.bind
+		pure_getters: true,
 	},
 	mangle: {toplevel: true},
 	module: false,
