@@ -2127,9 +2127,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-typescript@npm:8.2.5":
-  version: 8.2.5
-  resolution: "@rollup/plugin-typescript@npm:8.2.5"
+"@rollup/plugin-typescript@npm:8.3.0":
+  version: 8.3.0
+  resolution: "@rollup/plugin-typescript@npm:8.3.0"
   dependencies:
     "@rollup/pluginutils": ^3.1.0
     resolve: ^1.17.0
@@ -2137,7 +2137,7 @@ __metadata:
     rollup: ^2.14.0
     tslib: "*"
     typescript: ">=3.7.0"
-  checksum: ab32daf727e05fc1c166b2dc2211c16dd7f8d1fa8b916de60a83a8818ff1a84ddff119a39b4862aa0aa58de1e881053a20d51bf1baeb3d50bcea960872b18143
+  checksum: f8253a775389f29feadf639c2e04d87bddb4c30126b0d95b9e17bfffa2addad1b6275cb8dead40604348ea7ac0128fe4394413bc3b2129c4a545f93eb4585149
   languageName: node
   linkType: hard
 
@@ -4464,7 +4464,7 @@ __metadata:
     "@microsoft/api-extractor": 7.18.16
     "@rollup/plugin-babel": 5.3.0
     "@rollup/plugin-replace": 3.0.0
-    "@rollup/plugin-typescript": 8.2.5
+    "@rollup/plugin-typescript": 8.3.0
     "@size-limit/preset-small-lib": 6.0.3
     "@types/node": 16.10.1
     "@types/prettier": 2.4.1
