@@ -1,14 +1,15 @@
+// @ts-check
+
 import babel from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 import {terser} from 'rollup-plugin-terser';
-import dts from 'rollup-plugin-dts';
 
 const flags = {
-	dev: {__DEV__: true},
-	prod: {__DEV__: false},
-	es3: {__ES3__: true},
-	esnext: {__ES3__: false},
+	dev: {__DEV__: JSON.stringify(true)},
+	prod: {__DEV__: JSON.stringify(false)},
+	es3: {__ES3__: JSON.stringify(true)},
+	esnext: {__ES3__: JSON.stringify(false)},
 };
 
 /* eslint-disable camelcase */
@@ -34,73 +35,83 @@ const terserConfig = {
 /** @type {import('rollup-plugin-terser').Options} */
 const esmTerserConfig = {
 	...terserConfig,
-	ecma: 2016,
+	ecma: 2015,
 	compress: {
 		...terserConfig.compress,
-		ecma: 2016,
+		ecma: 2015,
 	},
 };
 /* eslint-enable camelcase */
 
+/**
+ * @type {import('rollup').RollupOptions[]}
+ */
 const config = [
 	// UMD
 	{
 		input: './src/index.ts',
-		output: [
-			{
-				file: './dist/convert.prod.js',
-				format: 'umd',
-				name: 'convert',
-				plugins: [replace({...flags.prod, ...flags.es3})],
-				exports: 'named',
-				sourcemap: true,
-			},
-			{
-				file: './dist/convert.dev.js',
-				format: 'umd',
-				name: 'convert',
-				plugins: [replace({...flags.dev, ...flags.es3})],
-				exports: 'named',
-				sourcemap: true,
-			},
+		plugins: [
+			typescript({incremental: true}),
+			replace({values: {...flags.prod, ...flags.es3}, preventAssignment: true}),
+			babel({babelHelpers: 'bundled', extensions: ['.ts']}),
+			terser(terserConfig),
 		],
-		plugins: [typescript(), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)],
+		output: {
+			file: './dist/convert.prod.js',
+			format: 'umd',
+			name: 'convert',
+			exports: 'named',
+			sourcemap: true,
+		},
 	},
+	{
+		input: './src/index.ts',
+		plugins: [
+			typescript({incremental: true}),
+			replace({values: {...flags.dev, ...flags.es3}, preventAssignment: true}),
+			babel({babelHelpers: 'bundled', extensions: ['.ts']}),
+			terser(terserConfig),
+		],
+		output: {
+			file: './dist/convert.dev.js',
+			format: 'umd',
+			name: 'convert',
+			exports: 'named',
+			sourcemap: true,
+		},
+	},
+
 	// ES Modules
 	{
 		input: './src/index.ts',
-		output: [
-			{
-				file: './dist/convert.prod.mjs',
-				format: 'esm',
-				plugins: [replace({...flags.prod, ...flags.esnext})],
-				exports: 'named',
-				sourcemap: true,
-			},
-			{
-				file: './dist/convert.dev.mjs',
-				format: 'esm',
-				plugins: [replace({...flags.dev, ...flags.esnext})],
-				exports: 'named',
-				sourcemap: true,
-			},
-		],
-		plugins: [typescript(), terser(esmTerserConfig)],
+		plugins: [typescript({incremental: true}), replace({values: {...flags.prod, ...flags.esnext}, preventAssignment: true}), terser(esmTerserConfig)],
+		output: {
+			file: './dist/convert.prod.mjs',
+			format: 'esm',
+			exports: 'named',
+			sourcemap: true,
+		},
 	},
+	{
+		input: './src/index.ts',
+		output: {
+			file: './dist/convert.dev.mjs',
+			format: 'esm',
+			exports: 'named',
+			sourcemap: true,
+		},
+		plugins: [typescript({incremental: true}), replace({values: {...flags.dev, ...flags.esnext}, preventAssignment: true}), terser(esmTerserConfig)],
+	},
+
 	// Entry
 	{
 		input: './src/entry.ts',
+		plugins: [typescript({incremental: true}), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)],
 		output: {
 			file: 'dist/index.js',
 			format: 'cjs',
 			sourcemap: true,
 		},
-		plugins: [typescript(), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)],
-	},
-	{
-		input: './tsc_types/index.d.ts',
-		output: [{file: 'dist/index.d.ts', format: 'es'}],
-		plugins: [dts()],
 	},
 ];
 

@@ -5,8 +5,7 @@
 		"moduleResolution": "node",
 		"strict": true,
 		"target": "esnext",
-		"outDir": "tsc_output",
-		"declarationDir": "tsc_types"
+		"outDir": "tsc_output"
 	},
 	"include": ["./src", "./types"],
 	"exclude": ["./node_modules"]

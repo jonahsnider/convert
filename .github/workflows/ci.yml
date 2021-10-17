@@ -253,6 +253,8 @@ jobs:
         run: yarn install --immutable
       - name: Compile TypeScript for publishing
         run: yarn run build
+      - name: Generate TypeScript declaration rollup
+        run: yarn run validate-api
       - name: Run release
         run: yarn run release
         env:

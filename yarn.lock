@@ -4473,7 +4473,6 @@ __metadata:
     decimal.js: 10.3.1
     prettier: 2.4.1
     rollup: 2.58.0
-    rollup-plugin-dts: 4.0.0
     rollup-plugin-terser: 7.0.2
     semantic-release: 18.0.0
     size-limit: 6.0.3
@@ -10611,22 +10610,6 @@ resolve@~1.19.0:
   bin:
     rimraf: bin.js
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
-  languageName: node
-  linkType: hard
-
-"rollup-plugin-dts@npm:4.0.0":
-  version: 4.0.0
-  resolution: "rollup-plugin-dts@npm:4.0.0"
-  dependencies:
-    "@babel/code-frame": ^7.14.5
-    magic-string: ^0.25.7
-  peerDependencies:
-    rollup: ^2.56.3
-    typescript: ^4.4.2
-  dependenciesMeta:
-    "@babel/code-frame":
-      optional: true
-  checksum: b8c74e892d4131da769389549ea6591fd6e6fe4ee480806d01d3d8cd300b278983afa11dcfd93a7c9de5a08352a9a0d321d98e76b00b3b2fa2a3f369971629f1
   languageName: node
   linkType: hard
 
