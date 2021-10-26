@@ -2686,10 +2686,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.10.9":
-  version: 16.10.9
-  resolution: "@types/node@npm:16.10.9"
-  checksum: b47c3e3896ce243d3bc9e356578d4d607357d9ea0c1445a15cb564341580ac4db4f95677bf15fd354e46343edbd171ac19701740a53637234411da5b66c883a4
+"@types/node@npm:16.11.6":
+  version: 16.11.6
+  resolution: "@types/node@npm:16.11.6"
+  checksum: 6e19634766ff589d3d2f361c2196b671f8f133cdadc5ad347a621c360d8994b6c4fbccfb2ad9c60c588c593831a96497c9c6b77d2b7e91be723384b94f6368e7
   languageName: node
   linkType: hard
 
@@ -4466,7 +4466,7 @@ __metadata:
     "@rollup/plugin-replace": 3.0.0
     "@rollup/plugin-typescript": 8.3.0
     "@size-limit/preset-small-lib": 6.0.3
-    "@types/node": 16.10.9
+    "@types/node": 16.11.6
     "@types/prettier": 2.4.1
     ava: 3.15.0
     c8: 7.10.0
