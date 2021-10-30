@@ -89,8 +89,8 @@
 	},
 	"devDependencies": {
 		"@ava/typescript": "2.0.0",
-		"@babel/core": "7.15.8",
-		"@babel/preset-env": "7.15.8",
+		"@babel/core": "7.16.0",
+		"@babel/preset-env": "7.16.0",
 		"@jonahsnider/prettier-config": "1.1.0",
 		"@jonahsnider/util": "8.4.1",
 		"@jonahsnider/xo-config": "5.0.0",
