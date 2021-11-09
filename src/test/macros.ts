@@ -36,7 +36,7 @@ export const convertMany: Macro<[actual: string, expected: [quantity: number | b
 	test(true);
 };
 
-convertMany.title = (_providedTitle, input, expected) => `${input} -> ${expected[0]} ${expected[1]}`;
+convertMany.title = (_providedTitle, input, expected) => `${input} -> ${expected[0]}${expected[1]}`;
 
 export const convertManyBest: Macro<[input: [from: string, kind?: BestConversionKind | undefined], expected: [quantity: number | bigint, unit: BestUnits]]> = (
 	t,
@@ -55,7 +55,7 @@ export const convertManyBest: Macro<[input: [from: string, kind?: BestConversion
 	test(true);
 };
 
-convertManyBest.title = (_providedTitle, input, expected) => `${input[0]} -> ${input[1] ?? '(default)'} ${expected[0]} ${expected[1]}`;
+convertManyBest.title = (_providedTitle, input, expected) => `${input[0]} -> ${input[1] ?? '(default)'} ${expected[0]}${expected[1]}`;
 
 export const ms: Macro<[from: string, expected: number | bigint]> = (t, input, expected) => {
 	const test = (devFlag: boolean) => {
@@ -67,4 +67,4 @@ export const ms: Macro<[from: string, expected: number | bigint]> = (t, input, e
 	test(true);
 };
 
-ms.title = (_providedTitle, input, expected) => `${input} -> ${expected} ms`;
+ms.title = (_providedTitle, input, expected) => `${input} -> ${expected}ms`;
