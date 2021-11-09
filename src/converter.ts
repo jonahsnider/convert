@@ -81,13 +81,14 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 		const baseUnit = family[0][Generated.BestIndex.Sym];
 
 		let quantity = convert(this[This.Quantity], this[This.From] as any).to(baseUnit as any) as unknown as SimplifyQuantity<Q>;
+		const absQuantity = quantity < 0 ? -quantity : quantity;
 
 		let bestUnit: typeof family[number][Generated.BestIndex.Sym] = baseUnit;
 
 		// eslint-disable-next-line unicorn/no-for-loop, @typescript-eslint/prefer-for-of
 		for (let i = 0; i < family.length; i++) {
 			const best = family[i];
-			if (quantity >= best[Generated.BestIndex.Value]) {
+			if (absQuantity >= best[Generated.BestIndex.Value]) {
 				bestUnit = best[Generated.BestIndex.Sym];
 			}
 		}
