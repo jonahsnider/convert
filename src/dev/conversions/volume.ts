@@ -62,10 +62,17 @@ export const conversions: ConversionGroup = [
 
 	// https://en.wikipedia.org/wiki/United_States_customary_units#Dry_volume
 	// https://en.wikipedia.org/wiki/Dry_measure#US_units_of_dry_measure
-	{names: ['US dry barrel', 'US dry barrels'], symbols: ['US dry bbl'], ratio: 0.12},
-	{names: ['US bushel', 'US bushels'], symbols: ['US bsh', 'US bu'], ratio: 3.523_91e-2},
-	{names: ['US peck'], symbols: ['US pk'], ratio: 9.092_18e-3},
+
+	// https://en.wikipedia.org/wiki/Bushel
+	{names: ['US bushel', 'US bushels'], symbols: ['US bsh', 'US bu'], ratio: 35.239_070_166_88e-3},
+	// https://en.wikipedia.org/wiki/Peck
+	{names: ['US peck'], symbols: ['US pk'], ratio: 8.809_767_541_72e-3},
+	// https://en.wikipedia.org/wiki/Gallon#US_dry_gallon
 	{names: ['US dry gallon'], symbols: ['US dry gal'], ratio: 4.404_883_770_86e-3},
-	{names: ['US dry quart'], symbols: ['US dry qt'], ratio: 0.946_352_946e-3},
-	{names: ['US dry pint'], symbols: ['US dry pt'], ratio: 33.600_312_5},
+	// https://en.wikipedia.org/wiki/Barrel_(unit)#Dry_goods_in_the_US
+	{names: ['US dry barrel', 'US dry barrels'], symbols: ['US dry bbl'], ratio: 115.6e-3},
+	// https://en.wikipedia.org/wiki/Quart#US_dry_quart
+	{names: ['US dry quart'], symbols: ['US dry qt'], ratio: 1.101_220_942_715e-3},
+	// https://en.wikipedia.org/wiki/Pint#US_dry_pint
+	{names: ['US dry pint'], symbols: ['US dry pt'], ratio: 550.610_471_357_5e-6},
 ];

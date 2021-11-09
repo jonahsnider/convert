@@ -59,7 +59,7 @@
 		"analyze": "size-limit --why",
 		"build": "rm -rf tsc_output dist; yarn run generate; tsc; rollup --config rollup.config.js; rm tsc_output/*.tsbuildinfo",
 		"docs": "typedoc",
-		"generate": "tsc --build ./dev.tsconfig.json; node tsc_output/dev/generate/index.js",
+		"generate": "tsc --build ./dev.tsconfig.json; node tsc_output/dev/generate/index.js; tsc --build ./dev.tsconfig.json",
 		"lint": "xo",
 		"release": "semantic-release",
 		"size": "size-limit",
