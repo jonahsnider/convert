@@ -103,6 +103,10 @@ const {ms} = require('convert');
 // Convert a duration into milliseconds
 ms('1d 2h 30min');
 // -> 95400000
+
+// Convert milliseconds to a string
+ms(86400000);
+// -> '1d'
 ```
 
 ## Installation

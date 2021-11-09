@@ -57,14 +57,14 @@ export const convertManyBest: Macro<[input: [from: string, kind?: BestConversion
 
 convertManyBest.title = (_providedTitle, input, expected) => `${input[0]} -> ${input[1] ?? '(default)'} ${expected[0]}${expected[1]}`;
 
-export const ms: Macro<[from: string, expected: number | bigint]> = (t, input, expected) => {
+export const ms: Macro<[from: string, expected: number] | [from: number | bigint, expected: string]> = (t, input, expected) => {
 	const test = (devFlag: boolean) => {
 		__DEV__ = devFlag;
-		t.is(lib.ms(input), expected);
+		t.is(lib.ms(input as any), expected);
 	};
 
 	test(false);
 	test(true);
 };
 
-ms.title = (_providedTitle, input, expected) => `${input} -> ${expected}ms`;
+ms.title = (_providedTitle, input, expected) => (typeof expected === 'string' ? `${input}ms -> ${expected}` : `${input} -> ${expected}ms`);

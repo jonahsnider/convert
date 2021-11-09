@@ -141,6 +141,9 @@ export type Length = GetAliases<_ConversionFamilyId.Length>;
 export type Mass = GetAliases<_ConversionFamilyId.Mass>;
 
 // @public
+export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<Q>}${Time}`;
+
+// @public
 export function ms(value: string): number;
 
 // Warning: (ae-incompatible-release-tags) The symbol "Pressure" is marked as @public, but its signature references "GetAliases" which is marked as @internal

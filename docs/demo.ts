@@ -1,16 +1,19 @@
 import {convert, convertMany, ms} from 'convert';
-// Only 4.53 kB with brotli compression, 5.57 kB gzipped
 
-// Convert time, length, data, volume, mass, and more
-convert(1024, 'bytes').to('kB');
+// Convert time, length, mass, and many others
+convert(2048, 'bytes').to('kiB'); // 2
+convert(5000, 'feet').to('best').toString(); // '1.524km'
+
+// Parse strings
+convertMany('5ft 11in').to('cm'); // 180.34
+
+// ms compatibility function
+ms(86400000); // '1d'
+ms('12h'); // 43200000
 
 // Won't compile in TypeScript & throws at runtime
 convert(451, 'fahrenheit').to('meters');
 
-// Combine several units into one, with a shorthand for ms
-convertMany('1mo 13d').to('year');
-ms('1mo 13d');
-
 // Carbon link for screenshots
 // Render as 2x PNG for GitHub
-// https://carbon.now.sh/?bg=rgba%28185%2C172%2C172%2C0%29&t=dracula-pro&wt=sharp&l=application%2Ftypescript&ds=true&dsyoff=31px&dsblur=68px&wc=true&wa=false&pv=0px&ph=0px&ln=false&fl=1&fm=JetBrains+Mono&fs=15.5px&lh=133%25&si=false&es=2x&wm=false&code=import%2520%257Bconvert%252C%2520convertMany%252C%2520ms%257D%2520from%2520%27convert%27%253B%250A%252F%252F%2520Only%25204.53%2520kB%2520with%2520brotli%2520compression%252C%25205.57%2520kB%2520gzipped%250A%250A%252F%252F%2520Convert%2520time%252C%2520length%252C%2520data%252C%2520volume%252C%2520mass%252C%2520and%2520more%250Aconvert%281024%252C%2520%27bytes%27%29.to%28%27kB%27%29%253B%250A%250A%252F%252F%2520Won%27t%2520compile%2520in%2520TypeScript%2520%2526%2520throws%2520at%2520runtime%250Aconvert%28451%252C%2520%27fahrenheit%27%29.to%28%27meters%27%29%253B%250A%250A%252F%252F%2520Combine%2520several%2520units%2520into%2520one%252C%2520with%2520a%2520shorthand%2520for%2520ms%250AconvertMany%28%271mo%252013d%27%29.to%28%27year%27%29%253B%250Ams%28%271mo%252013d%27%29%253B
+// https://carbon.now.sh/?bg=rgba%28185%2C172%2C172%2C0%29&t=dracula-pro&wt=sharp&l=application%2Ftypescript&ds=true&dsyoff=31px&dsblur=68px&wc=true&wa=false&pv=0px&ph=0px&ln=false&fl=1&fm=CascadiaCodePL&fs=15.5px&lh=133%25&si=false&es=2x&wm=false&code=import%2520%257Bconvert%252C%2520convertMany%252C%2520ms%257D%2520from%2520%27convert%27%253B%250A%250A%252F%252F%2520Convert%2520time%252C%2520length%252C%2520mass%252C%2520and%2520many%2520others%250Aconvert%282048%252C%2520%27bytes%27%29.to%28%27kiB%27%29%253B%2520%252F%252F%25202%250Aconvert%285000%252C%2520%27feet%27%29.to%28%27best%27%29.toString%28%29%253B%2520%252F%252F%2520%271.524km%27%250A%250A%252F%252F%2520Parse%2520strings%250AconvertMany%28%275ft%252011in%27%29.to%28%27cm%27%29%253B%2520%252F%252F%2520180.34%250A%250A%252F%252F%2520ms%2520compatibility%2520function%250Ams%2886400000%29%253B%2520%252F%252F%2520%271d%27%250Ams%28%2712h%27%29%253B%2520%252F%252F%252043200000%250A%250A%252F%252F%2520Won%27t%2520compile%2520in%2520TypeScript%2520%2526%2520throws%2520at%2520runtime%250Aconvert%28451%252C%2520%27fahrenheit%27%29.to%28%27meters%27%29%253B
