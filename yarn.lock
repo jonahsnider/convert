@@ -2797,6 +2797,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:2.4.2":
+  version: 2.4.2
+  resolution: "@types/prettier@npm:2.4.2"
+  checksum: 76e230b2d11028af11fe12e09b2d5b10b03738e9abf819ae6ebb0f78cac13d39f860755ce05ac3855b608222518d956628f5d00322dc206cc6d1f2d8d1519f1e
+  languageName: node
+  linkType: hard
+
 "@types/responselike@npm:^1.0.0":
   version: 1.0.0
   resolution: "@types/responselike@npm:1.0.0"
@@ -4570,7 +4577,7 @@ __metadata:
     "@rollup/plugin-typescript": 8.3.0
     "@size-limit/preset-small-lib": 6.0.4
     "@types/node": 16.11.7
-    "@types/prettier": 2.4.1
+    "@types/prettier": 2.4.2
     ava: 3.15.0
     c8: 7.10.0
     decimal.js: 10.3.1
