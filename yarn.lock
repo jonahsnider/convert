@@ -1772,10 +1772,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/util@npm:8.4.2":
-  version: 8.4.2
-  resolution: "@jonahsnider/util@npm:8.4.2"
-  checksum: e37585d9a1625d3d26a0b104409e426ee356d40ef41a5f4503f88b8c20078b42bc45168132288b1d1d46049347f386e7465964b3c30e2a5b44401587dd15ae21
+"@jonahsnider/util@npm:8.4.3":
+  version: 8.4.3
+  resolution: "@jonahsnider/util@npm:8.4.3"
+  checksum: 32fa66550382bc8b22f837e7c5dcd2f7de47e7ce76620287b9ceff965eafd831fcd1a8dbeb764ce7f6d3da63284b41a3d9385b42ef0a1a9ae4c36ee97a08f27f
   languageName: node
   linkType: hard
 
@@ -4569,7 +4569,7 @@ __metadata:
     "@babel/core": 7.16.0
     "@babel/preset-env": 7.16.0
     "@jonahsnider/prettier-config": 1.1.0
-    "@jonahsnider/util": 8.4.2
+    "@jonahsnider/util": 8.4.3
     "@jonahsnider/xo-config": 5.0.0
     "@microsoft/api-extractor": 7.18.19
     "@rollup/plugin-babel": 5.3.0
