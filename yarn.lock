@@ -2435,7 +2435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/preset-small-lib@npm:7.0.3":
+"@size-limit/preset-small-lib@npm:^7.0.3":
   version: 7.0.3
   resolution: "@size-limit/preset-small-lib@npm:7.0.3"
   dependencies:
@@ -4122,7 +4122,7 @@ __metadata:
     "@rollup/plugin-babel": 5.3.0
     "@rollup/plugin-replace": 3.0.0
     "@rollup/plugin-typescript": 8.3.0
-    "@size-limit/preset-small-lib": 7.0.3
+    "@size-limit/preset-small-lib": ^7.0.3
     "@types/node": 16.11.10
     "@types/prettier": 2.4.2
     ava: 3.15.0

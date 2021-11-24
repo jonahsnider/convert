@@ -98,7 +98,7 @@
 		"@rollup/plugin-babel": "5.3.0",
 		"@rollup/plugin-replace": "3.0.0",
 		"@rollup/plugin-typescript": "8.3.0",
-		"@size-limit/preset-small-lib": "7.0.3",
+		"@size-limit/preset-small-lib": "^7.0.3",
 		"@types/node": "16.11.10",
 		"@types/prettier": "2.4.2",
 		"ava": "3.15.0",
@@ -122,26 +122,22 @@
 		{
 			"brotli": true,
 			"limit": "4.5 KiB",
-			"path": "./dist/convert.prod.js",
-			"webpack": false
+			"path": "./dist/convert.prod.js"
 		},
 		{
 			"gzip": true,
 			"limit": "5.5 KiB",
-			"path": "./dist/convert.prod.js",
-			"webpack": false
+			"path": "./dist/convert.prod.js"
 		},
 		{
 			"brotli": true,
 			"limit": "4.5 KiB",
-			"path": "./dist/convert.prod.mjs",
-			"webpack": false
+			"path": "./dist/convert.prod.mjs"
 		},
 		{
 			"gzip": true,
 			"limit": "5.5 KiB",
-			"path": "./dist/convert.prod.mjs",
-			"webpack": false
+			"path": "./dist/convert.prod.mjs"
 		}
 	]
 }
