@@ -100,8 +100,8 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 			quantity,
 			unit: bestUnit,
 			// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-			toString: () => quantity + bestUnit,
-		} as BestConversion<Q, BestUnits<UnitToFamily[U], K>>;
+			toString: () => (quantity + bestUnit) as `${SimplifyQuantity<Q>}${BestUnits<UnitToFamily[U], K>}`,
+		};
 	}
 
 	const toUnit = conversions[to] as typeof conversions[keyof typeof conversions] | undefined;
