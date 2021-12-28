@@ -95,7 +95,6 @@ export function to<Q extends number | bigint, U extends Unit, K extends BestConv
 
 		quantity = convert(quantity, baseUnit as any).to(bestUnit as any) as unknown as SimplifyQuantity<Q>;
 
-		// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 		return {
 			quantity,
 			unit: bestUnit,
