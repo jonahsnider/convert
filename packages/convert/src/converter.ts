@@ -142,7 +142,7 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
 	assert(toUnit);
 
 	if (this[This.IsUsingBigInts] && isType<bigint>(this[This.Quantity])) {
-		// TODO: If quantity is a bigint return a different Converter<T> instead of checking it here - this may not increase performance if TurboFan is already optimizing for
+		// TODO: If quantity is a bigint return a different Converter<T> instead of checking it here - this may not increase performance if TurboFan is already optimizing for different code paths
 
 		if (__DEV__) {
 			try {
