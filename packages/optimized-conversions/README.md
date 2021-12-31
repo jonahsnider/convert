@@ -4,6 +4,8 @@ The `optimized-conversions` package exposes an optimizer function that is used w
 
 The output of the optimizer is a highly compact representation of the input which compresses the data to minimize bundle size.
 
+This compact data structure is what makes Convert the smallest and fastest conversion library.
+
 ## Example
 
 Here's a very minimal example of what a conversion family from [the `conversions` package][conversions] looks like:
