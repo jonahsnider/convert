@@ -32,21 +32,21 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           fail_ci_if_error: true
-          directory: ./packages/bundled-conversions/coverage/
+          files: ./packages/bundled-conversions/coverage/lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: bundled-conversions
       - name: Upload test coverage for codegen
         uses: codecov/codecov-action@v2
         with:
           fail_ci_if_error: true
-          directory: ./packages/codegen/coverage/
+          files: ./packages/codegen/coverage/lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: codegen
       - name: Upload test coverage for convert
         uses: codecov/codecov-action@v2
         with:
           fail_ci_if_error: true
-          directory: ./packages/convert-tests/coverage/
+          files: ./packages/convert-tests/coverage/lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: convert
   legacy-test:
