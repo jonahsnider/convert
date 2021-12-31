@@ -16,7 +16,7 @@
 		"lint": "xo",
 		"style": "prettier --check . --ignore-path ../../.prettierignore",
 		"test": "ava",
-		"test:coverage": "c8 --reporter lcov --reporter text-summary --100 --include 'src' --all ava"
+		"test:coverage": "c8 --reporter lcov --reporter text-summary --100 --src 'src' --all ava"
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"devDependencies": {
