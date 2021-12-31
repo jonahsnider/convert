@@ -3487,9 +3487,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"c8@npm:7.10.0":
-  version: 7.10.0
-  resolution: "c8@npm:7.10.0"
+"c8@npm:7.11.0":
+  version: 7.11.0
+  resolution: "c8@npm:7.11.0"
   dependencies:
     "@bcoe/v8-coverage": ^0.2.3
     "@istanbuljs/schema": ^0.1.2
@@ -3505,7 +3505,7 @@ __metadata:
     yargs-parser: ^20.2.7
   bin:
     c8: bin/c8.js
-  checksum: 38c9372dcbfd2b6675059f93764f9fe33694627568b70236b0c3b924d1b871edbc15d819b5f4eea39d1f83ce2f6288e127ecfc5f62a37d7aee178b7a15f3a654
+  checksum: 3576fd62dfbef7ef8ae0ce95349d3b297c3b10fa77902b5067896f40a6a3a4bc89637fb81a5badc6b36b4da3f883edc96172c325629d3ec3e24ff9aefab6dcca
   languageName: node
   linkType: hard
 
@@ -4164,7 +4164,7 @@ __metadata:
     "@types/node": 16.11.17
     "@types/prettier": 2.4.2
     ava: 3.15.0
-    c8: 7.10.0
+    c8: 7.11.0
     decimal.js: 10.3.1
     prettier: 2.5.1
     rollup: 2.62.0
