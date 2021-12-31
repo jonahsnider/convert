@@ -1,28 +1,13 @@
 {
-	"name": "convert",
+	"name": "base",
 	"version": "0.0.0-development",
-	"description": "The smallest & fastest library for really easy, totally type-safe unit conversions in TypeScript & JavaScript",
-	"keywords": [
-		"convert",
-		"convert-units",
-		"unit-conversion",
-		"uom",
-		"metric",
-		"imperial",
-		"units",
-		"unit",
-		"measurement",
-		"measure",
-		"temperature",
-		"mass",
-		"weight",
-		"length",
-		"data"
-	],
-	"homepage": "https://convert.js.org/",
+	"private": true,
+	"bugs": {
+		"url": "https://github.com/jonahsnider/convert/issues"
+	},
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/jonahsnider/convert.git"
+		"url": "git+https://github.com/jonahsnider/convert.git"
 	},
 	"license": "MIT",
 	"author": {
@@ -31,113 +16,81 @@
 		"url": "https://jonahsnider.com"
 	},
 	"sideEffects": false,
-	"type": "commonjs",
-	"exports": {
-		".": {
-			"require": "./dist/index.js",
-			"import": "./dist/convert.prod.mjs"
-		},
-		"./prod": {
-			"require": "./dist/convert.prod.js",
-			"import": "./dist/convert.prod.mjs"
-		},
-		"./dev": {
-			"require": "./dist/convert.dev.js",
-			"import": "./dist/convert.dev.mjs"
-		}
-	},
-	"main": "./dist/index.js",
-	"jsdelivr": "./dist/convert.prod.mjs",
-	"unpkg": "./dist/convert.prod.mjs",
-	"module": "./dist/convert.prod.mjs",
-	"browser": "./dist/convert.prod.mjs",
-	"typings": "./dist/index.d.ts",
-	"files": [
-		"dist/"
+	"type": "module",
+	"workspaces": [
+		"packages/*"
 	],
 	"scripts": {
-		"analyze": "size-limit --why",
-		"build": "rm -rf tsc_output dist; yarn run generate; tsc; rollup --config rollup.config.js; rm tsc_output/*.tsbuildinfo",
-		"docs": "typedoc",
-		"generate": "tsc --build ./dev.tsconfig.json; node tsc_output/dev/generate/index.js; tsc --build ./dev.tsconfig.json",
-		"lint": "xo",
-		"release": "semantic-release",
-		"size": "size-limit",
-		"style": "prettier --check .",
-		"test": "yarn run generate; ava",
-		"test:coverage": "yarn run generate; rm -rf coverage; c8 --reporter lcov --reporter text-summary --include 'tsc_output/**/*.js' --exclude 'tsc_output/{generated,test,dev,types}' --exclude 'tsc_output/*.test.js' --exclude 'tsc_output/entry.js' --all ava",
-		"validate-api": "api-extractor run",
-		"validate-api:local": "api-extractor run --local --verbose"
+		"build": "turbo run build --",
+		"docs": "turbo run docs --",
+		"lint": "turbo run lint --",
+		"size": "turbo run size --",
+		"style": "turbo run style --",
+		"test": "turbo run build style lint test validate-api",
+		"validate-api": "turbo run validate-api --",
+		"validate-api:local": "turbo run validate-api:local --"
 	},
 	"prettier": "@jonahsnider/prettier-config",
-	"ava": {
-		"files": [
-			"!src/test"
-		],
-		"require": [
-			"./src/test/globals.js"
-		],
-		"typescript": {
-			"rewritePaths": {
-				"src/": "tsc_output/"
-			},
-			"compile": false
-		}
-	},
-	"resolutions": {
-		"terser": "5.10.0"
-	},
 	"devDependencies": {
-		"@ava/typescript": "2.0.0",
-		"@babel/core": "7.16.7",
-		"@babel/preset-env": "7.16.7",
 		"@jonahsnider/prettier-config": "1.1.0",
-		"@jonahsnider/util": "8.10.0",
-		"@jonahsnider/xo-config": "5.0.3",
-		"@microsoft/api-extractor": "7.19.3",
-		"@rollup/plugin-babel": "5.3.0",
-		"@rollup/plugin-replace": "3.0.1",
-		"@rollup/plugin-typescript": "8.3.0",
-		"@size-limit/preset-small-lib": "7.0.5",
-		"@types/node": "16.11.17",
-		"@types/prettier": "2.4.2",
-		"ava": "3.15.0",
-		"c8": "7.10.0",
-		"decimal.js": "10.3.1",
 		"prettier": "2.5.1",
-		"rollup": "2.62.0",
-		"rollup-plugin-terser": "7.0.2",
-		"semantic-release": "18.0.1",
-		"size-limit": "7.0.5",
-		"terser": "5.10.0",
-		"ts-node": "10.4.0",
-		"tslib": "2.3.1",
-		"typedoc": "0.22.10",
-		"typescript": "4.5.4",
-		"xo": "0.47.0"
+		"turbo": "1.0.23"
+	},
+	"engines": {
+		"node": "16.x"
 	},
 	"packageManager": "yarn@3.1.1",
-	"runkitExampleFilename": "./docs/runkit.js",
-	"size-limit": [
-		{
-			"brotli": true,
-			"limit": "4.5 KiB",
-			"path": "./dist/convert.prod.js"
-		},
-		{
-			"gzip": true,
-			"limit": "5.5 KiB",
-			"path": "./dist/convert.prod.js"
-		},
-		{
-			"brotli": true,
-			"limit": "4.5 KiB",
-			"path": "./dist/convert.prod.mjs"
-		},
-		{
-			"gzip": true,
-			"limit": "5.5 KiB",
-			"path": "./dist/convert.prod.mjs"
+	"turbo": {
+		"baseBranch": "origin/main",
+		"pipeline": {
+			"build": {
+				"dependsOn": [
+					"^build"
+				],
+				"outputs": [
+					"dist/**"
+				]
+			},
+			"lint": {
+				"outputs": []
+			},
+			"style": {
+				"outputs": []
+			},
+			"size": {
+				"outputs": []
+			},
+			"docs": {
+				"outputs": [
+					"docs_out/**"
+				]
+			},
+			"test": {
+				"outputs": []
+			},
+			"test:coverage": {
+				"outputs": [
+					"coverage/**"
+				]
+			},
+			"validate-api": {
+				"dependsOn": [
+					"^build"
+				],
+				"outputs": [
+					"temp/**",
+					"docs/**"
+				]
+			},
+			"validate-api:local": {
+				"dependsOn": [
+					"build"
+				],
+				"outputs": [
+					"temp/**",
+					"docs/**"
+				]
+			}
 		}
-	]
+	}
 }

@@ -26,7 +26,8 @@ convertMany('4d 16h').to('minutes');
 ## Features
 
 - Full build time and runtime validation of conversions
-- Using a web framework like Next.js or Nuxt.js? You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/jonahsnider/convert/blob/master/docs/build-time-optimizations.tsx), so absolutely **zero conversion code is sent to clients**!
+- Using a web framework like Next.js or Nuxt.js?
+  You get 0-cost build-time conversions. Convert is totally side-effect free, so [**conversions will be precalculated at build-time**](https://github.com/jonahsnider/convert/blob/master/docs/build-time-optimizations.tsx), so absolutely **zero conversion code is sent to clients**!
 - Works in browsers and Node.js (UMD and ESM builds will work anywhere)
 - Out of the box ES3 backwards-compatibility (CI tests on Node.js v0.9.1)
 - Absolutely tiny bundle size and 0 dependencies

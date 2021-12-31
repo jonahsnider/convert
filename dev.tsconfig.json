@@ -1,9 +1,0 @@
-{
-	"$schema": "https://json.schemastore.org/tsconfig",
-	"compilerOptions": {
-		"module": "commonjs",
-		"incremental": true
-	},
-	"extends": "./tsconfig.json",
-	"include": ["./src", "./types"]
-}

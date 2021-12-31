@@ -1,0 +1,121 @@
+{
+	"name": "convert",
+	"version": "0.0.0-development",
+	"description": "The smallest & fastest library for really easy, totally type-safe unit conversions in TypeScript & JavaScript",
+	"keywords": [
+		"convert",
+		"convert-units",
+		"unit-conversion",
+		"uom",
+		"metric",
+		"imperial",
+		"units",
+		"unit",
+		"measurement",
+		"measure",
+		"temperature",
+		"mass",
+		"weight",
+		"length",
+		"data"
+	],
+	"homepage": "https://convert.js.org/",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/jonahsnider/convert.git"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Jonah Snider",
+		"email": "jonah@jonah.pw",
+		"url": "https://jonahsnider.com"
+	},
+	"sideEffects": false,
+	"type": "commonjs",
+	"exports": {
+		".": {
+			"import": "./dist/convert.prod.mjs",
+			"require": "./dist/index.js"
+		},
+		"./dev": {
+			"import": "./dist/convert.dev.mjs",
+			"require": "./dist/convert.dev.js"
+		},
+		"./prod": {
+			"import": "./dist/convert.prod.mjs",
+			"require": "./dist/convert.prod.js"
+		}
+	},
+	"main": "./dist/index.js",
+	"jsdelivr": "./dist/convert.prod.mjs",
+	"unpkg": "./dist/convert.prod.mjs",
+	"module": "./dist/convert.prod.mjs",
+	"browser": "./dist/convert.prod.mjs",
+	"typings": "./dist/index.d.ts",
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"build": "rollup --config rollup.config.js && tsc --emitDeclarationOnly && rm tsc_output/*.tsbuildinfo",
+		"docs": "typedoc",
+		"lint": "xo",
+		"release": "semantic-release",
+		"size": "size-limit",
+		"style": "prettier --check . --ignore-path ../../.prettierignore",
+		"validate-api": "api-extractor run",
+		"validate-api:local": "api-extractor run --local --verbose"
+	},
+	"prettier": "@jonahsnider/prettier-config",
+	"resolutions": {
+		"terser": "5.10.0"
+	},
+	"devDependencies": {
+		"@babel/core": "7.16.7",
+		"@babel/preset-env": "7.16.7",
+		"@jonahsnider/prettier-config": "1.1.0",
+		"@jonahsnider/xo-config": "5.0.3",
+		"@microsoft/api-extractor": "7.19.3",
+		"@rollup/plugin-babel": "5.3.0",
+		"@rollup/plugin-node-resolve": "13.1.2",
+		"@rollup/plugin-replace": "3.0.1",
+		"@rollup/plugin-typescript": "8.3.0",
+		"@size-limit/preset-small-lib": "7.0.5",
+		"@types/node": "16.11.17",
+		"bundled-conversions": "workspace:*",
+		"conversions": "workspace:*",
+		"optimized-conversions": "workspace:*",
+		"prettier": "2.5.1",
+		"rollup": "2.62.0",
+		"rollup-plugin-terser": "7.0.2",
+		"semantic-release": "18.0.1",
+		"size-limit": "7.0.5",
+		"terser": "5.10.0",
+		"typedoc": "0.22.10",
+		"typescript": "4.5.4",
+		"xo": "0.47.0"
+	},
+	"packageManager": "yarn@3.1.1",
+	"runkitExampleFilename": "./docs/runkit.js",
+	"size-limit": [
+		{
+			"brotli": true,
+			"limit": "4.5 KiB",
+			"path": "./dist/convert.prod.js"
+		},
+		{
+			"gzip": true,
+			"limit": "5.5 KiB",
+			"path": "./dist/convert.prod.js"
+		},
+		{
+			"brotli": true,
+			"limit": "4.5 KiB",
+			"path": "./dist/convert.prod.mjs"
+		},
+		{
+			"gzip": true,
+			"limit": "5.5 KiB",
+			"path": "./dist/convert.prod.mjs"
+		}
+	]
+}
