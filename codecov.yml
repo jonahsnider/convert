@@ -1,10 +1,3 @@
-flags:
-  bundled-conversions:
-    paths:
-      - ./packages/bundled-conversions
-  codegen:
-    paths:
-      - ./packages/codegen
-  convert:
-    paths:
-      - ./packages/convert-tests
+# https://docs.codecov.com/docs/fixing-paths
+fixes:
+  - '::packages/convert-tests/'
