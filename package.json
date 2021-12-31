@@ -26,7 +26,8 @@
 		"lint": "turbo run lint --",
 		"size": "turbo run size --",
 		"style": "turbo run style --",
-		"test": "turbo run build style lint test validate-api",
+		"test": "turbo run build size style lint validate-api test",
+		"test:coverage": "turbo run build size style lint validate-api test:coverage",
 		"validate-api": "turbo run validate-api --",
 		"validate-api:local": "turbo run validate-api:local --"
 	},
@@ -58,6 +59,9 @@
 				"outputs": []
 			},
 			"size": {
+				"dependsOn": [
+					"^build"
+				],
 				"outputs": []
 			},
 			"docs": {
