@@ -13,7 +13,6 @@ export function expandMacro(macro: ReadonlyArray<Readonly<UnitGroup>>, unit: Mac
 	return macro.map(unitGroup => ({
 		names: unit.names.map(name => `${unitGroup.prefix}${name}`),
 		symbols: unit.symbols.map(symbol => `${unitGroup.symbol}${symbol}`),
-		// TODO: Remove .toNumber() and see if the output changes (use snapshot tests, probably)
-		ratio: new Decimal(unit.ratio).times(unitGroup.value).toNumber(),
+		ratio: new Decimal(unit.ratio).times(unitGroup.value),
 	}));
 }
