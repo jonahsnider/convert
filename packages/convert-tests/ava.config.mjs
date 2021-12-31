@@ -4,7 +4,7 @@ const config = {
 	},
 	files: ['test/**/*.test.ts'],
 	nodeArguments: ['--loader=ts-node/esm'],
-	timeout: '25s',
+	timeout: '45s',
 };
 
 export default config;
