@@ -1,0 +1,10 @@
+flags:
+  bundled-conversions:
+    paths:
+      - ./packages/bundled-conversions
+  codegen:
+    paths:
+      - ./packages/codegen
+  convert:
+    paths:
+      - ./packages/convert-tests
