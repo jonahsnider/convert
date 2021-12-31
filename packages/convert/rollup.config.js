@@ -1,10 +1,14 @@
 // @ts-check
 
-import babel from '@rollup/plugin-babel';
+import {getBabelOutputPlugin} from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import typescript from '@rollup/plugin-typescript';
 import {terser} from 'rollup-plugin-terser';
 import {nodeResolve} from '@rollup/plugin-node-resolve';
+
+// NOTE: Using getBabelOutputPlugin() instead of the default babel() plugin is necessary as a workaround to transform the modules that Rollup bundles
+// ex. const conversions = ... is not transformed by babel() for some reason (maybe because it's from an input chunk?)
+// If you undo this workaround you will probably notice that parts of your final output aren't ES5 compatible
 
 const flags = {
 	dev: {__DEV__: JSON.stringify(true)},
@@ -20,7 +24,6 @@ const terserConfig = {
 	compress: {
 		arrows: false,
 		arguments: true,
-		ecma: 5,
 		keep_fargs: false,
 		toplevel: true,
 		passes: 10,
@@ -52,15 +55,17 @@ const config = [
 	{
 		input: './src/index.ts',
 		plugins: [
-			typescript({incremental: true}),
 			nodeResolve(),
+			typescript({incremental: true}),
 			replace({values: {...flags.prod, ...flags.es3}, preventAssignment: true}),
-			babel({babelHelpers: 'bundled', extensions: ['.ts']}),
+			getBabelOutputPlugin({
+				presets: [['@babel/env', {modules: 'umd'}]],
+			}),
 			terser(terserConfig),
 		],
 		output: {
 			file: './dist/convert.prod.js',
-			format: 'umd',
+			format: 'esm',
 			name: 'convert',
 			exports: 'named',
 			sourcemap: true,
@@ -69,15 +74,17 @@ const config = [
 	{
 		input: './src/index.ts',
 		plugins: [
-			typescript({incremental: true}),
 			nodeResolve(),
+			typescript({incremental: true}),
 			replace({values: {...flags.dev, ...flags.es3}, preventAssignment: true}),
-			babel({babelHelpers: 'bundled', extensions: ['.ts']}),
+			getBabelOutputPlugin({
+				presets: [['@babel/env', {modules: 'umd'}]],
+			}),
 			terser(terserConfig),
 		],
 		output: {
 			file: './dist/convert.dev.js',
-			format: 'umd',
+			format: 'esm',
 			name: 'convert',
 			exports: 'named',
 			sourcemap: true,
@@ -88,8 +95,8 @@ const config = [
 	{
 		input: './src/index.ts',
 		plugins: [
-			typescript({incremental: true}),
 			nodeResolve(),
+			typescript({incremental: true}),
 			replace({values: {...flags.prod, ...flags.esnext}, preventAssignment: true}),
 			terser(esmTerserConfig),
 		],
@@ -109,8 +116,8 @@ const config = [
 			sourcemap: true,
 		},
 		plugins: [
-			typescript({incremental: true}),
 			nodeResolve(),
+			typescript({incremental: true}),
 			replace({values: {...flags.dev, ...flags.esnext}, preventAssignment: true}),
 			terser(esmTerserConfig),
 		],
@@ -119,10 +126,17 @@ const config = [
 	// Entry
 	{
 		input: './src/entry.ts',
-		plugins: [typescript({incremental: true}), nodeResolve(), babel({babelHelpers: 'bundled', extensions: ['.ts']}), terser(terserConfig)],
+		plugins: [
+			nodeResolve(),
+			typescript({incremental: true}),
+			getBabelOutputPlugin({
+				presets: [['@babel/env', {modules: 'cjs'}]],
+			}),
+			terser(terserConfig),
+		],
 		output: {
 			file: 'dist/index.js',
-			format: 'cjs',
+			format: 'esm',
 			sourcemap: true,
 		},
 	},
