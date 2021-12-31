@@ -5,13 +5,13 @@ __metadata:
   version: 5
   cacheKey: 8
 
-"@ava/typescript@npm:2.0.0":
-  version: 2.0.0
-  resolution: "@ava/typescript@npm:2.0.0"
+"@ava/typescript@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@ava/typescript@npm:3.0.1"
   dependencies:
-    escape-string-regexp: ^4.0.0
-    execa: ^5.0.0
-  checksum: acacd1f47d2060a66514ec7a6b861f4e9000ec927019f45449d3fdd9e72fa43528351ee44235eefcf9d0163badf06ae60ce6157c91b3fac96973991a7e394909
+    escape-string-regexp: ^5.0.0
+    execa: ^5.1.1
+  checksum: 3075ad519e18d6daa0e0696d44716d31bda8f6cdaad70e3da9639d39b4d1807045995d4c8688cd06698586da38f184b47c054d28d873dac3a89364c309dee982
   languageName: node
   linkType: hard
 
@@ -4146,7 +4146,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "convert@workspace:."
   dependencies:
-    "@ava/typescript": 2.0.0
+    "@ava/typescript": 3.0.1
     "@babel/core": 7.16.7
     "@babel/preset-env": 7.16.7
     "@jonahsnider/prettier-config": 1.1.0
@@ -4946,6 +4946,13 @@ __metadata:
   version: 4.0.0
   resolution: "escape-string-regexp@npm:4.0.0"
   checksum: 98b48897d93060f2322108bf29db0feba7dd774be96cd069458d1453347b25ce8682ecc39859d4bca2203cc0ab19c237bcc71755eff49a0f8d90beadeeba5cc5
+  languageName: node
+  linkType: hard
+
+"escape-string-regexp@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "escape-string-regexp@npm:5.0.0"
+  checksum: 20daabe197f3cb198ec28546deebcf24b3dbb1a5a269184381b3116d12f0532e06007f4bc8da25669d6a7f8efb68db0758df4cd981f57bc5b57f521a3e12c59e
   languageName: node
   linkType: hard
 

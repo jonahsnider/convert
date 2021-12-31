@@ -88,7 +88,7 @@
 		"terser": "5.10.0"
 	},
 	"devDependencies": {
-		"@ava/typescript": "2.0.0",
+		"@ava/typescript": "3.0.1",
 		"@babel/core": "7.16.7",
 		"@babel/preset-env": "7.16.7",
 		"@jonahsnider/prettier-config": "1.1.0",
