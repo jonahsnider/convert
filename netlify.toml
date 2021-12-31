@@ -1,0 +1,4 @@
+[build]
+base = "./"
+command = "yarn run docs"
+publish = "./packages/convert/docs_out"

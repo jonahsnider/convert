@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"declaration": true,
+		"exactOptionalPropertyTypes": true,
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"outDir": "tsc_output",
+		"resolveJsonModule": true
+	},
+	"extends": "@tsconfig/node16/tsconfig.json",
+	"include": ["src", "types", "test"]
+}

@@ -1,5 +1,0 @@
-{
-	"entryPoints": ["./src/index.ts"],
-	"name": "convert",
-	"out": "docs_out"
-}

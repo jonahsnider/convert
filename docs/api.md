@@ -4,19 +4,58 @@
 
 ```ts
 
-// Warning: (ae-incompatible-release-tags) The symbol "Angle" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Angle" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
+import type Decimal from 'decimal.js';
+import type { ReadonlyDeep } from 'type-fest';
+
+// Warning: (ae-forgotten-export) The symbol "Conversions" needs to be exported by the entry point index.d.ts
 //
 // @public
-export type Angle = GetAliases<_ConversionFamilyId.Angle>;
+export type Angle = GetAliases<Conversions.Id.Angle>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "Area" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Area" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
+// @internal (undocumented)
+const angle: ReadonlyDeep<Family>;
+
+// @public
+export type Area = GetAliases<Conversions.Id.Area>;
+
+// @internal (undocumented)
+const area: ReadonlyDeep<Family>;
+
+declare namespace Best {
+    export {
+        Kind
+    }
+}
+
+// @public (undocumented)
+const enum Best_2 {
+    // (undocumented)
+    Sym = 1,
+    // (undocumented)
+    Value = 0
+}
+
+// Warning: (ae-forgotten-export) The symbol "bestUnits" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "Indexes" needs to be exported by the entry point index.d.ts
 //
 // @public
-export type Area = GetAliases<_ConversionFamilyId.Area>;
+export type BestUnits<Family extends Conversions.Id = Conversions.Id, Kind extends Conversions.Best.Kind = Conversions.Best.Kind> = typeof bestUnits[Kind][Family][number][Indexes.Best.Sym];
 
-// @internal
+// Warning: (ae-forgotten-export) The symbol "OnlySymbolConversion" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "NamedConversion" needs to be exported by the entry point index.d.ts
+//
+// @internal (undocumented)
+type Conversion = OnlySymbolConversion | NamedConversion;
+
+// @public (undocumented)
+const enum Conversion_2 {
+    // (undocumented)
+    Family = 0,
+    // (undocumented)
+    Ratio = 1
+}
+
+// @public
 export const enum _ConversionFamilyId {
     // (undocumented)
     Angle = 0,
@@ -40,105 +79,116 @@ export const enum _ConversionFamilyId {
     Volume = 9
 }
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(angle: Q, from: Angle): Converter<Q, Angle>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Area): Converter<Q, Area>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Data): Converter<Q, Data>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Force): Converter<Q, Force>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(length: Q, from: Length): Converter<Q, Length>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Mass): Converter<Q, Mass>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Pressure): Converter<Q, Pressure>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Temperature): Converter<Q, Temperature>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(duration: Q, from: Time): Converter<Q, Time>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "convert" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Volume): Converter<Q, Volume>;
 export { convert }
 export default convert;
 
-// Warning: (ae-internal-missing-underscore) The name "Converter" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
+// @public
 export interface Converter<Q extends number | bigint, U extends Unit> {
     // Warning: (ae-forgotten-export) The symbol "SimplifyQuantity" needs to be exported by the entry point index.d.ts
     to(to: U): SimplifyQuantity<Q>;
-    // Warning: (ae-forgotten-export) The symbol "BestUnits" needs to be exported by the entry point index.d.ts
     // Warning: (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
-    // Warning: (ae-forgotten-export) The symbol "BestConversionKind" needs to be exported by the entry point index.d.ts
     // Warning: (ae-forgotten-export) The symbol "BestConversion" needs to be exported by the entry point index.d.ts
-    to<B extends BestUnits<UnitToFamily[U], K>, K extends BestConversionKind = BestConversionKind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
+    to<B extends BestUnits<UnitToFamily[U], K>, K extends Conversions.Best.Kind = Conversions.Best.Kind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
 }
 
-// Warning: (ae-incompatible-release-tags) The symbol "convertMany" is marked as @public, but its signature references "Converter" which is marked as @internal
-//
 // @public
 export function convertMany(value: string): Converter<number, Unit>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "Data" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Data" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
-//
 // @public
-export type Data = GetAliases<_ConversionFamilyId.Data>;
+export type Data = GetAliases<Conversions.Id.Data>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "Force" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Force" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
-//
+// @internal (undocumented)
+const data: ReadonlyDeep<Family>;
+
+declare namespace Families {
+    export {
+        angle,
+        area,
+        data,
+        force,
+        length,
+        mass,
+        pressure,
+        temperature,
+        time,
+        volume
+    }
+}
+
+// @internal (undocumented)
+interface Family {
+    // (undocumented)
+    best: string[] | Record<Best.Kind, string[]>;
+    // (undocumented)
+    conversions: Conversion[];
+    // (undocumented)
+    id: _ConversionFamilyId;
+}
+
 // @public
-export type Force = GetAliases<_ConversionFamilyId.Force>;
+export type Force = GetAliases<Conversions.Id.Force>;
+
+// @internal (undocumented)
+const force: ReadonlyDeep<Family>;
 
 // Warning: (ae-forgotten-export) The symbol "FamilyToUnit" needs to be exported by the entry point index.d.ts
-// Warning: (ae-internal-missing-underscore) The name "GetAliases" should be prefixed with an underscore because the declaration is marked as @internal
-//
-// @internal
-export type GetAliases<T extends _ConversionFamilyId> = FamilyToUnit[T];
-
-// Warning: (ae-incompatible-release-tags) The symbol "Length" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Length" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
 //
 // @public
-export type Length = GetAliases<_ConversionFamilyId.Length>;
+export type GetAliases<T extends Conversions.Id> = FamilyToUnit[T];
 
-// Warning: (ae-incompatible-release-tags) The symbol "Mass" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Mass" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
-//
+// @internal (undocumented)
+const enum KelvinNames {
+    // (undocumented)
+    K = "K",
+    // (undocumented)
+    kelvin = "kelvin",
+    // (undocumented)
+    kelvins = "kelvins"
+}
+
+// @public (undocumented)
+type Kind = 'metric' | 'imperial';
+
 // @public
-export type Mass = GetAliases<_ConversionFamilyId.Mass>;
+export type Length = GetAliases<Conversions.Id.Length>;
+
+// @internal (undocumented)
+const length: ReadonlyDeep<Family>;
+
+// @public
+export type Mass = GetAliases<Conversions.Id.Mass>;
+
+// @internal (undocumented)
+const mass: ReadonlyDeep<Family>;
 
 // @public
 export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<Q>}${Time}`;
@@ -146,35 +196,35 @@ export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<
 // @public
 export function ms(value: string): number;
 
-// Warning: (ae-incompatible-release-tags) The symbol "Pressure" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Pressure" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
-//
-// @public
-export type Pressure = GetAliases<_ConversionFamilyId.Pressure>;
+// @internal (undocumented)
+type Numeric = number | Decimal;
 
-// Warning: (ae-incompatible-release-tags) The symbol "Temperature" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Temperature" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
-//
 // @public
-export type Temperature = GetAliases<_ConversionFamilyId.Temperature>;
+export type Pressure = GetAliases<Conversions.Id.Pressure>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "Time" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Time" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
-//
-// @public
-export type Time = GetAliases<_ConversionFamilyId.Time>;
+// @internal (undocumented)
+const pressure: ReadonlyDeep<Family>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "Unit" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Unit" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
-//
 // @public
-export type Unit = GetAliases<_ConversionFamilyId>;
+export type Temperature = GetAliases<Conversions.Id.Temperature>;
 
-// Warning: (ae-incompatible-release-tags) The symbol "Volume" is marked as @public, but its signature references "GetAliases" which is marked as @internal
-// Warning: (ae-incompatible-release-tags) The symbol "Volume" is marked as @public, but its signature references "ConversionFamilyId" which is marked as @internal
-//
+// @internal (undocumented)
+const temperature: ReadonlyDeep<Family>;
+
 // @public
-export type Volume = GetAliases<_ConversionFamilyId.Volume>;
+export type Time = GetAliases<Conversions.Id.Time>;
+
+// @internal (undocumented)
+const time: ReadonlyDeep<Family>;
+
+// @public
+export type Unit = GetAliases<Conversions.Id>;
+
+// @public
+export type Volume = GetAliases<Conversions.Id.Volume>;
+
+// @internal (undocumented)
+const volume: ReadonlyDeep<Family>;
 
 // (No @packageDocumentation comment for this package)
 
