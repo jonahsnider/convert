@@ -3403,6 +3403,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
+    "@types/node": 16.11.17
     ava: 4.0.0-rc.1
     c8: 7.11.0
     codegen: "workspace:*"
@@ -3812,6 +3813,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
+    "@types/node": 16.11.17
     "@types/prettier": 2.4.2
     ava: 4.0.0-rc.1
     c8: 7.11.0
@@ -4089,6 +4091,7 @@ __metadata:
     "@jonahsnider/util": 8.10.0
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
+    "@types/node": 16.11.17
     ava: 4.0.0-rc.1
     bundled-conversions: "workspace:*"
     c8: 7.11.0
