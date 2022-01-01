@@ -1,4 +1,4 @@
-import type Decimal from 'decimal.js';
+import type BigNumber from 'bignumber.js';
 import * as Best from './best.js';
 
 export const enum KelvinNames {
@@ -26,7 +26,7 @@ export const enum Id {
 	Volume,
 }
 
-export type Numeric = number | Decimal;
+export type Numeric = number | BigNumber;
 
 interface BaseConversion {
 	ratio: Numeric;

@@ -3276,6 +3276,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bignumber.js@npm:9.0.2":
+  version: 9.0.2
+  resolution: "bignumber.js@npm:9.0.2"
+  checksum: 8637b71d0a99104b20413c47578953970006fec6b4df796b9dcfd9835ea9c402ea0e727eba9a5ca9f9a393c1d88b6168c5bbe0887598b708d4f8b4870ad62e1f
+  languageName: node
+  linkType: hard
+
 "bin-links@npm:^2.2.1":
   version: 2.2.1
   resolution: "bin-links@npm:2.2.1"
@@ -4066,7 +4073,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
-    decimal.js: 10.3.1
+    bignumber.js: 9.0.2
     prettier: 2.5.1
     type-fest: 2.8.0
     typescript: 4.5.4
@@ -4312,13 +4319,6 @@ __metadata:
   version: 5.0.0
   resolution: "decamelize@npm:5.0.0"
   checksum: 60512c65227d04d24413b48063480ddb7631476853379672af3cbe1b6e556c9e850b4d65741906a8876b3b68de0f4293226659dc79ba161eb5f7fdec2214ee44
-  languageName: node
-  linkType: hard
-
-"decimal.js@npm:10.3.1":
-  version: 10.3.1
-  resolution: "decimal.js@npm:10.3.1"
-  checksum: 0351ac9f05fe050f23227aa6a4573bee2d58fa7378fcf28d969a8c789525032effb488a90320fd3fe86a66e17b4bc507d811b15eada5b7f0e7ec5d2af4c24a59
   languageName: node
   linkType: hard
 
@@ -8385,8 +8385,8 @@ fsevents@~2.3.2:
     "@jonahsnider/util": 8.10.0
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
+    bignumber.js: 9.0.2
     conversions: "workspace:*"
-    decimal.js: 10.3.1
     prettier: 2.5.1
     typescript: 4.5.4
     xo: 0.47.0

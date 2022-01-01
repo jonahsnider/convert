@@ -18,7 +18,7 @@
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
-		"decimal.js": "10.3.1",
+		"bignumber.js": "9.0.2",
 		"type-fest": "2.8.0"
 	},
 	"devDependencies": {

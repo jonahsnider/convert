@@ -1,10 +1,10 @@
-import Decimal from 'decimal.js';
+import BigNumber from 'bignumber.js';
 import type {ReadonlyDeep} from 'type-fest';
 import {expandMacro, Macros} from '../macros/index.js';
 import type {Family} from '../types/index.js';
 import {Id} from '../types/index.js';
 
-const poundInGrams = new Decimal(4.535_923_7e2);
+const poundInGrams = new BigNumber(4.535_923_7e2);
 
 export const mass: ReadonlyDeep<Family> = {
 	id: Id.Mass,

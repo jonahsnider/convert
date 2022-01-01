@@ -1,12 +1,10 @@
 import {combineIterables, Sort} from '@jonahsnider/util';
 import type * as Conversions from 'conversions';
-import Decimal from 'decimal.js';
+import BigNumber from 'bignumber.js';
 import type {Optimized} from '../types/index.js';
 
-Decimal.set({precision: 50});
-
-function simplify(decimal: Decimal): number {
-	const rounded = decimal.toDecimalPlaces(12);
+function simplify(decimal: BigNumber): number {
+	const rounded = decimal.decimalPlaces(12);
 
 	if (rounded.isInteger()) {
 		return rounded.toNumber();
@@ -20,14 +18,14 @@ export function optimizeBest(conversionFamilies: ReadonlyArray<Readonly<Conversi
 
 	for (const kind of ['metric', 'imperial'] as const) {
 		for (const conversionFamily of conversionFamilies) {
-			const lookup: Record<string, Decimal> = {};
+			const lookup: Record<string, BigNumber> = {};
 
 			for (const [name, conversion] of Object.entries(conversionFamily.conversions)) {
-				lookup[name] = new Decimal(conversion.ratio);
+				lookup[name] = new BigNumber(conversion.ratio);
 
 				const names: Iterable<string> = combineIterables(conversion.names ?? [], conversion.symbols ?? []);
 				for (const generatedName of names) {
-					lookup[generatedName] = new Decimal(conversion.ratio);
+					lookup[generatedName] = new BigNumber(conversion.ratio);
 				}
 			}
 
