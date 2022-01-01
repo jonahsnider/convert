@@ -18,7 +18,7 @@ const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
  * Minified names of properties on the `this` context.
  * Taken from the Terser output.
  */
-export const enum ConverterThisProperties {
+const enum ConverterThisProperties {
 	Search = 't',
 	Value = 'e',
 }
