@@ -1,4 +1,4 @@
-import type * as Conversions from 'conversions';
+import type {Best} from 'conversions';
 import {convert} from './convert.js';
 import type {BestConversion, BestUnits, Converter} from './types/common.js';
 import type {Unit} from './types/units.js';
@@ -28,7 +28,7 @@ interface ConverterThis {
 	[ConverterThisProperties.Value]: string;
 }
 
-function to(this: ConverterThis, unit: Unit | 'best', kind?: Conversions.Best.Kind | undefined) {
+function to(this: ConverterThis, unit: Unit | 'best', kind?: Best.Kind | undefined) {
 	const isBest = unit === 'best';
 
 	let result = 0;

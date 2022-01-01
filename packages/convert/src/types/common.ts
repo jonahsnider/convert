@@ -1,5 +1,6 @@
 import type {bestUnits} from 'bundled-conversions';
-import type * as Conversions from 'conversions';
+import type {Id as ConversionFamilyId, Best} from 'conversions';
+
 import type {Indexes} from 'optimized-conversions';
 import type {Unit, UnitToFamily} from './units.js';
 
@@ -11,8 +12,8 @@ export type SimplifyQuantity<Q> = Q extends number ? number : Q extends bigint ?
  * @public
  */
 export type BestUnits<
-	Family extends Conversions.Id = Conversions.Id,
-	Kind extends Conversions.Best.Kind = Conversions.Best.Kind,
+	Family extends ConversionFamilyId = ConversionFamilyId,
+	Kind extends Best.Kind = Best.Kind,
 > = typeof bestUnits[Kind][Family][number][Indexes.Best.Sym];
 
 /**
@@ -53,5 +54,5 @@ export interface Converter<Q extends number | bigint, U extends Unit> {
 	 *
 	 * @returns An object with a `quantity` property of the `unit` unit, which can be casted to a string using the `toString()` method
 	 */
-	to<B extends BestUnits<UnitToFamily[U], K>, K extends Conversions.Best.Kind = Conversions.Best.Kind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
+	to<B extends BestUnits<UnitToFamily[U], K>, K extends Best.Kind = Best.Kind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
 }

@@ -4,51 +4,29 @@
 
 ```ts
 
-import type Decimal from 'decimal.js';
-import type { ReadonlyDeep } from 'type-fest';
-
-// Warning: (ae-forgotten-export) The symbol "Conversions" needs to be exported by the entry point index.d.ts
-//
 // @public
-export type Angle = GetAliases<Conversions.Id.Angle>;
-
-// @internal (undocumented)
-const angle: ReadonlyDeep<Family>;
+export type Angle = GetAliases<_ConversionFamilyId.Angle>;
 
 // @public
-export type Area = GetAliases<Conversions.Id.Area>;
-
-// @internal (undocumented)
-const area: ReadonlyDeep<Family>;
-
-declare namespace Best {
-    export {
-        Kind
-    }
-}
+export type Area = GetAliases<_ConversionFamilyId.Area>;
 
 // @public (undocumented)
-const enum Best_2 {
+const enum Best {
     // (undocumented)
     Sym = 1,
     // (undocumented)
     Value = 0
 }
 
+// Warning: (ae-forgotten-export) The symbol "Best" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "bestUnits" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "Indexes" needs to be exported by the entry point index.d.ts
 //
 // @public
-export type BestUnits<Family extends Conversions.Id = Conversions.Id, Kind extends Conversions.Best.Kind = Conversions.Best.Kind> = typeof bestUnits[Kind][Family][number][Indexes.Best.Sym];
-
-// Warning: (ae-forgotten-export) The symbol "OnlySymbolConversion" needs to be exported by the entry point index.d.ts
-// Warning: (ae-forgotten-export) The symbol "NamedConversion" needs to be exported by the entry point index.d.ts
-//
-// @internal (undocumented)
-type Conversion = OnlySymbolConversion | NamedConversion;
+export type BestUnits<Family extends _ConversionFamilyId = _ConversionFamilyId, Kind extends Best_2.Kind = Best_2.Kind> = typeof bestUnits[Kind][Family][number][Indexes.Best.Sym];
 
 // @public (undocumented)
-const enum Conversion_2 {
+const enum Conversion {
     // (undocumented)
     Family = 0,
     // (undocumented)
@@ -117,78 +95,31 @@ export interface Converter<Q extends number | bigint, U extends Unit> {
     to(to: U): SimplifyQuantity<Q>;
     // Warning: (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
     // Warning: (ae-forgotten-export) The symbol "BestConversion" needs to be exported by the entry point index.d.ts
-    to<B extends BestUnits<UnitToFamily[U], K>, K extends Conversions.Best.Kind = Conversions.Best.Kind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
+    to<B extends BestUnits<UnitToFamily[U], K>, K extends Best_2.Kind = Best_2.Kind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
 }
 
 // @public
 export function convertMany(value: string): Converter<number, Unit>;
 
 // @public
-export type Data = GetAliases<Conversions.Id.Data>;
-
-// @internal (undocumented)
-const data: ReadonlyDeep<Family>;
-
-declare namespace Families {
-    export {
-        angle,
-        area,
-        data,
-        force,
-        length,
-        mass,
-        pressure,
-        temperature,
-        time,
-        volume
-    }
-}
-
-// @internal (undocumented)
-interface Family {
-    // (undocumented)
-    best: string[] | Record<Best.Kind, string[]>;
-    // (undocumented)
-    conversions: Conversion[];
-    // (undocumented)
-    id: _ConversionFamilyId;
-}
+export type Data = GetAliases<_ConversionFamilyId.Data>;
 
 // @public
-export type Force = GetAliases<Conversions.Id.Force>;
-
-// @internal (undocumented)
-const force: ReadonlyDeep<Family>;
+export type Force = GetAliases<_ConversionFamilyId.Force>;
 
 // Warning: (ae-forgotten-export) The symbol "FamilyToUnit" needs to be exported by the entry point index.d.ts
 //
 // @public
-export type GetAliases<T extends Conversions.Id> = FamilyToUnit[T];
-
-// @internal (undocumented)
-const enum KelvinNames {
-    // (undocumented)
-    K = "K",
-    // (undocumented)
-    kelvin = "kelvin",
-    // (undocumented)
-    kelvins = "kelvins"
-}
+export type GetAliases<T extends _ConversionFamilyId> = FamilyToUnit[T];
 
 // @public (undocumented)
 type Kind = 'metric' | 'imperial';
 
 // @public
-export type Length = GetAliases<Conversions.Id.Length>;
-
-// @internal (undocumented)
-const length: ReadonlyDeep<Family>;
+export type Length = GetAliases<_ConversionFamilyId.Length>;
 
 // @public
-export type Mass = GetAliases<Conversions.Id.Mass>;
-
-// @internal (undocumented)
-const mass: ReadonlyDeep<Family>;
+export type Mass = GetAliases<_ConversionFamilyId.Mass>;
 
 // @public
 export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<Q>}${Time}`;
@@ -196,35 +127,20 @@ export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<
 // @public
 export function ms(value: string): number;
 
-// @internal (undocumented)
-type Numeric = number | Decimal;
+// @public
+export type Pressure = GetAliases<_ConversionFamilyId.Pressure>;
 
 // @public
-export type Pressure = GetAliases<Conversions.Id.Pressure>;
-
-// @internal (undocumented)
-const pressure: ReadonlyDeep<Family>;
+export type Temperature = GetAliases<_ConversionFamilyId.Temperature>;
 
 // @public
-export type Temperature = GetAliases<Conversions.Id.Temperature>;
-
-// @internal (undocumented)
-const temperature: ReadonlyDeep<Family>;
+export type Time = GetAliases<_ConversionFamilyId.Time>;
 
 // @public
-export type Time = GetAliases<Conversions.Id.Time>;
-
-// @internal (undocumented)
-const time: ReadonlyDeep<Family>;
+export type Unit = GetAliases<_ConversionFamilyId>;
 
 // @public
-export type Unit = GetAliases<Conversions.Id>;
-
-// @public
-export type Volume = GetAliases<Conversions.Id.Volume>;
-
-// @internal (undocumented)
-const volume: ReadonlyDeep<Family>;
+export type Volume = GetAliases<_ConversionFamilyId.Volume>;
 
 // (No @packageDocumentation comment for this package)
 

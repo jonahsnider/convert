@@ -1,6 +1,6 @@
 import type {conversions} from 'bundled-conversions';
 import type {Indexes} from 'optimized-conversions';
-import type * as Conversions from 'conversions';
+import type {Id as ConversionFamilyId} from 'conversions';
 
 export type Units = Omit<typeof conversions, '__proto__'>;
 
@@ -16,72 +16,72 @@ type FamilyToUnit = {
  * A string literal type for all units belonging to a given conversion family.
  * @public
  */
-export type GetAliases<T extends Conversions.Id> = FamilyToUnit[T];
+export type GetAliases<T extends ConversionFamilyId> = FamilyToUnit[T];
 
 /**
  * Valid angle units.
  * @public
  */
-export type Angle = GetAliases<Conversions.Id.Angle>;
+export type Angle = GetAliases<ConversionFamilyId.Angle>;
 /**
  * Valid area units.
  * @public
  */
-export type Area = GetAliases<Conversions.Id.Area>;
+export type Area = GetAliases<ConversionFamilyId.Area>;
 /**
  * Valid data units.
  * @public
  */
-export type Data = GetAliases<Conversions.Id.Data>;
+export type Data = GetAliases<ConversionFamilyId.Data>;
 /**
  * Valid force units.
  * @public
  */
-export type Force = GetAliases<Conversions.Id.Force>;
+export type Force = GetAliases<ConversionFamilyId.Force>;
 /**
  * Valid length units.
  * @public
  */
-export type Length = GetAliases<Conversions.Id.Length>;
+export type Length = GetAliases<ConversionFamilyId.Length>;
 /**
  * Valid mass units.
  * @public
  */
-export type Mass = GetAliases<Conversions.Id.Mass>;
+export type Mass = GetAliases<ConversionFamilyId.Mass>;
 /**
  * Valid pressure units.
  * @public
  */
-export type Pressure = GetAliases<Conversions.Id.Pressure>;
+export type Pressure = GetAliases<ConversionFamilyId.Pressure>;
 /**
  * Valid temperature units.
  * @public
  */
-export type Temperature = GetAliases<Conversions.Id.Temperature>;
+export type Temperature = GetAliases<ConversionFamilyId.Temperature>;
 /**
  * Valid time units.
  * @public
  */
-export type Time = GetAliases<Conversions.Id.Time>;
+export type Time = GetAliases<ConversionFamilyId.Time>;
 /**
  * Valid volume units.
  * @public
  */
-export type Volume = GetAliases<Conversions.Id.Volume>;
+export type Volume = GetAliases<ConversionFamilyId.Volume>;
 
 /**
  * A supported unit you can convert.
  * @public
  */
-export type Unit = GetAliases<Conversions.Id>;
+export type Unit = GetAliases<ConversionFamilyId>;
 
-export type UnitToFamily = Record<Angle, Conversions.Id.Angle> &
-	Record<Area, Conversions.Id.Area> &
-	Record<Data, Conversions.Id.Data> &
-	Record<Force, Conversions.Id.Force> &
-	Record<Length, Conversions.Id.Length> &
-	Record<Mass, Conversions.Id.Mass> &
-	Record<Pressure, Conversions.Id.Pressure> &
-	Record<Temperature, Conversions.Id.Temperature> &
-	Record<Time, Conversions.Id.Time> &
-	Record<Volume, Conversions.Id.Volume>;
+export type UnitToFamily = Record<Angle, ConversionFamilyId.Angle> &
+	Record<Area, ConversionFamilyId.Area> &
+	Record<Data, ConversionFamilyId.Data> &
+	Record<Force, ConversionFamilyId.Force> &
+	Record<Length, ConversionFamilyId.Length> &
+	Record<Mass, ConversionFamilyId.Mass> &
+	Record<Pressure, ConversionFamilyId.Pressure> &
+	Record<Temperature, ConversionFamilyId.Temperature> &
+	Record<Time, ConversionFamilyId.Time> &
+	Record<Volume, ConversionFamilyId.Volume>;
