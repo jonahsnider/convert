@@ -1,6 +1,6 @@
+import type {Id as ConversionFamilyId} from 'conversions';
 import {convert} from './convert.js';
-import type {SimplifyQuantity} from './types/common.js';
-import type {Time} from './types/units.js';
+import type {BestUnits, SimplifyQuantity} from './types/common.js';
 import {convertMany} from '.';
 
 /**
@@ -19,7 +19,7 @@ import {convertMany} from '.';
  *
  * @public
  */
-export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<Q>}${Time}`;
+export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<Q>}${BestUnits<ConversionFamilyId.Time>}`;
 /**
  * Convert a duration string to a duration in milliseconds.
  *
@@ -37,7 +37,7 @@ export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<
  * @public
  */
 export function ms(value: string): number;
-export function ms<Q extends number | bigint>(value: Q | string): number | `${SimplifyQuantity<Q>}${Time}` {
+export function ms<Q extends number | bigint>(value: Q | string): number | `${SimplifyQuantity<Q>}${BestUnits<Id.Time>}` {
 	if (typeof value === 'string') {
 		return convertMany(value).to('ms');
 	}
