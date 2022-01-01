@@ -56,7 +56,7 @@
 		"dist/"
 	],
 	"scripts": {
-		"build": "rollup --config rollup.config.js && tsc --emitDeclarationOnly && rm tsc_output/*.tsbuildinfo && yarn run validate-api",
+		"build": "rollup --config rollup.config.js && tsc --emitDeclarationOnly && rm tsc_output/*.tsbuildinfo && yarn run validate-api --local",
 		"docs": "typedoc",
 		"lint": "xo",
 		"release": "semantic-release",
