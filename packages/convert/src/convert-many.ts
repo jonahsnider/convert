@@ -19,7 +19,7 @@ const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
  * Taken from the Terser output.
  */
 const enum ConverterThisProperties {
-	Search = 't',
+	Search = 'r',
 	Value = 'e',
 }
 

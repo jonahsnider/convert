@@ -16,11 +16,11 @@ type TemperatureWithDifference = Exclude<keyof typeof temperatureDifferences, '_
  * Taken from the Terser output.
  */
 const enum This {
-	Quantity = 't',
-	From = 'i',
-	FromUnit = 'm',
-	IsUsingBigInts = 'a',
-	IsConvertingTemperature = 'e',
+	Quantity = 'e',
+	From = 's',
+	FromUnit = 'o',
+	IsUsingBigInts = 'n',
+	IsConvertingTemperature = 'a',
 }
 
 export {This as ConverterThisProperties};
