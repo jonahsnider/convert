@@ -30,7 +30,7 @@
 		"xo": "0.47.0"
 	},
 	"engines": {
-		"node": ">= 16.0.0"
+		"node": "16.x"
 	},
 	"packageManager": "yarn@3.1.1"
 }
