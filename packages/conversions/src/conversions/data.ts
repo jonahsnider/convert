@@ -3,7 +3,6 @@ import {expandMacro, Macros} from '../macros/index.js';
 import type {Family} from '../types/index.js';
 import {Id} from '../types/index.js';
 
-/** @internal */
 export const data: ReadonlyDeep<Family> = {
 	id: Id.Data,
 	best: ['bits', 'B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB'],

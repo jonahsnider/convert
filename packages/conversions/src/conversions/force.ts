@@ -2,7 +2,6 @@ import type {ReadonlyDeep} from 'type-fest';
 import type {Family} from '../types/index.js';
 import {Id} from '../types/index.js';
 
-/** @internal */
 export const force: ReadonlyDeep<Family> = {
 	id: Id.Force,
 	best: {metric: ['N'], imperial: ['lbf']},

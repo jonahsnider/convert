@@ -2,7 +2,6 @@ import type {ReadonlyDeep} from 'type-fest';
 import type {Family} from '../types/index.js';
 import {Id} from '../types/index.js';
 
-/** @internal */
 export const angle: ReadonlyDeep<Family> = {
 	id: Id.Angle,
 	best: ['deg'],

@@ -3,7 +3,6 @@ import {expandMacro, Macros} from '../macros/index.js';
 import type {Family} from '../types/index.js';
 import {Id} from '../types/index.js';
 
-/** @internal */
 export const length: ReadonlyDeep<Family> = {
 	id: Id.Length,
 	best: {

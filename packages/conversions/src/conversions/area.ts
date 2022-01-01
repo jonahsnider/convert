@@ -3,7 +3,6 @@ import {expandMacro, Macros} from '../macros/index.js';
 import type {Family} from '../types/index.js';
 import {Id} from '../types/index.js';
 
-/** @internal */
 export const area: ReadonlyDeep<Family> = {
 	id: Id.Area,
 	best: {metric: ['mm2', 'cm2', 'm2', 'km2'], imperial: ['sq in', 'sq ft', 'sq mi', 'ac']},

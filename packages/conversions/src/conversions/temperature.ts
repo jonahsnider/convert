@@ -3,7 +3,6 @@ import {expandMacro, Macros} from '../macros/index.js';
 import type {Family} from '../types/index.js';
 import {KelvinNames, Id} from '../types/index.js';
 
-/** @internal */
 export const temperature: ReadonlyDeep<Family> = {
 	id: Id.Temperature,
 	best: {metric: ['C'], imperial: ['F']},

@@ -6,7 +6,6 @@ import {Id} from '../types/index.js';
 
 const poundInGrams = new Decimal(4.535_923_7e2);
 
-/** @internal */
 export const mass: ReadonlyDeep<Family> = {
 	id: Id.Mass,
 	best: {

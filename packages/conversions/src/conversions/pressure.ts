@@ -4,7 +4,6 @@ import {expandMacro, Macros} from '../macros/index.js';
 import type {Family} from '../types/index.js';
 import {Id} from '../types/index.js';
 
-/** @internal */
 export const pressure: ReadonlyDeep<Family> = {
 	id: Id.Pressure,
 	best: ['Pa'],

@@ -3,7 +3,6 @@ import {expandMacro, Macros} from '../macros/index.js';
 import type {Family} from '../types/index.js';
 import {Id} from '../types/index.js';
 
-/** @internal */
 export const time: ReadonlyDeep<Family> = {
 	id: Id.Time,
 	best: ['ns', 'μs', 'ms', 's', 'min', 'h', 'd', 'y'],
