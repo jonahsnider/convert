@@ -1,0 +1,3 @@
+# https://docs.codecov.com/docs/fixing-paths
+fixes:
+  - '::packages/convert-tests/'

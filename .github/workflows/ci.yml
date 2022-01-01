@@ -28,27 +28,10 @@ jobs:
           path: packages/convert/dist
       - name: Test and record coverage
         run: yarn run test:coverage
-      - name: Upload test coverage for bundled-conversions
-        uses: codecov/codecov-action@v2
-        with:
-          working-directory: ./packages/bundled-conversions/
-          flags: bundled-conversions
-          fail_ci_if_error: true
-          files: ./coverage/lcov.info
-          token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Upload test coverage for codegen
-        uses: codecov/codecov-action@v2
-        with:
-          working-directory: ./packages/codegen/
-          flags: codegen
-          fail_ci_if_error: true
-          files: ./coverage/lcov.info
-          token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Upload test coverage for convert
+      - name: Upload test coverage
         uses: codecov/codecov-action@v2
         with:
           working-directory: ./packages/convert-tests/
-          flags: convert
           fail_ci_if_error: true
           files: ./coverage/lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
