@@ -17,7 +17,27 @@ export const convert: Macro<[actual: [fromQuantity: number | bigint, from: Unit]
 		test(prod);
 		test(dev);
 	},
-	title: (_providedTitle, input, expected) => `${input[0]} ${input[1]} -> ${expected[0]} ${expected[1]}`,
+	title: (providedTitle, input, expected) => (providedTitle ? providedTitle + ' ' : '') + `${input[0]} ${input[1]} -> ${expected[0]} ${expected[1]}`,
+};
+
+export const convertBest: Macro<
+	[actual: [fromQuantity: number, from: Unit, kind?: Conversions.Best.Kind | undefined], expected: [toQuantity: number, to: BestUnits]]
+> = {
+	exec: (t, input, expected) => {
+		const test = (lib: typeof prod | typeof dev) => {
+			const {toString, ...best} = lib.convert(input[0], input[1] as any).to('best');
+
+			// @ts-expect-error Type safety
+			t.deepEqual(best, {quantity: expected[0], unit: expected[1] as typeof input[1]});
+			// @ts-expect-error Type safety
+			t.is(toString(), `${expected[0]}${expected[1]}`);
+		};
+
+		test(prod);
+		test(dev);
+	},
+	title: (providedTitle, input, expected) =>
+		(providedTitle ? providedTitle + ' ' : '') + `${input[0]}${input[1]} -> ${input[2] ?? '(default)'} ${expected[0]}${expected[1]}`,
 };
 
 export const convertMany: Macro<[actual: string, expected: [quantity: number | bigint, unit: Unit]]> = {
@@ -31,7 +51,7 @@ export const convertMany: Macro<[actual: string, expected: [quantity: number | b
 		test(prod);
 		test(dev);
 	},
-	title: (_providedTitle, input, expected) => `${input} -> ${expected[0]}${expected[1]}`,
+	title: (providedTitle, input, expected) => (providedTitle ? providedTitle + ' ' : '') + `${input} -> ${expected[0]}${expected[1]}`,
 };
 
 export const convertManyBest: Macro<[input: [from: string, kind?: Conversions.Best.Kind | undefined], expected: [quantity: number, unit: BestUnits]]> = {
@@ -46,7 +66,8 @@ export const convertManyBest: Macro<[input: [from: string, kind?: Conversions.Be
 		test(prod);
 		test(dev);
 	},
-	title: (_providedTitle, input, expected) => `${input[0]} -> ${input[1] ?? '(default)'} ${expected[0]}${expected[1]}`,
+	title: (providedTitle, input, expected) =>
+		(providedTitle ? providedTitle + ' ' : '') + `${input[0]} -> ${input[1] ?? '(default)'} ${expected[0]}${expected[1]}`,
 };
 
 export const ms: Macro<[from: string, expected: number] | [from: number, expected: string]> = {
@@ -58,5 +79,5 @@ export const ms: Macro<[from: string, expected: number] | [from: number, expecte
 		test(prod);
 		test(dev);
 	},
-	title: (_providedTitle, input, expected) => (typeof expected === 'string' ? `${input}ms -> ${expected}` : `${input} -> ${expected}ms`),
+	title: (providedTitle, input, expected) => (typeof expected === 'string' ? `${input}ms -> ${expected}` : `${input} -> ${expected}ms`),
 };
