@@ -122,7 +122,7 @@ export type Length = GetAliases<_ConversionFamilyId.Length>;
 export type Mass = GetAliases<_ConversionFamilyId.Mass>;
 
 // @public
-export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<Q>}${Time}`;
+export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<Q>}${BestUnits<_ConversionFamilyId.Time>}`;
 
 // @public
 export function ms(value: string): number;
