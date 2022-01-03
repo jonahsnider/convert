@@ -135,3 +135,6 @@ test('roundtrip conversion', t => {
 		}
 	}
 });
+
+test(macros.convert, [1.5, 'days'], [1.5, 'd']);
+test.failing('precision loss from converting to best', macros.convertBest, [1.5, 'days'], [1.5, 'd']);
