@@ -37,7 +37,7 @@ export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<
  * @public
  */
 export function ms(value: string): number;
-export function ms<Q extends number | bigint>(value: Q | string): number | `${SimplifyQuantity<Q>}${BestUnits<Id.Time>}` {
+export function ms<Q extends number | bigint>(value: Q | string): number | `${SimplifyQuantity<Q>}${BestUnits<ConversionFamilyId.Time>}` {
 	if (typeof value === 'string') {
 		return convertMany(value).to('ms');
 	}
