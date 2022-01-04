@@ -2793,6 +2793,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"acorn@npm:^8.7.0":
+  version: 8.7.0
+  resolution: "acorn@npm:8.7.0"
+  bin:
+    acorn: bin/acorn
+  checksum: e0f79409d68923fbf1aa6d4166f3eedc47955320d25c89a20cc822e6ba7c48c5963d5bc657bc242d68f7a4ac9faf96eef033e8f73656da6c640d4219935fdfd0
+  languageName: node
+  linkType: hard
+
 "agent-base@npm:6, agent-base@npm:^6.0.2":
   version: 6.0.2
   resolution: "agent-base@npm:6.0.2"
@@ -3123,21 +3132,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ava@npm:4.0.0-rc.1":
-  version: 4.0.0-rc.1
-  resolution: "ava@npm:4.0.0-rc.1"
+"ava@npm:4.0.0":
+  version: 4.0.0
+  resolution: "ava@npm:4.0.0"
   dependencies:
-    acorn: ^8.5.0
+    acorn: ^8.7.0
     acorn-walk: ^8.2.0
     ansi-styles: ^6.1.0
     arrgv: ^1.0.2
     arrify: ^3.0.0
     callsites: ^4.0.0
-    cbor: ^8.0.2
-    chalk: ^4.1.2
+    cbor: ^8.1.0
+    chalk: ^5.0.0
     chokidar: ^3.5.2
     chunkd: ^2.0.1
-    ci-info: ^3.2.0
+    ci-info: ^3.3.0
     ci-parallel-vars: ^1.0.1
     clean-yaml-object: ^0.1.0
     cli-truncate: ^3.1.0
@@ -3145,10 +3154,9 @@ __metadata:
     common-path-prefix: ^3.0.0
     concordance: ^5.0.4
     currently-unhandled: ^0.4.1
-    debug: ^4.3.2
+    debug: ^4.3.3
     del: ^6.0.0
     emittery: ^0.10.0
-    equal-length: ^1.0.1
     figures: ^4.0.0
     globby: ^12.0.2
     ignore-by-default: ^2.0.0
@@ -3159,20 +3167,20 @@ __metadata:
     matcher: ^5.0.0
     mem: ^9.0.1
     ms: ^2.1.3
-    p-event: ^4.2.0
-    p-map: ^5.2.0
+    p-event: ^5.0.1
+    p-map: ^5.3.0
     picomatch: ^2.3.0
     pkg-conf: ^4.0.0
-    plur: ^4.0.0
+    plur: ^5.1.0
     pretty-ms: ^7.0.1
     resolve-cwd: ^3.0.0
     slash: ^3.0.0
-    stack-utils: ^2.0.3
+    stack-utils: ^2.0.5
     strip-ansi: ^7.0.1
     supertap: ^2.0.0
     temp-dir: ^2.0.0
     write-file-atomic: ^3.0.3
-    yargs: ^17.2.1
+    yargs: ^17.3.1
   peerDependencies:
     "@ava/typescript": "*"
   peerDependenciesMeta:
@@ -3180,7 +3188,7 @@ __metadata:
       optional: true
   bin:
     ava: entrypoints/cli.mjs
-  checksum: fae5e760ae29eef46c284d786a107f77971d76807b9881e5be2f6c1d8b6dc5ddc48a5f61a3dbe6dba8357b948ca0881641141590e6e539bbee9fd8ceffb4c82a
+  checksum: f62c1ae335935b5e08213766a65b7e477a2c7ae597d249c6ec4d2339a51dd5064c54193ad8e6d125459c7b96d00dc258cbec4a329e5ea599f8b4d577001177ef
   languageName: node
   linkType: hard
 
@@ -3411,7 +3419,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.18
-    ava: 4.0.0-rc.1
+    ava: 4.0.0
     c8: 7.11.0
     codegen: "workspace:*"
     conversions: "workspace:*"
@@ -3585,7 +3593,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cbor@npm:^8.0.2":
+"cbor@npm:^8.1.0":
   version: 8.1.0
   resolution: "cbor@npm:8.1.0"
   dependencies:
@@ -3615,13 +3623,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
+"chalk@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "chalk@npm:5.0.0"
+  checksum: 6eba7c518b9aa5fe882ae6d14a1ffa58c418d72a3faa7f72af56641f1bbef51b645fca1d6e05d42357b7d3c846cd504c0b7b64d12309cdd07867e3b4411e0d01
   languageName: node
   linkType: hard
 
@@ -3669,6 +3674,13 @@ __metadata:
   version: 3.2.0
   resolution: "ci-info@npm:3.2.0"
   checksum: c68995a94e95ce3f233ff845e62dfc56f2e8ff1e3f5c1361bcdd520cbbc9726d8a54cbc1a685cb9ee19c3c5e71a1dade6dda23eb364b59b8e6c32508a9b761bc
+  languageName: node
+  linkType: hard
+
+"ci-info@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "ci-info@npm:3.3.0"
+  checksum: c3d86fe374938ecda5093b1ba39acb535d8309185ba3f23587747c6a057e63f45419b406d880304dbc0e1d72392c9a33e42fe9a1e299209bc0ded5efaa232b66
   languageName: node
   linkType: hard
 
@@ -3822,7 +3834,7 @@ __metadata:
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.18
     "@types/prettier": 2.4.2
-    ava: 4.0.0-rc.1
+    ava: 4.0.0
     c8: 7.11.0
     optimized-conversions: "workspace:*"
     prettier: 2.5.1
@@ -4099,7 +4111,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.18
-    ava: 4.0.0-rc.1
+    ava: 4.0.0
     bundled-conversions: "workspace:*"
     c8: 7.11.0
     conversions: "workspace:*"
@@ -4288,6 +4300,18 @@ __metadata:
   dependencies:
     ms: ^2.1.1
   checksum: b3d8c5940799914d30314b7c3304a43305fd0715581a919dacb8b3176d024a782062368405b47491516d2091d6462d4d11f2f4974a405048094f8bfebfa3071c
+  languageName: node
+  linkType: hard
+
+"debug@npm:^4.3.3":
+  version: 4.3.3
+  resolution: "debug@npm:4.3.3"
+  dependencies:
+    ms: 2.1.2
+  peerDependenciesMeta:
+    supports-color:
+      optional: true
+  checksum: 14472d56fe4a94dbcfaa6dbed2dd3849f1d72ba78104a1a328047bb564643ca49df0224c3a17fa63533fd11dd3d4c8636cd861191232a2c6735af00cc2d4de16
   languageName: node
   linkType: hard
 
@@ -4608,13 +4632,6 @@ __metadata:
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
   checksum: 65b5df55a8bab92229ab2b40dad3b387fad24613263d103a97f91c9fe43ceb21965cd3392b1ccb5d77088021e525c4e0481adb309625d0cb94ade1d1fb8dc17e
-  languageName: node
-  linkType: hard
-
-"equal-length@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "equal-length@npm:1.0.1"
-  checksum: 81286a93de1b46e1bb5c74767fb8e99fbf0c4ef3bf087ed531a8a296a60b16e1eb01dce24e1eaa77ad33b338e471011b8a3c1abaa12e7aebadf559b8a74725b5
   languageName: node
   linkType: hard
 
@@ -6315,7 +6332,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"irregular-plurals@npm:^3.2.0":
+"irregular-plurals@npm:^3.2.0, irregular-plurals@npm:^3.3.0":
   version: 3.3.0
   resolution: "irregular-plurals@npm:3.3.0"
   checksum: 1282d8adfb00a9718655ce21e5b096d4b31d2115c817a30e1e3254648ae4ac0f84d706cd0cad2a93c64f4bb5c5572ea8f63fcc9766f005a5362031c56d9e77b5
@@ -8421,12 +8438,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"p-event@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "p-event@npm:4.2.0"
+"p-event@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "p-event@npm:5.0.1"
   dependencies:
-    p-timeout: ^3.1.0
-  checksum: 8a3588f7a816a20726a3262dfeee70a631e3997e4773d23219176333eda55cce9a76219e3d2b441b331eb746e14fdb381eb2694ab9ff2fcf87c846462696fe89
+    p-timeout: ^5.0.2
+  checksum: 3bdd8df6092e6b149f25e9c2eb1c0843b3b4279b07be2a2c72c02b65b267a8908c2040fefd606f2497b0f2bcefcd214f8ca5a74f0c883515d400ccf1d88d5683
   languageName: node
   linkType: hard
 
@@ -8436,13 +8453,6 @@ fsevents@~2.3.2:
   dependencies:
     p-map: ^2.0.0
   checksum: 76e552ca624ce2233448d68b19eec9de42b695208121998f7e011edce71d1079a83096ee6a2078fb2a59cfa8a5c999f046edf00ebf16a8e780022010b4693234
-  languageName: node
-  linkType: hard
-
-"p-finally@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "p-finally@npm:1.0.0"
-  checksum: 93a654c53dc805dd5b5891bab16eb0ea46db8f66c4bfd99336ae929323b1af2b70a8b0654f8f1eae924b2b73d037031366d645f1fd18b3d30cbd15950cc4b1d4
   languageName: node
   linkType: hard
 
@@ -8541,7 +8551,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"p-map@npm:^5.2.0":
+"p-map@npm:^5.3.0":
   version: 5.3.0
   resolution: "p-map@npm:5.3.0"
   dependencies:
@@ -8567,12 +8577,10 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"p-timeout@npm:^3.1.0":
-  version: 3.2.0
-  resolution: "p-timeout@npm:3.2.0"
-  dependencies:
-    p-finally: ^1.0.0
-  checksum: 3dd0eaa048780a6f23e5855df3dd45c7beacff1f820476c1d0d1bcd6648e3298752ba2c877aa1c92f6453c7dd23faaf13d9f5149fc14c0598a142e2c5e8d649c
+"p-timeout@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "p-timeout@npm:5.0.2"
+  checksum: 69eda717e2cbc3d831617a805e069ce69f8cbf51b70f1d1760d3d118536c6b891bbc74f758a4e0d337180ff053f65cdbfc9f5dd04f368ab38173e76f47cf13a8
   languageName: node
   linkType: hard
 
@@ -8798,6 +8806,15 @@ fsevents@~2.3.2:
   dependencies:
     irregular-plurals: ^3.2.0
   checksum: fea2e903efca67cc5c7a8952fca3db46ae8d9e9353373b406714977e601a5d3b628bcb043c3ad2126c6ff0e73d8020bf43af30a72dd087eff1ec240eb13b90e1
+  languageName: node
+  linkType: hard
+
+"plur@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "plur@npm:5.1.0"
+  dependencies:
+    irregular-plurals: ^3.3.0
+  checksum: 57e400dc4b926768fb0abab7f8688fe17e85673712134546e7beaaee188bae7e0504976e847d7e41d0d6103ff2fd61204095f03c2a45de19a8bad15aecb45cc1
   languageName: node
   linkType: hard
 
@@ -9874,12 +9891,12 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"stack-utils@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "stack-utils@npm:2.0.3"
+"stack-utils@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "stack-utils@npm:2.0.5"
   dependencies:
     escape-string-regexp: ^2.0.0
-  checksum: c86ac08f58d1a9bce3f17946cb2f18268f55f8180f5396ae147deecb4d23cd54f3d27e4a8d3227d525b0f0c89b7f7e839e223851a577136a763ccd7e488440be
+  checksum: 76b69da0f5b48a34a0f93c98ee2a96544d2c4ca2557f7eef5ddb961d3bdc33870b46f498a84a7c4f4ffb781df639840e7ebf6639164ed4da5e1aeb659615b9c7
   languageName: node
   linkType: hard
 
@@ -11122,7 +11139,7 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"yargs@npm:^17.2.1":
+"yargs@npm:^17.3.1":
   version: 17.3.1
   resolution: "yargs@npm:17.3.1"
   dependencies:
