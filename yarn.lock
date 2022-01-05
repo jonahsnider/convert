@@ -4150,7 +4150,7 @@ __metadata:
     conversions: "workspace:*"
     optimized-conversions: "workspace:*"
     prettier: 2.5.1
-    rollup: 2.62.0
+    rollup: 2.63.0
     rollup-plugin-terser: 7.0.2
     semantic-release: 18.0.1
     size-limit: 7.0.5
@@ -9452,9 +9452,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"rollup@npm:2.62.0":
-  version: 2.62.0
-  resolution: "rollup@npm:2.62.0"
+"rollup@npm:2.63.0":
+  version: 2.63.0
+  resolution: "rollup@npm:2.63.0"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -9462,7 +9462,7 @@ resolve@~1.19.0:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 9dfa089a232346bc548bf5110e79e0cf5a2dac6fb9bf3f737a645e72795b4b4a1165d1bf86938f90805c4391e8dd571557afb901aaf81dcb82690c57737ab128
+  checksum: 23db16ea9d222ad5ae9620ba51d4f45c834927038c1e43d87f7dd3d240aa54422e51c2660437479af4b771e13f9529df236a3d43a3b9f4229bf241347d5f2c8f
   languageName: node
   linkType: hard
 
