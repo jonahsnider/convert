@@ -2564,10 +2564,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.11.18":
-  version: 16.11.18
-  resolution: "@types/node@npm:16.11.18"
-  checksum: f2e615c5f1320552e240170991bc4f6317bb83e7b413ee95ecd44ac42f774eb6cfbbfd5a366f4d6e472c79396afbdc22699c65f1e959426c63c5e72fedd6139f
+"@types/node@npm:16.11.19":
+  version: 16.11.19
+  resolution: "@types/node@npm:16.11.19"
+  checksum: a9ba0cd1e61c8ad50f3fc9c2b37b795bf0286dacb39dcc985da90328abf0c5151dffe9932d20bc9a6a52c3ce7bfc1e5a7c2dc1416480fb84f1c2d70e25caeba0
   languageName: node
   linkType: hard
 
@@ -3418,7 +3418,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
-    "@types/node": 16.11.18
+    "@types/node": 16.11.19
     ava: 4.0.0
     c8: 7.11.0
     codegen: "workspace:*"
@@ -3832,7 +3832,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.0
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
-    "@types/node": 16.11.18
+    "@types/node": 16.11.19
     "@types/prettier": 2.4.2
     ava: 4.0.0
     c8: 7.11.0
@@ -4110,7 +4110,7 @@ __metadata:
     "@jonahsnider/util": 8.10.0
     "@jonahsnider/xo-config": 5.0.3
     "@tsconfig/node16": 1.0.2
-    "@types/node": 16.11.18
+    "@types/node": 16.11.19
     ava: 4.0.0
     bundled-conversions: "workspace:*"
     c8: 7.11.0
@@ -4145,7 +4145,7 @@ __metadata:
     "@rollup/plugin-replace": 3.0.1
     "@rollup/plugin-typescript": 8.3.0
     "@size-limit/preset-small-lib": 7.0.5
-    "@types/node": 16.11.18
+    "@types/node": 16.11.19
     bundled-conversions: "workspace:*"
     conversions: "workspace:*"
     optimized-conversions: "workspace:*"
