@@ -156,7 +156,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 			[ConverterThisProperties.From]: from,
 			[ConverterThisProperties.FromUnit]: fromUnit,
 			[ConverterThisProperties.IsUsingBigInts]: isUsingBigInts,
-			// The plugin is bugged, see https://github.com/xojs/eslint-config-xo-typescript/issues/49
+			// The bundler will inline the const enum
 			// eslint-disable-next-line import/namespace
 			[ConverterThisProperties.IsConvertingTemperature]: fromUnit[Indexes.Conversion.Family] === Conversions.Id.Temperature,
 		}),
