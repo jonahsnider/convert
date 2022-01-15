@@ -42,8 +42,16 @@
 	},
 	"packageManager": "yarn@3.1.1",
 	"turbo": {
-		"baseBranch": "origin/main",
+		"baseBranch": "origin/master",
 		"pipeline": {
+			"style": {
+				"outputs": []
+			},
+			"docs": {
+				"outputs": [
+					"docs_out/**"
+				]
+			},
 			"build": {
 				"dependsOn": [
 					"^build"
@@ -52,30 +60,11 @@
 					"dist/**"
 				]
 			},
-			"lint": {
-				"outputs": []
-			},
-			"style": {
-				"outputs": []
-			},
 			"size": {
 				"dependsOn": [
-					"^build"
+					"build"
 				],
 				"outputs": []
-			},
-			"docs": {
-				"outputs": [
-					"docs_out/**"
-				]
-			},
-			"test": {
-				"outputs": []
-			},
-			"test:coverage": {
-				"outputs": [
-					"coverage/**"
-				]
 			},
 			"validate-api": {
 				"dependsOn": [
@@ -93,6 +82,49 @@
 				"outputs": [
 					"temp/**",
 					"docs/**"
+				]
+			},
+			"lint": {
+				"outputs": []
+			},
+			"optimized-conversions#lint": {
+				"dependsOn": [
+					"^build"
+				],
+				"outputs": []
+			},
+			"convert#lint": {
+				"dependsOn": [
+					"build"
+				],
+				"outputs": []
+			},
+			"test": {
+				"dependsOn": [
+					"^build"
+				],
+				"outputs": []
+			},
+			"test:coverage": {
+				"dependsOn": [
+					"^build"
+				],
+				"outputs": [
+					"coverage/**"
+				]
+			},
+			"convert#test": {
+				"dependsOn": [
+					"build"
+				],
+				"outputs": []
+			},
+			"convert#test:coverage": {
+				"dependsOn": [
+					"build"
+				],
+				"outputs": [
+					"coverage/**"
 				]
 			}
 		}
