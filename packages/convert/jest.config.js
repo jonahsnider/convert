@@ -2,7 +2,7 @@
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
-module.exports = {
+const config = {
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
 
@@ -25,7 +25,7 @@ module.exports = {
 	// coverageDirectory: undefined,
 
 	// An array of regexp pattern strings used to skip coverage collection
-	coveragePathIgnorePatterns: ['/convert\\/test/'],
+	coveragePathIgnorePatterns: [/convert\/test/].map(expression => expression.source),
 
 	// Indicates which provider should be used to instrument code for coverage
 	coverageProvider: 'v8',
@@ -114,7 +114,7 @@ module.exports = {
 	// rootDir: undefined,
 
 	// A list of paths to directories that Jest should use to search for files in
-	roots: ['<rootDir>/src', '<rootDir>/test'],
+	// roots: ['<rootDir>'],
 
 	// Allows you to use a custom runner instead of Jest's default test runner
 	// runner: "jest-runner",
@@ -147,9 +147,7 @@ module.exports = {
 	// ],
 
 	// An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-	// testPathIgnorePatterns: [
-	//   "/node_modules/"
-	// ],
+	testPathIgnorePatterns: [/\.rollup\.cache/].map(expression => expression.source),
 
 	// The regexp pattern or array of patterns that Jest uses to detect test files
 	// testRegex: [],
@@ -187,3 +185,5 @@ module.exports = {
 	// Whether to use watchman for file crawling
 	// watchman: true,
 };
+
+module.exports = config;
