@@ -7,7 +7,7 @@ jobs:
     name: Build and test
 
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 5
 
     steps:
       - name: Checkout git repository
@@ -39,7 +39,7 @@ jobs:
     name: Legacy Node.js tests
 
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
 
     steps:
       - name: Checkout git repository
