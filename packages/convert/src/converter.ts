@@ -1,3 +1,4 @@
+// The bundler will inline the const enum
 /* eslint-disable import/namespace */
 
 import {KelvinNames} from 'conversions';
@@ -54,6 +55,7 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
  * @returns The converted value
  */
 export function to<Q extends number | bigint, U extends Unit>(this: ConverterThis<Q, U>, to: U): SimplifyQuantity<Q>;
+// eslint-disable-next-line complexity
 export function to<Q extends number | bigint, U extends Unit, K extends Conversions.Best.Kind = Conversions.Best.Kind>(
 	this: ConverterThis<Q, U>,
 	to: U | 'best',

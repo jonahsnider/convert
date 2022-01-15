@@ -27,7 +27,7 @@ export function optimize(conversionFamilies: ReadonlyArray<Readonly<Conversions.
 				}
 
 				result.conversions[name] = newConversion;
-				// The plugin is bugged, see https://github.com/xojs/eslint-config-xo-typescript/issues/49
+				// The bundler will inline the const enum
 				// eslint-disable-next-line import/namespace
 				if (conversionFamily.id === Conversions.Id.Temperature && conversion.difference !== undefined && conversion.difference !== 0) {
 					result.temperatureDifferences[name] = new BigNumber(conversion.difference).toNumber();

@@ -31,7 +31,7 @@ jobs:
       - name: Upload test coverage
         uses: codecov/codecov-action@v2
         with:
-          working-directory: ./packages/convert-tests/
+          working-directory: ./packages/convert/
           fail_ci_if_error: true
           files: ./coverage/lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -61,9 +61,9 @@ jobs:
           cp ./node-v0.9.1-linux-x64/bin/node $HOME/.local/bin/node-0.9.1
           echo "$HOME/.local/bin" >> $GITHUB_PATH
       - name: Run tests on modern Node.js
-        run: node packages/convert-tests/test/legacy.cjs
+        run: node packages/convert/test/legacy.cjs
       - name: Run tests on Node.js v0.9.1
-        run: node-0.9.1 packages/convert-tests/test/legacy.cjs
+        run: node-0.9.1 packages/convert/test/legacy.cjs
   publish:
     name: Publish
 
