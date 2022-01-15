@@ -79,7 +79,7 @@
 			},
 			"validate-api": {
 				"dependsOn": [
-					"^build"
+					"build"
 				],
 				"outputs": [
 					"temp/**",
