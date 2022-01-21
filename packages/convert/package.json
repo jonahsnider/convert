@@ -73,7 +73,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "7.16.10",
-		"@babel/preset-env": "7.16.10",
+		"@babel/preset-env": "7.16.11",
 		"@babel/preset-typescript": "7.16.7",
 		"@jonahsnider/prettier-config": "1.1.0",
 		"@jonahsnider/util": "8.10.0",
