@@ -4080,7 +4080,7 @@ __metadata:
     optimized-conversions: "workspace:*"
     prettier: 2.5.1
     ts-node: 10.4.0
-    typescript: 4.5.4
+    typescript: 4.5.5
     xo: 0.47.0
   languageName: unknown
   linkType: soft
@@ -4514,7 +4514,7 @@ __metadata:
     optimized-conversions: "workspace:*"
     prettier: 2.5.1
     ts-node: 10.4.0
-    typescript: 4.5.4
+    typescript: 4.5.5
     xo: 0.47.0
   languageName: unknown
   linkType: soft
@@ -4770,7 +4770,7 @@ __metadata:
     bignumber.js: 9.0.2
     prettier: 2.5.1
     type-fest: 2.9.0
-    typescript: 4.5.4
+    typescript: 4.5.5
     xo: 0.47.0
   languageName: unknown
   linkType: soft
@@ -4821,7 +4821,7 @@ __metadata:
     size-limit: 7.0.5
     terser: 5.10.0
     typedoc: 0.22.11
-    typescript: 4.5.4
+    typescript: 4.5.5
     xo: 0.47.0
   languageName: unknown
   linkType: soft
@@ -9838,7 +9838,7 @@ __metadata:
     bignumber.js: 9.0.2
     conversions: "workspace:*"
     prettier: 2.5.1
-    typescript: 4.5.4
+    typescript: 4.5.5
     xo: 0.47.0
   languageName: unknown
   linkType: soft
@@ -12290,13 +12290,13 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.5.4":
-  version: 4.5.4
-  resolution: "typescript@npm:4.5.4"
+"typescript@npm:4.5.5":
+  version: 4.5.5
+  resolution: "typescript@npm:4.5.5"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 59f3243f9cd6fe3161e6150ff6bf795fc843b4234a655dbd938a310515e0d61afd1ac942799e7415e4334255e41c2c49b7dd5d9fd38a17acd25a6779ca7e0961
+  checksum: 506f4c919dc8aeaafa92068c997f1d213b9df4d9756d0fae1a1e7ab66b585ab3498050e236113a1c9e57ee08c21ec6814ca7a7f61378c058d79af50a4b1f5a5e
   languageName: node
   linkType: hard
 
@@ -12320,13 +12320,13 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.5.4#~builtin<compat/typescript>":
-  version: 4.5.4
-  resolution: "typescript@patch:typescript@npm%3A4.5.4#~builtin<compat/typescript>::version=4.5.4&hash=493e53"
+"typescript@patch:typescript@4.5.5#~builtin<compat/typescript>":
+  version: 4.5.5
+  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2e488dde7d2c4a2fa2e79cf2470600f8ce81bc0563c276b72df8ff412d74456ae532ba824650ae936ce207440c79720ddcfaa25e3cb4477572b8534fa4e34d49
+  checksum: c05c318d79c690f101d7ffb34cd6c7d6bbd884d3af9cefe7749ad0cd6be43c7082f098280982ca945dcba23fde34a08fed9602bb26540936baf8c0520727d3ba
   languageName: node
   linkType: hard
 
