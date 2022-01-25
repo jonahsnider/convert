@@ -34,6 +34,11 @@ export type Area = GetAliases<ConversionFamilyId.Area>;
  */
 export type Data = GetAliases<ConversionFamilyId.Data>;
 /**
+ * Valid energy units.
+ * @public
+ */
+export type Energy = GetAliases<ConversionFamilyId.Energy>;
+/**
  * Valid force units.
  * @public
  */
@@ -48,6 +53,11 @@ export type Length = GetAliases<ConversionFamilyId.Length>;
  * @public
  */
 export type Mass = GetAliases<ConversionFamilyId.Mass>;
+/**
+ * Valid power units.
+ * @public
+ */
+export type Power = GetAliases<ConversionFamilyId.Power>;
 /**
  * Valid pressure units.
  * @public
@@ -78,9 +88,11 @@ export type Unit = GetAliases<ConversionFamilyId>;
 export type UnitToFamily = Record<Angle, ConversionFamilyId.Angle> &
 	Record<Area, ConversionFamilyId.Area> &
 	Record<Data, ConversionFamilyId.Data> &
+	Record<Energy, ConversionFamilyId.Energy> &
 	Record<Force, ConversionFamilyId.Force> &
 	Record<Length, ConversionFamilyId.Length> &
 	Record<Mass, ConversionFamilyId.Mass> &
+	Record<Power, ConversionFamilyId.Power> &
 	Record<Pressure, ConversionFamilyId.Pressure> &
 	Record<Temperature, ConversionFamilyId.Temperature> &
 	Record<Time, ConversionFamilyId.Time> &

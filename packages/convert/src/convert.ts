@@ -3,7 +3,7 @@ import {conversions} from 'bundled-conversions';
 import {Indexes} from 'optimized-conversions';
 import {ConverterThisProperties, to} from './converter.js';
 import type {Converter} from './types/common.js';
-import type {Angle, Area, Data, Force, Length, Mass, Pressure, Temperature, Time, Unit, Volume} from './types/units.js';
+import type {Angle, Area, Data, Energy, Force, Length, Mass, Power, Pressure, Temperature, Time, Unit, Volume} from './types/units.js';
 
 /**
  * Convert a given angle into another unit.
@@ -39,6 +39,17 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Area): Con
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Data): Converter<Q, Data>;
 /**
+ * Convert a given quantity of energy into another unit.
+ *
+ * @param quantity - The quantity of energy you want to convert
+ * @param from - The unit of energy you are converting from
+ *
+ * @returns An object you can use to convert the provided quantity
+ *
+ * @public
+ */
+export function convert<Q extends number | bigint>(quantity: Q, from: Energy): Converter<Q, Energy>;
+/**
  * Convert a given quantity of force into another unit.
  *
  * @param quantity - The quantity of force you want to convert
@@ -71,6 +82,17 @@ export function convert<Q extends number | bigint>(length: Q, from: Length): Con
  * @public
  */
 export function convert<Q extends number | bigint>(quantity: Q, from: Mass): Converter<Q, Mass>;
+/**
+ * Convert a given quantity of power into another unit.
+ *
+ * @param quantity - The quantity of power you want to convert
+ * @param from - The unit of power you are converting from
+ *
+ * @returns An object you can use to convert the provided quantity
+ *
+ * @public
+ */
+export function convert<Q extends number | bigint>(quantity: Q, from: Power): Converter<Q, Power>;
 /**
  * Convert a given quantity of pressure into another unit.
  *

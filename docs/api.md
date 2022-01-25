@@ -42,19 +42,23 @@ export const enum _ConversionFamilyId {
     // (undocumented)
     Data = 2,
     // (undocumented)
-    Force = 3,
+    Energy = 3,
     // (undocumented)
-    Length = 4,
+    Force = 4,
     // (undocumented)
-    Mass = 5,
+    Length = 5,
     // (undocumented)
-    Pressure = 6,
+    Mass = 6,
     // (undocumented)
-    Temperature = 7,
+    Power = 7,
     // (undocumented)
-    Time = 8,
+    Pressure = 8,
     // (undocumented)
-    Volume = 9
+    Temperature = 9,
+    // (undocumented)
+    Time = 10,
+    // (undocumented)
+    Volume = 11
 }
 
 // @public
@@ -67,6 +71,9 @@ function convert<Q extends number | bigint>(quantity: Q, from: Area): Converter<
 function convert<Q extends number | bigint>(quantity: Q, from: Data): Converter<Q, Data>;
 
 // @public
+function convert<Q extends number | bigint>(quantity: Q, from: Energy): Converter<Q, Energy>;
+
+// @public
 function convert<Q extends number | bigint>(quantity: Q, from: Force): Converter<Q, Force>;
 
 // @public
@@ -74,6 +81,9 @@ function convert<Q extends number | bigint>(length: Q, from: Length): Converter<
 
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Mass): Converter<Q, Mass>;
+
+// @public
+function convert<Q extends number | bigint>(quantity: Q, from: Power): Converter<Q, Power>;
 
 // @public
 function convert<Q extends number | bigint>(quantity: Q, from: Pressure): Converter<Q, Pressure>;
@@ -105,6 +115,9 @@ export function convertMany(value: string): Converter<number, Unit>;
 export type Data = GetAliases<_ConversionFamilyId.Data>;
 
 // @public
+export type Energy = GetAliases<_ConversionFamilyId.Energy>;
+
+// @public
 export type Force = GetAliases<_ConversionFamilyId.Force>;
 
 // Warning: (ae-forgotten-export) The symbol "FamilyToUnit" needs to be exported by the entry point index.d.ts
@@ -126,6 +139,9 @@ export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<
 
 // @public
 export function ms(value: string): number;
+
+// @public
+export type Power = GetAliases<_ConversionFamilyId.Power>;
 
 // @public
 export type Pressure = GetAliases<_ConversionFamilyId.Pressure>;
