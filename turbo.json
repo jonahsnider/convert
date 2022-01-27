@@ -1,0 +1,54 @@
+{
+	"baseBranch": "origin/master",
+	"pipeline": {
+		"style": {
+			"outputs": []
+		},
+		"docs": {
+			"outputs": ["docs_out/**"]
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**"]
+		},
+		"size": {
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"validate-api": {
+			"dependsOn": ["build"],
+			"outputs": ["temp/**", "docs/**"]
+		},
+		"validate-api:local": {
+			"dependsOn": ["build"],
+			"outputs": ["temp/**", "docs/**"]
+		},
+		"lint": {
+			"outputs": []
+		},
+		"optimized-conversions#lint": {
+			"dependsOn": ["^build"],
+			"outputs": []
+		},
+		"convert#lint": {
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"test": {
+			"dependsOn": ["^build"],
+			"outputs": []
+		},
+		"test:coverage": {
+			"dependsOn": ["^build"],
+			"outputs": ["coverage/**"]
+		},
+		"convert#test": {
+			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"convert#test:coverage": {
+			"dependsOn": ["build"],
+			"outputs": ["coverage/**"]
+		}
+	}
+}
