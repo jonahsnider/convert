@@ -85,7 +85,7 @@
 		"@rollup/plugin-typescript": "8.3.0",
 		"@size-limit/preset-small-lib": "7.0.8",
 		"@types/jest": "27.4.0",
-		"@types/node": "16.11.24",
+		"@types/node": "16.11.25",
 		"babel-jest": "27.5.1",
 		"bundled-conversions": "workspace:*",
 		"conversions": "workspace:*",
