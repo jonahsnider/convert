@@ -47,6 +47,7 @@
 		}
 	},
 	"main": "./dist/index.js",
+	"react-native": "./dist/index.js",
 	"jsdelivr": "./dist/convert.prod.mjs",
 	"unpkg": "./dist/convert.prod.mjs",
 	"module": "./dist/convert.prod.mjs",
