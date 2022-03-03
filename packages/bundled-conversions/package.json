@@ -21,7 +21,7 @@
 	"prettier": "@jonahsnider/prettier-config",
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.0",
-		"@jonahsnider/xo-config": "5.0.3",
+		"@jonahsnider/xo-config": "5.0.4",
 		"@tsconfig/node16": "1.0.2",
 		"@types/node": "16.11.26",
 		"ava": "4.0.1",
