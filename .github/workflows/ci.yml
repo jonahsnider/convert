@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: yarn build
       - name: Upload compiled package
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: dist
           path: packages/convert/dist
