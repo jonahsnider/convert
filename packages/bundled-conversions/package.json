@@ -29,7 +29,7 @@
 		"codegen": "workspace:*",
 		"conversions": "workspace:*",
 		"optimized-conversions": "workspace:*",
-		"prettier": "2.5.1",
+		"prettier": "2.6.0",
 		"ts-node": "10.6.0",
 		"typescript": "4.6.2",
 		"xo": "0.48.0"
