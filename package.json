@@ -34,7 +34,7 @@
 	"prettier": "@jonahsnider/prettier-config",
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.0",
-		"prettier": "2.5.1",
+		"prettier": "2.6.0",
 		"turbo": "1.1.6"
 	},
 	"engines": {
