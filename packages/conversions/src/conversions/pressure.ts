@@ -6,7 +6,7 @@ import {Id} from '../types/index.js';
 
 export const pressure: ReadonlyDeep<Family> = {
 	id: Id.Pressure,
-	best: ['Pa'],
+	best: {metric: ['Pa'], imperial: ['psi']},
 	conversions: [
 		{names: ['pascal', 'pascals'], symbols: ['Pa'], ratio: 1},
 		...expandMacro(Macros.si, {names: ['pascal', 'pascals'], symbols: ['Pa'], ratio: 1}),
@@ -18,5 +18,8 @@ export const pressure: ReadonlyDeep<Family> = {
 		{names: ['millitorr'], symbols: ['mTorr'], ratio: new BigNumber(101_325).div(760).div(1e3)},
 
 		{names: ['atmosphere', 'atmospheres'], symbols: ['atm'], ratio: 101_325},
+
+		// https://en.wikipedia.org/wiki/Pound_per_square_inch
+		{names: ['pound per square inch', 'pounds per square inch'], symbols: ['psi', 'lbf/in2', 'lbf/in²'], ratio: 6.894_757e3},
 	],
 };

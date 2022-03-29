@@ -1,3 +1,4 @@
+import assert from 'node:assert/strict';
 import {combineIterables, Sort} from '@jonahsnider/util';
 import type * as Conversions from 'conversions';
 import BigNumber from 'bignumber.js';
@@ -34,7 +35,13 @@ export function optimizeBest(conversionFamilies: ReadonlyArray<Readonly<Conversi
 
 			const conversionFamilyBest = Array.isArray(conversionFamily.best) ? conversionFamily.best : conversionFamily.best[kind];
 
-			conversionFamilyBest.sort(Sort.ascending(bestUnit => lookup[bestUnit].toNumber()));
+			conversionFamilyBest.sort(
+				Sort.ascending(bestUnit => {
+					assert(lookup[bestUnit], `The unit "${bestUnit}" couldn't be found in conversion family ${conversionFamily.id} while optimizing best conversions`);
+
+					return lookup[bestUnit].toNumber();
+				}),
+			);
 
 			const firstValue = lookup[conversionFamilyBest[0]];
 
