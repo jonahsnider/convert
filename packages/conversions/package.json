@@ -23,7 +23,7 @@
 	},
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.0",
-		"@jonahsnider/xo-config": "5.0.4",
+		"@jonahsnider/xo-config": "5.1.0",
 		"@tsconfig/node16": "1.0.2",
 		"prettier": "2.6.1",
 		"typescript": "4.6.3",
