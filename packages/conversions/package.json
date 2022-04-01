@@ -19,7 +19,7 @@
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
 		"bignumber.js": "9.0.2",
-		"type-fest": "2.12.1"
+		"type-fest": "2.12.2"
 	},
 	"devDependencies": {
 		"@jonahsnider/prettier-config": "1.1.0",
