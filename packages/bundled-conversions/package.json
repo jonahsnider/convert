@@ -24,7 +24,7 @@
 		"@jonahsnider/xo-config": "5.1.0",
 		"@tsconfig/node16": "1.0.2",
 		"@types/node": "16.11.26",
-		"ava": "4.1.0",
+		"ava": "4.2.0",
 		"c8": "7.11.0",
 		"codegen": "workspace:*",
 		"conversions": "workspace:*",
