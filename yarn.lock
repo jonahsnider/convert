@@ -3657,9 +3657,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ava@npm:4.1.0":
-  version: 4.1.0
-  resolution: "ava@npm:4.1.0"
+"ava@npm:4.2.0":
+  version: 4.2.0
+  resolution: "ava@npm:4.2.0"
   dependencies:
     acorn: ^8.7.0
     acorn-walk: ^8.2.0
@@ -3713,7 +3713,7 @@ __metadata:
       optional: true
   bin:
     ava: entrypoints/cli.mjs
-  checksum: 09ef03da8ef0ec612018252930e8d05565a5ad6079bb144935784dfec81c2625a35ff07c068ebce08eb20e41821466d2895d2b1fd94d867e6f9da8766714557c
+  checksum: dc43f8b775f93f6fe2332de83e0051cdfef63014921fe79a57fc3c2b586d6443981091f7c193131a25b378655449fce9f5080460360a09d258f1697e3bfbb04d
   languageName: node
   linkType: hard
 
@@ -4025,7 +4025,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.26
-    ava: 4.1.0
+    ava: 4.2.0
     c8: 7.11.0
     codegen: "workspace:*"
     conversions: "workspace:*"
@@ -4466,7 +4466,7 @@ __metadata:
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.26
     "@types/prettier": 2.4.4
-    ava: 4.1.0
+    ava: 4.2.0
     c8: 7.11.0
     optimized-conversions: "workspace:*"
     prettier: 2.6.2
