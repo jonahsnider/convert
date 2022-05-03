@@ -2665,9 +2665,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-node-resolve@npm:13.2.1":
-  version: 13.2.1
-  resolution: "@rollup/plugin-node-resolve@npm:13.2.1"
+"@rollup/plugin-node-resolve@npm:13.2.2":
+  version: 13.2.2
+  resolution: "@rollup/plugin-node-resolve@npm:13.2.2"
   dependencies:
     "@rollup/pluginutils": ^3.1.0
     "@types/resolve": 1.17.1
@@ -2677,7 +2677,7 @@ __metadata:
     resolve: ^1.19.0
   peerDependencies:
     rollup: ^2.42.0
-  checksum: d0ba3b6f35440b5ebc203a4f62a6c0d2c565491aed9746448288b71d0cd603d1d12fdd9d1381c1be0a4b192f167412e53c34b89fd25413db4ba7d1fa910a29a2
+  checksum: 3a6886de6ede4c7ec0e3b8f2471c40eb160c3b592e5c3a64ae7d297b94e27ad24231a10782fd8b2ffca0bb4cb8550043d71273197fdfee54f0b4c7917edb6e96
   languageName: node
   linkType: hard
 
@@ -4878,7 +4878,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.1.0
     "@microsoft/api-extractor": 7.22.2
     "@rollup/plugin-babel": 5.3.1
-    "@rollup/plugin-node-resolve": 13.2.1
+    "@rollup/plugin-node-resolve": 13.2.2
     "@rollup/plugin-replace": 4.0.0
     "@rollup/plugin-typescript": 8.3.2
     "@size-limit/preset-small-lib": 7.0.8
