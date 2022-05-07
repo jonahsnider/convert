@@ -3216,13 +3216,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:2.4.4":
-  version: 2.4.4
-  resolution: "@types/prettier@npm:2.4.4"
-  checksum: 2c2cc57efd49c7d8907415a72f96c84a6dd8696dd3bf8aa4ca3a667427bebf71cbfbc912673624bdfc935d272d1c008c639cf155f6449315990a4dc110f0d216
-  languageName: node
-  linkType: hard
-
 "@types/prettier@npm:2.6.0":
   version: 2.6.0
   resolution: "@types/prettier@npm:2.6.0"
@@ -4599,7 +4592,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.2
     "@types/node": 16.11.33
-    "@types/prettier": 2.4.4
+    "@types/prettier": 2.6.0
     ava: 4.2.0
     c8: 7.11.2
     optimized-conversions: "workspace:*"
