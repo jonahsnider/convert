@@ -88,6 +88,10 @@ jobs:
         run: yarn run build
       - name: Generate TypeScript declaration rollup
         run: yarn run validate-api
+      - name: Setup Git for committing
+        run: |
+          git config --global user.email "convert.ci@jonah.pw"
+          git config --global user.name "convert"
       - name: Run release
         run: cd packages/convert && yarn run release
         env:
