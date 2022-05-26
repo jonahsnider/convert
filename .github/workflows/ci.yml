@@ -88,12 +88,8 @@ jobs:
         run: yarn run build
       - name: Generate TypeScript declaration rollup
         run: yarn run validate-api
-      - name: Setup Git for committing
-        run: |
-          git config --global user.email "convert.ci@jonah.pw"
-          git config --global user.name "convert"
       - name: Run release
-        run: cd packages/convert && echo $GITHUB_TOKEN && yarn run release
+        run: yarn workspace convert run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
