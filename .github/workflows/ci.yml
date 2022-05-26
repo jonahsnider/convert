@@ -89,7 +89,7 @@ jobs:
       - name: Generate TypeScript declaration rollup
         run: yarn run validate-api
       - name: Run release
-        run: yarn workspace convert run release
+        run: cd packages/convert && yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
