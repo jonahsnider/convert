@@ -93,7 +93,7 @@ jobs:
           git config --global user.email "convert.ci@jonah.pw"
           git config --global user.name "convert"
       - name: Run release
-        run: cd packages/convert && yarn run release
+        run: cd packages/convert && echo $GITHUB_TOKEN && yarn run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
