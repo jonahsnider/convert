@@ -5112,7 +5112,7 @@ __metadata:
     semantic-release: 19.0.2
     size-limit: 7.0.8
     terser: 5.13.1
-    typedoc: 0.22.15
+    typedoc: 0.22.16
     typescript: 4.7.2
     xo: 0.49.0
   languageName: unknown
@@ -6883,6 +6883,19 @@ __metadata:
     once: ^1.3.0
     path-is-absolute: ^1.0.0
   checksum: 78a8ea942331f08ed2e055cb5b9e40fe6f46f579d7fd3d694f3412fe5db23223d29b7fee1575440202e9a7ff9a72ab106a39fee39934c7bedafe5e5f8ae20134
+  languageName: node
+  linkType: hard
+
+"glob@npm:^8.0.3":
+  version: 8.0.3
+  resolution: "glob@npm:8.0.3"
+  dependencies:
+    fs.realpath: ^1.0.0
+    inflight: ^1.0.4
+    inherits: 2
+    minimatch: ^5.0.1
+    once: ^1.3.0
+  checksum: 50bcdea19d8e79d8de5f460b1939ffc2b3299eac28deb502093fdca22a78efebc03e66bf54f0abc3d3d07d8134d19a32850288b7440d77e072aa55f9d33b18c5
   languageName: node
   linkType: hard
 
@@ -9088,12 +9101,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"marked@npm:^4.0.12":
-  version: 4.0.12
-  resolution: "marked@npm:4.0.12"
+"marked@npm:^4.0.16":
+  version: 4.0.16
+  resolution: "marked@npm:4.0.16"
   bin:
     marked: bin/marked.js
-  checksum: 7575117f85a8986652f3ac8b8a7b95056c4c5fce01a1fc76dc4c7960412cb4c9bd9da8133487159b6b3ff84f52b543dfe9a36f826a5f358892b5ec4b6824f192
+  checksum: c0ef780bf56c9bb49c15b66683e5648410c924c1d725f1489fc3c7dc3bd01194c50d720052bb0282ad7907f472dfdc8fa278acbc7903c5db3be4b83487e0d684
   languageName: node
   linkType: hard
 
@@ -9266,6 +9279,15 @@ __metadata:
   dependencies:
     brace-expansion: ^2.0.1
   checksum: b34b98463da4754bc526b244d680c69d4d6089451ebe512edaf6dd9eeed0279399cfa3edb19233513b8f830bf4bfcad911dddcdf125e75074100d52f724774f0
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "minimatch@npm:5.1.0"
+  dependencies:
+    brace-expansion: ^2.0.1
+  checksum: 15ce53d31a06361e8b7a629501b5c75491bc2b59712d53e802b1987121d91b433d73fcc5be92974fde66b2b51d8fb28d75a9ae900d249feb792bb1ba2a4f0a90
   languageName: node
   linkType: hard
 
@@ -12483,20 +12505,20 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.22.15":
-  version: 0.22.15
-  resolution: "typedoc@npm:0.22.15"
+"typedoc@npm:0.22.16":
+  version: 0.22.16
+  resolution: "typedoc@npm:0.22.16"
   dependencies:
-    glob: ^7.2.0
+    glob: ^8.0.3
     lunr: ^2.3.9
-    marked: ^4.0.12
-    minimatch: ^5.0.1
+    marked: ^4.0.16
+    minimatch: ^5.1.0
     shiki: ^0.10.1
   peerDependencies:
-    typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x || 4.6.x
+    typescript: 4.0.x || 4.1.x || 4.2.x || 4.3.x || 4.4.x || 4.5.x || 4.6.x || 4.7.x
   bin:
     typedoc: bin/typedoc
-  checksum: 3f5f1cb9288bf811f42df59750c7062a026a23257b38dfe227515a30007a28e3d8139187949fcd19300fd6b2ef76bcdc4cf54549100bff3e000e61bb19958fb2
+  checksum: f19530bfa60149ab5fe1d90d42b45721d92f169281f051fc508515f26281edb22d4e62072dd83bb12b12f8c59b6b25ca2ccc8752a34232e2f4069bf13258595d
   languageName: node
   linkType: hard
 
