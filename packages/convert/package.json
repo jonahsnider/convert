@@ -83,7 +83,7 @@
 		"@rollup/plugin-babel": "5.3.1",
 		"@rollup/plugin-node-resolve": "13.3.0",
 		"@rollup/plugin-replace": "4.0.0",
-		"@rollup/plugin-typescript": "8.3.2",
+		"@rollup/plugin-typescript": "8.3.3",
 		"@size-limit/preset-small-lib": "7.0.8",
 		"@types/jest": "28.1.1",
 		"@types/node": "16.11.39",
