@@ -92,7 +92,7 @@
 		"conversions": "workspace:*",
 		"jest": "28.1.1",
 		"optimized-conversions": "workspace:*",
-		"prettier": "2.7.0",
+		"prettier": "2.7.1",
 		"rollup": "2.75.6",
 		"rollup-plugin-terser": "7.0.2",
 		"semantic-release": "19.0.3",
