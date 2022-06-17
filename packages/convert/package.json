@@ -99,7 +99,7 @@
 		"size-limit": "7.0.8",
 		"terser": "5.14.1",
 		"typedoc": "0.22.17",
-		"typescript": "4.7.3",
+		"typescript": "4.7.4",
 		"xo": "0.50.0"
 	},
 	"packageManager": "yarn@3.2.1",
