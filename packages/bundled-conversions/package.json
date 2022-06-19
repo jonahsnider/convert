@@ -20,7 +20,7 @@
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"devDependencies": {
-		"@jonahsnider/prettier-config": "1.1.1",
+		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/xo-config": "5.1.0",
 		"@tsconfig/node16": "1.0.3",
 		"@types/node": "16.11.41",

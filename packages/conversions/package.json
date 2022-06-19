@@ -22,7 +22,7 @@
 		"type-fest": "2.13.1"
 	},
 	"devDependencies": {
-		"@jonahsnider/prettier-config": "1.1.1",
+		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/xo-config": "5.1.0",
 		"@tsconfig/node16": "1.0.3",
 		"prettier": "2.7.1",
