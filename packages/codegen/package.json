@@ -20,12 +20,12 @@
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
-		"@types/prettier": "2.6.0",
+		"@types/prettier": "2.6.3",
 		"optimized-conversions": "workspace:*",
 		"prettier": "2.7.1"
 	},
 	"devDependencies": {
-		"@jonahsnider/prettier-config": "1.1.1",
+		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/xo-config": "5.1.0",
 		"@tsconfig/node16": "1.0.3",
 		"@types/node": "16.11.41",

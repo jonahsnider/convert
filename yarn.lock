@@ -2401,13 +2401,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/prettier-config@npm:1.1.1":
-  version: 1.1.1
-  resolution: "@jonahsnider/prettier-config@npm:1.1.1"
+"@jonahsnider/prettier-config@npm:1.1.2":
+  version: 1.1.2
+  resolution: "@jonahsnider/prettier-config@npm:1.1.2"
   dependencies:
-    "@types/prettier": 2.6.0
+    "@types/prettier": ^2.6.3
     prettier-config-xo: 2.0.0
-  checksum: 3b1eb1362d0b918234f6fb056cb6364b2c33a5c632da3d347d0900e5159c5a0cf733919f816d100febd69c9f0111132c36211b4476403cc8bb9b64206b9f7631
+  checksum: df2c7d49fbf99a731d877648d09bf2ead56d4e3366fcf99ff8a7c4f2017c73a9311d11d4b96c7bde0ede223177601693e821783cb7767cc71b32c92dc5b968d7
   languageName: node
   linkType: hard
 
@@ -3471,10 +3471,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:2.6.0":
-  version: 2.6.0
-  resolution: "@types/prettier@npm:2.6.0"
-  checksum: 946f1f82ce6f31664e023a5d65931c31b7d677b454f528f67dce851d72e7fcfe713076f4251b16c3646eecf1545f5f5b909b4962966341ed9ddf5b80113b3674
+"@types/prettier@npm:2.6.3, @types/prettier@npm:^2.6.3":
+  version: 2.6.3
+  resolution: "@types/prettier@npm:2.6.3"
+  checksum: e1836699ca189fff6d2a73dc22e028b6a6f693ed1180d5998ac29fa197caf8f85aa92cb38db642e4a370e616b451cb5722ad2395dab11c78e025a1455f37d1f0
   languageName: node
   linkType: hard
 
@@ -4217,7 +4217,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "base@workspace:."
   dependencies:
-    "@jonahsnider/prettier-config": 1.1.1
+    "@jonahsnider/prettier-config": 1.1.2
     prettier: 2.7.1
     turbo: 1.2.16
   languageName: unknown
@@ -4414,7 +4414,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "bundled-conversions@workspace:packages/bundled-conversions"
   dependencies:
-    "@jonahsnider/prettier-config": 1.1.1
+    "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.3
     "@types/node": 16.11.41
@@ -4875,11 +4875,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "codegen@workspace:packages/codegen"
   dependencies:
-    "@jonahsnider/prettier-config": 1.1.1
+    "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.3
     "@types/node": 16.11.41
-    "@types/prettier": 2.6.0
+    "@types/prettier": 2.6.3
     ava: 4.3.0
     c8: 7.11.3
     optimized-conversions: "workspace:*"
@@ -5128,7 +5128,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "conversions@workspace:packages/conversions"
   dependencies:
-    "@jonahsnider/prettier-config": 1.1.1
+    "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.3
     bignumber.js: 9.0.2
@@ -5162,7 +5162,7 @@ __metadata:
     "@babel/core": 7.18.5
     "@babel/preset-env": 7.18.2
     "@babel/preset-typescript": 7.17.12
-    "@jonahsnider/prettier-config": 1.1.1
+    "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/util": 9.0.0
     "@jonahsnider/xo-config": 5.1.0
     "@microsoft/api-extractor": 7.25.2
@@ -10056,7 +10056,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "optimized-conversions@workspace:packages/optimized-conversions"
   dependencies:
-    "@jonahsnider/prettier-config": 1.1.1
+    "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/util": 9.0.0
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.3
