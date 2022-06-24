@@ -2522,16 +2522,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.25.2":
-  version: 7.25.2
-  resolution: "@microsoft/api-extractor@npm:7.25.2"
+"@microsoft/api-extractor@npm:7.25.3":
+  version: 7.25.3
+  resolution: "@microsoft/api-extractor@npm:7.25.3"
   dependencies:
     "@microsoft/api-extractor-model": 7.18.2
     "@microsoft/tsdoc": 0.14.1
     "@microsoft/tsdoc-config": ~0.16.1
     "@rushstack/node-core-library": 3.45.7
     "@rushstack/rig-package": 0.3.12
-    "@rushstack/ts-command-line": 4.11.1
+    "@rushstack/ts-command-line": 4.12.0
     colors: ~1.2.1
     lodash: ~4.17.15
     resolve: ~1.17.0
@@ -2540,7 +2540,7 @@ __metadata:
     typescript: ~4.6.3
   bin:
     api-extractor: bin/api-extractor
-  checksum: b3e43b61a997618cf86b2a578a8a1b854c5e5c508fc15e5e7aec0561a623e1199f1a55ab6eb97726b5118e811664dca2ddce5fb20e75036595b0f6fc7c82fb3d
+  checksum: 977d3f54bac00fbbbdc391d66c2a52eb23f7dc58b960b78bb71ff92d2f28116da3f6ff037aab732d2246fbc8d84c5d3948efb28b98db5ebf10cc4aa3424ca9ae
   languageName: node
   linkType: hard
 
@@ -3054,15 +3054,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/ts-command-line@npm:4.11.1":
-  version: 4.11.1
-  resolution: "@rushstack/ts-command-line@npm:4.11.1"
+"@rushstack/ts-command-line@npm:4.12.0":
+  version: 4.12.0
+  resolution: "@rushstack/ts-command-line@npm:4.12.0"
   dependencies:
     "@types/argparse": 1.0.38
     argparse: ~1.0.9
     colors: ~1.2.1
     string-argv: ~0.3.1
-  checksum: e852a159242f1576eb7b578cffc35533344afcca4dc535848920febc14c43cc979c85d1f1f5e0cb2d6ed567de6a17c2b396081ebc39740acbe5fc3944acd6559
+  checksum: ee83003b0bf899d4e0b88ea417a7e528b987cd0dcf979674a466800d5d4bb06667a2b2a71efac6e4f042309f0d39ba562a9f359027ba5559356aed494ff0ce90
   languageName: node
   linkType: hard
 
@@ -5165,7 +5165,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/util": 9.0.0
     "@jonahsnider/xo-config": 5.1.0
-    "@microsoft/api-extractor": 7.25.2
+    "@microsoft/api-extractor": 7.25.3
     "@rollup/plugin-babel": 5.3.1
     "@rollup/plugin-node-resolve": 13.3.0
     "@rollup/plugin-replace": 4.0.0
