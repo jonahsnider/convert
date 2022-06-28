@@ -2480,27 +2480,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor-model@npm:7.20.1":
-  version: 7.20.1
-  resolution: "@microsoft/api-extractor-model@npm:7.20.1"
+"@microsoft/api-extractor-model@npm:7.20.2":
+  version: 7.20.2
+  resolution: "@microsoft/api-extractor-model@npm:7.20.2"
   dependencies:
     "@microsoft/tsdoc": 0.14.1
     "@microsoft/tsdoc-config": ~0.16.1
-    "@rushstack/node-core-library": 3.47.0
-  checksum: bb61f9d3e50d11c99108b1ed85269dd6c8ae9e33bf9327884ab5c3189ad3835a878d0f8ef10b96ef87dccf24f7c7561104521189fa0ef2dfb9216ec4cadba3b2
+    "@rushstack/node-core-library": 3.48.0
+  checksum: 906c912bfbc57e95e3fdf3f7b7eba929f3f9a9cd2addc06960d686ed7bc7d31f8e58ac98820522ee21e90b512b530544a48930eb83c9b3d906dea03d68ac8dae
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.27.1":
-  version: 7.27.1
-  resolution: "@microsoft/api-extractor@npm:7.27.1"
+"@microsoft/api-extractor@npm:7.28.0":
+  version: 7.28.0
+  resolution: "@microsoft/api-extractor@npm:7.28.0"
   dependencies:
-    "@microsoft/api-extractor-model": 7.20.1
+    "@microsoft/api-extractor-model": 7.20.2
     "@microsoft/tsdoc": 0.14.1
     "@microsoft/tsdoc-config": ~0.16.1
-    "@rushstack/node-core-library": 3.47.0
-    "@rushstack/rig-package": 0.3.12
-    "@rushstack/ts-command-line": 4.12.0
+    "@rushstack/node-core-library": 3.48.0
+    "@rushstack/rig-package": 0.3.13
+    "@rushstack/ts-command-line": 4.12.1
     colors: ~1.2.1
     lodash: ~4.17.15
     resolve: ~1.17.0
@@ -2509,7 +2509,7 @@ __metadata:
     typescript: ~4.6.3
   bin:
     api-extractor: bin/api-extractor
-  checksum: 7c4dc8ccd9eeec9879d9e961afbd1d798ec17f0d13fc7adcff496829909207f8106a6722aa022623c54376d2a2c60abb808f9d739e07f6af4d234ed39637447f
+  checksum: b8cd4353834eed472062c50ee84988d1b3d0ff0a7ca7c879f01f066862110af5b8a21f1dc94190a720cb373a522aac5873493dd179cc66cb18009d6609e38353
   languageName: node
   linkType: hard
 
@@ -2996,9 +2996,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/node-core-library@npm:3.47.0":
-  version: 3.47.0
-  resolution: "@rushstack/node-core-library@npm:3.47.0"
+"@rushstack/node-core-library@npm:3.48.0":
+  version: 3.48.0
+  resolution: "@rushstack/node-core-library@npm:3.48.0"
   dependencies:
     "@types/node": 12.20.24
     colors: ~1.2.1
@@ -3009,29 +3009,29 @@ __metadata:
     semver: ~7.3.0
     timsort: ~0.3.0
     z-schema: ~5.0.2
-  checksum: 92d0ab688168de636afea340f9dd7f07e8855a358ebe9d64ccbbb43f77b8ac79cbaee3233c14833dbd4281707e4671e437944cd694e8843d3dbe44234a2c562a
+  checksum: a3570dd279d76e391eb7ec0287f6184cfcc1859957fc0f57d0d7d6ec894de82758d6b55e94a30e512da74d8bde21b36c8ac3aa3ca53a90f2a693691e76f1b0e3
   languageName: node
   linkType: hard
 
-"@rushstack/rig-package@npm:0.3.12":
-  version: 0.3.12
-  resolution: "@rushstack/rig-package@npm:0.3.12"
+"@rushstack/rig-package@npm:0.3.13":
+  version: 0.3.13
+  resolution: "@rushstack/rig-package@npm:0.3.13"
   dependencies:
     resolve: ~1.17.0
     strip-json-comments: ~3.1.1
-  checksum: df0392f63f06cadb0531a95c7d55d9cdb1a27d7ab0654c7e6200c12709fb859e7c6bbafc6775b00da350eeb013c3dfa24ad273bd5a7bd059b0fa2f19eb96ee8f
+  checksum: 98c0b7dbefe6ae169745d065d696fbef5d07e71bae5146e070a2e37de82c5625752865c54f12bba6b002868fcb27a1d2d098a19b0a5d20a1dfacaa002c81c13d
   languageName: node
   linkType: hard
 
-"@rushstack/ts-command-line@npm:4.12.0":
-  version: 4.12.0
-  resolution: "@rushstack/ts-command-line@npm:4.12.0"
+"@rushstack/ts-command-line@npm:4.12.1":
+  version: 4.12.1
+  resolution: "@rushstack/ts-command-line@npm:4.12.1"
   dependencies:
     "@types/argparse": 1.0.38
     argparse: ~1.0.9
     colors: ~1.2.1
     string-argv: ~0.3.1
-  checksum: ee83003b0bf899d4e0b88ea417a7e528b987cd0dcf979674a466800d5d4bb06667a2b2a71efac6e4f042309f0d39ba562a9f359027ba5559356aed494ff0ce90
+  checksum: e9479bd001f4f206d207c867ec7b91444727cf8a1c685dac7589c6a33b54f47200deabc450d6831a1cc38501f0322eb7003c1f78f1fa43230541c4b7ddc4718d
   languageName: node
   linkType: hard
 
@@ -5133,7 +5133,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/util": 9.0.0
     "@jonahsnider/xo-config": 5.1.0
-    "@microsoft/api-extractor": 7.27.1
+    "@microsoft/api-extractor": 7.28.0
     "@rollup/plugin-babel": 5.3.1
     "@rollup/plugin-node-resolve": 13.3.0
     "@rollup/plugin-replace": 4.0.0
