@@ -2490,22 +2490,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor-model@npm:7.20.3":
-  version: 7.20.3
-  resolution: "@microsoft/api-extractor-model@npm:7.20.3"
+"@microsoft/api-extractor-model@npm:7.21.0":
+  version: 7.21.0
+  resolution: "@microsoft/api-extractor-model@npm:7.21.0"
   dependencies:
     "@microsoft/tsdoc": 0.14.1
     "@microsoft/tsdoc-config": ~0.16.1
     "@rushstack/node-core-library": 3.49.0
-  checksum: d5721794e9f98348933fcdc5922e5d8ec681e1250ba03764873c4a864478c815ee86bac877ec4430bbeb4f2ffa980b8ae71cf8edd6b822f3dc937c810804fdab
+  checksum: 9e0cb0cd2d344ee23f32294103856e413fd998ceefc5ea26427b603ef7a6dc155ff6710bf3a30d0c426b9928118e8f56e080f0c0aa9685f3e825e7e154340f62
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.28.1":
-  version: 7.28.1
-  resolution: "@microsoft/api-extractor@npm:7.28.1"
+"@microsoft/api-extractor@npm:7.28.2":
+  version: 7.28.2
+  resolution: "@microsoft/api-extractor@npm:7.28.2"
   dependencies:
-    "@microsoft/api-extractor-model": 7.20.3
+    "@microsoft/api-extractor-model": 7.21.0
     "@microsoft/tsdoc": 0.14.1
     "@microsoft/tsdoc-config": ~0.16.1
     "@rushstack/node-core-library": 3.49.0
@@ -2519,7 +2519,7 @@ __metadata:
     typescript: ~4.6.3
   bin:
     api-extractor: bin/api-extractor
-  checksum: 8ca814d4701d17388247f10f33720a49fb20e1790dc320c772a83f9203fbd8aadc6ec306b3b20d00b70829e33dd0dfae13cd3096ad104d9e6e6c6206e160a00e
+  checksum: ba32ce0c8466c09f43d65a32bf57046a7d36216781851bcab339b99b094c66e9beba209b714a9fda41c524e9372aeb686293a0dddb927f71d478f7d3df574861
   languageName: node
   linkType: hard
 
@@ -5143,7 +5143,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/util": 9.0.0
     "@jonahsnider/xo-config": 5.1.0
-    "@microsoft/api-extractor": 7.28.1
+    "@microsoft/api-extractor": 7.28.2
     "@rollup/plugin-babel": 5.3.1
     "@rollup/plugin-node-resolve": 13.3.0
     "@rollup/plugin-replace": 4.0.0
