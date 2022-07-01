@@ -5162,7 +5162,7 @@ __metadata:
     semantic-release: 19.0.3
     size-limit: 7.0.8
     terser: 5.14.1
-    typedoc: 0.23.2
+    typedoc: 0.23.3
     typescript: 4.7.4
     xo: 0.50.0
   languageName: unknown
@@ -12492,9 +12492,9 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.23.2":
-  version: 0.23.2
-  resolution: "typedoc@npm:0.23.2"
+"typedoc@npm:0.23.3":
+  version: 0.23.3
+  resolution: "typedoc@npm:0.23.3"
   dependencies:
     lunr: ^2.3.9
     marked: ^4.0.16
@@ -12504,7 +12504,7 @@ resolve@~1.19.0:
     typescript: 4.6.x || 4.7.x
   bin:
     typedoc: bin/typedoc
-  checksum: 2c93349b5f1987d32171130a428d36ecbe31e215d87e06707d837f9465eced70b19eec669939c67e8ef0e02852faf4ee1f4ba113dab7fee980171af082e27583
+  checksum: f935adbb90c8cce3d6d5306b32b1842c8963a295116258ff2a9a4b429e767b989c12683227dc2509c929d3b2f149f2cd325793bf2dcdae793851325841314183
   languageName: node
   linkType: hard
 
