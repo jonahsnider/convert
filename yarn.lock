@@ -12713,7 +12713,7 @@ resolve@~1.19.0:
 
 "typescript@patch:typescript@4.7.4#~builtin<compat/typescript>":
   version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -12723,7 +12723,7 @@ resolve@~1.19.0:
 
 "typescript@patch:typescript@^4.7.3#~builtin<compat/typescript>":
   version: 4.7.3
-  resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A4.7.3#~builtin<compat/typescript>::version=4.7.3&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -12733,7 +12733,7 @@ resolve@~1.19.0:
 
 "typescript@patch:typescript@~4.6.3#~builtin<compat/typescript>":
   version: 4.6.3
-  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
