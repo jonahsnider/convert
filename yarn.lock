@@ -3112,9 +3112,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-typescript@npm:8.3.3":
-  version: 8.3.3
-  resolution: "@rollup/plugin-typescript@npm:8.3.3"
+"@rollup/plugin-typescript@npm:8.3.4":
+  version: 8.3.4
+  resolution: "@rollup/plugin-typescript@npm:8.3.4"
   dependencies:
     "@rollup/pluginutils": ^3.1.0
     resolve: ^1.17.0
@@ -3125,7 +3125,7 @@ __metadata:
   peerDependenciesMeta:
     tslib:
       optional: true
-  checksum: c255f8bc3b4d94b81a96d7bf5ba426e4e0a9dc68b96be48d97c6646c1c7dcd08319d08805d93306adfa57f87b080ff4a05198e581592ecf6aba06b752006b5f5
+  checksum: 3a86664a1c8a00d715bd61fb3b2d739e1a3eb8c7a8e695a2ac9846e0d93872e8db0aa5695f952635bdbea8f1a5c79bdb643ce0d0eaa244e6cbfadce3f50ab8d9
   languageName: node
   linkType: hard
 
@@ -5242,7 +5242,7 @@ __metadata:
     "@rollup/plugin-babel": 5.3.1
     "@rollup/plugin-node-resolve": 13.3.0
     "@rollup/plugin-replace": 4.0.0
-    "@rollup/plugin-typescript": 8.3.3
+    "@rollup/plugin-typescript": 8.3.4
     "@size-limit/preset-small-lib": 7.0.8
     "@types/jest": 28.1.6
     "@types/node": 16.11.45
