@@ -107,7 +107,7 @@
 	"size-limit": [
 		{
 			"brotli": true,
-			"limit": "4.75 KiB",
+			"limit": "5 KiB",
 			"path": "./dist/convert.prod.js"
 		},
 		{
@@ -117,7 +117,7 @@
 		},
 		{
 			"brotli": true,
-			"limit": "4.75 KiB",
+			"limit": "5 KiB",
 			"path": "./dist/convert.prod.mjs"
 		},
 		{
