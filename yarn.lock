@@ -4331,10 +4331,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bignumber.js@npm:9.0.2":
-  version: 9.0.2
-  resolution: "bignumber.js@npm:9.0.2"
-  checksum: 8637b71d0a99104b20413c47578953970006fec6b4df796b9dcfd9835ea9c402ea0e727eba9a5ca9f9a393c1d88b6168c5bbe0887598b708d4f8b4870ad62e1f
+"bignumber.js@npm:9.1.0":
+  version: 9.1.0
+  resolution: "bignumber.js@npm:9.1.0"
+  checksum: 52ec2bb5a3874d7dc1a1018f28f8f7aff4683515ffd09d6c2d93191343c76567ae0ee32cc45149d53afb2b904bc62ed471a307b35764beea7e9db78e56bef6c6
   languageName: node
   linkType: hard
 
@@ -5161,7 +5161,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.3
-    bignumber.js: 9.0.2
+    bignumber.js: 9.1.0
     prettier: 2.7.1
     type-fest: 2.18.0
     typescript: 4.7.4
@@ -10057,7 +10057,7 @@ __metadata:
     "@jonahsnider/util": 9.0.0
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.3
-    bignumber.js: 9.0.2
+    bignumber.js: 9.1.0
     conversions: "workspace:*"
     prettier: 2.7.1
     typescript: 4.7.4
