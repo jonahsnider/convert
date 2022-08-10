@@ -6,7 +6,7 @@
 		"inlineSources": true,
 		"module": "ESNext",
 		"moduleResolution": "Node",
-		"outDir": "tsc_output",
+		"outDir": "dist",
 		"resolveJsonModule": true
 	},
 	"extends": "@tsconfig/node16/tsconfig.json",

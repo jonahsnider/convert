@@ -54,10 +54,11 @@
 	"browser": "./dist/convert.prod.mjs",
 	"typings": "./dist/index.d.ts",
 	"files": [
-		"dist/"
+		"dist/",
+		"!dist/{src,test}/"
 	],
 	"scripts": {
-		"build": "rollup --config rollup.config.js && rm tsc_output/*.tsbuildinfo && tsc --emitDeclarationOnly && (yarn run validate-api || true)",
+		"build": "rollup --config rollup.config.js && (yarn run validate-api || true)",
 		"docs": "typedoc",
 		"lint": "xo",
 		"release": "semantic-release",
