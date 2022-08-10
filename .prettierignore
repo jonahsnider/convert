@@ -249,9 +249,6 @@ $RECYCLE.BIN/
 # Rollup
 .rollup.cache
 
-# TypeScript compiler
-tsc_*
-
 # TypeDoc
 docs_out
 
