@@ -31,7 +31,12 @@ const terserConfig = {
 		// Required to reduce unnecessary side-effect reads of properties of `this` from Function.prototype.bind
 		pure_getters: true,
 	},
-	mangle: {toplevel: true},
+	mangle: {
+		toplevel: true,
+		properties: {
+			regex: /^_/,
+		},
+	},
 	module: false,
 	ie8: true,
 };

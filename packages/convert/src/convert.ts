@@ -1,7 +1,7 @@
-import * as Conversions from 'conversions';
 import {conversions} from 'bundled-conversions';
+import * as Conversions from 'conversions';
 import {Indexes} from 'optimized-conversions';
-import {ConverterThisProperties, to} from './converter.js';
+import {to} from './converter.js';
 import type {Converter} from './types/common.js';
 import type {Angle, Area, Data, Energy, Force, Length, Mass, Power, Pressure, Temperature, Time, Unit, Volume} from './types/units.js';
 
@@ -174,13 +174,13 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
 		to: to.bind({
-			[ConverterThisProperties.Quantity]: quantity,
-			[ConverterThisProperties.From]: from,
-			[ConverterThisProperties.FromUnit]: fromUnit,
-			[ConverterThisProperties.IsUsingBigInts]: isUsingBigInts,
+			_quantity: quantity,
+			_from: from,
+			_fromUnit: fromUnit,
+			_isUsingBigInts: isUsingBigInts,
 			// The bundler will inline the const enum
 			// eslint-disable-next-line import/namespace
-			[ConverterThisProperties.IsConvertingTemperature]: fromUnit[Indexes.Conversion.Family] === Conversions.Id.Temperature,
+			_isConvertingTemperature: fromUnit[Indexes.Conversion.Family] === Conversions.Id.Temperature,
 		}),
 	} as Converter<Q, Unit>;
 }

@@ -14,18 +14,9 @@ const enum MatchGroup {
 
 const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
 
-/**
- * Minified names of properties on the `this` context.
- * Taken from the Terser output.
- */
-const enum ConverterThisProperties {
-	Search = 'r',
-	Value = 'e',
-}
-
 interface ConverterThis {
-	[ConverterThisProperties.Search]: RegExpExecArray;
-	[ConverterThisProperties.Value]: string;
+	_search: RegExpExecArray;
+	_value: string;
 }
 
 function to(this: ConverterThis, unit: Unit | 'best', kind?: Best.Kind | undefined) {
@@ -36,10 +27,9 @@ function to(this: ConverterThis, unit: Unit | 'best', kind?: Best.Kind | undefin
 	let isFirstPass = true;
 
 	do {
-		const converted = convert(
-			Number(this[ConverterThisProperties.Search][MatchGroup.Quantity]),
-			this[ConverterThisProperties.Search][MatchGroup.Unit] as any,
-		).to(isBest && !isFirstPass ? (resolvedUnit! as any) : (unit as any)) as number | BestConversion<number, BestUnits>;
+		const converted = convert(Number(this._search[MatchGroup.Quantity]), this._search[MatchGroup.Unit] as any).to(
+			isBest && !isFirstPass ? (resolvedUnit! as any) : (unit as any),
+		) as number | BestConversion<number, BestUnits>;
 
 		if (isBest && isFirstPass) {
 			result += (converted as BestConversion<number, BestUnits>).quantity;
@@ -49,8 +39,8 @@ function to(this: ConverterThis, unit: Unit | 'best', kind?: Best.Kind | undefin
 			result += converted as number;
 		}
 
-		this[ConverterThisProperties.Search] = splitExpression.exec(this[ConverterThisProperties.Value])!;
-	} while (this[ConverterThisProperties.Search]);
+		this._search = splitExpression.exec(this._value)!;
+	} while (this._search);
 
 	if (isBest) {
 		return convert(result, resolvedUnit! as any).to('best', kind);
@@ -86,8 +76,8 @@ export function convertMany(value: string): Converter<number, Unit> {
 	// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 	return {
 		to: to.bind({
-			[ConverterThisProperties.Search]: search,
-			[ConverterThisProperties.Value]: value,
+			_search: search,
+			_value: value,
 		}),
 	} as Converter<number, Unit>;
 }
