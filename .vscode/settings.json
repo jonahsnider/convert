@@ -1,4 +1,17 @@
 {
+	"[javascript]": {
+		"editor.defaultFormatter": "samverschueren.linter-xo"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "samverschueren.linter-xo"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "samverschueren.linter-xo"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "samverschueren.linter-xo"
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"typescript.preferences.importModuleSpecifierEnding": "js",
 	"typescript.tsdk": "node_modules/typescript/lib"
 }
