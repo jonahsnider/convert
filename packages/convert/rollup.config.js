@@ -35,6 +35,7 @@ const terserConfig = {
 		toplevel: true,
 		properties: {
 			regex: /^_/,
+			reserved: ['__esModule'],
 		},
 	},
 	module: false,
