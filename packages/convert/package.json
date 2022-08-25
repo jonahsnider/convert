@@ -101,7 +101,7 @@
 		"terser": "5.15.0",
 		"typedoc": "0.23.10",
 		"typescript": "4.7.4",
-		"xo": "0.51.0"
+		"xo": "0.52.1"
 	},
 	"packageManager": "yarn@3.2.3",
 	"runkitExampleFilename": "./docs/runkit.js",
