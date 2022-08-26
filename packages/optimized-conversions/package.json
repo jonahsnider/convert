@@ -28,7 +28,7 @@
 		"@tsconfig/node16": "1.0.3",
 		"prettier": "2.7.1",
 		"typescript": "4.8.2",
-		"xo": "0.52.1"
+		"xo": "0.52.2"
 	},
 	"engines": {
 		"node": "16.x"
