@@ -86,7 +86,7 @@
 		"@rollup/plugin-replace": "4.0.0",
 		"@rollup/plugin-typescript": "8.4.0",
 		"@size-limit/preset-small-lib": "8.0.1",
-		"@types/jest": "28.1.8",
+		"@types/jest": "29.0.0",
 		"@types/node": "16.11.56",
 		"babel-jest": "29.0.1",
 		"bundled-conversions": "workspace:*",
