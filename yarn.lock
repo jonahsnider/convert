@@ -2557,10 +2557,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/util@npm:9.0.0":
-  version: 9.0.0
-  resolution: "@jonahsnider/util@npm:9.0.0"
-  checksum: 72c24bd295d6d3bb060335ce515b5e867b40279f1a85bdfbbd9541f86eae1b4e7f330da92453c23c8e51b2e34fb115e926fd92d76c89bdc7162dd8e8b3bcc9d2
+"@jonahsnider/util@npm:9.0.1":
+  version: 9.0.1
+  resolution: "@jonahsnider/util@npm:9.0.1"
+  checksum: ad382d20b3235e629a8c166deddb46856466c3fb6a0e33ef43586f5c3b31428f5136910b8643eaf73281ec2539fd3469c1e0d87c75600e5a22ff00e302edd486
   languageName: node
   linkType: hard
 
@@ -5260,7 +5260,7 @@ __metadata:
     "@babel/preset-env": 7.18.10
     "@babel/preset-typescript": 7.18.6
     "@jonahsnider/prettier-config": 1.1.2
-    "@jonahsnider/util": 9.0.0
+    "@jonahsnider/util": 9.0.1
     "@jonahsnider/xo-config": 5.1.0
     "@microsoft/api-extractor": 7.29.5
     "@rollup/plugin-babel": 5.3.1
@@ -10139,7 +10139,7 @@ __metadata:
   resolution: "optimized-conversions@workspace:packages/optimized-conversions"
   dependencies:
     "@jonahsnider/prettier-config": 1.1.2
-    "@jonahsnider/util": 9.0.0
+    "@jonahsnider/util": 9.0.1
     "@jonahsnider/xo-config": 5.1.0
     "@tsconfig/node16": 1.0.3
     bignumber.js: 9.1.0
