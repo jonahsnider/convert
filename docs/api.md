@@ -10,28 +10,12 @@ export type Angle = GetAliases<_ConversionFamilyId.Angle>;
 // @public
 export type Area = GetAliases<_ConversionFamilyId.Area>;
 
-// @public (undocumented)
-const enum Best {
-    // (undocumented)
-    Sym = 1,
-    // (undocumented)
-    Value = 0
-}
-
-// Warning: (ae-forgotten-export) The symbol "Best" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "Best_2" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "bestUnits" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "Indexes" needs to be exported by the entry point index.d.ts
 //
 // @public
 export type BestUnits<Family extends _ConversionFamilyId = _ConversionFamilyId, Kind extends Best_2.Kind = Best_2.Kind> = typeof bestUnits[Kind][Family][number][Indexes.Best.Sym];
-
-// @public (undocumented)
-const enum Conversion {
-    // (undocumented)
-    Family = 0,
-    // (undocumented)
-    Ratio = 1
-}
 
 // @public
 export const enum _ConversionFamilyId {
@@ -124,9 +108,6 @@ export type Force = GetAliases<_ConversionFamilyId.Force>;
 //
 // @public
 export type GetAliases<T extends _ConversionFamilyId> = FamilyToUnit[T];
-
-// @public (undocumented)
-type Kind = 'metric' | 'imperial';
 
 // @public
 export type Length = GetAliases<_ConversionFamilyId.Length>;
