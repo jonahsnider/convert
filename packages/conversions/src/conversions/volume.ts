@@ -58,7 +58,7 @@ export const volume: ReadonlyDeep<Family> = {
 		// https://en.wikipedia.org/wiki/Quart
 		{names: ['quart', 'quarts', 'US liquid quart', 'US liquid quarts'], symbols: ['qt'], ratio: 9.463_529_46e-4},
 		// https://en.wikipedia.org/wiki/Gallon
-		{names: ['gallon', 'gallons', 'US liquid gallon', 'US liquid gallons'], symbols: ['gal'], ratio: 3.785_411_784e-3},
+		{names: ['gallon', 'gallons', 'US liquid gallon', 'US liquid gallons'], symbols: ['gal'], ratio: 0.003_785_411_784},
 
 		// https://en.wikipedia.org/wiki/United_States_customary_units#Dry_volume
 		// https://en.wikipedia.org/wiki/Dry_measure#US_units_of_dry_measure
