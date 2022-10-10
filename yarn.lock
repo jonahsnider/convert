@@ -3270,19 +3270,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-node-resolve@npm:14.1.0":
-  version: 14.1.0
-  resolution: "@rollup/plugin-node-resolve@npm:14.1.0"
+"@rollup/plugin-node-resolve@npm:15.0.0":
+  version: 15.0.0
+  resolution: "@rollup/plugin-node-resolve@npm:15.0.0"
   dependencies:
-    "@rollup/pluginutils": ^3.1.0
-    "@types/resolve": 1.17.1
+    "@rollup/pluginutils": ^4.2.1
+    "@types/resolve": 1.20.2
     deepmerge: ^4.2.2
-    is-builtin-module: ^3.1.0
+    is-builtin-module: ^3.2.0
     is-module: ^1.0.0
-    resolve: ^1.19.0
+    resolve: ^1.22.1
   peerDependencies:
-    rollup: ^2.78.0
-  checksum: 7c5bed3e5a511ee47172acd91da1a828383f7ef72d54d27d8050598ef9038df0f86a8559db455611e138e07b99d787fd7445b11f81129970d07104644576d80a
+    rollup: ^2.78.0||^3.0.0
+  peerDependenciesMeta:
+    rollup:
+      optional: true
+  checksum: 1be60a90cdb98ffd4cadb9005bc280a768c1eb608ea090e29710052be94118044e85ebccf73c615ef71f6d1201b1d3086f13e314406a3d2e741adf0c808fcaf8
   languageName: node
   linkType: hard
 
@@ -3795,12 +3798,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/resolve@npm:1.17.1":
-  version: 1.17.1
-  resolution: "@types/resolve@npm:1.17.1"
-  dependencies:
-    "@types/node": "*"
-  checksum: dc6a6df507656004e242dcb02c784479deca516d5f4b58a1707e708022b269ae147e1da0521f3e8ad0d63638869d87e0adc023f0bd5454aa6f72ac66c7525cf5
+"@types/resolve@npm:1.20.2":
+  version: 1.20.2
+  resolution: "@types/resolve@npm:1.20.2"
+  checksum: 61c2cad2499ffc8eab36e3b773945d337d848d3ac6b7b0a87c805ba814bc838ef2f262fc0f109bfd8d2e0898ff8bd80ad1025f9ff64f1f71d3d4294c9f14e5f6
   languageName: node
   linkType: hard
 
@@ -4679,6 +4680,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"builtin-modules@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "builtin-modules@npm:3.3.0"
+  checksum: db021755d7ed8be048f25668fe2117620861ef6703ea2c65ed2779c9e3636d5c3b82325bd912244293959ff3ae303afa3471f6a15bf5060c103e4cc3a839749d
+  languageName: node
+  linkType: hard
+
 "builtins@npm:^5.0.0, builtins@npm:^5.0.1":
   version: 5.0.1
   resolution: "builtins@npm:5.0.1"
@@ -5399,7 +5407,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.2.0
     "@microsoft/api-extractor": 7.32.0
     "@rollup/plugin-babel": 6.0.0
-    "@rollup/plugin-node-resolve": 14.1.0
+    "@rollup/plugin-node-resolve": 15.0.0
     "@rollup/plugin-replace": 4.0.0
     "@rollup/plugin-typescript": 8.5.0
     "@size-limit/preset-small-lib": 8.1.0
@@ -7707,6 +7715,15 @@ __metadata:
   dependencies:
     builtin-modules: ^3.0.0
   checksum: f1e5dd2cd5f252d4d799b20a0c8c4f7e9c399c4d141749af76ca0121058d4062c3015d026f1b1409dd3d2a4ddfb9b15cf6eb9c370fed53fea8652ce35b5e95cb
+  languageName: node
+  linkType: hard
+
+"is-builtin-module@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "is-builtin-module@npm:3.2.0"
+  dependencies:
+    builtin-modules: ^3.3.0
+  checksum: 0315751b898feff0646511c896e88b608a755c5025d0ce9a3ad25783de50be870e47dafb838cebbb06fbb2a948b209ea55348eee267836c9dd40d3a11ec717d3
   languageName: node
   linkType: hard
 
@@ -11309,7 +11326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@^1.10.0, resolve@^1.14.2, resolve@^1.17.0, resolve@^1.20.0, resolve@npm:^1.19.0":
+"resolve@^1.10.0, resolve@^1.14.2, resolve@^1.17.0, resolve@^1.20.0":
   version: 1.20.0
   resolution: "resolve@npm:1.20.0"
   dependencies:
@@ -11345,7 +11362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.19.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.20.0#~builtin<compat/resolve>":
   version: 1.20.0
   resolution: "resolve@patch:resolve@npm%3A1.20.0#~builtin<compat/resolve>::version=1.20.0&hash=07638b"
   dependencies:
