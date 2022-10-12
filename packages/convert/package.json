@@ -58,7 +58,7 @@
 		"!dist/{src,test}/"
 	],
 	"scripts": {
-		"build": "rollup --config rollup.config.js && (yarn run validate-api || true)",
+		"build": "rollup --config rollup.config.js --bundleConfigAsCjs && (yarn run validate-api || true)",
 		"docs": "typedoc",
 		"lint": "xo",
 		"release": "semantic-release",
