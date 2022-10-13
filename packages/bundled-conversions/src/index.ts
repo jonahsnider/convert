@@ -157,6 +157,8 @@ export const conversions = {
 	kibibit: [2, 1024],
 	kibibits: [2, 1024],
 	Kib: [2, 1024],
+	Kb: [2, 1000],
+	KB: [2, 8000],
 	petabit: [2, 1000000000000000],
 	petabits: [2, 1000000000000000],
 	Pb: [2, 1000000000000000],
