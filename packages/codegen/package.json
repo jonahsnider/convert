@@ -28,7 +28,7 @@
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/xo-config": "5.2.0",
 		"@tsconfig/node16": "1.0.3",
-		"@types/node": "16.11.65",
+		"@types/node": "16.11.66",
 		"ava": "4.3.3",
 		"c8": "7.12.0",
 		"ts-node": "10.9.1",
