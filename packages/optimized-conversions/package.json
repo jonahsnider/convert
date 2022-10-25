@@ -31,7 +31,7 @@
 		"xo": "0.52.4"
 	},
 	"engines": {
-		"node": "16.x"
+		"node": "18.x"
 	},
 	"packageManager": "yarn@3.2.4"
 }
