@@ -103,7 +103,7 @@
 		"typescript": "4.9.3",
 		"xo": "0.52.4"
 	},
-	"packageManager": "yarn@3.2.4",
+	"packageManager": "yarn@3.3.0",
 	"runkitExampleFilename": "./docs/runkit.js",
 	"size-limit": [
 		{
