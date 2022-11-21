@@ -65,7 +65,15 @@ const config = [
 			typescript({incremental: true}),
 			replace({values: {...flags.prod, ...flags.es3}, preventAssignment: true}),
 			getBabelOutputPlugin({
-				presets: [['@babel/env', {modules: 'umd'}]],
+				presets: [
+					[
+						'@babel/env',
+						{
+							modules: 'umd',
+						},
+					],
+				],
+				filename: 'convert.js',
 			}),
 			terser(terserConfig),
 		],
@@ -85,6 +93,7 @@ const config = [
 			replace({values: {...flags.dev, ...flags.es3}, preventAssignment: true}),
 			getBabelOutputPlugin({
 				presets: [['@babel/env', {modules: 'umd'}]],
+				filename: 'convert.js',
 			}),
 			terser(terserConfig),
 		],
