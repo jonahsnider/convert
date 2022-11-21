@@ -133,7 +133,7 @@ const {convert} = require('convert/dev');
 const {convert} = require('convert/prod');
 ```
 
-#### ES Modules
+#### ES Modules via npm Registry
 
 ```js
 // The production build is the default
@@ -148,7 +148,7 @@ import convert from 'convert/prod';
 
 Pick your favorite CDN:
 
-#### Modules
+#### ES Modules via CDN
 
 ```html
 <script type="module">
