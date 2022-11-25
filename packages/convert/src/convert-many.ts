@@ -14,10 +14,10 @@ const enum MatchGroup {
 
 const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
 
-interface ConverterThis {
+type ConverterThis = {
 	_search: RegExpExecArray;
 	_value: string;
-}
+};
 
 function to(this: ConverterThis, unit: Unit | 'best', kind?: Best.Kind | undefined) {
 	const isBest = unit === 'best';

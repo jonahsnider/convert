@@ -1,5 +1,4 @@
 // The bundler will inline the const enum
-/* eslint-disable import/namespace */
 
 import {KelvinNames} from 'conversions';
 import {bestUnits, conversions, temperatureDifferences} from 'bundled-conversions';
@@ -12,13 +11,13 @@ import {assert, assertType, isType} from './assert.js';
 
 type TemperatureWithDifference = Exclude<keyof typeof temperatureDifferences, '__proto__'>;
 
-interface ConverterThis<Q extends number | bigint, U extends Unit> {
+type ConverterThis<Q extends number | bigint, U extends Unit> = {
 	_quantity: Q;
 	_from: U;
 	_fromUnit: typeof conversions[U];
 	_isUsingBigInts: Q extends bigint ? true : false;
 	_isConvertingTemperature: U extends Temperature ? true : false;
-}
+};
 
 /**
  * Convert a measurement to the best unit for display.
@@ -167,15 +166,15 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
 			case KelvinNames.kelvin:
 			case KelvinNames.kelvins: {
 				if (this._from in temperatureDifferences && isType<TemperatureWithDifference>(this._from)) {
-					return ((this._quantity + temperatureDifferences[this._from as TemperatureWithDifference]) *
-						this._fromUnit[Indexes.Conversion.Ratio]) as unknown as SimplifyQuantity<Q>;
+					return ((this._quantity + temperatureDifferences[this._from]) * this._fromUnit[Indexes.Conversion.Ratio]) as unknown as SimplifyQuantity<Q>;
 				}
 
 				return (this._quantity * this._fromUnit[Indexes.Conversion.Ratio]) as unknown as SimplifyQuantity<Q>;
 			}
 
-			default:
+			default: {
 				break;
+			}
 		}
 
 		switch (this._from) {
@@ -189,8 +188,9 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
 				return (this._quantity / toUnit[Indexes.Conversion.Ratio]) as unknown as SimplifyQuantity<Q>;
 			}
 
-			default:
+			default: {
 				break;
+			}
 		}
 
 		return convert(convert(this._quantity, this._from).to('K'), 'K').to(to) as unknown as SimplifyQuantity<Q>;

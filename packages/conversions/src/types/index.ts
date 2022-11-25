@@ -30,29 +30,29 @@ export const enum Id {
 
 export type Numeric = number | BigNumber;
 
-interface BaseConversion {
+type BaseConversion = {
 	ratio: Numeric;
 	difference?: Numeric | undefined;
-}
+};
 
-interface OnlySymbolConversion extends BaseConversion {
+type OnlySymbolConversion = {
 	names?: undefined;
 	symbols: string[];
-}
+} & BaseConversion;
 
-interface NamedConversion extends BaseConversion {
+type NamedConversion = {
 	names: string[];
 	symbols?: string[] | undefined;
-}
+} & BaseConversion;
 
 export type Conversion = OnlySymbolConversion | NamedConversion;
 
-export interface Family {
+export type Family = {
 	id: Id;
 
 	best: string[] | Record<Best.Kind, string[]>;
 
 	conversions: Conversion[];
-}
+};
 
 export {Best};

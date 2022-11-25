@@ -52,10 +52,10 @@ describe('conversions', () => {
 	});
 
 	describe('convert to best', () => {
-		interface TestCase {
+		type TestCase = {
 			from: [value: string] | [value: string, bestKind: Best.Kind];
 			to: [quantity: number, unit: string];
-		}
+		};
 
 		describe.each<TestCase>([
 			{from: ['500m 3km'], to: [3.5, 'km']},
