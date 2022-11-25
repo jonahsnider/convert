@@ -2,12 +2,12 @@ import BigNumber from 'bignumber.js';
 import type {Numeric, Conversion} from '../index.js';
 import type {UnitGroup} from './types.js';
 
-interface MacroOptions {
+type MacroOptions = {
 	readonly names: readonly string[];
 	readonly symbols: readonly string[];
 	readonly ratio: Numeric;
 	readonly kind?: 'big' | 'small';
-}
+};
 
 export function expandMacro(macro: ReadonlyArray<Readonly<UnitGroup>>, unit: MacroOptions): Conversion[] {
 	return macro.map(unitGroup => ({

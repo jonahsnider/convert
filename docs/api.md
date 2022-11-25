@@ -84,13 +84,10 @@ export { convert }
 export default convert;
 
 // @public
-export interface Converter<Q extends number | bigint, U extends Unit> {
-    // Warning: (ae-forgotten-export) The symbol "SimplifyQuantity" needs to be exported by the entry point index.d.ts
+export type Converter<Q extends number | bigint, U extends Unit> = {
     to(to: U): SimplifyQuantity<Q>;
-    // Warning: (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
-    // Warning: (ae-forgotten-export) The symbol "BestConversion" needs to be exported by the entry point index.d.ts
     to<B extends BestUnits<UnitToFamily[U], K>, K extends Best_2.Kind = Best_2.Kind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
-}
+};
 
 // @public
 export function convertMany(value: string): Converter<number, Unit>;
@@ -138,6 +135,12 @@ export type Unit = GetAliases<_ConversionFamilyId>;
 
 // @public
 export type Volume = GetAliases<_ConversionFamilyId.Volume>;
+
+// Warnings were encountered during analysis:
+//
+// dist/src/types/common.d.ts:40:5 - (ae-forgotten-export) The symbol "SimplifyQuantity" needs to be exported by the entry point index.d.ts
+// dist/src/types/common.d.ts:49:5 - (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
+// dist/src/types/common.d.ts:49:5 - (ae-forgotten-export) The symbol "BestConversion" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 

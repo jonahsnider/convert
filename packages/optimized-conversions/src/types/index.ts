@@ -11,8 +11,8 @@ type Conversion = [family: number, ratio: number];
 /** Values to use as offsets for converting temperatures to kelvin. */
 type TemperatureDifferences = Record<string, number>;
 
-export interface Optimized {
+export type Optimized = {
 	conversions: Record<string, Conversion>;
 	best: Best;
 	temperatureDifferences: TemperatureDifferences;
-}
+};

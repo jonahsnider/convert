@@ -93,7 +93,7 @@
 		"conversions": "workspace:*",
 		"jest": "29.3.1",
 		"optimized-conversions": "workspace:*",
-		"prettier": "2.7.1",
+		"prettier": "2.8.0",
 		"rollup": "3.4.0",
 		"rollup-plugin-terser": "7.0.2",
 		"semantic-release": "19.0.5",
@@ -101,7 +101,7 @@
 		"terser": "5.16.0",
 		"typedoc": "0.23.21",
 		"typescript": "4.9.3",
-		"xo": "0.52.4"
+		"xo": "0.53.1"
 	},
 	"packageManager": "yarn@3.3.0",
 	"runkitExampleFilename": "./docs/runkit.js",
