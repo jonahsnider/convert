@@ -10,6 +10,13 @@ export type Angle = GetAliases<_ConversionFamilyId.Angle>;
 // @public
 export type Area = GetAliases<_ConversionFamilyId.Area>;
 
+// @public
+export type _BestConversion<Q extends number | bigint, U extends BestUnits> = {
+    quantity: SimplifyQuantity<Q>;
+    unit: U;
+    toString(toFixed?: number): `${SimplifyQuantity<Q>}${U}`;
+};
+
 // Warning: (ae-forgotten-export) The symbol "Best_2" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "bestUnits" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "Indexes" needs to be exported by the entry point index.d.ts
@@ -86,7 +93,7 @@ export default convert;
 // @public
 export type Converter<Q extends number | bigint, U extends Unit> = {
     to(to: U): SimplifyQuantity<Q>;
-    to<B extends BestUnits<UnitToFamily[U], K>, K extends Best_2.Kind = Best_2.Kind>(to: 'best', kind?: K | undefined): BestConversion<Q, B>;
+    to<B extends BestUnits<UnitToFamily[U], K>, K extends Best_2.Kind = Best_2.Kind>(to: 'best', kind?: K | undefined): _BestConversion<Q, B>;
 };
 
 // @public
@@ -138,9 +145,8 @@ export type Volume = GetAliases<_ConversionFamilyId.Volume>;
 
 // Warnings were encountered during analysis:
 //
-// dist/src/types/common.d.ts:40:5 - (ae-forgotten-export) The symbol "SimplifyQuantity" needs to be exported by the entry point index.d.ts
-// dist/src/types/common.d.ts:49:5 - (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
-// dist/src/types/common.d.ts:49:5 - (ae-forgotten-export) The symbol "BestConversion" needs to be exported by the entry point index.d.ts
+// dist/src/types/common.d.ts:20:5 - (ae-forgotten-export) The symbol "SimplifyQuantity" needs to be exported by the entry point index.d.ts
+// dist/src/types/common.d.ts:56:5 - (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 

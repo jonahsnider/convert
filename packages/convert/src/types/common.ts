@@ -18,6 +18,7 @@ export type BestUnits<
 
 /**
  * The return value from converting a unit to `'best'`.
+ * @public
  */
 export type BestConversion<Q extends number | bigint, U extends BestUnits> = {
 	/**
@@ -29,8 +30,14 @@ export type BestConversion<Q extends number | bigint, U extends BestUnits> = {
 	/**
 	 * Join the quantity and the unit together in a string.
 	 * This method is automatically called when casting this object to a string, meaning you can safely do things like concatenate the object with a string.
+	 *
+	 * @param toFixed - The number of decimal places to include in the string.
+	 * The result will be padded with zeros if necessary.
+	 * Providing `undefined` will use the original number of decimal places.
+	 * Providing `0` will round the number to the nearest integer.
+	 * This option is ignored when converting `bigint`s.
 	 */
-	toString(): `${SimplifyQuantity<Q>}${U}`;
+	toString(toFixed?: number): `${SimplifyQuantity<Q>}${U}`;
 };
 
 /**

@@ -163,3 +163,32 @@ describe('precision loss from converting to best', () => {
 		expect(result.toString()).toBe(`${1.5 + Number.EPSILON}d`);
 	});
 });
+
+describe('converting to best with rounding', () => {
+	describe('works when removing decimal places', () => {
+		testWithBuilds(mod => {
+			expect(mod.convert(123_456, 'm').to('best').toString(2)).toBe('123.46km');
+			expect(mod.convert(123_456, 'm').to('best').toString(0)).toBe('123km');
+			expect(mod.convert(1000, 'micrometer').to('best').toString(1)).toBe('1.0mm');
+			expect(mod.convert(1000, 'micrometer').to('best').toString(0)).toBe('1mm');
+		});
+	});
+
+	describe('works when adding decimal places', () => {
+		testWithBuilds(mod => {
+			expect(mod.convert(1000, 'm').to('best').toString(4)).toBe('1.0000km');
+			expect(mod.convert(1000, 'm').to('best').toString(0)).toBe('1km');
+			expect(mod.convert(1000, 'micrometer').to('best').toString(4)).toBe('1.0000mm');
+			expect(mod.convert(1000, 'micrometer').to('best').toString(0)).toBe('1mm');
+		});
+	});
+
+	describe('does nothing when omitted', () => {
+		testWithBuilds(mod => {
+			expect(mod.convert(123_456, 'm').to('best').toString()).toBe('123.45599999999999km');
+			expect(mod.convert(123_456, 'm').to('best').toString(undefined)).toBe('123.45599999999999km');
+			expect(mod.convert(1000, 'micrometer').to('best').toString()).toBe('1mm');
+			expect(mod.convert(1000, 'micrometer').to('best').toString(undefined)).toBe('1mm');
+		});
+	});
+});

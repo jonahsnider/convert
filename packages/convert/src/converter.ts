@@ -86,8 +86,12 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
 		return {
 			quantity,
 			unit: bestUnit,
-			// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
-			toString: () => (quantity + bestUnit) as `${SimplifyQuantity<Q>}${BestUnits<UnitToFamily[U], K>}`,
+			toString: this._isUsingBigInts
+				? // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+				  () => ((quantity as bigint) + bestUnit) as `${SimplifyQuantity<Q>}${BestUnits<UnitToFamily[U], K>}`
+				: (toFixed?: number) =>
+						// eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+						((toFixed === undefined ? quantity : (quantity as number).toFixed(toFixed)) + bestUnit) as `${SimplifyQuantity<Q>}${BestUnits<UnitToFamily[U], K>}`,
 		};
 	}
 
