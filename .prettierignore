@@ -248,6 +248,7 @@ $RECYCLE.BIN/
 
 # Rollup
 .rollup.cache
+rollup.config-*.cjs
 
 # TypeDoc
 docs_out
