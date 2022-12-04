@@ -19,7 +19,7 @@
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
 		"@jonahsnider/util": "9.0.1",
-		"bignumber.js": "9.1.0",
+		"bignumber.js": "9.1.1",
 		"conversions": "workspace:*"
 	},
 	"devDependencies": {
