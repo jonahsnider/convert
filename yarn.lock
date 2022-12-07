@@ -4628,7 +4628,7 @@ __metadata:
   resolution: "base@workspace:."
   dependencies:
     "@jonahsnider/prettier-config": 1.1.2
-    prettier: 2.8.0
+    prettier: 2.8.1
     turbo: 1.6.3
   languageName: unknown
   linkType: soft
@@ -4799,7 +4799,7 @@ __metadata:
     codegen: "workspace:*"
     conversions: "workspace:*"
     optimized-conversions: "workspace:*"
-    prettier: 2.8.0
+    prettier: 2.8.1
     ts-node: 10.9.1
     typescript: 4.9.3
     xo: 0.53.1
@@ -5270,7 +5270,7 @@ __metadata:
     ava: 5.1.0
     c8: 7.12.0
     optimized-conversions: "workspace:*"
-    prettier: 2.8.0
+    prettier: 2.8.1
     ts-node: 10.9.1
     typescript: 4.9.3
     xo: 0.53.1
@@ -5480,7 +5480,7 @@ __metadata:
     "@jonahsnider/xo-config": 5.3.0
     "@tsconfig/node16": 1.0.3
     bignumber.js: 9.1.1
-    prettier: 2.8.0
+    prettier: 2.8.1
     type-fest: 3.3.0
     typescript: 4.9.3
     xo: 0.53.1
@@ -5533,7 +5533,7 @@ __metadata:
     conversions: "workspace:*"
     jest: 29.3.1
     optimized-conversions: "workspace:*"
-    prettier: 2.8.0
+    prettier: 2.8.1
     rollup: 3.6.0
     rollup-plugin-terser: 7.0.2
     semantic-release: 19.0.5
@@ -10525,7 +10525,7 @@ __metadata:
     "@tsconfig/node16": 1.0.3
     bignumber.js: 9.1.1
     conversions: "workspace:*"
-    prettier: 2.8.0
+    prettier: 2.8.1
     typescript: 4.9.3
     xo: 0.53.1
   languageName: unknown
@@ -10978,7 +10978,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.0, prettier@npm:^2.7.1":
+"prettier@npm:2.8.1":
+  version: 2.8.1
+  resolution: "prettier@npm:2.8.1"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 4f21a0f1269f76fb36f54e9a8a1ea4c11e27478958bf860661fb4b6d7ac69aac1581f8724fa98ea3585e56d42a2ea317a17ff6e3324f40cb11ff9e20b73785cc
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^2.7.1":
   version: 2.8.0
   resolution: "prettier@npm:2.8.0"
   bin:
