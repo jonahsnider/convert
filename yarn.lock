@@ -4801,7 +4801,7 @@ __metadata:
     optimized-conversions: "workspace:*"
     prettier: 2.8.1
     ts-node: 10.9.1
-    typescript: 4.9.3
+    typescript: 4.9.4
     xo: 0.53.1
   languageName: unknown
   linkType: soft
@@ -5272,7 +5272,7 @@ __metadata:
     optimized-conversions: "workspace:*"
     prettier: 2.8.1
     ts-node: 10.9.1
-    typescript: 4.9.3
+    typescript: 4.9.4
     xo: 0.53.1
   languageName: unknown
   linkType: soft
@@ -5482,7 +5482,7 @@ __metadata:
     bignumber.js: 9.1.1
     prettier: 2.8.1
     type-fest: 3.3.0
-    typescript: 4.9.3
+    typescript: 4.9.4
     xo: 0.53.1
   languageName: unknown
   linkType: soft
@@ -5540,7 +5540,7 @@ __metadata:
     size-limit: 8.1.0
     terser: 5.16.1
     typedoc: 0.23.21
-    typescript: 4.9.3
+    typescript: 4.9.4
     xo: 0.53.1
   languageName: unknown
   linkType: soft
@@ -10526,7 +10526,7 @@ __metadata:
     bignumber.js: 9.1.1
     conversions: "workspace:*"
     prettier: 2.8.1
-    typescript: 4.9.3
+    typescript: 4.9.4
     xo: 0.53.1
   languageName: unknown
   linkType: soft
@@ -12938,7 +12938,17 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.9.3, typescript@npm:^4.9.3":
+"typescript@npm:4.9.4":
+  version: 4.9.4
+  resolution: "typescript@npm:4.9.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: e782fb9e0031cb258a80000f6c13530288c6d63f1177ed43f770533fdc15740d271554cdae86701c1dd2c83b082cea808b07e97fd68b38a172a83dbf9e0d0ef9
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^4.9.3":
   version: 4.9.3
   resolution: "typescript@npm:4.9.3"
   bin:
@@ -12958,7 +12968,17 @@ resolve@~1.19.0:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.9.3#~builtin<compat/typescript>, typescript@patch:typescript@^4.9.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.9.4#~builtin<compat/typescript>":
+  version: 4.9.4
+  resolution: "typescript@patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 37f6e2c3c5e2aa5934b85b0fddbf32eeac8b1bacf3a5b51d01946936d03f5377fe86255d4e5a4ae628fd0cd553386355ad362c57f13b4635064400f3e8e05b9d
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.9.3#~builtin<compat/typescript>":
   version: 4.9.3
   resolution: "typescript@patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=d73830"
   bin:
