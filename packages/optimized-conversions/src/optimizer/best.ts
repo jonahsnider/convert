@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {combineIterables, Sort} from '@jonahsnider/util';
+import {concatIterables, Sort} from '@jonahsnider/util';
 import type * as Conversions from 'conversions';
 import BigNumber from 'bignumber.js';
 import type {Optimized} from '../types/index.js';
@@ -24,7 +24,7 @@ export function optimizeBest(conversionFamilies: ReadonlyArray<Readonly<Conversi
 			for (const [name, conversion] of Object.entries(conversionFamily.conversions)) {
 				lookup[name] = new BigNumber(conversion.ratio);
 
-				const names: Iterable<string> = combineIterables(conversion.names ?? [], conversion.symbols ?? []);
+				const names: Iterable<string> = concatIterables(conversion.names ?? [], conversion.symbols ?? []);
 				for (const generatedName of names) {
 					lookup[generatedName] = new BigNumber(conversion.ratio);
 				}
