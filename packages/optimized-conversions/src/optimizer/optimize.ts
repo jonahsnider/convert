@@ -1,4 +1,4 @@
-import {combineIterables, identical} from '@jonahsnider/util';
+import {concatIterables, identical} from '@jonahsnider/util';
 import * as Conversions from 'conversions';
 import BigNumber from 'bignumber.js';
 
@@ -17,7 +17,7 @@ export function optimize(conversionFamilies: ReadonlyArray<Readonly<Conversions.
 
 	for (const conversionFamily of conversionFamilies) {
 		for (const conversion of conversionFamily.conversions) {
-			const names: Iterable<string> = combineIterables(conversion.names ?? [], conversion.symbols ?? []);
+			const names: Iterable<string> = concatIterables(conversion.names ?? [], conversion.symbols ?? []);
 
 			for (const name of names) {
 				const newConversion: Optimized['conversions'][string] = [conversionFamily.id, new BigNumber(conversion.ratio).toNumber()];
