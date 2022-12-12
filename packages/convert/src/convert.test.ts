@@ -141,7 +141,7 @@ describe('roundtrip conversion', () => {
 
 			if (difference !== 0) {
 				// Not sure exactly why this value keeps showing up
-				expect(difference).toBe(Number.EPSILON * 64);
+				expect(difference).toBeCloseTo(0, 13);
 			}
 		});
 	});
