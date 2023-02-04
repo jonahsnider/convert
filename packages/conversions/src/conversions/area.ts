@@ -23,9 +23,9 @@ export const area: ReadonlyDeep<Family> = {
 		{names: ['decare', 'decares'], symbols: ['daa'], ratio: 1e3},
 		{names: ['hectare', 'hectares'], symbols: ['ha'], ratio: 1e4},
 
-		{names: ['square foot', 'square feet'], symbols: ['sq ft'], ratio: 9.290_304e-2},
-		{names: ['square inch', 'square inches'], symbols: ['sq in'], ratio: 6.4516e-4},
-		{names: ['square yard', 'square yards'], symbols: ['sq yd'], ratio: 0.836_127_36},
-		{names: ['square mile', 'square miles'], symbols: ['sq mi'], ratio: 2.589_988_110_336e6},
+		{names: ['square foot', 'square feet'], symbols: ['sq ft', 'ft²', 'ft2'], ratio: 9.290_304e-2},
+		{names: ['square inch', 'square inches'], symbols: ['sq in', 'in²', 'in2'], ratio: 6.4516e-4},
+		{names: ['square yard', 'square yards'], symbols: ['sq yd', 'yd²', 'yd2'], ratio: 0.836_127_36},
+		{names: ['square mile', 'square miles'], symbols: ['sq mi', 'mi²', 'mi2'], ratio: 2.589_988_110_336e6},
 	],
 };
