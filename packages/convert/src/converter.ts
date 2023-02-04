@@ -14,7 +14,7 @@ type TemperatureWithDifference = Exclude<keyof typeof temperatureDifferences, '_
 type ConverterThis<Q extends number | bigint, U extends Unit> = {
 	_quantity: Q;
 	_from: U;
-	_fromUnit: typeof conversions[U];
+	_fromUnit: (typeof conversions)[U];
 	_isUsingBigInts: Q extends bigint ? true : false;
 	_isConvertingTemperature: U extends Temperature ? true : false;
 };
@@ -71,7 +71,7 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
 		let quantity = convert(this._quantity, this._from as any).to(baseUnit as any) as unknown as SimplifyQuantity<Q>;
 		const absQuantity = quantity < 0 ? -quantity : quantity;
 
-		let bestUnit: typeof family[number][Indexes.Best.Sym] = baseUnit;
+		let bestUnit: (typeof family)[number][Indexes.Best.Sym] = baseUnit;
 
 		// eslint-disable-next-line unicorn/no-for-loop, @typescript-eslint/prefer-for-of
 		for (let i = 0; i < family.length; i++) {
@@ -95,7 +95,7 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
 		};
 	}
 
-	const toUnit = conversions[to] as typeof conversions[keyof typeof conversions] | undefined;
+	const toUnit = conversions[to] as (typeof conversions)[keyof typeof conversions] | undefined;
 
 	if (__DEV__) {
 		if (!toUnit) {

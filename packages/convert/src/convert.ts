@@ -161,7 +161,7 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 		throw new TypeError();
 	}
 
-	const fromUnit = conversions[from] as typeof conversions[keyof typeof conversions] | undefined;
+	const fromUnit = conversions[from] as (typeof conversions)[keyof typeof conversions] | undefined;
 
 	if (!fromUnit) {
 		if (__DEV__) {
