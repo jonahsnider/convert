@@ -4287,7 +4287,7 @@ __metadata:
     "@tsconfig/node16": 1.0.3
     bignumber.js: 9.1.1
     prettier: 2.8.3
-    type-fest: 3.5.4
+    type-fest: 3.5.5
     typescript: 4.9.5
     xo: 0.53.1
   languageName: unknown
@@ -10942,10 +10942,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:3.5.4, type-fest@npm:^3.1.0":
-  version: 3.5.4
-  resolution: "type-fest@npm:3.5.4"
-  checksum: e2250c8afc80c61126bb484bce767e6bf1bf831af9351bfed1b18f2150be45315b5c1c4fd185691572c348c3a929deda7371fd52adb38b301ef6ef9566776118
+"type-fest@npm:3.5.5":
+  version: 3.5.5
+  resolution: "type-fest@npm:3.5.5"
+  checksum: 69a046151b16e8a76bd8170b0779bf237be86705cbe6690500a950ddd92a1d8e671ad640e46b4197505bfc74a12181c950535ad2f74106c3c78dd9bb79f4a66a
   languageName: node
   linkType: hard
 
@@ -11009,6 +11009,13 @@ __metadata:
   version: 2.19.0
   resolution: "type-fest@npm:2.19.0"
   checksum: a4ef07ece297c9fba78fc1bd6d85dff4472fe043ede98bd4710d2615d15776902b595abf62bd78339ed6278f021235fb28a96361f8be86ed754f778973a0d278
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^3.1.0":
+  version: 3.5.4
+  resolution: "type-fest@npm:3.5.4"
+  checksum: e2250c8afc80c61126bb484bce767e6bf1bf831af9351bfed1b18f2150be45315b5c1c4fd185691572c348c3a929deda7371fd52adb38b301ef6ef9566776118
   languageName: node
   linkType: hard
 
