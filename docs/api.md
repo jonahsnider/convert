@@ -22,7 +22,7 @@ export type _BestConversion<Q extends number | bigint, U extends BestUnits> = {
 // Warning: (ae-forgotten-export) The symbol "Indexes" needs to be exported by the entry point index.d.ts
 //
 // @public
-export type BestUnits<Family extends _ConversionFamilyId = _ConversionFamilyId, Kind extends Best_2.Kind = Best_2.Kind> = typeof bestUnits[Kind][Family][number][Indexes.Best.Sym];
+export type BestUnits<Family extends _ConversionFamilyId = _ConversionFamilyId, Kind extends Best_2.Kind = Best_2.Kind> = (typeof bestUnits)[Kind][Family][number][Indexes.Best.Sym];
 
 // @public
 export const enum _ConversionFamilyId {

@@ -14,7 +14,7 @@ export type SimplifyQuantity<Q> = Q extends number ? number : Q extends bigint ?
 export type BestUnits<
 	Family extends ConversionFamilyId = ConversionFamilyId,
 	Kind extends Best.Kind = Best.Kind,
-> = typeof bestUnits[Kind][Family][number][Indexes.Best.Sym];
+> = (typeof bestUnits)[Kind][Family][number][Indexes.Best.Sym];
 
 /**
  * The return value from converting a unit to `'best'`.
