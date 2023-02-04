@@ -31,7 +31,7 @@ export const volume: ReadonlyDeep<Family> = {
 		// https://en.wikipedia.org/wiki/Cubic_yard
 		{names: ['cubic yard', 'cubic yards'], symbols: ['cu yd', 'yd3', 'yd³'], ratio: 0.76},
 		// https://en.wikipedia.org/wiki/Cubic_foot
-		{names: ['cubic foot', 'cubic feet'], symbols: ['cu ft', 'ft3', 'ft³'], ratio: 0.028},
+		{names: ['cubic foot', 'cubic feet'], symbols: ['cu ft', 'ft3', 'ft³'], ratio: 0.028_316_846_592},
 		{names: ['board foot', 'board feet'], ratio: 0.002_359_737},
 		// https://en.wikipedia.org/wiki/Cubic_inch
 		{names: ['cubic inch', 'cubic inches'], symbols: ['cu in', 'in3', 'in³'], ratio: 0.000_016_387_064},
