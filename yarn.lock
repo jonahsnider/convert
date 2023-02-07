@@ -2853,10 +2853,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.11.19":
-  version: 18.11.19
-  resolution: "@types/node@npm:18.11.19"
-  checksum: d7cd19fcfc59cbdd3f9ba0b4072cb7adc21bd575bd8eb7d7e698975e63564aaa83f03434f32b12331f84f73d0b369d9cbe2371e359d9d7f5c3361f4987f4f7da
+"@types/node@npm:18.13.0":
+  version: 18.13.0
+  resolution: "@types/node@npm:18.13.0"
+  checksum: 4ea10f8802848b01672bce938f678b6774ca2cee0c9774f12275ab064ae07818419c3e2e41d6257ce7ba846d1ea26c63214aa1dfa4166fa3746291752b8c6416
   languageName: node
   linkType: hard
 
@@ -3705,7 +3705,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.3.0
     "@tsconfig/node16": 1.0.3
-    "@types/node": 18.11.19
+    "@types/node": 18.13.0
     ava: 5.2.0
     c8: 7.12.0
     codegen: "workspace:*"
@@ -4093,7 +4093,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.3.0
     "@tsconfig/node16": 1.0.3
-    "@types/node": 18.11.19
+    "@types/node": 18.13.0
     "@types/prettier": 2.7.2
     ava: 5.2.0
     c8: 7.12.0
@@ -4370,7 +4370,7 @@ __metadata:
     "@rollup/plugin-typescript": 11.0.0
     "@size-limit/preset-small-lib": 8.1.2
     "@types/jest": 29.4.0
-    "@types/node": 18.11.19
+    "@types/node": 18.13.0
     babel-jest: 29.4.2
     bundled-conversions: "workspace:*"
     conversions: "workspace:*"
