@@ -52,7 +52,9 @@ export const volume: ReadonlyDeep<Family> = {
 		// https://en.wikipedia.org/wiki/Fluid_ounce
 		{names: ['US fluid ounce', 'US fluid ounces'], symbols: ['fl oz', 'fl. oz.', 'oz. fl.'], ratio: 29.573_529_562_5e-6},
 		// https://en.wikipedia.org/wiki/Cup_(unit)
-		{names: ['cup', 'cups', 'US legal cup', 'US legal cups'], symbols: ['c'], ratio: 236.588_236_5e-6},
+		{names: ['cup', 'cups'], symbols: ['c'], ratio: 236.588_236_5e-6},
+		// https://en.wikipedia.org/wiki/Cup_(unit)#Legal_cup
+		{names: ['US legal cup', 'US legal cups'], symbols: ['US lc'], ratio: 240e-6},
 		// https://en.wikipedia.org/wiki/Pint
 		{names: ['pint', 'pints', 'US liquid pint', 'US liquid pints'], symbols: ['pt', 'p'], ratio: 4.731_764_73e-4},
 		// https://en.wikipedia.org/wiki/Quart
