@@ -19,6 +19,8 @@ export const length: ReadonlyDeep<Family> = {
 		{names: ['mile', 'miles'], symbols: ['mi'], ratio: 1609.344},
 		{names: ['nautical mile', 'nautical miles'], symbols: ['M', 'NM', 'nmi'], ratio: 1852},
 
+		{names: ['light-year', 'light-years'], symbols: ['ly'], ratio: 9_460_730_472_580_800},
+
 		// https://en.wikipedia.org/wiki/Pica_(typography)
 		// The p symbol can't be used as it conflicts with pints
 		{names: ['pica', 'picas'], symbols: ['pc'], ratio: 4.2333e-3},
