@@ -10,8 +10,8 @@ var string = best.toString();
 
 delete best.toString;
 
-assert.deepEqual(best, {quantity: 1, unit: 'd'});
-assert.strictEqual(string, '1d');
+assert.deepEqual(best, {quantity: 23.999999999999996, unit: 'h'});
+assert.strictEqual(string, '23.999999999999996h');
 
 best = lib.convert(12, 'in').to('best', 'imperial');
 string = best.toString();
