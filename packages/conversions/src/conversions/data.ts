@@ -5,7 +5,7 @@ import {Id} from '../types/index.js';
 
 export const data: ReadonlyDeep<Family> = {
 	id: Id.Data,
-	best: ['bits', 'B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB'],
+	best: {metric: ['bits', 'B', 'KB', 'MB', 'GB', 'TB', 'PB'], imperial: ['bits', 'B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB']},
 	/**
 	 * @see https://en.wikipedia.org/wiki/Orders_of_magnitude_(data) Source
 	 */
