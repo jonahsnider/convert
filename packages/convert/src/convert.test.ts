@@ -155,12 +155,13 @@ describe('precision loss from converting to best', () => {
 
 		expect(result.unit).toBe('d');
 
-		// TODO: Fix this
-		expect(result.quantity).not.toBe(1.5);
-		expect(result.toString()).not.toBe('1.5d');
+		// Note: this used to not return 1.5, but after changing the smallest best unit from ns to fs it fixed itself
+		// This is because of arithmetic precision limitations for 64-bit floats, which are used to represent the ratio used for seconds (3.1536e+22)
+		expect(result.quantity).toBe(1.5);
+		expect(result.toString()).toBe('1.5d');
 
-		expect(result.quantity).toBe(1.5 + Number.EPSILON);
-		expect(result.toString()).toBe(`${1.5 + Number.EPSILON}d`);
+		expect(result.quantity).toBe(1.5);
+		expect(result.toString()).toBe(`${1.5}d`);
 	});
 });
 
