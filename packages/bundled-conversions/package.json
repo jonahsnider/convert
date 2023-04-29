@@ -23,7 +23,7 @@
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/xo-config": "5.3.0",
 		"@tsconfig/node16": "1.0.3",
-		"@types/node": "18.16.2",
+		"@types/node": "18.16.3",
 		"ava": "5.2.0",
 		"c8": "7.13.0",
 		"codegen": "workspace:*",
