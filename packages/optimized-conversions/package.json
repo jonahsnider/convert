@@ -26,9 +26,9 @@
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/xo-config": "5.3.0",
 		"@tsconfig/node16": "1.0.4",
-		"prettier": "2.8.7",
-		"typescript": "5.0.3",
-		"xo": "0.53.1"
+		"prettier": "2.8.8",
+		"typescript": "5.0.4",
+		"xo": "0.54.2"
 	},
 	"engines": {
 		"node": "18.x"
