@@ -17,7 +17,9 @@ export const mass: ReadonlyDeep<Family> = {
 		...expandMacro(Macros.si, {names: ['gram', 'grams'], symbols: ['g'], ratio: 1}),
 
 		{names: ['tonne', 'tonnes', 'metric ton', 'metric tons'], symbols: ['t'], ratio: 1e6},
-		...expandMacro(Macros.si, {names: ['gram', 'grams'], symbols: ['g'], ratio: 1}),
+		{names: ['kilotonne', 'kilotonnes'], symbols: ['kt'], ratio: 1e9},
+		{names: ['megatonne', 'megatonnes'], symbols: ['Mt'], ratio: 1e12},
+		{names: ['gigatonne', 'gigatonnes'], symbols: ['Gt'], ratio: 1e15},
 
 		{names: ['pound', 'pounds'], symbols: ['lb'], ratio: poundInGrams},
 		{names: ['stone', 'stones'], symbols: ['st'], ratio: poundInGrams.times(14)},
