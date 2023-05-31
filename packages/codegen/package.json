@@ -20,7 +20,7 @@
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"dependencies": {
-		"@types/prettier": "2.7.2",
+		"@types/prettier": "2.7.3",
 		"optimized-conversions": "workspace:*",
 		"prettier": "2.8.7"
 	},
