@@ -4852,7 +4852,7 @@ __metadata:
     jest: 29.5.0
     optimized-conversions: "workspace:*"
     prettier: 2.8.7
-    rollup: 3.25.0
+    rollup: 3.25.1
     rollup-plugin-terser: 7.0.2
     semantic-release: 21.0.5
     size-limit: 8.2.4
@@ -10651,9 +10651,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:3.25.0":
-  version: 3.25.0
-  resolution: "rollup@npm:3.25.0"
+"rollup@npm:3.25.1":
+  version: 3.25.1
+  resolution: "rollup@npm:3.25.1"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -10661,7 +10661,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: 66c0fb4fcdb74bdbf7ed372f293164d351ed8ea1a2ed99af7953544d7acd4708b8d6c9e58fcb226adfbc77aa4c6b73c866c8d10f52e3608096b82c0b27e22907
+  checksum: f483b28a0605097a725b080c088262b0fa21f7bce66f741df73d9ff0be6a3baaf2927916b094ce95412f4f15cc59bb5eae020f59cae3d3a6993d123faceb5b41
   languageName: node
   linkType: hard
 
