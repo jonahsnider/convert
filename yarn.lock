@@ -4856,7 +4856,7 @@ __metadata:
     rollup-plugin-terser: 7.0.2
     semantic-release: 21.0.5
     size-limit: 8.2.4
-    terser: 5.18.0
+    terser: 5.18.1
     typedoc: 0.24.8
     typescript: 5.0.3
     xo: 0.53.1
@@ -11381,9 +11381,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser@npm:5.18.0":
-  version: 5.18.0
-  resolution: "terser@npm:5.18.0"
+"terser@npm:5.18.1":
+  version: 5.18.1
+  resolution: "terser@npm:5.18.1"
   dependencies:
     "@jridgewell/source-map": ^0.3.3
     acorn: ^8.8.2
@@ -11391,7 +11391,7 @@ __metadata:
     source-map-support: ~0.5.20
   bin:
     terser: bin/terser
-  checksum: d01eb9805a978b3338b68fd2d9e35c1cd4cad78ea093dc92c7b3c38965232f0af0f95e0c6d90920ecf600a74135c608aebae26302c036c01393a590e1918bb90
+  checksum: 15d1af05aae451ce844f7dc3627db09ec79f842fa9a3cf2b40221a639249d70fcd91fd3baa9c970842d75e1dd2fb957eb1afd8a0fcfc9b2a3296076a4e72528a
   languageName: node
   linkType: hard
 
