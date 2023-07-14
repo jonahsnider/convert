@@ -35,14 +35,17 @@
 	"exports": {
 		".": {
 			"import": "./dist/convert.prod.mjs",
+			"types": "./dist/index.d.ts",
 			"require": "./dist/index.js"
 		},
 		"./dev": {
 			"import": "./dist/convert.dev.mjs",
+      "types": "./dist/index.d.ts",
 			"require": "./dist/convert.dev.js"
 		},
 		"./prod": {
 			"import": "./dist/convert.prod.mjs",
+      "types": "./dist/index.d.ts",
 			"require": "./dist/convert.prod.js"
 		}
 	},
