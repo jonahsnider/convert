@@ -73,6 +73,9 @@ jobs:
 
     needs: [build-and-test, legacy-test]
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v3
