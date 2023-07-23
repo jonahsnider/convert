@@ -34,18 +34,18 @@
 	"type": "commonjs",
 	"exports": {
 		".": {
-			"import": "./dist/convert.prod.mjs",
 			"types": "./dist/index.d.ts",
+			"import": "./dist/convert.prod.mjs",
 			"require": "./dist/index.js"
 		},
 		"./dev": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/convert.dev.mjs",
-      "types": "./dist/index.d.ts",
 			"require": "./dist/convert.dev.js"
 		},
 		"./prod": {
+			"types": "./dist/index.d.ts",
 			"import": "./dist/convert.prod.mjs",
-      "types": "./dist/index.d.ts",
 			"require": "./dist/convert.prod.js"
 		}
 	},
