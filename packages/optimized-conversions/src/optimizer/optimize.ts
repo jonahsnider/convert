@@ -1,7 +1,6 @@
 import {concatIterables, identical} from '@jonahsnider/util';
 import * as Conversions from 'conversions';
 import BigNumber from 'bignumber.js';
-
 import type {Optimized} from '../types/index.js';
 import {optimizeBest} from './best.js';
 

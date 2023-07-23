@@ -27,7 +27,9 @@ function to(this: ConverterThis, unit: Unit | 'best', kind?: Best.Kind | undefin
 	let isFirstPass = true;
 
 	do {
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 		const converted = convert(Number(this._search[MatchGroup.Quantity]), this._search[MatchGroup.Unit] as any).to(
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 			isBest && !isFirstPass ? (resolvedUnit! as any) : (unit as any),
 		) as number | BestConversion<number, BestUnits>;
 
@@ -43,6 +45,7 @@ function to(this: ConverterThis, unit: Unit | 'best', kind?: Best.Kind | undefin
 	} while (this._search);
 
 	if (isBest) {
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 		return convert(result, resolvedUnit! as any).to('best', kind);
 	}
 

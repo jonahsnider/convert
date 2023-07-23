@@ -68,6 +68,7 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
 
 		const baseUnit = family[0][Indexes.Best.Sym];
 
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 		let quantity = convert(this._quantity, this._from as any).to(baseUnit as any) as unknown as SimplifyQuantity<Q>;
 		const absQuantity = quantity < 0 ? -quantity : quantity;
 
@@ -81,6 +82,7 @@ export function to<Q extends number | bigint, U extends Unit, K extends Conversi
 			}
 		}
 
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 		quantity = convert(quantity, baseUnit as any).to(bestUnit as any) as unknown as SimplifyQuantity<Q>;
 
 		return {

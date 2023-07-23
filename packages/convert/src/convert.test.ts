@@ -25,6 +25,7 @@ describe('errors', () => {
 			expect(() => prod.convert('123' as any, 'meters')).toThrow(new TypeError(''));
 		});
 
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 		expect(() => prod.convert(123, invalidUnit as any)).toThrow(new RangeError(''));
 
 		expect(() =>
@@ -61,6 +62,7 @@ describe('errors', () => {
 			// Quantity type
 			{fn: () => dev.convert('123' as any, 'meters'), error: TypeError},
 
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 			{fn: () => dev.convert(123, invalidUnit as any), error: RangeError},
 			{
 				fn: () =>
@@ -134,7 +136,9 @@ describe('roundtrip conversion', () => {
 
 			const value = 123;
 
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 			const aToB = prod.convert(value, baseUnit as any).to(unit as any) as unknown as number;
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 			const bToA = prod.convert(aToB, unit as any).to(baseUnit as any) as unknown as number;
 
 			const difference = stddev([value, bToA]);

@@ -68,6 +68,7 @@ describe('__proto__ as difference', () => {
 		() => prod.convert(1, '__proto__' as Temperature).to('K'),
 		() => prod.convert(1, 'F').to('__proto__' as Temperature),
 		() => prod.convert(1, '__proto__' as Temperature).to('F'),
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
 		() => prod.convert(1, '__proto__' as any).to('__proto__' as any),
 	])('%p', fn => {
 		expect(fn).toThrow();
