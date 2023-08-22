@@ -3300,10 +3300,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node16@npm:16.1.0":
-  version: 16.1.0
-  resolution: "@tsconfig/node16@npm:16.1.0"
-  checksum: a0a176492e3802a5340eda1e61eabc8d4767e46496bc080ce9c381993ce8c5fb3df8f65267c3a9af4335bc00a85028845f795ea27545f63d62b93ab6675cf8fa
+"@tsconfig/node16@npm:16.1.1":
+  version: 16.1.1
+  resolution: "@tsconfig/node16@npm:16.1.1"
+  checksum: 26d83db06866083b543e73eda33585464362fd0835229b9a5b1185f0353b9b5db9ca4f66a4be53d4ec5d4c219be42b0a7582f8bcc7268f2f77b1c643375e490f
   languageName: node
   linkType: hard
 
@@ -4376,7 +4376,7 @@ __metadata:
   dependencies:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.3.0
-    "@tsconfig/node16": 16.1.0
+    "@tsconfig/node16": 16.1.1
     "@types/node": 18.17.6
     ava: 5.3.1
     c8: 8.0.1
@@ -4786,7 +4786,7 @@ __metadata:
   dependencies:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.3.0
-    "@tsconfig/node16": 16.1.0
+    "@tsconfig/node16": 16.1.1
     "@types/node": 18.17.6
     "@types/prettier": 2.7.3
     ava: 5.3.1
@@ -5017,7 +5017,7 @@ __metadata:
   dependencies:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/xo-config": 5.3.0
-    "@tsconfig/node16": 16.1.0
+    "@tsconfig/node16": 16.1.1
     bignumber.js: 9.1.1
     prettier: 2.8.8
     type-fest: 4.2.0
@@ -9961,7 +9961,7 @@ __metadata:
     "@jonahsnider/prettier-config": 1.1.2
     "@jonahsnider/util": 10.0.2
     "@jonahsnider/xo-config": 5.3.0
-    "@tsconfig/node16": 16.1.0
+    "@tsconfig/node16": 16.1.1
     bignumber.js: 9.1.1
     conversions: "workspace:*"
     prettier: 2.8.8
