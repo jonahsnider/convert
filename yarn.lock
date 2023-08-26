@@ -5076,7 +5076,7 @@ __metadata:
     "@tsconfig/node16": 16.1.1
     bignumber.js: 9.1.1
     prettier: 2.8.8
-    type-fest: 4.2.0
+    type-fest: 4.3.0
     typescript: 5.0.4
     xo: 0.54.2
   languageName: unknown
@@ -12205,10 +12205,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:4.2.0":
-  version: 4.2.0
-  resolution: "type-fest@npm:4.2.0"
-  checksum: 76c5dfde9293b1b185b266a07df669f68d58ae3e19c06e33f0ff0dd0ba68628f05389bc26bcee8476e29a79ab7da054653670b9778399ceb079c4c259bac29f0
+"type-fest@npm:4.3.0":
+  version: 4.3.0
+  resolution: "type-fest@npm:4.3.0"
+  checksum: 3786b95d17f18cbb24664b96845805391e1aee74eb573981d55acd742f545c379eb65221e2f3bf9f969fbb84b4d2b4670fcfa64acbcd9d2a7593fe566237beb7
   languageName: node
   linkType: hard
 
