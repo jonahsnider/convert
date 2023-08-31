@@ -11,6 +11,6 @@ import {optimize} from 'optimized-conversions';
 const OUT_PATH = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'src', 'index.ts');
 
 const conversionFamilyValues = Object.values(Conversions.Families);
-const contents = codegen(optimize(conversionFamilyValues));
+const contents = await codegen(optimize(conversionFamilyValues));
 
 await fs.writeFile(OUT_PATH, contents, 'utf8');

@@ -6,7 +6,7 @@ function stringify(value: unknown): string {
 	return JSON.stringify(value, undefined, '\t');
 }
 
-export function codegen(conversions: Optimized): string {
+export async function codegen(conversions: Optimized): Promise<string> {
 	const code = [
 		`export const conversions = {__proto__:null, ${stringify(conversions.conversions).slice(1)} as const;`,
 		'',
@@ -15,7 +15,7 @@ export function codegen(conversions: Optimized): string {
 		`export const temperatureDifferences = {__proto__:null, ${stringify(conversions.temperatureDifferences).slice(1)} as const;`,
 	].join('\n');
 
-	const formatted = Prettier.format(code, {...prettierConfig, filepath: 'index.ts'});
+	const formatted = await Prettier.format(code, {...prettierConfig, filepath: 'index.ts'});
 
 	return formatted;
 }
