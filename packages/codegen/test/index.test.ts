@@ -1,9 +1,9 @@
 import test from 'ava';
 import {codegen} from '../src/index.js';
 
-test('codegen', t => {
+test('codegen', async t => {
 	t.snapshot(
-		codegen({
+		await codegen({
 			best: {imperial: [], metric: []},
 			conversions: {},
 			temperatureDifferences: {},
