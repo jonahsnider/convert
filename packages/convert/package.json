@@ -103,8 +103,8 @@
 		"size-limit": "8.2.6",
 		"terser": "5.19.3",
 		"typedoc": "0.25.0",
-		"typescript": "5.0.4",
-		"xo": "0.54.2"
+		"typescript": "5.2.2",
+		"xo": "0.56.0"
 	},
 	"packageManager": "yarn@3.6.3",
 	"runkitExampleFilename": "./docs/runkit.js",
