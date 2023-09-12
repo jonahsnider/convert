@@ -11,7 +11,7 @@ export const areaSi: Macro = [
 	{prefix: 'square deci', symbol: 'd', value: 1e-1, kind: 'small'},
 	{prefix: 'square centi', symbol: 'c', value: 1e-4, kind: 'small'},
 	{prefix: 'square milli', symbol: 'm', value: 1e-6, kind: 'small'},
-	{prefix: 'square micro', symbol: 'μ', value: 1e-12, kind: 'small'},
+	{prefix: 'square micro', symbol: ['μ', 'µ'], value: 1e-12, kind: 'small'},
 	{prefix: 'square nano', symbol: 'n', value: 1e-18, kind: 'small'},
 	{prefix: 'square pico', symbol: 'p', value: 1e-24, kind: 'small'},
 	{prefix: 'square femto', symbol: 'f', value: 1e-30, kind: 'small'},

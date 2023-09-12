@@ -11,7 +11,7 @@ export const volumeSi: Macro = [
 	{prefix: 'cubic deci', symbol: 'd', value: 1e-3, kind: 'small'},
 	{prefix: 'cubic centi', symbol: 'c', value: 1e-6, kind: 'small'},
 	{prefix: 'cubic milli', symbol: 'm', value: 1e-9, kind: 'small'},
-	{prefix: 'cubic micro', symbol: 'μ', value: 1e-18, kind: 'small'},
+	{prefix: 'cubic micro', symbol: ['μ', 'µ'], value: 1e-18, kind: 'small'},
 	{prefix: 'cubic nano', symbol: 'n', value: 1e-27, kind: 'small'},
 	{prefix: 'cubic pico', symbol: 'p', value: 1e-36, kind: 'small'},
 	{prefix: 'cubic femto', symbol: 'f', value: 1e-45, kind: 'small'},

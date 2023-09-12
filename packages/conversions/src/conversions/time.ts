@@ -5,7 +5,7 @@ import {Id} from '../types/index.js';
 
 export const time: ReadonlyDeep<Family> = {
 	id: Id.Time,
-	best: ['fs', 'ps', 'ns', 'μs', 'ms', 's', 'min', 'h', 'd', 'y'],
+	best: ['fs', 'ps', 'ns', 'µs', 'ms', 's', 'min', 'h', 'd', 'y'],
 	conversions: [
 		{names: ['second', 'seconds'], symbols: ['s'], ratio: 1},
 		...expandMacro(Macros.si, {names: ['second', 'seconds'], symbols: ['s'], ratio: 1}),

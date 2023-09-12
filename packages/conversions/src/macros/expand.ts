@@ -10,9 +10,17 @@ type MacroOptions = {
 };
 
 export function expandMacro(macro: ReadonlyArray<Readonly<UnitGroup>>, unit: MacroOptions): Conversion[] {
-	return macro.map(unitGroup => ({
-		names: unit.names.map(name => `${unitGroup.prefix}${name}`),
-		symbols: unit.symbols.map(symbol => `${unitGroup.symbol}${symbol}`),
-		ratio: new BigNumber(unit.ratio).times(unitGroup.value),
-	}));
+	const conversions: Conversion[] = [];
+
+	for (const unitGroup of macro) {
+		const macroSymbols = Array.isArray(unitGroup.symbol) ? unitGroup.symbol : [unitGroup.symbol];
+		const conversion: Conversion = {
+			names: unit.names.map(name => `${unitGroup.prefix}${name}`),
+			symbols: unit.symbols.flatMap(symbol => macroSymbols.map(macroSymbol => `${macroSymbol}${symbol}`)),
+			ratio: new BigNumber(unit.ratio).times(unitGroup.value),
+		};
+		conversions.push(conversion);
+	}
+
+	return conversions;
 }
