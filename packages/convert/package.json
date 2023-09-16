@@ -81,7 +81,7 @@
 		"@babel/preset-env": "7.22.15",
 		"@babel/preset-typescript": "7.22.15",
 		"@jonahsnider/prettier-config": "1.1.2",
-		"@jonahsnider/util": "10.1.0",
+		"@jonahsnider/util": "10.2.0",
 		"@jonahsnider/xo-config": "5.3.0",
 		"@microsoft/api-extractor": "7.37.0",
 		"@rollup/plugin-babel": "6.0.3",
