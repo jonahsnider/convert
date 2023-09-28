@@ -1,5 +1,3 @@
-// The bundler will inline the const enum
-
 import {KelvinNames} from 'conversions';
 import {bestUnits, conversions, temperatureDifferences} from 'bundled-conversions';
 import * as Conversions from 'conversions';

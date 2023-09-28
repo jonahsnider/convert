@@ -1,11 +1,11 @@
 /** @public */
-export const enum Best {
+export enum Best {
 	Value,
 	Sym,
 }
 
 /** @public */
-export const enum Conversion {
+export enum Conversion {
 	Family,
 	Ratio,
 }

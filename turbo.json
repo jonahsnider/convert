@@ -1,27 +1,29 @@
 {
-	"baseBranch": "origin/master",
+	"$schema": "https://turbo.build/schema.json",
 	"pipeline": {
-		"style": {
-			"outputs": []
-		},
-		"docs": {
-			"outputs": ["docs_out/**"]
-		},
 		"build": {
 			"dependsOn": ["^build"],
 			"outputs": ["dist/**"]
 		},
-		"size": {
+		"convert#build": {
+			"dependsOn": ["^build"],
+			"inputs": ["scripts/**", "src/**"],
+			"outputs": ["dist/**"]
+		},
+		"convert#lint": {
 			"dependsOn": ["build"],
 			"outputs": []
 		},
-		"validate-api": {
+		"convert#test": {
 			"dependsOn": ["build"],
-			"outputs": ["temp/**", "docs/**"]
+			"outputs": []
 		},
-		"validate-api:local": {
+		"convert#test:coverage": {
 			"dependsOn": ["build"],
-			"outputs": ["temp/**", "docs/**"]
+			"outputs": ["coverage/**"]
+		},
+		"docs": {
+			"outputs": ["docs_out/**"]
 		},
 		"lint": {
 			"outputs": []
@@ -30,8 +32,11 @@
 			"dependsOn": ["^build"],
 			"outputs": []
 		},
-		"convert#lint": {
+		"size": {
 			"dependsOn": ["build"],
+			"outputs": []
+		},
+		"style": {
 			"outputs": []
 		},
 		"test": {
@@ -42,13 +47,13 @@
 			"dependsOn": ["^build"],
 			"outputs": ["coverage/**"]
 		},
-		"convert#test": {
+		"validate-api": {
 			"dependsOn": ["build"],
-			"outputs": []
+			"outputs": ["temp/**", "docs/**"]
 		},
-		"convert#test:coverage": {
+		"validate-api:local": {
 			"dependsOn": ["build"],
-			"outputs": ["coverage/**"]
+			"outputs": ["temp/**", "docs/**"]
 		}
 	}
 }

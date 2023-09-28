@@ -25,7 +25,7 @@ export type _BestConversion<Q extends number | bigint, U extends BestUnits> = {
 export type BestUnits<Family extends _ConversionFamilyId = _ConversionFamilyId, Kind extends Best_2.Kind = Best_2.Kind> = (typeof bestUnits)[Kind][Family][number][Indexes.Best.Sym];
 
 // @public
-export const enum _ConversionFamilyId {
+export enum _ConversionFamilyId {
     // (undocumented)
     Angle = 0,
     // (undocumented)
@@ -145,8 +145,8 @@ export type Volume = GetAliases<_ConversionFamilyId.Volume>;
 
 // Warnings were encountered during analysis:
 //
-// dist/src/types/common.d.ts:20:5 - (ae-forgotten-export) The symbol "SimplifyQuantity" needs to be exported by the entry point index.d.ts
-// dist/src/types/common.d.ts:56:5 - (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
+// tsc_output/src/types/common.d.ts:20:5 - (ae-forgotten-export) The symbol "SimplifyQuantity" needs to be exported by the entry point index.d.ts
+// tsc_output/src/types/common.d.ts:56:5 - (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 

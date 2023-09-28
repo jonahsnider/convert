@@ -26,7 +26,6 @@ export function optimize(conversionFamilies: ReadonlyArray<Readonly<Conversions.
 				}
 
 				result.conversions[name] = newConversion;
-				// The bundler will inline the const enum
 
 				if (conversionFamily.id === Conversions.Id.Temperature && conversion.difference !== undefined && conversion.difference !== 0) {
 					result.temperatureDifferences[name] = new BigNumber(conversion.difference).toNumber();

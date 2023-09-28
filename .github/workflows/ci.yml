@@ -19,6 +19,10 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: '1.0.3'
       - name: Build
         run: yarn build
       - name: Upload compiled package
@@ -50,6 +54,10 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: '1.0.3'
       - name: Build
         run: yarn run build
       - name: Download Node.js v0.9.1
@@ -86,6 +94,10 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies with Yarn
         run: yarn install --immutable
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: '1.0.3'
       - name: Build
         run: yarn run build
       - name: Generate TypeScript declaration rollup

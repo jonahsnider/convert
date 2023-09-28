@@ -1,7 +1,7 @@
 import type BigNumber from 'bignumber.js';
 import * as Best from './best.js';
 
-export const enum KelvinNames {
+export enum KelvinNames {
 	/* eslint-disable @typescript-eslint/naming-convention */
 	kelvin = 'kelvin',
 	kelvins = 'kelvins',
@@ -13,7 +13,7 @@ export const enum KelvinNames {
  * IDs for conversion families.
  * @public
  */
-export const enum Id {
+export enum Id {
 	Angle,
 	Area,
 	Data,

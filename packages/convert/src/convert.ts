@@ -178,8 +178,6 @@ export function convert<Q extends number | bigint>(quantity: Q, from: Unit): Con
 			_from: from,
 			_fromUnit: fromUnit,
 			_isUsingBigInts: isUsingBigInts,
-			// The bundler will inline the const enum
-
 			_isConvertingTemperature: fromUnit[Indexes.Conversion.Family] === Conversions.Id.Temperature,
 		}),
 	} as Converter<Q, Unit>;

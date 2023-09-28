@@ -6,3 +6,9 @@ docs_out
 
 # Api Extractor
 temp
+
+# tsc
+tsc_output
+
+# Bun
+bun_output
