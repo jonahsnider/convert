@@ -1,5 +1,5 @@
 var assert = require('assert');
-var lib = require('../dist2/convert.prod');
+var lib = require('../dist/convert.prod');
 
 assert.strictEqual(lib.convert(5, 'miles').to('km'), 8.04672);
 assert.strictEqual(lib.convertMany('4d 16h').to('minutes'), 6720);
