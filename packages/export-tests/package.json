@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"name": "export-tests",
+	"dependencies": {
+		"convert": "workspace:*"
+	},
+	"scripts": {
+		"test": "node test/import.cjs && node test/import.mjs"
+	}
+}
