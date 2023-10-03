@@ -74,7 +74,7 @@
 	},
 	"prettier": "@jonahsnider/prettier-config",
 	"resolutions": {
-		"terser": "5.20.0"
+		"terser": "5.21.0"
 	},
 	"devDependencies": {
 		"@babel/core": "7.23.0",
@@ -101,7 +101,7 @@
 		"rollup-plugin-terser": "7.0.2",
 		"semantic-release": "22.0.5",
 		"size-limit": "9.0.0",
-		"terser": "5.20.0",
+		"terser": "5.21.0",
 		"typedoc": "0.25.1",
 		"typescript": "5.2.2",
 		"xo": "0.56.0"
