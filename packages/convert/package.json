@@ -99,7 +99,7 @@
 		"prettier": "3.0.3",
 		"rollup": "4.1.5",
 		"rollup-plugin-terser": "7.0.2",
-		"semantic-release": "22.0.5",
+		"semantic-release": "22.0.6",
 		"size-limit": "9.0.0",
 		"terser": "5.23.0",
 		"typedoc": "0.25.3",
