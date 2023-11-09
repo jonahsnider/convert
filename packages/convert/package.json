@@ -77,9 +77,9 @@
 		"terser": "5.24.0"
 	},
 	"devDependencies": {
-		"@babel/core": "7.23.2",
-		"@babel/preset-env": "7.23.2",
-		"@babel/preset-typescript": "7.23.2",
+		"@babel/core": "7.23.3",
+		"@babel/preset-env": "7.23.3",
+		"@babel/preset-typescript": "7.23.3",
 		"@jonahsnider/prettier-config": "1.1.2",
 		"@jonahsnider/util": "10.2.0",
 		"@jonahsnider/xo-config": "5.3.0",
