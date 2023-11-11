@@ -3476,6 +3476,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sindresorhus/merge-streams@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@sindresorhus/merge-streams@npm:1.0.0"
+  checksum: 453c2a28164113a5ec4fd23ba636e291a4112f6ee9e91cd5476b9a96e0fc9ee5ff40d405fe81bbf284c9773b7ed718a3a0f31df7895a0efd413b1f9775d154fe
+  languageName: node
+  linkType: hard
+
 "@sinonjs/commons@npm:^2.0.0":
   version: 2.0.0
   resolution: "@sinonjs/commons@npm:2.0.0"
@@ -3494,39 +3501,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@size-limit/esbuild@npm:10.0.2":
-  version: 10.0.2
-  resolution: "@size-limit/esbuild@npm:10.0.2"
+"@size-limit/esbuild@npm:10.0.3":
+  version: 10.0.3
+  resolution: "@size-limit/esbuild@npm:10.0.3"
   dependencies:
     esbuild: ^0.19.5
-    nanoid: ^5.0.2
+    nanoid: ^5.0.3
   peerDependencies:
-    size-limit: 10.0.2
-  checksum: a004c396f083d2d5cbedfa774e41f105a3eaa7d133f90a0111613901d36287db8b49f0b11edd4e4928a7de152083d2267c0ef3e17ba6010f5ffb702f099c1f0c
+    size-limit: 10.0.3
+  checksum: 30badc6b293793ff99463bd4eba74ab006fef8a8a64f3e42086c87b78e9151417437a419252630ece7cff929227f712e2945a1a1d673e93f781dbda5bce4994d
   languageName: node
   linkType: hard
 
-"@size-limit/file@npm:10.0.2":
-  version: 10.0.2
-  resolution: "@size-limit/file@npm:10.0.2"
-  dependencies:
-    semver: 7.5.4
+"@size-limit/file@npm:10.0.3":
+  version: 10.0.3
+  resolution: "@size-limit/file@npm:10.0.3"
   peerDependencies:
-    size-limit: 10.0.2
-  checksum: a5a7ee006d6cfc42f0f2e65bdf86eab996f6bff045b2da667c6aaea143b27f551d5ea1c9bddca5d1285f24462c1f3cb38ba555802fd1b9a01614bba303c7a52d
+    size-limit: 10.0.3
+  checksum: e979602d9886a5a6925187845d0f8739aa32cbe4d3a9f2807ae81936996d64ffbedd2f6f8cfd252ac49e6973cdcff30a8c563cb1e55beb5c048ad2bae94c5a2b
   languageName: node
   linkType: hard
 
-"@size-limit/preset-small-lib@npm:10.0.2":
-  version: 10.0.2
-  resolution: "@size-limit/preset-small-lib@npm:10.0.2"
+"@size-limit/preset-small-lib@npm:10.0.3":
+  version: 10.0.3
+  resolution: "@size-limit/preset-small-lib@npm:10.0.3"
   dependencies:
-    "@size-limit/esbuild": 10.0.2
-    "@size-limit/file": 10.0.2
-    size-limit: 10.0.2
+    "@size-limit/esbuild": 10.0.3
+    "@size-limit/file": 10.0.3
+    size-limit: 10.0.3
   peerDependencies:
-    size-limit: 10.0.2
-  checksum: 2812085d988b6a7c0e9a5246b3bcabeb6f50004312bdb12d0eb378f9873e2d25468946e1ef3d06e6aed3a02af0571514eb771e8b3afda4c9a07729758f7bb1a8
+    size-limit: 10.0.3
+  checksum: 198750f5d20493b91cc383778544c92c60bcca9cf1d7256d687789345019d1c27669601bcea94fb818e43977692db58fcef7dfb5751dd912ffa61d29a4bbe088
   languageName: node
   linkType: hard
 
@@ -5386,7 +5391,7 @@ __metadata:
     "@rollup/plugin-node-resolve": 15.2.3
     "@rollup/plugin-replace": 5.0.5
     "@rollup/plugin-typescript": 11.1.5
-    "@size-limit/preset-small-lib": 10.0.2
+    "@size-limit/preset-small-lib": 10.0.3
     "@types/jest": 29.5.8
     "@types/node": 20.9.0
     babel-jest: 29.7.0
@@ -5398,7 +5403,7 @@ __metadata:
     rollup: 4.3.0
     rollup-plugin-terser: 7.0.2
     semantic-release: 22.0.7
-    size-limit: 10.0.2
+    size-limit: 10.0.3
     terser: 5.24.0
     typedoc: 0.25.3
     typescript: 5.2.2
@@ -6660,6 +6665,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-glob@npm:^3.3.2":
+  version: 3.3.2
+  resolution: "fast-glob@npm:3.3.2"
+  dependencies:
+    "@nodelib/fs.stat": ^2.0.2
+    "@nodelib/fs.walk": ^1.2.3
+    glob-parent: ^5.1.2
+    merge2: ^1.3.0
+    micromatch: ^4.0.4
+  checksum: 900e4979f4dbc3313840078419245621259f349950411ca2fa445a2f9a1a6d98c3b5e7e0660c5ccd563aa61abe133a21765c6c0dec8e57da1ba71d8000b05ec1
+  languageName: node
+  linkType: hard
+
 "fast-json-stable-stringify@npm:^2.0.0, fast-json-stable-stringify@npm:^2.1.0":
   version: 2.1.0
   resolution: "fast-json-stable-stringify@npm:2.1.0"
@@ -7240,6 +7258,20 @@ __metadata:
     merge2: ^1.4.1
     slash: ^4.0.0
   checksum: f3d84ced58a901b4fcc29c846983108c426631fe47e94872868b65565495f7bee7b3defd68923bd480582771fd4bbe819217803a164a618ad76f1d22f666f41e
+  languageName: node
+  linkType: hard
+
+"globby@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "globby@npm:14.0.0"
+  dependencies:
+    "@sindresorhus/merge-streams": ^1.0.0
+    fast-glob: ^3.3.2
+    ignore: ^5.2.4
+    path-type: ^5.0.0
+    slash: ^5.1.0
+    unicorn-magic: ^0.1.0
+  checksum: f331b42993e420c8f2b61a6ca062276977ea6d95f181640ff018f00200f4fe5b50f1fae7540903483e6570ca626fe16234ab88e848d43381a2529220548a9d39
   languageName: node
   linkType: hard
 
@@ -9830,12 +9862,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^5.0.2":
-  version: 5.0.2
-  resolution: "nanoid@npm:5.0.2"
+"nanoid@npm:^5.0.3":
+  version: 5.0.3
+  resolution: "nanoid@npm:5.0.3"
   bin:
     nanoid: bin/nanoid.js
-  checksum: fa6908c2c6a7a9e91e02b98cb0b9b829454d390a63f83c1798f0c504d07b536d99cad3e975e5014b176534e67e234ff66bccd4610bf3ffb2cf0d6d932a73f3a8
+  checksum: 419f083464f91e148fa8f313d898e3271b2c148aa711d37c6251e5689b119d2e3ac766d5fa26e53214896969e9e9c6ccbce7af679c966d24490b1b5df94ffb5d
   languageName: node
   linkType: hard
 
@@ -10756,6 +10788,13 @@ __metadata:
   version: 4.0.0
   resolution: "path-type@npm:4.0.0"
   checksum: 5b1e2daa247062061325b8fdbfd1fb56dde0a448fb1455453276ea18c60685bdad23a445dc148cf87bc216be1573357509b7d4060494a6fd768c7efad833ee45
+  languageName: node
+  linkType: hard
+
+"path-type@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "path-type@npm:5.0.0"
+  checksum: 15ec24050e8932c2c98d085b72cfa0d6b4eeb4cbde151a0a05726d8afae85784fc5544f733d8dfc68536587d5143d29c0bd793623fad03d7e61cc00067291cd5
   languageName: node
   linkType: hard
 
@@ -11685,17 +11724,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.4, semver@npm:^7.5.2, semver@npm:^7.5.4, semver@npm:~7.5.4":
-  version: 7.5.4
-  resolution: "semver@npm:7.5.4"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: 12d8ad952fa353b0995bf180cdac205a4068b759a140e5d3c608317098b3575ac2f1e09182206bf2eb26120e1c0ed8fb92c48c592f6099680de56bb071423ca3
-  languageName: node
-  linkType: hard
-
 "semver@npm:^6.0.0, semver@npm:^6.3.0":
   version: 6.3.0
   resolution: "semver@npm:6.3.0"
@@ -11722,6 +11750,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: ba9c7cbbf2b7884696523450a61fee1a09930d888b7a8d7579025ad93d459b2d1949ee5bbfeb188b2be5f4ac163544c5e98491ad6152df34154feebc2cc337c1
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.5.2, semver@npm:^7.5.4, semver@npm:~7.5.4":
+  version: 7.5.4
+  resolution: "semver@npm:7.5.4"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 12d8ad952fa353b0995bf180cdac205a4068b759a140e5d3c608317098b3575ac2f1e09182206bf2eb26120e1c0ed8fb92c48c592f6099680de56bb071423ca3
   languageName: node
   linkType: hard
 
@@ -11851,19 +11890,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"size-limit@npm:10.0.2":
-  version: 10.0.2
-  resolution: "size-limit@npm:10.0.2"
+"size-limit@npm:10.0.3":
+  version: 10.0.3
+  resolution: "size-limit@npm:10.0.3"
   dependencies:
     bytes-iec: ^3.1.1
     chokidar: ^3.5.3
-    globby: ^13.2.2
+    globby: ^14.0.0
     lilconfig: ^2.1.0
     nanospinner: ^1.1.0
     picocolors: ^1.0.0
   bin:
     size-limit: bin.js
-  checksum: e93e84dd819931c0f871946872a489552d6179b44dc128bb24666e492a5da85b2877212a74944b9e23b044c60f6559f1c215b2ff4951f0aa2adf0e41d70cd664
+  checksum: 92266dfc9041c219e9c14d07c54adac7b00a886ec5f771e51c07f0346520b45ae376b52a802ebc4c1bb0893f15a3a0d9e730554589175f0c384dd6dcb3f48a05
   languageName: node
   linkType: hard
 
@@ -12898,6 +12937,13 @@ __metadata:
   version: 2.1.0
   resolution: "unicode-property-aliases-ecmascript@npm:2.1.0"
   checksum: 243524431893649b62cc674d877bd64ef292d6071dd2fd01ab4d5ad26efbc104ffcd064f93f8a06b7e4ec54c172bf03f6417921a0d8c3a9994161fe1f88f815b
+  languageName: node
+  linkType: hard
+
+"unicorn-magic@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "unicorn-magic@npm:0.1.0"
+  checksum: 48c5882ca3378f380318c0b4eb1d73b7e3c5b728859b060276e0a490051d4180966beeb48962d850fd0c6816543bcdfc28629dcd030bb62a286a2ae2acb5acb6
   languageName: node
   linkType: hard
 
