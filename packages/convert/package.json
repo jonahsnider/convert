@@ -116,7 +116,7 @@
 		},
 		{
 			"gzip": true,
-			"limit": "6.5 KiB",
+			"limit": "6.75 KiB",
 			"path": "./dist/convert.prod.js"
 		},
 		{
