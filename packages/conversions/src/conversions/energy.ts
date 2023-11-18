@@ -13,6 +13,6 @@ export const energy: ReadonlyDeep<Family> = {
 
 		// https://en.wikipedia.org/wiki/Kilowatt-hour
 		{names: ['watt-hour'], symbols: ['W⋅h', 'W h', 'Wh'], ratio: 3600},
-		...expandMacro(Macros.si, {names: ['watt-hour'], symbols: ['W⋅h', 'W h', 'Wh'], ratio: 3600}),
+		...expandMacro(Macros.si, {names: ['watt-hour', 'watt-hours'], symbols: ['W⋅h', 'W h', 'Wh'], ratio: 3600}),
 	],
 };
