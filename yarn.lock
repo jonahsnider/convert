@@ -3703,13 +3703,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.5.8":
-  version: 29.5.8
-  resolution: "@types/jest@npm:29.5.8"
+"@types/jest@npm:29.5.9":
+  version: 29.5.9
+  resolution: "@types/jest@npm:29.5.9"
   dependencies:
     expect: "npm:^29.0.0"
     pretty-format: "npm:^29.0.0"
-  checksum: a8194e26c642780d5b2e22170ac538f7975e04aeaa76d87f8e5ac921f7a8fffc5252029a9e6efacdb0ec4b45320322c8e1f27a5338083f49efbd3c6021314f7e
+  checksum: 99a9a38efc5ebc2e683f3cb79abfbf984695a8d9796fa7ef319eb9fe23fe76dadc0da7f089c0525be9436379b546fd31eaaf547c3af8dfbc7c54bd6007d4d9ff
   languageName: node
   linkType: hard
 
@@ -5392,7 +5392,7 @@ __metadata:
     "@rollup/plugin-replace": "npm:5.0.5"
     "@rollup/plugin-typescript": "npm:11.1.5"
     "@size-limit/preset-small-lib": "npm:11.0.0"
-    "@types/jest": "npm:29.5.8"
+    "@types/jest": "npm:29.5.9"
     "@types/node": "npm:20.9.2"
     babel-jest: "npm:29.7.0"
     bundled-conversions: "workspace:*"
