@@ -5405,7 +5405,7 @@ __metadata:
     semantic-release: "npm:22.0.8"
     size-limit: "npm:11.0.0"
     terser: "npm:5.24.0"
-    typedoc: "npm:0.25.3"
+    typedoc: "npm:0.25.4"
     typescript: "npm:5.2.2"
     xo: "npm:0.56.0"
   languageName: unknown
@@ -12838,19 +12838,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.25.3":
-  version: 0.25.3
-  resolution: "typedoc@npm:0.25.3"
+"typedoc@npm:0.25.4":
+  version: 0.25.4
+  resolution: "typedoc@npm:0.25.4"
   dependencies:
     lunr: "npm:^2.3.9"
     marked: "npm:^4.3.0"
     minimatch: "npm:^9.0.3"
     shiki: "npm:^0.14.1"
   peerDependencies:
-    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x
+    typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x
   bin:
     typedoc: bin/typedoc
-  checksum: 1dd06155589731143e18555f51c0ad0543136040684aefadff3117b3c3c0ffb7ea41dec9de2cf2cf50afb51f0450f3b8e93a73a7a2928c80aa2516a2d247db4a
+  checksum: 638f63d751ba86f1b0e04a303501b88b6e97ba093f82c3fa72a555c207e16fd316ec76c13f7d628e9ee26296f80fddc45b87d4b13714925c5e726047adb76d22
   languageName: node
   linkType: hard
 
