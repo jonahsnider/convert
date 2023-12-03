@@ -3757,12 +3757,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.10.2":
-  version: 20.10.2
-  resolution: "@types/node@npm:20.10.2"
+"@types/node@npm:20.10.3":
+  version: 20.10.3
+  resolution: "@types/node@npm:20.10.3"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: e88d0e92870ec4880642cc39250903a098443d791e864a08d08f4e7fdca0c4c9c0233a6fd98bec356f0ebabc6551152a4590d1c9c34b73a95c2b33935f59185f
+  checksum: 7cb506abb0d570bb5133bd06a47115109a813b507323c985c3b4aef2993eed79b6bb62b82194cb5c558b4d349de3d199ee2e8c693b913065a1cd7f526cc65a68
   languageName: node
   linkType: hard
 
@@ -4718,7 +4718,7 @@ __metadata:
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/xo-config": "npm:5.3.0"
     "@tsconfig/node16": "npm:16.1.1"
-    "@types/node": "npm:20.10.2"
+    "@types/node": "npm:20.10.3"
     ava: "npm:5.3.1"
     c8: "npm:8.0.1"
     codegen: "workspace:*"
@@ -5141,7 +5141,7 @@ __metadata:
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/xo-config": "npm:5.3.0"
     "@tsconfig/node16": "npm:16.1.1"
-    "@types/node": "npm:20.10.2"
+    "@types/node": "npm:20.10.3"
     "@types/prettier": "npm:2.7.3"
     ava: "npm:5.3.1"
     c8: "npm:8.0.1"
@@ -5409,7 +5409,7 @@ __metadata:
     "@rollup/plugin-typescript": "npm:11.1.5"
     "@size-limit/preset-small-lib": "npm:11.0.0"
     "@types/jest": "npm:29.5.10"
-    "@types/node": "npm:20.10.2"
+    "@types/node": "npm:20.10.3"
     babel-jest: "npm:29.7.0"
     bundled-conversions: "workspace:*"
     conversions: "workspace:*"
