@@ -2,12 +2,9 @@
 
 The [smallest](https://bundlephobia.com/package/convert) & [fastest](https://github.com/jonahsnider/js-unit-conversion-benchmarks) library for really easy, totally type-safe unit conversions in TypeScript & JavaScript.
 
-[![published npm version](https://img.shields.io/npm/v/convert)](https://www.npmjs.com/package/convert)
 [![test coverage](https://img.shields.io/codecov/c/gh/jonahsnider/convert)](https://codecov.io/gh/jonahsnider/convert)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/convert)](https://bundlephobia.com/package/convert)
 [![npm monthly downloads](https://img.shields.io/npm/dm/convert)](https://www.npmjs.com/package/convert)
-[![type definitions](https://img.shields.io/npm/types/convert)](https://www.npmjs.com/package/convert)
-[![license](https://img.shields.io/npm/l/convert)](https://www.npmjs.com/package/convert)
 [![CI](https://github.com/jonahsnider/convert/actions/workflows/ci.yml/badge.svg)](https://github.com/jonahsnider/convert/actions/workflows/ci.yml)
 
 ```sh
