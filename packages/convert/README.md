@@ -4,7 +4,6 @@ The [smallest](https://bundlephobia.com/package/convert) & [fastest](https://git
 
 [![bundle size](https://img.shields.io/bundlephobia/minzip/convert)](https://bundlephobia.com/package/convert)
 [![npm monthly downloads](https://img.shields.io/npm/dm/convert)](https://www.npmjs.com/package/convert)
-[![CI](https://github.com/jonahsnider/convert/actions/workflows/ci.yml/badge.svg)](https://github.com/jonahsnider/convert/actions/workflows/ci.yml)
 
 ```sh
 npm install convert
