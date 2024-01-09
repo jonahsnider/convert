@@ -30,8 +30,8 @@
 		"typescript": "5.2.2",
 		"xo": "0.56.0"
 	},
+	"packageManager": "yarn@4.0.2",
 	"engines": {
 		"node": "20.x"
-	},
-	"packageManager": "yarn@4.0.2"
+	}
 }
