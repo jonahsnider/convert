@@ -259,3 +259,6 @@ docs/api.md
 
 # AVA test snapshot reports
 snapshots/*.md
+
+# Rollup temporary files
+rollup.config-*.cjs
