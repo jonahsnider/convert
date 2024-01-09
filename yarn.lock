@@ -4761,7 +4761,7 @@ __metadata:
     prettier: "npm:3.1.0"
     rollup: "npm:4.9.4"
     rollup-plugin-terser: "npm:7.0.2"
-    semantic-release: "npm:22.0.10"
+    semantic-release: "npm:22.0.12"
     size-limit: "npm:11.0.1"
     terser: "npm:5.26.0"
     typedoc: "npm:0.25.7"
@@ -10302,9 +10302,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:22.0.10":
-  version: 22.0.10
-  resolution: "semantic-release@npm:22.0.10"
+"semantic-release@npm:22.0.12":
+  version: 22.0.12
+  resolution: "semantic-release@npm:22.0.12"
   dependencies:
     "@semantic-release/commit-analyzer": "npm:^11.0.0"
     "@semantic-release/error": "npm:^4.0.0"
@@ -10337,7 +10337,7 @@ __metadata:
     yargs: "npm:^17.5.1"
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 4586c63f6432d3f38d14f45091e27c2d4b1e4383994381b229ce441f6e341a1aa5bc7bb2e7d824277e98f9a0fc2b6838f55e464e89ccfda0a52f522fb9d28242
+  checksum: cecc72eace26a28bec37a1c1958281b4f7ccee57620c476d852468499b08111d6d71d580943b23dd8b9ae4433f06ccfc450486dc2915c67a6654aa157fbd7130
   languageName: node
   linkType: hard
 
