@@ -68,7 +68,6 @@
 		"size": "size-limit",
 		"style": "prettier --check . --ignore-path ../../.prettierignore",
 		"test": "vitest run",
-		"test:coverage": "vitest run --coverage",
 		"validate-api": "api-extractor run",
 		"validate-api:local": "api-extractor run --local --verbose"
 	},

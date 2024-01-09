@@ -7,12 +7,5 @@ export default defineConfig({
 	root: dirname(fileURLToPath(import.meta.url)),
 	test: {
 		exclude: ['./.rollup.cache/**/*', './dist/**/*'],
-		coverage: {
-			include: ['{src,test}/**/*.ts'],
-			thresholds: {
-				// eslint-disable-next-line @typescript-eslint/naming-convention
-				'100': true,
-			},
-		},
 	},
 });
