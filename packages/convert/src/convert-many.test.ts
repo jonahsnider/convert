@@ -1,4 +1,5 @@
 import type {Best} from 'conversions';
+import {describe, test, expect} from 'vitest';
 import {prod, dev} from '../test/convert';
 import {testWithBuilds} from '../test/with-builds';
 
@@ -7,14 +8,18 @@ const invalidUnit = 'not a valid unit';
 
 describe('errors', () => {
 	describe('production', () => {
-		expect(() => prod.convertMany(invalidValue)).toThrowError(new RangeError(''));
+		test('converting invalid value', () => {
+			expect(() => prod.convertMany(invalidValue)).toThrowError(new RangeError(''));
+		});
 
-		expect(() =>
-			prod
-				.convertMany('1000ms')
-				// @ts-expect-error Invalid unit
-				.to(invalidUnit),
-		).toThrow(TypeError);
+		test('converting invalid unit', () => {
+			expect(() =>
+				prod
+					.convertMany('1000ms')
+					// @ts-expect-error Invalid unit
+					.to(invalidUnit),
+			).toThrow(TypeError);
+		});
 	});
 
 	describe('development', () => {

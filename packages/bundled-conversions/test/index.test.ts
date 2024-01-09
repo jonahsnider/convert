@@ -1,14 +1,14 @@
-import test from 'ava';
+import {expect, test} from 'vitest';
 import {bestUnits, conversions, temperatureDifferences} from '../src/index.js';
 
 test('conversions', t => {
-	t.snapshot(conversions);
+	expect(conversions).toMatchSnapshot();
 });
 
 test('best units', t => {
-	t.snapshot(bestUnits);
+	expect(bestUnits).toMatchSnapshot();
 });
 
 test('temperature differences', t => {
-	t.snapshot(temperatureDifferences);
+	expect(temperatureDifferences).toMatchSnapshot();
 });

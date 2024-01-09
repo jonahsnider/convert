@@ -1,3 +1,4 @@
+import {describe, test} from 'vitest';
 import {dev, NAME_PROPERTY, prod} from './convert';
 
 type Build = typeof dev;
