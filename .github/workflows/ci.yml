@@ -67,10 +67,7 @@ jobs:
 
     needs: [build-and-test, legacy-test]
 
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
+    permissions: write-all
 
     steps:
       - name: Checkout git repository
