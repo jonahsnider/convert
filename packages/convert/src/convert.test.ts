@@ -191,8 +191,8 @@ describe('converting to best with rounding', () => {
 
 	describe('does nothing when omitted', () => {
 		testWithBuilds(mod => {
-			expect(mod.convert(123_456, 'm').to('best').toString()).toBe('123.45599999999999km');
-			expect(mod.convert(123_456, 'm').to('best').toString(undefined)).toBe('123.45599999999999km');
+			expect(mod.convert(123_456, 'm').to('best').toString()).toBe('123.456km');
+			expect(mod.convert(123_456, 'm').to('best').toString(undefined)).toBe('123.456km');
 			expect(mod.convert(1000, 'micrometer').to('best').toString()).toBe('1mm');
 			expect(mod.convert(1000, 'micrometer').to('best').toString(undefined)).toBe('1mm');
 		});
