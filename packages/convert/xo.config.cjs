@@ -18,6 +18,6 @@ config.overrides.push(
 );
 
 config.ignore ??= [];
-config.ignore.push('./test/legacy.cjs');
+config.ignore.push('./test/legacy.cjs', 'rollup.config-*.cjs');
 
 module.exports = config;
