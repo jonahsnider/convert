@@ -86,7 +86,7 @@
 		"@rollup/plugin-babel": "6.0.4",
 		"@rollup/plugin-node-resolve": "15.2.3",
 		"@rollup/plugin-replace": "5.0.5",
-		"@rollup/plugin-typescript": "11.1.5",
+		"@rollup/plugin-typescript": "11.1.6",
 		"@size-limit/preset-small-lib": "11.0.1",
 		"@types/node": "20.10.7",
 		"@vitest/coverage-v8": "1.1.3",
