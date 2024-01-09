@@ -1,3 +1,4 @@
+import {describe} from 'vitest';
 import {assertConversions} from '../../test/assert-conversion';
 
 describe('conversions', () => {

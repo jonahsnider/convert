@@ -1,5 +1,6 @@
 import {stddev} from '@jonahsnider/util';
 import {conversions} from 'bundled-conversions';
+import {describe, test, expect} from 'vitest';
 import type {Indexes} from 'optimized-conversions';
 import {prod, dev} from '../test/convert';
 import {assertConversions} from '../test/assert-conversion';

@@ -1,12 +1,12 @@
-import test from 'ava';
+import {expect, test} from 'vitest';
 import {codegen} from '../src/index.js';
 
 test('codegen', async t => {
-	t.snapshot(
+	expect(
 		await codegen({
 			best: {imperial: [], metric: []},
 			conversions: {},
 			temperatureDifferences: {},
 		}),
-	);
+	).toMatchSnapshot();
 });

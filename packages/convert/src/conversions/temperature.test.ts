@@ -1,3 +1,4 @@
+import {describe, test, expect} from 'vitest';
 import {assertConversions} from '../../test/assert-conversion';
 import {dev, prod} from '../../test/convert';
 import type {Temperature} from '../index';

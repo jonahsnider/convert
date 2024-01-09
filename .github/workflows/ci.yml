@@ -26,14 +26,8 @@ jobs:
         with:
           name: dist
           path: packages/convert/dist
-      - name: Test and record coverage
-        run: yarn run test:coverage
-      - name: Upload test coverage
-        uses: codecov/codecov-action@v3
-        with:
-          fail_ci_if_error: true
-          files: ./packages/convert/coverage/lcov.info
-          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Run tests
+        run: yarn run test
   legacy-test:
     name: Legacy Node.js tests
 

@@ -1,3 +1,4 @@
+import {describe, expect} from 'vitest';
 import {testWithBuilds} from './with-builds';
 
 type ConversionTuple = [quantity: number | bigint, unit: string];
