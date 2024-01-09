@@ -253,3 +253,6 @@ $RECYCLE.BIN/
 
 # Turbo
 .turbo
+
+# Rollup temporary files
+rollup.config-*.cjs
