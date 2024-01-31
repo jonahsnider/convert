@@ -88,7 +88,7 @@
 		"@rollup/plugin-replace": "5.0.5",
 		"@rollup/plugin-typescript": "11.1.6",
 		"@size-limit/preset-small-lib": "11.0.2",
-		"@types/node": "20.11.11",
+		"@types/node": "20.11.13",
 		"@vitest/coverage-v8": "1.2.2",
 		"bundled-conversions": "workspace:*",
 		"conversions": "workspace:*",

@@ -3308,12 +3308,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.11.11":
-  version: 20.11.11
-  resolution: "@types/node@npm:20.11.11"
+"@types/node@npm:20.11.13":
+  version: 20.11.13
+  resolution: "@types/node@npm:20.11.13"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10/b5603c6576af14d90b03d21d9c5b7dac372770681bcd336bab30092b42d9e41c06c613dbd016f99b9bce586a5f1540f4aa7d83acb6e79da1a38e2c0914e817cf
+  checksum: 10/ffe143dd5e52d0d29f5bcea165b752c5355eaff8b6b933441108b540419e14c0c7e0e7912783e914125ab957e30db93f9c827e8dd437ec7e5f03def995e9a5e6
   languageName: node
   linkType: hard
 
@@ -4168,7 +4168,7 @@ __metadata:
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/xo-config": "npm:5.3.0"
     "@tsconfig/node16": "npm:16.1.1"
-    "@types/node": "npm:20.11.11"
+    "@types/node": "npm:20.11.13"
     "@vitest/coverage-v8": "npm:1.2.2"
     codegen: "workspace:*"
     conversions: "workspace:*"
@@ -4508,7 +4508,7 @@ __metadata:
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/xo-config": "npm:5.3.0"
     "@tsconfig/node16": "npm:16.1.1"
-    "@types/node": "npm:20.11.11"
+    "@types/node": "npm:20.11.13"
     "@types/prettier": "npm:2.7.3"
     "@vitest/coverage-v8": "npm:1.2.2"
     optimized-conversions: "workspace:*"
@@ -4737,7 +4737,7 @@ __metadata:
     "@rollup/plugin-replace": "npm:5.0.5"
     "@rollup/plugin-typescript": "npm:11.1.6"
     "@size-limit/preset-small-lib": "npm:11.0.2"
-    "@types/node": "npm:20.11.11"
+    "@types/node": "npm:20.11.13"
     "@vitest/coverage-v8": "npm:1.2.2"
     bundled-conversions: "workspace:*"
     conversions: "workspace:*"
