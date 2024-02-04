@@ -3988,7 +3988,7 @@ __metadata:
   resolution: "base@workspace:."
   dependencies:
     "@jonahsnider/prettier-config": "npm:1.1.2"
-    prettier: "npm:3.2.2"
+    prettier: "npm:3.2.5"
     turbo: "npm:1.11.3"
   languageName: unknown
   linkType: soft
@@ -4173,7 +4173,7 @@ __metadata:
     codegen: "workspace:*"
     conversions: "workspace:*"
     optimized-conversions: "workspace:*"
-    prettier: "npm:3.2.2"
+    prettier: "npm:3.2.5"
     typescript: "npm:5.3.3"
     vitest: "npm:1.2.2"
     xo: "npm:0.56.0"
@@ -4512,7 +4512,7 @@ __metadata:
     "@types/prettier": "npm:2.7.3"
     "@vitest/coverage-v8": "npm:1.2.2"
     optimized-conversions: "workspace:*"
-    prettier: "npm:3.2.2"
+    prettier: "npm:3.2.5"
     typescript: "npm:5.3.3"
     vitest: "npm:1.2.2"
     xo: "npm:0.56.0"
@@ -4707,7 +4707,7 @@ __metadata:
     "@jonahsnider/xo-config": "npm:5.3.0"
     "@tsconfig/node16": "npm:16.1.1"
     bignumber.js: "npm:9.1.2"
-    prettier: "npm:3.2.2"
+    prettier: "npm:3.2.5"
     type-fest: "npm:4.10.2"
     typescript: "npm:5.3.3"
     xo: "npm:0.56.0"
@@ -4742,7 +4742,7 @@ __metadata:
     bundled-conversions: "workspace:*"
     conversions: "workspace:*"
     optimized-conversions: "workspace:*"
-    prettier: "npm:3.2.2"
+    prettier: "npm:3.2.5"
     rollup: "npm:4.9.6"
     rollup-plugin-terser: "npm:7.0.2"
     semantic-release: "npm:22.0.12"
@@ -9044,7 +9044,7 @@ __metadata:
     "@tsconfig/node16": "npm:16.1.1"
     bignumber.js: "npm:9.1.2"
     conversions: "workspace:*"
-    prettier: "npm:3.2.2"
+    prettier: "npm:3.2.5"
     typescript: "npm:5.3.3"
     xo: "npm:0.56.0"
   languageName: unknown
@@ -9519,12 +9519,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.2.2":
-  version: 3.2.2
-  resolution: "prettier@npm:3.2.2"
+"prettier@npm:3.2.5":
+  version: 3.2.5
+  resolution: "prettier@npm:3.2.5"
   bin:
     prettier: bin/prettier.cjs
-  checksum: 10/ab9470ff6cfd19f28bc424f22e58f2fc4a488d148b9384f6c3739235017c8350cae82b3697392c23d9b098b9d8dfaa1cc9ff4ef25fd45f54c97b95f9cc7a1f7d
+  checksum: 10/d509f9da0b70e8cacc561a1911c0d99ec75117faed27b95cc8534cb2349667dee6351b0ca83fa9d5703f14127faa52b798de40f5705f02d843da133fc3aa416a
   languageName: node
   linkType: hard
 
