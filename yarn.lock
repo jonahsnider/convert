@@ -2185,9 +2185,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.39.5":
-  version: 7.39.5
-  resolution: "@microsoft/api-extractor@npm:7.39.5"
+"@microsoft/api-extractor@npm:7.40.0":
+  version: 7.40.0
+  resolution: "@microsoft/api-extractor@npm:7.40.0"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.28.8"
     "@microsoft/tsdoc": "npm:0.14.2"
@@ -2203,7 +2203,7 @@ __metadata:
     typescript: "npm:5.3.3"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10/af034bf760668ecb1adb5317a88221b78c22025dbe64166b315773ccca84285a7afcdd0d56118918c5fbe2fa08f745c0cb79789932d291eecfd7aef6f9305a08
+  checksum: 10/f95af544219d7b37dbac530e7e832f065bab183e29f11218bc0d98cdf85392c4512b2f230fd453a7089d4b1ceae082d04f74a7ff019e6d310f79946b9923b22a
   languageName: node
   linkType: hard
 
@@ -4731,7 +4731,7 @@ __metadata:
     "@jonahsnider/prettier-config": "npm:1.1.2"
     "@jonahsnider/util": "npm:10.3.0"
     "@jonahsnider/xo-config": "npm:5.3.0"
-    "@microsoft/api-extractor": "npm:7.39.5"
+    "@microsoft/api-extractor": "npm:7.40.0"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:15.2.3"
     "@rollup/plugin-replace": "npm:5.0.5"
