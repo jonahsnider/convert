@@ -99,7 +99,7 @@
 		"semantic-release": "22.0.12",
 		"size-limit": "11.0.2",
 		"terser": "5.27.0",
-		"typedoc": "0.25.7",
+		"typedoc": "0.25.8",
 		"typescript": "5.3.3",
 		"vitest": "1.2.2",
 		"xo": "0.56.0"
