@@ -13,6 +13,7 @@ const bytesToBest = new Bench({ time: 10e3 })
 await bytesToBest.warmup();
 await bytesToBest.run();
 
+// biome-ignore lint/suspicious/noConsoleLog: This is an intentional log
 console.log('Convert 8192 bytes to best:');
 console.table(bytesToBest.table());
 
@@ -26,5 +27,6 @@ const hoursToMinutes = new Bench({ time: 1000 })
 await hoursToMinutes.warmup();
 await hoursToMinutes.run();
 
+// biome-ignore lint/suspicious/noConsoleLog: This is an intentional log
 console.log('Convert 24 hours to minutes:');
 console.table(hoursToMinutes.table());
