@@ -6,17 +6,20 @@ import { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units';
 import { LiteralToPrimitive } from '../types/utils';
 
 function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: string): LiteralToPrimitive<Q> {
-	const parsedFrom = unitsObject[from as Unit];
 	const parsedTo = unitsObject[to as Unit];
 
-	const fromMeasure = parsedFrom[0];
-	const toMeasure = parsedTo[0];
-	const fromRatio = parsedFrom[1];
-	const toRatio = parsedTo[1];
+	if (!parsedTo) {
+		throw new RangeError(`${to} is not a valid unit`);
+	}
 
-	if (fromMeasure !== toMeasure) {
+	const parsedFrom = unitsObject[from as Unit];
+
+	if (parsedFrom[0] !== parsedTo[0]) {
 		throw new RangeError(`Cannot convert between different measures: ${from} and ${to}`);
 	}
+
+	const fromRatio = parsedFrom[1];
+	const toRatio = parsedTo[1];
 
 	if (typeof quantity === 'bigint') {
 		if (
@@ -129,6 +132,10 @@ export function convert<Q extends number | bigint, U extends Unit>(
 	quantity: Q,
 	from: U,
 ): Converter<Q, MeasuresByUnit<U>> {
+	if (!(from in unitsObject)) {
+		throw new RangeError(`${from} is not a valid unit`);
+	}
+
 	return {
 		to: convertToAny.bind({ _quantity: quantity, _from: from }),
 	} as Converter<Q, MeasuresByUnit<U>>;
