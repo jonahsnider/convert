@@ -1,4 +1,4 @@
-import type { Macro } from '../types.js';
+import type { Macro } from '../types';
 
 export const areaSi: Macro = [
 	{ prefix: 'square peta', symbol: 'P', value: 1e30, kind: 'big' },

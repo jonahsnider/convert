@@ -1,9 +1,10 @@
-export type { BestKind, MeasureKind } from './conversions/types.js';
-export { convertMany } from './converters/convert-many.js';
+export type { BestKind, MeasureKind } from './conversions/types';
+export { convertMany } from './converters/convert-many';
 // biome-ignore lint/style/noDefaultExport: This is a default export we want
-export { convert, convert as default } from './converters/convert.js';
-export { ms } from './converters/ms.js';
-export type { BestConversion, Converter } from './types/converter.js';
+export { convert, convert as default } from './converters/convert';
+export { ms } from './converters/ms';
+export type { UnitsByMeasure as _UnitsByMeasureRaw } from './generated/types';
+export type { BestConversion, Converter } from './types/converter';
 export type {
 	Angle,
 	Area,
@@ -23,4 +24,6 @@ export type {
 	Unit,
 	UnitsByMeasure,
 	Volume,
-} from './types/units.js';
+	MeasureKindByUnit as _MeasureKindByUnit,
+} from './types/units';
+export type { LiteralToPrimitive as _LiteralToPrimitive } from './types/utils';

@@ -1,6 +1,6 @@
-import { BestKind, MeasureKind } from '../conversions/types.js';
-import { BestUnits as BestUnitsGenerated } from '../generated/best-units.js';
-import { UnitsByMeasure as UnitsByMeasureGenerated } from '../generated/types.js';
+import { BestKind, MeasureKind } from '../conversions/types';
+import { BestUnits as BestUnitsGenerated } from '../generated/best-units';
+import { UnitsByMeasure as UnitsByMeasureGenerated } from '../generated/types';
 
 /**
  * Get the units for a given measure.
@@ -10,7 +10,8 @@ export type UnitsByMeasure<T extends MeasureKind> = T extends keyof UnitsByMeasu
 	? UnitsByMeasureGenerated[T]
 	: never;
 
-type MeasureKindByUnit<T extends Unit> = {
+/** @public */
+export type MeasureKindByUnit<T extends Unit> = {
 	[K in MeasureKind]: T extends UnitsByMeasureGenerated[K] ? K : never;
 }[MeasureKind];
 

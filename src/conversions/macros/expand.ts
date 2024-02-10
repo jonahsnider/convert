@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
-import { MeasureEntry } from '../types.js';
-import type { UnitGroup } from './types.js';
+import { MeasureEntry } from '../types';
+import type { UnitGroup } from './types';
 
 type MacroOptions = {
 	names: string[];

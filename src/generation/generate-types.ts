@@ -1,5 +1,5 @@
-import { flattenConversions } from '../conversions/flatten.js';
-import { Conversions, MeasureKind } from '../conversions/types.js';
+import { flattenConversions } from '../conversions/flatten';
+import { Conversions, MeasureKind } from '../conversions/types';
 
 export function generateTypes(conversions: Conversions): string {
 	const flat = flattenConversions(conversions);
@@ -16,6 +16,7 @@ export function generateTypes(conversions: Conversions): string {
 	const code: string[] = [
 		`// Generated at ${new Date().toLocaleString()}`,
 		'',
+		'/** @internal */',
 		'export type UnitsByMeasure = {',
 		...Array.from(unitsByMeasure.entries()).map(
 			([measure, units]) => `  ${measure}: ${units.map((unit) => `'${unit}'`).join(' | ')};`,

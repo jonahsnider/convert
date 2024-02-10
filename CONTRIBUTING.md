@@ -1,9 +1,25 @@
 # Contributing
 
-## Project structure
+Convert is a fairly standard TS project.
 
-Convert is a monorepo with packages stored in the [`packages/`](./packages/) directory.
+## Running scripts
 
-Each package has a `README.md` file which explains what it does.
+Because the build process is a little more complex than just `yarn build`, we use [`just`](https://github.com/casey/just) to run scripts.
 
-The primary package is [`convert`](./packages/convert/), which is the only one which is published.
+You can install it globally on your computer, or just run `yarn install` and then it'll be available as `yarn just`.
+
+To see available scripts:
+
+```sh
+just --list
+# or
+yarn just --list
+```
+
+And to run a script:
+
+```sh
+just <scripts>
+# or
+yarn just <scripts>
+```

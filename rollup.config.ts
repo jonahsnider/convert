@@ -1,8 +1,8 @@
 import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
+import swc from '@rollup/plugin-swc';
+import terser, { Options as TerserOptions } from '@rollup/plugin-terser';
 import { defineConfig } from 'rollup';
-import { Options as TerserOptions, terser } from 'rollup-plugin-terser';
 
 // NOTE: Using getBabelOutputPlugin() instead of the default babel() plugin is necessary as a workaround to transform the modules that Rollup bundles
 // ex. const conversions = ... is not transformed by babel() for some reason (maybe because it's from an input chunk?)
@@ -46,7 +46,7 @@ const esmTerserConfig = {
 export default defineConfig([
 	{
 		input: './src/index.ts',
-		plugins: [nodeResolve(), typescript(), terser(esmTerserConfig)],
+		plugins: [nodeResolve({ extensions: ['.js', '.ts'] }), swc(), terser(esmTerserConfig)],
 		output: {
 			file: './dist/index.mjs',
 			format: 'esm',
@@ -57,8 +57,8 @@ export default defineConfig([
 	{
 		input: './src/index.ts',
 		plugins: [
-			nodeResolve(),
-			typescript(),
+			nodeResolve({ extensions: ['.js', '.ts'] }),
+			swc(),
 			getBabelOutputPlugin({
 				presets: [
 					[

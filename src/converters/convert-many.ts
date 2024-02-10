@@ -1,8 +1,8 @@
-import { BestKind } from '../conversions/types.js';
-import { BestConversion, Converter } from '../types/converter.js';
-import { convert } from './convert.js';
+import { BestKind } from '../conversions/types';
+import { BestConversion, Converter } from '../types/converter';
+import { convert } from './convert';
 
-import type { BestUnits, Unit } from '../types/units.js';
+import type { BestUnits, Unit } from '../types/units';
 
 const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
 

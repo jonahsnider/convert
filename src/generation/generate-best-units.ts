@@ -1,7 +1,7 @@
 import assert from 'assert';
 import BigNumber from 'bignumber.js';
-import { flattenMeasure } from '../conversions/flatten.js';
-import { BestKind, Conversions, Measure, MeasureKind } from '../conversions/types.js';
+import { flattenMeasure } from '../conversions/flatten';
+import { BestKind, Conversions, Measure, MeasureKind } from '../conversions/types';
 
 type BestEntry = {
 	ratio: string | number;

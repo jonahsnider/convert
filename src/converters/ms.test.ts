@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { ms } from './ms.js';
+import { ms } from './ms';
 
 describe('conversions', () => {
 	describe('duration string to ms', () => {

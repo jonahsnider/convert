@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
-import { BestKind } from '../conversions/types.js';
-import { convertMany } from './convert-many.js';
+import { BestKind } from '../conversions/types';
+import { convertMany } from './convert-many';
 
 describe('conversions', () => {
 	test.each([

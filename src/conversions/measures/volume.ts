@@ -1,6 +1,6 @@
-import { expandMacro } from '../macros/expand.js';
-import { Macros } from '../macros/macros.js';
-import { Measure, MeasureKind } from '../types.js';
+import { expandMacro } from '../macros/expand';
+import { Macros } from '../macros/macros';
+import { Measure, MeasureKind } from '../types';
 
 export const volume: Measure = {
 	kind: MeasureKind.Volume,

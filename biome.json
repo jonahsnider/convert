@@ -8,7 +8,9 @@
 			"test/legacy.cjs",
 			"api-extractor.json",
 			".rollup.cache",
-			"docs"
+			"docs",
+			"temp",
+			"docs_out"
 		]
 	},
 	"formatter": {

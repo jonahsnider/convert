@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { assertConversions } from '../../../test/assert-conversion';
-import { convert } from '../convert.js';
+import { convert } from '../convert';
 
 describe('conversions', () => {
 	assertConversions([

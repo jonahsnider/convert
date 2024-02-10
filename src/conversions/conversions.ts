@@ -1,16 +1,16 @@
-import { angle } from './measures/angle.js';
-import { area } from './measures/area.js';
-import { data } from './measures/data.js';
-import { energy } from './measures/energy.js';
-import { force } from './measures/force.js';
-import { length } from './measures/length.js';
-import { mass } from './measures/mass.js';
-import { power } from './measures/power.js';
-import { pressure } from './measures/pressure.js';
-import { temperature } from './measures/temperature.js';
-import { time } from './measures/time.js';
-import { volume } from './measures/volume.js';
-import { Conversions, Measure } from './types.js';
+import { angle } from './measures/angle';
+import { area } from './measures/area';
+import { data } from './measures/data';
+import { energy } from './measures/energy';
+import { force } from './measures/force';
+import { length } from './measures/length';
+import { mass } from './measures/mass';
+import { power } from './measures/power';
+import { pressure } from './measures/pressure';
+import { temperature } from './measures/temperature';
+import { time } from './measures/time';
+import { volume } from './measures/volume';
+import { Conversions, Measure } from './types';
 
 export const conversions: Conversions = new Map();
 

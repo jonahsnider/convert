@@ -2,10 +2,10 @@ import assert from 'assert';
 import path from 'path';
 import { ParseArgsConfig, parseArgs } from 'util';
 import fs from 'fs/promises';
-import { conversions } from '../src/conversions/conversions.js';
-import { generateBestUnits } from '../src/generation/generate-best-units.js';
-import { generateParseUnit } from '../src/generation/generate-parse-unit.js';
-import { generateTypes } from '../src/generation/generate-types.js';
+import { conversions } from '../src/conversions/conversions';
+import { generateBestUnits } from '../src/generation/generate-best-units';
+import { generateParseUnit } from '../src/generation/generate-parse-unit';
+import { generateTypes } from '../src/generation/generate-types';
 
 const options: ParseArgsConfig = {
 	args: process.argv.slice(2),

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { convert } from './convert.js';
+import { convert } from './convert';
 
 test('basic conversions', () => {
 	expect(convert(1, 'm').to('cm')).toBe(100);

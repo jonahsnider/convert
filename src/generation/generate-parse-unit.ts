@@ -1,5 +1,5 @@
-import { FlattenedConversion, flattenConversions } from '../conversions/flatten.js';
-import { Conversions } from '../conversions/types.js';
+import { FlattenedConversion, flattenConversions } from '../conversions/flatten';
+import { Conversions } from '../conversions/types';
 
 function compressUnit(unit: FlattenedConversion): string {
 	return [

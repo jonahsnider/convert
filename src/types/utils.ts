@@ -1,3 +1,4 @@
+/** @internal */
 export type LiteralToPrimitive<T> = T extends number
 	? number
 	: T extends bigint
