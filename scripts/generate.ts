@@ -23,6 +23,10 @@ const { outputDir } = args.values;
 
 assert(typeof outputDir === 'string', 'Output directory is required');
 
-await fs.writeFile(path.join(outputDir, 'parse-unit.ts'), generateParseUnit(conversions));
-await fs.writeFile(path.join(outputDir, 'types.ts'), generateTypes(conversions));
-await fs.writeFile(path.join(outputDir, 'best-units.ts'), generateBestUnits(conversions));
+await fs.mkdir(outputDir, { recursive: true });
+
+await Promise.all([
+	fs.writeFile(path.join(outputDir, 'parse-unit.ts'), generateParseUnit(conversions)),
+	fs.writeFile(path.join(outputDir, 'types.ts'), generateTypes(conversions)),
+	fs.writeFile(path.join(outputDir, 'best-units.ts'), generateBestUnits(conversions)),
+]);
