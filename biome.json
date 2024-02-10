@@ -1,0 +1,29 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
+	"files": {
+		"ignore": ["dist", "node_modules", "src/generated", "test/legacy.cjs"]
+	},
+	"formatter": {
+		"formatWithErrors": true,
+		"lineWidth": 120
+	},
+	"javascript": {
+		"formatter": {
+			"jsxQuoteStyle": "single",
+			"quoteStyle": "single"
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true
+		}
+	},
+	"linter": {
+		"rules": {
+			"all": true,
+			"nursery": {
+				"all": false
+			}
+		}
+	}
+}

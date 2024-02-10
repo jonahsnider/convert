@@ -5,27 +5,63 @@
 ```ts
 
 // @public
-export type Angle = GetAliases<_ConversionFamilyId.Angle>;
+export type Angle = UnitsByMeasure<MeasureKind.Angle>;
 
 // @public
-export type Area = GetAliases<_ConversionFamilyId.Area>;
+export type Area = UnitsByMeasure<MeasureKind.Area>;
 
 // @public
-export type _BestConversion<Q extends number | bigint, U extends BestUnits> = {
-    quantity: SimplifyQuantity<Q>;
+export type BestConversion<Q extends number | bigint, U extends BestUnits> = {
+    quantity: LiteralToPrimitive<Q>;
     unit: U;
-    toString(toFixed?: number): `${SimplifyQuantity<Q>}${U}`;
+    toString(toFixed?: number): `${LiteralToPrimitive<Q>}${U}`;
 };
 
-// Warning: (ae-forgotten-export) The symbol "Best_2" needs to be exported by the entry point index.d.ts
-// Warning: (ae-forgotten-export) The symbol "bestUnits" needs to be exported by the entry point index.d.ts
-// Warning: (ae-forgotten-export) The symbol "Indexes" needs to be exported by the entry point index.d.ts
+// @public
+export type BestKind = 'metric' | 'imperial';
+
+// Warning: (ae-forgotten-export) The symbol "BestUnits_2" needs to be exported by the entry point index.d.ts
 //
 // @public
-export type BestUnits<Family extends _ConversionFamilyId = _ConversionFamilyId, Kind extends Best_2.Kind = Best_2.Kind> = (typeof bestUnits)[Kind][Family][number][Indexes.Best.Sym];
+export type BestUnits<T extends BestKind = BestKind> = BestUnits_2[T];
 
 // @public
-export const enum _ConversionFamilyId {
+export type BestUnitsForMeasure<M extends MeasureKind, K extends BestKind = BestKind> = BestUnitsForUnit<UnitsByMeasure<M>, K>;
+
+// @public
+export type BestUnitsForUnit<U extends Unit, K extends BestKind = BestKind> = U & BestUnits<K>;
+
+// @public
+function convert<Q extends number | bigint, U extends Unit>(quantity: Q, from: U): Converter<Q, MeasuresByUnit<U>>;
+export { convert }
+export default convert;
+
+// @public
+export type Converter<Q extends number | bigint, U extends Unit> = {
+    to(to: U): LiteralToPrimitive<Q>;
+    to<K extends BestKind = BestKind>(to: 'best', kind?: K | undefined): BestConversion<Q, BestUnitsForUnit<U, K>>;
+};
+
+// @public
+export function convertMany(value: string): Converter<number, Unit>;
+
+// @public
+export type Data = UnitsByMeasure<MeasureKind.Data>;
+
+// @public
+export type Energy = UnitsByMeasure<MeasureKind.Energy>;
+
+// @public
+export type Force = UnitsByMeasure<MeasureKind.Force>;
+
+// @public
+export type Length = UnitsByMeasure<MeasureKind.Length>;
+
+// @public
+export type Mass = UnitsByMeasure<MeasureKind.Mass>;
+
+// @public
+export enum MeasureKind {
     // (undocumented)
     Angle = 0,
     // (undocumented)
@@ -52,101 +88,43 @@ export const enum _ConversionFamilyId {
     Volume = 11
 }
 
-// @public
-function convert<Q extends number | bigint>(angle: Q, from: Angle): Converter<Q, Angle>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Area): Converter<Q, Area>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Data): Converter<Q, Data>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Energy): Converter<Q, Energy>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Force): Converter<Q, Force>;
-
-// @public
-function convert<Q extends number | bigint>(length: Q, from: Length): Converter<Q, Length>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Mass): Converter<Q, Mass>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Power): Converter<Q, Power>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Pressure): Converter<Q, Pressure>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Temperature): Converter<Q, Temperature>;
-
-// @public
-function convert<Q extends number | bigint>(duration: Q, from: Time): Converter<Q, Time>;
-
-// @public
-function convert<Q extends number | bigint>(quantity: Q, from: Volume): Converter<Q, Volume>;
-export { convert }
-export default convert;
-
-// @public
-export type Converter<Q extends number | bigint, U extends Unit> = {
-    to(to: U): SimplifyQuantity<Q>;
-    to<B extends BestUnits<UnitToFamily[U], K>, K extends Best_2.Kind = Best_2.Kind>(to: 'best', kind?: K | undefined): _BestConversion<Q, B>;
-};
-
-// @public
-export function convertMany(value: string): Converter<number, Unit>;
-
-// @public
-export type Data = GetAliases<_ConversionFamilyId.Data>;
-
-// @public
-export type Energy = GetAliases<_ConversionFamilyId.Energy>;
-
-// @public
-export type Force = GetAliases<_ConversionFamilyId.Force>;
-
-// Warning: (ae-forgotten-export) The symbol "FamilyToUnit" needs to be exported by the entry point index.d.ts
+// Warning: (ae-forgotten-export) The symbol "MeasureKindByUnit" needs to be exported by the entry point index.d.ts
 //
 // @public
-export type GetAliases<T extends _ConversionFamilyId> = FamilyToUnit[T];
+export type MeasuresByUnit<T extends Unit> = UnitsByMeasure<MeasureKindByUnit<T>>;
 
 // @public
-export type Length = GetAliases<_ConversionFamilyId.Length>;
-
-// @public
-export type Mass = GetAliases<_ConversionFamilyId.Mass>;
-
-// @public
-export function ms<Q extends number | bigint>(quantity: Q): `${SimplifyQuantity<Q>}${BestUnits<_ConversionFamilyId.Time>}`;
+export function ms<Q extends number | bigint>(quantity: Q): `${LiteralToPrimitive<Q>}${BestUnitsForMeasure<MeasureKind.Time>}`;
 
 // @public
 export function ms(value: string): number;
 
 // @public
-export type Power = GetAliases<_ConversionFamilyId.Power>;
+export type Power = UnitsByMeasure<MeasureKind.Power>;
 
 // @public
-export type Pressure = GetAliases<_ConversionFamilyId.Pressure>;
+export type Pressure = UnitsByMeasure<MeasureKind.Pressure>;
 
 // @public
-export type Temperature = GetAliases<_ConversionFamilyId.Temperature>;
+export type Temperature = UnitsByMeasure<MeasureKind.Temperature>;
 
 // @public
-export type Time = GetAliases<_ConversionFamilyId.Time>;
+export type Time = UnitsByMeasure<MeasureKind.Time>;
 
 // @public
-export type Unit = GetAliases<_ConversionFamilyId>;
+export type Unit = UnitsByMeasure<MeasureKind>;
+
+// Warning: (ae-forgotten-export) The symbol "UnitsByMeasure_2" needs to be exported by the entry point index.d.ts
+//
+// @public
+export type UnitsByMeasure<T extends MeasureKind> = T extends keyof UnitsByMeasure_2 ? UnitsByMeasure_2[T] : never;
 
 // @public
-export type Volume = GetAliases<_ConversionFamilyId.Volume>;
+export type Volume = UnitsByMeasure<MeasureKind.Volume>;
 
 // Warnings were encountered during analysis:
 //
-// dist/src/types/common.d.ts:20:5 - (ae-forgotten-export) The symbol "SimplifyQuantity" needs to be exported by the entry point index.d.ts
-// dist/src/types/common.d.ts:56:5 - (ae-forgotten-export) The symbol "UnitToFamily" needs to be exported by the entry point index.d.ts
+// dist/typings/src/types/converter.d.ts:12:5 - (ae-forgotten-export) The symbol "LiteralToPrimitive" needs to be exported by the entry point index.d.ts
 
 // (No @packageDocumentation comment for this package)
 

@@ -1,15 +1,21 @@
 {
 	"[javascript]": {
-		"editor.defaultFormatter": "samverschueren.linter-xo"
+		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[javascriptreact]": {
-		"editor.defaultFormatter": "samverschueren.linter-xo"
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[typescript]": {
-		"editor.defaultFormatter": "samverschueren.linter-xo"
+		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[typescriptreact]": {
-		"editor.defaultFormatter": "samverschueren.linter-xo"
+		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"typescript.preferences.importModuleSpecifierEnding": "js",

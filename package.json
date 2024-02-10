@@ -1,44 +1,121 @@
 {
-	"name": "base",
-	"version": "0.0.0-development",
-	"private": true,
-	"bugs": {
-		"url": "https://github.com/jonahsnider/convert/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/jonahsnider/convert.git"
-	},
-	"license": "MIT",
-	"author": {
-		"name": "Jonah Snider",
-		"email": "jonah@jonah.pw",
-		"url": "https://jonahsnider.com"
-	},
-	"sideEffects": false,
-	"type": "module",
-	"workspaces": [
-		"packages/*"
-	],
-	"scripts": {
-		"build": "turbo run build --",
-		"docs": "turbo run docs --",
-		"lint": "turbo run lint --",
-		"size": "turbo run size --",
-		"style": "turbo run style --",
-		"test": "turbo run build size style lint validate-api test",
-		"test:coverage": "turbo run build size style lint validate-api test:coverage",
-		"validate-api": "turbo run validate-api --",
-		"validate-api:local": "turbo run validate-api:local --"
-	},
-	"prettier": "@jonahsnider/prettier-config",
-	"devDependencies": {
-		"@jonahsnider/prettier-config": "1.1.2",
-		"prettier": "3.2.5",
-		"turbo": "1.11.3"
-	},
-	"packageManager": "yarn@4.1.0",
-	"engines": {
-		"node": "20.x"
-	}
+  "name": "convert",
+  "version": "0.0.0-development",
+  "description": "The smallest & fastest library for really easy, totally type-safe unit conversions in TypeScript & JavaScript",
+  "keywords": [
+    "convert",
+    "convert-units",
+    "unit-conversion",
+    "uom",
+    "metric",
+    "imperial",
+    "units",
+    "unit",
+    "measurement",
+    "measure",
+    "temperature",
+    "mass",
+    "weight",
+    "length",
+    "data"
+  ],
+  "homepage": "https://convert.js.org/",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jonahsnider/convert.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jonah Snider",
+    "email": "jonah@jonahsnider.com",
+    "url": "https://jonahsnider.com"
+  },
+  "sideEffects": false,
+  "type": "commonjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "jsdelivr": "./dist/index.mjs",
+  "unpkg": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "browser": "./dist/index.mjs",
+  "react-native": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "!dist/{src,test}/"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rollup --config rollup.config.ts --configPlugin typescript",
+    "bundle": "exit 1",
+    "docs": "typedoc",
+    "lint": "xo",
+    "release": "semantic-release",
+    "size": "size-limit",
+    "test": "vitest run",
+    "test:dev": "vitest --ui",
+    "validate-api": "api-extractor run",
+    "generate": "bun scripts/generate.ts -o src/generated/",
+    "validate-api:local": "api-extractor run --local --verbose"
+  },
+  "prettier": "@jonahsnider/prettier-config",
+  "resolutions": {
+    "terser": "5.27.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.23.9",
+    "@babel/preset-env": "7.23.9",
+    "@babel/preset-typescript": "7.23.3",
+    "@jonahsnider/util": "10.3.0",
+    "@microsoft/api-extractor": "7.40.1",
+    "@rollup/plugin-babel": "6.0.4",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "@rollup/plugin-replace": "5.0.5",
+    "@rollup/plugin-typescript": "11.1.6",
+    "@size-limit/preset-small-lib": "11.0.2",
+    "@tsconfig/node20": "20.1.2",
+    "@tsconfig/strictest": "2.0.3",
+    "@types/node": "20.11.17",
+    "@vitest/coverage-v8": "1.2.2",
+    "@vitest/ui": "^1.2.2",
+    "bignumber.js": "9.1.2",
+    "rollup": "4.9.6",
+    "rollup-plugin-terser": "7.0.2",
+    "semantic-release": "22.0.12",
+    "size-limit": "11.0.2",
+    "terser": "5.27.0",
+    "tslib": "2.6.2",
+    "typedoc": "0.25.7",
+    "typescript": "5.3.3",
+    "vitest": "1.2.2"
+  },
+  "packageManager": "yarn@4.1.0",
+  "runkitExampleFilename": "./docs/runkit.js",
+  "size-limit": [
+    {
+      "brotli": true,
+      "limit": "5.5 KiB",
+      "path": "./dist/index.js"
+    },
+    {
+      "gzip": true,
+      "limit": "6.75 KiB",
+      "path": "./dist/index.js"
+    },
+    {
+      "brotli": true,
+      "limit": "5.5 KiB",
+      "path": "./dist/index.mjs"
+    },
+    {
+      "gzip": true,
+      "limit": "6.75 KiB",
+      "path": "./dist/index.mjs"
+    }
+  ]
 }

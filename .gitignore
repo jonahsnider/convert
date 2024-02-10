@@ -256,3 +256,12 @@ $RECYCLE.BIN/
 
 # Rollup temporary files
 rollup.config-*.cjs
+
+# Generated files
+src/generated/*
+
+# API Extractor
+temp
+
+# Rollup cache
+.rollup.cache
