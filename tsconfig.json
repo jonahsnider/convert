@@ -7,7 +7,8 @@
 		"inlineSources": true,
 		"module": "ESNext",
 		"moduleResolution": "Node",
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"checkJs": false
 	},
 	"extends": ["@tsconfig/strictest", "@tsconfig/node20"],
 	"include": ["src", "scripts", "rollup.config.ts", "test"]

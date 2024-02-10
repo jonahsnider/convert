@@ -8,9 +8,9 @@ import { mass } from './measures/mass.js';
 import { power } from './measures/power.js';
 import { pressure } from './measures/pressure.js';
 import { temperature } from './measures/temperature.js';
-import { Conversions, Measure } from './types.js';
-import { volume } from './measures/volume.js';
 import { time } from './measures/time.js';
+import { volume } from './measures/volume.js';
+import { Conversions, Measure } from './types.js';
 
 export const conversions: Conversions = new Map();
 

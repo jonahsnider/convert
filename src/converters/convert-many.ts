@@ -1,6 +1,6 @@
 import { BestKind } from '../conversions/types.js';
-import { convert } from './convert.js';
 import { BestConversion, Converter } from '../types/converter.js';
+import { convert } from './convert.js';
 
 import type { BestUnits, Unit } from '../types/units.js';
 
@@ -19,12 +19,9 @@ function to(this: ConverterThis, unit: Unit | 'best', kind?: BestKind | undefine
 	let isFirstPass = true;
 
 	do {
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-		// biome-ignore lint/suspicious/noExplicitAny:
-		const converted = convert(Number(this._search[1]), this._search[2] as any).to(
+		const converted = convert(Number(this._search[1]), this._search[2] as Unit).to(
 			// biome-ignore lint/style/noNonNullAssertion:
-			// biome-ignore lint/suspicious/noExplicitAny:
-			isBest && !isFirstPass ? (resolvedUnit! as any) : (unit as any),
+			(isBest && !isFirstPass ? resolvedUnit! : unit) as Unit,
 		) as number | BestConversion<number, BestUnits>;
 
 		if (isBest && isFirstPass) {

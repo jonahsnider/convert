@@ -1,4 +1,4 @@
-import {convert, convertMany, ms} from 'convert';
+import { convert, convertMany, ms } from 'convert';
 
 // Convert time, length, mass, and many others
 convert(2048, 'bytes').to('kiB'); // 2

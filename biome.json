@@ -1,7 +1,15 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
 	"files": {
-		"ignore": ["dist", "node_modules", "src/generated", "test/legacy.cjs"]
+		"ignore": [
+			"dist",
+			"node_modules",
+			"src/generated",
+			"test/legacy.cjs",
+			"api-extractor.json",
+			".rollup.cache",
+			"docs"
+		]
 	},
 	"formatter": {
 		"formatWithErrors": true,

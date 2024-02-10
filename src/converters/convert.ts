@@ -21,19 +21,21 @@ function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: str
 	}
 
 	if (typeof quantity === 'bigint') {
+		if (fromDifference === toDifference) {
+			return ((quantity * BigInt(fromRatio)) / BigInt(toRatio)) as LiteralToPrimitive<Q>;
+		}
+
 		if (fromDifference !== 0 || toDifference !== 0) {
 			throw new RangeError(
-				`Conversion for ${from} to ${to} cannot be calculated as ${from} has a conversion difference which cannot be expressed with bigints`,
+				`Conversion for ${from} to ${to} cannot be calculated as one of the units has a conversion difference which cannot be expressed with bigints`,
 			);
 		}
 
-		return ((quantity * BigInt(fromRatio)) / BigInt(toRatio)) as LiteralToPrimitive<Q>;
+		return ((quantity + BigInt(fromDifference)) * (BigInt(fromRatio) / BigInt(toRatio)) -
+			BigInt(toDifference)) as LiteralToPrimitive<Q>;
 	}
 
-	// return ((quantity as number) * (fromRatio / toRatio)) as LiteralToPrimitive<Q>;
-
-	// @ts-expect-error
-	return quantity * (fromRatio / toRatio);
+	return (((quantity as number) + fromDifference) * (fromRatio / toRatio) - toDifference) as LiteralToPrimitive<Q>;
 }
 
 function convertToBest<Q extends number | bigint, U extends Unit>(
@@ -81,16 +83,16 @@ type ConverterThis<Q extends number | bigint, U extends Unit> = {
 	_from: U;
 };
 
-function to<Q extends number | bigint, U extends Unit>(
+function convertToAny<Q extends number | bigint, U extends Unit>(
 	this: ConverterThis<Q, U>,
 	to: MeasuresByUnit<U>,
 ): LiteralToPrimitive<Q>;
-function to<Q extends number | bigint, U extends Unit, K extends BestKind = 'metric'>(
+function convertToAny<Q extends number | bigint, U extends Unit, K extends BestKind = 'metric'>(
 	this: ConverterThis<Q, U>,
 	to: 'best',
 	kind?: K | undefined,
 ): BestConversion<Q, BestUnitsForUnit<U>>;
-function to<Q extends number | bigint, U extends Unit, K extends BestKind = 'metric'>(
+function convertToAny<Q extends number | bigint, U extends Unit, K extends BestKind = 'metric'>(
 	this: ConverterThis<Q, U>,
 	to: MeasuresByUnit<U> | 'best',
 	kind?: K | undefined,
@@ -117,6 +119,6 @@ export function convert<Q extends number | bigint, U extends Unit>(
 	from: U,
 ): Converter<Q, MeasuresByUnit<U>> {
 	return {
-		to: to.bind({ _quantity: quantity, _from: from }),
+		to: convertToAny.bind({ _quantity: quantity, _from: from }),
 	} as Converter<Q, MeasuresByUnit<U>>;
 }

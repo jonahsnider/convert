@@ -1,8 +1,8 @@
 import { MeasureKind } from '../conversions/types.js';
-import { convertMany } from './convert-many.js';
-import { convert } from './convert.js';
 import { BestUnitsForMeasure } from '../types/units.js';
 import { LiteralToPrimitive } from '../types/utils.js';
+import { convertMany } from './convert-many.js';
+import { convert } from './convert.js';
 
 /**
  * Convert a given duration of milliseconds to a string that best represents it.

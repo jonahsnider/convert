@@ -1,11 +1,11 @@
-import fs from 'fs/promises';
-import { generateParseUnit } from '../src/generation/generate-parse-unit.js';
+import assert from 'assert';
 import path from 'path';
 import { ParseArgsConfig, parseArgs } from 'util';
-import assert from 'assert';
+import fs from 'fs/promises';
 import { conversions } from '../src/conversions/conversions.js';
-import { generateTypes } from '../src/generation/generate-types.js';
 import { generateBestUnits } from '../src/generation/generate-best-units.js';
+import { generateParseUnit } from '../src/generation/generate-parse-unit.js';
+import { generateTypes } from '../src/generation/generate-types.js';
 
 const options: ParseArgsConfig = {
 	args: process.argv.slice(2),
