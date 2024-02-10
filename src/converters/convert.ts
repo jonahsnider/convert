@@ -1,41 +1,52 @@
 import { BestKind } from '../conversions/types';
-import { getBestUnitsByMeasure } from '../generated/best-units';
-import { parseUnit } from '../generated/parse-unit';
+import { bestUnits } from '../generated/best-units';
+import { differences, unitsObject } from '../generated/parse-unit';
 import { BestConversion, Converter } from '../types/converter';
 import { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units';
 import { LiteralToPrimitive } from '../types/utils';
 
 function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: string): LiteralToPrimitive<Q> {
-	const parsedFrom = parseUnit(from);
-	const parsedTo = parseUnit(to);
+	const parsedFrom = unitsObject[from as Unit];
+	const parsedTo = unitsObject[to as Unit];
 
 	const fromMeasure = parsedFrom[0];
 	const toMeasure = parsedTo[0];
 	const fromRatio = parsedFrom[1];
 	const toRatio = parsedTo[1];
-	const fromDifference = parsedFrom[2];
-	const toDifference = parsedTo[2];
 
 	if (fromMeasure !== toMeasure) {
 		throw new RangeError(`Cannot convert between different measures: ${from} and ${to}`);
 	}
 
 	if (typeof quantity === 'bigint') {
-		if (fromDifference === toDifference) {
-			return ((quantity * BigInt(fromRatio)) / BigInt(toRatio)) as LiteralToPrimitive<Q>;
-		}
-
-		if (fromDifference !== 0 || toDifference !== 0) {
+		if (
+			(from in differences || to in differences) &&
+			differences[from as keyof typeof differences] !== differences[to as keyof typeof differences]
+		) {
 			throw new RangeError(
 				`Conversion for ${from} to ${to} cannot be calculated as one of the units has a conversion difference which cannot be expressed with bigints`,
 			);
 		}
 
-		return ((quantity + BigInt(fromDifference)) * (BigInt(fromRatio) / BigInt(toRatio)) -
-			BigInt(toDifference)) as LiteralToPrimitive<Q>;
+		return ((quantity * BigInt(fromRatio)) / BigInt(toRatio)) as LiteralToPrimitive<Q>;
 	}
 
-	return (((quantity as number) + fromDifference) * (fromRatio / toRatio) - toDifference) as LiteralToPrimitive<Q>;
+	if (from in differences) {
+		if (to in differences) {
+			return (((quantity as number) + differences[from as keyof typeof differences]) * (fromRatio / toRatio) -
+				differences[to as keyof typeof differences]) as LiteralToPrimitive<Q>;
+		}
+
+		return (((quantity as number) + differences[from as keyof typeof differences]) *
+			(fromRatio / toRatio)) as LiteralToPrimitive<Q>;
+	}
+
+	if (to in differences) {
+		return ((quantity as number) * (fromRatio / toRatio) -
+			differences[to as keyof typeof differences]) as LiteralToPrimitive<Q>;
+	}
+
+	return ((quantity as number) * (fromRatio / toRatio)) as LiteralToPrimitive<Q>;
 }
 
 function convertToBest<Q extends number | bigint, U extends Unit>(
@@ -43,8 +54,8 @@ function convertToBest<Q extends number | bigint, U extends Unit>(
 	from: U,
 	kind: BestKind,
 ): BestConversion<Q, BestUnitsForUnit<U>> {
-	const fromMeasure = parseUnit(from)[0];
-	const best = getBestUnitsByMeasure(fromMeasure, kind);
+	const fromMeasure = unitsObject[from][0];
+	const best = bestUnits[kind === 'imperial' ? 1 : 0][fromMeasure];
 
 	const smallestUnit = best[0][0];
 

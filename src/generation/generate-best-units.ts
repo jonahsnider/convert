@@ -1,7 +1,7 @@
 import assert from 'assert';
 import BigNumber from 'bignumber.js';
 import { flattenMeasure } from '../conversions/flatten';
-import { BestKind, Conversions, Measure, MeasureKind } from '../conversions/types';
+import { BestKind, Conversions, Measure } from '../conversions/types';
 
 type BestEntry = {
 	ratio: string | number;
@@ -32,9 +32,17 @@ function getBestUnitsByMeasure(measure: Measure, kind: BestKind): BestEntry[] {
 
 export type CompressedBestUnit = [unit: string, ratio: number];
 
-function compressBestUnits(best: BestEntry[]): string {
-	const inner = best.map((entry) => `['${entry.unit}', ${entry.ratio}]`);
-	return `[${inner.join(', ')}] as const`;
+function createLookupArray(measures: Conversions, kind: BestKind): string {
+	// Result is an array where indexes match up with the values of MeasureKind
+	// It will have tuples of the best units for each measure
+	const result: [unit: string, value: number][][] = [];
+
+	for (const measure of measures.values()) {
+		const best = getBestUnitsByMeasure(measure, kind);
+		result.push(best.map((entry) => [entry.unit, Number(entry.ratio)]));
+	}
+
+	return JSON.stringify(result);
 }
 
 export function generateBestUnits(measures: Conversions): string {
@@ -66,30 +74,10 @@ export function generateBestUnits(measures: Conversions): string {
 	const code: string[] = [
 		`// Generated at ${new Date().toLocaleString()}`,
 		'',
-		'export function getBestUnitsByMeasure(measure: number, kind: "metric" | "imperial") {',
-		'  switch (measure) {',
-		Object.values(MeasureKind)
-			.filter((kind): kind is MeasureKind => typeof kind !== 'string')
-			.map((kind) => {
-				const measure = measures.get(kind);
-				assert(measure, new TypeError(`Measure ${kind} is not defined`));
-
-				const bestMetric = compressBestUnits(getBestUnitsByMeasure(measure, 'metric'));
-				const bestImperial = compressBestUnits(getBestUnitsByMeasure(measure, 'imperial'));
-
-				if (Array.isArray(measure.best)) {
-					// No logic
-					return [`    case ${kind}:`, `      return ${bestMetric};`].join('\n');
-				}
-
-				// Check whether kind is metric
-				return [`    case ${kind}:`, `      return kind === 'imperial' ? ${bestImperial} : ${bestMetric};`].join('\n');
-			})
-			.join('\n'),
-		'    default:',
-		'      throw new RangeError(`Unknown measure: ${measure}`);',
-		'  }',
-		'}',
+		'export const bestUnits = [',
+		`  ${createLookupArray(measures, 'metric')},`,
+		`  ${createLookupArray(measures, 'imperial')}`,
+		'] as const;',
 		'',
 		'export type BestUnits = {',
 		`  imperial: ${bestUnits.imperial.join(' | ')};`,
