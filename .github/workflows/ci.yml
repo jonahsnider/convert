@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: '20'
           cache: 'yarn'
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Build and test
@@ -35,6 +37,8 @@ jobs:
         with:
           node-version: '20'
           cache: 'yarn'
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Build
@@ -70,6 +74,8 @@ jobs:
         with:
           node-version: '20'
           cache: 'yarn'
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Run release
