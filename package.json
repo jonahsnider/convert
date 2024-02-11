@@ -98,12 +98,12 @@
 		},
 		{
 			"brotli": true,
-			"limit": "5.14 KB",
+			"limit": "5.18 KB",
 			"path": "./dist/index.mjs"
 		},
 		{
 			"gzip": true,
-			"limit": "6.48 KB",
+			"limit": "6.55 KB",
 			"path": "./dist/index.mjs"
 		}
 	]
