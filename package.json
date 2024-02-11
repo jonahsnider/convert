@@ -46,14 +46,7 @@
 	"browser": "./dist/index.mjs",
 	"react-native": "./dist/index.js",
 	"typings": "./dist/index.d.ts",
-	"files": [
-		"dist/",
-		"!dist/typings"
-	],
-	"prettier": "@jonahsnider/prettier-config",
-	"resolutions": {
-		"terser": "5.27.0"
-	},
+	"files": ["dist/", "!dist/typings", "!dist/src", "!dist/test", "!dist/scripts", "!dist/rollup.config.js"],
 	"devDependencies": {
 		"@babel/core": "7.23.9",
 		"@babel/preset-env": "7.23.9",
