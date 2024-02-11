@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Build and test
-        run: yarn just build lint test
+        run: yarn just build lint test size
   legacy-test:
     name: Legacy Node.js tests
 
