@@ -1,4 +1,4 @@
 [build]
 base = "./"
-command = "yarn run build && yarn run docs"
-publish = "./packages/convert/docs_out"
+command = "yarn just docs"
+publish = "./docs_out"

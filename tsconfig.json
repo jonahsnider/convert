@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"checkJs": false,
+		"declaration": true,
+		"declarationDir": "dist/typings",
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"outDir": "dist",
+		"rootDir": ".",
+		"resolveJsonModule": true
+	},
+	"extends": ["@tsconfig/strictest", "@tsconfig/node20"],
+	"include": ["src", "scripts", "rollup.config.ts", "test"]
+}

@@ -1,6 +1,6 @@
-import {convert} from 'convert';
+import { convert } from 'convert';
 
-// Your React/Vue/Svelte/Aurelia/Angular/Webpack-powered app:
+// Your React/Svelte/Vue/Vite/Webpack app:
 
 render(
 	<div>

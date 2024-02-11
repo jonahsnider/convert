@@ -1,4 +1,4 @@
-const {convert, convertMany, ms} = require('convert');
+const { convert, convertMany, ms } = require('convert');
 
 // Convert time, length, data, volume, mass, and more
 convert(1024, 'bytes').to('kB');

@@ -1,8 +1,0 @@
-# Rollup
-.rollup.cache
-
-# TypeDoc
-docs_out
-
-# Api Extractor
-temp
