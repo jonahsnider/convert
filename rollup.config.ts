@@ -51,7 +51,7 @@ export default defineConfig([
 			file: './dist/index.mjs',
 			format: 'esm',
 			exports: 'named',
-			sourcemap: true,
+			sourcemap: 'inline',
 		},
 	},
 	{
@@ -77,7 +77,7 @@ export default defineConfig([
 			format: 'esm',
 			name: 'convert',
 			exports: 'named',
-			sourcemap: true,
+			sourcemap: 'inline',
 		},
 	},
 ]);
