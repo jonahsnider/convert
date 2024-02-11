@@ -11,7 +11,7 @@ npm install convert
 yarn add convert
 ```
 
-[**More installation examples below, including browser builds**](#Installation).
+[**More installation examples below**](#Installation).
 
 ```js
 convert(5, "miles").to("km");
@@ -21,9 +21,8 @@ convertMany("4d 16h").to("minutes");
 ## Features
 
 - Full build time and runtime validation of conversions
-- Web frameworks like Next.js and Vite know that Convert  [conversions will be precalculated at build-time](https://github.com/jonahsnider/convert/blob/master/docs/build-time-optimizations.tsx), so absolutely **zero conversion code is sent to clients**!
-- Works in browsers and Node.js (UMD and ESM builds will work anywhere)
-- Runs anywhere, full ES3 backwards-compatibility
+- Web frameworks like Next.js and Vite know that Convert is side-effect free, so [conversions will be precalculated at build-time](https://github.com/jonahsnider/convert/blob/master/docs/build-time-optimizations.tsx), absolutely zero conversion code is sent to clients
+- Runs anywhere (browsers, Node, Bun, etc), full ES3 backwards-compatibility
 - Tiny bundle size and 0 dependencies
 - Supports bigints
 
