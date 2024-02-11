@@ -12,5 +12,5 @@
 		"resolveJsonModule": true
 	},
 	"extends": ["@tsconfig/strictest", "@tsconfig/node20"],
-	"include": ["src", "scripts", "rollup.config.ts", "test", "benchmarks"]
+	"include": ["src", "scripts", "rollup.config.ts", "test"]
 }

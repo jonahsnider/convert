@@ -50,7 +50,3 @@ build: validate-api bundle
 # Run semantic-release
 release: build
 	yarn semantic-release
-
-# Run benchmarks
-benchmarks: bundle types
-	NODE_ENV=production node dist/benchmarks/benchmarks.mjs

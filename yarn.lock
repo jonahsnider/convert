@@ -4144,7 +4144,6 @@ __metadata:
     semantic-release: "npm:23.0.2"
     size-limit: "npm:11.0.2"
     terser: "npm:5.27.0"
-    tinybench: "npm:2.6.0"
     tslib: "npm:2.6.2"
     typedoc: "npm:0.25.8"
     typescript: "npm:5.3.3"
@@ -8580,13 +8579,6 @@ __metadata:
   version: 1.3.0
   resolution: "tiny-relative-date@npm:1.3.0"
   checksum: 10/82a1fa2f3b00cd77c3ff0cf45380dad9e5befa8ee344d8de8076525efda4e6bd6af8f7f483e103b5834dc34bbed337fab7ac151f1d1a429a20f434a3744057b4
-  languageName: node
-  linkType: hard
-
-"tinybench@npm:2.6.0":
-  version: 2.6.0
-  resolution: "tinybench@npm:2.6.0"
-  checksum: 10/6d35f0540bbf6208e8f47fa88cad733bc4b35b3bea75ec995004a9a44f70b8947eff3d271a3b4a4f7e787a82211df0dec9370fa566ccf50441067c559382b3ed
   languageName: node
   linkType: hard
 

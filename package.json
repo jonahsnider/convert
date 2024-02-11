@@ -46,7 +46,10 @@
 	"browser": "./dist/index.mjs",
 	"react-native": "./dist/index.js",
 	"typings": "./dist/index.d.ts",
-	"files": ["dist/", "!dist/typings"],
+	"files": [
+		"dist/",
+		"!dist/typings"
+	],
 	"prettier": "@jonahsnider/prettier-config",
 	"resolutions": {
 		"terser": "5.27.0"
@@ -75,7 +78,6 @@
 		"semantic-release": "23.0.2",
 		"size-limit": "11.0.2",
 		"terser": "5.27.0",
-		"tinybench": "2.6.0",
 		"tslib": "2.6.2",
 		"typedoc": "0.25.8",
 		"typescript": "5.3.3",
