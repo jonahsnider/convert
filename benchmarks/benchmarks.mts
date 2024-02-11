@@ -1,6 +1,6 @@
 import * as published from 'convert';
 import { Bench } from 'tinybench';
-import type * as Mod from '../dist';
+import type * as Mod from '../src/index';
 
 // @ts-expect-error
 import * as modRaw from '../index.mjs';
