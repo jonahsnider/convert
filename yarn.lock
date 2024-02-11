@@ -4110,13 +4110,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convert@npm:4.14.1":
-  version: 4.14.1
-  resolution: "convert@npm:4.14.1"
-  checksum: 10/7402e80b9cab4cc87e7f26b8e4fbe208a589555e07296ba565391bccfdd6dd46a31596928636e4b1c25c84326c4d19fbaf6f13851e3d45d1f9a0e38f9f39a836
-  languageName: node
-  linkType: hard
-
 "convert@workspace:.":
   version: 0.0.0-use.local
   resolution: "convert@workspace:."
@@ -4138,13 +4131,10 @@ __metadata:
     "@vitest/coverage-v8": "npm:1.2.2"
     "@vitest/ui": "npm:^1.2.2"
     bignumber.js: "npm:9.1.2"
-    convert: "npm:4.14.1"
     just-install: "npm:2.0.1"
     rollup: "npm:4.10.0"
     semantic-release: "npm:23.0.2"
     size-limit: "npm:11.0.2"
-    terser: "npm:5.27.0"
-    tslib: "npm:2.6.2"
     typedoc: "npm:0.25.8"
     typescript: "npm:5.3.3"
     vitest: "npm:1.2.2"
@@ -8501,7 +8491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser@npm:5.27.0, terser@npm:^5.17.4":
+"terser@npm:^5.17.4":
   version: 5.27.0
   resolution: "terser@npm:5.27.0"
   dependencies:
@@ -8644,13 +8634,6 @@ __metadata:
   version: 3.0.0
   resolution: "treeverse@npm:3.0.0"
   checksum: 10/a053ad73f800c64c53ecf0effe7ea12e16eae1cf03f0901ac6b61390b6440d05d0aa8c942b6e77d2e9237d247b36fd405284942419f3817c9c3ef43bc5236218
-  languageName: node
-  linkType: hard
-
-"tslib@npm:2.6.2":
-  version: 2.6.2
-  resolution: "tslib@npm:2.6.2"
-  checksum: 10/bd26c22d36736513980091a1e356378e8b662ded04204453d353a7f34a4c21ed0afc59b5f90719d4ba756e581a162ecbf93118dc9c6be5acf70aa309188166ca
   languageName: node
   linkType: hard
 
