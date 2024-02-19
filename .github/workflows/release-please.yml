@@ -42,7 +42,7 @@ jobs:
       - name: Install dependencies with Yarn
         if: ${{ steps.release.outputs.release_created }}
         run: yarn install --immutable
-      - name: Build
+      - name: Publish to npm
         run: yarn just publish
         if: ${{ steps.release.outputs.release_created }}
         env:
