@@ -47,6 +47,6 @@ validate-api-local: types
 # Build for production
 build: validate-api bundle
 
-# Run semantic-release
-release: build
-	yarn semantic-release
+# Publish to npm
+publish: build
+	npm publish
