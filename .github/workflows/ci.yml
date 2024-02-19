@@ -2,6 +2,10 @@ name: CI
 
 on: [push, pull_request]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build-and-test:
     name: Build and test
@@ -63,8 +67,6 @@ jobs:
     if: ${{ github.ref  == 'refs/heads/master' }}
 
     needs: [build-and-test, legacy-test]
-
-    permissions: write-all
 
     steps:
       - name: Checkout git repository
