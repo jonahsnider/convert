@@ -42,8 +42,11 @@ jobs:
       - name: Install dependencies with Yarn
         if: ${{ steps.release.outputs.release_created }}
         run: yarn install --immutable
-      - name: Publish to npm
-        run: yarn just publish
+      - name: Build and test
+        run: yarn just build lint docs size validate-api test
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Publish
+        run: npm publish
         if: ${{ steps.release.outputs.release_created }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

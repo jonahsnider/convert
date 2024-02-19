@@ -46,7 +46,3 @@ validate-api-local: types
 
 # Build for production
 build: validate-api bundle
-
-# Publish to npm
-publish: build
-	npm publish
