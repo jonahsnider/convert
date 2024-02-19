@@ -21,7 +21,7 @@ convertMany("4d 16h").to("minutes");
 ## Features
 
 - Full build time and runtime validation of conversions
-- Web frameworks like Next.js and Vite know that Convert is side-effect free, so [conversions will be precalculated at build-time](https://github.com/jonahsnider/convert/blob/master/docs/build-time-optimizations.tsx), absolutely zero conversion code is sent to clients
+- Web frameworks like Next.js and Vite know that Convert is side-effect free, so [conversions will be precalculated at build-time](https://github.com/jonahsnider/convert/blob/main/docs/build-time-optimizations.tsx), absolutely zero conversion code is sent to clients
 - Runs anywhere (browsers, Node, Bun, etc), full ES3 backwards-compatibility
 - Tiny bundle size and 0 dependencies
 - Supports bigints
