@@ -31,19 +31,21 @@ jobs:
         # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        if: ${{ steps.release.outputs.release_created }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "yarn"
+          node-version: "lts/*"
+          registry-url: "https://registry.npmjs.org"
+          cache: yarn
+        if: ${{ steps.release.outputs.release_created }}
       - name: Setup Bun
         if: ${{ steps.release.outputs.release_created }}
         uses: oven-sh/setup-bun@v1
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "lts/*"
+          registry-url: "https://registry.npmjs.org"
       - name: Install dependencies with Yarn
         if: ${{ steps.release.outputs.release_created }}
         run: yarn install --immutable
