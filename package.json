@@ -59,7 +59,7 @@
 		"@babel/preset-env": "7.23.9",
 		"@biomejs/biome": "1.5.3",
 		"@jonahsnider/util": "10.3.0",
-		"@microsoft/api-extractor": "7.40.3",
+		"@microsoft/api-extractor": "7.40.6",
 		"@rollup/plugin-babel": "6.0.4",
 		"@rollup/plugin-node-resolve": "15.2.3",
 		"@rollup/plugin-swc": "0.3.0",
