@@ -1851,9 +1851,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.41.1":
-  version: 7.41.1
-  resolution: "@microsoft/api-extractor@npm:7.41.1"
+"@microsoft/api-extractor@npm:7.42.0":
+  version: 7.42.0
+  resolution: "@microsoft/api-extractor@npm:7.42.0"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.28.13"
     "@microsoft/tsdoc": "npm:0.14.2"
@@ -1863,13 +1863,14 @@ __metadata:
     "@rushstack/terminal": "npm:0.10.0"
     "@rushstack/ts-command-line": "npm:4.18.0"
     lodash: "npm:~4.17.15"
+    minimatch: "npm:~3.0.3"
     resolve: "npm:~1.22.1"
     semver: "npm:~7.5.4"
     source-map: "npm:~0.6.1"
     typescript: "npm:5.3.3"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10/6eed9d697698d037d36740fcab36c451bd5dd9b5a69aa811a082e36a66f8903e9d7e380610c43f4bbf2f989030f2d50b7335f07f07c3142f6dd6310c0941643e
+  checksum: 10/4aed37e79570399f1ec54998710ecce8781e0c61446762b342a6ea6456cc07a806f09f43bbc4cfd1c8de7c29bd7673961788da3fde0346669d0e4872e61766ae
   languageName: node
   linkType: hard
 
@@ -3098,7 +3099,7 @@ __metadata:
     "@babel/preset-env": "npm:7.24.0"
     "@biomejs/biome": "npm:1.5.3"
     "@jonahsnider/util": "npm:10.3.0"
-    "@microsoft/api-extractor": "npm:7.41.1"
+    "@microsoft/api-extractor": "npm:7.42.0"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:15.2.3"
     "@rollup/plugin-swc": "npm:0.3.0"
@@ -4238,6 +4239,15 @@ __metadata:
   dependencies:
     brace-expansion: "npm:^2.0.1"
   checksum: 10/c81b47d28153e77521877649f4bab48348d10938df9e8147a58111fe00ef89559a2938de9f6632910c4f7bf7bb5cd81191a546167e58d357f0cfb1e18cecc1c5
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:~3.0.3":
+  version: 3.0.8
+  resolution: "minimatch@npm:3.0.8"
+  dependencies:
+    brace-expansion: "npm:^1.1.7"
+  checksum: 10/6df5373cb1ea79020beb6887ff5576c58cfabcfd32c5a65c2cf58f326e4ee8eae84f129e5fa50b8a4347fa1d1e583f931285c9fb3040d984bdfb5109ef6607ec
   languageName: node
   linkType: hard
 
