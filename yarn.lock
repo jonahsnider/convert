@@ -1851,9 +1851,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.42.1":
-  version: 7.42.1
-  resolution: "@microsoft/api-extractor@npm:7.42.1"
+"@microsoft/api-extractor@npm:7.42.2":
+  version: 7.42.2
+  resolution: "@microsoft/api-extractor@npm:7.42.2"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.28.13"
     "@microsoft/tsdoc": "npm:0.14.2"
@@ -1861,7 +1861,7 @@ __metadata:
     "@rushstack/node-core-library": "npm:4.0.2"
     "@rushstack/rig-package": "npm:0.5.2"
     "@rushstack/terminal": "npm:0.10.0"
-    "@rushstack/ts-command-line": "npm:4.18.1"
+    "@rushstack/ts-command-line": "npm:4.19.0"
     lodash: "npm:~4.17.15"
     minimatch: "npm:~3.0.3"
     resolve: "npm:~1.22.1"
@@ -1870,7 +1870,7 @@ __metadata:
     typescript: "npm:5.3.3"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10/ee136e7603abde2c3dc504e1059fe736843b8c6aba87d2211057fcaf0d420e88a6430717afdcab339da1114ddb86cfa1da9e8e8404a0eec40962ea188a41935a
+  checksum: 10/d5fc939f2105d1e5163f5482aa7c4f0aa60bbdcdcc61bedde869d4fdd0de84f087e7308cca8acd1652dee24fd9fd484df59de7734988badc36c086fb8b85f282
   languageName: node
   linkType: hard
 
@@ -2268,15 +2268,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/ts-command-line@npm:4.18.1":
-  version: 4.18.1
-  resolution: "@rushstack/ts-command-line@npm:4.18.1"
+"@rushstack/ts-command-line@npm:4.19.0":
+  version: 4.19.0
+  resolution: "@rushstack/ts-command-line@npm:4.19.0"
   dependencies:
     "@rushstack/terminal": "npm:0.10.0"
     "@types/argparse": "npm:1.0.38"
     argparse: "npm:~1.0.9"
     string-argv: "npm:~0.3.1"
-  checksum: 10/48177ccdf983f35ae37b7bd005560460134775c54914ed4903120043307962dbec5d2549ab7a77c54d6b927674f3232351bb0952e15e21d08b9ace6d5a59b199
+  checksum: 10/10da2110cc068da8120ef69f3466c30b4bfb3c051b69ef83bea8b3230a35c51ec31adb4ce1c4f448a3267f9c42ca20b8bf3c539cedba00122dd1c5879282ab0e
   languageName: node
   linkType: hard
 
@@ -3099,7 +3099,7 @@ __metadata:
     "@babel/preset-env": "npm:7.24.0"
     "@biomejs/biome": "npm:1.5.3"
     "@jonahsnider/util": "npm:10.3.0"
-    "@microsoft/api-extractor": "npm:7.42.1"
+    "@microsoft/api-extractor": "npm:7.42.2"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:15.2.3"
     "@rollup/plugin-swc": "npm:0.3.0"
