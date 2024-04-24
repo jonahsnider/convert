@@ -46,18 +46,11 @@
 	"browser": "./dist/index.mjs",
 	"react-native": "./dist/index.js",
 	"typings": "./dist/index.d.ts",
-	"files": [
-		"dist/",
-		"!dist/typings",
-		"!dist/src",
-		"!dist/test",
-		"!dist/scripts",
-		"!dist/rollup.config.js"
-	],
+	"files": ["dist/", "!dist/typings", "!dist/src", "!dist/test", "!dist/scripts", "!dist/rollup.config.js"],
 	"devDependencies": {
 		"@babel/core": "7.24.4",
 		"@babel/preset-env": "7.24.4",
-		"@biomejs/biome": "1.5.3",
+		"@biomejs/biome": "1.7.1",
 		"@jonahsnider/util": "10.3.0",
 		"@microsoft/api-extractor": "7.43.1",
 		"@rollup/plugin-babel": "6.0.4",

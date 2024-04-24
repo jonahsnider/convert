@@ -1,4 +1,4 @@
-import { Measure, MeasureKind } from '../types';
+import { type Measure, MeasureKind } from '../types';
 
 export const angle: Measure = {
 	kind: MeasureKind.Angle,

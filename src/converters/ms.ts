@@ -1,6 +1,6 @@
-import { MeasureKind } from '../conversions/types';
-import { BestUnitsForMeasure } from '../types/units';
-import { LiteralToPrimitive } from '../types/utils';
+import type { MeasureKind } from '../conversions/types';
+import type { BestUnitsForMeasure } from '../types/units';
+import type { LiteralToPrimitive } from '../types/utils';
 import { convert } from './convert';
 import { convertMany } from './convert-many';
 

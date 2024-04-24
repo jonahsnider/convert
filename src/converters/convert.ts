@@ -1,9 +1,9 @@
-import { BestKind } from '../conversions/types';
+import type { BestKind } from '../conversions/types';
 import { bestUnits } from '../generated/best-units';
 import { differences, unitsObject } from '../generated/parse-unit';
-import { BestConversion, Converter } from '../types/converter';
-import { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units';
-import { LiteralToPrimitive } from '../types/utils';
+import type { BestConversion, Converter } from '../types/converter';
+import type { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units';
+import type { LiteralToPrimitive } from '../types/utils';
 
 function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: string): LiteralToPrimitive<Q> {
 	const parsedTo = unitsObject[to as Unit];
