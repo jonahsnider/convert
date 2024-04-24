@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.1.0](https://github.com/jonahsnider/convert/compare/v5.0.0...v5.1.0) (2024-04-24)
+
+
+### Features
+
+* **length:** add US survey foot unit ([25e1d47](https://github.com/jonahsnider/convert/commit/25e1d47c45ee0aff7a41cd9f8d5d2baee170a17e))
+
 ## [5.0.0](https://github.com/jonahsnider/convert/compare/v4.14.1...v5.0.0) (2024-02-19)
 
 
