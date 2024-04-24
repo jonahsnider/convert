@@ -14,6 +14,10 @@ export const length: Measure = {
 		...expandMacro(Macros.si, { names: ['meter', 'metre', 'meters', 'metres'], symbols: ['m'], ratio: 1 }),
 
 		{ names: ['foot', 'feet'], symbols: ['ft', "'"], ratio: 0.3048 },
+		{
+			names: ['US survey foot', 'US survey feet', 'U.S. survey foot', 'U.S. survey feet'],
+			ratio: new BigNumber(1200).div(3937),
+		},
 		{ names: ['inch', 'inches'], symbols: ['in', '"'], ratio: 0.0254 },
 		{ names: ['yard', 'yards'], symbols: ['yd'], ratio: 0.9144 },
 		{ names: ['mile', 'miles'], symbols: ['mi'], ratio: 1609.344 },
