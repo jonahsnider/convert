@@ -1,5 +1,5 @@
-import { FlattenedConversion, flattenConversions } from '../conversions/flatten';
-import { Conversions } from '../conversions/types';
+import { type FlattenedConversion, flattenConversions } from '../conversions/flatten';
+import type { Conversions } from '../conversions/types';
 
 function compressUnit(unit: FlattenedConversion): string {
 	return unit.names.map((name) => `  '${name}': [${unit.measure}, ${unit.ratio}],`).join('\n');

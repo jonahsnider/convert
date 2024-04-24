@@ -10,7 +10,7 @@ import { pressure } from './measures/pressure';
 import { temperature } from './measures/temperature';
 import { time } from './measures/time';
 import { volume } from './measures/volume';
-import { Conversions, Measure } from './types';
+import type { Conversions, Measure } from './types';
 
 export const conversions: Conversions = new Map();
 

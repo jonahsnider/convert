@@ -1,7 +1,7 @@
 import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import swc from '@rollup/plugin-swc';
-import terser, { Options as TerserOptions } from '@rollup/plugin-terser';
+import terser, { type Options as TerserOptions } from '@rollup/plugin-terser';
 import { defineConfig } from 'rollup';
 
 // NOTE: Using getBabelOutputPlugin() instead of the default babel() plugin is necessary as a workaround to transform the modules that Rollup bundles

@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { expandMacro } from '../macros/expand';
 import { Macros } from '../macros/macros';
-import { Measure, MeasureKind } from '../types';
+import { type Measure, MeasureKind } from '../types';
 
 export const length: Measure = {
 	kind: MeasureKind.Length,

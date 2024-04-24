@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { expandMacro } from '../macros/expand';
 import { Macros } from '../macros/macros';
-import { Measure, MeasureKind } from '../types';
+import { type Measure, MeasureKind } from '../types';
 
 const poundInGrams = new BigNumber(4.535_923_7e2);
 

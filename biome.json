@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.0.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.7.1/schema.json",
 	"files": {
 		"ignore": [
 			"dist",
@@ -33,6 +33,9 @@
 			"all": true,
 			"nursery": {
 				"all": false
+			},
+			"style": {
+				"useForOf": "off"
 			}
 		}
 	}

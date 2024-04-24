@@ -1,7 +1,7 @@
-import assert from 'assert';
-import path from 'path';
-import { ParseArgsConfig, parseArgs } from 'util';
-import fs from 'fs/promises';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { type ParseArgsConfig, parseArgs } from 'node:util';
 import { conversions } from '../src/conversions/conversions';
 import { generateBestUnits } from '../src/generation/generate-best-units';
 import { generateParseUnit } from '../src/generation/generate-parse-unit';

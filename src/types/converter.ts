@@ -1,6 +1,6 @@
-import { BestKind } from '../conversions/types';
-import { BestUnits, BestUnitsForUnit, Unit } from './units';
-import { LiteralToPrimitive } from './utils';
+import type { BestKind } from '../conversions/types';
+import type { BestUnits, BestUnitsForUnit, Unit } from './units';
+import type { LiteralToPrimitive } from './utils';
 
 /**
  * The return value from converting a unit to `'best'`.

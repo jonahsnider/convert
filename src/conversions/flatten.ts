@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { Conversions, Measure, MeasureEntry, MeasureKind, Numeric } from './types';
+import type { Conversions, Measure, MeasureEntry, MeasureKind, Numeric } from './types';
 
 export type FlattenedConversion = {
 	measure: MeasureKind;
