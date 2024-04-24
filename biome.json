@@ -10,7 +10,8 @@
 			".rollup.cache",
 			"docs",
 			"temp",
-			"docs_out"
+			"docs_out",
+			"package.json"
 		]
 	},
 	"formatter": {
