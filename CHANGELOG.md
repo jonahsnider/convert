@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.0](https://github.com/jonahsnider/convert/compare/v5.1.0...v5.2.0) (2024-04-28)
+
+
+### Features
+
+* support "m" as an alias for minutes ([067a398](https://github.com/jonahsnider/convert/commit/067a398a6f41045586a2d11b95494cd0b5050421)), closes [#659](https://github.com/jonahsnider/convert/issues/659)
+
 ## [5.1.0](https://github.com/jonahsnider/convert/compare/v5.0.0...v5.1.0) (2024-04-24)
 
 
