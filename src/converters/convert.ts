@@ -1,4 +1,4 @@
-import { type BestKind, type MeasureKind } from '../conversions/types';
+import type { BestKind, MeasureKind } from '../conversions/types';
 import { bestUnits } from '../generated/best-units';
 import { differences, unitsObject } from '../generated/parse-unit';
 import type { BestConversion, Converter } from '../types/converter';
