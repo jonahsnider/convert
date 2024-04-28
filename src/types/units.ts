@@ -19,7 +19,12 @@ export type MeasureKindByUnit<T extends Unit> = {
  * A type that gives all the units compatible with the same measure as a given unit.
  * @public
  */
-export type MeasuresByUnit<T extends Unit> = UnitsByMeasure<MeasureKindByUnit<T>>;
+export type MeasuresByUnit<T extends Unit> =
+	| UnitsByMeasure<MeasureKindByUnit<T>>
+	// Special case for converting from 'm' (alias for minutes) to time
+	| (T extends 'm' ? Time : never)
+	// Special case for converting from time to 'm' (alias for minutes)
+	| (T extends Time ? 'm' : never);
 
 /**
  * A supported unit you can convert.
@@ -46,7 +51,19 @@ export type BestUnitsForMeasure<M extends MeasureKind, K extends BestKind = Best
  * Get the best units for a given unit.
  * @public
  */
-export type BestUnitsForUnit<U extends Unit, K extends BestKind = BestKind> = U & BestUnits<K>;
+// We have special logic related to the 'm' unit, where it is injected in some cases
+// Or when Time is injected if you are converting from 'm'
+// We need to undo that logic here, otherwise the best units will be incorrect for 'm' or Time
+// Cases:
+// 1. U = Time | Length, output should be U - Time
+// 2. U = Time | 'm', output should be U - 'm'
+// 3. U = something else, output should be U (no transformation)
+export type BestUnitsForUnit<U extends Unit, K extends BestKind = BestKind> = (Time | Length extends U
+	? Exclude<U, Time>
+	: Time | 'm' extends U
+		? Exclude<U, 'm'>
+		: U) &
+	BestUnits<K>;
 
 /**
  * Valid angle units.

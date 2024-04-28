@@ -5,6 +5,7 @@ describe('conversions', () => {
 	describe('duration string to ms', () => {
 		test.each([
 			['1s', 1000],
+			['1m', 60_000],
 			['1d', 86_400_000],
 			['1d 24h', 86_400_000 * 2],
 		])('%p -> %p', (from, to) => {

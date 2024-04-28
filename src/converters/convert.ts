@@ -1,21 +1,33 @@
-import type { BestKind } from '../conversions/types';
+import { type BestKind, type MeasureKind } from '../conversions/types';
 import { bestUnits } from '../generated/best-units';
 import { differences, unitsObject } from '../generated/parse-unit';
 import type { BestConversion, Converter } from '../types/converter';
 import type { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units';
 import type { LiteralToPrimitive } from '../types/utils';
 
+// Importing MeasureKind will cause the entire enum to be included in the output, which increases bundle size
+// This workaround allows me to just hardcode the value, but ensures it doesn't become inaccurate if the enum changes
+const MeasureKindTime: MeasureKind.Time = 10;
+
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: No easy way to reduce complexity
 function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: string): LiteralToPrimitive<Q> {
-	const parsedTo = unitsObject[to as Unit];
+	let parsedTo = unitsObject[to as Unit];
 
 	if (!parsedTo) {
 		throw new RangeError(`${to} is not a valid unit`);
 	}
 
-	const parsedFrom = unitsObject[from as Unit];
+	let parsedFrom = unitsObject[from as Unit];
 
 	if (parsedFrom[0] !== parsedTo[0]) {
-		throw new RangeError(`Cannot convert between different measures: ${from} and ${to}`);
+		if (parsedFrom[0] === MeasureKindTime && to === 'm') {
+			// Going from time to meters, you meant to do minutes
+			parsedTo = unitsObject.min;
+		} else if (from === 'm' && parsedTo[0] === MeasureKindTime) {
+			parsedFrom = unitsObject.min;
+		} else {
+			throw new RangeError(`Cannot convert between different measures: ${from} and ${to}`);
+		}
 	}
 
 	const fromRatio = parsedFrom[1];

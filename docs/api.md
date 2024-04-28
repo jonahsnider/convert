@@ -29,7 +29,7 @@ export type BestUnits<T extends BestKind = BestKind> = BestUnits_2[T];
 export type BestUnitsForMeasure<M extends MeasureKind, K extends BestKind = BestKind> = BestUnitsForUnit<UnitsByMeasure<M>, K>;
 
 // @public
-export type BestUnitsForUnit<U extends Unit, K extends BestKind = BestKind> = U & BestUnits<K>;
+export type BestUnitsForUnit<U extends Unit, K extends BestKind = BestKind> = (Time | Length extends U ? Exclude<U, Time> : Time | 'm' extends U ? Exclude<U, 'm'> : U) & BestUnits<K>;
 
 // @public
 function convert<Q extends number | bigint, U extends Unit>(quantity: Q, from: U): Converter<Q, MeasuresByUnit<U>>;
@@ -99,7 +99,7 @@ export type _MeasureKindByUnit<T extends Unit> = {
 }[MeasureKind];
 
 // @public
-export type MeasuresByUnit<T extends Unit> = UnitsByMeasure<_MeasureKindByUnit<T>>;
+export type MeasuresByUnit<T extends Unit> = UnitsByMeasure<_MeasureKindByUnit<T>> | (T extends 'm' ? Time : never) | (T extends Time ? 'm' : never);
 
 // Warning: (ae-incompatible-release-tags) The symbol "ms" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
 //
