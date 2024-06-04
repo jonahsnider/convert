@@ -4,7 +4,7 @@ import { convert } from './convert';
 
 import type { BestUnits, Unit } from '../types/units';
 
-const splitExpression = /(-?(?:\d+)?\.?\d+)(\S+)/g;
+const splitExpression = /(-?(?:\d+)?\.?\d+)\s?(\S+)/g;
 
 type ConverterThis = {
 	_search: RegExpExecArray;

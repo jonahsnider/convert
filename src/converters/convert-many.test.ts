@@ -15,6 +15,13 @@ describe('conversions', () => {
 		{ from: '-1m', to: [-1, 'm'] },
 		{ from: '0.1m', to: [0.1, 'm'] },
 		{ from: '-0.1m', to: [-0.1, 'm'] },
+
+		{ from: '1 m', to: [1, 'm'] },
+		{ from: '-.1 m', to: [-0.1, 'm'] },
+		{ from: '-1 m', to: [-1, 'm'] },
+		{ from: '1m 1 m', to: [2, 'm'] },
+		// Doesn't parse double spaces
+		{ from: '1m 1  m', to: [1, 'm'] },
 	])('$from -> $to', ({ from, to }) => {
 		// biome-ignore lint/suspicious/noExplicitAny:
 		expect(convertMany(from).to(to[1] as any)).toBe(to[0]);
