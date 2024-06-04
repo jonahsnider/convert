@@ -94,7 +94,7 @@
 		},
 		{
 			"brotli": true,
-			"limit": "5.22 KB",
+			"limit": "5.23 KB",
 			"path": "./dist/index.mjs"
 		},
 		{

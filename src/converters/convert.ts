@@ -95,12 +95,8 @@ function convertToBest<Q extends number | bigint, U extends Unit>(
 	return {
 		quantity: result,
 		unit: bestUnit,
-		toString:
-			typeof quantity === 'bigint'
-				? () => ((result as bigint) + bestUnit) as `${LiteralToPrimitive<Q>}${BestUnitsForUnit<U>}`
-				: (toFixed?: number) =>
-						((toFixed === undefined ? result : (result as number).toFixed(toFixed)) +
-							bestUnit) as `${LiteralToPrimitive<Q>}${BestUnitsForUnit<U>}`,
+		toString: (toFixed?: number) =>
+			`${typeof result === 'bigint' || toFixed === undefined ? result : result.toFixed(toFixed)} ${bestUnit}` as `${LiteralToPrimitive<Q>} ${BestUnitsForUnit<U>}`,
 	};
 }
 

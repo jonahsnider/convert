@@ -23,7 +23,7 @@ export type BestConversion<Q extends number | bigint, U extends BestUnits> = {
 	 * Providing `0` will round the number to the nearest integer.
 	 * This option is ignored when converting `bigint`s.
 	 */
-	toString(toFixed?: number): `${LiteralToPrimitive<Q>}${U}`;
+	toString(toFixed?: number): `${LiteralToPrimitive<Q>} ${U}`;
 };
 
 /**

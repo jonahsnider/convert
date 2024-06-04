@@ -42,7 +42,7 @@ export function ms<Q extends number | bigint>(
 export function ms(value: string): number;
 export function ms<Q extends number | bigint>(
 	value: Q | string,
-): number | `${LiteralToPrimitive<Q>}${BestUnitsForMeasure<MeasureKind.Time>}` {
+): number | `${LiteralToPrimitive<Q>} ${BestUnitsForMeasure<MeasureKind.Time>}` {
 	if (typeof value === 'string') {
 		return convertMany(value).to('ms');
 	}

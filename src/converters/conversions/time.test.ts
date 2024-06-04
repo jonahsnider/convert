@@ -14,9 +14,9 @@ describe('special case for m', () => {
 	convert(1, 'm').to('s');
 	convert(60, 's').to('m');
 
-	const best1m: `${number}${Length}` = convert(1, 'm').to('best').toString();
-	const best60s: `${number}${Time}` = convert(1, 'min').to('best').toString();
+	const best1m: `${number} ${Length}` = convert(1, 'm').to('best').toString();
+	const best60s: `${number} ${Time}` = convert(1, 'min').to('best').toString();
 
-	expect(best1m).toBe('1m');
-	expect(best60s).toBe('60s');
+	expect(best1m).toBe('1 m');
+	expect(best60s).toBe('60 s');
 });

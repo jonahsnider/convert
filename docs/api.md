@@ -14,7 +14,7 @@ export type Area = UnitsByMeasure<MeasureKind.Area>;
 export type BestConversion<Q extends number | bigint, U extends BestUnits> = {
     quantity: _LiteralToPrimitive<Q>;
     unit: U;
-    toString(toFixed?: number): `${_LiteralToPrimitive<Q>}${U}`;
+    toString(toFixed?: number): `${_LiteralToPrimitive<Q>} ${U}`;
 };
 
 // @public

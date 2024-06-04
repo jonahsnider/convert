@@ -15,10 +15,10 @@ describe('conversions', () => {
 
 	describe('ms to duration string', () => {
 		test.each([
-			[60_000, '1min'],
-			[2 * 60_000, '2min'],
-			[-3 * 60_000, '-3min'],
-			[10 * 60_000 * 60, '10h'],
+			[60_000, '1 min'],
+			[2 * 60_000, '2 min'],
+			[-3 * 60_000, '-3 min'],
+			[10 * 60_000 * 60, '10 h'],
 		])('%p -> %p', (from, to) => {
 			expect(ms(from)).toBe(to);
 		});

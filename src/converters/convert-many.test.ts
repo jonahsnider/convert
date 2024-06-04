@@ -44,7 +44,7 @@ describe('conversions', () => {
 			expect(result.quantity).toBe(to[0]);
 			expect(result.unit).toBe(to[1]);
 
-			expect(result.toString()).toBe(to[0].toString() + to[1]);
+			expect(result.toString()).toBe(`${to[0].toString()} ${to[1]}`);
 		});
 	});
 });

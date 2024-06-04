@@ -17,34 +17,34 @@ describe('best conversions', () => {
 		expect(result.unit).toBe('d');
 
 		expect(result.quantity).toMatchInlineSnapshot('1.5');
-		expect(result.toString()).toMatchInlineSnapshot(`"1.5d"`);
+		expect(result.toString()).toMatchInlineSnapshot(`"1.5 d"`);
 	});
 
 	describe('with rounding', () => {
 		test('works when removing decimal places', () => {
-			expect(convert(123_456, 'm').to('best').toString(2)).toMatchInlineSnapshot(`"123.46km"`);
-			expect(convert(123_456, 'm').to('best').toString(0)).toMatchInlineSnapshot(`"123km"`);
-			expect(convert(1000, 'micrometer').to('best').toString(1)).toMatchInlineSnapshot(`"1.0mm"`);
-			expect(convert(1000, 'micrometer').to('best').toString(0)).toMatchInlineSnapshot(`"1mm"`);
+			expect(convert(123_456, 'm').to('best').toString(2)).toMatchInlineSnapshot(`"123.46 km"`);
+			expect(convert(123_456, 'm').to('best').toString(0)).toMatchInlineSnapshot(`"123 km"`);
+			expect(convert(1000, 'micrometer').to('best').toString(1)).toMatchInlineSnapshot(`"1.0 mm"`);
+			expect(convert(1000, 'micrometer').to('best').toString(0)).toMatchInlineSnapshot(`"1 mm"`);
 		});
 
 		test('works when adding decimal places', () => {
-			expect(convert(1000, 'm').to('best').toString(4)).toMatchInlineSnapshot(`"1.0000km"`);
-			expect(convert(1000, 'm').to('best').toString(0)).toMatchInlineSnapshot(`"1km"`);
-			expect(convert(1000, 'micrometer').to('best').toString(4)).toMatchInlineSnapshot(`"1.0000mm"`);
-			expect(convert(1000, 'micrometer').to('best').toString(0)).toMatchInlineSnapshot(`"1mm"`);
+			expect(convert(1000, 'm').to('best').toString(4)).toMatchInlineSnapshot(`"1.0000 km"`);
+			expect(convert(1000, 'm').to('best').toString(0)).toMatchInlineSnapshot(`"1 km"`);
+			expect(convert(1000, 'micrometer').to('best').toString(4)).toMatchInlineSnapshot(`"1.0000 mm"`);
+			expect(convert(1000, 'micrometer').to('best').toString(0)).toMatchInlineSnapshot(`"1 mm"`);
 		});
 
 		test('does nothing when omitted', () => {
-			expect(convert(123_456, 'm').to('best').toString()).toMatchInlineSnapshot(`"123.456km"`);
-			expect(convert(123_456, 'm').to('best').toString(undefined)).toMatchInlineSnapshot(`"123.456km"`);
-			expect(convert(1000, 'micrometer').to('best').toString()).toMatchInlineSnapshot(`"1mm"`);
-			expect(convert(1000, 'micrometer').to('best').toString(undefined)).toMatchInlineSnapshot(`"1mm"`);
+			expect(convert(123_456, 'm').to('best').toString()).toMatchInlineSnapshot(`"123.456 km"`);
+			expect(convert(123_456, 'm').to('best').toString(undefined)).toMatchInlineSnapshot(`"123.456 km"`);
+			expect(convert(1000, 'micrometer').to('best').toString()).toMatchInlineSnapshot(`"1 mm"`);
+			expect(convert(1000, 'micrometer').to('best').toString(undefined)).toMatchInlineSnapshot(`"1 mm"`);
 		});
 	});
 
 	test('works with metric', () => {
-		expect(convert(0.001, 'days').to('best', 'metric').toString()).toMatchInlineSnapshot(`"1.44min"`);
+		expect(convert(0.001, 'days').to('best', 'metric').toString()).toMatchInlineSnapshot(`"1.44 min"`);
 	});
 });
 
