@@ -1,5 +1,13 @@
 # Changelog
 
+## [5.3.0](https://github.com/jonahsnider/convert/compare/v5.2.0...v5.3.0) (2024-06-04)
+
+
+### Features
+
+* add a space separating quantity from unit when converting best conversion to string ([775d3c1](https://github.com/jonahsnider/convert/commit/775d3c169b5dfdfbd82815ec752d450045e35ce8)), closes [#665](https://github.com/jonahsnider/convert/issues/665)
+* support spaces between quantity and unit in convertMany() and ms() ([8f7eb2d](https://github.com/jonahsnider/convert/commit/8f7eb2deb47c00c2b2b7a119b051f34581c93fb0))
+
 ## [5.2.0](https://github.com/jonahsnider/convert/compare/v5.1.0...v5.2.0) (2024-04-28)
 
 
