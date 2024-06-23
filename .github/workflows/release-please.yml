@@ -40,7 +40,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - name: Setup Bun
         if: ${{ steps.release.outputs.release_created }}
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
