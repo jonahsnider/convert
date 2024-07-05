@@ -11,7 +11,7 @@ var string = best.toString();
 delete best.toString;
 
 assert.deepEqual(best, { quantity: 24, unit: 'h' });
-assert.strictEqual(string, '24h');
+assert.strictEqual(string, '24 h');
 
 best = lib.convert(12, 'in').to('best', 'imperial');
 string = best.toString();
@@ -19,4 +19,4 @@ string = best.toString();
 delete best.toString;
 
 assert.deepEqual(best, { quantity: 1, unit: 'ft' });
-assert.strictEqual(string, '1ft');
+assert.strictEqual(string, '1 ft');
