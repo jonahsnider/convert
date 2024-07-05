@@ -2181,9 +2181,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-swc@npm:0.3.0":
-  version: 0.3.0
-  resolution: "@rollup/plugin-swc@npm:0.3.0"
+"@rollup/plugin-swc@npm:0.3.1":
+  version: 0.3.1
+  resolution: "@rollup/plugin-swc@npm:0.3.1"
   dependencies:
     "@rollup/pluginutils": "npm:^5.0.1"
     smob: "npm:^1.4.0"
@@ -2193,7 +2193,7 @@ __metadata:
   peerDependenciesMeta:
     rollup:
       optional: true
-  checksum: 10/c2887c6c0a4383133ac89e00dfee14d14d30cdfe0354a409f64bafaf4ff515f49a89bf7ca00e6f7a7c86ea61f8cd2d598e59a960b7d04c2980c5098b0df9a8b9
+  checksum: 10/32cf0cd64581988a96f30fb68baf8e95b13e236b9338ae027b5ac2c12132804602c80215754d24db7a08638e777172858585d05877344aab6fc9331e8b7d720e
   languageName: node
   linkType: hard
 
@@ -3366,7 +3366,7 @@ __metadata:
     "@microsoft/api-extractor": "npm:7.43.8"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:15.2.3"
-    "@rollup/plugin-swc": "npm:0.3.0"
+    "@rollup/plugin-swc": "npm:0.3.1"
     "@rollup/plugin-terser": "npm:0.4.4"
     "@size-limit/preset-small-lib": "npm:11.1.4"
     "@swc/core": "npm:1.5.24"
