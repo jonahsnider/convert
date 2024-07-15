@@ -55,7 +55,7 @@
 		"!dist/rollup.config.js"
 	],
 	"devDependencies": {
-		"@babel/core": "7.24.8",
+		"@babel/core": "7.24.9",
 		"@babel/preset-env": "7.24.8",
 		"@biomejs/biome": "1.8.3",
 		"@jonahsnider/util": "11.0.0",
