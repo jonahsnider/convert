@@ -68,7 +68,7 @@
 		"@swc/core": "1.7.11",
 		"@tsconfig/node20": "20.1.4",
 		"@tsconfig/strictest": "2.0.5",
-		"@types/node": "20.15.0",
+		"@types/node": "20.16.0",
 		"@vitest/coverage-v8": "1.6.0",
 		"@vitest/ui": "^1.2.2",
 		"bignumber.js": "9.1.2",
