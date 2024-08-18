@@ -75,7 +75,7 @@
 		"just-install": "2.0.2",
 		"rollup": "4.21.0",
 		"size-limit": "11.1.4",
-		"typedoc": "0.26.5",
+		"typedoc": "0.26.6",
 		"typescript": "5.5.4",
 		"vitest": "1.6.0"
 	},
