@@ -73,7 +73,7 @@
 		"@vitest/ui": "^1.2.2",
 		"bignumber.js": "9.1.2",
 		"just-install": "2.0.2",
-		"rollup": "4.21.0",
+		"rollup": "4.21.1",
 		"size-limit": "11.1.4",
 		"typedoc": "0.26.6",
 		"typescript": "5.5.4",
