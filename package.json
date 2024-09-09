@@ -64,7 +64,7 @@
 		"@rollup/plugin-node-resolve": "15.2.3",
 		"@rollup/plugin-swc": "0.4.0",
 		"@rollup/plugin-terser": "0.4.4",
-		"@size-limit/preset-small-lib": "11.1.4",
+		"@size-limit/preset-small-lib": "11.1.5",
 		"@swc/core": "1.7.24",
 		"@tsconfig/node20": "20.1.4",
 		"@tsconfig/strictest": "2.0.5",
@@ -74,7 +74,7 @@
 		"bignumber.js": "9.1.2",
 		"just-install": "2.0.2",
 		"rollup": "4.21.2",
-		"size-limit": "11.1.4",
+		"size-limit": "11.1.5",
 		"typedoc": "0.26.7",
 		"typescript": "5.5.4",
 		"vitest": "1.6.0"
