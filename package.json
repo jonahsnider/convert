@@ -69,15 +69,15 @@
 		"@tsconfig/node20": "20.1.4",
 		"@tsconfig/strictest": "2.0.5",
 		"@types/node": "20.16.5",
-		"@vitest/coverage-v8": "1.6.0",
-		"@vitest/ui": "^1.2.2",
+		"@vitest/coverage-v8": "2.0.5",
+		"@vitest/ui": "^2.0.0",
 		"bignumber.js": "9.1.2",
 		"just-install": "2.0.2",
 		"rollup": "4.21.2",
 		"size-limit": "11.1.5",
 		"typedoc": "0.26.7",
 		"typescript": "5.6.2",
-		"vitest": "1.6.0"
+		"vitest": "2.0.5"
 	},
 	"packageManager": "yarn@4.4.1",
 	"runkitExampleFilename": "./docs/runkit.js",
