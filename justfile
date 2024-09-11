@@ -6,7 +6,7 @@ lint: generate
 
 # Apply lint fixes
 lint-fix: generate
-	yarn biome check . --apply-unsafe
+	yarn biome check . --write --unsafe
 
 # Generate docs to ./docs_out
 docs: generate
