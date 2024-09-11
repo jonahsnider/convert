@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.0](https://github.com/jonahsnider/convert/compare/v5.3.0...v5.4.0) (2024-09-11)
+
+
+### Features
+
+* **energy:** update "best" array to use SI prefixed units ([#679](https://github.com/jonahsnider/convert/issues/679)) ([994fca7](https://github.com/jonahsnider/convert/commit/994fca792c1f34af61fbb45d338f2e1196e1d422))
+
 ## [5.3.0](https://github.com/jonahsnider/convert/compare/v5.2.0...v5.3.0) (2024-06-04)
 
 
