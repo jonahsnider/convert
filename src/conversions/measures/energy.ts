@@ -4,7 +4,7 @@ import { type Measure, MeasureKind } from '../types';
 
 export const energy: Measure = {
 	kind: MeasureKind.Energy,
-	best: ['GWh', 'MWh', 'kWh', 'Wh', 'J'],
+	best: ['J', 'Wh', 'kWh', 'MWh', 'GWh'],
 	units: [
 		{ names: ['joule', 'joules'], symbols: ['J'], ratio: 1 },
 		...expandMacro(Macros.si, {
