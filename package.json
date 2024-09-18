@@ -1,6 +1,6 @@
 {
 	"name": "convert",
-	"version": "5.4.0",
+	"version": "5.4.1",
 	"description": "The smallest & fastest library for really easy, totally type-safe unit conversions in TypeScript & JavaScript",
 	"keywords": [
 		"convert",
