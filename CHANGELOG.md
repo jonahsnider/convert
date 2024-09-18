@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.4.1](https://github.com/jonahsnider/convert/compare/v5.4.0...v5.4.1) (2024-09-18)
+
+
+### Bug Fixes
+
+* **energy:** fix best array order ([#691](https://github.com/jonahsnider/convert/issues/691)) ([92f9b33](https://github.com/jonahsnider/convert/commit/92f9b3311aa77a6ee239df7838df58b966d06d4f))
+
 ## [5.4.0](https://github.com/jonahsnider/convert/compare/v5.3.0...v5.4.0) (2024-09-11)
 
 
