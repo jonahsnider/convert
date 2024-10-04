@@ -3425,7 +3425,7 @@ __metadata:
     just-install: "npm:2.0.2"
     rollup: "npm:4.24.0"
     size-limit: "npm:11.1.6"
-    typedoc: "npm:0.26.7"
+    typedoc: "npm:0.26.8"
     typescript: "npm:5.6.2"
     vitest: "npm:2.1.1"
   languageName: unknown
@@ -5721,9 +5721,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.26.7":
-  version: 0.26.7
-  resolution: "typedoc@npm:0.26.7"
+"typedoc@npm:0.26.8":
+  version: 0.26.8
+  resolution: "typedoc@npm:0.26.8"
   dependencies:
     lunr: "npm:^2.3.9"
     markdown-it: "npm:^14.1.0"
@@ -5734,7 +5734,7 @@ __metadata:
     typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10/1b8ff53fa108fec664af5497c7a11d72074f6e58e7bac7e3e884a8ee9173b38efad50e67df7d961830e218af58429760bfe464739a9e26b03e1c0d3937d5424d
+  checksum: 10/a903e77fdbc45f8fa99c6454f31d36304b9edcd4f04a787bed25f0300ce779ffebfd9dc8525678484799bc2d0990bc40522a222f962a4f65a079e68950d13670
   languageName: node
   linkType: hard
 
