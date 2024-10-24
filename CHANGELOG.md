@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.5.1](https://github.com/jonahsnider/convert/compare/v5.5.0...v5.5.1) (2024-10-24)
+
+
+### Bug Fixes
+
+* **volume:** improve definition of cubic yards conversion factor ([#695](https://github.com/jonahsnider/convert/issues/695)) ([5c526ad](https://github.com/jonahsnider/convert/commit/5c526ad3d6b8a102683608a536041b12d0c25eff))
+
 ## [5.5.0](https://github.com/jonahsnider/convert/compare/v5.4.1...v5.5.0) (2024-10-24)
 
 
