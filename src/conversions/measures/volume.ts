@@ -28,7 +28,7 @@ export const volume: Measure = {
 		// https://en.wikipedia.org/wiki/Acre-foot
 		{ names: ['acre-foot', 'acre-feet'], symbols: ['ac⋅ft', 'ac ft'], ratio: 1233.481_837_547_52 },
 		// https://en.wikipedia.org/wiki/Cubic_yard
-		{ names: ['cubic yard', 'cubic yards'], symbols: ['cu yd', 'yd3', 'yd³'], ratio: 0.76 },
+		{ names: ['cubic yard', 'cubic yards'], symbols: ['cu yd', 'yd3', 'yd³'], ratio: 0.764_554_857_984 },
 		// https://en.wikipedia.org/wiki/Cubic_foot
 		{ names: ['cubic foot', 'cubic feet'], symbols: ['cu ft', 'ft3', 'ft³'], ratio: 0.028_316_846_592 },
 		{ names: ['board foot', 'board feet'], ratio: 0.002_359_737 },
