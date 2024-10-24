@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.5.0](https://github.com/jonahsnider/convert/compare/v5.4.1...v5.5.0) (2024-10-24)
+
+
+### Features
+
+* **mass:** add lbs as symbol for pounds ([84f8ce0](https://github.com/jonahsnider/convert/commit/84f8ce0ff262e52863b56bc5f0ed7475c81478bc)), closes [#693](https://github.com/jonahsnider/convert/issues/693)
+
 ## [5.4.1](https://github.com/jonahsnider/convert/compare/v5.4.0...v5.4.1) (2024-09-18)
 
 
