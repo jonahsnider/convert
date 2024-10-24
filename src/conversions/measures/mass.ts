@@ -20,7 +20,7 @@ export const mass: Measure = {
 		{ names: ['megatonne', 'megatonnes'], symbols: ['Mt'], ratio: 1e12 },
 		{ names: ['gigatonne', 'gigatonnes'], symbols: ['Gt'], ratio: 1e15 },
 
-		{ names: ['pound', 'pounds'], symbols: ['lb'], ratio: poundInGrams },
+		{ names: ['pound', 'pounds'], symbols: ['lb', 'lbs'], ratio: poundInGrams },
 		{ names: ['stone', 'stones'], symbols: ['st'], ratio: poundInGrams.times(14) },
 		{ names: ['ounce', 'ounces'], symbols: ['oz'], ratio: poundInGrams.div(16) },
 		{ names: ['short ton', 'short tons', 'US ton', 'US tons'], ratio: poundInGrams.times(2000) },
