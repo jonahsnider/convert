@@ -55,6 +55,12 @@ export type Energy = UnitsByMeasure<MeasureKind.Energy>;
 export type Force = UnitsByMeasure<MeasureKind.Force>;
 
 // @public
+export function getMeasureKind<U extends Unit>(unit: U): _MeasureKindByUnit<U>;
+
+// @public
+export function getMeasureKind(unit: string): MeasureKind | undefined;
+
+// @public
 export type Length = UnitsByMeasure<MeasureKind.Length>;
 
 // @internal (undocumented)

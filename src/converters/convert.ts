@@ -2,7 +2,7 @@ import type { BestKind, MeasureKind } from '../conversions/types';
 import { bestUnits } from '../generated/best-units';
 import { differences, unitsObject } from '../generated/parse-unit';
 import type { BestConversion, Converter } from '../types/converter';
-import type { BestUnitsForUnit, MeasureKindByUnit, MeasuresByUnit, Unit } from '../types/units';
+import type { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units';
 import type { LiteralToPrimitive } from '../types/utils';
 
 // Importing MeasureKind will cause the entire enum to be included in the output, which increases bundle size
@@ -147,11 +147,4 @@ export function convert<Q extends number | bigint, U extends Unit>(
 	return {
 		to: convertToAny.bind({ _quantity: quantity, _from: from }),
 	} as Converter<Q, MeasuresByUnit<U>>;
-}
-
-export function getMeasure<U extends Unit>(unit: U): MeasureKindByUnit<U> {
-	if (!(unit in unitsObject)) {
-		throw new RangeError(`${unit} is not a valid unit`);
-	}
-	return unitsObject[unit][0] as MeasureKindByUnit<U>;
 }

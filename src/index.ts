@@ -2,7 +2,8 @@ export type { BestKind, MeasureKind } from './conversions/types';
 // biome-ignore lint/performance/noBarrelFile: This is the library entrypoint
 export { convertMany } from './converters/convert-many';
 // biome-ignore lint/style/noDefaultExport: This is a default export we want
-export { convert, convert as default, getMeasure } from './converters/convert';
+export { convert, convert as default } from './converters/convert';
+export { getMeasureKind } from './converters/get-measure-kind';
 export { ms } from './converters/ms';
 export type { UnitsByMeasure as _UnitsByMeasureRaw } from './generated/types';
 export type { BestConversion, Converter } from './types/converter';
