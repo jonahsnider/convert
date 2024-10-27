@@ -48,7 +48,7 @@ convert(20n, "hours").to("minutes");
 
 // Format to the best unit automatically
 convert(5500, "meters").to("best");
-// -> { quantity: 5.5, unit: 'km', toString: () => '5.5km' }
+// -> { quantity: 5.5, unit: 'km', toString: () => '5.5 km' }
 
 // You can also do length, data, volume, mass, temperature, and more
 convert(5, "kilometers").to("nautical miles");
@@ -76,16 +76,16 @@ const { convert } = require("convert");
 
 // Convert into the best unit
 const duration = convert(36, "h").to("best");
-// -> { quantity: 1.5, unit: 'd', toString: () => '1.5d' }
+// -> { quantity: 1.5, unit: 'd', toString: () => '1.5 d' }
 
 // The toString() method means you can automatically cast the object to a string without any issues
 "duration is " + duration;
 // -> duration is 1.5d
 
 // You can also specify to use a specific kind of units (metric or imperial, metric is default)
-convert(3.5, "km").to("best"); // -> { quantity: 3.5, unit: 'km', toString: () => '3.5km' }
-convert(3.5, "km").to("best", "metric"); // -> { quantity: 3.5, unit: 'km', toString: () => '3.5km' }
-convert(3.5, "km").to("best", "imperial"); // -> { quantity: 2.17, unit: 'mi', toString: () => '3.5mi' }
+convert(3.5, "km").to("best"); // -> { quantity: 3.5, unit: 'km', toString: () => '3.5 km' }
+convert(3.5, "km").to("best", "metric"); // -> { quantity: 3.5, unit: 'km', toString: () => '3.5 km' }
+convert(3.5, "km").to("best", "imperial"); // -> { quantity: 2.17, unit: 'mi', toString: () => '3.5 mi' }
 ```
 
 ### `ms` shorthand
