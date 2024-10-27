@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.0](https://github.com/jonahsnider/convert/compare/v5.5.1...v5.6.0) (2024-10-27)
+
+
+### Features
+
+* add getMeasureKind() function for validating inputs ([dd535cc](https://github.com/jonahsnider/convert/commit/dd535ccec9397dbe6218d28a6a02d3d9bdbaea98))
+
 ## [5.5.1](https://github.com/jonahsnider/convert/compare/v5.5.0...v5.5.1) (2024-10-24)
 
 
