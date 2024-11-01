@@ -57,11 +57,10 @@ function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: str
 	}
 
 	if (to in differences) {
-		return ((quantity as number) * (fromRatio / toRatio) -
-			differences[to as keyof typeof differences]) as LiteralToPrimitive<Q>;
+		return (quantity * (fromRatio / toRatio) - differences[to as keyof typeof differences]) as LiteralToPrimitive<Q>;
 	}
 
-	return ((quantity as number) * (fromRatio / toRatio)) as LiteralToPrimitive<Q>;
+	return (quantity * (fromRatio / toRatio)) as LiteralToPrimitive<Q>;
 }
 
 function convertToBest<Q extends number | bigint, U extends Unit>(
