@@ -99,30 +99,28 @@ function convertToBest<Q extends number | bigint, U extends Unit>(
 	};
 }
 
-type ConverterThis<Q extends number | bigint, U extends Unit> = {
-	_quantity: Q;
-	_from: U;
-};
-
 function convertToAny<Q extends number | bigint, U extends Unit>(
-	this: ConverterThis<Q, U>,
+	quantity: Q,
+	from: U,
 	to: MeasuresByUnit<U>,
 ): LiteralToPrimitive<Q>;
 function convertToAny<Q extends number | bigint, U extends Unit, K extends BestKind = 'metric'>(
-	this: ConverterThis<Q, U>,
+	quantity: Q,
+	from: U,
 	to: 'best',
 	kind?: K | undefined,
 ): BestConversion<Q, BestUnitsForUnit<U>>;
 function convertToAny<Q extends number | bigint, U extends Unit, K extends BestKind = 'metric'>(
-	this: ConverterThis<Q, U>,
+	quantity: Q,
+	from: U,
 	to: MeasuresByUnit<U> | 'best',
 	kind?: K | undefined,
 ): LiteralToPrimitive<Q> | BestConversion<Q, BestUnitsForUnit<U>> {
 	if (to === 'best') {
-		return convertToBest(this._quantity, this._from, kind ?? 'metric');
+		return convertToBest(quantity, from, kind ?? 'metric');
 	}
 
-	return convertTo(this._from, this._quantity, to);
+	return convertTo(from, quantity, to);
 }
 
 /**
@@ -143,7 +141,9 @@ export function convert<Q extends number | bigint, U extends Unit>(
 		throw new RangeError(`${from} is not a valid unit`);
 	}
 
-	return {
-		to: convertToAny.bind({ _quantity: quantity, _from: from }),
+	const converter = {
+		to: (to, kind) => convertToAny(quantity, from, to, kind),
 	} as Converter<Q, MeasuresByUnit<U>>;
+
+	return converter;
 }
