@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.1](https://github.com/jonahsnider/convert/compare/v5.6.0...v5.6.1) (2024-11-01)
+
+
+### Performance Improvements
+
+* use closures instead of bound functions ([49699d6](https://github.com/jonahsnider/convert/commit/49699d680ad8db678e4022fb74abf4bf6edb6bd5))
+
 ## [5.6.0](https://github.com/jonahsnider/convert/compare/v5.5.1...v5.6.0) (2024-10-27)
 
 
