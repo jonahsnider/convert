@@ -21,6 +21,8 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Build and test
@@ -39,6 +41,8 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Build
