@@ -46,3 +46,7 @@ validate-api-local: types
 
 # Build for production
 build: validate-api bundle
+
+# Run benchmarks
+benchmarks: generate
+	yarn vitest bench --run
