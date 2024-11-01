@@ -58,3 +58,28 @@ jobs:
         run: node ./test/legacy.cjs
       - name: Run tests on Node.js v0.9.1
         run: node-0.9.1 ./test/legacy.cjs
+  benchmarks:
+    name: Benchmarks
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "yarn"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Prepare to run benchmarks
+        run: yarn just generate
+      - name: Run benchmarks
+        uses: CodSpeedHQ/action@v3
+        with:
+          token: ${{ secrets.CODSPEED_TOKEN }}
+          run: "yarn vitest bench --run"
