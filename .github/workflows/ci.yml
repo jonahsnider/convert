@@ -72,6 +72,8 @@ jobs:
         with:
           node-version: "lts/*"
           cache: "yarn"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Prepare to run benchmarks
