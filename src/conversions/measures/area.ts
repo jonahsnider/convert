@@ -4,7 +4,7 @@ import { type Measure, MeasureKind } from '../types';
 
 export const area: Measure = {
 	kind: MeasureKind.Area,
-	best: { metric: ['mm2', 'cm2', 'm2', 'km2'], imperial: ['sq in', 'sq ft', 'sq mi', 'ac'] },
+	best: { metric: ['mm2', 'cm2', 'm2', 'km2'], imperial: ['sq in', 'sq ft', 'ac', 'sq mi'] },
 	units: [
 		// https://en.wikipedia.org/wiki/Category:Units_of_area
 		// https://en.wikipedia.org/wiki/Square_metre

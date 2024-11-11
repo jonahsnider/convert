@@ -1,5 +1,6 @@
-import { describe } from 'vitest';
+import { describe, expect, test } from 'vitest';
 import { assertConversions } from '../../../test/assert-conversion';
+import { convert } from '../convert';
 
 describe('conversions', () => {
 	assertConversions([
@@ -23,4 +24,10 @@ describe('conversions', () => {
 		{ from: [1, 'sq yd'], to: [9, 'sq ft'] },
 		{ from: [1, 'm2'], to: [3.861_021_585_424_458e-7, 'sq mi'] },
 	]);
+
+	const squareMileInM2 = convert(1, 'sq mi').to('m2');
+
+	test('best conversions', () => {
+		expect(convert(squareMileInM2, 'm2').to('best', 'imperial').toString()).toMatchInlineSnapshot(`"1 sq mi"`);
+	});
 });
