@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.6.1](https://github.com/jonahsnider/convert/compare/v5.6.0...v5.6.1) (2024-11-11)
+
+
+### Bug Fixes
+
+* **area:** fix acres being treated as larger than square miles ([b57f18e](https://github.com/jonahsnider/convert/commit/b57f18efae41df609891ae38b0e8d48ad027a529)), closes [#709](https://github.com/jonahsnider/convert/issues/709)
+
 ## [5.6.0](https://github.com/jonahsnider/convert/compare/v5.5.1...v5.6.0) (2024-10-27)
 
 
