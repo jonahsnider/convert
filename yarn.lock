@@ -3396,7 +3396,7 @@ __metadata:
     just-install: "npm:2.0.2"
     rollup: "npm:4.27.4"
     size-limit: "npm:11.1.6"
-    typedoc: "npm:0.27.0"
+    typedoc: "npm:0.27.1"
     typescript: "npm:5.7.2"
     vitest: "npm:2.1.5"
   languageName: unknown
@@ -5814,9 +5814,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.27.0":
-  version: 0.27.0
-  resolution: "typedoc@npm:0.27.0"
+"typedoc@npm:0.27.1":
+  version: 0.27.1
+  resolution: "typedoc@npm:0.27.1"
   dependencies:
     "@gerrit0/mini-shiki": "npm:^1.23.2"
     lunr: "npm:^2.3.9"
@@ -5827,7 +5827,7 @@ __metadata:
     typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10/6536a9bfdc8dc1466ecfc7dd9b0b89d64dcd0ca7770729333d2cafb6cd51867f677e300980f98c0a2a939974da92fa7185addc2821985df830a50c60529e7164
+  checksum: 10/426cdcb2726f23818040434a09e9f86f0bc7cbd8f9c865946720edc49acac746872e5f34ddf02bc29b1e32452c67418612c9ab7367600228a17287633e54312e
   languageName: node
   linkType: hard
 
