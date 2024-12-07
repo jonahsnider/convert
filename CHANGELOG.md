@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.7.0](https://github.com/jonahsnider/convert/compare/v5.6.1...v5.7.0) (2024-12-07)
+
+
+### Features
+
+* **mass:** add troy ounce units ([473e5b4](https://github.com/jonahsnider/convert/commit/473e5b4038d33b52b1f5c4f376781d6585dc3049)), closes [#713](https://github.com/jonahsnider/convert/issues/713)
+
 ## [5.6.1](https://github.com/jonahsnider/convert/compare/v5.6.0...v5.6.1) (2024-11-11)
 
 
