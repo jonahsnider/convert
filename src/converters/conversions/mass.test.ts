@@ -6,4 +6,5 @@ describe('conversions', () => {
 	assertConversions([{ from: [1, 'kt'], to: [1102.3 + 0.011_310_924_388, 'short ton'] }]);
 	assertConversions([{ from: [1, 'megatonne'], to: [1e6, 'tonne'] }]);
 	assertConversions([{ from: [1, 'gigatonne'], to: [1, 'petagram'] }]);
+	assertConversions([{ from: [1, 'troy ounce'], to: [31.1034768, 'grams'] }]);
 });

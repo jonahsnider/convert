@@ -28,5 +28,8 @@ export const mass: Measure = {
 			names: ['long ton', 'long tons', 'imperial ton', 'imperial tons', 'displacement ton', 'displacement tons'],
 			ratio: poundInGrams.times(2240),
 		},
+
+		// https://en.wikipedia.org/wiki/Troy_weight
+		{ names: ['troy ounce'], symbols: ['oz t', 'toz'], ratio: 31.1034768 },
 	],
 };
