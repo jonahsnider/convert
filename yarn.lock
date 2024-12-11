@@ -1495,27 +1495,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codspeed/core@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@codspeed/core@npm:3.1.1"
+"@codspeed/core@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@codspeed/core@npm:4.0.0"
   dependencies:
     axios: "npm:^1.4.0"
     find-up: "npm:^6.3.0"
     form-data: "npm:^4.0.0"
     node-gyp-build: "npm:^4.6.0"
-  checksum: 10/da238a226e79b1f316a8600e5f9ac606bfb43e0ff1c10723957828e6bdae08106c394c8d7a89c0f660e63a9bd59291c3de8a38e7a997b708b2b35daa7cdeb14b
+  checksum: 10/94413634e70b4eadbc5daa6d72f77c3101acaa953256162505c5d08f1ed430de168d3315774e5c0164912c6a7ae4db7ee814b03b45fd00fae82025718ed73722
   languageName: node
   linkType: hard
 
-"@codspeed/vitest-plugin@npm:3.1.1":
-  version: 3.1.1
-  resolution: "@codspeed/vitest-plugin@npm:3.1.1"
+"@codspeed/vitest-plugin@npm:4.0.0":
+  version: 4.0.0
+  resolution: "@codspeed/vitest-plugin@npm:4.0.0"
   dependencies:
-    "@codspeed/core": "npm:^3.1.1"
+    "@codspeed/core": "npm:^4.0.0"
   peerDependencies:
     vite: ^4.2.0 || ^5.0.0
     vitest: ">=1.2.2"
-  checksum: 10/0cc16765545e60f9b418133854aea1c2717f01e8a87d65f48696569f58e7ba52d6859b9e9ebe4a9742103361a6370c996da69ed304f854bdbe9f7542dd1277e3
+  checksum: 10/936d2b5d5b2f862a860bdbf5e51f15b194d8ed8827d438f8061d1b17a3cb7cd80ee414294d1cbb4747ce62ad57215b1ce9e19dd3dac11f148394bbb9a2acac48
   languageName: node
   linkType: hard
 
@@ -3385,7 +3385,7 @@ __metadata:
     "@babel/core": "npm:7.26.0"
     "@babel/preset-env": "npm:7.26.0"
     "@biomejs/biome": "npm:1.9.4"
-    "@codspeed/vitest-plugin": "npm:3.1.1"
+    "@codspeed/vitest-plugin": "npm:4.0.0"
     "@jonahsnider/util": "npm:11.0.0"
     "@microsoft/api-extractor": "npm:7.48.0"
     "@rollup/plugin-babel": "npm:6.0.4"
