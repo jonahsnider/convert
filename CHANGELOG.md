@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.8.0](https://github.com/jonahsnider/convert/compare/v5.7.0...v5.8.0) (2025-02-19)
+
+
+### Features
+
+* **pressure:** add inches of water and inches of mercury units ([#729](https://github.com/jonahsnider/convert/issues/729)) ([534fe1c](https://github.com/jonahsnider/convert/commit/534fe1cdf0c41db9162314361511bb8c42b7e245))
+
 ## [5.7.0](https://github.com/jonahsnider/convert/compare/v5.6.1...v5.7.0) (2024-12-07)
 
 
