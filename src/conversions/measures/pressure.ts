@@ -24,5 +24,19 @@ export const pressure: Measure = {
 			symbols: ['psi', 'lbf/in2', 'lbf/in²'],
 			ratio: 6.894_757e3,
 		},
+
+		// https://en.wikipedia.org/wiki/Inch_of_water
+		{
+			names: ['inch of water', 'inches of water'],
+			symbols: ['inAq', 'Aq'],
+			ratio: 249.0889,
+		},
+
+		// https://en.wikipedia.org/wiki/Inch_of_mercury
+		{
+			names: ['inch of mercury', 'inches of mercury'],
+			symbols: ['inHg', 'Hg'],
+			ratio: 3386.389,
+		},
 	],
 };
