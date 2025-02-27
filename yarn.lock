@@ -2128,9 +2128,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.50.1":
-  version: 7.50.1
-  resolution: "@microsoft/api-extractor@npm:7.50.1"
+"@microsoft/api-extractor@npm:7.51.0":
+  version: 7.51.0
+  resolution: "@microsoft/api-extractor@npm:7.51.0"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.30.3"
     "@microsoft/tsdoc": "npm:~0.15.1"
@@ -2147,7 +2147,7 @@ __metadata:
     typescript: "npm:5.7.3"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10/4ceb85d54de6a483dedebabcbd9def20664579c10db8878ab391918cc35027767538a9e4a63743f60c69290b35adcf2964fbe3ee947a237467717d88a84a27d6
+  checksum: 10/3a661b926df6edc3fa43e051a852ce83e785f238c36ebdb3d945202bb39d9be6e5ac3152cc3ebb544122e120f37dba4a1f430d2dd18c278980b44edb4466e3aa
   languageName: node
   linkType: hard
 
@@ -3551,7 +3551,7 @@ __metadata:
     "@biomejs/biome": "npm:1.9.4"
     "@codspeed/vitest-plugin": "npm:4.0.0"
     "@jonahsnider/util": "npm:11.0.0"
-    "@microsoft/api-extractor": "npm:7.50.1"
+    "@microsoft/api-extractor": "npm:7.51.0"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:16.0.0"
     "@rollup/plugin-swc": "npm:0.4.0"
