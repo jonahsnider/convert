@@ -11,7 +11,7 @@ export const temperature: Measure = {
 		...expandMacro(Macros.si, { names: ['kelvin', 'kelvins'], symbols: ['K'], ratio: 1 }),
 
 		{ names: ['fahrenheit'], symbols: ['F'], ratio: () => 5 / 9, difference: 459.67 },
-		{ names: ['celsius'], symbols: ['C'], ratio: 1, difference: 273.15 },
+		{ names: ['celsius'], symbols: ['C', '°C'], ratio: 1, difference: 273.15 },
 		{ names: ['rankine'], symbols: ['R'], ratio: () => 5 / 9 },
 	],
 };
