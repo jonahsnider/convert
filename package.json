@@ -55,7 +55,7 @@
 		"!dist/rollup.config.js"
 	],
 	"devDependencies": {
-		"@babel/core": "7.26.9",
+		"@babel/core": "7.26.10",
 		"@babel/preset-env": "7.26.9",
 		"@biomejs/biome": "1.9.4",
 		"@codspeed/vitest-plugin": "4.0.0",
