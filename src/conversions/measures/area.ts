@@ -26,5 +26,8 @@ export const area: Measure = {
 		{ names: ['square inch', 'square inches'], symbols: ['sq in', 'in²', 'in2'], ratio: 6.4516e-4 },
 		{ names: ['square yard', 'square yards'], symbols: ['sq yd', 'yd²', 'yd2'], ratio: 0.836_127_36 },
 		{ names: ['square mile', 'square miles'], symbols: ['sq mi', 'mi²', 'mi2'], ratio: 2.589_988_110_336e6 },
+
+		// https://en.wikipedia.org/wiki/Mu_(land)
+		{ names: ['mǔ', 'mu'], ratio: 666 + (2 / 3) },
 	],
 };
