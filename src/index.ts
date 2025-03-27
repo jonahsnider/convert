@@ -1,5 +1,4 @@
-export type { BestKind, MeasureKind } from './conversions/types';
-// biome-ignore lint/performance/noBarrelFile: This is the library entrypoint
+export { type BestKind, MeasureKind } from './conversions/types';
 export { convertMany } from './converters/convert-many';
 // biome-ignore lint/style/noDefaultExport: This is a default export we want
 export { convert, convert as default } from './converters/convert';
