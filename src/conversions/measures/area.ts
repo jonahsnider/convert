@@ -28,6 +28,6 @@ export const area: Measure = {
 		{ names: ['square mile', 'square miles'], symbols: ['sq mi', 'mi²', 'mi2'], ratio: 2.589_988_110_336e6 },
 
 		// https://en.wikipedia.org/wiki/Mu_(land)
-		{ names: ['mǔ', 'mu'], ratio: 666 + (2 / 3) },
+		{ names: ['mǔ', 'mu'], ratio: 666 + 2 / 3 },
 	],
 };
