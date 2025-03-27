@@ -1,3 +1,4 @@
+// biome-ignore lint/performance/noBarrelFile: This has to be exported
 export { type BestKind, MeasureKind } from './conversions/types';
 export { convertMany } from './converters/convert-many';
 // biome-ignore lint/style/noDefaultExport: This is a default export we want
