@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.9.0](https://github.com/jonahsnider/convert/compare/v5.8.0...v5.9.0) (2025-03-27)
+
+
+### Features
+
+* **area:** add Chinese mu unit ([#738](https://github.com/jonahsnider/convert/issues/738)) ([70ffc35](https://github.com/jonahsnider/convert/commit/70ffc35733fabe289a9a11ac1f5d3f1fbb682720))
+* export runtime definition of MeasureKind enum ([9c2796a](https://github.com/jonahsnider/convert/commit/9c2796a0f08ec8b30a9dd0c44cb75f2b0373851e)), closes [#735](https://github.com/jonahsnider/convert/issues/735)
+* **temperature:** add alternate symbol for Celsius (°C) ([#734](https://github.com/jonahsnider/convert/issues/734)) ([cfc541c](https://github.com/jonahsnider/convert/commit/cfc541c11ae13b8286daed0e5cde36d55a39de7e))
+
 ## [5.8.0](https://github.com/jonahsnider/convert/compare/v5.7.0...v5.8.0) (2025-02-19)
 
 
