@@ -60,7 +60,7 @@
 		"@biomejs/biome": "1.9.4",
 		"@codspeed/vitest-plugin": "4.0.1",
 		"@jonahsnider/util": "11.0.0",
-		"@microsoft/api-extractor": "7.52.2",
+		"@microsoft/api-extractor": "7.52.3",
 		"@rollup/plugin-babel": "6.0.4",
 		"@rollup/plugin-node-resolve": "16.0.1",
 		"@rollup/plugin-swc": "0.4.0",
