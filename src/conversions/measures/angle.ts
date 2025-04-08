@@ -13,13 +13,13 @@ export const angle: Measure = {
 			ratio: () => Math.PI / 200,
 		},
 		{
-			names: ["arcminute", "arcminutes", "minute", "minutes"],
-			symbols: ["'", "arcmin", "arcmins", "min", "mins"],
+			names: ["arcminute", "arcminutes"],
+			symbols: ["'", "arcmin", "arcmins"],
 			ratio: () => Math.PI / 10800,
 		},
 		{
-			names: ["arcsecond", "arcseconds", "second", "seconds"],
-			symbols: ["''", '"', "arcsec", "arcsecs", "sec", "secs"],
+			names: ["arcsecond", "arcseconds"],
+			symbols: ["''", '"', "arcsec", "arcsecs"],
 			ratio: () => Math.PI / 648000,
 		},
 	],
