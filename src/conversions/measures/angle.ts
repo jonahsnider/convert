@@ -12,5 +12,15 @@ export const angle: Measure = {
 			symbols: ['gon', 'gons', 'grad', 'grads', 'grade', 'grades'],
 			ratio: () => Math.PI / 200,
 		},
+		{
+			names: ["arcminute", "arcminutes", "minute", "minutes"],
+			symbols: ["'", "arcmin", "arcmins", "min", "mins"],
+			ratio: () => Math.PI / 10800,
+		},
+		{
+			names: ["arcsecond", "arcseconds", "second", "seconds"],
+			symbols: ["''", '"', "arcsec", "arcsecs", "sec", "secs"],
+			ratio: () => Math.PI / 648000,
+		},
 	],
 };
