@@ -60,6 +60,7 @@
 		"build:ci": "wireit",
 		"bundle": "wireit",
 		"docs": "wireit",
+		"generate": "wireit",
 		"lint": "wireit",
 		"lint:fix": "wireit",
 		"size": "wireit",
