@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0](https://github.com/jonahsnider/convert/compare/v5.9.0...v5.10.0) (2025-04-11)
+
+
+### Features
+
+* **angle:** add arcminutes and arcseconds units ([#740](https://github.com/jonahsnider/convert/issues/740)) ([f69bcb8](https://github.com/jonahsnider/convert/commit/f69bcb844f2c845524b6852383fab0e0aace6f2f))
+
 ## [5.9.0](https://github.com/jonahsnider/convert/compare/v5.8.0...v5.9.0) (2025-03-27)
 
 
