@@ -31,12 +31,16 @@ export type BestUnitsForMeasure<M extends MeasureKind, K extends BestKind = Best
 // @public
 export type BestUnitsForUnit<U extends Unit, K extends BestKind = BestKind> = (Time | Length extends U ? Exclude<U, Time> : Time | 'm' extends U ? Exclude<U, 'm'> : U) & BestUnits<K>;
 
-// Warning: (ae-forgotten-export) The symbol "Converter" needs to be exported by the entry point index.d.ts
-//
 // @public
 function convert<Q extends number | bigint, U extends Unit>(quantity: Q, from: U): Converter<Q, MeasuresByUnit<U>>;
 export { convert }
 export default convert;
+
+// @public
+export type Converter<Q extends number | bigint, U extends Unit> = {
+    to(to: U): _LiteralToPrimitive<Q>;
+    to<K extends BestKind = BestKind>(to: 'best', kind?: K | undefined): BestConversion<Q, BestUnitsForUnit<U, K>>;
+};
 
 // @public
 export function convertMany(value: string): Converter<number, Unit>;
@@ -154,6 +158,7 @@ export type Volume = UnitsByMeasure<MeasureKind.Volume>;
 //
 // dist/typings/src/types/converter.d.ts:12:5 - (ae-incompatible-release-tags) The symbol "quantity" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
 // dist/typings/src/types/converter.d.ts:25:5 - (ae-incompatible-release-tags) The symbol "toString" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
+// dist/typings/src/types/converter.d.ts:39:5 - (ae-incompatible-release-tags) The symbol "to" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
 
 // (No @packageDocumentation comment for this package)
 
