@@ -272,3 +272,6 @@ temp
 
 # Docs
 docs_out
+
+# Wireit cache
+.wireit

@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Build and test
-        run: yarn just build lint test size
+        run: yarn build:ci
   legacy-test:
     name: Legacy Node.js tests
 
@@ -46,7 +46,7 @@ jobs:
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Build
-        run: yarn just bundle
+        run: yarn bundle
       - name: Download Node.js v0.9.1
         run: |
           wget https://nodejs.org/dist/v0.9.1/node-v0.9.1-linux-x64.tar.gz
@@ -77,7 +77,7 @@ jobs:
       - name: Install dependencies with Yarn
         run: yarn install --immutable
       - name: Prepare to run benchmarks
-        run: yarn just generate
+        run: yarn generate
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3
         with:
