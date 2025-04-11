@@ -50,7 +50,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         run: yarn install --immutable
       - name: Build and test
-        run: yarn just build lint docs size validate-api test
+        run: yarn test:ci
         if: ${{ steps.release.outputs.release_created }}
       - name: Publish
         run: npm publish
