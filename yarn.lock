@@ -3348,10 +3348,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bignumber.js@npm:9.2.1":
-  version: 9.2.1
-  resolution: "bignumber.js@npm:9.2.1"
-  checksum: 10/dc0b979aea8e35b00281f675c96185d512548cf90be097f84b9e831729d2c60eef50792006075878c029b57881e5c5e9cc0d5283e0fa69aad144dc6f4ac77216
+"bignumber.js@npm:9.3.0":
+  version: 9.3.0
+  resolution: "bignumber.js@npm:9.3.0"
+  checksum: 10/60b79efcf7b56b925fca8eebd10d1f4b70aa2bf6eade7f5af0266f0092226dd2abcd9a3ee315ecb39459750d5a630ce3980b707e5d7bea32c97ffd378e8cc159
   languageName: node
   linkType: hard
 
@@ -3681,7 +3681,7 @@ __metadata:
     "@types/node": "npm:22.14.1"
     "@vitest/coverage-v8": "npm:3.0.5"
     "@vitest/ui": "npm:^3.0.0"
-    bignumber.js: "npm:9.2.1"
+    bignumber.js: "npm:9.3.0"
     rollup: "npm:4.40.0"
     size-limit: "npm:11.2.0"
     typedoc: "npm:0.28.2"
