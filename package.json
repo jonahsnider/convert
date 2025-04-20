@@ -95,7 +95,7 @@
 		"bignumber.js": "9.3.0",
 		"rollup": "4.40.0",
 		"size-limit": "11.2.0",
-		"typedoc": "0.28.2",
+		"typedoc": "0.28.3",
 		"typescript": "5.8.3",
 		"vitest": "3.0.5"
 	},
