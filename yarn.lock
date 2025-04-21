@@ -2151,9 +2151,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.52.4":
-  version: 7.52.4
-  resolution: "@microsoft/api-extractor@npm:7.52.4"
+"@microsoft/api-extractor@npm:7.52.5":
+  version: 7.52.5
+  resolution: "@microsoft/api-extractor@npm:7.52.5"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.30.5"
     "@microsoft/tsdoc": "npm:~0.15.1"
@@ -2161,7 +2161,7 @@ __metadata:
     "@rushstack/node-core-library": "npm:5.13.0"
     "@rushstack/rig-package": "npm:0.5.3"
     "@rushstack/terminal": "npm:0.15.2"
-    "@rushstack/ts-command-line": "npm:4.23.7"
+    "@rushstack/ts-command-line": "npm:5.0.0"
     lodash: "npm:~4.17.15"
     minimatch: "npm:~3.0.3"
     resolve: "npm:~1.22.1"
@@ -2170,7 +2170,7 @@ __metadata:
     typescript: "npm:5.8.2"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10/c1a39d3b4dd1f2cbd2d3860b076ce9cae731be2152abeedffbb14ce19a19c18ac6c7152ea113cf300b6b168380a84ad2823d956b06d8e72d261784f3d60ff82b
+  checksum: 10/f012c8c071f2696594001cabac63fd3400c997f38ae9c19dffcba7a22fdfee9b3eb53c5cc4f99a8b8c43261277150e395806b813241f9ef76d55e1c1329908e0
   languageName: node
   linkType: hard
 
@@ -2667,15 +2667,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/ts-command-line@npm:4.23.7":
-  version: 4.23.7
-  resolution: "@rushstack/ts-command-line@npm:4.23.7"
+"@rushstack/ts-command-line@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@rushstack/ts-command-line@npm:5.0.0"
   dependencies:
     "@rushstack/terminal": "npm:0.15.2"
     "@types/argparse": "npm:1.0.38"
     argparse: "npm:~1.0.9"
     string-argv: "npm:~0.3.1"
-  checksum: 10/8ddd606f47bd9da569f943757c32d92e01df342fa9d45ddd2c7ebadb43ddd4b04a34c6246222350124dac05a79e6791c5eeb21fbfd44a120261f1e0d1cf22ba4
+  checksum: 10/7f2c4b6da7a6e44966ba045dcf2d3094b01aece6a0a0130a6526d203bc8e5f2446841c3d7a13628040466e84a416c6b05353047066dbceef1a9e5d222756a6dd
   languageName: node
   linkType: hard
 
@@ -3669,7 +3669,7 @@ __metadata:
     "@biomejs/biome": "npm:1.9.4"
     "@codspeed/vitest-plugin": "npm:4.0.1"
     "@jonahsnider/util": "npm:11.0.0"
-    "@microsoft/api-extractor": "npm:7.52.4"
+    "@microsoft/api-extractor": "npm:7.52.5"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:16.0.1"
     "@rollup/plugin-swc": "npm:0.4.0"
