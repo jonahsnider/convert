@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.11.0](https://github.com/jonahsnider/convert/compare/v5.10.0...v5.11.0) (2025-04-24)
+
+
+### Features
+
+* **mass:** add mcg symbol for micrograms ([94f9e8c](https://github.com/jonahsnider/convert/commit/94f9e8c2e31a1462a7d86076f7b67869c897e620)), closes [#744](https://github.com/jonahsnider/convert/issues/744)
+
 ## [5.10.0](https://github.com/jonahsnider/convert/compare/v5.9.0...v5.10.0) (2025-04-11)
 
 
