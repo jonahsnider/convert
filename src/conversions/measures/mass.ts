@@ -14,6 +14,8 @@ export const mass: Measure = {
 	units: [
 		{ names: ['gram', 'grams'], symbols: ['g'], ratio: 1 },
 		...expandMacro(Macros.si, { names: ['gram', 'grams'], symbols: ['g'], ratio: 1 }),
+		// https://en.wikipedia.org/wiki/Microgram
+		{ names: [], symbols: ['mcg'], ratio: 1 / 1e6 },
 
 		{ names: ['tonne', 'tonnes', 'metric ton', 'metric tons'], symbols: ['t'], ratio: 1e6 },
 		{ names: ['kilotonne', 'kilotonnes'], symbols: ['kt'], ratio: 1e9 },
