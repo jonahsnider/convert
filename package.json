@@ -75,8 +75,8 @@
 		"wireit": "0.14.12"
 	},
 	"devDependencies": {
-		"@babel/core": "7.26.10",
-		"@babel/preset-env": "7.26.9",
+		"@babel/core": "7.27.1",
+		"@babel/preset-env": "7.27.1",
 		"@biomejs/biome": "1.9.4",
 		"@codspeed/vitest-plugin": "4.0.1",
 		"@jonahsnider/util": "11.0.0",
