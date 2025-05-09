@@ -8,4 +8,9 @@ describe('conversions', () => {
 	assertConversions([{ from: [1, 'gigatonne'], to: [1, 'petagram'] }]);
 	assertConversions([{ from: [1, 'troy ounce'], to: [31.1034768, 'grams'] }]);
 	assertConversions([{ from: [1, 'microgram'], to: [1, 'mcg'] }]);
+
+	assertConversions([{ from: [1, 'grain'], to: [64.79891, 'mg'] }]);
+
+	assertConversions([{ from: [1, 'short hundredweight'], to: [45.36, 'kg'] }]);
+	assertConversions([{ from: [1, 'long hundredweight'], to: [50.8, 'kg'] }]);
 });
