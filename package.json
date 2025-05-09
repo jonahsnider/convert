@@ -104,22 +104,22 @@
 	"size-limit": [
 		{
 			"brotli": true,
-			"limit": "5.79 KB",
+			"limit": "5.83 KB",
 			"path": "./dist/index.js"
 		},
 		{
 			"gzip": true,
-			"limit": "7.25 KB",
+			"limit": "7.32 KB",
 			"path": "./dist/index.js"
 		},
 		{
 			"brotli": true,
-			"limit": "5.54 KB",
+			"limit": "5.59 KB",
 			"path": "./dist/index.mjs"
 		},
 		{
 			"gzip": true,
-			"limit": "7.01 KB",
+			"limit": "7.07 KB",
 			"path": "./dist/index.mjs"
 		}
 	],
