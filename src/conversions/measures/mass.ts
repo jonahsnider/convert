@@ -23,8 +23,24 @@ export const mass: Measure = {
 		{ names: ['gigatonne', 'gigatonnes'], symbols: ['Gt'], ratio: 1e15 },
 
 		{ names: ['pound', 'pounds'], symbols: ['lb', 'lbs'], ratio: poundInGrams },
+
+		// https://en.wikipedia.org/wiki/Grain_(unit)
+		{ names: ['grain', 'grains'], symbols: ['gr'], ratio: 64.79891e-3 },
+
 		{ names: ['stone', 'stones'], symbols: ['st'], ratio: poundInGrams.times(14) },
 		{ names: ['ounce', 'ounces'], symbols: ['oz'], ratio: poundInGrams.div(16) },
+
+		// https://en.wikipedia.org/wiki/Hundredweight
+		{
+			names: ['short hundredweight', 'cental'],
+			ratio: 45.36e3,
+		},
+		{
+			names: ['long hundredweight', 'imperial hundredweight'],
+			symbols: ['cwt'],
+			ratio: 50.8e3,
+		},
+
 		{ names: ['short ton', 'short tons', 'US ton', 'US tons'], ratio: poundInGrams.times(2000) },
 		{
 			names: ['long ton', 'long tons', 'imperial ton', 'imperial tons', 'displacement ton', 'displacement tons'],
