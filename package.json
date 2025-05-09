@@ -192,7 +192,8 @@
 		"validate-api": {
 			"command": "api-extractor run",
 			"files": [
-				"api-extractor.json"
+				"api-extractor.json",
+				"docs/convert.api.md"
 			],
 			"dependencies": [
 				"types"
@@ -207,7 +208,8 @@
 		"validate-api:local": {
 			"command": "api-extractor run --local --verbose",
 			"files": [
-				"api-extractor.json"
+				"api-extractor.json",
+				"docs/convert.api.md"
 			],
 			"dependencies": [
 				"types"
