@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.12.0](https://github.com/jonahsnider/convert/compare/v5.11.0...v5.12.0) (2025-05-09)
+
+
+### Features
+
+* **mass:** add grain and hundredweight units with precise definitions ([#751](https://github.com/jonahsnider/convert/issues/751)) ([2ea5623](https://github.com/jonahsnider/convert/commit/2ea56235ac775c124c6f8f7356145cef6061db52))
+
 ## [5.11.0](https://github.com/jonahsnider/convert/compare/v5.10.0...v5.11.0) (2025-04-24)
 
 
