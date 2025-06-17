@@ -13,13 +13,11 @@ const terserConfig = {
 	compress: {
 		arrows: false,
 		arguments: true,
-		// biome-ignore lint/style/useNamingConvention: This has to be camelcase
 		keep_fargs: false,
 		toplevel: true,
 		passes: 10,
 		unsafe: true,
 		// Required to reduce unnecessary side-effect reads of properties of `this` from Function.prototype.bind
-		// biome-ignore lint/style/useNamingConvention: This has to be camelcase
 		pure_getters: true,
 	},
 	mangle: {
@@ -42,7 +40,6 @@ const esmTerserConfig = {
 	},
 } satisfies TerserOptions;
 
-// biome-ignore lint/style/noDefaultExport: This must be a default export for Rollup
 export default defineConfig([
 	{
 		input: './src/index.ts',

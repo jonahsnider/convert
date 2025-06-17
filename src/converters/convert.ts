@@ -9,7 +9,6 @@ import type { LiteralToPrimitive } from '../types/utils';
 // This workaround allows me to just hardcode the value, but ensures it doesn't become inaccurate if the enum changes
 const MeasureKindTime: MeasureKind.Time = 10;
 
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: No easy way to reduce complexity
 function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: string): LiteralToPrimitive<Q> {
 	let parsedTo = unitsObject[to as Unit];
 

@@ -77,7 +77,7 @@
 	"devDependencies": {
 		"@babel/core": "7.27.4",
 		"@babel/preset-env": "7.27.2",
-		"@biomejs/biome": "1.9.4",
+		"@biomejs/biome": "2.0.0",
 		"@codspeed/vitest-plugin": "4.0.1",
 		"@jonahsnider/util": "11.0.0",
 		"@microsoft/api-extractor": "7.52.8",
@@ -125,7 +125,7 @@
 	],
 	"wireit": {
 		"lint": {
-			"command": "biome check --colors=force .",
+			"command": "biome check --colors=force",
 			"dependencies": [
 				{
 					"script": "generate",
@@ -135,7 +135,7 @@
 			"output": []
 		},
 		"lint:fix": {
-			"command": "biome check --colors=force . --write --unsafe",
+			"command": "biome check --colors=force --write --unsafe",
 			"dependencies": [
 				{
 					"script": "generate",

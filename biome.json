@@ -1,17 +1,18 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
 	"files": {
-		"ignore": [
-			"dist",
-			"node_modules",
-			"src/generated",
-			"test/legacy.cjs",
-			"api-extractor.json",
-			".rollup.cache",
-			"docs",
-			"temp",
-			"docs_out",
-			"package.json"
+		"includes": [
+			"**",
+			"!**/dist",
+			"!**/node_modules",
+			"!**/src/generated",
+			"!**/test/legacy.cjs",
+			"!**/api-extractor.json",
+			"!**/.rollup.cache",
+			"!**/docs",
+			"!**/temp",
+			"!**/docs_out",
+			"!**/package.json"
 		]
 	},
 	"formatter": {
@@ -30,8 +31,11 @@
 		}
 	},
 	"linter": {
+		"domains": {
+			"project": "recommended",
+			"test": "recommended"
+		},
 		"rules": {
-			"all": true,
 			"correctness": {
 				"noNodejsModules": "off",
 				"useImportExtensions": "off"

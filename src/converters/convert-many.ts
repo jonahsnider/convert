@@ -1,8 +1,7 @@
 import type { BestKind } from '../conversions/types';
 import type { BestConversion, Converter } from '../types/converter';
-import { convert } from './convert';
-
 import type { BestUnits, Unit } from '../types/units';
+import { convert } from './convert';
 
 const splitExpression = /(-?(?:\d+)?\.?\d+)\s?(\S+)/g;
 
@@ -20,7 +19,7 @@ function to(this: ConverterThis, unit: Unit | 'best', kind?: BestKind | undefine
 
 	do {
 		const converted = convert(Number(this._search[1]), this._search[2] as Unit).to(
-			// biome-ignore lint/style/noNonNullAssertion:
+			// biome-ignore lint/style/noNonNullAssertion: isBest and not isFirstPass implies resolvedUnit
 			(isBest && !isFirstPass ? resolvedUnit! : unit) as Unit,
 		) as number | BestConversion<number, BestUnits>;
 
@@ -32,12 +31,12 @@ function to(this: ConverterThis, unit: Unit | 'best', kind?: BestKind | undefine
 			result += converted as number;
 		}
 
-		// biome-ignore lint/style/noNonNullAssertion:
+		// biome-ignore lint/style/noNonNullAssertion: do while loop implies this._search is not null
 		this._search = splitExpression.exec(this._value)!;
 	} while (this._search);
 
 	if (isBest) {
-		// biome-ignore lint/style/noNonNullAssertion:
+		// biome-ignore lint/style/noNonNullAssertion: isBest implies resolvedUnit
 		return convert(result, resolvedUnit!).to('best', kind);
 	}
 

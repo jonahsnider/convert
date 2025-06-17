@@ -4,7 +4,6 @@ import codspeedPlugin from '@codspeed/vitest-plugin';
 // eslint-disable-next-line n/file-extension-in-import
 import { defineConfig } from 'vitest/config';
 
-// biome-ignore lint/style/noDefaultExport: This is required
 export default defineConfig({
 	root: dirname(fileURLToPath(import.meta.url)),
 	test: {

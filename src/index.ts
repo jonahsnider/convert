@@ -1,8 +1,6 @@
-// biome-ignore lint/performance/noBarrelFile: This has to be exported
 export { type BestKind, MeasureKind } from './conversions/types';
-export { convertMany } from './converters/convert-many';
-// biome-ignore lint/style/noDefaultExport: This is a default export we want
 export { convert, convert as default } from './converters/convert';
+export { convertMany } from './converters/convert-many';
 export { getMeasureKind } from './converters/get-measure-kind';
 export { ms } from './converters/ms';
 export type { UnitsByMeasure as _UnitsByMeasureRaw } from './generated/types';
@@ -18,6 +16,7 @@ export type {
 	Force,
 	Length,
 	Mass,
+	MeasureKindByUnit as _MeasureKindByUnit,
 	MeasuresByUnit,
 	Power,
 	Pressure,
@@ -26,6 +25,5 @@ export type {
 	Unit,
 	UnitsByMeasure,
 	Volume,
-	MeasureKindByUnit as _MeasureKindByUnit,
 } from './types/units';
 export type { LiteralToPrimitive as _LiteralToPrimitive } from './types/utils';
