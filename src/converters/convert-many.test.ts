@@ -23,7 +23,7 @@ describe('conversions', () => {
 		// Doesn't parse double spaces
 		{ from: '1m 1  m', to: [1, 'm'] },
 	])('$from -> $to', ({ from, to }) => {
-		// biome-ignore lint/suspicious/noExplicitAny:
+		// biome-ignore lint/suspicious/noExplicitAny: test case
 		expect(convertMany(from).to(to[1] as any)).toBe(to[0]);
 	});
 
@@ -38,7 +38,7 @@ describe('conversions', () => {
 			{ from: ['500m 3km', 'metric'], to: [3.5, 'km'] },
 			{ from: ['500m 3km', 'imperial'], to: [2.174_799_172_830_668_6, 'mi'] },
 		])('$from -> $to', ({ from, to }) => {
-			// biome-ignore lint/suspicious/noExplicitAny:
+			// biome-ignore lint/suspicious/noExplicitAny: test case
 			const result = convertMany(from[0] as any).to('best', from[1] as any);
 
 			expect(result.quantity).toBe(to[0]);

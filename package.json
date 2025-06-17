@@ -125,7 +125,7 @@
 	],
 	"wireit": {
 		"lint": {
-			"command": "biome check --colors=force .",
+			"command": "biome check --colors=force",
 			"dependencies": [
 				{
 					"script": "generate",
@@ -135,7 +135,7 @@
 			"output": []
 		},
 		"lint:fix": {
-			"command": "biome check --colors=force . --write --unsafe",
+			"command": "biome check --colors=force --write --unsafe",
 			"dependencies": [
 				{
 					"script": "generate",
