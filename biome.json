@@ -31,6 +31,10 @@
 		}
 	},
 	"linter": {
+		"domains": {
+			"project": "recommended",
+			"test": "recommended"
+		},
 		"rules": {
 			"correctness": {
 				"noNodejsModules": "off",
