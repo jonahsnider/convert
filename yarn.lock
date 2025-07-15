@@ -2717,12 +2717,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.16.3":
-  version: 22.16.3
-  resolution: "@types/node@npm:22.16.3"
+"@types/node@npm:22.16.4":
+  version: 22.16.4
+  resolution: "@types/node@npm:22.16.4"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10/b71fe7abf242091e2f303b400b27f677c311b03a3125bf5532e06aff8a4cd41944bcc6f70a0666834e4352228607e676bc8082fa38d3739d3e1460a20d5c51d2
+  checksum: 10/6d2c133bf1ac498b78f15f8a13b2d5a5853e62606feaec1c9d2c93088f038d4ef94dc869a9a1155554e77643e2f4630afb3697daca5471843e08684ee9a1cc8a
   languageName: node
   linkType: hard
 
@@ -3404,7 +3404,7 @@ __metadata:
     "@swc/core": "npm:1.12.14"
     "@tsconfig/node20": "npm:20.1.6"
     "@tsconfig/strictest": "npm:2.0.5"
-    "@types/node": "npm:22.16.3"
+    "@types/node": "npm:22.16.4"
     "@vitest/coverage-v8": "npm:3.2.4"
     "@vitest/ui": "npm:^3.0.0"
     bignumber.js: "npm:9.3.1"
