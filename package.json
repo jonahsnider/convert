@@ -79,7 +79,7 @@
 		"@babel/preset-env": "7.28.0",
 		"@biomejs/biome": "2.1.2",
 		"@codspeed/vitest-plugin": "4.0.1",
-		"@jonahsnider/util": "11.0.0",
+		"@jonahsnider/util": "12.0.0",
 		"@microsoft/api-extractor": "7.52.8",
 		"@rollup/plugin-babel": "6.0.4",
 		"@rollup/plugin-node-resolve": "16.0.1",

@@ -1767,10 +1767,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jonahsnider/util@npm:11.0.0":
-  version: 11.0.0
-  resolution: "@jonahsnider/util@npm:11.0.0"
-  checksum: 10/b595d9c0a842a316c86dbe433965f6af898170d45fb8e69284ef028ebaf8a12163c9b5b79d36811ce53b7e15fb6ac8f0ed5eb69ab95d15c1f81861dab7cb99bf
+"@jonahsnider/util@npm:12.0.0":
+  version: 12.0.0
+  resolution: "@jonahsnider/util@npm:12.0.0"
+  checksum: 10/96a70ff75972e9f46547c96bfd5234f62978897d77a203d0f96d07481cb72cbaa3832e18b364b5737bca5f9758789e49631a07e8aa22065f683b566318dc540d
   languageName: node
   linkType: hard
 
@@ -3394,7 +3394,7 @@ __metadata:
     "@babel/preset-env": "npm:7.28.0"
     "@biomejs/biome": "npm:2.1.2"
     "@codspeed/vitest-plugin": "npm:4.0.1"
-    "@jonahsnider/util": "npm:11.0.0"
+    "@jonahsnider/util": "npm:12.0.0"
     "@microsoft/api-extractor": "npm:7.52.8"
     "@rollup/plugin-babel": "npm:6.0.4"
     "@rollup/plugin-node-resolve": "npm:16.0.1"
