@@ -86,7 +86,7 @@
 		"@rollup/plugin-swc": "0.4.0",
 		"@rollup/plugin-terser": "0.4.4",
 		"@size-limit/preset-small-lib": "11.2.0",
-		"@swc/core": "1.13.1",
+		"@swc/core": "1.13.2",
 		"@tsconfig/node20": "20.1.6",
 		"@tsconfig/strictest": "2.0.5",
 		"@types/node": "22.16.5",
