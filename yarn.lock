@@ -3426,7 +3426,7 @@ __metadata:
     bignumber.js: "npm:9.3.1"
     rollup: "npm:4.46.2"
     size-limit: "npm:11.2.0"
-    typedoc: "npm:0.28.9"
+    typedoc: "npm:0.28.10"
     typescript: "npm:5.9.2"
     vitest: "npm:3.2.4"
     wireit: "npm:0.14.12"
@@ -5833,9 +5833,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.28.9":
-  version: 0.28.9
-  resolution: "typedoc@npm:0.28.9"
+"typedoc@npm:0.28.10":
+  version: 0.28.10
+  resolution: "typedoc@npm:0.28.10"
   dependencies:
     "@gerrit0/mini-shiki": "npm:^3.9.0"
     lunr: "npm:^2.3.9"
@@ -5846,7 +5846,7 @@ __metadata:
     typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10/b803651a2c1295c293c68b97bc8aa722ba89fe253b23104aab0f751f30921b69a813352173bf09fa65efc0c6dfbce11305f365218ee7298f955a0993907da36d
+  checksum: 10/b9a29d4142da5ebb5158a3e31fcec15592db0b10c35bf094b6ea82fc1f2ec52b09c36e1700e4d1ceac86a5a15da422be638c3c27ab29aff23ae4872c58c24f61
   languageName: node
   linkType: hard
 
