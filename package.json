@@ -71,9 +71,6 @@
 		"validate-api": "wireit",
 		"validate-api:local": "wireit"
 	},
-	"dependencies": {
-		"wireit": "0.14.12"
-	},
 	"devDependencies": {
 		"@babel/core": "7.28.4",
 		"@babel/preset-env": "7.28.3",
@@ -97,7 +94,8 @@
 		"size-limit": "11.2.0",
 		"typedoc": "0.28.13",
 		"typescript": "5.9.3",
-		"vitest": "3.2.4"
+		"vitest": "3.2.4",
+		"wireit": "0.14.12"
 	},
 	"packageManager": "yarn@4.10.3",
 	"runkitExampleFilename": "./docs/runkit.js",
