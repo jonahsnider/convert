@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.12.1](https://github.com/jonahsnider/convert/compare/v5.12.0...v5.12.1) (2025-10-11)
+
+
+### Bug Fixes
+
+* remove unused dependency ([0523dfc](https://github.com/jonahsnider/convert/commit/0523dfc932306199756c8455d087d16b083bec13))
+
 ## [5.12.0](https://github.com/jonahsnider/convert/compare/v5.11.0...v5.12.0) (2025-05-09)
 
 
