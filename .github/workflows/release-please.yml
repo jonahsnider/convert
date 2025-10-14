@@ -32,7 +32,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v5
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: "lts/*"
           registry-url: "https://registry.npmjs.org"
@@ -42,7 +42,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         uses: oven-sh/setup-bun@v2
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: "lts/*"
           registry-url: "https://registry.npmjs.org"
