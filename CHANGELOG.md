@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.13.0](https://github.com/jonahsnider/convert/compare/v5.12.1...v5.13.0) (2025-10-14)
+
+
+### Features
+
+* **temperature:** add alternate symbol for Fahrenheit (°F) ([1b1ae88](https://github.com/jonahsnider/convert/commit/1b1ae8892e344060dd2f5ecd3c2704f6c00c4410))
+
 ## [5.12.1](https://github.com/jonahsnider/convert/compare/v5.12.0...v5.12.1) (2025-10-11)
 
 
