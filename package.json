@@ -72,8 +72,8 @@
 		"validate-api:local": "wireit"
 	},
 	"devDependencies": {
-		"@babel/core": "7.28.4",
-		"@babel/preset-env": "7.28.3",
+		"@babel/core": "7.28.5",
+		"@babel/preset-env": "7.28.5",
 		"@biomejs/biome": "2.2.7",
 		"@codspeed/vitest-plugin": "5.0.1",
 		"@jonahsnider/util": "12.0.0",
