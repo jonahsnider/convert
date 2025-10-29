@@ -266,10 +266,6 @@ temp
 # Rollup cache
 .rollup.cache
 
-# moon
-.moon/cache
-.moon/docker
-
 # Docs
 docs_out
 
