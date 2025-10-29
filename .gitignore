@@ -255,7 +255,7 @@ $RECYCLE.BIN/
 .turbo
 
 # Rollup temporary files
-rollup.config-*.cjs
+rollup.config-*.{c,m}js
 
 # Generated files
 src/generated/*
