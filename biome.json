@@ -1,19 +1,7 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
 	"files": {
-		"includes": [
-			"**",
-			"!**/dist",
-			"!**/node_modules",
-			"!**/src/generated",
-			"!**/test/legacy.cjs",
-			"!**/api-extractor.json",
-			"!**/.rollup.cache",
-			"!**/docs",
-			"!**/temp",
-			"!**/docs_out",
-			"!**/package.json"
-		]
+		"includes": ["**", "!**/test/legacy.cjs", "!**/api-extractor.json", "!**/.rollup.cache", "!**/package.json"]
 	},
 	"formatter": {
 		"formatWithErrors": true,
@@ -47,5 +35,11 @@
 				"noMisplacedAssertion": "off"
 			}
 		}
+	},
+	"vcs": {
+		"clientKind": "git",
+		"defaultBranch": "main",
+		"enabled": true,
+		"useIgnoreFile": true
 	}
 }
