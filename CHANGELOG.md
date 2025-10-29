@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.13.1](https://github.com/jonahsnider/convert/compare/v5.13.0...v5.13.1) (2025-10-29)
+
+
+### Bug Fixes
+
+* bump version ([d3b42d4](https://github.com/jonahsnider/convert/commit/d3b42d4760c7fefe06ca969f7821d47d4fc6f401)), closes [#774](https://github.com/jonahsnider/convert/issues/774)
+
 ## [5.13.0](https://github.com/jonahsnider/convert/compare/v5.12.1...v5.13.0) (2025-10-14)
 
 
