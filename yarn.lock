@@ -2852,10 +2852,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/strictest@npm:2.0.6":
-  version: 2.0.6
-  resolution: "@tsconfig/strictest@npm:2.0.6"
-  checksum: 10/2d51922b7be2bc57cfedd651d01430bffc2329508e1d8ebf7b16be27f9e05151d3cca52f03a2f9ca949cb0c11db4800494432fcad8da1d718e977712f557d244
+"@tsconfig/strictest@npm:2.0.7":
+  version: 2.0.7
+  resolution: "@tsconfig/strictest@npm:2.0.7"
+  checksum: 10/ba25b743b76b6d44248311c8ae8737e565e1c940fd406f9b2d0917f081f123ead2b3539ed21d4831fe4940087b72b02f20e2ab32f9d96fc8837be8c3aa1441f6
   languageName: node
   linkType: hard
 
@@ -3622,7 +3622,7 @@ __metadata:
     "@size-limit/preset-small-lib": "npm:11.2.0"
     "@swc/core": "npm:1.14.0"
     "@tsconfig/node20": "npm:20.1.6"
-    "@tsconfig/strictest": "npm:2.0.6"
+    "@tsconfig/strictest": "npm:2.0.7"
     "@types/node": "npm:24.9.2"
     "@vitest/coverage-v8": "npm:3.2.4"
     "@vitest/ui": "npm:^3.0.0"
