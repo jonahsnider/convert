@@ -92,7 +92,7 @@
 		"bignumber.js": "9.3.1",
 		"rollup": "4.53.3",
 		"size-limit": "11.2.0",
-		"typedoc": "0.28.14",
+		"typedoc": "0.28.15",
 		"typescript": "5.9.3",
 		"vitest": "3.2.4",
 		"wireit": "0.14.12"
