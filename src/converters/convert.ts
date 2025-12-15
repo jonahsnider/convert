@@ -7,7 +7,7 @@ import type { LiteralToPrimitive } from '../types/utils';
 
 // Importing MeasureKind will cause the entire enum to be included in the output, which increases bundle size
 // This workaround allows me to just hardcode the value, but ensures it doesn't become inaccurate if the enum changes
-const MeasureKindTime: MeasureKind.Time = 10;
+const MeasureKindTime: MeasureKind.Time = 11;
 
 function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: string): LiteralToPrimitive<Q> {
 	let parsedTo = unitsObject[to as Unit];
