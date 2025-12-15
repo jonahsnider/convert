@@ -22,7 +22,7 @@
 	"homepage": "https://convert.js.org/",
 	"repository": {
 		"type": "git",
-		"url": "http://github.com/jonahsnider/convert.git"
+		"url": "git+https://github.com/jonahsnider/convert.git"
 	},
 	"license": "MIT",
 	"author": {
