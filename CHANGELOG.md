@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.14.1](https://github.com/jonahsnider/convert/compare/v5.14.0...v5.14.1) (2025-12-15)
+
+
+### Bug Fixes
+
+* fix release ([b50eadc](https://github.com/jonahsnider/convert/commit/b50eadc435303e31d46cefd56964a15c84e3bd14))
+
 ## [5.14.0](https://github.com/jonahsnider/convert/compare/v5.13.1...v5.14.0) (2025-12-15)
 
 
