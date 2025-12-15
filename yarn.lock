@@ -3028,10 +3028,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node20@npm:20.1.8":
-  version: 20.1.8
-  resolution: "@tsconfig/node20@npm:20.1.8"
-  checksum: 10/8d168d805306c71073c1b95165bbdb0e09eed315a8ea976e642777f8b8ca3cb19f55fd137b03590afacf7699e01f9d5d875328eb69e7dff1e07d7f8eb9e14561
+"@tsconfig/node22@npm:22.0.0":
+  version: 22.0.0
+  resolution: "@tsconfig/node22@npm:22.0.0"
+  checksum: 10/9fc45789304640e1e37e1f1e04c02dca593c290d4f1cb55af7e9cab799fb2c6356e1cc15ee9f140185591a81f491a4c7f2d6c08c1e5a3d758658ba69f1afee6d
   languageName: node
   linkType: hard
 
@@ -3795,7 +3795,7 @@ __metadata:
     "@rollup/plugin-terser": "npm:0.4.4"
     "@size-limit/preset-small-lib": "npm:12.0.0"
     "@swc/core": "npm:1.15.5"
-    "@tsconfig/node20": "npm:20.1.8"
+    "@tsconfig/node22": "npm:22.0.0"
     "@tsconfig/strictest": "npm:2.0.8"
     "@types/node": "npm:24.10.4"
     "@vitest/coverage-v8": "npm:3.2.4"

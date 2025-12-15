@@ -11,6 +11,6 @@
 		"rootDir": ".",
 		"resolveJsonModule": true
 	},
-	"extends": ["@tsconfig/strictest", "@tsconfig/node20"],
+	"extends": ["@tsconfig/strictest", "@tsconfig/node22"],
 	"include": ["src", "scripts", "rollup.config.ts", "test"]
 }
