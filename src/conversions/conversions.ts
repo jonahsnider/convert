@@ -3,6 +3,7 @@ import { area } from './measures/area';
 import { data } from './measures/data';
 import { energy } from './measures/energy';
 import { force } from './measures/force';
+import { frequency } from './measures/frequency';
 import { length } from './measures/length';
 import { mass } from './measures/mass';
 import { power } from './measures/power';
@@ -20,6 +21,7 @@ const measures: Measure[] = [
 	data,
 	energy,
 	force,
+	frequency,
 	length,
 	mass,
 	power,

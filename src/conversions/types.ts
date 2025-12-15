@@ -10,13 +10,14 @@ export enum MeasureKind {
 	Data = 2,
 	Energy = 3,
 	Force = 4,
-	Length = 5,
-	Mass = 6,
-	Power = 7,
-	Pressure = 8,
-	Temperature = 9,
-	Time = 10,
-	Volume = 11,
+	Frequency = 5,
+	Length = 6,
+	Mass = 7,
+	Power = 8,
+	Pressure = 9,
+	Temperature = 10,
+	Time = 11,
+	Volume = 12,
 }
 
 export type Numeric = number | BigNumber | (() => number);
