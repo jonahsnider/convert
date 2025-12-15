@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.14.0](https://github.com/jonahsnider/convert/compare/v5.13.1...v5.14.0) (2025-12-15)
+
+
+### Features
+
+* add frequency units ([#780](https://github.com/jonahsnider/convert/issues/780)) ([44eeb18](https://github.com/jonahsnider/convert/commit/44eeb189b663fe77d2f42844a5b21773828fdfb2))
+
 ## [5.13.1](https://github.com/jonahsnider/convert/compare/v5.13.0...v5.13.1) (2025-10-29)
 
 
