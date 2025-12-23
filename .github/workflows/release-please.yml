@@ -42,11 +42,6 @@ jobs:
       - name: Setup Bun
         if: ${{ steps.release.outputs.release_created }}
         uses: oven-sh/setup-bun@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: "lts/*"
-          registry-url: "https://registry.npmjs.org"
       - name: Install dependencies with Yarn
         if: ${{ steps.release.outputs.release_created }}
         run: yarn install --immutable
