@@ -1,0 +1,11 @@
+{
+	"$schema": "https://jsr.io/schema/config-file.v1.json",
+	"exports": "./src/index.ts",
+	"license": "MIT",
+	"name": "@jonahsnider/convert",
+	"publish": {
+		"exclude": ["!src/generated/*.ts"],
+		"include": ["src/**/*.ts", "README.md", "LICENSE"]
+	},
+	"version": "5.14.1"
+}
