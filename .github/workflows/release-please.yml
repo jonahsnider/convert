@@ -48,6 +48,9 @@ jobs:
       - name: Build and test
         run: yarn test:ci
         if: ${{ steps.release.outputs.release_created }}
-      - name: Publish
+      - name: Publish to npm
         run: npm publish
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Publish to JSR
+        run: yarn dlx jsr publish
         if: ${{ steps.release.outputs.release_created }}
