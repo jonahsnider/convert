@@ -30,12 +30,12 @@ function getBestUnitsByMeasure(measure: Measure, kind: BestKind): BestEntry[] {
 	return result;
 }
 
-export type CompressedBestUnit = [unit: string, ratio: number];
+type CompressedBestUnit = [unit: string, ratio: number];
 
 function createLookupArray(measures: Conversions, kind: BestKind): string {
 	// Result is an array where indexes match up with the values of MeasureKind
 	// It will have tuples of the best units for each measure
-	const result: [unit: string, value: number][][] = [];
+	const result: CompressedBestUnit[][] = [];
 
 	for (const measure of measures.values()) {
 		const best = getBestUnitsByMeasure(measure, kind);

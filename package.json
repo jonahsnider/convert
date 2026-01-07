@@ -61,6 +61,7 @@
 		"bundle": "wireit",
 		"docs": "wireit",
 		"generate": "wireit",
+		"knip": "wireit",
 		"lint": "wireit",
 		"lint:fix": "wireit",
 		"size": "wireit",
@@ -90,6 +91,7 @@
 		"@vitest/coverage-v8": "3.2.4",
 		"@vitest/ui": "^3.0.0",
 		"bignumber.js": "9.3.1",
+		"knip": "5.80.0",
 		"rollup": "4.55.1",
 		"size-limit": "12.0.0",
 		"typedoc": "0.28.15",
@@ -141,6 +143,16 @@
 				}
 			]
 		},
+		"knip": {
+			"command": "knip",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"output": []
+		},
 		"generate": {
 			"command": "bun scripts/generate.ts -o src/generated/",
 			"files": [
@@ -170,7 +182,7 @@
 			]
 		},
 		"bundle": {
-			"command": "rollup --config rollup.config.ts --configPlugin swc",
+			"command": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-swc",
 			"files": [
 				"src/**/*.ts",
 				"rollup.config.ts"
@@ -270,6 +282,7 @@
 		"test:ci": {
 			"dependencies": [
 				"build:ci",
+				"knip",
 				"lint",
 				"test",
 				"size"

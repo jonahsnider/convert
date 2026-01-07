@@ -9,6 +9,9 @@ export default defineConfig({
 	test: {
 		include: ['src/**/*.test.ts'],
 		exclude: ['./.rollup.cache/**/*', './dist/**/*'],
+		coverage: {
+			provider: 'v8',
+		},
 	},
 	plugins: [codspeedPlugin()],
 });

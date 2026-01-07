@@ -1,3 +1,4 @@
+import { concatIterables, multiReplace } from '@jonahsnider/util';
 import BigNumber from 'bignumber.js';
 import type { Conversions, Measure, MeasureEntry, MeasureKind, Numeric } from './types';
 
@@ -7,8 +8,6 @@ export type FlattenedConversion = {
 	ratio: number | string;
 	difference: number | string;
 };
-
-export type CompressedConversion = [measure: MeasureKind, ratio: number, difference: number];
 
 export function flattenConversions(conversions: Conversions): FlattenedConversion[] {
 	const compressed: FlattenedConversion[] = [];
@@ -38,7 +37,7 @@ function flattenUnit(measure: MeasureKind, unit: MeasureEntry): FlattenedConvers
 	return { measure, names, ratio, difference };
 }
 
-export function flattenNumeric(numeric: Numeric): number | string {
+function flattenNumeric(numeric: Numeric): number | string {
 	if (typeof numeric === 'number') {
 		return numeric;
 	}
@@ -55,8 +54,6 @@ export function flattenNumeric(numeric: Numeric): number | string {
 
 	return fn.replace('() => ', '');
 }
-
-import { concatIterables, multiReplace } from '@jonahsnider/util';
 
 function escapeName(name: string): string {
 	return multiReplace(name, {

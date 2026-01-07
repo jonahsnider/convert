@@ -59,7 +59,7 @@ export default defineConfig([
 			getBabelOutputPlugin({
 				presets: [
 					[
-						'@babel/env',
+						'@babel/preset-env',
 						{
 							modules: 'umd',
 						},

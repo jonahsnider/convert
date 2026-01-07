@@ -1,5 +1,4 @@
-import { expandMacro } from '../macros/expand';
-import { Macros } from '../macros/macros';
+import { expandMacro, Macros } from '../macros/macros';
 import { type Measure, MeasureKind } from '../types';
 
 export const data: Measure = {
