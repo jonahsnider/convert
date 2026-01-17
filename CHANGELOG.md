@@ -1,5 +1,17 @@
 # Changelog
 
+## [6.0.0](https://github.com/jonahsnider/convert/compare/v5.14.1...v6.0.0) (2026-01-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* **length:** remove pc symbol for pica unit
+
+### Features
+
+* **length:** add parsec unit ([66d1cda](https://github.com/jonahsnider/convert/commit/66d1cda4d8775f0464e6a1c179a7a027e2302e0a))
+* **length:** remove pc symbol for pica unit ([c6c2f7e](https://github.com/jonahsnider/convert/commit/c6c2f7e460c483dcf46a2e44027634008f577743))
+
 ## [5.14.1](https://github.com/jonahsnider/convert/compare/v5.14.0...v5.14.1) (2025-12-15)
 
 
