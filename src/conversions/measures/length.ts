@@ -24,6 +24,9 @@ export const length: Measure = {
 
 		{ names: ['light-year', 'light-years'], symbols: ['ly'], ratio: new BigNumber('9460730472580800') },
 
+		// https://en.wikipedia.org/wiki/Parsec
+		{ names: ['parsec', 'parsecs'], symbols: ['pc'], ratio: new BigNumber('30856775814913673') },
+
 		// https://en.wikipedia.org/wiki/Pica_(typography)
 		// The p symbol can't be used as it conflicts with pints
 		{ names: ['pica', 'picas'], ratio: 4.2333e-3 },
