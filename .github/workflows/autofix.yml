@@ -1,0 +1,31 @@
+name: autofix.ci # needed to securely identify the workflow
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  autofix:
+    name: Autofix
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Git repository
+        uses: actions/checkout@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "lts/*"
+          cache: "yarn"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Migrate Biome schema
+        run: yarn biome migrate --write
+      - name: Apply lint fixes
+        run: yarn lint:fix
+      - name: Run autofix.ci
+        uses: autofix-ci/action@v1
+        with:
+          commit-message: "refactor: apply automatic fixes"
