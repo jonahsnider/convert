@@ -1,3 +1,4 @@
+import { codecovRollupPlugin } from '@codecov/rollup-plugin';
 import { getBabelOutputPlugin } from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import swc from '@rollup/plugin-swc';
@@ -40,10 +41,22 @@ const esmTerserConfig = {
 	},
 } satisfies TerserOptions;
 
+// biome-ignore lint/complexity/useLiteralKeys: Required for strict TypeScript index signature access
+const codecovToken = process.env['CODECOV_TOKEN'];
+
 export default defineConfig([
 	{
 		input: './src/index.ts',
-		plugins: [nodeResolve({ extensions: ['.js', '.ts'] }), swc(), terser(esmTerserConfig)],
+		plugins: [
+			nodeResolve({ extensions: ['.js', '.ts'] }),
+			swc(),
+			terser(esmTerserConfig),
+			codecovRollupPlugin({
+				enableBundleAnalysis: codecovToken !== undefined,
+				bundleName: 'convert-esm',
+				...(codecovToken && { uploadToken: codecovToken }),
+			}),
+		],
 		output: {
 			file: './dist/index.mjs',
 			format: 'esm',
@@ -68,6 +81,11 @@ export default defineConfig([
 				filename: 'convert.js',
 			}),
 			terser(terserConfig),
+			codecovRollupPlugin({
+				enableBundleAnalysis: codecovToken !== undefined,
+				bundleName: 'convert-cjs',
+				...(codecovToken && { uploadToken: codecovToken }),
+			}),
 		],
 		output: {
 			file: './dist/index.js',
