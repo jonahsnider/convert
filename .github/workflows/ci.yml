@@ -27,6 +27,8 @@ jobs:
         run: yarn install --immutable
       - name: Build and test
         run: yarn test:ci
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
   legacy-test:
     name: Legacy Node.js tests
 
