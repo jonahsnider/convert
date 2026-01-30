@@ -7,6 +7,32 @@ permissions:
   pull-requests: write
 
 jobs:
+  size-limit:
+    name: Size Limit
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout git repository
+        uses: actions/checkout@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "lts/*"
+          cache: "yarn"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Install dependencies with Yarn
+        run: yarn install --immutable
+      - name: Build bundle
+        run: yarn bundle
+      - name: Size Limit
+        uses: andresz1/size-limit-action@v1
+        continue-on-error: true # TODO: remove after first merge (main doesn't have size-limit yet)
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          skip_step: install
+
   build-and-test:
     name: Build and test
 

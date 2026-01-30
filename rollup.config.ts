@@ -53,7 +53,7 @@ export default defineConfig([
 			terser(esmTerserConfig),
 			codecovRollupPlugin({
 				enableBundleAnalysis: codecovToken !== undefined,
-				bundleName: 'convert-esm',
+				bundleName: 'convert',
 				...(codecovToken && { uploadToken: codecovToken }),
 			}),
 		],
@@ -83,7 +83,7 @@ export default defineConfig([
 			terser(terserConfig),
 			codecovRollupPlugin({
 				enableBundleAnalysis: codecovToken !== undefined,
-				bundleName: 'convert-cjs',
+				bundleName: 'convert',
 				...(codecovToken && { uploadToken: codecovToken }),
 			}),
 		],
