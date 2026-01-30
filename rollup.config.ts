@@ -54,7 +54,7 @@ export default defineConfig([
 			codecovRollupPlugin({
 				enableBundleAnalysis: codecovToken !== undefined,
 				bundleName: 'convert-esm',
-				uploadToken: codecovToken,
+				...(codecovToken && { uploadToken: codecovToken }),
 			}),
 		],
 		output: {
@@ -84,7 +84,7 @@ export default defineConfig([
 			codecovRollupPlugin({
 				enableBundleAnalysis: codecovToken !== undefined,
 				bundleName: 'convert-cjs',
-				uploadToken: codecovToken,
+				...(codecovToken && { uploadToken: codecovToken }),
 			}),
 		],
 		output: {
