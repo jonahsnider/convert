@@ -9,6 +9,7 @@ permissions:
 jobs:
   size-limit:
     name: Size Limit
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -29,6 +30,7 @@ jobs:
         uses: andresz1/size-limit-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          skip_step: install
 
   build-and-test:
     name: Build and test
