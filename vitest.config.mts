@@ -11,6 +11,7 @@ export default defineConfig({
 		exclude: ['./.rollup.cache/**/*', './dist/**/*'],
 		coverage: {
 			provider: 'v8',
+			enabled: Boolean(process.env.CI),
 		},
 	},
 	plugins: [codspeedPlugin()],

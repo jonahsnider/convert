@@ -29,6 +29,10 @@ jobs:
         run: yarn test:ci
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
   legacy-test:
     name: Legacy Node.js tests
 
