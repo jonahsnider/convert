@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v6
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -41,6 +44,9 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v6
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -67,6 +73,9 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v6
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -98,6 +107,9 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v6
+      - name: Enable Corepack
+        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
+        run: corepack enable
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
