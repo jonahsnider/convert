@@ -87,7 +87,7 @@
 		"@swc/core": "1.15.11",
 		"@tsconfig/node24": "24.0.3",
 		"@tsconfig/strictest": "2.0.8",
-		"@types/node": "24.10.9",
+		"@types/node": "24.10.10",
 		"@vitest/coverage-v8": "3.2.4",
 		"@vitest/ui": "^3.0.0",
 		"bignumber.js": "9.3.1",
