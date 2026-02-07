@@ -2382,9 +2382,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.56.2":
-  version: 7.56.2
-  resolution: "@microsoft/api-extractor@npm:7.56.2"
+"@microsoft/api-extractor@npm:7.56.3":
+  version: 7.56.3
+  resolution: "@microsoft/api-extractor@npm:7.56.3"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.32.2"
     "@microsoft/tsdoc": "npm:~0.16.0"
@@ -2394,7 +2394,7 @@ __metadata:
     "@rushstack/terminal": "npm:0.21.0"
     "@rushstack/ts-command-line": "npm:5.2.0"
     diff: "npm:~8.0.2"
-    lodash: "npm:~4.17.15"
+    lodash: "npm:~4.17.23"
     minimatch: "npm:10.1.2"
     resolve: "npm:~1.22.1"
     semver: "npm:~7.5.4"
@@ -2402,7 +2402,7 @@ __metadata:
     typescript: "npm:5.8.2"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10c0/52d66a919450fbccd3780a2bca566e6a6f639b7ebd56fc14b2f939a802fed98ec55a2d216abce47ab004b22ac78164e7a04c8c4383038d279df3af22da73a817
+  checksum: 10c0/1f81f7ce796bba3c4c698a7fe58df4bee5ef739d54591bef11cd4b6c079286b24b4fb086e6a73f296a13a938b061a9a2cc059863cd5f8bfd51d073adf7ee66ba
   languageName: node
   linkType: hard
 
@@ -4254,7 +4254,7 @@ __metadata:
     "@codecov/rollup-plugin": "npm:^1.9.1"
     "@codspeed/vitest-plugin": "npm:5.1.0"
     "@jonahsnider/util": "npm:13.0.0"
-    "@microsoft/api-extractor": "npm:7.56.2"
+    "@microsoft/api-extractor": "npm:7.56.3"
     "@rollup/plugin-babel": "npm:6.1.0"
     "@rollup/plugin-node-resolve": "npm:16.0.3"
     "@rollup/plugin-swc": "npm:0.4.0"
@@ -5533,10 +5533,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:~4.17.15":
-  version: 4.17.21
-  resolution: "lodash@npm:4.17.21"
-  checksum: 10c0/d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
+"lodash@npm:~4.17.23":
+  version: 4.17.23
+  resolution: "lodash@npm:4.17.23"
+  checksum: 10c0/1264a90469f5bb95d4739c43eb6277d15b6d9e186df4ac68c3620443160fc669e2f14c11e7d8b2ccf078b81d06147c01a8ccced9aab9f9f63d50dcf8cace6bf6
   languageName: node
   linkType: hard
 
