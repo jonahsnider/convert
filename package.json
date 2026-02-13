@@ -94,7 +94,7 @@
 		"knip": "5.83.1",
 		"rollup": "4.57.1",
 		"size-limit": "12.0.0",
-		"typedoc": "0.28.16",
+		"typedoc": "0.28.17",
 		"typescript": "5.9.3",
 		"vitest": "3.2.4",
 		"wireit": "0.14.12"
