@@ -16,7 +16,7 @@ export const luminance: Measure = {
 		...expandMacro(Macros.si, { names: ['nit'], symbols: ['nt'], ratio: 1 }),
 
 		// https://en.wikipedia.org/wiki/Foot-lambert
-		{ names: ['foot-lambert', 'foot lambert'], symbols: ['fL', 'ft-L'], ratio: 1 / 0.3048 ** 2 / Math.PI },
+		{ names: ['foot-lambert', 'foot lambert'], symbols: [/* 'fL' conflicts with femtolitre, */ 'ft-L'], ratio: 1 / 0.3048 ** 2 / Math.PI },
 
 		// https://en.wikipedia.org/wiki/Skot_(unit)
 		{ names: ['skot'], symbols: ['sk'], ratio: 1e-3 / Math.PI },
