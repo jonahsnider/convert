@@ -15,6 +15,8 @@ export const luminance: Measure = {
 		{ names: ['nit'], symbols: ['nt'], ratio: 1 },
 		...expandMacro(Macros.si, { names: ['nit'], symbols: ['nt'], ratio: 1 }),
 
+		{ names: ['lambert'], symbols: [] /* 'L' conflicts with litre */, ratio: 1e4 / Math.PI },
+
 		// https://en.wikipedia.org/wiki/Foot-lambert
 		{
 			names: ['foot-lambert', 'foot lambert'],
@@ -29,7 +31,7 @@ export const luminance: Measure = {
 		{ names: ['bril'], symbols: ['bl'], ratio: 1e-7 / Math.PI },
 
 		// https://en.wikipedia.org/wiki/Apostilb
-		{ names: ['apostilb', 'blondel'], symbols: ['asb'], ratio: 1e-4 / Math.PI },
+		{ names: ['apostilb', 'blondel'], symbols: ['asb'], ratio: 1 / Math.PI },
 
 		// https://en.wikipedia.org/wiki/Stilb
 		{ names: ['stilb'], symbols: ['sb'], ratio: 1e4 },
