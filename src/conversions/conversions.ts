@@ -4,6 +4,7 @@ import { data } from './measures/data';
 import { energy } from './measures/energy';
 import { force } from './measures/force';
 import { frequency } from './measures/frequency';
+import { illuminance } from './measures/illuminance';
 import { length } from './measures/length';
 import { mass } from './measures/mass';
 import { power } from './measures/power';
@@ -29,6 +30,7 @@ const measures: Measure[] = [
 	temperature,
 	time,
 	volume,
+	illuminance,
 ];
 
 for (const measure of measures) {

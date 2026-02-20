@@ -18,6 +18,7 @@ export enum MeasureKind {
 	Temperature = 10,
 	Time = 11,
 	Volume = 12,
+	Illuminance = 13,
 }
 
 export type Numeric = number | BigNumber | (() => number);
