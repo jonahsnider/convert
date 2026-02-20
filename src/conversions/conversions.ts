@@ -6,6 +6,7 @@ import { force } from './measures/force';
 import { frequency } from './measures/frequency';
 import { illuminance } from './measures/illuminance';
 import { length } from './measures/length';
+import { luminance } from './measures/luminance';
 import { mass } from './measures/mass';
 import { power } from './measures/power';
 import { pressure } from './measures/pressure';
@@ -31,6 +32,7 @@ const measures: Measure[] = [
 	time,
 	volume,
 	illuminance,
+	luminance,
 ];
 
 for (const measure of measures) {
