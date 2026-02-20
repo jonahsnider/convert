@@ -20,6 +20,7 @@ export enum MeasureKind {
 	Volume = 12,
 	Illuminance = 13,
 	Luminance = 14,
+	LuminousIntensity = 15,
 }
 
 export type Numeric = number | BigNumber | (() => number);

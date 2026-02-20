@@ -7,6 +7,7 @@ import { frequency } from './measures/frequency';
 import { illuminance } from './measures/illuminance';
 import { length } from './measures/length';
 import { luminance } from './measures/luminance';
+import { luminousIntensity } from './measures/luminous-intensity';
 import { mass } from './measures/mass';
 import { power } from './measures/power';
 import { pressure } from './measures/pressure';
@@ -33,6 +34,7 @@ const measures: Measure[] = [
 	volume,
 	illuminance,
 	luminance,
+	luminousIntensity,
 ];
 
 for (const measure of measures) {
