@@ -137,6 +137,11 @@ export type Unit = UnitsByMeasure<MeasureKind>;
 // @public
 export type UnitsByMeasure<T extends MeasureKind> = T extends keyof _UnitsByMeasureRaw ? _UnitsByMeasureRaw[T] : never;
 
+// @public
+export const unitsByMeasure: Readonly<{
+    [K in MeasureKind]: readonly UnitsByMeasure<K>[];
+}>;
+
 // @internal (undocumented)
 export type _UnitsByMeasureRaw = {
     0: 'radian' | 'radians' | 'rad' | 'rads' | 'r' | 'turn' | 'turns' | 'degree' | 'degrees' | 'deg' | 'degs' | '°' | 'gradian' | 'gradians' | 'gon' | 'gons' | 'grad' | 'grads' | 'grade' | 'grades' | 'arcminute' | 'arcminutes' | 'minutes of arc' | 'arcmin' | 'arcmins' | 'arcsecond' | 'arcseconds' | 'seconds of arc' | 'arcsec' | 'arcsecs';
