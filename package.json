@@ -31,28 +31,28 @@
 		"url": "https://jonahsnider.com"
 	},
 	"sideEffects": false,
-	"type": "commonjs",
+	"type": "module",
 	"exports": {
 		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
-			"default": "./dist/index.js"
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
 		}
 	},
-	"main": "./dist/index.js",
-	"jsdelivr": "./dist/index.mjs",
-	"unpkg": "./dist/index.mjs",
-	"module": "./dist/index.mjs",
-	"browser": "./dist/index.mjs",
-	"react-native": "./dist/index.js",
+	"main": "./dist/index.cjs",
+	"jsdelivr": "./dist/index.js",
+	"unpkg": "./dist/index.js",
+	"module": "./dist/index.js",
+	"browser": "./dist/index.js",
+	"react-native": "./dist/index.cjs",
 	"typings": "./dist/index.d.ts",
 	"files": [
-		"dist/",
-		"!dist/typings",
-		"!dist/src",
-		"!dist/test",
-		"!dist/scripts",
-		"!dist/rollup.config.js"
+		"dist/"
 	],
 	"scripts": {
 		"benchmarks": "wireit",
@@ -67,24 +67,15 @@
 		"test": "wireit",
 		"test:ci": "wireit",
 		"test:dev": "wireit",
-		"types": "wireit",
 		"validate-api": "wireit",
 		"validate-api:local": "wireit"
 	},
 	"devDependencies": {
-		"@babel/core": "7.29.0",
-		"@babel/preset-env": "7.29.0",
 		"@biomejs/biome": "2.3.11",
-		"@codecov/rollup-plugin": "^1.9.1",
 		"@codspeed/vitest-plugin": "5.2.0",
 		"@jonahsnider/util": "13.0.0",
 		"@microsoft/api-extractor": "7.57.2",
-		"@rollup/plugin-babel": "6.1.0",
-		"@rollup/plugin-node-resolve": "16.0.3",
-		"@rollup/plugin-swc": "0.4.0",
-		"@rollup/plugin-terser": "0.4.4",
 		"@size-limit/preset-small-lib": "12.0.0",
-		"@swc/core": "1.15.11",
 		"@tsconfig/node24": "24.0.3",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.10.13",
@@ -92,32 +83,32 @@
 		"@vitest/ui": "^4.0.0",
 		"bignumber.js": "9.3.1",
 		"knip": "5.84.1",
-		"rollup": "4.58.0",
 		"size-limit": "12.0.0",
 		"typedoc": "0.28.17",
 		"typescript": "5.9.3",
 		"vitest": "4.0.18",
-		"wireit": "0.14.12"
+		"wireit": "0.14.12",
+		"zshy": "^0.7.0"
 	},
 	"packageManager": "yarn@4.12.0",
 	"runkitExampleFilename": "./docs/runkit.js",
 	"size-limit": [
 		{
 			"name": "ESM (brotli)",
-			"path": "dist/index.mjs"
+			"path": "dist/index.js"
 		},
 		{
 			"name": "ESM (gzip)",
-			"path": "dist/index.mjs",
+			"path": "dist/index.js",
 			"gzip": true
 		},
 		{
 			"name": "CJS (brotli)",
-			"path": "dist/index.js"
+			"path": "dist/index.cjs"
 		},
 		{
 			"name": "CJS (gzip)",
-			"path": "dist/index.js",
+			"path": "dist/index.cjs",
 			"gzip": true
 		}
 	],
@@ -147,8 +138,7 @@
 			]
 		},
 		"bundle": {
-			"clean": false,
-			"command": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-swc",
+			"command": "zshy -p tsconfig.build.json",
 			"dependencies": [
 				{
 					"cascade": false,
@@ -157,11 +147,10 @@
 			],
 			"files": [
 				"src/**/*.ts",
-				"rollup.config.ts"
+				"tsconfig.build.json"
 			],
 			"output": [
-				"dist/index.js",
-				"dist/index.mjs"
+				"dist/"
 			]
 		},
 		"docs": {
@@ -253,34 +242,17 @@
 			],
 			"service": true
 		},
-		"types": {
-			"command": "tsc --pretty",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			],
-			"files": [
-				"src/**/*.ts",
-				"tsconfig.json"
-			],
-			"output": [
-				"dist/typings/"
-			]
-		},
 		"validate-api": {
 			"clean": false,
 			"command": "api-extractor run",
 			"dependencies": [
-				"types"
+				"bundle"
 			],
 			"files": [
 				"api-extractor.json",
 				"docs/convert.api.md"
 			],
 			"output": [
-				"dist/index.d.ts",
 				"temp/convert.api.json",
 				"temp/convert.api.md"
 			]
@@ -289,7 +261,7 @@
 			"clean": false,
 			"command": "api-extractor run --local --verbose",
 			"dependencies": [
-				"types"
+				"bundle"
 			],
 			"files": [
 				"api-extractor.json",
@@ -297,10 +269,13 @@
 			],
 			"output": [
 				"docs/convert.api.md",
-				"dist/index.d.ts",
 				"temp/convert.api.json",
 				"temp/convert.api.md"
 			]
 		}
+	},
+	"zshy": {
+		"exports": "./src/index.ts",
+		"noEdit": true
 	}
 }
