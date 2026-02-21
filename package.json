@@ -82,7 +82,7 @@
 		"@vitest/coverage-v8": "4.0.18",
 		"@vitest/ui": "^4.0.0",
 		"bignumber.js": "9.3.1",
-		"knip": "5.84.1",
+		"knip": "5.85.0",
 		"size-limit": "12.0.0",
 		"typedoc": "0.28.17",
 		"typescript": "5.9.3",
