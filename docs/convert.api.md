@@ -164,9 +164,9 @@ export type Volume = UnitsByMeasure<MeasureKind.Volume>;
 
 // Warnings were encountered during analysis:
 //
-// dist/typings/src/types/converter.d.ts:12:5 - (ae-incompatible-release-tags) The symbol "quantity" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
-// dist/typings/src/types/converter.d.ts:25:5 - (ae-incompatible-release-tags) The symbol "toString" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
-// dist/typings/src/types/converter.d.ts:39:5 - (ae-incompatible-release-tags) The symbol "to" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
+// dist/types/converter.d.ts:12:5 - (ae-incompatible-release-tags) The symbol "quantity" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
+// dist/types/converter.d.ts:25:5 - (ae-incompatible-release-tags) The symbol "toString" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
+// dist/types/converter.d.ts:39:5 - (ae-incompatible-release-tags) The symbol "to" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
 
 // (No @packageDocumentation comment for this package)
 
