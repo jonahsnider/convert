@@ -25,16 +25,16 @@ const measures: Measure[] = [
 	energy,
 	force,
 	frequency,
+	illuminance,
 	length,
+	luminance,
+	luminousIntensity,
 	mass,
 	power,
 	pressure,
 	temperature,
 	time,
 	volume,
-	illuminance,
-	luminance,
-	luminousIntensity,
 ];
 
 for (const measure of measures) {
