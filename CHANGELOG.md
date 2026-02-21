@@ -1,5 +1,17 @@
 # Changelog
 
+## [7.0.0](https://github.com/jonahsnider/convert/compare/v6.0.0...v7.0.0) (2026-02-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* ES2017 or later is now required
+
+### Features
+
+* export unitsByMeasure lookup table ([a9666e7](https://github.com/jonahsnider/convert/commit/a9666e72d599f4b13f307b168a3a6bcbf1d619b2)), closes [#795](https://github.com/jonahsnider/convert/issues/795)
+* require ES2017 and above ([34b4c13](https://github.com/jonahsnider/convert/commit/34b4c136fbefec0aea2706d882f56263973c3bf2))
+
 ## [6.0.0](https://github.com/jonahsnider/convert/compare/v5.14.1...v6.0.0) (2026-01-17)
 
 
