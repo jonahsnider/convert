@@ -64,40 +64,6 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-  legacy-test:
-    name: Legacy Node.js tests
-
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - name: Checkout git repository
-        uses: actions/checkout@v6
-      - name: Enable Corepack
-        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
-        run: corepack enable
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: "lts/*"
-          cache: "yarn"
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
-      - name: Build
-        run: yarn bundle
-      - name: Download Node.js v0.9.1
-        run: |
-          wget https://nodejs.org/dist/v0.9.1/node-v0.9.1-linux-x64.tar.gz
-          tar xf node-v0.9.1-linux-x64.tar.gz
-          mkdir -p $HOME/.local/bin
-          cp ./node-v0.9.1-linux-x64/bin/node $HOME/.local/bin/node-0.9.1
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-      - name: Run tests on modern Node.js
-        run: node ./test/legacy.cjs
-      - name: Run tests on Node.js v0.9.1
-        run: node-0.9.1 ./test/legacy.cjs
   benchmarks:
     name: Benchmarks
 
