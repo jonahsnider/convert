@@ -442,9 +442,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.57.2":
-  version: 7.57.2
-  resolution: "@microsoft/api-extractor@npm:7.57.2"
+"@microsoft/api-extractor@npm:7.57.3":
+  version: 7.57.3
+  resolution: "@microsoft/api-extractor@npm:7.57.3"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.33.1"
     "@microsoft/tsdoc": "npm:~0.16.0"
@@ -462,7 +462,7 @@ __metadata:
     typescript: "npm:5.8.2"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10c0/eeb2867ad06798b5ac43407a36d05e90666f21f3c3184b67ac315385293d758979f2b2a40ef0146efd95b29a4bb2c14a0a3b7b211837a7c6138f16f64caba502
+  checksum: 10c0/f3023fda742028c3987b0180648dc65daa366b1c24ef0d8882572926e23f4c4b1fc31044a751d80248d036e64e921f578bbbfe38d2f046578fd6bbbd03e2f9c1
   languageName: node
   linkType: hard
 
@@ -1671,7 +1671,7 @@ __metadata:
     "@biomejs/biome": "npm:2.3.11"
     "@codspeed/vitest-plugin": "npm:5.2.0"
     "@jonahsnider/util": "npm:13.0.0"
-    "@microsoft/api-extractor": "npm:7.57.2"
+    "@microsoft/api-extractor": "npm:7.57.3"
     "@size-limit/preset-small-lib": "npm:12.0.0"
     "@tsconfig/node24": "npm:24.0.3"
     "@tsconfig/strictest": "npm:2.0.8"
