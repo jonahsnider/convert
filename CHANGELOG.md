@@ -1,5 +1,19 @@
 # Changelog
 
+## [7.0.0](https://github.com/jonahsnider/convert/compare/v6.0.0...v7.0.0) (2026-02-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* ES2017 or later is now required
+
+### Features
+
+* add photometry units ([#796](https://github.com/jonahsnider/convert/issues/796)) ([45d9e5e](https://github.com/jonahsnider/convert/commit/45d9e5ec208d04ba7e113c2db758efc5e9b40e28))
+* export full conversions object ([#800](https://github.com/jonahsnider/convert/issues/800)) ([dbe85ee](https://github.com/jonahsnider/convert/commit/dbe85ee9c3cd8056ca42339abbdb355fc36adc95))
+* export unitsByMeasure lookup table ([a9666e7](https://github.com/jonahsnider/convert/commit/a9666e72d599f4b13f307b168a3a6bcbf1d619b2)), closes [#795](https://github.com/jonahsnider/convert/issues/795)
+* require ES2017 and above ([34b4c13](https://github.com/jonahsnider/convert/commit/34b4c136fbefec0aea2706d882f56263973c3bf2))
+
 ## [6.0.0](https://github.com/jonahsnider/convert/compare/v5.14.1...v6.0.0) (2026-01-17)
 
 
