@@ -3,7 +3,6 @@ export { convert, convert as default } from './converters/convert';
 export { convertMany } from './converters/convert-many';
 export { getMeasureKind } from './converters/get-measure-kind';
 export { ms } from './converters/ms';
-export { unitsByMeasure } from './converters/units-by-measure';
 export type { UnitsByMeasure as _UnitsByMeasureRaw } from './generated/types';
 export type { BestConversion, Converter } from './types/converter';
 export type {

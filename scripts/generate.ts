@@ -4,6 +4,7 @@ import path from 'node:path';
 import { type ParseArgsConfig, parseArgs } from 'node:util';
 import { conversions } from '../src/conversions/conversions';
 import { generateBestUnits } from '../src/generation/generate-best-units';
+import { generateConversions } from '../src/generation/generate-conversions';
 import { generateParseUnit } from '../src/generation/generate-parse-unit';
 import { generateTypes } from '../src/generation/generate-types';
 
@@ -29,4 +30,5 @@ await Promise.all([
 	fs.writeFile(path.join(outputDir, 'parse-unit.ts'), generateParseUnit(conversions)),
 	fs.writeFile(path.join(outputDir, 'types.ts'), generateTypes(conversions)),
 	fs.writeFile(path.join(outputDir, 'best-units.ts'), generateBestUnits(conversions)),
+	fs.writeFile(path.join(outputDir, 'conversions.ts'), generateConversions(conversions)),
 ]);

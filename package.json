@@ -42,6 +42,16 @@
 				"types": "./dist/index.d.cts",
 				"default": "./dist/index.cjs"
 			}
+		},
+		"./conversions": {
+			"import": {
+				"types": "./dist/conversions-entry.d.ts",
+				"default": "./dist/conversions-entry.js"
+			},
+			"require": {
+				"types": "./dist/conversions-entry.d.cts",
+				"default": "./dist/conversions-entry.cjs"
+			}
 		}
 	},
 	"main": "./dist/index.cjs",
@@ -275,7 +285,10 @@
 		}
 	},
 	"zshy": {
-		"exports": "./src/index.ts",
+		"exports": {
+			".": "./src/index.ts",
+			"./conversions": "./src/conversions-entry.ts"
+		},
 		"noEdit": true
 	}
 }
