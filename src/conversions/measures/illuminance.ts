@@ -6,10 +6,11 @@ export const illuminance: Measure = {
 	best: ['lux', 'µlx', 'nlx', 'klx'],
 	units: [
 		// https://en.wikipedia.org/wiki/Lux
+		// https://en.wikipedia.org/wiki/Lumen_(unit)
 		{ names: ['lux'], symbols: ['lx'], ratio: 1 },
 		...expandMacro(Macros.si, { names: ['lux'], symbols: ['lx'], ratio: 1 }),
 
-		{ names: ['lumen per square meter'], symbols: ['lm/m²'], ratio: 1 },
+		{ names: ['lumen per square meter'], symbols: ['lm/m2', 'lm/m²'], ratio: 1 },
 
 		// https://en.wikipedia.org/wiki/Foot-candle
 		{ names: ['foot-candle', 'foot candle'], symbols: ['fc', 'ft-c'], ratio: 10.764 },
