@@ -4,7 +4,10 @@ import { data } from './measures/data';
 import { energy } from './measures/energy';
 import { force } from './measures/force';
 import { frequency } from './measures/frequency';
+import { illuminance } from './measures/illuminance';
 import { length } from './measures/length';
+import { luminance } from './measures/luminance';
+import { luminousIntensity } from './measures/luminous-intensity';
 import { mass } from './measures/mass';
 import { power } from './measures/power';
 import { pressure } from './measures/pressure';
@@ -22,7 +25,10 @@ const measures: Measure[] = [
 	energy,
 	force,
 	frequency,
+	illuminance,
 	length,
+	luminance,
+	luminousIntensity,
 	mass,
 	power,
 	pressure,
