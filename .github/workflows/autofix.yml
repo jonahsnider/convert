@@ -28,6 +28,8 @@ jobs:
         run: yarn biome migrate --write
       - name: Apply lint fixes
         run: yarn lint:fix
+      - name: Apply Knip fixes
+        run: yarn knip -- --fix
       - name: Run autofix.ci
         uses: autofix-ci/action@v1
         with:
