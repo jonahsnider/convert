@@ -86,7 +86,7 @@
 		"@jonahsnider/util": "13.0.0",
 		"@microsoft/api-extractor": "7.57.6",
 		"@size-limit/preset-small-lib": "12.0.0",
-		"@tsconfig/node24": "24.0.3",
+		"@tsconfig/node24": "24.0.4",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.11.0",
 		"@vitest/coverage-v8": "4.0.18",
