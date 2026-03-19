@@ -100,7 +100,7 @@
 		"wireit": "0.14.12",
 		"zshy": "^0.7.0"
 	},
-	"packageManager": "yarn@4.12.0",
+	"packageManager": "yarn@4.13.0",
 	"runkitExampleFilename": "./docs/runkit.js",
 	"size-limit": [
 		{
