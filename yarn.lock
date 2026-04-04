@@ -442,9 +442,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.58.0":
-  version: 7.58.0
-  resolution: "@microsoft/api-extractor@npm:7.58.0"
+"@microsoft/api-extractor@npm:7.58.1":
+  version: 7.58.1
+  resolution: "@microsoft/api-extractor@npm:7.58.1"
   dependencies:
     "@microsoft/api-extractor-model": "npm:7.33.5"
     "@microsoft/tsdoc": "npm:~0.16.0"
@@ -454,7 +454,7 @@ __metadata:
     "@rushstack/terminal": "npm:0.22.4"
     "@rushstack/ts-command-line": "npm:5.3.4"
     diff: "npm:~8.0.2"
-    lodash: "npm:~4.17.23"
+    lodash: "npm:~4.18.1"
     minimatch: "npm:10.2.3"
     resolve: "npm:~1.22.1"
     semver: "npm:~7.5.4"
@@ -462,7 +462,7 @@ __metadata:
     typescript: "npm:5.9.3"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10c0/04ace9ed091c39dd6d0dd34e081773b572287b60f9bd215b709f666355d79c96486e7be19c13625b84f4627d1c487684673f133bbdfcbbe04ebb3410ad0ec5e2
+  checksum: 10c0/614aaa8db4a75ac055e3fb12f233a6275b661ceade3a26ddd9b459163c0d6d663e4f81f8861ff750bed29e0737c28520e23694a220b2bf7cbdd8009c7d5d9612
   languageName: node
   linkType: hard
 
@@ -1756,7 +1756,7 @@ __metadata:
     "@biomejs/biome": "npm:2.3.11"
     "@codspeed/vitest-plugin": "npm:5.2.0"
     "@jonahsnider/util": "npm:13.0.0"
-    "@microsoft/api-extractor": "npm:7.58.0"
+    "@microsoft/api-extractor": "npm:7.58.1"
     "@size-limit/preset-small-lib": "npm:12.0.1"
     "@tsconfig/node24": "npm:24.0.4"
     "@tsconfig/strictest": "npm:2.0.8"
@@ -2813,10 +2813,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:~4.17.23":
-  version: 4.17.23
-  resolution: "lodash@npm:4.17.23"
-  checksum: 10c0/1264a90469f5bb95d4739c43eb6277d15b6d9e186df4ac68c3620443160fc669e2f14c11e7d8b2ccf078b81d06147c01a8ccced9aab9f9f63d50dcf8cace6bf6
+"lodash@npm:~4.18.1":
+  version: 4.18.1
+  resolution: "lodash@npm:4.18.1"
+  checksum: 10c0/757228fc68805c59789e82185135cf85f05d0b2d3d54631d680ca79ec21944ec8314d4533639a14b8bcfbd97a517e78960933041a5af17ecb693ec6eecb99a27
   languageName: node
   linkType: hard
 
