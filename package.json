@@ -91,7 +91,7 @@
 		"@types/node": "24.12.2",
 		"@vitest/coverage-v8": "4.1.4",
 		"@vitest/ui": "^4.0.0",
-		"bignumber.js": "10.0.2",
+		"bignumber.js": "11.0.0",
 		"knip": "6.4.1",
 		"size-limit": "12.1.0",
 		"typedoc": "0.28.19",
