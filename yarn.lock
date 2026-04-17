@@ -431,30 +431,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor-model@npm:7.33.6":
-  version: 7.33.6
-  resolution: "@microsoft/api-extractor-model@npm:7.33.6"
+"@microsoft/api-extractor-model@npm:7.33.7":
+  version: 7.33.7
+  resolution: "@microsoft/api-extractor-model@npm:7.33.7"
   dependencies:
     "@microsoft/tsdoc": "npm:~0.16.0"
     "@microsoft/tsdoc-config": "npm:~0.18.1"
-    "@rushstack/node-core-library": "npm:5.22.0"
-  checksum: 10c0/3d2a615ed10f28c6ca64a69eb57611f7081c489905dd62a8ccdc49652431a7252a2cef3d15a28e6359834a320ea25aae227305b8185687995553903552544284
+    "@rushstack/node-core-library": "npm:5.23.0"
+  checksum: 10c0/22ce985146c97bcbfb12388efe5c39057a1133a79496986cb5fbf1228d41c05dc388056202065cb1e3a6eb0a835bfef5906c58ede3b4a5783e2a4bc934726924
   languageName: node
   linkType: hard
 
-"@microsoft/api-extractor@npm:7.58.2":
-  version: 7.58.2
-  resolution: "@microsoft/api-extractor@npm:7.58.2"
+"@microsoft/api-extractor@npm:7.58.3":
+  version: 7.58.3
+  resolution: "@microsoft/api-extractor@npm:7.58.3"
   dependencies:
-    "@microsoft/api-extractor-model": "npm:7.33.6"
+    "@microsoft/api-extractor-model": "npm:7.33.7"
     "@microsoft/tsdoc": "npm:~0.16.0"
     "@microsoft/tsdoc-config": "npm:~0.18.1"
-    "@rushstack/node-core-library": "npm:5.22.0"
+    "@rushstack/node-core-library": "npm:5.23.0"
     "@rushstack/rig-package": "npm:0.7.2"
-    "@rushstack/terminal": "npm:0.22.5"
-    "@rushstack/ts-command-line": "npm:5.3.5"
+    "@rushstack/terminal": "npm:0.22.6"
+    "@rushstack/ts-command-line": "npm:5.3.6"
     diff: "npm:~8.0.2"
-    lodash: "npm:~4.18.1"
     minimatch: "npm:10.2.3"
     resolve: "npm:~1.22.1"
     semver: "npm:~7.5.4"
@@ -462,7 +461,7 @@ __metadata:
     typescript: "npm:5.9.3"
   bin:
     api-extractor: bin/api-extractor
-  checksum: 10c0/b5b367719ff146a51dd11d7f2ca2ca8cba9983e5f8618c9e9ee317ee0b43ce04c32b83015c94c0c2b9f0a6c24d1926d251333f485b0e59569081b793d09e0d4f
+  checksum: 10c0/b1275900bea69fe220cb369e41a8176fdd099cfff29f3a450e6f2ce89105d76cd58dbe01841d9c505b8569d90831a280853739c60831971f59b861fc6a9937ae
   languageName: node
   linkType: hard
 
@@ -962,9 +961,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/node-core-library@npm:5.22.0":
-  version: 5.22.0
-  resolution: "@rushstack/node-core-library@npm:5.22.0"
+"@rushstack/node-core-library@npm:5.23.0":
+  version: 5.23.0
+  resolution: "@rushstack/node-core-library@npm:5.23.0"
   dependencies:
     ajv: "npm:~8.18.0"
     ajv-draft-04: "npm:~1.0.0"
@@ -979,7 +978,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/node":
       optional: true
-  checksum: 10c0/59949efefbda31f2c3bbc33e19e53dbac215dffff20cbf02e72fc1765ecb08eaf9c3e250515b2cab6c90ca0d6089741680b65b1f560d3a243168c34472703698
+  checksum: 10c0/a1906e19b1323134f85482c721e2e2540c549e41eab8c21d08369d69c1ab22008dc24d9891b986ff148c727d78697f396614b27c97b5501d30cbc68f066e6014
   languageName: node
   linkType: hard
 
@@ -1005,11 +1004,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rushstack/terminal@npm:0.22.5":
-  version: 0.22.5
-  resolution: "@rushstack/terminal@npm:0.22.5"
+"@rushstack/terminal@npm:0.22.6":
+  version: 0.22.6
+  resolution: "@rushstack/terminal@npm:0.22.6"
   dependencies:
-    "@rushstack/node-core-library": "npm:5.22.0"
+    "@rushstack/node-core-library": "npm:5.23.0"
     "@rushstack/problem-matcher": "npm:0.2.1"
     supports-color: "npm:~8.1.1"
   peerDependencies:
@@ -1017,19 +1016,19 @@ __metadata:
   peerDependenciesMeta:
     "@types/node":
       optional: true
-  checksum: 10c0/d4beb37df3b56da28359c4c7157459241d99162f43487eb52b73bf08ba328363c5a1a30d0753181f2e11ec4a96af05127767fe60ade2746cdf24ad0dbdecfea7
+  checksum: 10c0/2baf635a606a794dfb6e6db514d51935dbad39000110261898884157da5ffe54c580d4e81214e66d0f58a14eb817f872f041068d0f8f08d3d69c3ddb59140240
   languageName: node
   linkType: hard
 
-"@rushstack/ts-command-line@npm:5.3.5":
-  version: 5.3.5
-  resolution: "@rushstack/ts-command-line@npm:5.3.5"
+"@rushstack/ts-command-line@npm:5.3.6":
+  version: 5.3.6
+  resolution: "@rushstack/ts-command-line@npm:5.3.6"
   dependencies:
-    "@rushstack/terminal": "npm:0.22.5"
+    "@rushstack/terminal": "npm:0.22.6"
     "@types/argparse": "npm:1.0.38"
     argparse: "npm:~1.0.9"
     string-argv: "npm:~0.3.1"
-  checksum: 10c0/f65cf629e64e853cc99d6dcc2ebfcdfe1c17e58d1d4de4ebf10e36c0b850712f394eb0d4d7651a5fc5936d24ad0da30cd3364ab96c1b4f5f4aadb6a5146574fb
+  checksum: 10c0/375a81198d5da71ddf2b55ae8ff08e60ccea809f100b8f88fa8144482b07af9c297d22e2c537e529c0dd74f00ab6c26e378de15d9a979e17679144161dc22d91
   languageName: node
   linkType: hard
 
@@ -1765,7 +1764,7 @@ __metadata:
     "@biomejs/biome": "npm:2.3.11"
     "@codspeed/vitest-plugin": "npm:5.3.0"
     "@jonahsnider/util": "npm:13.0.0"
-    "@microsoft/api-extractor": "npm:7.58.2"
+    "@microsoft/api-extractor": "npm:7.58.3"
     "@size-limit/preset-small-lib": "npm:12.1.0"
     "@tsconfig/node24": "npm:24.0.4"
     "@tsconfig/strictest": "npm:2.0.8"
@@ -2819,13 +2818,6 @@ __metadata:
   version: 4.4.2
   resolution: "lodash.truncate@npm:4.4.2"
   checksum: 10c0/4e870d54e8a6c86c8687e057cec4069d2e941446ccab7f40b4d9555fa5872d917d0b6aa73bece7765500a3123f1723bcdba9ae881b679ef120bba9e1a0b0ed70
-  languageName: node
-  linkType: hard
-
-"lodash@npm:~4.18.1":
-  version: 4.18.1
-  resolution: "lodash@npm:4.18.1"
-  checksum: 10c0/757228fc68805c59789e82185135cf85f05d0b2d3d54631d680ca79ec21944ec8314d4533639a14b8bcfbd97a517e78960933041a5af17ecb693ec6eecb99a27
   languageName: node
   linkType: hard
 
