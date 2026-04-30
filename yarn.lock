@@ -4409,8 +4409,8 @@ __metadata:
   linkType: hard
 
 "zshy@npm:^0.7.0":
-  version: 0.7.1
-  resolution: "zshy@npm:0.7.1"
+  version: 0.7.2
+  resolution: "zshy@npm:0.7.2"
   dependencies:
     arg: "npm:^5.0.2"
     fast-glob: "npm:^3.3.2"
@@ -4419,6 +4419,6 @@ __metadata:
     typescript: ">5.5.0"
   bin:
     zshy: dist/index.cjs
-  checksum: 10c0/8d3f3aa2d8c5feef417d4be2215064c9cc0dd8f5b36a597ddb436fcbe9e679c994b75c8a2168d61659a2e927e1294d6755617c62af99c8288b66840aea65c073
+  checksum: 10c0/de83218998ea80a25c57ac4b463ecd7d513a3c89c4c046a38c8caf18f985f01fdfb112799eef43ebc3c5ea86d76387e29dc29b04de4a63c35a21de9ea6f7d6ff
   languageName: node
   linkType: hard
