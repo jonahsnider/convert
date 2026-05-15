@@ -1,5 +1,5 @@
-import type { MeasureKind } from '../conversions/types';
 import { unitsObject } from '../generated/parse-unit';
+import type { MeasureKind } from '../types/public';
 import type { MeasureKindByUnit, Unit } from '../types/units';
 
 /**

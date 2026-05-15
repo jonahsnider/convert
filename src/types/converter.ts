@@ -1,4 +1,4 @@
-import type { BestKind } from '../conversions/types';
+import type { BestKind } from './public';
 import type { BestUnits, BestUnitsForUnit, Unit } from './units';
 import type { LiteralToPrimitive } from './utils';
 

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { MeasureKind } from '../conversions/types';
+import { MeasureKind } from '../types/public';
 import { getMeasureKind } from './get-measure-kind';
 
 describe('get measure kind', () => {

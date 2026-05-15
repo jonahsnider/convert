@@ -1,5 +1,6 @@
 import { flattenConversions } from '../conversions/flatten';
-import type { Conversions, MeasureKind } from '../conversions/types';
+import type { Conversions } from '../conversions/types';
+import type { MeasureKind } from '../types/public';
 
 export function generateTypes(conversions: Conversions): string {
 	const flat = flattenConversions(conversions);

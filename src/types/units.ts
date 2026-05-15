@@ -1,6 +1,6 @@
-import type { BestKind, MeasureKind } from '../conversions/types';
 import type { BestUnits as BestUnitsGenerated } from '../generated/best-units';
 import type { UnitsByMeasure as UnitsByMeasureGenerated } from '../generated/types';
+import type { BestKind, MeasureKind } from './public';
 
 /**
  * Get the units for a given measure.

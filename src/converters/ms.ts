@@ -1,4 +1,4 @@
-import type { MeasureKind } from '../conversions/types';
+import type { MeasureKind } from '../types/public';
 import type { BestUnitsForMeasure } from '../types/units';
 import type { LiteralToPrimitive } from '../types/utils';
 import { convert } from './convert';

@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import type { BestKind } from '../conversions/types';
+import type { BestKind } from '../types/public';
 import { convertMany } from './convert-many';
 
 describe('conversions', () => {

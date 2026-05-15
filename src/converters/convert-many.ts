@@ -1,5 +1,5 @@
-import type { BestKind } from '../conversions/types';
 import type { BestConversion, Converter } from '../types/converter';
+import type { BestKind } from '../types/public';
 import type { BestUnits, Unit } from '../types/units';
 import { convert } from './convert';
 

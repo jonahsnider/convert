@@ -1,7 +1,7 @@
-import type { BestKind, MeasureKind } from '../conversions/types';
 import { bestUnits } from '../generated/best-units';
 import { differences, unitsObject } from '../generated/parse-unit';
 import type { BestConversion, Converter } from '../types/converter';
+import type { BestKind, MeasureKind } from '../types/public';
 import type { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units';
 import type { LiteralToPrimitive } from '../types/utils';
 

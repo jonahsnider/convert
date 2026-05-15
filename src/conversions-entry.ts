@@ -1,7 +1,7 @@
-export { type BestKind, MeasureKind } from './conversions/types';
-
-import type { MeasureKind } from './conversions/types';
 import { conversions } from './generated/conversions';
+import type { MeasureKind } from './types/public';
+
+export { type BestKind, MeasureKind } from './types/public';
 
 const readonlyConversions: ReadonlyMap<
 	MeasureKind,

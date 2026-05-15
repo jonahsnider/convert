@@ -1,4 +1,5 @@
-import { type Conversions, type MeasureEntry, MeasureKind } from '../conversions/types';
+import type { Conversions, MeasureEntry } from '../conversions/types';
+import { MeasureKind } from '../types/public';
 
 function escapeString(s: string): string {
 	return s.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
@@ -41,7 +42,7 @@ ${units},
 
 	return [
 		`// Generated at ${new Date().toLocaleString()}`,
-		"import { MeasureKind } from '../conversions/types';",
+		"import { MeasureKind } from '../types/public';",
 		'',
 		'export const conversions = new Map([',
 		entries.join(',\n'),
