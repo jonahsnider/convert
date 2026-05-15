@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.0.1](https://github.com/jonahsnider/convert/compare/v7.0.0...v7.0.1) (2026-05-15)
+
+
+### Bug Fixes
+
+* fix devDependencies leaking into .d.ts files ([189635c](https://github.com/jonahsnider/convert/commit/189635c73fc5284bb758ca8a26c4973e0443a0f5)), closes [#809](https://github.com/jonahsnider/convert/issues/809)
+
 ## [7.0.0](https://github.com/jonahsnider/convert/compare/v6.0.0...v7.0.0) (2026-02-24)
 
 
