@@ -138,28 +138,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codspeed/core@npm:^5.4.0":
-  version: 5.4.0
-  resolution: "@codspeed/core@npm:5.4.0"
+"@codspeed/core@npm:^5.5.0":
+  version: 5.5.0
+  resolution: "@codspeed/core@npm:5.5.0"
   dependencies:
     axios: "npm:^1.4.0"
     find-up: "npm:^6.3.0"
     form-data: "npm:^4.0.4"
     node-gyp-build: "npm:^4.6.0"
-  checksum: 10c0/ca4d1e8af7a697d199a4645e4e8c94d88e6cdaf372af78e1371e1a9862d3962afa65bf62749370156e1219888a4272518d84a36df13829f3335adbf7a0a4db76
+    stack-trace: "npm:1.0.0-pre2"
+  checksum: 10c0/45e3140b7bde1db431393642c7187de670540ad74701317367676a81c7f5db60c36fa93fbaa921812c31b31195d787452d7d80745449c588e84ebe1ddf11f77a
   languageName: node
   linkType: hard
 
-"@codspeed/vitest-plugin@npm:5.4.0":
-  version: 5.4.0
-  resolution: "@codspeed/vitest-plugin@npm:5.4.0"
+"@codspeed/vitest-plugin@npm:5.5.0":
+  version: 5.5.0
+  resolution: "@codspeed/vitest-plugin@npm:5.5.0"
   dependencies:
-    "@codspeed/core": "npm:^5.4.0"
+    "@codspeed/core": "npm:^5.5.0"
   peerDependencies:
     tinybench: ">=2.9.0"
     vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
     vitest: ^3.2 || ^4
-  checksum: 10c0/47f86727174563106c6b273587e3cf0a95ff13850daa4cda7814f8a3c66b6be7d2e769a7f8651b3ea64d89a1ff1774dbdcb27474429afd1547c0ad4a46421b69
+  checksum: 10c0/652528c53824a9a276061e15c0091c164d12a2c5e15347f2691c599f4e22bcf4ce188dac07909a159bdf70c46e0aee0a2dd8888a6cd8d2ec7eb2a3c694955de6
   languageName: node
   linkType: hard
 
@@ -1804,7 +1805,7 @@ __metadata:
   resolution: "convert@workspace:."
   dependencies:
     "@biomejs/biome": "npm:2.3.11"
-    "@codspeed/vitest-plugin": "npm:5.4.0"
+    "@codspeed/vitest-plugin": "npm:5.5.0"
     "@jonahsnider/util": "npm:13.0.0"
     "@microsoft/api-extractor": "npm:7.58.7"
     "@size-limit/preset-small-lib": "npm:12.1.0"
@@ -3908,6 +3909,13 @@ __metadata:
   dependencies:
     minipass: "npm:^3.1.1"
   checksum: 10c0/c5d153ce03b5980d683ecaa4d805f6a03d8dc545736213803e168a1907650c46c08a4e5ce6d670a0205482b35c35713d9d286d9133bdd79853a406e22ad81f04
+  languageName: node
+  linkType: hard
+
+"stack-trace@npm:1.0.0-pre2":
+  version: 1.0.0-pre2
+  resolution: "stack-trace@npm:1.0.0-pre2"
+  checksum: 10c0/00caccc88bebfa42068fe236d6427257ca9fb87fef4afdf7d8b145df52310ae529ae94849dcc190ce2a41420db6cde1bbfb993e82c64b2b818b5b2bcb5a4f462
   languageName: node
   linkType: hard
 
