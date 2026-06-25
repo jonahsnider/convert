@@ -97,7 +97,7 @@
 		"typedoc": "0.28.19",
 		"typescript": "6.0.3",
 		"vitest": "4.1.9",
-		"wireit": "0.14.12",
+		"wireit": "0.14.13",
 		"zshy": "^0.7.0"
 	},
 	"packageManager": "yarn@4.17.0",
