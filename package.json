@@ -94,7 +94,7 @@
 		"bignumber.js": "11.1.5",
 		"knip": "6.24.0",
 		"size-limit": "12.1.0",
-		"typedoc": "0.28.19",
+		"typedoc": "0.28.20",
 		"typescript": "6.0.3",
 		"vitest": "4.1.9",
 		"wireit": "0.14.13",
