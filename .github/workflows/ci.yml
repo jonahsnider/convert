@@ -92,4 +92,4 @@ jobs:
         with:
           token: ${{ secrets.CODSPEED_TOKEN }}
           run: "yarn vitest bench --run"
-          mode: "instrumentation"
+          mode: "simulation"
