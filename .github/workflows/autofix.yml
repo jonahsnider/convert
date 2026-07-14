@@ -16,7 +16,7 @@ jobs:
         # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
         run: corepack enable
       - name: Setup Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: "lts/*"
           cache: "yarn"
