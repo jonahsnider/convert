@@ -88,7 +88,7 @@
 		"@size-limit/preset-small-lib": "12.1.0",
 		"@tsconfig/node24": "24.0.4",
 		"@tsconfig/strictest": "2.0.8",
-		"@types/node": "24.13.3",
+		"@types/node": "26.1.1",
 		"@vitest/coverage-v8": "4.1.10",
 		"@vitest/ui": "^4.0.0",
 		"bignumber.js": "11.1.5",
