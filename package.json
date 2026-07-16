@@ -81,7 +81,7 @@
 		"validate-api:local": "wireit"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.3",
+		"@biomejs/biome": "2.5.4",
 		"@codspeed/vitest-plugin": "5.7.1",
 		"@jonahsnider/util": "13.0.0",
 		"@microsoft/api-extractor": "7.58.9",
