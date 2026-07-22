@@ -3,6 +3,15 @@ import { assertConversions } from '../../../test/assert-conversion';
 import type { Length, Time } from '../../types/units';
 import { convert } from '../convert';
 
+describe('conversions', () => {
+	assertConversions([
+		{ from: [1, 'year'], to: [365, 'd'] },
+		{ from: [1, 'decade'], to: [10, 'year'] },
+		{ from: [1, 'century'], to: [10, 'decade'] },
+		{ from: [1, 'millennium'], to: [10, 'century'] },
+	]);
+});
+
 describe('special case for m', () => {
 	assertConversions([{ from: [1, 'm'], to: [1, 'm'] }]);
 

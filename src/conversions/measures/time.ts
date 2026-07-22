@@ -15,11 +15,12 @@ export const time: Measure = {
 		{ names: ['week', 'weeks'], symbols: ['wk'], ratio: 60 * 60 * 24 * 7 },
 		{ names: ['fortnight', 'fortnights'], symbols: ['fn'], ratio: 60 * 60 * 24 * 14 },
 		{ names: ['month', 'months'], symbols: ['mo'], ratio: 2.592e6 },
+		// https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8
 		{ names: ['year', 'years'], symbols: ['a', 'y', 'yr'], ratio: 3.1536e7 },
-		{ names: ['decade', 'decades'], symbols: ['dec'], ratio: 3.155_695_2e8 },
+		{ names: ['decade', 'decades'], symbols: ['dec'], ratio: 3.1536e8 },
 		// Symbol `c` is excluded to avoid conflict
-		{ names: ['century', 'centuries'], ratio: 3.155_695_2e9 },
-		{ names: ['millennium', 'millennia'], ratio: 3.155_695_2e10 },
+		{ names: ['century', 'centuries'], ratio: 3.1536e9 },
+		{ names: ['millennium', 'millennia'], ratio: 3.1536e10 },
 
 		{ names: ['moment', 'moments'], ratio: 90 },
 		{ names: ['shake', 'shakes'], ratio: 1e-8 },
