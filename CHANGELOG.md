@@ -1,5 +1,14 @@
 # Changelog
 
+## [7.0.2](https://github.com/jonahsnider/convert/compare/v7.0.1...v7.0.2) (2026-07-22)
+
+
+### Bug Fixes
+
+* **time:** define decade, century, and millenium as multiple of 365.0 day year ([6ae417b](https://github.com/jonahsnider/convert/commit/6ae417b5b162e42a27b06eb916b045ae90784638))
+* **volume:** fix conversion ratio for cubic miles ([#821](https://github.com/jonahsnider/convert/issues/821)) ([be4e7f0](https://github.com/jonahsnider/convert/commit/be4e7f02ad3dc09a22b579ab18ec08266253c4bc))
+* **volume:** improve precision of imperial barrel definition ([5dee49a](https://github.com/jonahsnider/convert/commit/5dee49aa0739dfb814e30886580c85c3c7bab2e7))
+
 ## [7.0.1](https://github.com/jonahsnider/convert/compare/v7.0.0...v7.0.1) (2026-05-15)
 
 
