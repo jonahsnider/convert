@@ -9,6 +9,8 @@ describe('conversions', () => {
 		{ from: [1, 'US dry quart'], to: [1.101_220_942_715, 'L'] },
 		{ from: [1, 'US dry pint'], to: [550.610_471_357_5, 'mL'] },
 		{ from: [1, 'US dry pint'], to: [0.125, 'US dry gallon'] },
+		{ from: [1, 'imperial barrel'], to: [163.659_24, 'L'] },
+		{ from: [1, 'imperial barrel'], to: [36, 'imperial gallon'] },
 
 		{ from: [2.3, 'cm3'], to: [0.000_002_299_999_999_999_999_6, 'm3'] },
 		{ from: [2, 'dm3'], to: [0.002, 'm3'] },

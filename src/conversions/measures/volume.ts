@@ -34,7 +34,10 @@ export const volume: Measure = {
 		// https://en.wikipedia.org/wiki/Cubic_inch
 		{ names: ['cubic inch', 'cubic inches'], symbols: ['cu in', 'in3', 'in³'], ratio: 0.000_016_387_064 },
 		{ names: ['measurement ton', 'measurement tons'], symbols: ['MTON'], ratio: 1.133 },
-		{ names: ['imperial barrel', 'imperial barrels'], symbols: ['imp bbl'], ratio: 0.16 },
+		// 36 imperial gallons * 4.54609 L/gallon = 163.65924 L
+		// https://www.legislation.gov.uk/ukpga/1910/8/pdfs/ukpga_19100008_en.pdf
+		// https://www.legislation.gov.uk/ukpga/1985/72/schedule/1
+		{ names: ['imperial barrel', 'imperial barrels'], symbols: ['imp bbl'], ratio: 36 * 0.004_546_09 },
 		// https://en.wikipedia.org/wiki/Bushel#Imperial_bushel
 		{ names: ['imperial bushel', 'imperial bushels'], symbols: ['imp bsh', 'imp bu'], ratio: 0.036_368_72 },
 		{ names: ['imperial peck', 'imperial pecks'], symbols: ['pk', 'imp pk'], ratio: 0.009_092_18 },
