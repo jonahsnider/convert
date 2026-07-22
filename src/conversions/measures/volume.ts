@@ -23,7 +23,7 @@ export const volume: Measure = {
 		...expandMacro(Macros.si, { names: ['liter', 'liters', 'litre', 'litres'], symbols: ['l', 'L'], ratio: 1e-3 }),
 
 		// https://en.wikipedia.org/wiki/Cubic_mile
-		{ names: ['cubic mile', 'cubic miles'], symbols: ['cu mi', 'mi3', 'mi³'], ratio: 4.2e3 },
+		{ names: ['cubic mile', 'cubic miles'], symbols: ['cu mi', 'mi3', 'mi³'], ratio: 4_168_181_825.440_579_4 },
 		// https://en.wikipedia.org/wiki/Acre-foot
 		{ names: ['acre-foot', 'acre-feet'], symbols: ['ac⋅ft', 'ac ft'], ratio: 1233.481_837_547_52 },
 		// https://en.wikipedia.org/wiki/Cubic_yard
