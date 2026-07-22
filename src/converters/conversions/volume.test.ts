@@ -20,6 +20,11 @@ describe('conversions', () => {
 		{ from: [1, 'yd3'], to: [0.764_554_857_984, 'm3'] },
 		{ from: [27, 'ft3'], to: [1, 'yd3'] },
 
+		// 1 mile = 1760 yd = 5280 ft, so a cubic mile is 1760^3 cubic yards = 5280^3 cubic feet
+		{ from: [1, 'cubic mile'], to: [4_168_181_825.440_579_4, 'm3'] },
+		{ from: [1, 'cubic mile'], to: [1760 ** 3, 'yd3'] },
+		{ from: [1, 'cubic mile'], to: [5280 ** 3, 'ft3'] },
+
 		{ from: [1, 'US legal cup'], to: [240 + 0.000_000_000_000_03, 'mL'] },
 	]);
 });
