@@ -95,7 +95,7 @@
 		"knip": "6.29.0",
 		"size-limit": "12.1.0",
 		"typedoc": "0.28.20",
-		"typescript": "6.0.3",
+		"typescript": "7.0.2",
 		"vitest": "4.1.10",
 		"wireit": "0.14.13",
 		"zshy": "^0.7.0"
