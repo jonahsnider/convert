@@ -85,7 +85,7 @@
 		"@codspeed/vitest-plugin": "5.7.1",
 		"@jonahsnider/util": "13.0.0",
 		"@microsoft/api-extractor": "7.58.12",
-		"@size-limit/preset-small-lib": "12.1.0",
+		"@size-limit/preset-small-lib": "13.0.1",
 		"@tsconfig/node24": "24.0.4",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.13.3",
