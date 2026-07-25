@@ -93,7 +93,7 @@
 		"@vitest/ui": "^4.0.0",
 		"bignumber.js": "11.1.5",
 		"knip": "6.29.0",
-		"size-limit": "12.1.0",
+		"size-limit": "13.0.1",
 		"typedoc": "0.28.20",
 		"typescript": "6.0.3",
 		"vitest": "4.1.10",

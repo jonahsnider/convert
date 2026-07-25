@@ -1825,7 +1825,7 @@ __metadata:
     "@vitest/ui": "npm:^4.0.0"
     bignumber.js: "npm:11.1.5"
     knip: "npm:6.29.0"
-    size-limit: "npm:12.1.0"
+    size-limit: "npm:13.0.1"
     typedoc: "npm:0.28.20"
     typescript: "npm:6.0.3"
     vitest: "npm:4.1.10"
@@ -3838,6 +3838,20 @@ __metadata:
   bin:
     size-limit: bin.js
   checksum: 10c0/74e7ded2d2a44ca8a45af0b4f86aa6eede483c672fbb3f20818e9d68c1c4e95b4f8ce850704079550c97692b413ad78a608755d4c29e19181bca13feb22bc193
+  languageName: node
+  linkType: hard
+
+"size-limit@npm:13.0.1":
+  version: 13.0.1
+  resolution: "size-limit@npm:13.0.1"
+  dependencies:
+    bytes-iec: "npm:^3.1.1"
+    lilconfig: "npm:^3.1.3"
+    nanospinner: "npm:^1.2.2"
+    picocolors: "npm:^1.1.1"
+  bin:
+    size-limit: bin.js
+  checksum: 10c0/6f179f9ed6652c71ff158af459839176f42a75eae13684febec5e5040eea8b2f51a54c1ac35742446c5572e0cbde2eeee0b6851f9366dc4a377c762e1a81455f
   languageName: node
   linkType: hard
 
