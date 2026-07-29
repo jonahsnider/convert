@@ -88,7 +88,7 @@ jobs:
       - name: Prepare to run benchmarks
         run: yarn generate
       - name: Run benchmarks
-        uses: CodSpeedHQ/action@v4
+        uses: CodSpeedHQ/action@v5
         with:
           token: ${{ secrets.CODSPEED_TOKEN }}
           run: "yarn vitest bench --run"
