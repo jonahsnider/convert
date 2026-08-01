@@ -1824,7 +1824,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:4.1.10"
     "@vitest/ui": "npm:^4.0.0"
     bignumber.js: "npm:11.1.5"
-    knip: "npm:6.30.0"
+    knip: "npm:6.31.0"
     size-limit: "npm:13.0.3"
     typedoc: "npm:0.28.20"
     typescript: "npm:6.0.3"
@@ -2695,9 +2695,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:6.30.0":
-  version: 6.30.0
-  resolution: "knip@npm:6.30.0"
+"knip@npm:6.31.0":
+  version: 6.31.0
+  resolution: "knip@npm:6.31.0"
   dependencies:
     fdir: "npm:^6.5.0"
     formatly: "npm:^0.3.0"
@@ -2715,7 +2715,7 @@ __metadata:
   bin:
     knip: bin/knip.js
     knip-bun: bin/knip-bun.js
-  checksum: 10c0/6635b1bee84efd8c4c5c6e272f81b1ef5012411cb15c68698969582a493281ca756dd59882f92eacd55f2f87d1d5d23cf116f7450888a016965544b8ada41f1b
+  checksum: 10c0/e3f706099a3bc2ba21687bc836d1f5b0cbe441b3515e3d0b0a6c7c941005d8efcd7e2d326e6236874124e8888a45597579538990f2a1089b01f13172019ea1e3
   languageName: node
   linkType: hard
 
