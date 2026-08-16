@@ -1152,10 +1152,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tsconfig/node24@npm:24.0.4":
-  version: 24.0.4
-  resolution: "@tsconfig/node24@npm:24.0.4"
-  checksum: 10c0/9c5d4173204c6935c45d3ff0584fd423bd7d8bc3f6b246e646320ae584e4226b34ea1c66ec67cd16769c73e7e80f4cc562287b0acaa4ec81aa482463972ff83f
+"@tsconfig/node24@npm:24.0.5":
+  version: 24.0.5
+  resolution: "@tsconfig/node24@npm:24.0.5"
+  checksum: 10c0/cea0c13ac00121e210f69823104d69081c99cf98c801a0772b6df5b51b3412e188084d74b6d2a42b33f29e3cf99298faf02c0baed41d336f5ef8828cc04d458f
   languageName: node
   linkType: hard
 
@@ -1807,7 +1807,7 @@ __metadata:
     "@jonahsnider/util": "npm:13.0.0"
     "@microsoft/api-extractor": "npm:7.58.12"
     "@size-limit/preset-small-lib": "npm:13.0.3"
-    "@tsconfig/node24": "npm:24.0.4"
+    "@tsconfig/node24": "npm:24.0.5"
     "@tsconfig/strictest": "npm:2.0.8"
     "@types/node": "npm:24.13.3"
     "@vitest/coverage-v8": "npm:4.1.10"
