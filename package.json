@@ -145,7 +145,8 @@
 				"package.json"
 			],
 			"output": [
-				"dist/"
+				"dist/",
+				"!dist/tsdoc-metadata.json"
 			]
 		},
 		"docs": {
@@ -248,6 +249,7 @@
 				"docs/convert.api.md"
 			],
 			"output": [
+				"dist/tsdoc-metadata.json",
 				"temp/convert.api.json",
 				"temp/convert.api.md"
 			]
@@ -263,6 +265,7 @@
 				"docs/convert.api.md"
 			],
 			"output": [
+				"dist/tsdoc-metadata.json",
 				"docs/convert.api.md",
 				"temp/convert.api.json",
 				"temp/convert.api.md"
