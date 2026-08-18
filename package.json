@@ -157,7 +157,8 @@
 			],
 			"files": [
 				"src/**/*.ts",
-				"tsconfig.build.json"
+				"tsconfig.build.json",
+				"package.json"
 			],
 			"output": [
 				"dist/"
