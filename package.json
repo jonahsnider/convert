@@ -101,7 +101,6 @@
 		"zshy": "^0.7.0"
 	},
 	"packageManager": "yarn@4.18.0",
-	"runkitExampleFilename": "./docs/runkit.js",
 	"size-limit": [
 		{
 			"name": "ESM (brotli)",
