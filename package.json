@@ -69,7 +69,7 @@
 		"@biomejs/biome": "2.5.9",
 		"@codspeed/vitest-plugin": "5.7.1",
 		"@jonahsnider/util": "13.0.0",
-		"@microsoft/api-extractor": "7.58.12",
+		"@microsoft/api-extractor": "7.58.13",
 		"@size-limit/preset-small-lib": "13.0.3",
 		"@tsconfig/node24": "24.0.5",
 		"@tsconfig/strictest": "2.0.8",
