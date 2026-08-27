@@ -65,6 +65,172 @@
 		"validate-api": "wireit",
 		"validate-api:local": "wireit"
 	},
+	"wireit": {
+		"benchmarks": {
+			"command": "vitest bench --run",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"files": [
+				"src/**/*.ts"
+			]
+		},
+		"build": {
+			"dependencies": [
+				"bundle",
+				"validate-api:local"
+			]
+		},
+		"build:ci": {
+			"dependencies": [
+				"bundle",
+				"validate-api"
+			]
+		},
+		"bundle": {
+			"command": "zshy -p tsconfig.build.json",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"files": [
+				"src/**/*.ts",
+				"tsconfig.build.json",
+				"package.json"
+			],
+			"output": [
+				"dist/",
+				"!dist/tsdoc-metadata.json"
+			]
+		},
+		"docs": {
+			"command": "typedoc src/index.ts --out docs_out",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"files": [
+				"src/**/*.ts"
+			],
+			"output": [
+				"docs_out"
+			]
+		},
+		"generate": {
+			"command": "bun scripts/generate.ts -o src/generated/",
+			"files": [
+				"scripts/generate.ts",
+				"src/generation/**/*.ts",
+				"src/conversions/**/*.ts"
+			],
+			"output": [
+				"src/generated"
+			],
+			"clean": false
+		},
+		"knip": {
+			"command": "knip",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"output": []
+		},
+		"lint": {
+			"command": "biome check --colors=force",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"output": []
+		},
+		"lint:fix": {
+			"command": "biome check --colors=force --write --unsafe",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			]
+		},
+		"test": {
+			"command": "vitest run",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"files": [
+				"src/**/*.ts"
+			]
+		},
+		"test:ci": {
+			"dependencies": [
+				"build:ci",
+				"knip",
+				"lint",
+				"test"
+			]
+		},
+		"test:dev": {
+			"command": "vitest --ui",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"files": [
+				"src/**/*.ts"
+			],
+			"service": true
+		},
+		"validate-api": {
+			"command": "api-extractor run",
+			"dependencies": [
+				"bundle"
+			],
+			"files": [
+				"api-extractor.json",
+				"docs/convert.api.md"
+			],
+			"output": [
+				"dist/tsdoc-metadata.json",
+				"temp/convert.api.json",
+				"temp/convert.api.md"
+			],
+			"clean": false
+		},
+		"validate-api:local": {
+			"command": "api-extractor run --local --verbose",
+			"dependencies": [
+				"bundle"
+			],
+			"files": [
+				"api-extractor.json",
+				"docs/convert.api.md"
+			],
+			"output": [
+				"dist/tsdoc-metadata.json",
+				"docs/convert.api.md",
+				"temp/convert.api.json",
+				"temp/convert.api.md"
+			],
+			"clean": false
+		}
+	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.10",
 		"@codspeed/vitest-plugin": "5.7.1",
@@ -106,172 +272,6 @@
 			"gzip": true
 		}
 	],
-	"wireit": {
-		"benchmarks": {
-			"command": "vitest bench --run",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			],
-			"files": [
-				"src/**/*.ts"
-			]
-		},
-		"build": {
-			"dependencies": [
-				"bundle",
-				"validate-api:local"
-			]
-		},
-		"build:ci": {
-			"dependencies": [
-				"bundle",
-				"validate-api"
-			]
-		},
-		"bundle": {
-			"command": "zshy -p tsconfig.build.json",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			],
-			"files": [
-				"src/**/*.ts",
-				"tsconfig.build.json",
-				"package.json"
-			],
-			"output": [
-				"dist/",
-				"!dist/tsdoc-metadata.json"
-			]
-		},
-		"docs": {
-			"command": "typedoc src/index.ts --out docs_out",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			],
-			"files": [
-				"src/**/*.ts"
-			],
-			"output": [
-				"docs_out"
-			]
-		},
-		"generate": {
-			"clean": false,
-			"command": "bun scripts/generate.ts -o src/generated/",
-			"files": [
-				"scripts/generate.ts",
-				"src/generation/**/*.ts",
-				"src/conversions/**/*.ts"
-			],
-			"output": [
-				"src/generated"
-			]
-		},
-		"knip": {
-			"command": "knip",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			],
-			"output": []
-		},
-		"lint": {
-			"command": "biome check --colors=force",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			],
-			"output": []
-		},
-		"lint:fix": {
-			"command": "biome check --colors=force --write --unsafe",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			]
-		},
-		"test": {
-			"command": "vitest run",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			],
-			"files": [
-				"src/**/*.ts"
-			]
-		},
-		"test:ci": {
-			"dependencies": [
-				"build:ci",
-				"knip",
-				"lint",
-				"test"
-			]
-		},
-		"test:dev": {
-			"command": "vitest --ui",
-			"dependencies": [
-				{
-					"cascade": false,
-					"script": "generate"
-				}
-			],
-			"files": [
-				"src/**/*.ts"
-			],
-			"service": true
-		},
-		"validate-api": {
-			"clean": false,
-			"command": "api-extractor run",
-			"dependencies": [
-				"bundle"
-			],
-			"files": [
-				"api-extractor.json",
-				"docs/convert.api.md"
-			],
-			"output": [
-				"dist/tsdoc-metadata.json",
-				"temp/convert.api.json",
-				"temp/convert.api.md"
-			]
-		},
-		"validate-api:local": {
-			"clean": false,
-			"command": "api-extractor run --local --verbose",
-			"dependencies": [
-				"bundle"
-			],
-			"files": [
-				"api-extractor.json",
-				"docs/convert.api.md"
-			],
-			"output": [
-				"dist/tsdoc-metadata.json",
-				"docs/convert.api.md",
-				"temp/convert.api.json",
-				"temp/convert.api.md"
-			]
-		}
-	},
 	"zshy": {
 		"exports": {
 			".": "./src/index.ts",
