@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { ms } from './ms';
+import { ms } from './ms.ts';
 
 describe('conversions', () => {
 	describe('duration string to ms', () => {

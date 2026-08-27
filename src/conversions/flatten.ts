@@ -1,6 +1,6 @@
 import { concatIterables, multiReplace } from '@jonahsnider/util';
 import BigNumber from 'bignumber.js';
-import type { Conversions, Measure, MeasureEntry, MeasureKind, Numeric } from './types';
+import type { Conversions, Measure, MeasureEntry, MeasureKind, Numeric } from './types.ts';
 
 export type FlattenedConversion = {
 	measure: MeasureKind;
@@ -52,7 +52,7 @@ function flattenNumeric(numeric: Numeric): number | string {
 	// Convert function to string and remove initial declaration
 	const fn = numeric.toString();
 
-	return fn.replace('() => ', '');
+	return fn.replace(/^\(\)\s*=>\s*/, '');
 }
 
 function escapeName(name: string): string {

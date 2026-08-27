@@ -1,4 +1,4 @@
-import type { Macro } from '../types';
+import type { Macro } from '../types.ts';
 
 export const volumeSi: Macro = [
 	{ prefix: 'cubic peta', symbol: 'P', value: 1e45, kind: 'big' },

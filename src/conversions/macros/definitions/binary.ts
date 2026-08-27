@@ -1,4 +1,4 @@
-import type { Macro } from '../types';
+import type { Macro } from '../types.ts';
 
 /** @see https://en.wikipedia.org/wiki/Template:Bit_and_byte_prefixes Source */
 export const iec: Macro = [

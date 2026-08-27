@@ -1,10 +1,10 @@
-export { convert, convert as default } from './converters/convert';
-export { convertMany } from './converters/convert-many';
-export { getMeasureKind } from './converters/get-measure-kind';
-export { ms } from './converters/ms';
-export type { UnitsByMeasure as _UnitsByMeasureRaw } from './generated/types';
-export type { BestConversion, Converter } from './types/converter';
-export { type BestKind, MeasureKind } from './types/public';
+export { convert, convert as default } from './converters/convert.ts';
+export { convertMany } from './converters/convert-many.ts';
+export { getMeasureKind } from './converters/get-measure-kind.ts';
+export { ms } from './converters/ms.ts';
+export type { UnitsByMeasure as _UnitsByMeasureRaw } from './generated/types.ts';
+export type { BestConversion, Converter } from './types/converter.ts';
+export { type BestKind, MeasureKind } from './types/public.ts';
 export type {
 	Angle,
 	Area,
@@ -25,5 +25,5 @@ export type {
 	Unit,
 	UnitsByMeasure,
 	Volume,
-} from './types/units';
-export type { LiteralToPrimitive as _LiteralToPrimitive } from './types/utils';
+} from './types/units.ts';
+export type { LiteralToPrimitive as _LiteralToPrimitive } from './types/utils.ts';

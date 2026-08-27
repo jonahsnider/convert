@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
-import { expandMacro, Macros } from '../macros/macros';
-import { type Measure, MeasureKind } from '../types';
+import { expandMacro, Macros } from '../macros/macros.ts';
+import { type Measure, MeasureKind } from '../types.ts';
 
 export const pressure: Measure = {
 	kind: MeasureKind.Pressure,

@@ -1,5 +1,5 @@
 import { bench, describe } from 'vitest';
-import { convert } from './convert';
+import { convert } from './convert.ts';
 
 describe('convert to best', () => {
 	bench('convert 8192 bytes to best', () => {

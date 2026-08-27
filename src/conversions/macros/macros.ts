@@ -1,2 +1,2 @@
-export * as Macros from './definitions/index';
-export { expandMacro } from './expand';
+export * as Macros from './definitions/index.ts';
+export { expandMacro } from './expand.ts';

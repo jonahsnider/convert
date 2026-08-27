@@ -1,4 +1,4 @@
-import type { Macro } from '../types';
+import type { Macro } from '../types.ts';
 
 export const si: Macro = [
 	{ prefix: 'peta', symbol: 'P', value: 1e15, kind: 'big' },

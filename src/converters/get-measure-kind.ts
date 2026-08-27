@@ -1,6 +1,6 @@
-import { unitsObject } from '../generated/parse-unit';
-import type { MeasureKind } from '../types/public';
-import type { MeasureKindByUnit, Unit } from '../types/units';
+import { unitsObject } from '../generated/parse-unit.ts';
+import type { MeasureKind } from '../types/public.ts';
+import type { MeasureKindByUnit, Unit } from '../types/units.ts';
 
 /**
  * Get the {@link MeasureKind} associated with a unit.

@@ -1,7 +1,7 @@
 import type BigNumber from 'bignumber.js';
-import type { BestKind, MeasureKind } from '../types/public';
+import type { BestKind, MeasureKind } from '../types/public.ts';
 
-export { MeasureKind } from '../types/public';
+export { MeasureKind } from '../types/public.ts';
 
 export type Numeric = number | BigNumber | (() => number);
 

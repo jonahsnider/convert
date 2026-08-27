@@ -1,6 +1,6 @@
-import type { BestUnits as BestUnitsGenerated } from '../generated/best-units';
-import type { UnitsByMeasure as UnitsByMeasureGenerated } from '../generated/types';
-import type { BestKind, MeasureKind } from './public';
+import type { BestUnits as BestUnitsGenerated } from '../generated/best-units.ts';
+import type { UnitsByMeasure as UnitsByMeasureGenerated } from '../generated/types.ts';
+import type { BestKind, MeasureKind } from './public.ts';
 
 /**
  * Get the units for a given measure.

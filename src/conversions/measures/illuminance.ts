@@ -1,5 +1,5 @@
-import { expandMacro, Macros } from '../macros/macros';
-import { type Measure, MeasureKind } from '../types';
+import { expandMacro, Macros } from '../macros/macros.ts';
+import { type Measure, MeasureKind } from '../types.ts';
 
 export const illuminance: Measure = {
 	kind: MeasureKind.Illuminance,

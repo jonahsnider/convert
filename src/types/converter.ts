@@ -1,6 +1,6 @@
-import type { BestKind } from './public';
-import type { BestUnits, BestUnitsForUnit, Unit } from './units';
-import type { LiteralToPrimitive } from './utils';
+import type { BestKind } from './public.ts';
+import type { BestUnits, BestUnitsForUnit, Unit } from './units.ts';
+import type { LiteralToPrimitive } from './utils.ts';
 
 /**
  * The return value from converting a unit to `'best'`.

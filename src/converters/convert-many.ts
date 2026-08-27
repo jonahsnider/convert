@@ -1,7 +1,7 @@
-import type { BestConversion, Converter } from '../types/converter';
-import type { BestKind } from '../types/public';
-import type { BestUnits, Unit } from '../types/units';
-import { convert } from './convert';
+import type { BestConversion, Converter } from '../types/converter.ts';
+import type { BestKind } from '../types/public.ts';
+import type { BestUnits, Unit } from '../types/units.ts';
+import { convert } from './convert.ts';
 
 const splitExpression = /(-?(?:\d+)?\.?\d+)\s?(\S+)/g;
 

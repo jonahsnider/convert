@@ -1,7 +1,7 @@
 import { describe, expect } from 'vitest';
-import { assertConversions } from '../../../test/assert-conversion';
-import type { Length, Time } from '../../types/units';
-import { convert } from '../convert';
+import { assertConversions } from '../../../test/assert-conversion.ts';
+import type { Length, Time } from '../../types/units.ts';
+import { convert } from '../convert.ts';
 
 describe('conversions', () => {
 	assertConversions([

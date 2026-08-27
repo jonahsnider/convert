@@ -1,5 +1,5 @@
 import { bench, describe } from 'vitest';
-import { ms } from './ms';
+import { ms } from './ms.ts';
 
 describe('ms', () => {
 	bench('parse 10h to ms', () => {

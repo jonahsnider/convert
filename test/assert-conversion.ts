@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest';
-import { convert } from '../src/converters/convert';
-import type { Unit } from '../src/types/units';
+import { convert } from '../src/converters/convert.ts';
+import type { Unit } from '../src/types/units.ts';
 
 type ConversionTuple = [quantity: number | bigint, unit: Unit];
 type ConversionTest = {

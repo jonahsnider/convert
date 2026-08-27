@@ -1,9 +1,9 @@
-import { bestUnits } from '../generated/best-units';
-import { differences, unitsObject } from '../generated/parse-unit';
-import type { BestConversion, Converter } from '../types/converter';
-import type { BestKind, MeasureKind } from '../types/public';
-import type { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units';
-import type { LiteralToPrimitive } from '../types/utils';
+import { bestUnits } from '../generated/best-units.ts';
+import { differences, unitsObject } from '../generated/parse-unit.ts';
+import type { BestConversion, Converter } from '../types/converter.ts';
+import type { BestKind, MeasureKind } from '../types/public.ts';
+import type { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units.ts';
+import type { LiteralToPrimitive } from '../types/utils.ts';
 
 // Importing MeasureKind will cause the entire enum to be included in the output, which increases bundle size
 // This workaround allows me to just hardcode the value, but ensures it doesn't become inaccurate if the enum changes

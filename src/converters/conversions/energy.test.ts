@@ -1,6 +1,6 @@
 import { describe, expect } from 'vitest';
-import { assertConversions } from '../../../test/assert-conversion';
-import { convert } from '../convert';
+import { assertConversions } from '../../../test/assert-conversion.ts';
+import { convert } from '../convert.ts';
 
 describe('conversions', () => {
 	assertConversions([{ from: [1, 'kWh'], to: [60 * 60 * 1000, 'joules'] }]);

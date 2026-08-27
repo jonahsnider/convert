@@ -1,5 +1,5 @@
 import { describe } from 'vitest';
-import { assertConversions } from '../../../test/assert-conversion';
+import { assertConversions } from '../../../test/assert-conversion.ts';
 
 describe('conversions', () => {
 	assertConversions([

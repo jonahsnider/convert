@@ -1,8 +1,8 @@
 import { describe, expect, test } from 'vitest';
-import { area } from '../../conversions/measures/area';
-import { length } from '../../conversions/measures/length';
-import { volume } from '../../conversions/measures/volume';
-import type { Measure } from '../../conversions/types';
+import { area } from '../../conversions/measures/area.ts';
+import { length } from '../../conversions/measures/length.ts';
+import { volume } from '../../conversions/measures/volume.ts';
+import type { Measure } from '../../conversions/types.ts';
 
 function ratioOf(measure: Measure, name: string): number {
 	const entry = measure.units.find((unit) => unit.names.includes(name));

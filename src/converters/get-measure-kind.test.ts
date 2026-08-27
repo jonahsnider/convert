@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
-import { MeasureKind } from '../types/public';
-import { getMeasureKind } from './get-measure-kind';
+import { MeasureKind } from '../types/public.ts';
+import { getMeasureKind } from './get-measure-kind.ts';
 
 describe('get measure kind', () => {
 	test('returns measure kind for valid units', () => {

@@ -1,8 +1,8 @@
-import type { MeasureKind } from '../types/public';
-import type { BestUnitsForMeasure } from '../types/units';
-import type { LiteralToPrimitive } from '../types/utils';
-import { convert } from './convert';
-import { convertMany } from './convert-many';
+import type { MeasureKind } from '../types/public.ts';
+import type { BestUnitsForMeasure } from '../types/units.ts';
+import type { LiteralToPrimitive } from '../types/utils.ts';
+import { convert } from './convert.ts';
+import { convertMany } from './convert-many.ts';
 
 /**
  * Convert a given duration of milliseconds to a string that best represents it.

@@ -2,11 +2,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { type ParseArgsConfig, parseArgs } from 'node:util';
-import { conversions } from '../src/conversions/conversions';
-import { generateBestUnits } from '../src/generation/generate-best-units';
-import { generateConversions } from '../src/generation/generate-conversions';
-import { generateParseUnit } from '../src/generation/generate-parse-unit';
-import { generateTypes } from '../src/generation/generate-types';
+import { conversions } from '../src/conversions/conversions.ts';
+import { generateBestUnits } from '../src/generation/generate-best-units.ts';
+import { generateConversions } from '../src/generation/generate-conversions.ts';
+import { generateParseUnit } from '../src/generation/generate-parse-unit.ts';
+import { generateTypes } from '../src/generation/generate-types.ts';
 
 const options: ParseArgsConfig = {
 	args: process.argv.slice(2),
