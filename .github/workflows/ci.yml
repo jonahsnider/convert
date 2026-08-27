@@ -19,8 +19,6 @@ jobs:
         uses: pnpm/setup@v2
         with:
           cache: true
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
       - name: Build bundle
         run: pnpm bundle
       - name: Size Limit
@@ -42,8 +40,6 @@ jobs:
         uses: pnpm/setup@v2
         with:
           cache: true
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
       - name: Build and test
         run: pnpm test:ci
         env:
@@ -65,8 +61,6 @@ jobs:
         uses: pnpm/setup@v2
         with:
           cache: true
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
       - name: Prepare to run benchmarks
         run: pnpm generate
       - name: Run benchmarks

@@ -37,9 +37,6 @@ jobs:
         with:
           cache: true
         if: ${{ steps.release.outputs.release_created }}
-      - name: Setup Bun
-        if: ${{ steps.release.outputs.release_created }}
-        uses: oven-sh/setup-bun@v2
       - name: Build and test
         run: pnpm test:ci
         if: ${{ steps.release.outputs.release_created }}

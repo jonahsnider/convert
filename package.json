@@ -124,7 +124,7 @@
 			]
 		},
 		"generate": {
-			"command": "bun scripts/generate.ts -o src/generated/",
+			"command": "node --experimental-transform-types scripts/generate.ts -o src/generated/",
 			"files": [
 				"scripts/generate.ts",
 				"src/generation/**/*.ts",
