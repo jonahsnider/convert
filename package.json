@@ -251,7 +251,14 @@
 		"wireit": "0.14.13",
 		"zshy": "^0.7.0"
 	},
-	"packageManager": "yarn@4.18.0",
+	"packageManager": "pnpm@12.0.0",
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "24.x",
+			"onFail": "error"
+		}
+	},
 	"size-limit": [
 		{
 			"name": "ESM (brotli)",

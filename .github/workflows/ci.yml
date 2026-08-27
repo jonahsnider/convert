@@ -15,20 +15,14 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v7
-      - name: Enable Corepack
-        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
-        run: corepack enable
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - name: Setup pnpm
+        uses: pnpm/setup@v2
         with:
-          node-version: "lts/*"
-          cache: "yarn"
+          cache: true
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
       - name: Build bundle
-        run: yarn bundle
+        run: pnpm bundle
       - name: Size Limit
         uses: andresz1/size-limit-action@v1
         with:
@@ -44,20 +38,14 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v7
-      - name: Enable Corepack
-        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
-        run: corepack enable
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - name: Setup pnpm
+        uses: pnpm/setup@v2
         with:
-          node-version: "lts/*"
-          cache: "yarn"
+          cache: true
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
       - name: Build and test
-        run: yarn test:ci
+        run: pnpm test:ci
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload coverage to Codecov
@@ -73,23 +61,17 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v7
-      - name: Enable Corepack
-        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
-        run: corepack enable
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - name: Setup pnpm
+        uses: pnpm/setup@v2
         with:
-          node-version: "lts/*"
-          cache: "yarn"
+          cache: true
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-      - name: Install dependencies with Yarn
-        run: yarn install --immutable
       - name: Prepare to run benchmarks
-        run: yarn generate
+        run: pnpm generate
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v5
         with:
           token: ${{ secrets.CODSPEED_TOKEN }}
-          run: "yarn vitest bench --run"
+          run: "pnpm vitest bench --run"
           mode: "simulation"

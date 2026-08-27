@@ -12,24 +12,18 @@ jobs:
     steps:
       - name: Checkout Git repository
         uses: actions/checkout@v7
-      - name: Enable Corepack
-        # Required due to a limitation in setup-node https://github.com/actions/setup-node/issues/480#issuecomment-1820622085
-        run: corepack enable
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
+      - name: Setup pnpm
+        uses: pnpm/setup@v2
         with:
-          node-version: "lts/*"
-          cache: "yarn"
+          cache: true
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-      - name: Install dependencies
-        run: yarn install --immutable
       - name: Migrate Biome schema
-        run: yarn biome migrate --write
+        run: pnpm biome migrate --write
       - name: Apply lint fixes
-        run: yarn lint:fix
+        run: pnpm lint:fix
       - name: Apply Knip fixes
-        run: yarn knip -- --fix
+        run: pnpm knip -- --fix
       - name: Run autofix.ci
         uses: autofix-ci/action@v1
         with:

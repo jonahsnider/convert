@@ -8,7 +8,7 @@ The [smallest](https://bundlephobia.com/package/convert) & [fastest](https://git
 ```sh
 npm install convert
 # or
-yarn add convert
+pnpm add convert
 ```
 
 [**More installation examples below**](#Installation).
@@ -112,7 +112,7 @@ Convert is published as `convert` on npm.
 ```sh
 npm install convert
 # or
-yarn add convert
+pnpm add convert
 ```
 
 And then import it in your code like this:
