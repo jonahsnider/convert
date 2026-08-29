@@ -243,7 +243,7 @@
 		"@vitest/coverage-v8": "4.1.11",
 		"@vitest/ui": "^4.0.0",
 		"bignumber.js": "11.1.5",
-		"knip": "6.32.3",
+		"knip": "6.33.0",
 		"size-limit": "13.0.3",
 		"typedoc": "0.28.20",
 		"typescript": "6.0.3",
