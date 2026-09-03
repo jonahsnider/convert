@@ -9,6 +9,7 @@
 					"type": "json"
 				}
 			],
+			"include-component-in-tag": false,
 			"release-type": "node"
 		}
 	}
