@@ -7,8 +7,6 @@ The [smallest](https://bundlephobia.com/package/convert) & [fastest](https://git
 
 ```sh
 npm install convert
-# or
-pnpm add convert
 ```
 
 [**More installation examples below**](#Installation).
@@ -33,10 +31,7 @@ Generated API documentation for the latest version is available online.
 [**View docs**](https://convert.js.org).
 
 ```ts
-// ESM:
 import convert from "convert";
-// CJS:
-const { convert } = require("convert");
 
 // 360 seconds into minutes
 convert(360, "seconds").to("minutes");
@@ -62,7 +57,6 @@ convert(451, "fahrenheit").to("celsius");
 
 ```ts
 import { convertMany } from "convert";
-const { convertMany } = require("convert");
 
 // Convert 1 day and 8 hours into ms
 convertMany("1d8h").to("ms");
@@ -72,7 +66,6 @@ convertMany("1d8h").to("ms");
 
 ```ts
 import convert from "convert";
-const { convert } = require("convert");
 
 // Convert into the best unit
 const duration = convert(36, "h").to("best");
@@ -92,7 +85,6 @@ convert(3.5, "km").to("best", "imperial"); // -> { quantity: 2.17, unit: 'mi', t
 
 ```ts
 import { ms } from "convert";
-const { ms } = require("convert");
 
 // Convert a duration into milliseconds
 ms("1d 2h 30min");
@@ -105,46 +97,16 @@ ms(86400000);
 
 ## Installation
 
-### Package manager
-
 Convert is published as `convert` on npm.
 
 ```sh
 npm install convert
-# or
-pnpm add convert
 ```
 
 And then import it in your code like this:
 
 ```js
-// CommonJS
-const { convert } = require("convert");
-
-// ESM
 import convert from "convert";
-```
-
-### Browsers
-
-Pick your favorite CDN:
-
-#### ES Modules via CDN
-
-```html
-<script type="module">
-	import convert from "https://cdn.skypack.dev/convert@5";
-	import convert from "https://esm.run/convert@5";
-	import convert from "https://cdn.jsdelivr.net/npm/convert@5";
-	import convert from "https://unpkg.com/convert@5";
-</script>
-```
-
-#### UMD (global)
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/convert@5/dist/index.js"></script>
-<script src="https://unpkg.com/convert@5/dist/index.js"></script>
 ```
 
 ## Alternatives
