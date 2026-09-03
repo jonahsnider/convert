@@ -4,8 +4,14 @@
 	"license": "MIT",
 	"name": "@jonahsnider/convert",
 	"publish": {
-		"exclude": ["!src/generated/*.ts"],
-		"include": ["src/**/*.ts", "README.md", "LICENSE"]
+		"exclude": [
+			"!src/generated/*.ts"
+		],
+		"include": [
+			"src/**/*.ts",
+			"README.md",
+			"LICENSE"
+		]
 	},
-	"version": "5.14.1"
+	"version": "8.0.0"
 }
