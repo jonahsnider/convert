@@ -1,5 +1,21 @@
 # Changelog
 
+## [8.0.0](https://github.com/jonahsnider/convert/compare/v7.0.2...v8.0.0) (2026-09-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* convert package to ESM only
+
+### Features
+
+* convert package to ESM only ([55e9e85](https://github.com/jonahsnider/convert/commit/55e9e85cb47e2f615413dfadfd511fab7f634fab))
+
+
+### Bug Fixes
+
+* fix JSR publishing ([ef101d5](https://github.com/jonahsnider/convert/commit/ef101d5d23785ccf49447f8872d0fc006f1f716d))
+
 ## [7.0.2](https://github.com/jonahsnider/convert/compare/v7.0.1...v7.0.2) (2026-07-22)
 
 
