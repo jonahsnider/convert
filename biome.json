@@ -5,6 +5,7 @@
 	},
 	"formatter": {
 		"formatWithErrors": true,
+		"includes": ["**", "!**/jsr.json"],
 		"lineWidth": 120
 	},
 	"javascript": {
