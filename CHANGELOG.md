@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.1](https://github.com/jonahsnider/convert/compare/v8.0.0...v8.0.1) (2026-09-04)
+
+
+### Bug Fixes
+
+* bump version ([25f4a91](https://github.com/jonahsnider/convert/commit/25f4a91bb16602dd488575b5c2ff56df32c98ac3))
+
 ## [8.0.0](https://github.com/jonahsnider/convert/compare/v7.0.2...v8.0.0) (2026-09-03)
 
 
