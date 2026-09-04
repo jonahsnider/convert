@@ -5,7 +5,10 @@
 	"name": "@jonahsnider/convert",
 	"publish": {
 		"exclude": [
-			"!src/generated/*.ts"
+			"!src/generated/*.ts",
+			"src/**/*.bench.ts",
+			"src/**/*.test.ts",
+			"src/generation/"
 		],
 		"include": [
 			"src/**/*.ts",
