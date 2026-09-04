@@ -232,7 +232,7 @@
 		}
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.11",
+		"@biomejs/biome": "2.5.12",
 		"@codspeed/vitest-plugin": "5.7.1",
 		"@jonahsnider/util": "13.0.0",
 		"@microsoft/api-extractor": "7.59.0",
