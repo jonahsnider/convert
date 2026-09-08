@@ -9,7 +9,6 @@ permissions:
 jobs:
   size-limit:
     name: Size Limit
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -22,10 +21,14 @@ jobs:
       - name: Build bundle
         run: pnpm bundle
       - name: Size Limit
+        if: github.event_name == 'pull_request'
         uses: andresz1/size-limit-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           skip_step: install
+      - name: Size Limit
+        if: github.event_name == 'push'
+        run: pnpm size-limit
 
   build-and-test:
     name: Build and test
