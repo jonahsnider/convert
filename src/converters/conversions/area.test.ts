@@ -14,6 +14,8 @@ describe('conversions', () => {
 		{ from: [2, 'square meter'], to: [2e-6, 'square kilometer'] },
 		{ from: [2, 'square meter'], to: [20_000, 'square centimeter'] },
 		{ from: [2, 'square centimeter'], to: [200.000_000_000_000_03, 'square millimeter'] },
+		{ from: [1, 'square meter'], to: [100, 'square decimeter'] },
+		{ from: [1, 'dm2'], to: [100, 'cm2'] },
 
 		{ from: [1, 'square inch'], to: [6.451_599_999_999_999, 'square centimeters'] },
 		{ from: [1, 'square foot'], to: [0.092_903_04, 'square meters'] },

@@ -8,7 +8,7 @@ export const areaSi: Macro = [
 	{ prefix: 'square kilo', symbol: 'k', value: 1e6, kind: 'big' },
 	{ prefix: 'square hecto', symbol: 'h', value: 1e4, kind: 'big' },
 	{ prefix: 'square deca', symbol: 'da', value: 1e2, kind: 'big' },
-	{ prefix: 'square deci', symbol: 'd', value: 1e-1, kind: 'small' },
+	{ prefix: 'square deci', symbol: 'd', value: 1e-2, kind: 'small' },
 	{ prefix: 'square centi', symbol: 'c', value: 1e-4, kind: 'small' },
 	{ prefix: 'square milli', symbol: 'm', value: 1e-6, kind: 'small' },
 	{ prefix: 'square micro', symbol: ['μ', 'µ'], value: 1e-12, kind: 'small' },
