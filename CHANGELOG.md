@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.2](https://github.com/jonahsnider/convert/compare/v8.0.1...v8.0.2) (2026-09-10)
+
+
+### Bug Fixes
+
+* **area:** correct square deci prefix factor ([#836](https://github.com/jonahsnider/convert/issues/836)) ([3729f8c](https://github.com/jonahsnider/convert/commit/3729f8c43995812032b8a1681d8cbe54d78f1ab7))
+
 ## [8.0.1](https://github.com/jonahsnider/convert/compare/v8.0.0...v8.0.1) (2026-09-04)
 
 
