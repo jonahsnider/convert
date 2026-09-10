@@ -34,10 +34,8 @@ describe('imperial length/area/volume factor consistency', () => {
 	});
 });
 
-// The SI prefix macros are three hand-written copies of the same prefix list, so the squared and
-// cubed tables must be the linear one raised to that power. Guards against a prefix being left
-// un-exponentiated, like `square deci`: #545 re-exponentiated the area macro but missed that one
-// row, which read 1e-1 instead of 1e-2 for another four years.
+// The SI prefix macros are three hand-written copies of the same prefix list, so the squared and cubed tables must be the linear one raised to that power
+// Guards against a prefix being left un-exponentiated
 function factorOf(macro: Macro, prefix: string): number {
 	const group = macro.find((entry) => entry.prefix === prefix);
 	if (group === undefined) {
