@@ -70,5 +70,5 @@ jobs:
         uses: CodSpeedHQ/action@v5
         with:
           token: ${{ secrets.CODSPEED_TOKEN }}
-          run: "pnpm vitest bench --run"
-          mode: "simulation"
+          run: 'pnpm vitest bench --run'
+          mode: 'simulation'

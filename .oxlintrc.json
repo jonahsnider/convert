@@ -1,0 +1,22 @@
+{
+	"ignorePatterns": ["docs/**"],
+	"options": {
+		"typeAware": true,
+		"typeCheck": true
+	},
+	"categories": {
+		"correctness": "error",
+		"perf": "error"
+	},
+	"rules": {
+		"typescript/no-duplicate-type-constituents": "off"
+	},
+	"overrides": [
+		{
+			"files": ["src/**/*.test.ts"],
+			"rules": {
+				"oxc/number-arg-out-of-range": "off"
+			}
+		}
+	]
+}

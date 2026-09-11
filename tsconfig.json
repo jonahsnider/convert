@@ -8,8 +8,10 @@
 		"outDir": "dist",
 		"rootDir": ".",
 		"rewriteRelativeImportExtensions": true,
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"target": "ES2020",
+		"types": ["node"]
 	},
-	"extends": ["@tsconfig/strictest", "@tsconfig/node24"],
+	"extends": ["@tsconfig/strictest", "@tsconfig/recommended"],
 	"include": ["src", "scripts", "test"]
 }

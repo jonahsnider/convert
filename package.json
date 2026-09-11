@@ -55,6 +55,8 @@
 		"build:ci": "wireit",
 		"bundle": "wireit",
 		"docs": "wireit",
+		"format": "wireit",
+		"format:fix": "wireit",
 		"generate": "wireit",
 		"knip": "wireit",
 		"lint": "wireit",
@@ -123,6 +125,25 @@
 				"docs_out"
 			]
 		},
+		"format": {
+			"command": "oxfmt --check",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			],
+			"output": []
+		},
+		"format:fix": {
+			"command": "oxfmt",
+			"dependencies": [
+				{
+					"script": "generate",
+					"cascade": false
+				}
+			]
+		},
 		"generate": {
 			"command": "node --experimental-transform-types scripts/generate.ts -o src/generated/",
 			"files": [
@@ -146,7 +167,7 @@
 			"output": []
 		},
 		"lint": {
-			"command": "biome check --colors=force",
+			"command": "oxlint",
 			"dependencies": [
 				{
 					"script": "generate",
@@ -156,7 +177,7 @@
 			"output": []
 		},
 		"lint:fix": {
-			"command": "biome check --colors=force --write --unsafe",
+			"command": "oxlint --fix",
 			"dependencies": [
 				{
 					"script": "generate",
@@ -179,6 +200,7 @@
 		"test:ci": {
 			"dependencies": [
 				"build:ci",
+				"format",
 				"knip",
 				"lint",
 				"test"
@@ -232,24 +254,26 @@
 		}
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.13",
 		"@codspeed/vitest-plugin": "6.0.0-beta.2",
 		"@jonahsnider/util": "13.0.0",
 		"@microsoft/api-extractor": "7.59.1",
 		"@size-limit/preset-small-lib": "13.0.3",
-		"@tsconfig/node24": "24.0.5",
+		"@tsconfig/recommended": "1.0.13",
 		"@tsconfig/strictest": "2.0.8",
 		"@types/node": "24.13.4",
 		"@vitest/coverage-v8": "5.0.0",
-		"@vitest/ui": "^5.0.0",
+		"@vitest/ui": "5.0.0",
 		"bignumber.js": "11.1.5",
 		"knip": "6.35.1",
+		"oxfmt": "0.67.0",
+		"oxlint": "1.82.0",
+		"oxlint-tsgolint": "7.0.2001",
 		"size-limit": "13.0.3",
 		"typedoc": "0.28.20",
 		"typescript": "6.0.3",
 		"vitest": "5.0.0",
 		"wireit": "0.14.13",
-		"zshy": "^0.8.0"
+		"zshy": "0.8.0"
 	},
 	"packageManager": "pnpm@12.4.0",
 	"devEngines": {

@@ -16,13 +16,16 @@ jobs:
         uses: pnpm/setup@v2
         with:
           cache: true
-      - name: Migrate Biome schema
-        run: pnpm biome migrate --write
+      - name: Apply formatting fixes
+        run: pnpm format:fix
+        continue-on-error: true
       - name: Apply lint fixes
         run: pnpm lint:fix
+        continue-on-error: true
       - name: Apply Knip fixes
         run: pnpm knip -- --fix
+        continue-on-error: true
       - name: Run autofix.ci
         uses: autofix-ci/action@v1
         with:
-          commit-message: "refactor: apply automatic fixes"
+          commit-message: 'refactor: apply automatic fixes'

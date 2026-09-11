@@ -1,0 +1,6 @@
+{
+	"ignorePatterns": ["**/*.md", "api-extractor.json", "jsr.json", "package.json"],
+	"singleQuote": true,
+	"useTabs": true,
+	"printWidth": 120
+}

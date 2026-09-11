@@ -1,7 +1,7 @@
 {
 	"recommendations": [
 		"google.wireit",
-		"biomejs.biome",
+		"oxc.oxc-vscode",
 		"vitest.explorer",
 		"webpro.vscode-knip",
 		"editorconfig.editorconfig"

@@ -44,7 +44,7 @@ function flattenNumeric(numeric: Numeric): number | string {
 
 	if (numeric instanceof BigNumber) {
 		if (Number.isNaN(numeric.toNumber())) {
-			throw new RangeError(`Invalid numeric value: ${numeric}`);
+			throw new RangeError(`Invalid numeric value: ${numeric.toString()}`);
 		}
 		return numeric.toString();
 	}
