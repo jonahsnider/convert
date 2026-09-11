@@ -239,7 +239,7 @@
 		"@size-limit/preset-small-lib": "13.0.3",
 		"@tsconfig/node24": "24.0.5",
 		"@tsconfig/strictest": "2.0.8",
-		"@types/node": "24.13.3",
+		"@types/node": "24.13.4",
 		"@vitest/coverage-v8": "5.0.0",
 		"@vitest/ui": "^5.0.0",
 		"bignumber.js": "11.1.5",
