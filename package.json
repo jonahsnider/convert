@@ -251,7 +251,7 @@
 		"wireit": "0.14.13",
 		"zshy": "^0.8.0"
 	},
-	"packageManager": "pnpm@12.3.4",
+	"packageManager": "pnpm@12.4.0",
 	"devEngines": {
 		"runtime": {
 			"name": "node",
