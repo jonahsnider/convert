@@ -30,7 +30,7 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v7
       - name: Setup pnpm
-        uses: pnpm/setup@v2
+        uses: pnpm/setup@v3
         with:
           cache: true
         if: ${{ steps.release.outputs.release_created }}
