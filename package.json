@@ -264,7 +264,7 @@
 		"@vitest/coverage-v8": "5.0.1",
 		"@vitest/ui": "5.0.1",
 		"bignumber.js": "11.1.5",
-		"knip": "6.37.0",
+		"knip": "6.38.0",
 		"oxfmt": "0.70.0",
 		"oxlint": "1.85.0",
 		"oxlint-tsgolint": "7.0.2003",
