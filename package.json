@@ -270,7 +270,7 @@
 		"oxlint-tsgolint": "7.0.2003",
 		"size-limit": "14.0.1",
 		"typedoc": "0.28.20",
-		"typescript": "6.0.3",
+		"typescript": "7.0.2",
 		"vitest": "5.0.2",
 		"wireit": "0.14.13",
 		"zshy": "0.8.0"
