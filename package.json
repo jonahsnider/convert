@@ -265,7 +265,7 @@
 		"@vitest/ui": "5.0.2",
 		"bignumber.js": "11.1.5",
 		"knip": "6.38.0",
-		"oxfmt": "0.70.0",
+		"oxfmt": "0.71.0",
 		"oxlint": "1.85.0",
 		"oxlint-tsgolint": "7.0.2003",
 		"size-limit": "14.1.0",
