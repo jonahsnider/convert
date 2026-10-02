@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const area: Measure = {
@@ -8,7 +8,7 @@ export const area: Measure = {
 		// https://en.wikipedia.org/wiki/Category:Units_of_area
 		// https://en.wikipedia.org/wiki/Square_metre
 		{ names: ['square meter', 'square meters', 'square metre', 'square metres'], symbols: ['m²', 'm2'], ratio: 1 },
-		...expandMacro(Macros.areaSi, { names: ['meter', 'metre', 'meters', 'metres'], symbols: ['m²', 'm2'], ratio: 1 }),
+		{ macro: Macros.areaSi, names: ['meter', 'metre', 'meters', 'metres'], symbols: ['m²', 'm2'], ratio: 1 },
 
 		// https://en.wikipedia.org/wiki/Conversion_of_units#Area
 		{ names: ['acre', 'acres'], symbols: ['ac'], ratio: 4046.856_422_4 },

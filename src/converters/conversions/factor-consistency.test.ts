@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { areaSi, si, volumeSi } from '../../conversions/macros/definitions/index.ts';
+import { expandUnits } from '../../conversions/macros/expand.ts';
 import type { Macro } from '../../conversions/macros/types.ts';
 import { area } from '../../conversions/measures/area.ts';
 import { length } from '../../conversions/measures/length.ts';
@@ -7,7 +8,7 @@ import { volume } from '../../conversions/measures/volume.ts';
 import type { Measure } from '../../conversions/types.ts';
 
 function ratioOf(measure: Measure, name: string): number {
-	const entry = measure.units.find((unit) => unit.names.includes(name));
+	const entry = expandUnits(measure.units).find((unit) => unit.names.includes(name));
 	if (entry === undefined) {
 		throw new Error(`No unit named ${name}`);
 	}

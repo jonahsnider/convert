@@ -1,3 +1,4 @@
+import { expandUnits } from '../conversions/macros/expand.ts';
 import type { Conversions, MeasureEntry } from '../conversions/types.ts';
 import { MeasureKind } from '../types/public.ts';
 
@@ -29,7 +30,9 @@ export function generateConversions(conversions: Conversions): string {
 		const imperial = Array.isArray(measure.best) ? measure.best : measure.best.imperial;
 		const bestStr = `{ metric: ${serializeStringArray(metric)}, imperial: ${serializeStringArray(imperial)} }`;
 
-		const units = measure.units.map((u) => serializeUnit(u)).join(',\n');
+		const units = expandUnits(measure.units)
+			.map((u) => serializeUnit(u))
+			.join(',\n');
 
 		entries.push(`\t[${kindName}, {
 \t\tkind: ${kindName},

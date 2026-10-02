@@ -1,5 +1,6 @@
 import { concatIterables, multiReplace } from '@jonahsnider/util';
 import BigNumber from 'bignumber.js';
+import { expandUnits } from './macros/expand.ts';
 import type { Conversions, Measure, MeasureEntry, MeasureKind, Numeric } from './types.ts';
 
 export type FlattenedConversion = {
@@ -22,7 +23,7 @@ export function flattenConversions(conversions: Conversions): FlattenedConversio
 export function flattenMeasure(measure: Measure): FlattenedConversion[] {
 	const compressed: FlattenedConversion[] = [];
 
-	for (const unit of measure.units) {
+	for (const unit of expandUnits(measure.units)) {
 		compressed.push(flattenUnit(measure.kind, unit));
 	}
 

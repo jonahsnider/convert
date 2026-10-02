@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 const poundInGrams = new BigNumber(4.535_923_7e2);
@@ -12,7 +12,7 @@ export const mass: Measure = {
 	},
 	units: [
 		{ names: ['gram', 'grams'], symbols: ['g'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['gram', 'grams'], symbols: ['g'], ratio: 1 }),
+		{ macro: Macros.si, names: ['gram', 'grams'], symbols: ['g'], ratio: 1 },
 		// https://en.wikipedia.org/wiki/Microgram
 		{ names: [], symbols: ['mcg'], ratio: 1 / 1e6 },
 

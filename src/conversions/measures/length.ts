@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const length: Measure = {
@@ -10,7 +10,7 @@ export const length: Measure = {
 	},
 	units: [
 		{ names: ['meter', 'meters', 'metre', 'metres'], symbols: ['m'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['meter', 'metre', 'meters', 'metres'], symbols: ['m'], ratio: 1 }),
+		{ macro: Macros.si, names: ['meter', 'metre', 'meters', 'metres'], symbols: ['m'], ratio: 1 },
 
 		{ names: ['foot', 'feet'], symbols: ['ft', "'"], ratio: 0.3048 },
 		{

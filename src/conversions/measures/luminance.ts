@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const luminance: Measure = {
@@ -16,7 +16,8 @@ export const luminance: Measure = {
 			symbols: ['cd/m2', 'cd/m²'],
 			ratio: 1,
 		},
-		...expandMacro(Macros.si, {
+		{
+			macro: Macros.si,
 			names: [
 				'candela per square meter',
 				'candelas per square meter',
@@ -25,7 +26,7 @@ export const luminance: Measure = {
 			],
 			symbols: ['cd/m2', 'cd/m²'],
 			ratio: 1,
-		}),
+		},
 
 		// https://en.wikipedia.org/wiki/Candela_per_square_metre
 		{ names: ['nit', 'nits'], symbols: ['nt'], ratio: 1 },

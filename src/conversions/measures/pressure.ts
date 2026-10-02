@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const pressure: Measure = {
@@ -7,10 +7,10 @@ export const pressure: Measure = {
 	best: { metric: ['Pa'], imperial: ['psi'] },
 	units: [
 		{ names: ['pascal', 'pascals'], symbols: ['Pa'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['pascal', 'pascals'], symbols: ['Pa'], ratio: 1 }),
+		{ macro: Macros.si, names: ['pascal', 'pascals'], symbols: ['Pa'], ratio: 1 },
 
 		{ names: ['bar', 'bars'], symbols: ['bar'], ratio: 1e5 },
-		...expandMacro(Macros.si, { names: ['bar', 'bars'], symbols: ['bar'], ratio: 1e5 }),
+		{ macro: Macros.si, names: ['bar', 'bars'], symbols: ['bar'], ratio: 1e5 },
 
 		{ names: ['torr', 'torrs'], symbols: ['Torr'], ratio: new BigNumber(101_325).div(760) },
 		{ names: ['millitorr'], symbols: ['mTorr'], ratio: new BigNumber(101_325).div(760).div(1e3) },

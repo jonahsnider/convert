@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const volume: Measure = {
@@ -13,14 +13,14 @@ export const volume: Measure = {
 			symbols: ['m³', 'm3'],
 			ratio: 1,
 		},
-		...expandMacro(Macros.volumeSi, { names: ['meter', 'meters'], symbols: ['m3', 'm³'], ratio: 1 }),
+		{ macro: Macros.volumeSi, names: ['meter', 'meters'], symbols: ['m3', 'm³'], ratio: 1 },
 
 		{
 			names: ['liter', 'liters', 'litre', 'litres'],
 			symbols: ['l', 'L'],
 			ratio: 1e-3,
 		},
-		...expandMacro(Macros.si, { names: ['liter', 'liters', 'litre', 'litres'], symbols: ['l', 'L'], ratio: 1e-3 }),
+		{ macro: Macros.si, names: ['liter', 'liters', 'litre', 'litres'], symbols: ['l', 'L'], ratio: 1e-3 },
 
 		// https://en.wikipedia.org/wiki/Cubic_mile
 		{ names: ['cubic mile', 'cubic miles'], symbols: ['cu mi', 'mi3', 'mi³'], ratio: 4_168_181_825.440_579_4 },

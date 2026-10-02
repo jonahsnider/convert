@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const temperature: Measure = {
@@ -7,7 +7,7 @@ export const temperature: Measure = {
 	/** @see https://en.wikipedia.org/wiki/Conversion_of_scales_of_temperature#Kelvin */
 	units: [
 		{ names: ['kelvin', 'kelvins'], symbols: ['K'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['kelvin', 'kelvins'], symbols: ['K'], ratio: 1 }),
+		{ macro: Macros.si, names: ['kelvin', 'kelvins'], symbols: ['K'], ratio: 1 },
 
 		{ names: ['fahrenheit'], symbols: ['F', '°F'], ratio: () => 5 / 9, difference: 459.67 },
 		{ names: ['celsius'], symbols: ['C', '°C'], ratio: 1, difference: 273.15 },

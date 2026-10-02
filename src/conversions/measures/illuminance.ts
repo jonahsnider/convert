@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const illuminance: Measure = {
@@ -8,7 +8,7 @@ export const illuminance: Measure = {
 		// https://en.wikipedia.org/wiki/Lux
 		// https://en.wikipedia.org/wiki/Lumen_(unit)
 		{ names: ['lux'], symbols: ['lx'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['lux'], symbols: ['lx'], ratio: 1 }),
+		{ macro: Macros.si, names: ['lux'], symbols: ['lx'], ratio: 1 },
 
 		{ names: ['lumen per square meter'], symbols: ['lm/m2', 'lm/m²'], ratio: 1 },
 

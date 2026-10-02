@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const frequency: Measure = {
@@ -7,6 +7,6 @@ export const frequency: Measure = {
 	units: [
 		// https://en.wikipedia.org/wiki/Hertz
 		{ names: ['hertz'], symbols: ['Hz'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['hertz'], symbols: ['Hz'], ratio: 1 }),
+		{ macro: Macros.si, names: ['hertz'], symbols: ['Hz'], ratio: 1 },
 	],
 };

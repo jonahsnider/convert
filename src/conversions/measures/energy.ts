@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const energy: Measure = {
@@ -6,18 +6,10 @@ export const energy: Measure = {
 	best: ['J', 'Wh', 'kWh', 'MWh', 'GWh'],
 	units: [
 		{ names: ['joule', 'joules'], symbols: ['J'], ratio: 1 },
-		...expandMacro(Macros.si, {
-			names: ['joule', 'joules'],
-			symbols: ['J'],
-			ratio: 1,
-		}),
+		{ macro: Macros.si, names: ['joule', 'joules'], symbols: ['J'], ratio: 1 },
 
 		// https://en.wikipedia.org/wiki/Kilowatt-hour
 		{ names: ['watt-hour'], symbols: ['W⋅h', 'W h', 'Wh'], ratio: 3600 },
-		...expandMacro(Macros.si, {
-			names: ['watt-hour', 'watt-hours'],
-			symbols: ['W⋅h', 'W h', 'Wh'],
-			ratio: 3600,
-		}),
+		{ macro: Macros.si, names: ['watt-hour', 'watt-hours'], symbols: ['W⋅h', 'W h', 'Wh'], ratio: 3600 },
 	],
 };

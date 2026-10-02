@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const time: Measure = {
@@ -6,7 +6,7 @@ export const time: Measure = {
 	best: ['fs', 'ps', 'ns', 'µs', 'ms', 's', 'min', 'h', 'd', 'y'],
 	units: [
 		{ names: ['second', 'seconds'], symbols: ['s'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['second', 'seconds'], symbols: ['s'], ratio: 1 }),
+		{ macro: Macros.si, names: ['second', 'seconds'], symbols: ['s'], ratio: 1 },
 
 		{ names: ['minute', 'minutes'], symbols: ['min'], ratio: 60 },
 		{ names: ['hour', 'hours'], symbols: ['h'], ratio: 60 * 60 },

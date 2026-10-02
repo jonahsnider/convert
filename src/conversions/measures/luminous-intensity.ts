@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const luminousIntensity: Measure = {
@@ -7,7 +7,7 @@ export const luminousIntensity: Measure = {
 	units: [
 		// https://en.wikipedia.org/wiki/Candela
 		{ names: ['candela'], symbols: ['cd'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['candela'], symbols: ['cd'], ratio: 1 }),
+		{ macro: Macros.si, names: ['candela'], symbols: ['cd'], ratio: 1 },
 
 		// https://en.wikipedia.org/wiki/Candlepower
 		{ names: ['candlepower'], symbols: ['cp', 'CP'], ratio: 1 },

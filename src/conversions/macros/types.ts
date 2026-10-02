@@ -1,6 +1,6 @@
 import type BigNumber from 'bignumber.js';
 
-export type UnitGroup = {
+type UnitGroup = {
 	prefix: string;
 	symbol: string | string[];
 	value: number | BigNumber;

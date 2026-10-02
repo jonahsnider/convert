@@ -1,4 +1,4 @@
-import { expandMacro, Macros } from '../macros/macros.ts';
+import { Macros } from '../macros/macros.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const force: Measure = {
@@ -6,7 +6,7 @@ export const force: Measure = {
 	best: { metric: ['N'], imperial: ['lbf'] },
 	units: [
 		{ names: ['newton', 'newtons'], symbols: ['N'], ratio: 1 },
-		...expandMacro(Macros.si, { names: ['newton', 'newtons'], symbols: ['N'], ratio: 1 }),
+		{ macro: Macros.si, names: ['newton', 'newtons'], symbols: ['N'], ratio: 1 },
 
 		{ names: ['dyne', 'dynes'], symbols: ['dyn'], ratio: 1e-5 },
 
