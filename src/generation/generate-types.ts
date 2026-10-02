@@ -1,29 +1,49 @@
-import { flattenConversions } from '../conversions/flatten.ts';
+import assert from 'node:assert/strict';
+import * as Macros from '../conversions/macros/definitions/index.ts';
 import type { Conversions } from '../conversions/types.ts';
-import type { MeasureKind } from '../types/public.ts';
+
+function stringUnion(strings: string[]): string {
+	return [...new Set(strings)].map((value) => JSON.stringify(value)).join(' | ') || 'never';
+}
 
 export function generateTypes(conversions: Conversions): string {
-	const flat = flattenConversions(conversions);
-	const unitsByMeasure: Map<MeasureKind, string[]> = new Map();
+	const macroNames = new Map(
+		Object.entries(Macros).map(([name, macro]) => [macro, name[0]?.toUpperCase() + name.slice(1)]),
+	);
+	const macroTypes = [...macroNames].flatMap(([macro, name]) => [
+		'/** @internal */',
+		`export type ${name}Prefix = ${stringUnion(macro.map((group) => group.prefix))};`,
+		'/** @internal */',
+		`export type ${name}Symbol = ${stringUnion(macro.flatMap((group) => group.symbol))};`,
+	]);
+	const unitsByMeasure: string[] = [];
 
-	for (const conversion of flat) {
-		for (const name of conversion.names) {
-			const units = unitsByMeasure.get(conversion.measure) ?? [];
-			units.push(name);
-			unitsByMeasure.set(conversion.measure, units);
+	for (const measure of conversions.values()) {
+		const units: string[] = [];
+		for (const unit of measure.units) {
+			if ('macro' in unit) {
+				const name = macroNames.get(unit.macro);
+				assert(name, 'Unknown unit macro');
+				units.push(
+					`\`\${${name}Prefix}\${${stringUnion(unit.names)}}\``,
+					`\`\${${name}Symbol}\${${stringUnion(unit.symbols)}}\``,
+				);
+			} else {
+				units.push(stringUnion([...unit.names, ...(unit.symbols ?? [])]));
+			}
 		}
+
+		unitsByMeasure.push(`  ${measure.kind}: ${units.join(' | ')};`);
 	}
 
-	const code: string[] = [
+	return [
 		`// Generated at ${new Date().toLocaleString()}`,
+		'',
+		...macroTypes,
 		'',
 		'/** @internal */',
 		'export type UnitsByMeasure = {',
-		...Array.from(unitsByMeasure.entries()).map(
-			([measure, units]) => `  ${measure}: ${units.map((unit) => `'${unit}'`).join(' | ')};`,
-		),
+		...unitsByMeasure,
 		'}',
-	];
-
-	return code.join('\n');
+	].join('\n');
 }
