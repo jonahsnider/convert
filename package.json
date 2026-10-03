@@ -260,7 +260,7 @@
 		"@size-limit/preset-small-lib": "14.1.0",
 		"@tsconfig/recommended": "1.0.13",
 		"@tsconfig/strictest": "2.0.8",
-		"@types/node": "24.19.0",
+		"@types/node": "24.19.1",
 		"@vitest/coverage-v8": "5.0.3",
 		"@vitest/ui": "5.0.3",
 		"bignumber.js": "11.1.5",
