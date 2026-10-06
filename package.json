@@ -266,7 +266,7 @@
 		"bignumber.js": "11.1.5",
 		"knip": "6.39.0",
 		"oxfmt": "0.71.0",
-		"oxlint": "1.86.0",
+		"oxlint": "1.87.0",
 		"oxlint-tsgolint": "7.0.2003",
 		"size-limit": "14.1.0",
 		"typedoc": "0.28.20",
