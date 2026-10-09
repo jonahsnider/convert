@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.1.0](https://github.com/jonahsnider/convert/compare/v8.0.2...v8.1.0) (2026-10-09)
+
+
+### Features
+
+* use TypeScript string literals to define _UnitsByMeasureRaw ([2b626f5](https://github.com/jonahsnider/convert/commit/2b626f51c3dfa036d0000fd3ea47688c0f9f4e58))
+
 ## [8.0.2](https://github.com/jonahsnider/convert/compare/v8.0.1...v8.0.2) (2026-09-10)
 
 
