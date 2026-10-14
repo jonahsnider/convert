@@ -254,7 +254,7 @@
 		}
 	},
 	"devDependencies": {
-		"@codspeed/vitest-plugin": "6.0.0-beta.2",
+		"@codspeed/vitest-plugin": "6.0.0",
 		"@jonahsnider/util": "13.0.0",
 		"@microsoft/api-extractor": "7.59.4",
 		"@size-limit/preset-small-lib": "14.2.0",
