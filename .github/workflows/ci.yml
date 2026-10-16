@@ -43,10 +43,23 @@ jobs:
         uses: pnpm/setup@v3
         with:
           cache: true
-      - name: Build and test
-        run: pnpm test:ci
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Generate source
+        run: pnpm generate
+      - parallel:
+          - name: Build and validate API
+            run: pnpm build:ci
+            env:
+              CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          - name: Check formatting
+            run: pnpm format
+          - name: Check unused code and dependencies
+            run: pnpm knip
+          - name: Lint
+            run: pnpm lint
+          - name: Test
+            run: pnpm test
+            env:
+              CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v7
         with:
