@@ -145,7 +145,7 @@
 			]
 		},
 		"generate": {
-			"command": "node --experimental-transform-types scripts/generate.ts -o src/generated/",
+			"command": "tsx scripts/generate.ts -o src/generated/",
 			"files": [
 				"scripts/generate.ts",
 				"src/generation/**/*.ts",
@@ -260,7 +260,7 @@
 		"@size-limit/preset-small-lib": "14.3.0",
 		"@tsconfig/recommended": "1.0.13",
 		"@tsconfig/strictest": "2.0.8",
-		"@types/node": "26.6.5",
+		"@types/node": "26.6.6",
 		"@vitest/coverage-v8": "5.0.5",
 		"@vitest/ui": "5.0.5",
 		"bignumber.js": "11.1.5",
@@ -269,6 +269,7 @@
 		"oxlint": "1.90.0",
 		"oxlint-tsgolint": "7.0.2005",
 		"size-limit": "14.3.0",
+		"tsx": "4.23.15",
 		"typedoc": "0.28.20",
 		"typescript": "6.0.3",
 		"vitest": "5.0.5",
@@ -279,7 +280,7 @@
 	"devEngines": {
 		"runtime": {
 			"name": "node",
-			"version": "24.x",
+			"version": "26.x",
 			"onFail": "warn"
 		}
 	},
