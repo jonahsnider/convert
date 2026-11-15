@@ -46,5 +46,12 @@ describe('conversions', () => {
 
 			expect(result.toString()).toBe(`${to[0].toString()} ${to[1]}`);
 		});
+
+		test('passes exclude through', () => {
+			const result = convertMany('500m 3km').to('best', 'metric', { exclude: ['km'] });
+
+			expect(result.quantity).toBe(3500);
+			expect(result.unit).toBe('m');
+		});
 	});
 });

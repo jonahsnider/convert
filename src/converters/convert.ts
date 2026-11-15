@@ -1,6 +1,6 @@
 import { bestUnits } from '../generated/best-units.ts';
 import { differences, unitsObject } from '../generated/parse-unit.ts';
-import type { BestConversion, Converter } from '../types/converter.ts';
+import type { BestConversion, BestConversionOptions, Converter } from '../types/converter.ts';
 import type { BestKind, MeasureKind } from '../types/public.ts';
 import type { BestUnitsForUnit, MeasuresByUnit, Unit } from '../types/units.ts';
 import type { LiteralToPrimitive } from '../types/utils.ts';
@@ -66,14 +66,16 @@ function convertToBest<Q extends number | bigint, U extends Unit>(
 	quantity: Q,
 	from: U,
 	kind: BestKind,
+	exclude: readonly string[] | undefined,
 ): BestConversion<Q, BestUnitsForUnit<U>> {
 	const fromMeasure = unitsObject[from][0];
 	const best = bestUnits[kind === 'imperial' ? 1 : 0][fromMeasure];
 
 	const smallestUnit = best[0][0];
 
-	let bestUnit = smallestUnit as BestUnitsForUnit<U>;
+	let bestUnit: BestUnitsForUnit<U> | undefined;
 
+	// Ratios in `best` are relative to the smallest unit, so it's always used as the base, even if it's excluded
 	const baseQuantity = convertTo(from, quantity, smallestUnit);
 	const absQuantity = baseQuantity < 0 ? -baseQuantity : baseQuantity;
 
@@ -81,11 +83,20 @@ function convertToBest<Q extends number | bigint, U extends Unit>(
 		// biome-ignore lint/style/noNonNullAssertion: This is safe because we know the best array is not empty
 		const bestEntry = best[i]!;
 
-		if (absQuantity >= bestEntry[1]) {
+		if (exclude?.includes(bestEntry[0])) {
+			continue;
+		}
+
+		// The smallest unit that isn't excluded is always used as a fallback
+		if (bestUnit === undefined || absQuantity >= bestEntry[1]) {
 			bestUnit = bestEntry[0] as BestUnitsForUnit<U>;
 		} else {
 			break;
 		}
+	}
+
+	if (bestUnit === undefined) {
+		throw new RangeError(`All best units for ${from} were excluded`);
 	}
 
 	const result = convertTo(from, quantity, bestUnit);
@@ -111,14 +122,16 @@ function convertToAny<Q extends number | bigint, U extends Unit, K extends BestK
 	this: ConverterThis<Q, U>,
 	to: 'best',
 	kind?: K | undefined,
+	options?: BestConversionOptions<BestUnitsForUnit<U>> | undefined,
 ): BestConversion<Q, BestUnitsForUnit<U>>;
 function convertToAny<Q extends number | bigint, U extends Unit, K extends BestKind = 'metric'>(
 	this: ConverterThis<Q, U>,
 	to: MeasuresByUnit<U> | 'best',
 	kind?: K | undefined,
+	options?: BestConversionOptions<BestUnitsForUnit<U>> | undefined,
 ): LiteralToPrimitive<Q> | BestConversion<Q, BestUnitsForUnit<U>> {
 	if (to === 'best') {
-		return convertToBest(this._quantity, this._from, kind ?? 'metric');
+		return convertToBest(this._quantity, this._from, kind ?? 'metric', options?.exclude);
 	}
 
 	return convertTo(this._from, this._quantity, to);

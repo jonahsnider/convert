@@ -27,6 +27,18 @@ export type BestConversion<Q extends number | bigint, U extends BestUnits> = {
 };
 
 /**
+ * Options for converting a unit to `'best'`.
+ * @public
+ */
+export type BestConversionOptions<U extends BestUnits = BestUnits> = {
+	/**
+	 * Units that should never be picked as the best unit.
+	 * If every possible best unit is excluded, a `RangeError` is thrown.
+	 */
+	exclude?: readonly U[] | undefined;
+};
+
+/**
  * The return value from calling a conversion function.
  * @public
  */
@@ -44,8 +56,13 @@ export type Converter<Q extends number | bigint, U extends Unit> = {
 	 *
 	 * @param to - The string `best`
 	 * @param kind - The set of units to use (defaults to `'metric'`)
+	 * @param options - Options for picking the best unit, like units to exclude
 	 *
 	 * @returns An object with a `quantity` property of the `unit` unit, which can be casted to a string using the `toString()` method
 	 */
-	to<K extends BestKind = BestKind>(to: 'best', kind?: K | undefined): BestConversion<Q, BestUnitsForUnit<U, K>>;
+	to<K extends BestKind = BestKind, E extends BestUnitsForUnit<U, K> = never>(
+		to: 'best',
+		kind?: K | undefined,
+		options?: BestConversionOptions<E> | undefined,
+	): BestConversion<Q, Exclude<BestUnitsForUnit<U, K>, E>>;
 };
