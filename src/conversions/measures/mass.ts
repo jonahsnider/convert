@@ -32,12 +32,12 @@ export const mass: Measure = {
 		// https://en.wikipedia.org/wiki/Hundredweight
 		{
 			names: ['short hundredweight', 'cental'],
-			ratio: 45.36e3,
+			ratio: poundInGrams.times(100),
 		},
 		{
 			names: ['long hundredweight', 'imperial hundredweight'],
 			symbols: ['cwt'],
-			ratio: 50.8e3,
+			ratio: poundInGrams.times(112),
 		},
 
 		{ names: ['short ton', 'short tons', 'US ton', 'US tons'], ratio: poundInGrams.times(2000) },

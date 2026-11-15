@@ -29,9 +29,9 @@ export const length: Measure = {
 
 		// https://en.wikipedia.org/wiki/Pica_(typography)
 		// The p symbol can't be used as it conflicts with pints
-		{ names: ['pica', 'picas'], ratio: 4.2333e-3 },
+		{ names: ['pica', 'picas'], ratio: 0.0254 / 6 },
 		// https://en.wikipedia.org/wiki/Point_(typography)
 		// The pt symbol can't be use as it conflicts with pints
-		{ names: ['point', 'points'], ratio: 0.3528e-3 },
+		{ names: ['point', 'points'], ratio: 0.0254 / 72 },
 	],
 };

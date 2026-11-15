@@ -1,5 +1,6 @@
-import { describe } from 'vitest';
+import { describe, expect, test } from 'vitest';
 import { assertConversions } from '../../../test/assert-conversion.ts';
+import { convert } from '../convert.ts';
 
 describe('conversions', () => {
 	assertConversions([{ from: [1, 'tonne'], to: [1, 'megagram'] }]);
@@ -11,6 +12,11 @@ describe('conversions', () => {
 
 	assertConversions([{ from: [1, 'grain'], to: [64.79891, 'mg'] }]);
 
-	assertConversions([{ from: [1, 'short hundredweight'], to: [45.36, 'kg'] }]);
-	assertConversions([{ from: [1, 'long hundredweight'], to: [50.8, 'kg'] }]);
+	test.each([
+		['short hundredweight', 100, 45.359237],
+		['long hundredweight', 112, 50.80234544],
+	] as const)('%s equals %i pounds', (unit, pounds, kilograms) => {
+		expect(convert(1, unit).to('pounds')).toBeCloseTo(pounds, 12);
+		expect(convert(1, unit).to('kg')).toBeCloseTo(kilograms, 12);
+	});
 });
