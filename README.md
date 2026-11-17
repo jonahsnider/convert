@@ -79,6 +79,10 @@ const duration = convert(36, "h").to("best");
 convert(3.5, "km").to("best"); // -> { quantity: 3.5, unit: 'km', toString: () => '3.5 km' }
 convert(3.5, "km").to("best", "metric"); // -> { quantity: 3.5, unit: 'km', toString: () => '3.5 km' }
 convert(3.5, "km").to("best", "imperial"); // -> { quantity: 2.17, unit: 'mi', toString: () => '3.5 mi' }
+
+// You can exclude units you never want to be picked
+convert(1200, "m").to("best", "imperial"); // -> { quantity: 1312.34, unit: 'yd', toString: () => '1312.34 yd' }
+convert(1200, "m").to("best", "imperial", { exclude: ["yd"] }); // -> { quantity: 3937.01, unit: 'ft', toString: () => '3937.01 ft' }
 ```
 
 ### `ms` shorthand

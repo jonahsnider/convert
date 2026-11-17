@@ -24,6 +24,11 @@ export type BestConversion<Q extends number | bigint, U extends BestUnits> = {
 };
 
 // @public
+export type BestConversionOptions<U extends BestUnits = BestUnits> = {
+    exclude?: readonly U[] | undefined;
+};
+
+// @public
 export type BestKind = 'metric' | 'imperial';
 
 // Warning: (ae-forgotten-export) The symbol "BestUnits_2" needs to be exported by the entry point index.d.ts
@@ -45,7 +50,7 @@ export default convert;
 // @public
 export type Converter<Q extends number | bigint, U extends Unit> = {
     to(to: U): _LiteralToPrimitive<Q>;
-    to<K extends BestKind = BestKind>(to: 'best', kind?: K | undefined): BestConversion<Q, BestUnitsForUnit<U, K>>;
+    to<K extends BestKind = BestKind, E extends BestUnitsForUnit<U, K> = never>(to: 'best', kind?: K | undefined, options?: BestConversionOptions<E> | undefined): BestConversion<Q, Exclude<BestUnitsForUnit<U, K>, E>>;
 };
 
 // @public
@@ -194,7 +199,7 @@ export type _VolumeSiSymbol = "P" | "T" | "G" | "M" | "k" | "h" | "da" | "d" | "
 //
 // dist/types/converter.d.ts:12:5 - (ae-incompatible-release-tags) The symbol "quantity" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
 // dist/types/converter.d.ts:25:5 - (ae-incompatible-release-tags) The symbol "toString" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
-// dist/types/converter.d.ts:39:5 - (ae-incompatible-release-tags) The symbol "to" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
+// dist/types/converter.d.ts:50:5 - (ae-incompatible-release-tags) The symbol "to" is marked as @public, but its signature references "_LiteralToPrimitive" which is marked as @internal
 
 // (No @packageDocumentation comment for this package)
 

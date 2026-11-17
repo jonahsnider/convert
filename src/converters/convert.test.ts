@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, expectTypeOf, test } from 'vitest';
 import { convert } from './convert.ts';
 
 test('basic conversions', () => {
@@ -45,6 +45,52 @@ describe('best conversions', () => {
 
 	test('works with metric', () => {
 		expect(convert(0.001, 'days').to('best', 'metric').toString()).toMatchInlineSnapshot(`"1.44 min"`);
+	});
+
+	describe('exclude', () => {
+		test('skips excluded units', () => {
+			expect(convert(1200, 'm').to('best', 'imperial').unit).toBe('yd');
+
+			const result = convert(1200, 'm').to('best', 'imperial', { exclude: ['yd'] });
+
+			expect(result.unit).toBe('ft');
+			expect(result.quantity).toBeCloseTo(3937.007_874);
+		});
+
+		test('falls back to the smallest unit that is not excluded', () => {
+			expect(
+				convert(5, 'mm')
+					.to('best', 'metric', { exclude: ['mm'] })
+					.toString(),
+			).toBe('0.5 cm');
+		});
+
+		test('handles negative quantities', () => {
+			expect(convert(-1200, 'm').to('best', 'imperial', { exclude: ['yd'] }).unit).toBe('ft');
+		});
+
+		test('does nothing with an empty list', () => {
+			expect(convert(1200, 'm').to('best', 'imperial', { exclude: [] }).unit).toBe('yd');
+		});
+
+		test('narrows the result unit type', () => {
+			const result = convert(1200, 'm').to('best', 'imperial', { exclude: ['yd'] });
+
+			expectTypeOf(result.unit).toEqualTypeOf<'in' | 'ft' | 'mi'>();
+		});
+
+		test('only accepts best units for the measure', () => {
+			convert(1200, 'm').to('best', 'imperial', {
+				// @ts-expect-error Intentionally incorrect
+				exclude: ['kg'],
+			});
+		});
+
+		test('throws when every unit is excluded', () => {
+			expect(() =>
+				convert(1, 'm').to('best', 'metric', { exclude: ['mm', 'cm', 'm', 'km'] }),
+			).toThrowErrorMatchingInlineSnapshot('[RangeError: All best units for m were excluded]');
+		});
 	});
 });
 

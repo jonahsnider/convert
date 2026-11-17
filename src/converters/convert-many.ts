@@ -1,4 +1,4 @@
-import type { BestConversion, Converter } from '../types/converter.ts';
+import type { BestConversion, BestConversionOptions, Converter } from '../types/converter.ts';
 import type { BestKind } from '../types/public.ts';
 import type { BestUnits, Unit } from '../types/units.ts';
 import { convert } from './convert.ts';
@@ -10,7 +10,12 @@ type ConverterThis = {
 	_value: string;
 };
 
-function to(this: ConverterThis, unit: Unit | 'best', kind?: BestKind | undefined) {
+function to(
+	this: ConverterThis,
+	unit: Unit | 'best',
+	kind?: BestKind | undefined,
+	options?: BestConversionOptions | undefined,
+) {
 	const isBest = unit === 'best';
 
 	let result = 0;
@@ -36,8 +41,9 @@ function to(this: ConverterThis, unit: Unit | 'best', kind?: BestKind | undefine
 	} while (this._search);
 
 	if (isBest) {
+		// The measure isn't known statically here, so the exclude list can't be narrowed to its best units
 		// biome-ignore lint/style/noNonNullAssertion: isBest implies resolvedUnit
-		return convert(result, resolvedUnit!).to('best', kind);
+		return convert(result, resolvedUnit!).to('best', kind, options as BestConversionOptions<never> | undefined);
 	}
 
 	return result;

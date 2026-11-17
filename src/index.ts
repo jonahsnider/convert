@@ -13,7 +13,7 @@ export type {
 	VolumeSiPrefix as _VolumeSiPrefix,
 	VolumeSiSymbol as _VolumeSiSymbol,
 } from './generated/types.ts';
-export type { BestConversion, Converter } from './types/converter.ts';
+export type { BestConversion, BestConversionOptions, Converter } from './types/converter.ts';
 export { type BestKind, MeasureKind } from './types/public.ts';
 export type {
 	Angle,
