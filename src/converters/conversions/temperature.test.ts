@@ -17,8 +17,11 @@ describe('conversions', () => {
 		{ from: [1n, '°C'], to: [1n, '°C'] },
 		{ from: [1n, '°C'], to: [1n, 'C'] },
 		{ from: [1n, 'C'], to: [1n, '°C'] },
-		// Converting fahrenheit or rankine fails with bigints, so they are omitted
 		{ from: [1n, 'K'], to: [1n, 'K'] },
+		{ from: [9n, 'F'], to: [9n, 'F'] },
+		{ from: [9n, 'F'], to: [9n, '°F'] },
+		{ from: [9n, 'R'], to: [5n, 'K'] },
+		{ from: [9n, 'K'], to: [16n, 'R'] },
 	]);
 });
 

@@ -6,8 +6,35 @@ test('basic conversions', () => {
 	expect(convert(1, 's').to('s')).toBe(1);
 });
 
-test('bigints', () => {
-	expect(convert(2n, 'hours').to('minute')).toBe(120n);
+describe('bigints', () => {
+	test('integer ratios', () => {
+		expect(convert(2n, 'hours').to('minute')).toBe(120n);
+		expect(convert(1024n, 'B').to('KiB')).toBe(1n);
+	});
+
+	test('non-integer ratios', () => {
+		expect(convert(1n, 'L').to('mL')).toBe(1000n);
+		expect(convert(1n, 'km').to('mm')).toBe(1_000_000n);
+		expect(convert(1000n, 'mm').to('m')).toBe(1n);
+		expect(convert(1n, 'ft').to('in')).toBe(12n);
+		expect(convert(12n, 'in').to('ft')).toBe(1n);
+	});
+
+	test('rounds towards zero', () => {
+		expect(convert(1n, 'm').to('ft')).toBe(3n);
+		expect(convert(-1n, 'm').to('ft')).toBe(-3n);
+		expect(convert(999n, 'mm').to('m')).toBe(0n);
+	});
+
+	test('large ratios are exact', () => {
+		expect(convert(1n, 'Pm2').to('m2')).toBe(10n ** 30n);
+		expect(convert(10n ** 30n, 'm2').to('Pm2')).toBe(1n);
+	});
+
+	test('best conversions', () => {
+		expect(convert(5n, 'km').to('best').toString()).toBe('5 km');
+		expect(convert(1500n, 'mL').to('best').toString()).toBe('1 L');
+	});
 });
 
 describe('best conversions', () => {
