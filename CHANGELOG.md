@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.2.0](https://github.com/jonahsnider/convert/compare/v8.1.0...v8.2.0) (2026-11-19)
+
+
+### Features
+
+* add exclude option to best conversions ([#894](https://github.com/jonahsnider/convert/issues/894)) ([cd3cab0](https://github.com/jonahsnider/convert/commit/cd3cab0cf35e7f984dd7d6d66c2891d43a110cee)), closes [#793](https://github.com/jonahsnider/convert/issues/793)
+
+
+### Bug Fixes
+
+* support bigint conversions with non-integer ratios ([#896](https://github.com/jonahsnider/convert/issues/896)) ([4f2d89c](https://github.com/jonahsnider/convert/commit/4f2d89cb8e207e11ba7728a9a8e09d15f2dc3f29))
+
 ## [8.1.0](https://github.com/jonahsnider/convert/compare/v8.0.2...v8.1.0) (2026-11-15)
 
 
