@@ -9,6 +9,19 @@ import type { LiteralToPrimitive } from '../types/utils.ts';
 // This workaround allows me to just hardcode the value, but ensures it doesn't become inaccurate if the enum changes
 const MeasureKindTime: MeasureKind.Time = 14;
 
+/**
+ * Convert a positive ratio into an exact fraction of bigints, using its shortest decimal representation.
+ * For example, `0.001` becomes `[1n, 1000n]` and `1e+30` becomes `[10n ** 30n, 1n]`.
+ */
+function toFraction(ratio: number): [numerator: bigint, denominator: bigint] {
+	const [mantissa, exponent] = String(ratio).split('e') as [string, string?];
+	const [whole, decimals = ''] = mantissa.split('.') as [string, string?];
+	const scale = Number(exponent ?? 0) - decimals.length;
+	const numerator = BigInt(whole + decimals);
+
+	return scale < 0 ? [numerator, 10n ** BigInt(-scale)] : [numerator * 10n ** BigInt(scale), 1n];
+}
+
 function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: string): LiteralToPrimitive<Q> {
 	let parsedTo = unitsObject[to as Unit];
 
@@ -42,7 +55,14 @@ function convertTo<Q extends number | bigint>(from: string, quantity: Q, to: str
 			);
 		}
 
-		return ((quantity * BigInt(fromRatio)) / BigInt(toRatio)) as LiteralToPrimitive<Q>;
+		if (Number.isSafeInteger(fromRatio) && Number.isSafeInteger(toRatio)) {
+			return ((quantity * BigInt(fromRatio)) / BigInt(toRatio)) as LiteralToPrimitive<Q>;
+		}
+
+		const [fromNumerator, fromDenominator] = toFraction(fromRatio);
+		const [toNumerator, toDenominator] = toFraction(toRatio);
+
+		return ((quantity * fromNumerator * toDenominator) / (fromDenominator * toNumerator)) as LiteralToPrimitive<Q>;
 	}
 
 	if (from in differences) {
