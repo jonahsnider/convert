@@ -20,12 +20,23 @@ function getBestUnitsByMeasure(measure: Measure, kind: BestKind): BestEntry[] {
 	const smallest = flattened.get(smallestName);
 	assert(smallest, new TypeError(`Unit ${smallestName} is not defined`));
 
+	let previous: BestEntry | undefined;
+
 	for (const unit of best) {
 		const entry = flattened.get(unit);
 		assert(entry, new TypeError(`Unit ${unit} is not defined`));
 
-		const ratio = unit === smallestName ? 1 : new BigNumber(entry.ratio).div(smallest.ratio).toString();
-		result.push({ ratio: ratio, unit });
+		const ratio: BestEntry['ratio'] =
+			unit === smallestName ? 1 : new BigNumber(entry.ratio).div(smallest.ratio).toString();
+
+		// convertToBest stops at the first unit that's too large, so best units must be in ascending order
+		assert(
+			previous === undefined || new BigNumber(ratio).gt(previous.ratio),
+			new RangeError(`Best units must be sorted from smallest to largest, but ${unit} comes after ${previous?.unit}`),
+		);
+
+		previous = { ratio: ratio, unit };
+		result.push(previous);
 	}
 
 	return result;

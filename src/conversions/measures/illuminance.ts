@@ -3,7 +3,7 @@ import { type Measure, MeasureKind } from '../types.ts';
 
 export const illuminance: Measure = {
 	kind: MeasureKind.Illuminance,
-	best: ['lux', 'µlx', 'nlx', 'klx'],
+	best: ['nlx', 'µlx', 'lux', 'klx'],
 	units: [
 		// https://en.wikipedia.org/wiki/Lux
 		// https://en.wikipedia.org/wiki/Lumen_(unit)
