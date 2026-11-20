@@ -1,6 +1,11 @@
 import { expect, test } from 'vitest';
+import { conversions as allConversions } from '../conversions/conversions.ts';
 import { type Conversions, MeasureKind } from '../conversions/types.ts';
 import { generateBestUnits } from './generate-best-units.ts';
+
+test('best units for every measure are sorted from smallest to largest', () => {
+	expect(() => generateBestUnits(allConversions)).not.toThrow();
+});
 
 test('throws when best units are not sorted from smallest to largest', () => {
 	const conversions: Conversions = new Map([
