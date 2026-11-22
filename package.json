@@ -267,7 +267,7 @@
 		"knip": "6.47.0",
 		"oxfmt": "0.79.0",
 		"oxlint": "1.94.0",
-		"oxlint-tsgolint": "7.0.2007",
+		"oxlint-tsgolint": "7.0.2008",
 		"size-limit": "14.3.0",
 		"tsx": "4.23.15",
 		"typedoc": "0.28.20",
