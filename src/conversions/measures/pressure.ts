@@ -1,5 +1,6 @@
 import BigNumber from 'bignumber.js';
 import { Macros } from '../macros/macros.ts';
+import { poundForce } from './force.ts';
 import { type Measure, MeasureKind } from '../types.ts';
 
 export const pressure: Measure = {
@@ -18,10 +19,11 @@ export const pressure: Measure = {
 		{ names: ['atmosphere', 'atmospheres'], symbols: ['atm'], ratio: 101_325 },
 
 		// https://en.wikipedia.org/wiki/Pound_per_square_inch
+		// 1 psi = 1 lbf / (0.0254 m)²
 		{
 			names: ['pound per square inch', 'pounds per square inch'],
 			symbols: ['psi', 'lbf/in2', 'lbf/in²'],
-			ratio: 6.894_757e3,
+			ratio: poundForce.div(new BigNumber('0.0254').pow(2)),
 		},
 
 		// https://en.wikipedia.org/wiki/Inch_of_water
